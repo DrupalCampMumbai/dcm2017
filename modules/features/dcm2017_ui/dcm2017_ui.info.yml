@@ -17,5 +17,6 @@ dependencies:
   - text
   - user
   - views
+  - views_slideshow
 version: 8.x-1.1
 package: dcm2017

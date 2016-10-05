@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function dcm_sponsors_page_attachments(array &$attachments) { 
+  $attachments['#attached']['library'][] = 'dcm_sponsors/flip-css';
+  $attachments['#attached']['library'][] = 'dcm_sponsors/flip-js';
+}
+

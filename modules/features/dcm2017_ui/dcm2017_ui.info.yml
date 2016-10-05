@@ -1,0 +1,8 @@
+name: UI
+description: 'add all content types and blocks'
+type: module
+core: 8.x
+dependencies:
+  - features
+version: 8.x-1.0
+package: dcm2017

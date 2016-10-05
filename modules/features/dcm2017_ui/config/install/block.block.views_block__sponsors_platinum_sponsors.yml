@@ -10,8 +10,8 @@ dependencies:
     - dcm17
 id: views_block__sponsors_platinum_sponsors
 theme: dcm17
-region: highlighted
-weight: -7
+region: footer
+weight: -9
 provider: null
 plugin: 'views_block:sponsors-platinum_sponsors'
 settings:

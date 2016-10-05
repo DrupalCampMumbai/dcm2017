@@ -3,6 +3,19 @@ description: 'add all content types and blocks'
 type: module
 core: 8.x
 dependencies:
+  - block
   - features
-version: 8.x-1.0
+  - field
+  - file
+  - image
+  - link
+  - menu_ui
+  - node
+  - path
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x-1.1
 package: dcm2017

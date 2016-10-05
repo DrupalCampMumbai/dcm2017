@@ -1,0 +1,18 @@
+flip-js:
+  version: 1.x
+  js:
+    js/jquery.flip.min.js: {}
+    js/dcm_sponsors.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+flip-css:
+  version: 1.x
+  css:
+    base:
+      css/sponsors.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.ui

@@ -6,6 +6,7 @@ dependencies:
   - block
   - features
   - field
+  - file
   - image
   - link
   - menu_ui
@@ -16,5 +17,5 @@ dependencies:
   - text
   - user
   - views
-version: 8.x-1.0
+version: 8.x-1.1
 package: dcm2017

@@ -8,7 +8,9 @@ dependencies:
   - field
   - file
   - image
+  - jquery_countdown_timer
   - link
+  - masonry_views
   - menu_ui
   - node
   - path

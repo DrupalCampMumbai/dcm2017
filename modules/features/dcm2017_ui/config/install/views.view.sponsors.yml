@@ -8,9 +8,6 @@ dependencies:
     - image.style.medium
     - node.type.sponsor
     - taxonomy.vocabulary.sponsors_catergory
-  content:
-    - 'taxonomy_term:sponsors_catergory:0bae1c5d-b953-4777-97ff-88bda1bf511d'
-    - 'taxonomy_term:sponsors_catergory:7c4c9580-2b4e-463c-a3f1-6782e2df061d'
   module:
     - image
     - node

@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_wall_image
-    - image.style.thumbnail
+    - image.style.wall_image
     - node.type.wall_image
   module:
     - image
@@ -130,7 +130,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: thumbnail
+            image_style: wall_image
             image_link: ''
           group_column: ''
           group_columns: {  }

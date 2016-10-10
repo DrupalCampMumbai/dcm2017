@@ -1,0 +1,910 @@
+/*Variables*/
+/*End Variables*/
+/*Fonts*/
+/*New fonts - Homepage redesign*/
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url("../fonts/proximanova-reg-webfont.woff");
+  src: url("../fonts/proximanova-reg-webfont.eot");
+  src: url("../fonts/proximanova-reg-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-reg-webfont.ttf") format("truetype"), url("../fonts/proximanova-reg-webfont.woff") format("woff"), url("../fonts/proximanova-reg-webfont.svg") format("svg");
+}
+@font-face {
+  font-family: 'Proxima Nova Lt';
+  src: url("../fonts/proximanova-sbold-webfont.woff");
+  src: url("../fonts/proximanova-sbold-webfont.eot");
+  src: url("../fonts/proximanova-sbold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/proximanova-sbold-webfont.ttf") format("truetype"), url("../fonts/proximanova-sbold-webfont.woff") format("woff"), url("../fonts/proximanova-sbold-webfont.svg") format("svg");
+}
+/*End Fonts*/
+/*Generic css*/
+/*Body & Other general elements*/
+/* line 5, ../sass/dcm2017.scss */
+body {
+  border: 0 none;
+  color: #333;
+  font-family: "Proxima Nova Rg";
+  font-size: 14px;
+  line-height: 19px;
+  margin: 0;
+  min-width: 100%;
+  padding: 0;
+}
+/* line 14, ../sass/dcm2017.scss */
+body div * {
+  outline: none;
+}
+
+/* line 18, ../sass/dcm2017.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  margin: 0 0 15px;
+}
+
+/* line 22, ../sass/dcm2017.scss */
+h1, .h1 {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+/* line 26, ../sass/dcm2017.scss */
+h2, .h2 {
+  font-size: 25px;
+  line-height: 25px;
+}
+
+/* line 30, ../sass/dcm2017.scss */
+h3, .h3 {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+/* line 34, ../sass/dcm2017.scss */
+h4, .h4 {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+/* line 38, ../sass/dcm2017.scss */
+h5, .h5 {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/* line 42, ../sass/dcm2017.scss */
+h4, .h4 {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+/* line 46, ../sass/dcm2017.scss */
+p {
+  margin: 0 0 10px;
+}
+
+/* line 49, ../sass/dcm2017.scss */
+a:hover, a:focus {
+  background: transparent;
+  color: #666;
+  text-decoration: none;
+  outline: 0;
+}
+
+/* line 55, ../sass/dcm2017.scss */
+a {
+  color: #2aa9de;
+  text-decoration: none;
+  outline: 0;
+}
+/* line 59, ../sass/dcm2017.scss */
+a img {
+  border: 0;
+  outline: 0;
+}
+
+/* line 64, ../sass/dcm2017.scss */
+div.warning, table tr.warning {
+  white-space: normal;
+}
+
+/* line 67, ../sass/dcm2017.scss */
+.element-invisible {
+  display: none;
+}
+
+/* line 70, ../sass/dcm2017.scss */
+ul, .block ul, ol {
+  margin: 0.5em 0 1em;
+  padding: 0 0 0 1.0em;
+}
+/* line 73, ../sass/dcm2017.scss */
+ul li, ul li.leaf, .block ul li, .block ul li.leaf, ol li, ol li.leaf {
+  display: list-item;
+  list-style-image: none;
+  list-style-type: disc;
+  margin: 0;
+  padding: 0 0 5px;
+}
+
+/* line 81, ../sass/dcm2017.scss */
+ul.list-inline {
+  margin: 0.5em 0 1em;
+  padding: 0 0 0 1.0em;
+}
+/* line 84, ../sass/dcm2017.scss */
+ul.list-inline li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0;
+  list-style-image: none;
+}
+
+/* line 92, ../sass/dcm2017.scss */
+.pagination > li {
+  display: inline;
+}
+
+/* line 95, ../sass/dcm2017.scss */
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+}
+
+/* line 98, ../sass/dcm2017.scss */
+ul.contextual-links, .block ul.contextual-links, ol.contextual-links {
+  margin: 0;
+  padding: 0;
+}
+/* line 101, ../sass/dcm2017.scss */
+ul.contextual-links li, ul.contextual-links li.leaf, .block ul.contextual-links li, .block ul.contextual-links li.leaf, ol.contextual-links li, ol.contextual-links li.leaf {
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 108, ../sass/dcm2017.scss */
+ul.tabs.primary {
+  white-space: normal;
+}
+
+/* line 111, ../sass/dcm2017.scss */
+.tabs--primary.nav.nav-tabs {
+  margin: 0 0 15px;
+}
+/* line 113, ../sass/dcm2017.scss */
+.tabs--primary.nav.nav-tabs li {
+  padding: 0;
+}
+/* line 115, ../sass/dcm2017.scss */
+.tabs--primary.nav.nav-tabs li a {
+  padding: 5px 10px;
+}
+
+/* line 120, ../sass/dcm2017.scss */
+table {
+  border: 0;
+}
+/* line 122, ../sass/dcm2017.scss */
+table tbody {
+  border: 0;
+}
+/* line 125, ../sass/dcm2017.scss */
+table tbody tr th {
+  border: 0;
+  border-right: 1px solid #ddd;
+  background-color: #eee;
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px;
+}
+/* line 133, ../sass/dcm2017.scss */
+table tbody tr th:last-child {
+  border-right: 0;
+}
+/* line 137, ../sass/dcm2017.scss */
+table tbody tr td {
+  border: 1px solid #ddd;
+  color: #000;
+  font-weight: normal;
+  padding: 8px;
+}
+/* line 142, ../sass/dcm2017.scss */
+table tbody tr td:first-child {
+  border-left: 0;
+}
+/* line 145, ../sass/dcm2017.scss */
+table tbody tr td:last-child {
+  border-right: 0;
+}
+/* line 150, ../sass/dcm2017.scss */
+table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* line 157, ../sass/dcm2017.scss */
+.label {
+  color: #000;
+  font-size: 14px;
+  padding: 0;
+  text-align: left;
+}
+
+/*End Body & Other general elements*/
+/*Header*/
+/* line 166, ../sass/dcm2017.scss */
+header, .navbar.container, .main-container.container, footer, .footer.container {
+  background-color: transparent;
+  border: 0 none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+/*End Header*/
+/*Main menu*/
+/* line 177, ../sass/dcm2017.scss */
+.navbar-nav li, .navbar-nav .leaf {
+  list-style-type: none;
+}
+
+/*End Main menu*/
+/*Main content*/
+/* line 184, ../sass/dcm2017.scss */
+.main-container.container {
+  background-color: transparent;
+  border: 0 none;
+  margin: 20px auto;
+  min-height: 550px;
+  padding: 0;
+  width: 100%;
+}
+/* line 191, ../sass/dcm2017.scss */
+.main-container.container .close {
+  line-height: 0.5;
+}
+/* line 194, ../sass/dcm2017.scss */
+.main-container.container h1.page-header {
+  border: 0 none;
+  clear: both;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 31px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+/* line 203, ../sass/dcm2017.scss */
+.main-container.container .block {
+  margin: 0 0 20px;
+}
+
+/*End Main content*/
+/*sidebars*/
+/* line 210, ../sass/dcm2017.scss */
+aside, .sidebar {
+  margin: 0;
+  padding: 0;
+}
+/* line 213, ../sass/dcm2017.scss */
+aside h2.block-title, .sidebar h2.block-title {
+  background: transparent none repeat scroll 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  margin: 0 0 14px;
+  padding: 0;
+  text-transform: capitalize;
+}
+/* line 222, ../sass/dcm2017.scss */
+aside .block, .sidebar .block {
+  margin: 0 0 20px;
+}
+
+/* line 227, ../sass/dcm2017.scss */
+.sidebar-first aside, .sidebar-first .sidebar {
+  margin: 0 15px 0 0;
+  padding: 0;
+  width: 180px;
+}
+/* line 232, ../sass/dcm2017.scss */
+.sidebar-first #content, .sidebar-first .col-sm-9 {
+  margin: 0;
+  padding: 0;
+  width: 765px;
+}
+
+/* line 239, ../sass/dcm2017.scss */
+.sidebar-second aside, .sidebar-second .sidebar {
+  margin: 0 0 0 15px;
+  padding: 0;
+  width: 180px;
+}
+/* line 244, ../sass/dcm2017.scss */
+.sidebar-second #content, .sidebar-second .col-sm-9 {
+  margin: 0;
+  padding: 0;
+  width: 765px;
+}
+
+/* line 251, ../sass/dcm2017.scss */
+.two-sidebars aside, .two-sidebars .sidebar {
+  margin: 0;
+  padding: 0;
+  width: 180px;
+}
+/* line 256, ../sass/dcm2017.scss */
+.two-sidebars #content, .two-sidebars .col-sm-6 {
+  margin: 0 15px;
+  padding: 0;
+  width: 570px;
+}
+
+/* line 263, ../sass/dcm2017.scss */
+.no-sidebars section {
+  padding: 0;
+}
+/* line 266, ../sass/dcm2017.scss */
+.no-sidebars #content, .no-sidebars .col-sm-12 {
+  margin: 0;
+  width: 100%;
+}
+
+/* line 271, ../sass/dcm2017.scss */
+.well {
+  background-color: transparent;
+  border: 0 none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/*end sidebars*/
+/*Node*/
+/* line 282, ../sass/dcm2017.scss */
+.node {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/* line 286, ../sass/dcm2017.scss */
+.node .content, .node .comment .content {
+  margin: 0;
+}
+
+/* line 290, ../sass/dcm2017.scss */
+.field .field-label, label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* line 294, ../sass/dcm2017.scss */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 298, ../sass/dcm2017.scss */
+.breadcrumb {
+  background-color: transparent;
+  border-radius: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/*End Node*/
+/*Form field*/
+/* line 433, ../sass/dcm2017.scss */
+#content form, .col-sm-9 form, .col-sm-6 form, .col-sm-12 form, #modalContent form {
+  clear: both;
+}
+/* line 309, ../sass/dcm2017.scss */
+#content form .form-group, .col-sm-9 form .form-group, .col-sm-6 form .form-group, .col-sm-12 form .form-group, #modalContent form .form-group {
+  margin-bottom: 15px;
+}
+/* line 312, ../sass/dcm2017.scss */
+#content form .form-item.form-group, .col-sm-9 form .form-item.form-group, .col-sm-6 form .form-item.form-group, .col-sm-12 form .form-item.form-group, #modalContent form .form-item.form-group {
+  margin: 0 0 15px;
+  width: auto;
+}
+/* line 315, ../sass/dcm2017.scss */
+#content form .form-item.form-group .form-item, .col-sm-9 form .form-item.form-group .form-item, .col-sm-6 form .form-item.form-group .form-item, .col-sm-12 form .form-item.form-group .form-item, #modalContent form .form-item.form-group .form-item {
+  margin: 0;
+  width: auto;
+}
+/* line 320, ../sass/dcm2017.scss */
+#content form label, .col-sm-9 form label, .col-sm-6 form label, .col-sm-12 form label, #modalContent form label {
+  color: #000;
+  font-weight: 500;
+  float: left;
+  margin: 8px 0;
+  width: 20%;
+}
+/* line 327, ../sass/dcm2017.scss */
+#content form .form-control, #content form .form-select, .col-sm-9 form .form-control, .col-sm-9 form .form-select, .col-sm-6 form .form-control, .col-sm-6 form .form-select, .col-sm-12 form .form-control, .col-sm-12 form .form-select, #modalContent form .form-control, #modalContent form .form-select {
+  color: #666;
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  width: 54%;
+}
+/* line 334, ../sass/dcm2017.scss */
+#content form input.error, #content form .form-control.error:focus, .col-sm-9 form input.error, .col-sm-9 form .form-control.error:focus, .col-sm-6 form input.error, .col-sm-6 form .form-control.error:focus, .col-sm-12 form input.error, .col-sm-12 form .form-control.error:focus, #modalContent form input.error, #modalContent form .form-control.error:focus {
+  border-color: #a94442;
+  color: #a94442;
+}
+/* line 339, ../sass/dcm2017.scss */
+#content form .form-type-textarea label, .col-sm-9 form .form-type-textarea label, .col-sm-6 form .form-type-textarea label, .col-sm-12 form .form-type-textarea label, #modalContent form .form-type-textarea label {
+  vertical-align: top;
+}
+/* line 342, ../sass/dcm2017.scss */
+#content form .form-type-textarea .form-textarea-wrapper, .col-sm-9 form .form-type-textarea .form-textarea-wrapper, .col-sm-6 form .form-type-textarea .form-textarea-wrapper, .col-sm-12 form .form-type-textarea .form-textarea-wrapper, #modalContent form .form-type-textarea .form-textarea-wrapper {
+  display: inline-block;
+  width: 54%;
+}
+/* line 345, ../sass/dcm2017.scss */
+#content form .form-type-textarea .form-textarea-wrapper .form-control, .col-sm-9 form .form-type-textarea .form-textarea-wrapper .form-control, .col-sm-6 form .form-type-textarea .form-textarea-wrapper .form-control, .col-sm-12 form .form-type-textarea .form-textarea-wrapper .form-control, #modalContent form .form-type-textarea .form-textarea-wrapper .form-control {
+  color: #000;
+  background-color: transparent;
+  border: 1px solid #000;
+  width: 100%;
+  max-height: 78px;
+}
+/* line 354, ../sass/dcm2017.scss */
+#content form fieldset, .col-sm-9 form fieldset, .col-sm-6 form fieldset, .col-sm-12 form fieldset, #modalContent form fieldset {
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 360, ../sass/dcm2017.scss */
+#content form fieldset label, .col-sm-9 form fieldset label, .col-sm-6 form fieldset label, .col-sm-12 form fieldset label, #modalContent form fieldset label {
+  font-weight: normal;
+}
+/* line 363, ../sass/dcm2017.scss */
+#content form fieldset .panel-heading, .col-sm-9 form fieldset .panel-heading, .col-sm-6 form fieldset .panel-heading, .col-sm-12 form fieldset .panel-heading, #modalContent form fieldset .panel-heading {
+  background-color: transparent;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  width: 46%;
+  text-align: left;
+  display: inline-block;
+}
+/* line 371, ../sass/dcm2017.scss */
+#content form fieldset .panel-heading .panel-title, .col-sm-9 form fieldset .panel-heading .panel-title, .col-sm-6 form fieldset .panel-heading .panel-title, .col-sm-12 form fieldset .panel-heading .panel-title, #modalContent form fieldset .panel-heading .panel-title {
+  font-size: 14px;
+  line-height: 31px;
+  color: #666;
+  font-weight: normal;
+}
+/* line 378, ../sass/dcm2017.scss */
+#content form fieldset .panel-body, #content form fieldset .fieldset-wrapper, .col-sm-9 form fieldset .panel-body, .col-sm-9 form fieldset .fieldset-wrapper, .col-sm-6 form fieldset .panel-body, .col-sm-6 form fieldset .fieldset-wrapper, .col-sm-12 form fieldset .panel-body, .col-sm-12 form fieldset .fieldset-wrapper, #modalContent form fieldset .panel-body, #modalContent form fieldset .fieldset-wrapper {
+  color: #666;
+  display: inline-block;
+  width: 54%;
+  padding: 0;
+}
+/* line 383, ../sass/dcm2017.scss */
+#content form fieldset .panel-body .form-item, #content form fieldset .fieldset-wrapper .form-item, .col-sm-9 form fieldset .panel-body .form-item, .col-sm-9 form fieldset .fieldset-wrapper .form-item, .col-sm-6 form fieldset .panel-body .form-item, .col-sm-6 form fieldset .fieldset-wrapper .form-item, .col-sm-12 form fieldset .panel-body .form-item, .col-sm-12 form fieldset .fieldset-wrapper .form-item, #modalContent form fieldset .panel-body .form-item, #modalContent form fieldset .fieldset-wrapper .form-item {
+  margin: 0;
+  width: 100%;
+}
+/* line 386, ../sass/dcm2017.scss */
+#content form fieldset .panel-body .form-item label, #content form fieldset .fieldset-wrapper .form-item label, .col-sm-9 form fieldset .panel-body .form-item label, .col-sm-9 form fieldset .fieldset-wrapper .form-item label, .col-sm-6 form fieldset .panel-body .form-item label, .col-sm-6 form fieldset .fieldset-wrapper .form-item label, .col-sm-12 form fieldset .panel-body .form-item label, .col-sm-12 form fieldset .fieldset-wrapper .form-item label, #modalContent form fieldset .panel-body .form-item label, #modalContent form fieldset .fieldset-wrapper .form-item label {
+  margin: 5px 20px 0 0;
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+}
+/* line 395, ../sass/dcm2017.scss */
+#content form fieldset .container-inline-date, .col-sm-9 form fieldset .container-inline-date, .col-sm-6 form fieldset .container-inline-date, .col-sm-12 form fieldset .container-inline-date, #modalContent form fieldset .container-inline-date {
+  clear: none;
+  float: none;
+  width: 100%;
+}
+/* line 399, ../sass/dcm2017.scss */
+#content form fieldset .container-inline-date .date-padding, .col-sm-9 form fieldset .container-inline-date .date-padding, .col-sm-6 form fieldset .container-inline-date .date-padding, .col-sm-12 form fieldset .container-inline-date .date-padding, #modalContent form fieldset .container-inline-date .date-padding {
+  display: block;
+  float: none;
+  padding: 0;
+}
+/* line 403, ../sass/dcm2017.scss */
+#content form fieldset .container-inline-date .date-padding .form-control, .col-sm-9 form fieldset .container-inline-date .date-padding .form-control, .col-sm-6 form fieldset .container-inline-date .date-padding .form-control, .col-sm-12 form fieldset .container-inline-date .date-padding .form-control, #modalContent form fieldset .container-inline-date .date-padding .form-control {
+  width: 100%;
+}
+/* line 407, ../sass/dcm2017.scss */
+#content form fieldset .container-inline-date input, .col-sm-9 form fieldset .container-inline-date input, .col-sm-6 form fieldset .container-inline-date input, .col-sm-12 form fieldset .container-inline-date input, #modalContent form fieldset .container-inline-date input {
+  color: #666;
+  background-color: #f5f5f5;
+  border-radius: 0;
+  padding: 2px;
+  box-sizing: border-box;
+  height: 30px;
+  line-height: 30px;
+  box-shadow: none;
+  border: 1px solid #cccccc;
+  width: 100%;
+}
+/* line 419, ../sass/dcm2017.scss */
+#content form fieldset .container-inline-date .description, .col-sm-9 form fieldset .container-inline-date .description, .col-sm-6 form fieldset .container-inline-date .description, .col-sm-12 form fieldset .container-inline-date .description, #modalContent form fieldset .container-inline-date .description {
+  display: none;
+}
+/* line 424, ../sass/dcm2017.scss */
+#content form fieldset .container-inline-date .form-item .form-item label, .col-sm-9 form fieldset .container-inline-date .form-item .form-item label, .col-sm-6 form fieldset .container-inline-date .form-item .form-item label, .col-sm-12 form fieldset .container-inline-date .form-item .form-item label, #modalContent form fieldset .container-inline-date .form-item .form-item label {
+  display: none;
+}
+
+/* line 437, ../sass/dcm2017.scss */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/*End Form field*/
+/*Buttons & message*/
+/* line 443, ../sass/dcm2017.scss */
+.btn, .btn-default {
+  background: none repeat scroll 0 0 #e42626;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #fff;
+  font-size: 13px;
+  padding: 3px 10px;
+}
+/* line 451, ../sass/dcm2017.scss */
+.btn:hover, .btn:focus, .btn:active, .btn.active, .btn .open .dropdown-toggle.btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .btn-default .open .dropdown-toggle.btn-default {
+  background: none repeat scroll 0 0 #cf2122;
+  color: #fff;
+}
+
+/* line 456, ../sass/dcm2017.scss */
+.btn-default:focus, .btn-default.focus {
+  background-color: #666;
+}
+
+/* line 459, ../sass/dcm2017.scss */
+a.btn:focus, a.btn:hover {
+  background-color: #666;
+}
+
+/* line 462, ../sass/dcm2017.scss */
+div.error, table tr.error {
+  background-color: transparent;
+  color: #a94442;
+}
+
+/* line 466, ../sass/dcm2017.scss */
+.alert {
+  padding: 8px;
+}
+
+/*End Buttons & message*/
+/*Modal popup*/
+/* line 472, ../sass/dcm2017.scss */
+#modalContent {
+  margin-left: -1000px / 2;
+  left: 50%;
+}
+/* line 475, ../sass/dcm2017.scss */
+#modalContent .ctools-modal-dialog {
+  width: 1000px;
+  border-radius: 0;
+  margin: 0;
+  height: 400px;
+}
+/* line 480, ../sass/dcm2017.scss */
+#modalContent .ctools-modal-dialog .modal-content {
+  background-color: #fff;
+  border: 0 none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+}
+/* line 488, ../sass/dcm2017.scss */
+#modalContent .ctools-modal-dialog .modal-content .modal-header {
+  background-image: none;
+  background-color: #ccc;
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+/* line 496, ../sass/dcm2017.scss */
+#modalContent .ctools-modal-dialog .modal-content .modal-header .close {
+  color: #fff;
+  opacity: 1;
+}
+/* line 500, ../sass/dcm2017.scss */
+#modalContent .ctools-modal-dialog .modal-content .modal-header #modal-title {
+  color: #fff;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: left;
+}
+/* line 507, ../sass/dcm2017.scss */
+#modalContent .ctools-modal-dialog .modal-content .modal-body {
+  color: #333;
+  height: auto;
+  max-height: inherit;
+  overflow-y: auto;
+  padding: 10px 20px;
+  position: static;
+  width: 100%;
+}
+
+/* line 519, ../sass/dcm2017.scss */
+#modalBackdrop {
+  background-color: #666;
+}
+
+/* line 522, ../sass/dcm2017.scss */
+.modal-open {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* line 526, ../sass/dcm2017.scss */
+#freeze-height {
+  height: 100%;
+}
+
+/*End Modal popup*/
+/*Comment form*/
+/* line 532, ../sass/dcm2017.scss */
+.comment {
+  background-color: transparent;
+  border: 0 none;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 20px;
+  padding: 0 10px 20px;
+  word-wrap: break-word;
+  background-color: transparent;
+  border: 0 none;
+  margin: 0 0 15px;
+  padding: 0 10px 15px;
+  word-wrap: break-word;
+}
+/* line 544, ../sass/dcm2017.scss */
+.comment .user-picture {
+  float: left;
+  margin: 0 15px 5px 0;
+}
+
+/* line 549, ../sass/dcm2017.scss */
+#comments {
+  margin: 20px 0 0;
+}
+/* line 551, ../sass/dcm2017.scss */
+#comments .comment {
+  background-color: #f9f9f9;
+  border-left: 1px solid #ccc;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+/* line 554, ../sass/dcm2017.scss */
+#comments .comment .links.inline {
+  display: none;
+}
+/* line 562, ../sass/dcm2017.scss */
+#comments .field-name-field-review-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+/* line 567, ../sass/dcm2017.scss */
+#comments .field-name-field-review-title .field-item:before {
+  content: open-quote;
+}
+/* line 570, ../sass/dcm2017.scss */
+#comments .field-name-field-review-title .field-item:after {
+  content: close-quote;
+}
+/* line 575, ../sass/dcm2017.scss */
+#comments h3 {
+  margin: 0 0 3px;
+}
+/* line 577, ../sass/dcm2017.scss */
+#comments h3 .permalink {
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+}
+/* line 581, ../sass/dcm2017.scss */
+#comments h3 .permalink:before {
+  content: open-quote;
+}
+/* line 584, ../sass/dcm2017.scss */
+#comments h3 .permalink:after {
+  content: close-quote;
+}
+/* line 589, ../sass/dcm2017.scss */
+#comments .submitted {
+  color: #333;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 5px;
+  font-size: 11px;
+}
+/* line 595, ../sass/dcm2017.scss */
+#comments .submitted::before {
+  content: "(";
+}
+/* line 598, ../sass/dcm2017.scss */
+#comments .submitted::after {
+  content: ")";
+}
+/* line 602, ../sass/dcm2017.scss */
+#comments ul.links {
+  margin: 5px 0 0;
+  padding: 0;
+  text-align: right;
+}
+/* line 606, ../sass/dcm2017.scss */
+#comments ul.links li {
+  margin: 0;
+  padding: 0 5px;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+/* line 614, ../sass/dcm2017.scss */
+.field.field-name-field-your-message.field-type-text-long.field-label-hidden {
+  font-size: 13px;
+  margin: 15px 0 0;
+}
+
+/* line 620, ../sass/dcm2017.scss */
+[id^='comment-form'] [id^='edit-author'] .username {
+  color: #333;
+  font-size: 13px;
+}
+/* line 626, ../sass/dcm2017.scss */
+[id^='comment-form'] .form-item label {
+  color: #333;
+  float: left;
+  font-weight: 500;
+  width: 15%;
+}
+/* line 632, ../sass/dcm2017.scss */
+[id^='comment-form'] .form-item .form-text {
+  height: auto;
+  padding: 7px 10px;
+  width: 635px;
+}
+/* line 637, ../sass/dcm2017.scss */
+[id^='comment-form'] .form-item .form-textarea-wrapper {
+  width: 83%;
+}
+/* line 639, ../sass/dcm2017.scss */
+[id^='comment-form'] .form-item .form-textarea-wrapper textarea {
+  font-weight: normal;
+  min-height: 150px;
+  padding: 10px;
+  resize: vertical;
+  width: 100%;
+}
+/* line 650, ../sass/dcm2017.scss */
+[id^='comment-form'] .field-name-field-review-title .form-item label {
+  margin: 10px 0 0;
+}
+/* line 655, ../sass/dcm2017.scss */
+[id^='comment-form'] .form-actions.form-wrapper {
+  margin-left: 143px;
+}
+/* line 658, ../sass/dcm2017.scss */
+[id^='comment-form'] .form-submit {
+  margin: 0 10px 0 0;
+  padding: 5px 20px;
+  text-transform: uppercase;
+}
+/* line 662, ../sass/dcm2017.scss */
+[id^='comment-form'] .form-submit:hover {
+  background-color: #cf2122;
+}
+/* line 666, ../sass/dcm2017.scss */
+[id^='comment-form'] .filter-wrapper {
+  display: none;
+}
+/* line 669, ../sass/dcm2017.scss */
+[id^='comment-form'] [id^='edit-preview'] {
+  display: none;
+}
+
+/* line 674, ../sass/dcm2017.scss */
+.resizable-textarea .grippie {
+  display: none;
+}
+
+/* line 679, ../sass/dcm2017.scss */
+#review h2.title {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 0 0 10px;
+}
+
+/* line 686, ../sass/dcm2017.scss */
+.comment-edit {
+  border-left: 1px solid #005a8c;
+  border-right: 1px solid #005a8c;
+}
+
+/* line 690, ../sass/dcm2017.scss */
+.field.field-name-field-rating.field-type-fivestar.field-label-above {
+  clear: both;
+  display: block;
+  margin: 10px 0 0;
+}
+
+/* line 695, ../sass/dcm2017.scss */
+.indented {
+  margin-left: 25px;
+}
+
+/* line 698, ../sass/dcm2017.scss */
+.reviews-back-to-page {
+  margin: 20px 0 0;
+}
+/* line 700, ../sass/dcm2017.scss */
+.reviews-back-to-page a {
+  background-color: #e42627;
+  border-radius: 5px;
+  color: #333;
+  display: inline-block;
+  padding: 6px 12px;
+  text-decoration: none;
+  text-transform: none;
+}
+
+/* line 711, ../sass/dcm2017.scss */
+.reviews.no-reviews a {
+  color: #333;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+/*End Comment form*/
+/*maintainace page*/
+/* line 720, ../sass/dcm2017.scss */
+body.maintenance-page {
+  background-position: 0 0;
+}
+/* line 722, ../sass/dcm2017.scss */
+body.maintenance-page #header {
+  background-color: #fff;
+  padding: 0;
+}
+/* line 725, ../sass/dcm2017.scss */
+body.maintenance-page #header #logo-title {
+  margin: 15px auto 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+/* line 730, ../sass/dcm2017.scss */
+body.maintenance-page #header #logo-title img {
+  width: 150px;
+}
+/* line 735, ../sass/dcm2017.scss */
+body.maintenance-page #container {
+  margin: 20px auto;
+  padding: 50px 20px;
+  width: 100%;
+  text-align: center;
+}
+/* line 740, ../sass/dcm2017.scss */
+body.maintenance-page #container #page-title {
+  clear: both;
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+/*end maintainace page*/
+/*Footer*/
+/*End Footer*/

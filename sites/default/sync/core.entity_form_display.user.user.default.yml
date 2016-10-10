@@ -1,0 +1,115 @@
+uuid: de60b5cf-7292-4e30-a00b-2894cbb3048d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_c
+    - field.field.user.user.field_drupal_org_id_url_
+    - field.field.user.user.field_f
+    - field.field.user.user.field_how_likely_is_it_that_i_wi
+    - field.field.user.user.field_i_am_a_
+    - field.field.user.user.field_i_am_registering_as_a_
+    - field.field.user.user.field_i_learned_about_dcm2017_fr
+    - field.field.user.user.field_i_would_like_to_attend_thi
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_my_drupal_persona_is_a_
+    - field.field.user.user.field_organisation
+    - field.field.user.user.field_p
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+    - user
+_core:
+  default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_c:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_drupal_org_id_url_:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_f:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_how_likely_is_it_that_i_wi:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_i_am_a_:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_i_am_registering_as_a_:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_i_learned_about_dcm2017_fr:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_i_would_like_to_attend_thi:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_last_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_my_drupal_persona_is_a_:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_organisation:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_p:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    weight: 3
+hidden:
+  contact: true
+  language: true
+  timezone: true

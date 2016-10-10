@@ -1,0 +1,21 @@
+uuid: f4be8398-595b-4ff4-bbb1-6d0b2cc8440b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_my_drupal_persona_is_a_
+  module:
+    - options
+    - user
+id: user.user.field_my_drupal_persona_is_a_
+field_name: field_my_drupal_persona_is_a_
+entity_type: user
+bundle: user
+label: 'My Drupal Persona is a...'
+description: 'Learn more about Drupal persona here - <a href="https://www.drupal.org/personas">Here.</a>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

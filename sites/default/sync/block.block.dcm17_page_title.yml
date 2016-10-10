@@ -1,0 +1,20 @@
+uuid: adf68e89-0630-404d-b43b-f78796601419
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dcm17
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: dcm17_page_title
+theme: dcm17
+region: content
+weight: -11
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

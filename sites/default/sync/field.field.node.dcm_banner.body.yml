@@ -1,0 +1,24 @@
+uuid: bd156bac-4f45-4f66-b278-197dcfc71928
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.dcm_banner
+  module:
+    - text
+_core:
+  default_config_hash: z5FZOGra3xvnhOXasCD5MOZEBCu-m_mN5KnrVKmELxk
+id: node.dcm_banner.body
+field_name: body
+entity_type: node
+bundle: dcm_banner
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

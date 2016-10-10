@@ -1,0 +1,26 @@
+uuid: 0914221b-ef91-4726-8e05-fe490ca1df8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.wall_image.field_wall_image
+    - node.type.wall_image
+  module:
+    - image
+    - user
+id: node.wall_image.default
+targetEntityType: node
+bundle: wall_image
+mode: default
+content:
+  field_wall_image:
+    weight: 101
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  links:
+    weight: 100
+hidden: {  }

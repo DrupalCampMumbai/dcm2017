@@ -1,0 +1,20 @@
+uuid: c9179657-8f36-422b-ab4a-f1dfaf41b747
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: 3dQ25ur8EqEg6ptl0eJMENYI0nae5-lHdwsGEWNbis4
+name: 'DCM Banner'
+type: dcm_banner
+description: 'Banner for homepage'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

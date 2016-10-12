@@ -1,0 +1,128 @@
+uuid: 7a2819ef-ff14-4239-aabb-b62c8c1024a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_c
+    - field.field.user.user.field_drupal_org_id_url_
+    - field.field.user.user.field_f
+    - field.field.user.user.field_how_likely_is_it_that_i_wi
+    - field.field.user.user.field_i_am_a_
+    - field.field.user.user.field_i_am_registering_as_a_
+    - field.field.user.user.field_i_learned_about_dcm2017_fr
+    - field.field.user.user.field_i_would_like_to_attend_thi
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_my_drupal_persona_is_a_
+    - field.field.user.user.field_organisation
+    - field.field.user.user.field_p
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+    - options
+    - user
+_core:
+  default_config_hash: L2mtwGWH_7wDRCMIR4r_Iu_jmvQ10DV1L8ht8iNZ5qY
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_c:
+    weight: 19
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_drupal_org_id_url_:
+    weight: 11
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_f:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_how_likely_is_it_that_i_wi:
+    weight: 18
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_i_am_a_:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_i_am_registering_as_a_:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_i_learned_about_dcm2017_fr:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_i_would_like_to_attend_thi:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_last_name:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_my_drupal_persona_is_a_:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_organisation:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_p:
+    weight: 14
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  member_for:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden: {  }

@@ -123,7 +123,7 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
         ]
       %}
-      <section{{ content_attributes.addClass(content_classes) }}>
+      <section id="middle-content" {{ content_attributes.addClass(content_classes) }}>
 
         {# Highlighted #}
         {% if page.highlighted %}

@@ -52,8 +52,13 @@
     db_offline ? 'db-offline',
     theme.settings.navbar_position ? 'navbar-is-' ~ theme.settings.navbar_position,
     theme.has_glyphicons ? 'has-glyphicons',
+    not page.sidebar_first and not page.sidebar_second ? 'no-sidebars',
+    page.sidebar_first and not page.sidebar_second ? 'sidebar-first',
+    page.sidebar_second and not page.sidebar_first ? 'sidebar-second',
+    page.sidebar_first and page.sidebar_second ? 'two-sidebars'	
   ]
 %}
+
 <!DOCTYPE html>
 <html {{ html_attributes }}>
   <head>

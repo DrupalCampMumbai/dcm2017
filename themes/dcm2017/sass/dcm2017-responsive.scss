@@ -1,0 +1,80 @@
+@media (min-width: 769px) and (max-width:1200px)  {
+/*sidebars*/
+.sidebar-first, .sidebar-second {
+	aside, .sidebar {
+	}
+	#content, .col-sm-9 {
+	}	
+}
+.two-sidebars {
+	aside, .sidebar {	
+	}
+	#content, .col-sm-6 {
+	}	
+}
+.no-sidebars {
+	#content, .col-sm-12 {
+		width: 100%;
+	}	
+}
+/*end sidebars*/
+}
+
+@media screen and (max-width: 768px) {
+/*Header*/	
+header#navbar {
+	.slogan {
+	    h2 {
+			font-size: 30px;
+			margin-bottom: 20px;
+			line-height: 30px;
+		}
+		p {
+		    font-size: 30px;
+		}
+	}
+}
+/*End Header*/
+/*sidebars*/
+.sidebar-first, .sidebar-second, .two-sidebars, .no-sidebars {
+	aside, .sidebar {
+		width: 100%;
+	}
+	#content, .col-sm-9, .col-sm-6, .col-sm-12 {
+		width: 100%;
+	}	
+}
+/*end sidebars*/
+
+/*Main content*/
+.main-container {
+	width: 100%;
+}
+/*End Main content*/
+
+/*Footer*/
+footer.footer {
+	#dcm2017-footer {
+		.footer-copy {
+			position: absolute;
+			right: inherit;
+			top: inherit;
+			padding: 15px;
+			height: 50%;
+			font-size: 14px;
+			line-height: 16px;
+			width: 100%;
+			bottom: 0;
+		}
+	}
+}
+/*End Footer*/
+}
+
+@media screen and (max-width: 320px) {
+/*Generic*/
+body {
+	min-width: 320px;
+}
+/*End Generic*/
+}

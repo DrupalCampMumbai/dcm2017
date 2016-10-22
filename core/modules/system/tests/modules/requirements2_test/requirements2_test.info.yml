@@ -5,10 +5,6 @@ dependencies:
   - requirements1_test
   - comment
 package: Testing
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-=======
 # version: VERSION
 # core: 8.x
 
@@ -17,4 +13,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

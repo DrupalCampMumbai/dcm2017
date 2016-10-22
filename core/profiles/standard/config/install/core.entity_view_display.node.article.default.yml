@@ -2,10 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-<<<<<<< HEAD
-    - core.entity_view_display.comment.comment.default
-=======
->>>>>>> github/master
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_image
@@ -29,18 +25,10 @@ content:
     third_party_settings: {  }
     label: hidden
   comment:
-<<<<<<< HEAD
-    type: comment_default
-    weight: 110
-    label: above
-    settings:
-      view_mode: default
-=======
     label: above
     type: comment_default
     weight: 20
     settings:
->>>>>>> github/master
       pager_id: 0
     third_party_settings: {  }
   field_image:
@@ -58,8 +46,6 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-<<<<<<< HEAD
-=======
   comment:
     label: above
     type: comment_default
@@ -67,7 +53,6 @@ content:
     settings:
       pager_id: 0
     third_party_settings: {  }
->>>>>>> github/master
   links:
     weight: 100
 hidden:

@@ -125,11 +125,7 @@ trait MigrationConfigurationTrait {
    * @param \Drupal\Core\Database\Connection $connection
    *   The database connection object.
    *
-<<<<<<< HEAD
-   * @return int|false
-=======
    * @return int|FALSE
->>>>>>> github/master
    *   An integer representing the major branch of Drupal core (e.g. '6' for
    *   Drupal 6.x), or FALSE if no valid version is matched.
    */

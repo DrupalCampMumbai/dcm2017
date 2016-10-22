@@ -97,11 +97,7 @@ class CacheTagTest extends PluginTestBase {
    * @param \Drupal\views\ViewExecutable $view
    *   The view.
    *
-<<<<<<< HEAD
-   * @return array|false
-=======
    * @return array|FALSE
->>>>>>> github/master
    *   The render cache result or FALSE if not existent.
    */
   protected function getRenderCache(ViewExecutable $view) {

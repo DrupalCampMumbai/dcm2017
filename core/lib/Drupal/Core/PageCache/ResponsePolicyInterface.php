@@ -27,11 +27,7 @@ interface ResponsePolicyInterface {
    * @param \Symfony\Component\HttpFoundation\Request $request
    *   The request object.
    *
-<<<<<<< HEAD
-   * @return string|null
-=======
    * @return string|NULL
->>>>>>> github/master
    *   Either static::DENY or NULL. Calling code may attempt to store a page in
    *   the cache unless static::DENY is returned. Returns NULL if the policy
    *   policy is not specified for the given response.

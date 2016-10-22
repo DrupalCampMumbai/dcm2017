@@ -1,11 +1,5 @@
 name: 'Menu link content dynamic route'
 type: module
-<<<<<<< HEAD
-core: 8.x
-hidden: true
-dependencies:
-  - menu_link_content
-=======
 # core: 8.x
 hidden: true
 dependencies:
@@ -16,4 +10,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

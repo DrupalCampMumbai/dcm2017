@@ -7,11 +7,6 @@ use Drupal\KernelTests\KernelTestBase;
 use Drupal\migrate\MigrateExecutable;
 use Drupal\migrate\MigrateMessageInterface;
 use Drupal\migrate\Plugin\MigrateIdMapInterface;
-<<<<<<< HEAD
-use Drupal\migrate\Plugin\Migration;
-use Drupal\migrate\Plugin\MigrationInterface;
-=======
->>>>>>> github/master
 use Drupal\migrate\Row;
 
 /**
@@ -142,19 +137,6 @@ abstract class MigrateTestBase extends KernelTestBase implements MigrateMessageI
   }
 
   /**
-<<<<<<< HEAD
-   * Modify a migration's configuration before executing it.
-   *
-   * @param \Drupal\migrate\Plugin\MigrationInterface $migration
-   *   The migration to execute.
-   */
-  protected function prepareMigration(MigrationInterface $migration) {
-    // Default implementation for test classes not requiring modification.
-  }
-
-  /**
-=======
->>>>>>> github/master
    * Executes a single migration.
    *
    * @param string|\Drupal\migrate\Plugin\MigrationInterface $migration
@@ -170,11 +152,6 @@ abstract class MigrateTestBase extends KernelTestBase implements MigrateMessageI
     if ($this instanceof MigrateDumpAlterInterface) {
       static::migrateDumpAlter($this);
     }
-<<<<<<< HEAD
-
-    $this->prepareMigration($this->migration);
-=======
->>>>>>> github/master
     (new MigrateExecutable($this->migration, $this))->import();
   }
 

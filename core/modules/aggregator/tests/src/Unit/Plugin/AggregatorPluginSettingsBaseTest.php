@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-namespace Drupal\Tests\aggregator\Unit\Plugin;
-=======
 namespace Drupal\Tests\aggregator\Unit\Plugin {
->>>>>>> github/master
 
 use Drupal\aggregator\Form\SettingsForm;
 use Drupal\Core\Form\FormState;
@@ -109,13 +105,6 @@ class AggregatorPluginSettingsBaseTest extends UnitTestCase {
 
 }
 
-<<<<<<< HEAD
-// @todo Delete after https://www.drupal.org/node/2278383 is in.
-namespace Drupal\Core\Form;
-
-if (!function_exists('drupal_set_message')) {
-  function drupal_set_message() {}
-=======
 }
 
 namespace {
@@ -123,5 +112,4 @@ namespace {
   if (!function_exists('drupal_set_message')) {
     function drupal_set_message() {}
   }
->>>>>>> github/master
 }

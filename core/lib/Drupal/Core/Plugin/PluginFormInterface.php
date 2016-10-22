@@ -7,13 +7,6 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Provides an interface for an embeddable plugin form.
  *
-<<<<<<< HEAD
- * Plugins can implement this form directly, or a standalone class can be used.
- * Decoupled forms can implement \Drupal\Component\Plugin\PluginAwareInterface
- * in order to gain access to the plugin.
- *
-=======
->>>>>>> github/master
  * @ingroup plugin_api
  */
 interface PluginFormInterface {
@@ -34,13 +27,7 @@ interface PluginFormInterface {
    * @param array $form
    *   An associative array containing the initial structure of the plugin form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-<<<<<<< HEAD
-   *   The current state of the form. Calling code should pass on a subform
-   *   state created through
-   *   \Drupal\Core\Form\SubformState::createForSubform().
-=======
    *   The current state of the complete form.
->>>>>>> github/master
    *
    * @return array
    *   The form structure.
@@ -54,13 +41,7 @@ interface PluginFormInterface {
    *   An associative array containing the structure of the plugin form as built
    *   by static::buildConfigurationForm().
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-<<<<<<< HEAD
-   *   The current state of the form. Calling code should pass on a subform
-   *   state created through
-   *   \Drupal\Core\Form\SubformState::createForSubform().
-=======
    *   The current state of the complete form.
->>>>>>> github/master
    */
   public function validateConfigurationForm(array &$form, FormStateInterface $form_state);
 
@@ -71,13 +52,7 @@ interface PluginFormInterface {
    *   An associative array containing the structure of the plugin form as built
    *   by static::buildConfigurationForm().
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-<<<<<<< HEAD
-   *   The current state of the form. Calling code should pass on a subform
-   *   state created through
-   *   \Drupal\Core\Form\SubformState::createForSubform().
-=======
    *   The current state of the complete form.
->>>>>>> github/master
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state);
 

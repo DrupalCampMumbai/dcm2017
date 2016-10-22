@@ -3,10 +3,6 @@
 namespace Drupal\Core\Plugin;
 
 use Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface;
-<<<<<<< HEAD
-use Drupal\Core\Cache\CacheableDependencyInterface;
-=======
->>>>>>> github/master
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Cache\UseCacheBackendTrait;
 use Drupal\Component\Plugin\Discovery\DiscoveryCachedTrait;
@@ -24,11 +20,7 @@ use Drupal\Core\Plugin\Factory\ContainerFactory;
  *
  * @ingroup plugin_api
  */
-<<<<<<< HEAD
-class DefaultPluginManager extends PluginManagerBase implements PluginManagerInterface, CachedDiscoveryInterface, CacheableDependencyInterface {
-=======
 class DefaultPluginManager extends PluginManagerBase implements PluginManagerInterface, CachedDiscoveryInterface {
->>>>>>> github/master
 
   use DiscoveryCachedTrait;
   use UseCacheBackendTrait;
@@ -246,14 +238,6 @@ class DefaultPluginManager extends PluginManagerBase implements PluginManagerInt
    * method.
    */
   public function processDefinition(&$definition, $plugin_id) {
-<<<<<<< HEAD
-    // Only arrays can be operated on.
-    if (!is_array($definition)) {
-      return;
-    }
-
-=======
->>>>>>> github/master
     if (!empty($this->defaults) && is_array($this->defaults)) {
       $definition = NestedArray::mergeDeep($this->defaults, $definition);
     }
@@ -329,28 +313,4 @@ class DefaultPluginManager extends PluginManagerBase implements PluginManagerInt
     return $this->moduleHandler->moduleExists($provider);
   }
 
-<<<<<<< HEAD
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheContexts() {
-    return [];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheTags() {
-    return $this->cacheTags;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    return CACHE::PERMANENT;
-  }
-
-=======
->>>>>>> github/master
 }

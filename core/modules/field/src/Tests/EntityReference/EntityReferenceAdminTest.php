@@ -94,11 +94,7 @@ class EntityReferenceAdminTest extends WebTestBase {
 
     // The base handler settings should be displayed.
     $entity_type_id = 'node';
-<<<<<<< HEAD
-    $bundles = $this->container->get('entity_type.bundle.info')->getBundleInfo($entity_type_id);
-=======
     $bundles = entity_get_bundles($entity_type_id);
->>>>>>> github/master
     foreach ($bundles as $bundle_name => $bundle_info) {
       $this->assertFieldByName('settings[handler_settings][target_bundles][' . $bundle_name . ']');
     }

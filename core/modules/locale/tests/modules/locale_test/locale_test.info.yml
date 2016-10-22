@@ -2,13 +2,6 @@ name: 'Locale test'
 type: module
 description: 'Support module for locale module testing.'
 package: Testing
-<<<<<<< HEAD
-version: '1.2'
-core: 8.x
-hidden: true
-'interface translation project': locale_test
-'interface translation server pattern': core/modules/locale/test/test.%language.po
-=======
 # version: '1.2'
 # core: 8.x
 hidden: true
@@ -20,4 +13,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

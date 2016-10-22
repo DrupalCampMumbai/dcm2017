@@ -1,13 +1,5 @@
 name: Token test
 type: module
-<<<<<<< HEAD
-core: 8.x
-package: Testing
-version: VERSION
-dependencies:
- - user
- - node
-=======
 # core: 8.x
 package: Testing
 # version: VERSION
@@ -20,4 +12,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

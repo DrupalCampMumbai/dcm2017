@@ -3,11 +3,7 @@
 /*
  * This file is part of the Symfony CMF package.
  *
-<<<<<<< HEAD
- * (c) 2011-2015 Symfony CMF
-=======
  * (c) 2011-2014 Symfony CMF
->>>>>>> github/master
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -38,11 +34,7 @@ interface VersatileGeneratorInterface extends UrlGeneratorInterface
 
     /**
      * Convert a route identifier (name, content object etc) into a string
-<<<<<<< HEAD
-     * usable for logging and other debug/error messages.
-=======
      * usable for logging and other debug/error messages
->>>>>>> github/master
      *
      * @param mixed $name
      * @param array $parameters which should contain a content field containing

@@ -173,16 +173,12 @@ class MenuForm extends EntityForm {
    */
   public function save(array $form, FormStateInterface $form_state) {
     $menu = $this->entity;
-<<<<<<< HEAD
-    $status = $menu->save();
-=======
     if (!$menu->isNew() || $menu->isLocked()) {
       $this->submitOverviewForm($form, $form_state);
     }
 
     $status = $menu->save();
 
->>>>>>> github/master
     $edit_link = $this->entity->link($this->t('Edit'));
     if ($status == SAVED_UPDATED) {
       drupal_set_message($this->t('Menu %label has been updated.', array('%label' => $menu->label())));
@@ -197,20 +193,6 @@ class MenuForm extends EntityForm {
   }
 
   /**
-<<<<<<< HEAD
-   * {@inheritdoc}
-   */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    parent::submitForm($form, $form_state);
-
-    if (!$this->entity->isNew() || $this->entity->isLocked()) {
-      $this->submitOverviewForm($form, $form_state);
-    }
-  }
-
-  /**
-=======
->>>>>>> github/master
    * Form constructor to edit an entire menu tree at once.
    *
    * Shows for one menu the menu links accessible to the current user and

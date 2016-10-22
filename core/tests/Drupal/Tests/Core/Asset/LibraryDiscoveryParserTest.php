@@ -211,8 +211,6 @@ class LibraryDiscoveryParserTest extends UnitTestCase {
     $this->assertEquals(\Drupal::VERSION, $libraries['core-versioned']['js'][0]['version']);
   }
 
-<<<<<<< HEAD
-=======
   /**
    * Tests the version property with ISO dates.
    *
@@ -241,7 +239,6 @@ class LibraryDiscoveryParserTest extends UnitTestCase {
     // An example of an ISO date as a string which parses correctly.
     $this->assertEquals('2014-12-13', $libraries['valid-version']['version']);
   }
->>>>>>> github/master
 
   /**
    * Tests that the version property of external libraries is handled.
@@ -360,11 +357,7 @@ class LibraryDiscoveryParserTest extends UnitTestCase {
    * @covers ::buildByExtension
    */
   public function testLibraryWithDependencies() {
-<<<<<<< HEAD
-    $this->moduleHandler->expects($this->atLeastOnce())
-=======
      $this->moduleHandler->expects($this->atLeastOnce())
->>>>>>> github/master
       ->method('moduleExists')
       ->with('dependencies')
       ->will($this->returnValue(TRUE));

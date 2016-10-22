@@ -30,11 +30,7 @@ trait AllowedTagsXssTrait {
    *   valid UTF-8.
    */
   public function fieldFilterXss($string) {
-<<<<<<< HEAD
-    return FieldFilteredMarkup::create($string);
-=======
    return FieldFilteredMarkup::create($string);
->>>>>>> github/master
   }
 
   /**

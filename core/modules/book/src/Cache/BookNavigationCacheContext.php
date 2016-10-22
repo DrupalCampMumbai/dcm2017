@@ -4,12 +4,7 @@ namespace Drupal\book\Cache;
 
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Cache\Context\CacheContextInterface;
-<<<<<<< HEAD
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-=======
 use Symfony\Component\DependencyInjection\ContainerAware;
->>>>>>> github/master
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -24,13 +19,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
  * This class is container-aware to avoid initializing the 'book.manager'
  * service when it is not necessary.
  */
-<<<<<<< HEAD
-class BookNavigationCacheContext implements CacheContextInterface, ContainerAwareInterface {
-
-  use ContainerAwareTrait;
-=======
 class BookNavigationCacheContext extends ContainerAware implements CacheContextInterface {
->>>>>>> github/master
 
   /**
    * The request stack.

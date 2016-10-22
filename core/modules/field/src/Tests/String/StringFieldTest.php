@@ -3,10 +3,6 @@
 namespace Drupal\field\Tests\String;
 
 use Drupal\Component\Utility\Unicode;
-<<<<<<< HEAD
-use Drupal\entity_test\Entity\EntityTest;
-=======
->>>>>>> github/master
 use Drupal\field\Entity\FieldConfig;
 use Drupal\simpletest\WebTestBase;
 use Drupal\field\Entity\FieldStorageConfig;
@@ -95,11 +91,7 @@ class StringFieldTest extends WebTestBase {
     $this->assertText(t('entity_test @id has been created.', array('@id' => $id)), 'Entity was created');
 
     // Display the entity.
-<<<<<<< HEAD
-    $entity = EntityTest::load($id);
-=======
     $entity = entity_load('entity_test', $id);
->>>>>>> github/master
     $display = entity_get_display($entity->getEntityTypeId(), $entity->bundle(), 'full');
     $content = $display->build($entity);
     $this->setRawContent(\Drupal::service('renderer')->renderRoot($content));

@@ -34,15 +34,6 @@ class DateTimeWidgetBase extends WidgetBase {
       '#required' => $element['#required'],
     );
 
-<<<<<<< HEAD
-    if ($this->getFieldSetting('datetime_type') == DateTimeItem::DATETIME_TYPE_DATE) {
-      // A date-only field should have no timezone conversion performed, so
-      // use the same timezone as for storage.
-      $element['value']['#date_timezone'] = DATETIME_STORAGE_TIMEZONE;
-    }
-
-=======
->>>>>>> github/master
     if ($items[$delta]->date) {
       $date = $items[$delta]->date;
       // The date was created and verified during field_load(), so it is safe to

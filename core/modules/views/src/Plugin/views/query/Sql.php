@@ -1553,11 +1553,7 @@ class Sql extends QueryPluginBase {
       $flat_ids = iterator_to_array(new \RecursiveIteratorIterator(new \RecursiveArrayIterator($ids)), FALSE);
 
       $entities = $entity_storage->loadMultiple(array_unique($flat_ids));
-<<<<<<< HEAD
-      $results = $this->assignEntitiesToResult($ids, $entities, $results);
-=======
       $results = $this->_assignEntitiesToResult($ids, $entities, $results);
->>>>>>> github/master
     }
 
     // Now load all revisions.
@@ -1573,11 +1569,7 @@ class Sql extends QueryPluginBase {
         }
       }
 
-<<<<<<< HEAD
-      $results = $this->assignEntitiesToResult($revision_ids, $entities, $results);
-=======
       $results = $this->_assignEntitiesToResult($revision_ids, $entities, $results);
->>>>>>> github/master
     }
   }
 
@@ -1598,11 +1590,7 @@ class Sql extends QueryPluginBase {
    * @return \Drupal\views\ResultRow[]
    *   The changed views results.
    */
-<<<<<<< HEAD
-  protected function assignEntitiesToResult($ids, array $entities, array $results) {
-=======
   protected function _assignEntitiesToResult($ids, array $entities, array $results) {
->>>>>>> github/master
     foreach ($ids as $index => $relationships) {
       foreach ($relationships as $relationship_id => $id) {
         if (isset($entities[$id])) {

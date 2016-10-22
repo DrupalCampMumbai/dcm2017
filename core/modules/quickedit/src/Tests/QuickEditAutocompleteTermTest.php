@@ -3,10 +3,6 @@
 namespace Drupal\quickedit\Tests;
 
 use Drupal\Component\Serialization\Json;
-<<<<<<< HEAD
-use Drupal\Core\EventSubscriber\MainContentViewSubscriber;
-=======
->>>>>>> github/master
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\field\Tests\EntityReference\EntityReferenceTestTrait;
@@ -134,11 +130,7 @@ class QuickEditAutocompleteTermTest extends WebTestBase {
 
     $quickedit_uri = 'quickedit/form/node/' . $this->node->id() . '/' . $this->fieldName . '/' . $this->node->language()->getId() . '/full';
     $post = array('nocssjs' => 'true') + $this->getAjaxPageStatePostData();
-<<<<<<< HEAD
-    $response = $this->drupalPost($quickedit_uri, '', $post, ['query' => [MainContentViewSubscriber::WRAPPER_FORMAT => 'drupal_ajax']]);
-=======
     $response = $this->drupalPost($quickedit_uri, 'application/vnd.drupal-ajax', $post);
->>>>>>> github/master
     $ajax_commands = Json::decode($response);
 
     // Prepare form values for submission. drupalPostAJAX() is not suitable for
@@ -156,11 +148,7 @@ class QuickEditAutocompleteTermTest extends WebTestBase {
       );
 
       // Submit field form and check response. Should render back all the terms.
-<<<<<<< HEAD
-      $response = $this->drupalPost($quickedit_uri, '', $post, ['query' => [MainContentViewSubscriber::WRAPPER_FORMAT => 'drupal_ajax']]);
-=======
       $response = $this->drupalPost($quickedit_uri, 'application/vnd.drupal-ajax', $post);
->>>>>>> github/master
       $this->assertResponse(200);
       $ajax_commands = Json::decode($response);
       $this->setRawContent($ajax_commands[0]['data']);
@@ -173,11 +161,7 @@ class QuickEditAutocompleteTermTest extends WebTestBase {
       // PrivateTempStore.
       $quickedit_uri = 'quickedit/form/node/' . $this->node->id() . '/' . $this->fieldName . '/' . $this->node->language()->getId() . '/full';
       $post = array('nocssjs' => 'true') + $this->getAjaxPageStatePostData();
-<<<<<<< HEAD
-      $response = $this->drupalPost($quickedit_uri, '', $post, ['query' => [MainContentViewSubscriber::WRAPPER_FORMAT => 'drupal_ajax']]);
-=======
       $response = $this->drupalPost($quickedit_uri, 'application/vnd.drupal-ajax', $post);
->>>>>>> github/master
       $ajax_commands = Json::decode($response);
 
       // The AjaxResponse's first command is an InsertCommand which contains

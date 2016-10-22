@@ -1,0 +1,66 @@
+@media (min-width: 769px) and (max-width: 1200px) {
+  /*sidebars*/
+  /* line 16, ../sass/dcm2017-responsive.scss */
+  .no-sidebars #content, .no-sidebars .col-sm-12 {
+    width: 100%;
+  }
+
+  /*end sidebars*/
+}
+@media screen and (max-width: 768px) {
+  /*Header*/
+  /* line 27, ../sass/dcm2017-responsive.scss */
+  header#navbar .slogan h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    line-height: 30px;
+  }
+  /* line 32, ../sass/dcm2017-responsive.scss */
+  header#navbar .slogan p {
+    font-size: 30px;
+  }
+
+  /*End Header*/
+  /*sidebars*/
+  /* line 40, ../sass/dcm2017-responsive.scss */
+  .sidebar-first aside, .sidebar-first .sidebar, .sidebar-second aside, .sidebar-second .sidebar, .two-sidebars aside, .two-sidebars .sidebar, .no-sidebars aside, .no-sidebars .sidebar {
+    width: 100%;
+  }
+  /* line 43, ../sass/dcm2017-responsive.scss */
+  .sidebar-first #content, .sidebar-first .col-sm-9, .sidebar-first .col-sm-6, .sidebar-first .col-sm-12, .sidebar-second #content, .sidebar-second .col-sm-9, .sidebar-second .col-sm-6, .sidebar-second .col-sm-12, .two-sidebars #content, .two-sidebars .col-sm-9, .two-sidebars .col-sm-6, .two-sidebars .col-sm-12, .no-sidebars #content, .no-sidebars .col-sm-9, .no-sidebars .col-sm-6, .no-sidebars .col-sm-12 {
+    width: 100%;
+  }
+
+  /*end sidebars*/
+  /*Main content*/
+  /* line 50, ../sass/dcm2017-responsive.scss */
+  .main-container {
+    width: 100%;
+  }
+
+  /*End Main content*/
+  /*Footer*/
+  /* line 58, ../sass/dcm2017-responsive.scss */
+  footer.footer #dcm2017-footer .footer-copy {
+    position: absolute;
+    right: inherit;
+    top: inherit;
+    padding: 15px;
+    height: 50%;
+    font-size: 14px;
+    line-height: 16px;
+    width: 100%;
+    bottom: 0;
+  }
+
+  /*End Footer*/
+}
+@media screen and (max-width: 320px) {
+  /*Generic*/
+  /* line 76, ../sass/dcm2017-responsive.scss */
+  body {
+    min-width: 320px;
+  }
+
+  /*End Generic*/
+}

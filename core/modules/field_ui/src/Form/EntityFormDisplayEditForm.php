@@ -78,20 +78,6 @@ class EntityFormDisplayEditForm extends EntityDisplayFormBase {
   /**
    * {@inheritdoc}
    */
-<<<<<<< HEAD
-  protected function getDisplayModesLink() {
-    return [
-      '#type' => 'link',
-      '#title' => t('Manage form modes'),
-      '#url' => Url::fromRoute('entity.entity_form_mode.collection'),
-    ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-=======
->>>>>>> github/master
   protected function getTableHeader() {
     return array(
       $this->t('Field'),

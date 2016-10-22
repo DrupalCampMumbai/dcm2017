@@ -37,11 +37,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
    *
    * @var \Drupal\views\Plugin\views\ViewsHandlerInterface[]
    */
-<<<<<<< HEAD
-  public $handlers = [];
-=======
    public $handlers = [];
->>>>>>> github/master
 
   /**
    * An array of instantiated plugins used in this display.
@@ -1055,15 +1051,9 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
       if (!isset($tokens["%$count"])) {
         $tokens["%$count"] = '';
       }
-<<<<<<< HEAD
-      // Use strip tags as there should never be HTML in the path.
-      // However, we need to preserve special characters like " that
-      // were encoded by \Drupal\Component\Utility\Html::escape().
-=======
        // Use strip tags as there should never be HTML in the path.
        // However, we need to preserve special characters like " that
        // were encoded by \Drupal\Component\Utility\Html::escape().
->>>>>>> github/master
       $tokens["!$count"] = isset($this->view->args[$count - 1]) ? strip_tags(Html::decodeEntities($this->view->args[$count - 1])) : '';
     }
 
@@ -1349,10 +1339,6 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
       );
     }
 
-<<<<<<< HEAD
-    /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form_plugin */
-=======
->>>>>>> github/master
     $exposed_form_plugin = $this->getPlugin('exposed_form');
     if (!$exposed_form_plugin) {
       // Default to the no cache control plugin.
@@ -2249,11 +2235,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
     }
 
     $plugin = $this->getPlugin('access');
-<<<<<<< HEAD
-    /** @var \Drupal\views\Plugin\views\access\AccessPluginBase $plugin */
-=======
       /** @var \Drupal\views\Plugin\views\access\AccessPluginBase $plugin */
->>>>>>> github/master
     if ($plugin) {
       return $plugin->access($account);
     }
@@ -2272,10 +2254,6 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
     }
     $this->view->initHandlers();
     if ($this->usesExposed()) {
-<<<<<<< HEAD
-      /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form */
-=======
->>>>>>> github/master
       $exposed_form = $this->getPlugin('exposed_form');
       $exposed_form->preExecute();
     }
@@ -2572,10 +2550,6 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
     $this->view->initHandlers();
 
     if ($this->usesExposed() && $this->getOption('exposed_block')) {
-<<<<<<< HEAD
-      /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form */
-=======
->>>>>>> github/master
       $exposed_form = $this->getPlugin('exposed_form');
       return $exposed_form->renderExposedForm(TRUE);
     }

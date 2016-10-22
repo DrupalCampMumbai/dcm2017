@@ -5,13 +5,8 @@
  * Test fixture.
  */
 
-<<<<<<< HEAD
-use Drupal\Core\Database\Database;
-use Drupal\Core\Serialization\Yaml;
-=======
 use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Database\Database;
->>>>>>> github/master
 
 $connection = Database::getConnection();
 

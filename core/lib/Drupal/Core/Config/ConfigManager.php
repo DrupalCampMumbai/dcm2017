@@ -3,19 +3,12 @@
 namespace Drupal\Core\Config;
 
 use Drupal\Component\Diff\Diff;
-<<<<<<< HEAD
-=======
 use Drupal\Component\Serialization\Yaml;
->>>>>>> github/master
 use Drupal\Core\Config\Entity\ConfigDependencyManager;
 use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Config\Entity\ConfigEntityTypeInterface;
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
-<<<<<<< HEAD
-use Drupal\Core\Serialization\Yaml;
-=======
->>>>>>> github/master
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

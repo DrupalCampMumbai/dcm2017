@@ -127,18 +127,6 @@ class Feed extends ContentEntityBase implements FeedInterface {
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-<<<<<<< HEAD
-    /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
-    $fields = parent::baseFieldDefinitions($entity_type);
-
-    $fields['fid']->setLabel(t('Feed ID'))
-      ->setDescription(t('The ID of the aggregator feed.'));
-
-    $fields['uuid']->setDescription(t('The aggregator feed UUID.'));
-
-    $fields['langcode']->setLabel(t('Language code'))
-      ->setDescription(t('The feed language code.'));
-=======
     $fields['fid'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Feed ID'))
       ->setDescription(t('The ID of the aggregator feed.'))
@@ -149,7 +137,6 @@ class Feed extends ContentEntityBase implements FeedInterface {
       ->setLabel(t('UUID'))
       ->setDescription(t('The aggregator feed UUID.'))
       ->setReadOnly(TRUE);
->>>>>>> github/master
 
     $fields['title'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Title'))
@@ -163,8 +150,6 @@ class Feed extends ContentEntityBase implements FeedInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->addConstraint('FeedTitle');
 
-<<<<<<< HEAD
-=======
     $fields['langcode'] = BaseFieldDefinition::create('language')
       ->setLabel(t('Language code'))
       ->setDescription(t('The feed language code.'))
@@ -176,7 +161,6 @@ class Feed extends ContentEntityBase implements FeedInterface {
         'weight' => 2,
       ));
 
->>>>>>> github/master
     $fields['url'] = BaseFieldDefinition::create('uri')
       ->setLabel(t('URL'))
       ->setDescription(t('The fully-qualified URL of the feed.'))

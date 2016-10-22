@@ -7,10 +7,6 @@ use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Form\FormHelper;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
-<<<<<<< HEAD
-use Drupal\Core\Render\Element\Checkboxes;
-=======
->>>>>>> github/master
 use Drupal\user\RoleInterface;
 use Drupal\views\Plugin\views\HandlerBase;
 use Drupal\Component\Utility\Html;
@@ -543,11 +539,7 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     );
 
     if (!empty($form['operator']['#type'])) {
-<<<<<<< HEAD
-      // Increase the width of the left (operator) column.
-=======
        // Increase the width of the left (operator) column.
->>>>>>> github/master
       $form['operator']['#prefix'] = '<div class="views-group-box views-left-40">';
       $form['operator']['#suffix'] = '</div>';
       $form['value']['#prefix'] = '<div class="views-group-box views-right-60">';
@@ -626,41 +618,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
   }
 
   /**
-<<<<<<< HEAD
-   * Determines if the given grouped filter entry has a valid value.
-   *
-   * @param array $group
-   *   A group entry as defined by buildGroupForm().
-   *
-   * @return bool
-   */
-  protected function hasValidGroupedValue(array $group) {
-    $operators = $this->operators();
-    if ($operators[$group['operator']]['values'] == 0) {
-      // Some filters, such as "is empty," do not require a value to be
-      // specified in order to be valid entries.
-      return TRUE;
-    }
-    else {
-      if (is_string($group['value'])) {
-        return trim($group['value']) != '';
-      }
-      elseif (is_array($group['value'])) {
-        // Some filters allow multiple options to be selected (for example, node
-        // types). Ensure at least the minimum number of values is present for
-        // this entry to be considered valid.
-        $min_values = $operators[$group['operator']]['values'];
-        $actual_values = count(array_filter($group['value'], 'static::arrayFilterZero'));
-        return $actual_values >= $min_values;
-      }
-    }
-    return FALSE;
-  }
-
-
-  /**
-=======
->>>>>>> github/master
    * Validate the build group options form.
    */
   protected function buildGroupValidate($form, FormStateInterface $form_state) {
@@ -670,22 +627,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     }
 
     if ($group_items = $form_state->getValue(array('options', 'group_info', 'group_items'))) {
-<<<<<<< HEAD
-      foreach ($group_items as $id => $group) {
-        if (empty($group['remove'])) {
-          $has_valid_value = $this->hasValidGroupedValue($group);
-          if ($has_valid_value && $group['title'] == '') {
-            $operators = $this->operators();
-            if ($operators[$group['operator']]['values'] == 0) {
-              $form_state->setError($form['group_info']['group_items'][$id]['title'], $this->t('A label is required for the specified operator.'));
-            }
-            else {
-              $form_state->setError($form['group_info']['group_items'][$id]['title'], $this->t('A label is required if the value for this item is defined.'));
-            }
-          }
-          if (!$has_valid_value && $group['title'] != '') {
-            $form_state->setError($form['group_info']['group_items'][$id]['value'], $this->t('A value is required if the label for this item is defined.'));
-=======
       $operators = $this->operators();
 
       foreach ($group_items as $id => $group) {
@@ -705,7 +646,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
             if (empty($group['title'])) {
               $form_state->setError($form['group_info']['group_items'][$id]['title'], $this->t('The title is required if value for this item is defined.'));
             }
->>>>>>> github/master
           }
         }
       }
@@ -1339,11 +1279,7 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
    */
   public function groupMultipleExposedInput(&$input) {
     if (!empty($input[$this->options['group_info']['identifier']])) {
-<<<<<<< HEAD
-      return array_filter($input[$this->options['group_info']['identifier']]);
-=======
     return array_filter($input[$this->options['group_info']['identifier']]);
->>>>>>> github/master
     }
     return array();
   }
@@ -1396,29 +1332,15 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
   }
 
   /**
-<<<<<<< HEAD
-   * Determines if the input from a filter should change the generated query.
-   *
-   * @param array $input
-   *   The exposed data for this view.
-   *
-   * @return bool
-   *   TRUE if the input for this filter should be included in the view query.
-   *   FALSE otherwise.
-=======
    * Check to see if input from the exposed filters should change
    * the behavior of this filter.
->>>>>>> github/master
    */
   public function acceptExposedInput($input) {
     if (empty($this->options['exposed'])) {
       return TRUE;
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> github/master
     if (!empty($this->options['expose']['use_operator']) && !empty($this->options['expose']['operator_id']) && isset($input[$this->options['expose']['operator_id']])) {
       $this->operator = $input[$this->options['expose']['operator_id']];
     }
@@ -1436,15 +1358,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
           if ($value == 'All' || $value === array()) {
             return FALSE;
           }
-<<<<<<< HEAD
-
-          // If checkboxes are used to render this filter, do not include the
-          // filter if no options are checked.
-          if (is_array($value) && Checkboxes::detectEmptyCheckboxes($value)) {
-            return FALSE;
-          }
-=======
->>>>>>> github/master
         }
 
         if (!empty($this->alwaysMultiple) && $value === '') {
@@ -1539,10 +1452,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
    *
    * @return bool
    */
-<<<<<<< HEAD
-  public function canGroup() {
-    return TRUE;
-=======
    public function canGroup() {
      return TRUE;
    }
@@ -1558,7 +1467,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
    */
   protected static function arrayFilterZero($var) {
     return trim($var) != '';
->>>>>>> github/master
   }
 
   /**
@@ -1598,25 +1506,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     }
   }
 
-<<<<<<< HEAD
-  /**
-   * Filter by no empty values, though allow the use of (string) "0".
-   *
-   * @param string $var
-   *   The variable to evaluate.
-   *
-   * @return bool
-   *   TRUE if the value is equal to an empty string, FALSE otherwise.
-   */
-  protected static function arrayFilterZero($var) {
-    if (is_int($var)) {
-      return $var != 0;
-    }
-    return trim($var) != '';
-  }
-
-=======
->>>>>>> github/master
 }
 
 /**

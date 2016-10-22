@@ -94,11 +94,7 @@ class AuthenticationManager implements AuthenticationProviderInterface, Authenti
    * @param \Symfony\Component\HttpFoundation\Request $request
    *   The incoming request.
    *
-<<<<<<< HEAD
-   * @return string|null
-=======
    * @return string|NULL
->>>>>>> github/master
    *   The id of the first authentication provider which applies to the request.
    *   If no application detects appropriate credentials, then NULL is returned.
    */
@@ -116,11 +112,7 @@ class AuthenticationManager implements AuthenticationProviderInterface, Authenti
    * @param \Symfony\Component\HttpFoundation\Request $request
    *   The incoming request.
    *
-<<<<<<< HEAD
-   * @return string|null
-=======
    * @return string|NULL
->>>>>>> github/master
    *   The ID of the first authentication provider which applies to the request.
    *   If no application detects appropriate credentials, then NULL is returned.
    */

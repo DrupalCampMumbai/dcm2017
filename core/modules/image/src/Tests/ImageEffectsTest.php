@@ -2,10 +2,6 @@
 
 namespace Drupal\image\Tests;
 
-<<<<<<< HEAD
-use Drupal\image\Entity\ImageStyle;
-=======
->>>>>>> github/master
 use Drupal\system\Tests\Image\ToolkitTestBase;
 
 /**
@@ -167,29 +163,6 @@ class ImageEffectsTest extends ToolkitTestBase {
   }
 
   /**
-<<<<<<< HEAD
-   * Tests if validation errors are passed plugin form to the parent form.
-   */
-  public function testEffectFormValidationErrors() {
-    $account = $this->drupalCreateUser(['administer image styles']);
-    $this->drupalLogin($account);
-    /** @var \Drupal\image\ImageStyleInterface $style */
-    $style = ImageStyle::load('thumbnail');
-    // Image Scale is the only effect shipped with 'thumbnail', by default.
-    $uuids = $style->getEffects()->getInstanceIds();
-    $uuid = key($uuids);
-
-    // We are posting the form with both, width and height, empty.
-    $edit = ['data[width]' => '', 'data[height]' => ''];
-    $path = 'admin/config/media/image-styles/manage/thumbnail/effects/' . $uuid;
-    $this->drupalPostForm($path, $edit, t('Update effect'));
-    // Check that the error message has been displayed.
-    $this->assertText(t('Width and height can not both be blank.'));
-  }
-
-  /**
-=======
->>>>>>> github/master
    * Asserts the effect processing of an image effect plugin.
    *
    * @param string $effect_name

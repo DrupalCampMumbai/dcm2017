@@ -780,11 +780,7 @@ interface FormStateInterface {
   /**
    * Returns the HTTP form method.
    *
-<<<<<<< HEAD
-   * @param string $method_type
-=======
    * @param string
->>>>>>> github/master
    *   The HTTP form method.
    *
    * @return bool

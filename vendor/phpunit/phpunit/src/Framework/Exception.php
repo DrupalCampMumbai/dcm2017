@@ -27,10 +27,7 @@
  * the parent would break the intended encapsulation of process isolation.
  *
  * @see http://fabien.potencier.org/article/9/php-serialization-stack-traces-and-exceptions
-<<<<<<< HEAD
-=======
  *
->>>>>>> github/master
  * @since Class available since Release 3.4.0
  */
 class PHPUnit_Framework_Exception extends RuntimeException implements PHPUnit_Exception

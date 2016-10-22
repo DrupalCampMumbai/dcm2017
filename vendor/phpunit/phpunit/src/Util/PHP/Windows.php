@@ -74,17 +74,9 @@ class PHPUnit_Util_PHP_Windows extends PHPUnit_Util_PHP_Default
     }
 
     /**
-<<<<<<< HEAD
-     * @param resource $pipe
-     * @param string   $job
-     *
-     * @throws PHPUnit_Framework_Exception
-     *
-=======
      * @param  resource                    $pipe
      * @param  string                      $job
      * @throws PHPUnit_Framework_Exception
->>>>>>> github/master
      * @since  Method available since Release 3.5.12
      */
     protected function process($pipe, $job)

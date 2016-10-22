@@ -67,10 +67,6 @@ class PHPUnit_Framework_TestFailure
      * Returns a description for the thrown exception.
      *
      * @return string
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.4.0
      */
     public function getExceptionAsString()
@@ -81,15 +77,8 @@ class PHPUnit_Framework_TestFailure
     /**
      * Returns a description for an exception.
      *
-<<<<<<< HEAD
-     * @param Exception $e
-     *
-     * @return string
-     *
-=======
      * @param  Exception $e
      * @return string
->>>>>>> github/master
      * @since  Method available since Release 3.2.0
      */
     public static function exceptionToString(Exception $e)
@@ -119,10 +108,6 @@ class PHPUnit_Framework_TestFailure
      * Returns the name of the failing test (including data set, if any).
      *
      * @return string
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 4.3.0
      */
     public function getTestName()

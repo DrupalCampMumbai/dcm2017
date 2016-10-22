@@ -2,13 +2,6 @@ name: 'Contact test storage'
 type: module
 description: 'Tests that contact messages can be stored.'
 package: Testing
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-dependencies:
-  - contact
-  - user
-=======
 # version: VERSION
 # core: 8.x
 dependencies:
@@ -20,4 +13,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

@@ -5,11 +5,7 @@
  * Contains \Drupal\Tests\Core\Entity\EntityResolverManagerTest.
  */
 
-<<<<<<< HEAD
-namespace Drupal\Tests\Core\Entity;
-=======
 namespace Drupal\Tests\Core\Entity {
->>>>>>> github/master
 
 use Drupal\Core\Entity\Entity;
 use Drupal\Core\Entity\EntityInterface;
@@ -94,11 +90,7 @@ class EntityResolverManagerTest extends UnitTestCase {
   public function providerTestSetRouteOptionsWithStandardRoute() {
     return array(
       array('Drupal\Tests\Core\Entity\BasicControllerClass::exampleControllerMethod'),
-<<<<<<< HEAD
-      array('Drupal\Tests\Core\Entity\test_function_controller'),
-=======
       array('test_function_controller'),
->>>>>>> github/master
     );
   }
 
@@ -128,11 +120,7 @@ class EntityResolverManagerTest extends UnitTestCase {
   public function providerTestSetRouteOptionsWithStandardRouteWithArgument() {
     return array(
       array('Drupal\Tests\Core\Entity\BasicControllerClass::exampleControllerMethodWithArgument'),
-<<<<<<< HEAD
-      array('Drupal\Tests\Core\Entity\test_function_controller_with_argument'),
-=======
       array('test_function_controller_with_argument'),
->>>>>>> github/master
     );
   }
 
@@ -162,11 +150,7 @@ class EntityResolverManagerTest extends UnitTestCase {
   public function providerTestSetRouteOptionsWithContentController() {
     return array(
       array('Drupal\Tests\Core\Entity\BasicControllerClass::exampleControllerMethodWithArgument'),
-<<<<<<< HEAD
-      array('Drupal\Tests\Core\Entity\test_function_controller_with_argument'),
-=======
       array('test_function_controller_with_argument'),
->>>>>>> github/master
     );
   }
 
@@ -199,11 +183,7 @@ class EntityResolverManagerTest extends UnitTestCase {
   public function providerTestSetRouteOptionsWithEntityTypeNoUpcasting() {
     return array(
       array('Drupal\Tests\Core\Entity\BasicControllerClass::exampleControllerWithEntityNoUpcasting'),
-<<<<<<< HEAD
-      array('Drupal\Tests\Core\Entity\test_function_controller_no_upcasting'),
-=======
       array('test_function_controller_no_upcasting'),
->>>>>>> github/master
     );
   }
 
@@ -237,11 +217,7 @@ class EntityResolverManagerTest extends UnitTestCase {
   public function providerTestSetRouteOptionsWithEntityTypeUpcasting() {
     return array(
       array('Drupal\Tests\Core\Entity\BasicControllerClass::exampleControllerWithEntityUpcasting'),
-<<<<<<< HEAD
-      array('Drupal\Tests\Core\Entity\test_function_controller_entity_upcasting'),
-=======
       array('test_function_controller_entity_upcasting'),
->>>>>>> github/master
     );
   }
 
@@ -571,18 +547,6 @@ class BasicFormNoContainerInjectionInterface implements FormInterface {
 
 }
 
-<<<<<<< HEAD
-function test_function_controller() {
-}
-
-function test_function_controller_with_argument($argument) {
-}
-
-function test_function_controller_no_upcasting($entity_test) {
-}
-
-function test_function_controller_entity_upcasting(EntityInterface $entity_test) {
-=======
 }
 
 namespace {
@@ -600,5 +564,4 @@ namespace {
 
   function test_function_controller_entity_upcasting(EntityInterface $entity_test) {
   }
->>>>>>> github/master
 }

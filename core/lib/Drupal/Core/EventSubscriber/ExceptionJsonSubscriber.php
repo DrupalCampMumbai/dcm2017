@@ -28,20 +28,6 @@ class ExceptionJsonSubscriber extends HttpExceptionSubscriberBase {
   }
 
   /**
-<<<<<<< HEAD
-   * Handles a 400 error for JSON.
-   *
-   * @param \Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
-   *   The event to process.
-   */
-  public function on400(GetResponseForExceptionEvent $event) {
-    $response = new JsonResponse(array('message' => $event->getException()->getMessage()), Response::HTTP_BAD_REQUEST);
-    $event->setResponse($response);
-  }
-
-  /**
-=======
->>>>>>> github/master
    * Handles a 403 error for JSON.
    *
    * @param \Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
@@ -85,18 +71,4 @@ class ExceptionJsonSubscriber extends HttpExceptionSubscriberBase {
     $event->setResponse($response);
   }
 
-<<<<<<< HEAD
-  /**
-   * Handles a 415 error for JSON.
-   *
-   * @param \Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
-   *   The event to process.
-   */
-  public function on415(GetResponseForExceptionEvent $event) {
-    $response = new JsonResponse(['message' => $event->getException()->getMessage()], Response::HTTP_UNSUPPORTED_MEDIA_TYPE);
-    $event->setResponse($response);
-  }
-
-=======
->>>>>>> github/master
 }

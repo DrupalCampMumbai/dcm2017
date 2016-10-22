@@ -8,10 +8,6 @@ use Drupal\Core\Routing\AccessAwareRouterInterface;
 use Drupal\Tests\UnitTestCase;
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Component\HttpFoundation\Request;
-<<<<<<< HEAD
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
-=======
->>>>>>> github/master
 use Symfony\Component\Routing\Route;
 
 /**
@@ -110,25 +106,6 @@ class AccessAwareRouterTest extends UnitTestCase {
   }
 
   /**
-<<<<<<< HEAD
-   * Tests the matchRequest() function for access denied with reason message.
-   */
-  public function testCheckAccessResultWithReason() {
-    $this->setupRouter();
-    $request = new Request();
-    $reason = $this->getRandomGenerator()->string();
-    $access_result = AccessResult::forbidden($reason);
-    $this->accessManager->expects($this->once())
-      ->method('checkRequest')
-      ->with($request)
-      ->willReturn($access_result);
-    $this->setExpectedException(AccessDeniedHttpException::class, $reason);
-    $this->router->matchRequest($request);
-  }
-
-  /**
-=======
->>>>>>> github/master
    * Ensure that methods are passed to the wrapped router.
    *
    * @covers ::__call

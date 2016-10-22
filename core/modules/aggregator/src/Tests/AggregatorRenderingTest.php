@@ -3,10 +3,6 @@
 namespace Drupal\aggregator\Tests;
 
 use Drupal\Component\Utility\SafeMarkup;
-<<<<<<< HEAD
-use Drupal\views\Entity\View;
-=======
->>>>>>> github/master
 
 /**
  * Tests display of aggregator items on the page.
@@ -94,11 +90,7 @@ class AggregatorRenderingTest extends AggregatorTestBase {
   public function testFeedPage() {
     // Increase the number of items published in the rss.xml feed so we have
     // enough articles to test paging.
-<<<<<<< HEAD
-    $view = View::load('frontpage');
-=======
     $view = entity_load('view', 'frontpage');
->>>>>>> github/master
     $display = &$view->getDisplay('feed_1');
     $display['display_options']['pager']['options']['items_per_page'] = 30;
     $view->save();

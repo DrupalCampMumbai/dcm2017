@@ -2,12 +2,6 @@
 
 namespace Drupal\migrate\Event;
 
-<<<<<<< HEAD
-/**
- * Wraps a pre- or post-import event for event listeners.
- */
-class MigrateImportEvent extends EventBase {}
-=======
 use Drupal\migrate\Plugin\MigrationInterface;
 use Symfony\Component\EventDispatcher\Event;
 
@@ -44,4 +38,3 @@ class MigrateImportEvent extends Event {
   }
 
 }
->>>>>>> github/master

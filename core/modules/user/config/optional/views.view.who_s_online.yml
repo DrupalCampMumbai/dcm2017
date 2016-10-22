@@ -96,11 +96,7 @@ display:
           entity_field: name
       filters:
         status:
-<<<<<<< HEAD
-          value: '1'
-=======
           value: true
->>>>>>> github/master
           table: users_field_data
           field: status
           id: status

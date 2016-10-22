@@ -42,11 +42,7 @@ class SearchBlockForm extends FormBase {
    *   The search page repository.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
-<<<<<<< HEAD
-   * @param \Drupal\Core\Render\RendererInterface $renderer
-=======
    * @param \Drupal\Core\Render\RendererInterface
->>>>>>> github/master
    *   The renderer.
    */
   public function __construct(SearchPageRepositoryInterface $search_page_repository, ConfigFactoryInterface $config_factory, RendererInterface $renderer) {

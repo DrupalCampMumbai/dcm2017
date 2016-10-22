@@ -137,12 +137,7 @@ class BulkDeleteTest extends FieldKernelTestBase {
         $entity->save();
       }
     }
-<<<<<<< HEAD
-    $this->entities = $this->container->get('entity_type.manager')
-      ->getStorage($this->entityTypeId)->loadMultiple();
-=======
     $this->entities = entity_load_multiple($this->entityTypeId);
->>>>>>> github/master
     foreach ($this->entities as $entity) {
       // This test relies on the entities having stale field definitions
       // so that the deleted field can be accessed on them. Access the field

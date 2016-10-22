@@ -135,14 +135,7 @@ class ManageDisplayTest extends WebTestBase {
     $this->drupalPostForm(NULL, array(), t('Save'));
 
     \Drupal::entityManager()->clearCachedFieldDefinitions();
-<<<<<<< HEAD
-    $id = 'node.' . $this->type . '.default';
-    $storage = $this->container->get('entity_type.manager')->getStorage('entity_view_display');
-    $storage->resetCache([$id]);
-    $display = $storage->load($id);
-=======
     $display = entity_load('entity_view_display', 'node.' . $this->type . '.default', TRUE);
->>>>>>> github/master
     $this->assertEqual($display->getRenderer('field_test')->getThirdPartySetting('field_third_party_test', 'field_test_field_formatter_third_party_settings_form'), 'foo');
     $this->assertTrue(in_array('field_third_party_test', $display->calculateDependencies()->getDependencies()['module']), 'The display has a dependency on field_third_party_test module.');
 
@@ -268,13 +261,7 @@ class ManageDisplayTest extends WebTestBase {
     // Save the form to save the third party settings.
     $this->drupalPostForm(NULL, array(), t('Save'));
     \Drupal::entityManager()->clearCachedFieldDefinitions();
-<<<<<<< HEAD
-    $storage = $this->container->get('entity_type.manager')->getStorage('entity_form_display');
-    $storage->resetCache(array('node.' . $this->type . '.default'));
-    $display = $storage->load('node.' . $this->type . '.default');
-=======
     $display = entity_load('entity_form_display', 'node.' . $this->type . '.default', TRUE);
->>>>>>> github/master
     $this->assertEqual($display->getRenderer('field_test')->getThirdPartySetting('field_third_party_test', 'field_test_widget_third_party_settings_form'), 'foo');
     $this->assertTrue(in_array('field_third_party_test', $display->calculateDependencies()->getDependencies()['module']), 'Form display does not have a dependency on field_third_party_test module.');
 

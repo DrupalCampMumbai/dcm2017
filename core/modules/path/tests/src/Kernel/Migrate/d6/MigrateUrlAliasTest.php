@@ -29,11 +29,7 @@ class MigrateUrlAliasTest extends MigrateDrupal6TestBase {
   /**
    * Assert a path.
    *
-<<<<<<< HEAD
-   * @param string $pid
-=======
    * @param string pid
->>>>>>> github/master
    *   The path id.
    * @param array $conditions
    *   The path conditions.

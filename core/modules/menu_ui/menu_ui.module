@@ -435,11 +435,7 @@ function menu_ui_form_node_type_form_alter(&$form, FormStateInterface $form_stat
 }
 
 /**
-<<<<<<< HEAD
- * Validate handler for forms with menu options.
-=======
  * Submit handler for forms with menu options.
->>>>>>> github/master
  *
  * @see menu_ui_form_node_type_form_alter()
  */

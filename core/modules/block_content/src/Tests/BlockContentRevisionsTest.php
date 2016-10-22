@@ -3,11 +3,6 @@
 namespace Drupal\block_content\Tests;
 
 use Drupal\block_content\Entity\BlockContent;
-<<<<<<< HEAD
-use Drupal\user\Entity\User;
-use Drupal\user\UserInterface;
-=======
->>>>>>> github/master
 
 /**
  * Create a block with revisions.
@@ -34,12 +29,6 @@ class BlockContentRevisionsTest extends BlockContentTestBase {
   protected function setUp() {
     parent::setUp();
 
-<<<<<<< HEAD
-    /** @var UserInterface $user */
-    $user = User::load(1);
-
-=======
->>>>>>> github/master
     // Create initial block.
     $block = $this->createBlockContent('initial');
 
@@ -54,15 +43,8 @@ class BlockContentRevisionsTest extends BlockContentTestBase {
     $revision_count = 3;
     for ($i = 0; $i < $revision_count; $i++) {
       $block->setNewRevision(TRUE);
-<<<<<<< HEAD
-      $block->setRevisionLogMessage($this->randomMachineName(32));
-      $block->setRevisionUser($this->adminUser);
-      $block->setRevisionCreationTime(REQUEST_TIME);
-      $logs[] = $block->getRevisionLogMessage();
-=======
       $block->setRevisionLog($this->randomMachineName(32));
       $logs[] = $block->getRevisionLog();
->>>>>>> github/master
       $block->save();
       $blocks[] = $block->getRevisionId();
     }
@@ -80,25 +62,11 @@ class BlockContentRevisionsTest extends BlockContentTestBase {
 
     foreach ($blocks as $delta => $revision_id) {
       // Confirm the correct revision text appears.
-<<<<<<< HEAD
-      /** @var \Drupal\block_content\BlockContentInterface  $loaded */
-      $loaded = entity_revision_load('block_content', $revision_id);
-      // Verify revision log is the same.
-      $this->assertEqual($loaded->getRevisionLogMessage(), $logs[$delta], format_string('Correct log message found for revision @revision', array(
-        '@revision' => $loaded->getRevisionId(),
-      )));
-      if ($delta > 0) {
-        $this->assertTrue($loaded->getRevisionUser() instanceof UserInterface, 'Revision User found.');
-        $this->assertTrue(is_numeric($loaded->getRevisionUserId()), 'Revision User ID found.');
-        $this->assertTrue(is_numeric($loaded->getRevisionCreationTime()), 'Revision time found.');
-      }
-=======
       $loaded = entity_revision_load('block_content', $revision_id);
       // Verify revision log is the same.
       $this->assertEqual($loaded->getRevisionLog(), $logs[$delta], format_string('Correct log message found for revision @revision', array(
         '@revision' => $loaded->getRevisionId(),
       )));
->>>>>>> github/master
     }
 
     // Confirm that this is the default revision.

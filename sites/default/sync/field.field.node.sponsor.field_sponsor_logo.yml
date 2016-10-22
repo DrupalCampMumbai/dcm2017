@@ -1,0 +1,40 @@
+uuid: affea7e3-f599-45b2-9c8e-c7bd92848aaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_logo
+    - node.type.sponsor
+  module:
+    - image
+_core:
+  default_config_hash: D75LONDad9LarAo-18COyRQRKyff-kXeW0edL4JiLyU
+id: node.sponsor.field_sponsor_logo
+field_name: field_sponsor_logo
+entity_type: node
+bundle: sponsor
+label: 'Sponsor Logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: true
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,9 +1,4 @@
 type: theme
-<<<<<<< HEAD
-core: 8.x
-name: 'Test theme with a too long name'
-version: VERSION
-=======
 # core: 8.x
 name: 'Test theme with a too long name'
 # version: VERSION
@@ -13,4 +8,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

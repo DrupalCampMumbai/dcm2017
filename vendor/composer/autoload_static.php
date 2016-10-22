@@ -358,16 +358,6 @@ class ComposerStaticInitDrupal8
                 0 => __DIR__ . '/..' . '/composer/installers/src',
             ),
         ),
-<<<<<<< HEAD
-        'A' => 
-        array (
-            'Asm89\\Stack' => 
-            array (
-                0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
-            ),
-        ),
-=======
->>>>>>> github/master
     );
 
     public static $classMap = array (

@@ -47,22 +47,11 @@ class Item extends ContentEntityBase implements ItemInterface {
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-<<<<<<< HEAD
-    /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
-    $fields = parent::baseFieldDefinitions($entity_type);
-
-    $fields['iid']->setLabel(t('Aggregator item ID'))
-      ->setDescription(t('The ID of the feed item.'));
-
-    $fields['langcode']->setLabel(t('Language code'))
-      ->setDescription(t('The feed item language code.'));
-=======
     $fields['iid'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Aggregator item ID'))
       ->setDescription(t('The ID of the feed item.'))
       ->setReadOnly(TRUE)
       ->setSetting('unsigned', TRUE);
->>>>>>> github/master
 
     $fields['fid'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Source feed'))
@@ -80,13 +69,10 @@ class Item extends ContentEntityBase implements ItemInterface {
       ->setLabel(t('Title'))
       ->setDescription(t('The title of the feed item.'));
 
-<<<<<<< HEAD
-=======
     $fields['langcode'] = BaseFieldDefinition::create('language')
       ->setLabel(t('Language code'))
       ->setDescription(t('The feed item language code.'));
 
->>>>>>> github/master
     $fields['link'] = BaseFieldDefinition::create('uri')
       ->setLabel(t('Link'))
       ->setDescription(t('The link of the feed item.'))

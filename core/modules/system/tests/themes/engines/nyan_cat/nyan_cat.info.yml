@@ -1,10 +1,5 @@
 type: theme_engine
 name: Nyan cat
-<<<<<<< HEAD
-core: 8.x
-version: VERSION
-package: Core
-=======
 # core: 8.x
 # version: VERSION
 package: Core
@@ -14,4 +9,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

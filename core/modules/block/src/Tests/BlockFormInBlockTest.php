@@ -25,11 +25,7 @@ class BlockFormInBlockTest extends WebTestBase {
     parent::setUp();
 
     // Enable our test block.
-<<<<<<< HEAD
-    $this->drupalPlaceBlock('test_form_in_block');
-=======
    $this->drupalPlaceBlock('test_form_in_block');
->>>>>>> github/master
   }
 
   /**

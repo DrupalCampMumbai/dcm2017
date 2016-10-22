@@ -5,10 +5,6 @@ namespace Drupal\rest\LinkManager;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
-<<<<<<< HEAD
-use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
-=======
->>>>>>> github/master
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -29,16 +25,6 @@ class TypeLinkManager extends LinkManagerBase implements TypeLinkManagerInterfac
   protected $moduleHandler;
 
   /**
-<<<<<<< HEAD
-   * The bundle info service.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeBundleInfoInterface
-   */
-  protected $bundleInfoService;
-
-  /**
-=======
->>>>>>> github/master
    * Constructor.
    *
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache
@@ -49,23 +35,12 @@ class TypeLinkManager extends LinkManagerBase implements TypeLinkManagerInterfac
    *   The config factory service.
    * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The request stack.
-<<<<<<< HEAD
-   * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $bundle_info_service
-   *   The bundle info service.
-   */
-  public function __construct(CacheBackendInterface $cache, ModuleHandlerInterface $module_handler, ConfigFactoryInterface $config_factory, RequestStack $request_stack, EntityTypeBundleInfoInterface $bundle_info_service) {
-=======
    */
   public function __construct(CacheBackendInterface $cache, ModuleHandlerInterface $module_handler, ConfigFactoryInterface $config_factory, RequestStack $request_stack) {
->>>>>>> github/master
     $this->cache = $cache;
     $this->configFactory = $config_factory;
     $this->moduleHandler = $module_handler;
     $this->requestStack = $request_stack;
-<<<<<<< HEAD
-    $this->bundleInfoService = $bundle_info_service;
-=======
->>>>>>> github/master
   }
 
   /**
@@ -114,19 +89,10 @@ class TypeLinkManager extends LinkManagerBase implements TypeLinkManagerInterfac
     $cid = 'rest:links:types';
     $cache = $this->cache->get($cid);
     if (!$cache) {
-<<<<<<< HEAD
-      $data = $this->writeCache($context);
-    }
-    else {
-      $data = $cache->data;
-    }
-    return $data;
-=======
       $this->writeCache($context);
       $cache = $this->cache->get($cid);
     }
     return $cache->data;
->>>>>>> github/master
   }
 
   /**
@@ -134,13 +100,6 @@ class TypeLinkManager extends LinkManagerBase implements TypeLinkManagerInterfac
    *
    * @param array $context
    *   Context from the normalizer/serializer operation.
-<<<<<<< HEAD
-   *
-   * @return array
-   *   An array of typed data ids (entity_type and bundle) keyed by
-   *   corresponding type URI.
-=======
->>>>>>> github/master
    */
   protected function writeCache($context = array()) {
     $data = array();
@@ -148,11 +107,7 @@ class TypeLinkManager extends LinkManagerBase implements TypeLinkManagerInterfac
     // Type URIs correspond to bundles. Iterate through the bundles to get the
     // URI and data for them.
     $entity_types = \Drupal::entityManager()->getDefinitions();
-<<<<<<< HEAD
-    foreach ($this->bundleInfoService->getAllBundleInfo() as $entity_type_id => $bundles) {
-=======
     foreach (entity_get_bundles() as $entity_type_id => $bundles) {
->>>>>>> github/master
       // Only content entities are supported currently.
       // @todo Consider supporting config entities.
       if ($entity_types[$entity_type_id]->isSubclassOf('\Drupal\Core\Config\Entity\ConfigEntityInterface')) {
@@ -170,10 +125,6 @@ class TypeLinkManager extends LinkManagerBase implements TypeLinkManagerInterfac
     // These URIs only change when entity info changes, so cache it permanently
     // and only clear it when entity_info is cleared.
     $this->cache->set('rest:links:types', $data, Cache::PERMANENT, array('entity_types'));
-<<<<<<< HEAD
-    return $data;
-=======
->>>>>>> github/master
   }
 
 }

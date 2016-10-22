@@ -63,21 +63,6 @@ process:
   region:
     plugin: block_region
     source:
-<<<<<<< HEAD
-      - theme
-      - '@theme'
-      - region
-    map:
-      garland:
-        bartik:
-          # Garland 6.x --> Bartik 8.x
-          header: header
-          footer: footer_fifth
-          left: sidebar_first
-          right: sidebar_second
-    # If mapping fails, put the block in the content region.
-    default_value: content
-=======
       - region
       - theme
       - '@theme'
@@ -89,7 +74,6 @@ process:
       help: help
       header: header
       footer: footer
->>>>>>> github/master
   weight: weight
   settings:
     plugin: block_settings

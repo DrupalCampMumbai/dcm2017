@@ -30,13 +30,7 @@ class ImageOnTranslatedEntityTest extends ImageFieldTestBase {
     parent::setUp();
 
     // Create the "Basic page" node type.
-<<<<<<< HEAD
-    // @todo Remove the disabling of new revision creation in
-    //   https://www.drupal.org/node/1239558.
-    $this->drupalCreateContentType(['type' => 'basicpage', 'name' => 'Basic page', 'new_revision' => FALSE]);
-=======
     $this->drupalCreateContentType(array('type' => 'basicpage', 'name' => 'Basic page'));
->>>>>>> github/master
 
     // Create a image field on the "Basic page" node type.
     $this->fieldName = strtolower($this->randomMachineName());
@@ -197,13 +191,10 @@ class ImageOnTranslatedEntityTest extends ImageFieldTestBase {
     $file = File::load($replaced_second_fid);
     $this->assertTrue($file->isPermanent());
 
-<<<<<<< HEAD
-=======
     // Ensure the file status of the old second file is now temporary.
     $file = File::load($second_fid);
     $this->assertTrue($file->isTemporary());
 
->>>>>>> github/master
     // Delete the third translation.
     $this->drupalPostForm('nl/node/' . $default_language_node->id() . '/delete', array(), t('Delete Dutch translation'));
 

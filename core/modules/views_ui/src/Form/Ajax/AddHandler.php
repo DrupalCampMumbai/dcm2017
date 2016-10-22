@@ -95,11 +95,7 @@ class AddHandler extends ViewsFormBase {
       $groups = array('all' => $this->t('- All -'));
       $form['override']['controls']['group'] = array(
         '#type' => 'select',
-<<<<<<< HEAD
-        '#title' => $this->t('Category'),
-=======
         '#title' => $this->t('Type'),
->>>>>>> github/master
         '#options' => array(),
       );
 

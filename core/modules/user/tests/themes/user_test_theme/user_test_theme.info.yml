@@ -1,10 +1,6 @@
 name: 'User Test theme'
 type: theme
 description: 'Theme for testing the available fields in user twig template'
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-=======
 # version: VERSION
 # core: 8.x
 
@@ -13,4 +9,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

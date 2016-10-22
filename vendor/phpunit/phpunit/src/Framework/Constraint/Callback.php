@@ -16,12 +16,7 @@ class PHPUnit_Framework_Constraint_Callback extends PHPUnit_Framework_Constraint
     private $callback;
 
     /**
-<<<<<<< HEAD
-     * @param callable $callback
-     *
-=======
      * @param  callable                    $callback
->>>>>>> github/master
      * @throws PHPUnit_Framework_Exception
      */
     public function __construct($callback)
@@ -42,12 +37,7 @@ class PHPUnit_Framework_Constraint_Callback extends PHPUnit_Framework_Constraint
      * Evaluates the constraint for parameter $value. Returns true if the
      * constraint is met, false otherwise.
      *
-<<<<<<< HEAD
-     * @param mixed $other Value or object to evaluate.
-     *
-=======
      * @param  mixed $other Value or object to evaluate.
->>>>>>> github/master
      * @return bool
      */
     protected function matches($other)

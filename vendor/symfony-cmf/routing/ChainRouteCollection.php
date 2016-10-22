@@ -3,11 +3,7 @@
 /*
  * This file is part of the Symfony CMF package.
  *
-<<<<<<< HEAD
- * (c) 2011-2015 Symfony CMF
-=======
  * (c) 2011-2014 Symfony CMF
->>>>>>> github/master
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -61,11 +57,7 @@ class ChainRouteCollection extends RouteCollection
     {
         $count = 0;
         foreach ($this->routeCollections as $routeCollection) {
-<<<<<<< HEAD
-            $count += $routeCollection->count();
-=======
             $count+= $routeCollection->count();
->>>>>>> github/master
         }
 
         return $count;
@@ -114,19 +106,11 @@ class ChainRouteCollection extends RouteCollection
             }
         }
 
-<<<<<<< HEAD
-        return;
-    }
-
-    /**
-     * Removes a route or an array of routes by name from the collection.
-=======
         return null;
     }
 
     /**
      * Removes a route or an array of routes by name from the collection
->>>>>>> github/master
      *
      * @param string|array $name The route name or an array of route names
      */

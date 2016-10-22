@@ -128,10 +128,7 @@ class DbLogController extends ControllerBase {
     $this->moduleHandler->loadInclude('dblog', 'admin.inc');
 
     $build['dblog_filter_form'] = $this->formBuilder->getForm('Drupal\dblog\Form\DblogFilterForm');
-<<<<<<< HEAD
-=======
     $build['dblog_clear_log_form'] = $this->formBuilder->getForm('Drupal\dblog\Form\DblogClearLogForm');
->>>>>>> github/master
 
     $header = array(
       // Icon column.
@@ -347,20 +344,6 @@ class DbLogController extends ControllerBase {
    */
   public function formatMessage($row) {
     // Check for required properties.
-<<<<<<< HEAD
-    if (isset($row->message, $row->variables)) {
-      $variables = @unserialize($row->variables);
-      // Messages without variables or user specified text.
-      if ($variables === NULL) {
-        $message = Xss::filterAdmin($row->message);
-      }
-      elseif (!is_array($variables)) {
-        $message = $this->t('Log data is corrupted and cannot be unserialized: @message', ['@message' => Xss::filterAdmin($row->message)]);
-      }
-      // Message to translate with injected variables.
-      else {
-        $message = $this->t(Xss::filterAdmin($row->message), $variables);
-=======
     if (isset($row->message) && isset($row->variables)) {
       // Messages without variables or user specified text.
       if ($row->variables === 'N;') {
@@ -369,7 +352,6 @@ class DbLogController extends ControllerBase {
       // Message to translate with injected variables.
       else {
         $message = $this->t(Xss::filterAdmin($row->message), unserialize($row->variables));
->>>>>>> github/master
       }
     }
     else {

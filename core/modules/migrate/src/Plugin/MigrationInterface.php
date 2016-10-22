@@ -11,8 +11,6 @@ use Drupal\Component\Plugin\PluginInspectionInterface;
 interface MigrationInterface extends PluginInspectionInterface, DerivativeInspectionInterface {
 
   /**
-<<<<<<< HEAD
-=======
    * A constant used for systemOfRecord.
    */
   const SOURCE = 'source';
@@ -23,7 +21,6 @@ interface MigrationInterface extends PluginInspectionInterface, DerivativeInspec
   const DESTINATION = 'destination';
 
   /**
->>>>>>> github/master
    * The migration is currently not running.
    */
   const STATUS_IDLE = 0;
@@ -156,8 +153,6 @@ interface MigrationInterface extends PluginInspectionInterface, DerivativeInspec
   public function getIdMap();
 
   /**
-<<<<<<< HEAD
-=======
    * The current value of the high water mark.
    *
    * The high water mark defines a timestamp stating the time the import was last
@@ -178,7 +173,6 @@ interface MigrationInterface extends PluginInspectionInterface, DerivativeInspec
   public function saveHighWater($high_water);
 
   /**
->>>>>>> github/master
    * Check if all source rows from this migration have been processed.
    *
    * @return bool
@@ -290,8 +284,6 @@ interface MigrationInterface extends PluginInspectionInterface, DerivativeInspec
   public function mergeProcessOfProperty($property, array $process_of_property);
 
   /**
-<<<<<<< HEAD
-=======
    * Get the current system of record of the migration.
    *
    * @return string
@@ -310,7 +302,6 @@ interface MigrationInterface extends PluginInspectionInterface, DerivativeInspec
   public function setSystemOfRecord($system_of_record);
 
   /**
->>>>>>> github/master
    * Checks if the migration should track time of last import.
    *
    * @return bool
@@ -353,8 +344,6 @@ interface MigrationInterface extends PluginInspectionInterface, DerivativeInspec
   public function getSourceConfiguration();
 
   /**
-<<<<<<< HEAD
-=======
    * Get information on the property used as the high watermark.
    *
    * Array of 'name' & (optional) db 'alias' properties used for high watermark.
@@ -367,7 +356,6 @@ interface MigrationInterface extends PluginInspectionInterface, DerivativeInspec
   public function getHighWaterProperty();
 
   /**
->>>>>>> github/master
    * If true, track time of last import.
    *
    * @return bool
@@ -386,15 +374,4 @@ interface MigrationInterface extends PluginInspectionInterface, DerivativeInspec
    */
   public function getDestinationIds();
 
-<<<<<<< HEAD
-  /**
-   * The migration tags.
-   *
-   * @return array
-   *   Migration tags.
-   */
-  public function getMigrationTags();
-
-=======
->>>>>>> github/master
 }

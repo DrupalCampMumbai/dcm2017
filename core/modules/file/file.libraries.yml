@@ -2,12 +2,9 @@ drupal.file:
   version: VERSION
   js:
     file.js: {}
-<<<<<<< HEAD
-=======
   css:
     theme:
       css/file.admin.css: {}
->>>>>>> github/master
   dependencies:
     - core/jquery
     - core/jquery.once

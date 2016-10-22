@@ -1,9 +1,6 @@
 administer content translation:
   title: 'Administer translation settings'
-<<<<<<< HEAD
-=======
   description: 'Configure translatability of entities and fields.'
->>>>>>> github/master
 create content translations:
   title: 'Create translations'
 update content translations:

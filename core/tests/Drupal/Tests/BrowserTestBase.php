@@ -8,23 +8,13 @@ use Behat\Mink\Mink;
 use Behat\Mink\Session;
 use Drupal\Component\FileCache\FileCacheFactory;
 use Drupal\Component\Serialization\Json;
-<<<<<<< HEAD
-=======
 use Drupal\Component\Serialization\Yaml;
->>>>>>> github/master
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Cache\Cache;
-<<<<<<< HEAD
-use Drupal\Core\Config\Testing\ConfigSchemaChecker;
 use Drupal\Core\Database\Database;
 use Drupal\Core\DrupalKernel;
-use Drupal\Core\Serialization\Yaml;
-=======
-use Drupal\Core\Database\Database;
-use Drupal\Core\DrupalKernel;
->>>>>>> github/master
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\AnonymousUserSession;
 use Drupal\Core\Session\UserSession;
@@ -66,10 +56,6 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   use ContentTypeCreationTrait {
     createContentType as drupalCreateContentType;
   }
-<<<<<<< HEAD
-  use ConfigTestTrait;
-=======
->>>>>>> github/master
   use UserCreationTrait {
     createRole as drupalCreateRole;
     createUser as drupalCreateUser;
@@ -168,47 +154,6 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   protected $configImporter;
 
   /**
-<<<<<<< HEAD
-   * Set to TRUE to strict check all configuration saved.
-   *
-   * @see \Drupal\Core\Config\Testing\ConfigSchemaChecker
-   *
-   * @var bool
-   */
-  protected $strictConfigSchema = TRUE;
-
-  /**
-   * Modules to enable.
-   *
-   * The test runner will merge the $modules lists from this class, the class
-   * it extends, and so on up the class hierarchy. It is not necessary to
-   * include modules in your list that a parent class has already declared.
-   *
-   * @var string[]
-   *
-   * @see \Drupal\Tests\BrowserTestBase::installDrupal()
-   */
-  public static $modules = [];
-
-  /**
-   * An array of config object names that are excluded from schema checking.
-   *
-   * @var string[]
-   */
-  protected static $configSchemaCheckerExclusions = array(
-    // Following are used to test lack of or partial schema. Where partial
-    // schema is provided, that is explicitly tested in specific tests.
-    'config_schema_test.noschema',
-    'config_schema_test.someschema',
-    'config_schema_test.schema_data_types',
-    'config_schema_test.no_schema_data_types',
-    // Used to test application of schema to filtering of configuration.
-    'config_test.dynamic.system',
-  );
-
-  /**
-=======
->>>>>>> github/master
    * The profile to install as a basis for testing.
    *
    * @var string
@@ -413,11 +358,7 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
     }
 
     if (is_array($this->minkDefaultDriverArgs)) {
-<<<<<<< HEAD
-      // Use ReflectionClass to instantiate class with received params.
-=======
        // Use ReflectionClass to instantiate class with received params.
->>>>>>> github/master
       $reflector = new \ReflectionClass($this->minkDefaultDriverClass);
       $driver = $reflector->newInstanceArgs($this->minkDefaultDriverArgs);
     }
@@ -687,39 +628,17 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
    *   Drupal path or URL to load into Mink controlled browser.
    * @param array $options
    *   (optional) Options to be forwarded to the url generator.
-<<<<<<< HEAD
-   * @param string[] $headers
-   *   An array containing additional HTTP request headers, the array keys are
-   *   the header names and the array values the header values. This is useful
-   *   to set for example the "Accept-Language" header for requesting the page
-   *   in a different language. Note that not all headers are supported, for
-   *   example the "Accept" header is always overridden by the browser. For
-   *   testing REST APIs it is recommended to directly use an HTTP client such
-   *   as Guzzle instead.
-=======
->>>>>>> github/master
    *
    * @return string
    *   The retrieved HTML string, also available as $this->getRawContent()
    */
-<<<<<<< HEAD
-  protected function drupalGet($path, array $options = array(), array $headers = array()) {
-=======
   protected function drupalGet($path, array $options = array()) {
->>>>>>> github/master
     $options['absolute'] = TRUE;
     $url = $this->buildUrl($path, $options);
 
     $session = $this->getSession();
 
     $this->prepareRequest();
-<<<<<<< HEAD
-    foreach ($headers as $header_name => $header_value) {
-      $session->setRequestHeader($header_name, $header_value);
-    }
-
-=======
->>>>>>> github/master
     $session->visit($url);
     $out = $session->getPage()->getContent();
 
@@ -1070,20 +989,6 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
     }
     // Copy the testing-specific service overrides in place.
     copy($settings_services_file, $directory . '/services.yml');
-<<<<<<< HEAD
-    if ($this->strictConfigSchema) {
-      // Add a listener to validate configuration schema on save.
-      $content = file_get_contents($directory . '/services.yml');
-      $services = Yaml::decode($content);
-      $services['services']['simpletest.config_schema_checker'] = [
-        'class' => ConfigSchemaChecker::class,
-        'arguments' => ['@config.typed', $this->getConfigSchemaExclusions()],
-        'tags' => [['name' => 'event_subscriber']]
-      ];
-      file_put_contents($directory . '/services.yml', Yaml::encode($services));
-    }
-=======
->>>>>>> github/master
 
     // Since Drupal is bootstrapped already, install_begin_request() will not
     // bootstrap into DRUPAL_BOOTSTRAP_CONFIGURATION (again). Hence, we have to
@@ -1246,11 +1151,6 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
    * @see BrowserTestBase::prepareEnvironment()
    */
   private function prepareDatabasePrefix() {
-<<<<<<< HEAD
-    $test_db = new TestDatabase();
-    $this->siteDirectory = $test_db->getTestSitePath();
-    $this->databasePrefix = $test_db->getDatabasePrefix();
-=======
     // Ensure that the generated test site directory does not exist already,
     // which may happen with a large amount of concurrent threads and
     // long-running tests.
@@ -1259,7 +1159,6 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
       $this->siteDirectory = 'sites/simpletest/' . $suffix;
       $this->databasePrefix = 'simpletest' . $suffix;
     } while (is_dir(DRUPAL_ROOT . '/' . $this->siteDirectory));
->>>>>>> github/master
   }
 
   /**
@@ -1666,21 +1565,10 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
    *
    * @param string|\Drupal\Component\Render\MarkupInterface $label
    *   Text between the anchor tags.
-<<<<<<< HEAD
-   * @param int $index
-   *   (optional) The index number for cases where multiple links have the same
-   *   text. Defaults to 0.
-   */
-  protected function clickLink($label, $index = 0) {
-    $label = (string) $label;
-    $links = $this->getSession()->getPage()->findAll('named', ['link', $label]);
-    $links[$index]->click();
-=======
    */
   protected function clickLink($label) {
     $label = (string) $label;
     $this->getSession()->getPage()->clickLink($label);
->>>>>>> github/master
   }
 
   /**
@@ -1797,26 +1685,4 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
     $file_cache->delete($filename);
   }
 
-<<<<<<< HEAD
-  /**
-   * Gets the config schema exclusions for this test.
-   *
-   * @return string[]
-   *   An array of config object names that are excluded from schema checking.
-   */
-  protected function getConfigSchemaExclusions() {
-    $class = get_class($this);
-    $exceptions = [];
-    while ($class) {
-      if (property_exists($class, 'configSchemaCheckerExclusions')) {
-        $exceptions = array_merge($exceptions, $class::$configSchemaCheckerExclusions);
-      }
-      $class = get_parent_class($class);
-    }
-    // Filter out any duplicates.
-    return array_unique($exceptions);
-  }
-
-=======
->>>>>>> github/master
 }

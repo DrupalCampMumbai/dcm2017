@@ -5,10 +5,7 @@ namespace Drupal\simpletest;
 use Drupal\block\Entity\Block;
 use Drupal\Component\FileCache\FileCacheFactory;
 use Drupal\Component\Serialization\Json;
-<<<<<<< HEAD
-=======
 use Drupal\Component\Serialization\Yaml;
->>>>>>> github/master
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Component\Utility\UrlHelper;
@@ -21,24 +18,13 @@ use Drupal\Core\EventSubscriber\AjaxResponseSubscriber;
 use Drupal\Core\EventSubscriber\MainContentViewSubscriber;
 use Drupal\Core\Extension\MissingDependencyException;
 use Drupal\Core\Render\Element;
-<<<<<<< HEAD
-use Drupal\Core\Serialization\Yaml;
-=======
->>>>>>> github/master
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\AnonymousUserSession;
 use Drupal\Core\Session\UserSession;
 use Drupal\Core\Site\Settings;
-<<<<<<< HEAD
-use Drupal\Core\Test\AssertMailTrait;
-use Drupal\Core\Url;
-use Drupal\system\Tests\Cache\AssertPageCacheContextsAndTagsTrait;
-use Drupal\Tests\TestFileCreationTrait;
-=======
 use Drupal\Core\StreamWrapper\PublicStream;
 use Drupal\Core\Test\AssertMailTrait;
 use Drupal\Core\Url;
->>>>>>> github/master
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Yaml\Yaml as SymfonyYaml;
@@ -52,14 +38,6 @@ use Zend\Diactoros\Uri;
 abstract class WebTestBase extends TestBase {
 
   use AssertContentTrait;
-<<<<<<< HEAD
-  use TestFileCreationTrait {
-    getTestFiles as drupalGetTestFiles;
-    compareFiles as drupalCompareFiles;
-  }
-  use AssertPageCacheContextsAndTagsTrait;
-=======
->>>>>>> github/master
   use BlockCreationTrait {
     placeBlock as drupalPlaceBlock;
   }
@@ -189,14 +167,11 @@ abstract class WebTestBase extends TestBase {
   protected $sessionId = NULL;
 
   /**
-<<<<<<< HEAD
-=======
    * Whether the files were copied to the test files directory.
    */
   protected $generatedTestFiles = FALSE;
 
   /**
->>>>>>> github/master
    * The maximum number of redirects to follow when handling responses.
    */
   protected $maximumRedirects = 5;
@@ -357,8 +332,6 @@ abstract class WebTestBase extends TestBase {
   }
 
   /**
-<<<<<<< HEAD
-=======
    * Gets a list of files that can be used in tests.
    *
    * The first time this method is called, it will call
@@ -452,7 +425,6 @@ abstract class WebTestBase extends TestBase {
   }
 
   /**
->>>>>>> github/master
    * Log in a user with the internal browser.
    *
    * If a user is already logged in, then the current user is logged out before
@@ -1188,13 +1160,9 @@ abstract class WebTestBase extends TestBase {
     }
     // We set the user agent header on each request so as to use the current
     // time and a new uniqid.
-<<<<<<< HEAD
-    curl_setopt($this->curlHandle, CURLOPT_USERAGENT, drupal_generate_test_ua($this->databasePrefix));
-=======
     if (preg_match('/simpletest\d+/', $this->databasePrefix, $matches)) {
       curl_setopt($this->curlHandle, CURLOPT_USERAGENT, drupal_generate_test_ua($matches[0]));
     }
->>>>>>> github/master
   }
 
   /**
@@ -2740,8 +2708,6 @@ abstract class WebTestBase extends TestBase {
   }
 
   /**
-<<<<<<< HEAD
-=======
    * Asserts whether an expected cache context was present in the last response.
    *
    * @param string $expected_cache_context
@@ -2764,7 +2730,6 @@ abstract class WebTestBase extends TestBase {
   }
 
   /**
->>>>>>> github/master
    * Asserts whether an expected cache tag was present in the last response.
    *
    * @param string $expected_cache_tag

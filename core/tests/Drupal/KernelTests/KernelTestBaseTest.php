@@ -25,21 +25,13 @@ class KernelTestBaseTest extends KernelTestBase {
    * @covers ::bootEnvironment
    */
   public function testBootEnvironment() {
-<<<<<<< HEAD
-    $this->assertRegExp('/^test\d{8}$/', $this->databasePrefix);
-=======
     $this->assertRegExp('/^simpletest\d{6}$/', $this->databasePrefix);
->>>>>>> github/master
     $this->assertStringStartsWith('vfs://root/sites/simpletest/', $this->siteDirectory);
     $this->assertEquals(array(
       'root' => array(
         'sites' => array(
           'simpletest' => array(
-<<<<<<< HEAD
-            substr($this->databasePrefix, 4) => array(
-=======
             substr($this->databasePrefix, 10) => array(
->>>>>>> github/master
               'files' => array(
                 'config' => array(
                   'sync' => array(),
@@ -234,11 +226,7 @@ class KernelTestBaseTest extends KernelTestBase {
         ':pattern' => 'sqlite_%',
       ))->fetchAllKeyed(0, 0);
 
-<<<<<<< HEAD
-      $this->assertTrue(empty($result), 'All test tables have been removed.');
-=======
      $this->assertTrue(empty($result), 'All test tables have been removed.');
->>>>>>> github/master
     }
   }
 

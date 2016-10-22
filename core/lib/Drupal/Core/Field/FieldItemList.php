@@ -257,11 +257,7 @@ class FieldItemList extends ItemList implements FieldItemListInterface {
   /**
    * {@inheritdoc}
    */
-<<<<<<< HEAD
-  public function generateSampleItems($count = 1) {
-=======
    public function generateSampleItems($count = 1) {
->>>>>>> github/master
     $field_definition = $this->getFieldDefinition();
     $field_type_class = \Drupal::service('plugin.manager.field.field_type')->getPluginClass($field_definition->getType());
     for ($delta = 0; $delta < $count; $delta++) {

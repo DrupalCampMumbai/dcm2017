@@ -1,11 +1,6 @@
 name: Test Wild West
 type: theme
 description: A theme that doesn't use Stable as its base. It tests the wild west instead.
-<<<<<<< HEAD
-version: VERSION
-base theme: false
-core: 8.x
-=======
 # version: VERSION
 base theme: false
 # core: 8.x
@@ -15,4 +10,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

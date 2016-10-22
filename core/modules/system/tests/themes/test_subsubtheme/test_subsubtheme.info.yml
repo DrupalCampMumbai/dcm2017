@@ -1,11 +1,6 @@
 name: 'Theme test subsubtheme'
 type: theme
 description: 'Test theme which uses test_subtheme as the base theme.'
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-base theme: test_subtheme
-=======
 # version: VERSION
 # core: 8.x
 base theme: test_subtheme
@@ -15,4 +10,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

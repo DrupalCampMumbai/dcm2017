@@ -1,11 +1,6 @@
 name: 'Language test'
 type: module
 description: 'Support module for the language layer tests.'
-<<<<<<< HEAD
-core: 8.x
-package: Testing
-version: VERSION
-=======
 # core: 8.x
 package: Testing
 # version: VERSION
@@ -15,4 +10,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

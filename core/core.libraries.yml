@@ -24,17 +24,10 @@ classList:
 
 ckeditor:
   remote: https://github.com/ckeditor/ckeditor-dev
-<<<<<<< HEAD
-  version: "4.5.11"
-  license:
-    name: GNU-GPL-2.0-or-later
-    url: https://github.com/ckeditor/ckeditor-dev/blob/4.5.11/LICENSE.md
-=======
   version: "4.5.10"
   license:
     name: GNU-GPL-2.0-or-later
     url: https://github.com/ckeditor/ckeditor-dev/blob/4.5.10/LICENSE.md
->>>>>>> github/master
     gpl-compatible: true
   js:
     assets/vendor/ckeditor/ckeditor.js: { preprocess: false, minified: true }
@@ -340,17 +333,10 @@ html5shiv:
 
 jquery:
   remote: https://github.com/jquery/jquery
-<<<<<<< HEAD
-  version: "2.2.3"
-  license:
-    name: MIT
-    url: https://github.com/jquery/jquery/blob/2.2.3/MIT-LICENSE.txt
-=======
   version: "2.1.4"
   license:
     name: MIT
     url: https://github.com/jquery/jquery/blob/2.1.4/MIT-LICENSE.txt
->>>>>>> github/master
     gpl-compatible: true
   js:
     assets/vendor/jquery/jquery.min.js: { minified: true, weight: -20 }

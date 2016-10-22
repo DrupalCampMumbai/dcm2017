@@ -63,11 +63,7 @@ class CssCollectionRenderer implements AssetCollectionRendererInterface {
   /**
    * Constructs a CssCollectionRenderer.
    *
-<<<<<<< HEAD
-   * @param \Drupal\Core\State\StateInterface $state
-=======
    * @param \Drupal\Core\State\StateInterface
->>>>>>> github/master
    *   The state key/value store.
    */
   public function __construct(StateInterface $state) {

@@ -1,7 +1,4 @@
 administer views:
   title: 'Administer views'
-<<<<<<< HEAD
-=======
   description: 'Access the views administration pages.'
->>>>>>> github/master
   restrict access: true

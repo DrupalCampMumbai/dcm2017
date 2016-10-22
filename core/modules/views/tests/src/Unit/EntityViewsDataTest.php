@@ -5,11 +5,7 @@
  * Contains \Drupal\Tests\views\Unit\EntityViewsDataTest.
  */
 
-<<<<<<< HEAD
-namespace Drupal\Tests\views\Unit;
-=======
 namespace Drupal\Tests\views\Unit {
->>>>>>> github/master
 
 use Drupal\Core\Config\Entity\ConfigEntityType;
 use Drupal\Core\Entity\ContentEntityType;
@@ -572,11 +568,7 @@ class EntityViewsDataTest extends UnitTestCase {
 
     $this->viewsData->setEntityType($entity_type);
 
-<<<<<<< HEAD
-    // Setup the table mapping.
-=======
      // Setup the table mapping.
->>>>>>> github/master
     $table_mapping = $this->getMockBuilder(DefaultTableMapping::class)
       ->disableOriginalConstructor()
       ->getMock();
@@ -725,11 +717,7 @@ class EntityViewsDataTest extends UnitTestCase {
 
     $this->viewsData->setEntityType($entity_type);
 
-<<<<<<< HEAD
-    // Setup the table mapping.
-=======
      // Setup the table mapping.
->>>>>>> github/master
     $table_mapping = $this->getMockBuilder(DefaultTableMapping::class)
       ->disableOriginalConstructor()
       ->getMock();
@@ -1112,13 +1100,6 @@ class TestEntityType extends EntityType {
 
 }
 
-<<<<<<< HEAD
-namespace Drupal\entity_test\Entity;
-
-if (!function_exists('t')) {
-  function t($string, array $args = []) {
-    return strtr($string, $args);
-=======
 }
 
 namespace Drupal\entity_test\Entity {
@@ -1126,6 +1107,5 @@ namespace Drupal\entity_test\Entity {
     function t($string, array $args = []) {
       return strtr($string, $args);
     }
->>>>>>> github/master
   }
 }

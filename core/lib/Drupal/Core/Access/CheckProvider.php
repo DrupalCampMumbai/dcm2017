@@ -3,25 +3,14 @@
 namespace Drupal\Core\Access;
 
 use Drupal\Core\Routing\Access\AccessInterface;
-<<<<<<< HEAD
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-=======
 use Symfony\Component\DependencyInjection\ContainerAware;
->>>>>>> github/master
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
 /**
  * Loads access checkers from the container.
  */
-<<<<<<< HEAD
-class CheckProvider implements CheckProviderInterface, ContainerAwareInterface {
-
-  use ContainerAwareTrait;
-=======
 class CheckProvider extends ContainerAware implements CheckProviderInterface {
->>>>>>> github/master
 
   /**
    * Array of registered access check service ids.

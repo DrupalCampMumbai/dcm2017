@@ -3,10 +3,6 @@
 namespace Drupal\datetime\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
-<<<<<<< HEAD
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
-=======
->>>>>>> github/master
 
 /**
  * Plugin implementation of the 'Plain' formatter for 'datetime' fields.
@@ -37,11 +33,8 @@ class DateTimePlainFormatter extends DateTimeFormatterBase {
           // A date without time will pick up the current time, use the default.
           datetime_date_default_time($date);
         }
-<<<<<<< HEAD
-=======
         else {
         }
->>>>>>> github/master
         $this->setTimeZone($date);
 
         $output = $this->formatDate($date);
@@ -63,11 +56,7 @@ class DateTimePlainFormatter extends DateTimeFormatterBase {
    * {@inheritdoc}
    */
   protected function formatDate($date) {
-<<<<<<< HEAD
-    $format = $this->getFieldSetting('datetime_type') == DateTimeItem::DATETIME_TYPE_DATE ? DATETIME_DATE_STORAGE_FORMAT : DATETIME_DATETIME_STORAGE_FORMAT;
-=======
     $format = $this->getFieldSetting('datetime_type') == 'date' ? DATETIME_DATE_STORAGE_FORMAT : DATETIME_DATETIME_STORAGE_FORMAT;
->>>>>>> github/master
     $timezone = $this->getSetting('timezone_override');
     return $this->dateFormatter->format($date->getTimestamp(), 'custom', $format, $timezone != '' ? $timezone : NULL);
   }

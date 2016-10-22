@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-=======
->>>>>>> github/master
 /**
  * @file
  * Contains \Drupal\Tests\Component\Assertion\InspectorTest.

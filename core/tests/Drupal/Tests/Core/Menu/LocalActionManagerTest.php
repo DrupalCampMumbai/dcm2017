@@ -162,15 +162,9 @@ class LocalActionManagerTest extends UnitTestCase {
         ->method('getTitle')
         ->will($this->returnValue($plugin_definition['title']));
       $this->controllerResolver->expects($this->any())
-<<<<<<< HEAD
-        ->method('getArguments')
-        ->with($this->request, array($plugin, 'getTitle'))
-        ->will($this->returnValue(array()));
-=======
       ->method('getArguments')
       ->with($this->request, array($plugin, 'getTitle'))
       ->will($this->returnValue(array()));
->>>>>>> github/master
 
       $plugin->expects($this->any())
         ->method('getWeight')

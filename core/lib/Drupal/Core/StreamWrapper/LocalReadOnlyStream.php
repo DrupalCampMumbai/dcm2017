@@ -23,9 +23,6 @@ abstract class LocalReadOnlyStream extends LocalStream {
   }
 
   /**
-<<<<<<< HEAD
-   * {@inheritdoc}
-=======
    * Support for fopen(), file_get_contents(), etc.
    *
    * Any write modes will be rejected, as this is a read-only stream wrapper.
@@ -44,7 +41,6 @@ abstract class LocalReadOnlyStream extends LocalStream {
    *   successfully, FALSE otherwise.
    *
    * @see http://php.net/manual/streamwrapper.stream-open.php
->>>>>>> github/master
    */
   public function stream_open($uri, $mode, $options, &$opened_path) {
     if (!in_array($mode, array('r', 'rb', 'rt'))) {
@@ -53,9 +49,6 @@ abstract class LocalReadOnlyStream extends LocalStream {
       }
       return FALSE;
     }
-<<<<<<< HEAD
-    return parent::stream_open($uri, $mode, $options, $opened_path);
-=======
 
     $this->uri = $uri;
     $path = $this->getLocalPath();
@@ -65,7 +58,6 @@ abstract class LocalReadOnlyStream extends LocalStream {
     }
 
     return (bool) $this->handle;
->>>>>>> github/master
   }
 
   /**

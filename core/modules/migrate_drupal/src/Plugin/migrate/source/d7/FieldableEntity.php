@@ -15,11 +15,7 @@ abstract class FieldableEntity extends DrupalSqlBase {
    *
    * @param string $entity_type
    *   The entity type ID.
-<<<<<<< HEAD
-   * @param string|null $bundle
-=======
    * @param string|NULL $bundle
->>>>>>> github/master
    *   (optional) The bundle.
    *
    * @return array[]

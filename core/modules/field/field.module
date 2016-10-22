@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-=======
->>>>>>> github/master
 /**
  * @file
  * Attach custom data fields to Drupal entities.

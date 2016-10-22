@@ -245,11 +245,7 @@ interface FieldItemListInterface extends ListInterface, AccessibleInterface {
    * in order to be a valid runtime value for the field type; e.g., a date field
    * could process the defined value of 'NOW' to a valid date.
    *
-<<<<<<< HEAD
-   * @param array $default_value
-=======
    * @param array
->>>>>>> github/master
    *   The unprocessed default value defined for the field, as a numerically
    *   indexed array of items, each item being an array of property/value pairs.
    * @param \Drupal\Core\Entity\FieldableEntityInterface $entity

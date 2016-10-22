@@ -7,10 +7,6 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\views\Tests\ViewTestData;
 use Drupal\views_ui\Tests\UITestBase;
-<<<<<<< HEAD
-use Drupal\views\Entity\View;
-=======
->>>>>>> github/master
 
 /**
  * Tests the taxonomy index filter handler UI.
@@ -106,11 +102,7 @@ class TaxonomyIndexTidUiTest extends UITestBase {
 
     // Ensure the autocomplete input element appears when using the 'textfield'
     // type.
-<<<<<<< HEAD
-    $view = View::load('test_filter_taxonomy_index_tid');
-=======
     $view = entity_load('view', 'test_filter_taxonomy_index_tid');
->>>>>>> github/master
     $display =& $view->getDisplay('default');
     $display['display_options']['filters']['tid']['type'] = 'textfield';
     $view->save();

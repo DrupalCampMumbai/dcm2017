@@ -130,17 +130,6 @@ class Message extends ContentEntityBase implements MessageInterface {
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-<<<<<<< HEAD
-    /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
-    $fields = parent::baseFieldDefinitions($entity_type);
-
-    $fields['contact_form']->setLabel(t('Form ID'))
-      ->setDescription(t('The ID of the associated form.'));
-
-    $fields['uuid']->setDescription(t('The message UUID.'));
-
-    $fields['langcode']->setDescription(t('The message language code.'));
-=======
     $fields['contact_form'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Form ID'))
       ->setDescription(t('The ID of the associated form.'))
@@ -159,7 +148,6 @@ class Message extends ContentEntityBase implements MessageInterface {
         'type' => 'language_select',
         'weight' => 2,
       ));
->>>>>>> github/master
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t("The sender's name"))

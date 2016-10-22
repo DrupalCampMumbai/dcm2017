@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-namespace Drupal\Component\Assertion;
-=======
 /**
  * @file
  * Contains \Drupal\Component\Assertion\Handle.
@@ -40,7 +36,6 @@ if (!class_exists('AssertionError', FALSE)) {
 }
 
 namespace Drupal\Component\Assertion {
->>>>>>> github/master
 
 /**
  * Handler for runtime assertion failures.
@@ -61,12 +56,6 @@ class Handle {
     assert_options(ASSERT_WARNING, FALSE);
 
     if (version_compare(PHP_VERSION, '7.0.0-dev') < 0) {
-<<<<<<< HEAD
-      if (!class_exists('AssertionError', FALSE)) {
-        require __DIR__ . '/global_namespace_php5.php';
-      }
-=======
->>>>>>> github/master
       // PHP 5 - create a handler to throw the exception directly.
       assert_options(ASSERT_CALLBACK, function($file = '', $line = 0, $code = '', $message = '') {
         if (empty($message)) {
@@ -82,8 +71,5 @@ class Handle {
   }
 
 }
-<<<<<<< HEAD
-=======
 
 }
->>>>>>> github/master

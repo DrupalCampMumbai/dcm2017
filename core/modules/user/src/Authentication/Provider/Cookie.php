@@ -62,11 +62,7 @@ class Cookie implements AuthenticationProviderInterface {
    * @param \Symfony\Component\HttpFoundation\Session\SessionInterface $session
    *   The session.
    *
-<<<<<<< HEAD
-   * @return \Drupal\Core\Session\AccountInterface|null
-=======
    * @return \Drupal\Core\Session\AccountInterface|NULL
->>>>>>> github/master
    *   The UserSession object for the current user, or NULL if this is an
    *   anonymous session.
    */

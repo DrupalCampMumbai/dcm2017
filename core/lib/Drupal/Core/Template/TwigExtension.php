@@ -573,11 +573,7 @@ class TwigExtension extends \Twig_Extension {
    *
    * @param \Twig_Environment $env
    *   A Twig_Environment instance.
-<<<<<<< HEAD
-   * @param mixed[]|\Traversable|null $value
-=======
    * @param mixed[]|\Traversable|NULL $value
->>>>>>> github/master
    *   The pieces to join.
    * @param string $glue
    *   The delimiter with which to join the string. Defaults to an empty string.

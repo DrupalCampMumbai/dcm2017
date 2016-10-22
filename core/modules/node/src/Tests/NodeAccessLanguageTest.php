@@ -204,15 +204,9 @@ class NodeAccessLanguageTest extends NodeTestBase {
     // Query the nodes table as the web user with the node access tag and no
     // specific langcode.
     $select = db_select('node', 'n')
-<<<<<<< HEAD
-      ->fields('n', array('nid'))
-      ->addMetaData('account', $web_user)
-      ->addTag('node_access');
-=======
     ->fields('n', array('nid'))
     ->addMetaData('account', $web_user)
     ->addTag('node_access');
->>>>>>> github/master
     $nids = $select->execute()->fetchAllAssoc('nid');
 
     // The public node and no language node should be returned. Because no
@@ -224,17 +218,10 @@ class NodeAccessLanguageTest extends NodeTestBase {
     // Query the nodes table as the web user with the node access tag and
     // langcode de.
     $select = db_select('node', 'n')
-<<<<<<< HEAD
-      ->fields('n', array('nid'))
-      ->addMetaData('account', $web_user)
-      ->addMetaData('langcode', 'de')
-      ->addTag('node_access');
-=======
     ->fields('n', array('nid'))
     ->addMetaData('account', $web_user)
     ->addMetaData('langcode', 'de')
     ->addTag('node_access');
->>>>>>> github/master
     $nids = $select->execute()->fetchAllAssoc('nid');
 
     // Because no nodes are created in German, no nodes are returned.
@@ -243,15 +230,9 @@ class NodeAccessLanguageTest extends NodeTestBase {
     // Query the nodes table as admin user (full access) with the node access
     // tag and no specific langcode.
     $select = db_select('node', 'n')
-<<<<<<< HEAD
-      ->fields('n', array('nid'))
-      ->addMetaData('account', $admin_user)
-      ->addTag('node_access');
-=======
     ->fields('n', array('nid'))
     ->addMetaData('account', $admin_user)
     ->addTag('node_access');
->>>>>>> github/master
     $nids = $select->execute()->fetchAllAssoc('nid');
 
     // All nodes are returned.
@@ -260,17 +241,10 @@ class NodeAccessLanguageTest extends NodeTestBase {
     // Query the nodes table as admin user (full access) with the node access
     // tag and langcode de.
     $select = db_select('node', 'n')
-<<<<<<< HEAD
-      ->fields('n', array('nid'))
-      ->addMetaData('account', $admin_user)
-      ->addMetaData('langcode', 'de')
-      ->addTag('node_access');
-=======
     ->fields('n', array('nid'))
     ->addMetaData('account', $admin_user)
     ->addMetaData('langcode', 'de')
     ->addTag('node_access');
->>>>>>> github/master
     $nids = $select->execute()->fetchAllAssoc('nid');
 
     // All nodes are returned because node access tag is not invoked when the

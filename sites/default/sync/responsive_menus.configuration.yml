@@ -1,0 +1,17 @@
+style: sidr
+ignore_admin: 0
+style_settings:
+  selector_info: ''
+  responsive_menus_sidr_css_selectors: '<div id="block-dcm17-dcmmenu"> <ul class="menu"> </ul> </div>'
+  responsive_menus_sidr_trigger_txt: Menu
+  responsive_menus_sidr_menu_side: right
+  responsive_menus_sidr_menu_theme: dark
+  responsive_menus_sidr_animation_speed: '200'
+  responsive_menus_sidr_media_size: '768'
+  responsive_menus_sidr_displace: '1'
+  responsive_menus_sidr_renaming: '1'
+  responsive_menus_sidr_on_open: ''
+  responsive_menus_sidr_on_close: ''
+_core:
+  default_config_hash: Ew71dtLpbljPB4lmHfbm09DRmpU18l9fJZxgLKI-DDI
+no_jquery_update: null

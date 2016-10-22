@@ -2,12 +2,6 @@ name: Migrate Drupal
 type: module
 description: 'Contains migrations from older Drupal versions.'
 package: Core (Experimental)
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-dependencies:
-  - migrate
-=======
 # version: VERSION
 # core: 8.x
 dependencies:
@@ -18,4 +12,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

@@ -46,11 +46,7 @@ class ViewsListTest extends WebTestBase {
     // Check if we can access the main views admin page.
     $this->drupalGet('admin/structure/views');
     $this->assertResponse(200);
-<<<<<<< HEAD
-    $this->assertLink(t('Add view'));
-=======
     $this->assertLink(t('Add new view'));
->>>>>>> github/master
 
     // Count default views to be subtracted from the limit.
     $views = count(Views::getEnabledViews());

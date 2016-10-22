@@ -3,10 +3,7 @@
 namespace Drupal\config\Form;
 
 use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
-<<<<<<< HEAD
-=======
 use Drupal\Component\Serialization\Yaml;
->>>>>>> github/master
 use Drupal\config\StorageReplaceDataWrapper;
 use Drupal\Core\Config\ConfigImporter;
 use Drupal\Core\Config\ConfigImporterException;
@@ -22,10 +19,6 @@ use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Lock\LockBackendInterface;
 use Drupal\Core\Render\RendererInterface;
-<<<<<<< HEAD
-use Drupal\Core\Serialization\Yaml;
-=======
->>>>>>> github/master
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

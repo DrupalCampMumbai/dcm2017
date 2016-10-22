@@ -5,11 +5,7 @@
  * Contains \Drupal\Tests\Component\Utility\ArgumentsResolverTest.
  */
 
-<<<<<<< HEAD
-namespace Drupal\Tests\Component\Utility;
-=======
 namespace Drupal\Tests\Component\Utility {
->>>>>>> github/master
 
 use Drupal\Component\Utility\ArgumentsResolver;
 use Drupal\Tests\UnitTestCase;
@@ -191,11 +187,7 @@ class ArgumentsResolverTest extends UnitTestCase {
     $data = [];
     $data[] = [function($foo) {}];
     $data[] = [[new TestClass(), 'access']];
-<<<<<<< HEAD
-    $data[] = ['Drupal\Tests\Component\Utility\test_access_arguments_resolver_access'];
-=======
     $data[] = ['test_access_arguments_resolver_access'];
->>>>>>> github/master
     return $data;
   }
 
@@ -222,13 +214,9 @@ interface TestInterface1 {
 interface TestInterface2 {
 }
 
-<<<<<<< HEAD
-function test_access_arguments_resolver_access($foo) {
-=======
 }
 
 namespace {
   function test_access_arguments_resolver_access($foo) {
   }
->>>>>>> github/master
 }

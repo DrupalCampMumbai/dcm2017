@@ -69,12 +69,8 @@ class FieldEntityTranslationTest extends ViewTestBase {
     $translation->save();
 
     $this->drupalGet('test_entity_field_renderers/entity_translation');
-<<<<<<< HEAD
-    $this->assertRows([
-=======
     $this->assertRows(
     [
->>>>>>> github/master
       [
         'title' => 'example EN',
         'sticky' => 'Off',
@@ -86,78 +82,6 @@ class FieldEntityTranslationTest extends ViewTestBase {
     ]);
 
     $this->drupalGet('test_entity_field_renderers/entity_default');
-<<<<<<< HEAD
-    $this->assertRows([
-      [
-        'title' => 'example EN',
-        'sticky' => 'Off',
-      ],
-      [
-        'title' => 'example EN',
-        'sticky' => 'Off',
-      ],
-    ]);
-
-    $this->drupalGet('test_entity_field_renderers/site_default');
-    $this->assertRows([
-      [
-        'title' => 'example EN',
-        'sticky' => 'Off',
-      ],
-      [
-        'title' => 'example EN',
-        'sticky' => 'Off',
-      ],
-    ]);
-
-    $this->drupalGet('test_entity_field_renderers/language_interface');
-    $this->assertRows([
-      [
-        'title' => 'example EN',
-        'sticky' => 'Off',
-      ],
-      [
-        'title' => 'example EN',
-        'sticky' => 'Off',
-      ],
-    ]);
-
-    $this->drupalGet('test_entity_field_renderers/language_interface', ['language' => new Language(['id' => 'es'])]);
-    $this->assertRows([
-      [
-        'title' => 'example ES',
-        'sticky' => 'On',
-      ],
-      [
-        'title' => 'example ES',
-        'sticky' => 'On',
-      ],
-    ]);
-
-    $this->drupalGet('test_entity_field_renderers/en');
-    $this->assertRows([
-      [
-        'title' => 'example EN',
-        'sticky' => 'Off',
-      ],
-      [
-        'title' => 'example EN',
-        'sticky' => 'Off',
-      ],
-    ]);
-
-    $this->drupalGet('test_entity_field_renderers/es');
-    $this->assertRows([
-      [
-        'title' => 'example ES',
-        'sticky' => 'On',
-      ],
-      [
-        'title' => 'example ES',
-        'sticky' => 'On',
-      ],
-    ]);
-=======
     $this->assertRows(
       [
         [
@@ -234,7 +158,6 @@ class FieldEntityTranslationTest extends ViewTestBase {
           'sticky' => 'On',
         ],
       ]);
->>>>>>> github/master
   }
 
   /**

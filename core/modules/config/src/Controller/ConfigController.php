@@ -3,18 +3,11 @@
 namespace Drupal\config\Controller;
 
 use Drupal\Core\Archiver\ArchiveTar;
-<<<<<<< HEAD
-=======
 use Drupal\Component\Serialization\Yaml;
->>>>>>> github/master
 use Drupal\Core\Config\ConfigManagerInterface;
 use Drupal\Core\Config\StorageInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Diff\DiffFormatter;
-<<<<<<< HEAD
-use Drupal\Core\Serialization\Yaml;
-=======
->>>>>>> github/master
 use Drupal\Core\Url;
 use Drupal\system\FileDownloadController;
 use Symfony\Component\DependencyInjection\ContainerInterface;

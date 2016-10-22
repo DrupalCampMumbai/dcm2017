@@ -397,16 +397,6 @@ system.theme_settings_theme:
   requirements:
     _access: 'TRUE'
 
-<<<<<<< HEAD
-'<nolink>':
-  path: ''
-  options:
-    _no_path: TRUE
-  requirements:
-    _access: 'TRUE'
-
-=======
->>>>>>> github/master
 '<current>':
   path: '<current>'
 
@@ -426,17 +416,6 @@ system.modules_uninstall_confirm:
   requirements:
     _permission: 'administer modules'
 
-<<<<<<< HEAD
-system.prepare_modules_entity_uninstall:
-  path: '/admin/modules/uninstall/entity/{entity_type_id}'
-  defaults:
-    _form: '\Drupal\system\Form\PrepareModulesEntityUninstallForm'
-    _title_callback: '\Drupal\system\Form\PrepareModulesEntityUninstallForm::formTitle'
-  requirements:
-    _permission: 'administer modules'
-
-=======
->>>>>>> github/master
 system.timezone:
   path: '/system/timezone/{abbreviation}/{offset}/{is_daylight_saving_time}'
   defaults:
@@ -506,13 +485,3 @@ system.entity_autocomplete:
     _controller: '\Drupal\system\Controller\EntityAutocompleteController::handleAutocomplete'
   requirements:
     _access: 'TRUE'
-<<<<<<< HEAD
-
-system.csrftoken:
-  path: '/session/token'
-  defaults:
-    _controller: '\Drupal\system\Controller\CsrfTokenController::csrfToken'
-  requirements:
-    _access: 'TRUE'
-=======
->>>>>>> github/master

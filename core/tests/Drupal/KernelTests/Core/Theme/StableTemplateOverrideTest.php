@@ -24,10 +24,6 @@ class StableTemplateOverrideTest extends KernelTestBase {
    */
   protected $templatesToSkip = [
     'views-form-views-form',
-<<<<<<< HEAD
-    'entity-moderation-form'
-=======
->>>>>>> github/master
   ];
 
   /**

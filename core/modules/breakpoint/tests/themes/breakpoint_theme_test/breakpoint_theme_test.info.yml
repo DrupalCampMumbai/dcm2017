@@ -1,11 +1,6 @@
 name: 'Breakpoint test theme'
 type: theme
 description: 'Test theme for breakpoint.'
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-base theme: bartik
-=======
 # version: VERSION
 # core: 8.x
 base theme: bartik
@@ -15,4 +10,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

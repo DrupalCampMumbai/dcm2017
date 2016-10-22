@@ -1220,10 +1220,6 @@ class ViewExecutable implements \Serializable {
     $this->_preQuery();
 
     if ($this->display_handler->usesExposed()) {
-<<<<<<< HEAD
-      /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form */
-=======
->>>>>>> github/master
       $exposed_form = $this->display_handler->getPlugin('exposed_form');
       $this->exposed_widgets = $exposed_form->renderExposedForm();
       if (FormState::hasAnyErrors() || !empty($this->build_info['abort'])) {
@@ -1451,10 +1447,6 @@ class ViewExecutable implements \Serializable {
       return;
     }
 
-<<<<<<< HEAD
-    /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form */
-=======
->>>>>>> github/master
     $exposed_form = $this->display_handler->getPlugin('exposed_form');
     $exposed_form->preRender($this->result);
 
@@ -1661,11 +1653,7 @@ class ViewExecutable implements \Serializable {
   /**
    * Runs attachments and lets the display do what it needs to before running.
    *
-<<<<<<< HEAD
-   * @param array $args
-=======
    * @param array @args
->>>>>>> github/master
    *   An array of arguments from the URL that can be used by the view.
    */
   public function preExecute($args = array()) {

@@ -48,15 +48,7 @@ class NodeCreationTest extends NodeTestBase {
     $this->drupalPostForm('node/add/page', $edit, t('Save'));
 
     // Check that the Basic page has been created.
-<<<<<<< HEAD
-    $this->assertText(t('@post @title has been created.', array('@post' => 'Basic page', '@title' => $edit['title[0][value]'])), 'Basic page created.');
-
-    // Verify that the creation message contains a link to a node.
-    $view_link = $this->xpath('//div[@class="messages"]//a[contains(@href, :href)]', array(':href' => 'node/'));
-    $this->assert(isset($view_link), 'The message area contains a link to a node');
-=======
     $this->assertRaw(t('@post %title has been created.', array('@post' => 'Basic page', '%title' => $edit['title[0][value]'])), 'Basic page created.');
->>>>>>> github/master
 
     // Check that the node exists in the database.
     $node = $this->drupalGetNodeByTitle($edit['title[0][value]']);
@@ -145,15 +137,7 @@ class NodeCreationTest extends NodeTestBase {
     $this->assertText(t('Test page text'));
 
     // Confirm that the node was created.
-<<<<<<< HEAD
-    $this->assertText(t('@post @title has been created.', array('@post' => 'Basic page', '@title' => $edit['title[0][value]'])));
-
-    // Verify that the creation message contains a link to a node.
-    $view_link = $this->xpath('//div[@class="messages"]//a[contains(@href, :href)]', array(':href' => 'node/'));
-    $this->assert(isset($view_link), 'The message area contains a link to a node');
-=======
     $this->assertRaw(t('@post %title has been created.', array('@post' => 'Basic page', '%title' => $edit['title[0][value]'])));
->>>>>>> github/master
   }
 
   /**

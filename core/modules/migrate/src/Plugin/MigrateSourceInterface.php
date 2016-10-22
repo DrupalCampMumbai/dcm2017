@@ -1,10 +1,6 @@
 <?php
 
 namespace Drupal\migrate\Plugin;
-<<<<<<< HEAD
-
-=======
->>>>>>> github/master
 use Drupal\Component\Plugin\PluginInspectionInterface;
 use Drupal\migrate\Row;
 

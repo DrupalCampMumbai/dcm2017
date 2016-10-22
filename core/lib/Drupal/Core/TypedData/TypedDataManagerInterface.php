@@ -192,11 +192,7 @@ interface TypedDataManagerInterface extends PluginManagerInterface, CachedDiscov
    * The validation constraint manager is used to instantiate validation
    * constraint plugins.
    *
-<<<<<<< HEAD
-   * @param \Drupal\Core\Validation\ConstraintManager $constraintManager
-=======
    * @param \Drupal\Core\Validation\ConstraintManager
->>>>>>> github/master
    *   The constraint manager to set.
    */
   public function setValidationConstraintManager(ConstraintManager $constraintManager);

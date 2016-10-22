@@ -40,15 +40,6 @@ class CssCollectionOptimizer implements AssetCollectionOptimizerInterface {
   /**
    * Constructs a CssCollectionOptimizer.
    *
-<<<<<<< HEAD
-   * @param \Drupal\Core\Asset\AssetCollectionGrouperInterface $grouper
-   *   The grouper for CSS assets.
-   * @param \Drupal\Core\Asset\AssetOptimizerInterface $optimizer
-   *   The optimizer for a single CSS asset.
-   * @param \Drupal\Core\Asset\AssetDumperInterface $dumper
-   *   The dumper for optimized CSS assets.
-   * @param \Drupal\Core\State\StateInterface $state
-=======
    * @param \Drupal\Core\Asset\AssetCollectionGrouperInterface
    *   The grouper for CSS assets.
    * @param \Drupal\Core\Asset\AssetOptimizerInterface
@@ -56,7 +47,6 @@ class CssCollectionOptimizer implements AssetCollectionOptimizerInterface {
    * @param \Drupal\Core\Asset\AssetDumperInterface
    *   The dumper for optimized CSS assets.
    * @param \Drupal\Core\State\StateInterface
->>>>>>> github/master
    *   The state key/value store.
    */
   public function __construct(AssetCollectionGrouperInterface $grouper, AssetOptimizerInterface $optimizer, AssetDumperInterface $dumper, StateInterface $state) {

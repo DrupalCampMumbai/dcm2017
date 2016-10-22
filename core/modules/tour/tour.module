@@ -6,10 +6,6 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-<<<<<<< HEAD
-use Drupal\tour\Entity\Tour;
-=======
->>>>>>> github/master
 
 /**
  * Implements hook_help().
@@ -56,10 +52,7 @@ function tour_toolbar() {
       '#value' => t('Tour'),
       '#attributes' => array(
         'class' => array('toolbar-icon', 'toolbar-icon-help'),
-<<<<<<< HEAD
-=======
         'role' => 'button',
->>>>>>> github/master
         'aria-pressed' => 'false',
       ),
     ),
@@ -92,11 +85,7 @@ function tour_page_bottom(array &$page_bottom) {
   $results = \Drupal::entityQuery('tour')
     ->condition('routes.*.route_name', $route_name)
     ->execute();
-<<<<<<< HEAD
-  if (!empty($results) && $tours = Tour::loadMultiple(array_keys($results))) {
-=======
   if (!empty($results) && $tours = entity_load_multiple('tour', array_keys($results))) {
->>>>>>> github/master
     foreach ($tours as $id => $tour) {
       // Match on params.
       if (!$tour->hasMatchingRoute($route_name, $route_match->getRawParameters()->all())) {

@@ -1,9 +1,5 @@
 name: 'Outbound route/path processing'
 type: module
-<<<<<<< HEAD
-core: 8.x
-hidden: true
-=======
 # core: 8.x
 hidden: true
 
@@ -12,4 +8,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

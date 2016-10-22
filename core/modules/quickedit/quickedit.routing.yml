@@ -2,11 +2,8 @@ quickedit.metadata:
   path: '/quickedit/metadata'
   defaults:
     _controller: '\Drupal\quickedit\QuickEditController::metadata'
-<<<<<<< HEAD
-=======
   options:
     _theme: ajax_base_page
->>>>>>> github/master
   requirements:
     _permission: 'access in-place editing'
 
@@ -22,10 +19,7 @@ quickedit.field_form:
   defaults:
     _controller: '\Drupal\quickedit\QuickEditController::fieldForm'
   options:
-<<<<<<< HEAD
-=======
     _theme: ajax_base_page
->>>>>>> github/master
     parameters:
       entity:
         type: entity:{entity_type}

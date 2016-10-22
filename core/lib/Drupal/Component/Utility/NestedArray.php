@@ -349,11 +349,7 @@ class NestedArray {
    *
    * @param array $array
    *   The filtered nested array.
-<<<<<<< HEAD
-   * @param callable|null $callable
-=======
    * @param callable|NULL $callable
->>>>>>> github/master
    *   The callable to apply for filtering.
    *
    * @return array

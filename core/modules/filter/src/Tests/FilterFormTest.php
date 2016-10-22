@@ -3,10 +3,6 @@
 namespace Drupal\filter\Tests;
 
 use Drupal\Component\Utility\SafeMarkup;
-<<<<<<< HEAD
-use Drupal\filter\Entity\FilterFormat;
-=======
->>>>>>> github/master
 use Drupal\simpletest\WebTestBase;
 
 /**
@@ -44,19 +40,11 @@ class FilterFormTest extends WebTestBase {
     parent::setUp();
 
     /** @var \Drupal\filter\FilterFormatInterface $filter_test_format */
-<<<<<<< HEAD
-    $filter_test_format = FilterFormat::load('filter_test');
-    /** @var \Drupal\filter\FilterFormatInterface $filtered_html_format */
-    $filtered_html_format = FilterFormat::load('filtered_html');
-    /** @var \Drupal\filter\FilterFormatInterface $full_html_format */
-    $full_html_format = FilterFormat::load('full_html');
-=======
     $filter_test_format = entity_load('filter_format', 'filter_test');
     /** @var \Drupal\filter\FilterFormatInterface $filtered_html_format */
     $filtered_html_format = entity_load('filter_format', 'filtered_html');
     /** @var \Drupal\filter\FilterFormatInterface $full_html_format */
     $full_html_format = entity_load('filter_format', 'full_html');
->>>>>>> github/master
 
     // Create users.
     $this->adminUser = $this->drupalCreateUser(array(

@@ -7,10 +7,6 @@ use Drupal\Component\Utility\Html;
 use Drupal\Component\Render\MarkupInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\GeneratedLink;
-<<<<<<< HEAD
-use Drupal\Core\GeneratedNoLink;
-=======
->>>>>>> github/master
 use Drupal\Core\Link;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Routing\UrlGeneratorInterface;
@@ -147,11 +143,7 @@ class LinkGenerator implements LinkGeneratorInterface {
     $url = $variables['url'];
 
     // Move attributes out of options since generateFromRoute() doesn't need
-<<<<<<< HEAD
-    // them. Make sure the "href" comes first for testing purposes.
-=======
     // them. Include a placeholder for the href.
->>>>>>> github/master
     $attributes = array('href' => '') + $variables['options']['attributes'];
     unset($variables['options']['attributes']);
     $url->setOptions($variables['options']);
@@ -161,13 +153,6 @@ class LinkGenerator implements LinkGeneratorInterface {
       $generated_link = new GeneratedLink();
       $attributes['href'] = $url->toString(FALSE);
     }
-<<<<<<< HEAD
-    elseif ($url->isRouted() && $url->getRouteName() === '<nolink>') {
-      $generated_link = new GeneratedNoLink();
-      unset($attributes['href']);
-    }
-=======
->>>>>>> github/master
     else {
       $generated_url = $url->toString(TRUE);
       $generated_link = GeneratedLink::createFromObject($generated_url);
@@ -182,11 +167,7 @@ class LinkGenerator implements LinkGeneratorInterface {
     $attributes = new Attribute($attributes);
     // This is safe because Attribute does escaping and $variables['text'] is
     // either rendered or escaped.
-<<<<<<< HEAD
-    return $generated_link->setGeneratedLink('<' . $generated_link::TAG . $attributes . '>' . $variables['text'] . '</' . $generated_link::TAG . '>');
-=======
     return $generated_link->setGeneratedLink('<a' . $attributes . '>' . $variables['text'] . '</a>');
->>>>>>> github/master
   }
 
 }

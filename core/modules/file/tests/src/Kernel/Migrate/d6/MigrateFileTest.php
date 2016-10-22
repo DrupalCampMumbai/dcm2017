@@ -72,14 +72,9 @@ class MigrateFileTest extends MigrateDrupal6TestBase implements MigrateDumpAlter
     $this->assertEntity(5, 'html-1.txt', '24', 'public://html-1.txt', 'text/plain', '1');
 
     // Test that we can re-import and also test with file_directory_path set.
-<<<<<<< HEAD
-    \Drupal::database()
-      ->truncate($this->getMigration('d6_file')->getIdMap()->mapTableName())
-=======
     $migration_plugin_manager = $this->container->get('plugin.manager.migration');
     \Drupal::database()
       ->truncate($migration_plugin_manager->createInstance('d6_file')->getIdMap()->mapTableName())
->>>>>>> github/master
       ->execute();
 
     // Update the file_directory_path.
@@ -94,23 +89,16 @@ class MigrateFileTest extends MigrateDrupal6TestBase implements MigrateDumpAlter
       ->condition('name', 'file_directory_temp')
       ->execute();
 
-<<<<<<< HEAD
-    $this->executeMigration('d6_file');
-=======
     $migration = $migration_plugin_manager->createInstance('d6_file');
     $this->executeMigration($migration);
->>>>>>> github/master
 
     $file = File::load(2);
     $this->assertIdentical('public://core/modules/simpletest/files/image-2.jpg', $file->getFileUri());
 
-<<<<<<< HEAD
-=======
     // Ensure that a temporary file has been migrated.
     $file = File::load(6);
     $this->assertIdentical('temporary://' . static::getUniqueFilename(), $file->getFileUri());
 
->>>>>>> github/master
     // File 7, created in static::migrateDumpAlter(), shares a path with
     // file 5, which means it should be skipped entirely.
     $this->assertNull(File::load(7));

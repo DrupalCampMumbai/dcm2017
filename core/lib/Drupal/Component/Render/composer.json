@@ -6,11 +6,7 @@
   "license": "GPL-2.0+",
   "require": {
     "php": ">=5.5.9",
-<<<<<<< HEAD
-    "drupal/core-utility": "~8.2"
-=======
     "drupal/core-utility": "~8.1"
->>>>>>> github/master
   },
   "autoload": {
     "psr-4": {

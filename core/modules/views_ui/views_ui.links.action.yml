@@ -1,9 +1,5 @@
 views_add_local_action:
   route_name: views_ui.add
-<<<<<<< HEAD
-  title: 'Add view'
-=======
   title: 'Add new view'
->>>>>>> github/master
   appears_on:
     - entity.view.collection

@@ -70,11 +70,7 @@ class ScaleImageEffect extends ResizeImageEffect {
       '#type' => 'checkbox',
       '#default_value' => $this->configuration['upscale'],
       '#title' => t('Allow Upscaling'),
-<<<<<<< HEAD
-      '#description' => t('Let scale make images larger than their original size.'),
-=======
       '#description' => t('Let scale make images larger than their original size'),
->>>>>>> github/master
     );
     return $form;
   }

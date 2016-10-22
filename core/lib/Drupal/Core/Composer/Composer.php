@@ -196,11 +196,7 @@ EOT;
    * @param string $package_name
    *   The package name from composer. This is always already lower case.
    *
-<<<<<<< HEAD
-   * @return string|null
-=======
    * @return NULL|string
->>>>>>> github/master
    *   The string key, or NULL if none was found.
    */
   protected static function findPackageKey($package_name) {

@@ -60,11 +60,7 @@ class ThemeController extends ControllerBase {
    *   the token is invalid.
    */
   public function uninstall(Request $request) {
-<<<<<<< HEAD
-    $theme = $request->query->get('theme');
-=======
     $theme = $request->get('theme');
->>>>>>> github/master
     $config = $this->config('system.theme');
 
     if (isset($theme)) {
@@ -106,11 +102,7 @@ class ThemeController extends ControllerBase {
    *   the token is invalid.
    */
   public function install(Request $request) {
-<<<<<<< HEAD
-    $theme = $request->query->get('theme');
-=======
     $theme = $request->get('theme');
->>>>>>> github/master
 
     if (isset($theme)) {
       try {

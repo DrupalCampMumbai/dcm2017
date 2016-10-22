@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-namespace Drupal\Tests\Core\Config\Entity;
-=======
 namespace Drupal\Tests\Core\Config\Entity {
->>>>>>> github/master
 
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Config\Entity\ConfigEntityInterface;
@@ -945,15 +941,6 @@ class ConfigEntityStorageTest extends UnitTestCase {
 
 }
 
-<<<<<<< HEAD
-namespace Drupal\Core\Config\Entity;
-
-if (!defined('SAVED_NEW')) {
-  define('SAVED_NEW', 1);
-}
-if (!defined('SAVED_UPDATED')) {
-  define('SAVED_UPDATED', 2);
-=======
 }
 namespace {
   if (!defined('SAVED_NEW')) {
@@ -962,5 +949,4 @@ namespace {
   if (!defined('SAVED_UPDATED')) {
     define('SAVED_UPDATED', 2);
   }
->>>>>>> github/master
 }

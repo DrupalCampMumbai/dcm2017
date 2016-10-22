@@ -78,16 +78,9 @@ class ForumForm extends TermForm {
     $route_name = $this->urlStub == 'container' ? 'entity.taxonomy_term.forum_edit_container_form' : 'entity.taxonomy_term.forum_edit_form';
     $route_parameters  = ['taxonomy_term' => $term->id()];
     $link = $this->l($this->t('Edit'), new Url($route_name, $route_parameters));
-<<<<<<< HEAD
-    $view_link = $term->link($term->getName());
-    switch ($status) {
-      case SAVED_NEW:
-        drupal_set_message($this->t('Created new @type %term.', array('%term' => $view_link, '@type' => $this->forumFormType)));
-=======
     switch ($status) {
       case SAVED_NEW:
         drupal_set_message($this->t('Created new @type %term.', array('%term' => $term->getName(), '@type' => $this->forumFormType)));
->>>>>>> github/master
         $this->logger('forum')->notice('Created new @type %term.', array('%term' => $term->getName(), '@type' => $this->forumFormType, 'link' => $link));
         $form_state->setValue('tid', $term->id());
         break;

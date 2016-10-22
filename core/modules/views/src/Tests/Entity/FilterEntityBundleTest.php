@@ -50,11 +50,7 @@ class FilterEntityBundleTest extends ViewTestBase {
 
     ViewTestData::createTestViews(get_class($this), array('views_test_config'));
 
-<<<<<<< HEAD
-    $this->entityBundles = $this->container->get('entity_type.bundle.info')->getBundleInfo('node');
-=======
     $this->entityBundles = entity_get_bundles('node');
->>>>>>> github/master
 
     $this->entities['count'] = 0;
 

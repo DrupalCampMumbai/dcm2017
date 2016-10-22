@@ -4,10 +4,6 @@ namespace Drupal\filter\Tests;
 
 use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Access\AccessResult;
-<<<<<<< HEAD
-use Drupal\filter\Entity\FilterFormat;
-=======
->>>>>>> github/master
 use Drupal\simpletest\WebTestBase;
 
 /**
@@ -93,11 +89,7 @@ class FilterFormatAccessTest extends WebTestBase {
       );
       $this->drupalPostForm('admin/config/content/formats/add', $edit, t('Save configuration'));
       $this->resetFilterCaches();
-<<<<<<< HEAD
-      $formats[] = FilterFormat::load($edit['format']);
-=======
       $formats[] = entity_load('filter_format', $edit['format']);
->>>>>>> github/master
     }
     list($this->allowedFormat, $this->secondAllowedFormat, $this->disallowedFormat) = $formats;
     $this->drupalLogout();
@@ -128,11 +120,7 @@ class FilterFormatAccessTest extends WebTestBase {
   function testFormatPermissions() {
     // Make sure that a regular user only has access to the text formats for
     // which they were granted access.
-<<<<<<< HEAD
-    $fallback_format = FilterFormat::load(filter_fallback_format());
-=======
     $fallback_format = entity_load('filter_format', filter_fallback_format());
->>>>>>> github/master
     $this->assertTrue($this->allowedFormat->access('use', $this->webUser), 'A regular user has access to use a text format they were granted access to.');
     $this->assertEqual(AccessResult::allowed()->addCacheContexts(['user.permissions']), $this->allowedFormat->access('use', $this->webUser, TRUE), 'A regular user has access to use a text format they were granted access to.');
     $this->assertFalse($this->disallowedFormat->access('use', $this->webUser), 'A regular user does not have access to use a text format they were not granted access to.');
@@ -209,11 +197,7 @@ class FilterFormatAccessTest extends WebTestBase {
     $this->assertFalse(in_array($this->disallowedFormat->id(), array_keys(filter_get_formats_by_role($rid))), 'A text format which a role does not have access to does not appear in the list of formats available to that role.');
 
     // Check that the fallback format is always allowed.
-<<<<<<< HEAD
-    $this->assertEqual(filter_get_roles_by_format(FilterFormat::load(filter_fallback_format())), user_role_names(), 'All roles have access to the fallback format.');
-=======
     $this->assertEqual(filter_get_roles_by_format(entity_load('filter_format', filter_fallback_format())), user_role_names(), 'All roles have access to the fallback format.');
->>>>>>> github/master
     $this->assertTrue(in_array(filter_fallback_format(), array_keys(filter_get_formats_by_role($rid))), 'The fallback format appears in the list of allowed formats for any role.');
   }
 

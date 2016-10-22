@@ -28,75 +28,24 @@ class ClassLoaderTest extends WebTestBase {
     // Check twice to test an unprimed and primed system_list() cache.
     for ($i = 0; $i < 2; $i++) {
       $this->drupalGet('module-test/class-loading');
-<<<<<<< HEAD
-      $this->assertResponse(200);
-=======
->>>>>>> github/master
       $this->assertText($this->expected, 'Autoloader loads classes from an enabled module.');
     }
   }
 
   /**
-<<<<<<< HEAD
-   * Tests that module-provided classes can't be loaded if module not installed.
-   *
-   * @see \Drupal\module_autoload_test\SomeClass
-   */
-  function testClassLoadingNotInstalledModules() {
-    // Enable the module_test module.
-    \Drupal::service('module_installer')->install(array('module_test'), FALSE);
-    $this->resetAll();
-    // Check twice to test an unprimed and primed system_list() cache.
-    for ($i = 0; $i < 2; $i++) {
-      $this->drupalGet('module-test/class-loading');
-      $this->assertResponse(200);
-      $this->assertNoText($this->expected, 'Autoloader does not load classes from a disabled module.');
-    }
-  }
-
-  /**
-=======
->>>>>>> github/master
    * Tests that module-provided classes can't be loaded from disabled modules.
    *
    * @see \Drupal\module_autoload_test\SomeClass
    */
   function testClassLoadingDisabledModules() {
-<<<<<<< HEAD
-    // Enable the module_test and module_autoload_test modules.
-    \Drupal::service('module_installer')->install(array('module_test', 'module_autoload_test'), FALSE);
-    $this->resetAll();
-=======
->>>>>>> github/master
     // Ensure that module_autoload_test is disabled.
     $this->container->get('module_installer')->uninstall(array('module_autoload_test'), FALSE);
     $this->resetAll();
     // Check twice to test an unprimed and primed system_list() cache.
     for ($i = 0; $i < 2; $i++) {
       $this->drupalGet('module-test/class-loading');
-<<<<<<< HEAD
-      $this->assertResponse(200);
-=======
->>>>>>> github/master
       $this->assertNoText($this->expected, 'Autoloader does not load classes from a disabled module.');
     }
   }
 
-<<<<<<< HEAD
-  /**
-   * Ensures the negative caches in the class loader don't result in crashes.
-   */
-  public function testMultipleModules() {
-    $this->drupalLogin($this->rootUser);
-    $edit = [
-      "modules[Testing][module_install_class_loader_test1][enable]" => TRUE,
-      "modules[Testing][module_install_class_loader_test2][enable]" => TRUE,
-    ];
-    $this->drupalPostForm('admin/modules', $edit, t('Install'));
-    $this->rebuildContainer();
-    $this->assertTrue(\Drupal::moduleHandler()->moduleExists('module_install_class_loader_test2'), 'The module_install_class_loader_test2 module has been installed.');
-  }
-
-=======
->>>>>>> github/master
 }

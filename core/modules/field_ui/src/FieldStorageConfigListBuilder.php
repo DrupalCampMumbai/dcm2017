@@ -6,10 +6,6 @@ use Drupal\Core\Config\Entity\ConfigEntityListBuilder;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
-<<<<<<< HEAD
-use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
-=======
->>>>>>> github/master
 use Drupal\Core\Field\FieldTypePluginManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -59,19 +55,11 @@ class FieldStorageConfigListBuilder extends ConfigEntityListBuilder {
    * @param \Drupal\Core\Field\FieldTypePluginManagerInterface $field_type_manager
    *   The 'field type' plugin manager.
    */
-<<<<<<< HEAD
-  public function __construct(EntityTypeInterface $entity_type, EntityManagerInterface $entity_manager, FieldTypePluginManagerInterface $field_type_manager, EntityTypeBundleInfoInterface $bundle_info_service) {
-    parent::__construct($entity_type, $entity_manager->getStorage($entity_type->id()));
-
-    $this->entityManager = $entity_manager;
-    $this->bundles = $bundle_info_service->getAllBundleInfo();
-=======
   public function __construct(EntityTypeInterface $entity_type, EntityManagerInterface $entity_manager, FieldTypePluginManagerInterface $field_type_manager) {
     parent::__construct($entity_type, $entity_manager->getStorage($entity_type->id()));
 
     $this->entityManager = $entity_manager;
     $this->bundles = entity_get_bundles();
->>>>>>> github/master
     $this->fieldTypeManager = $field_type_manager;
     $this->fieldTypes = $this->fieldTypeManager->getDefinitions();
   }
@@ -83,12 +71,7 @@ class FieldStorageConfigListBuilder extends ConfigEntityListBuilder {
     return new static(
       $entity_type,
       $container->get('entity.manager'),
-<<<<<<< HEAD
-      $container->get('plugin.manager.field.field_type'),
-      $container->get('entity_type.bundle.info')
-=======
       $container->get('plugin.manager.field.field_type')
->>>>>>> github/master
     );
   }
 

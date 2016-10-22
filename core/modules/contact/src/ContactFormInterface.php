@@ -10,17 +10,6 @@ use Drupal\Core\Config\Entity\ConfigEntityInterface;
 interface ContactFormInterface extends ConfigEntityInterface {
 
   /**
-<<<<<<< HEAD
-   * Returns the message to be displayed to user.
-   *
-   * @return string
-   *   A user message.
-   */
-  public function getMessage();
-
-  /**
-=======
->>>>>>> github/master
    * Returns list of recipient email addresses.
    *
    * @return array
@@ -29,27 +18,6 @@ interface ContactFormInterface extends ConfigEntityInterface {
   public function getRecipients();
 
   /**
-<<<<<<< HEAD
-   * Returns the path for redirect.
-   *
-   * @return string
-   *   The redirect path.
-   */
-  public function getRedirectPath();
-
-  /**
-   * Returns the url object for redirect path.
-   *
-   * Empty redirect property results a url object of front page.
-   *
-   * @return \Drupal\core\Url
-   *   The redirect url object.
-   */
-  public function getRedirectUrl();
-
-  /**
-=======
->>>>>>> github/master
    * Returns an auto-reply message to send to the message author.
    *
    * @return string
@@ -66,19 +34,6 @@ interface ContactFormInterface extends ConfigEntityInterface {
   public function getWeight();
 
   /**
-<<<<<<< HEAD
-   * Sets the message to be displayed to the user.
-   *
-   * @param string $message
-   *   The message to display after form is submitted.
-   *
-   * @return $this
-   */
-  public function setMessage($message);
-
-  /**
-=======
->>>>>>> github/master
    * Sets list of recipient email addresses.
    *
    * @param array $recipients
@@ -89,19 +44,6 @@ interface ContactFormInterface extends ConfigEntityInterface {
   public function setRecipients($recipients);
 
   /**
-<<<<<<< HEAD
-   * Sets the redirect path.
-   *
-   * @param string $redirect
-   *   The desired path.
-   *
-   * @return $this
-   */
-  public function setRedirectPath($redirect);
-
-  /**
-=======
->>>>>>> github/master
    * Sets an auto-reply message to send to the message author.
    *
    * @param string $reply

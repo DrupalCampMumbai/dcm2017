@@ -139,14 +139,7 @@ class TermTranslationUITest extends ContentTranslationUITestBase {
    * {@inheritdoc}
    */
   protected function doTestTranslationEdit() {
-<<<<<<< HEAD
-    $storage = $this->container->get('entity_type.manager')
-      ->getStorage($this->entityTypeId);
-    $storage->resetCache([$this->entityId]);
-    $entity = $storage->load($this->entityId);
-=======
     $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
->>>>>>> github/master
     $languages = $this->container->get('language_manager')->getLanguages();
 
     foreach ($this->langcodes as $langcode) {

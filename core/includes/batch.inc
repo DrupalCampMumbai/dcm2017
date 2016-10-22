@@ -34,11 +34,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 function _batch_page(Request $request) {
   $batch = &batch_get();
 
-<<<<<<< HEAD
-  if (!($request_id = $request->query->get('id'))) {
-=======
   if (!($request_id = $request->get('id'))) {
->>>>>>> github/master
     return FALSE;
   }
 
@@ -65,11 +61,7 @@ function _batch_page(Request $request) {
     }
   }
 
-<<<<<<< HEAD
-  $op = $request->query->get('op', '');
-=======
   $op = $request->get('op', '');
->>>>>>> github/master
   switch ($op) {
     case 'start':
     case 'do_nojs':

@@ -121,11 +121,7 @@ display:
           field_api_classes: false
       filters:
         status:
-<<<<<<< HEAD
-          value: '1'
-=======
           value: true
->>>>>>> github/master
           table: node_field_data
           field: status
           plugin_id: boolean

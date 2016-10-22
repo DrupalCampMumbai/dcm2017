@@ -505,10 +505,6 @@ class SchemaTest extends KernelTestBase {
           array('not null' => FALSE, 'default' => 7),
           array('not null' => TRUE, 'initial' => 1),
           array('not null' => TRUE, 'initial' => 1, 'default' => 7),
-<<<<<<< HEAD
-          array('not null' => TRUE, 'initial_from_field' => 'serial_column'),
-=======
->>>>>>> github/master
         );
 
         foreach ($variations as $variation) {
@@ -536,10 +532,6 @@ class SchemaTest extends KernelTestBase {
           array('not null' => FALSE, 'default' => 7),
           array('not null' => TRUE, 'initial' => 1),
           array('not null' => TRUE, 'initial' => 1, 'default' => 7),
-<<<<<<< HEAD
-          array('not null' => TRUE, 'initial_from_field' => 'serial_column'),
-=======
->>>>>>> github/master
         );
 
         foreach ($variations as $variation) {
@@ -628,22 +620,6 @@ class SchemaTest extends KernelTestBase {
       $this->assertEqual($count, 0, 'Initial values filled out.');
     }
 
-<<<<<<< HEAD
-    // Check that the initial value from another field has been registered.
-    if (isset($field_spec['initial_from_field'])) {
-      // There should be no row with a value different than
-      // $field_spec['initial_from_field'].
-      $count = db_select($table_name)
-        ->fields($table_name, array('serial_column'))
-        ->where($table_name . '.' . $field_spec['initial_from_field'] . ' <> ' . $table_name . '.' . $field_name)
-        ->countQuery()
-        ->execute()
-        ->fetchField();
-      $this->assertEqual($count, 0, 'Initial values from another field filled out.');
-    }
-
-=======
->>>>>>> github/master
     // Check that the default value has been registered.
     if (isset($field_spec['default'])) {
       // Try inserting a row, and check the resulting value of the new column.

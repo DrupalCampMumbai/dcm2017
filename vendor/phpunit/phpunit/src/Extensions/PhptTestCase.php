@@ -50,12 +50,7 @@ class PHPUnit_Extensions_PhptTestCase implements PHPUnit_Framework_Test, PHPUnit
     /**
      * Constructs a test case with the given filename.
      *
-<<<<<<< HEAD
-     * @param string $filename
-     *
-=======
      * @param  string                      $filename
->>>>>>> github/master
      * @throws PHPUnit_Framework_Exception
      */
     public function __construct($filename)
@@ -89,12 +84,7 @@ class PHPUnit_Extensions_PhptTestCase implements PHPUnit_Framework_Test, PHPUnit
     /**
      * Runs a test and collects its result in a TestResult instance.
      *
-<<<<<<< HEAD
-     * @param PHPUnit_Framework_TestResult $result
-     *
-=======
      * @param  PHPUnit_Framework_TestResult $result
->>>>>>> github/master
      * @return PHPUnit_Framework_TestResult
      */
     public function run(PHPUnit_Framework_TestResult $result = null)
@@ -187,10 +177,6 @@ class PHPUnit_Extensions_PhptTestCase implements PHPUnit_Framework_Test, PHPUnit
 
     /**
      * @return array
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @throws PHPUnit_Framework_Exception
      */
     private function parse()
@@ -219,12 +205,7 @@ class PHPUnit_Extensions_PhptTestCase implements PHPUnit_Framework_Test, PHPUnit
     }
 
     /**
-<<<<<<< HEAD
-     * @param string $code
-     *
-=======
      * @param  string $code
->>>>>>> github/master
      * @return string
      */
     private function render($code)
@@ -246,10 +227,6 @@ class PHPUnit_Extensions_PhptTestCase implements PHPUnit_Framework_Test, PHPUnit
      * Parse --INI-- section key value pairs and return as array.
      *
      * @param string
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @return array
      */
     protected function parseIniSection($content)

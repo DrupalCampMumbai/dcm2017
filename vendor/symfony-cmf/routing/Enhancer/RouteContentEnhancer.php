@@ -3,11 +3,7 @@
 /*
  * This file is part of the Symfony CMF package.
  *
-<<<<<<< HEAD
- * (c) 2011-2015 Symfony CMF
-=======
  * (c) 2011-2014 Symfony CMF
->>>>>>> github/master
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,10 +12,7 @@
 namespace Symfony\Cmf\Component\Routing\Enhancer;
 
 use Symfony\Component\HttpFoundation\Request;
-<<<<<<< HEAD
-=======
 
->>>>>>> github/master
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 
 /**
@@ -56,11 +49,7 @@ class RouteContentEnhancer implements RouteEnhancerInterface
      * If the route has a non-null content and if that content class is in the
      * injected map, returns that controller.
      *
-<<<<<<< HEAD
-     * {@inheritdoc}
-=======
      * {@inheritDoc}
->>>>>>> github/master
      */
     public function enhance(array $defaults, Request $request)
     {
@@ -69,13 +58,8 @@ class RouteContentEnhancer implements RouteEnhancerInterface
             return $defaults;
         }
 
-<<<<<<< HEAD
-        if (!isset($defaults[$this->routefield])
-            || !$defaults[$this->routefield] instanceof RouteObjectInterface
-=======
         if (! isset($defaults[$this->routefield])
             || ! $defaults[$this->routefield] instanceof RouteObjectInterface
->>>>>>> github/master
         ) {
             // we can't determine the content
             return $defaults;
@@ -84,11 +68,7 @@ class RouteContentEnhancer implements RouteEnhancerInterface
         $route = $defaults[$this->routefield];
 
         $content = $route->getContent();
-<<<<<<< HEAD
-        if (!$content) {
-=======
         if (! $content) {
->>>>>>> github/master
             // we have no content
             return $defaults;
         }

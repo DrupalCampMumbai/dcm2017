@@ -80,13 +80,7 @@ abstract class EntityWithUriCacheTagsTestBase extends EntityCacheTagsTestBase {
       // Verify that after modifying the corresponding bundle entity, there is a
       // cache miss.
       $this->pass("Test modification of entity's bundle entity.", 'Debug');
-<<<<<<< HEAD
-      $bundle_entity = $this->container->get('entity_type.manager')
-        ->getStorage($bundle_entity_type_id)
-        ->load($this->entity->bundle());
-=======
       $bundle_entity = entity_load($bundle_entity_type_id, $this->entity->bundle());
->>>>>>> github/master
       $bundle_entity->save();
       $this->verifyPageCache($entity_url, 'MISS');
 

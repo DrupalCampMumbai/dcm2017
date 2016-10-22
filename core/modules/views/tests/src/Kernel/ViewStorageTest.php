@@ -78,11 +78,7 @@ class ViewStorageTest extends ViewsKernelTestBase {
    * Tests loading configuration entities.
    */
   protected function loadTests() {
-<<<<<<< HEAD
-    $view = View::load('test_view_storage');
-=======
     $view = entity_load('view', 'test_view_storage');
->>>>>>> github/master
     $data = $this->config('views.view.test_view_storage')->get();
 
     // Confirm that an actual view object is loaded and that it returns all of
@@ -147,11 +143,7 @@ class ViewStorageTest extends ViewsKernelTestBase {
 
     // Check the UUID of the loaded View.
     $created->save();
-<<<<<<< HEAD
-    $created_loaded = View::load('test_view_storage_new');
-=======
     $created_loaded = entity_load('view', 'test_view_storage_new');
->>>>>>> github/master
     $this->assertIdentical($created->uuid(), $created_loaded->uuid(), 'The created UUID has been saved correctly.');
   }
 
@@ -160,11 +152,7 @@ class ViewStorageTest extends ViewsKernelTestBase {
    */
   protected function displayTests() {
     // Check whether a display can be added and saved to a View.
-<<<<<<< HEAD
-    $view = View::load('test_view_storage_new');
-=======
     $view = entity_load('view', 'test_view_storage_new');
->>>>>>> github/master
 
     $new_id = $view->addDisplay('page', 'Test', 'test');
     $display = $view->get('display');

@@ -87,10 +87,6 @@ class ChainedFastBackend implements CacheBackendInterface, CacheTagsInvalidatorI
    *   The fast cache backend.
    * @param string $bin
    *   The cache bin for which the object is created.
-<<<<<<< HEAD
-   */
-  public function __construct(CacheBackendInterface $consistent_backend, CacheBackendInterface $fast_backend, $bin) {
-=======
    *
    * @throws \Exception
    *   When the consistent cache backend and the fast cache backend are the same
@@ -101,7 +97,6 @@ class ChainedFastBackend implements CacheBackendInterface, CacheTagsInvalidatorI
       // @todo: should throw a proper exception. See https://www.drupal.org/node/2751847.
       trigger_error('Consistent cache backend and fast cache backend cannot use the same service.', E_USER_ERROR);
     }
->>>>>>> github/master
     $this->consistentBackend = $consistent_backend;
     $this->fastBackend = $fast_backend;
     $this->bin = 'cache_' . $bin;

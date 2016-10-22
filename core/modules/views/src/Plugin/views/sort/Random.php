@@ -3,10 +3,6 @@
 namespace Drupal\views\Plugin\views\sort;
 
 use Drupal\Core\Cache\CacheableDependencyInterface;
-<<<<<<< HEAD
-use Drupal\Core\Cache\UncacheableDependencyTrait;
-=======
->>>>>>> github/master
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -16,11 +12,6 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class Random extends SortPluginBase implements CacheableDependencyInterface {
 
-<<<<<<< HEAD
-  use UncacheableDependencyTrait;
-
-=======
->>>>>>> github/master
   /**
    * {@inheritdoc}
    */
@@ -37,8 +28,6 @@ class Random extends SortPluginBase implements CacheableDependencyInterface {
     $form['order']['#access'] = FALSE;
   }
 
-<<<<<<< HEAD
-=======
   /**
    * {@inheritdoc}
    */
@@ -60,5 +49,4 @@ class Random extends SortPluginBase implements CacheableDependencyInterface {
     return [];
   }
 
->>>>>>> github/master
 }

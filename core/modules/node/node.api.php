@@ -492,12 +492,8 @@ function hook_node_links_alter(array &$links, NodeInterface $entity, array &$con
     '#links' => array(
       'node-report' => array(
         'title' => t('Report'),
-<<<<<<< HEAD
-        'url' => Url::fromRoute('node_test.report', ['node' => $entity->id()], ['query' => ['token' => \Drupal::getContainer()->get('csrf_token')->get("node/{$entity->id()}/report")]]),
-=======
         'href' => "node/{$entity->id()}/report",
         'query' => array('token' => \Drupal::getContainer()->get('csrf_token')->get("node/{$entity->id()}/report")),
->>>>>>> github/master
       ),
     ),
   );

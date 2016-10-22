@@ -147,11 +147,7 @@ type: module
 description: 'testing info file parsing'
 simple_string: 'A simple string'
 version: "VERSION"
-<<<<<<< HEAD
-double_colon: dummyClassName::method
-=======
 double_colon: dummyClassName::
->>>>>>> github/master
 COMMONTEST;
 
     vfsStream::setup('modules');
@@ -163,11 +159,7 @@ COMMONTEST;
     $info_values = $this->infoParser->parse(vfsStream::url('modules/fixtures/common_test.info.txt'));
     $this->assertEquals($info_values['simple_string'], 'A simple string', 'Simple string value was parsed correctly.');
     $this->assertEquals($info_values['version'], \Drupal::VERSION, 'Constant value was parsed correctly.');
-<<<<<<< HEAD
-    $this->assertEquals($info_values['double_colon'], 'dummyClassName::method', 'Value containing double-colon was parsed correctly.');
-=======
     $this->assertEquals($info_values['double_colon'], 'dummyClassName::', 'Value containing double-colon was parsed correctly.');
->>>>>>> github/master
   }
 
 }

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sponsors Catergory'
+vid: sponsors_catergory
+description: 'Describes the category of Sponsors'
+hierarchy: 0
+weight: 0

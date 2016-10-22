@@ -34,17 +34,10 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
-<<<<<<< HEAD
-    <head-placeholder token="{{ placeholder_token }}">
-    <title>{{ head_title|safe_join(' | ') }}</title>
-    <css-placeholder token="{{ placeholder_token }}">
-    <js-placeholder token="{{ placeholder_token }}">
-=======
     <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
->>>>>>> github/master
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     {#
@@ -57,10 +50,6 @@
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
-<<<<<<< HEAD
-    <js-bottom-placeholder token="{{ placeholder_token }}">
-=======
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
->>>>>>> github/master
   </body>
 </html>

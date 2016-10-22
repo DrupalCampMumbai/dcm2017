@@ -28,8 +28,6 @@ class InPlaceEditor extends Plugin {
   public $id;
 
   /**
-<<<<<<< HEAD
-=======
    * An array of in-place editors plugin IDs that have registered themselves as
    * alternatives to this in-place editor.
    *
@@ -38,7 +36,6 @@ class InPlaceEditor extends Plugin {
   public $alternativeTo;
 
   /**
->>>>>>> github/master
    * The name of the module providing the in-place editor plugin.
    *
    * @var string

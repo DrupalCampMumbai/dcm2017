@@ -98,26 +98,6 @@ class Date extends NumericFilter {
   }
 
   /**
-<<<<<<< HEAD
-   * {@inheritdoc}
-   */
-  protected function hasValidGroupedValue(array $group) {
-    if (!is_array($group['value']) || empty($group['value'])) {
-      return FALSE;
-    }
-
-    // Special case when validating grouped date filters because the
-    // $group['value'] array contains the type of filter (date or offset) and
-    // therefore the number of items the comparison has to be done against is
-    // one greater.
-    $operators = $this->operators();
-    $expected = $operators[$group['operator']]['values'] + 1;
-    $actual = count(array_filter($group['value'], 'static::arrayFilterZero'));
-
-    return $actual == $expected;
-  }
-
-=======
    * Validate the build group options form.
    */
   protected function buildGroupValidate($form, FormStateInterface $form_state) {
@@ -145,7 +125,6 @@ class Date extends NumericFilter {
   }
 
 
->>>>>>> github/master
   public function acceptExposedInput($input) {
     if (empty($this->options['exposed'])) {
       return TRUE;

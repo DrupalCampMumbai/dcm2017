@@ -5,15 +5,9 @@ namespace Drupal\Tests\Core\Session;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Session\UserSession;
 use Drupal\Tests\UnitTestCase;
-<<<<<<< HEAD
-use Drupal\user\RoleInterface;
-
-/**
-=======
   use Drupal\user\RoleInterface;
 
   /**
->>>>>>> github/master
  * @coversDefaultClass \Drupal\Core\Session\UserSession
  * @group Session
  */

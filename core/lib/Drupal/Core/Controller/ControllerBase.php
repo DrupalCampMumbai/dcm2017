@@ -3,10 +3,6 @@
 namespace Drupal\Core\Controller;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
-<<<<<<< HEAD
-use Drupal\Core\Logger\LoggerChannelTrait;
-=======
->>>>>>> github/master
 use Drupal\Core\Routing\LinkGeneratorTrait;
 use Drupal\Core\Routing\RedirectDestinationTrait;
 use Drupal\Core\Routing\UrlGeneratorTrait;
@@ -37,10 +33,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 abstract class ControllerBase implements ContainerInjectionInterface {
 
   use LinkGeneratorTrait;
-<<<<<<< HEAD
-  use LoggerChannelTrait;
-=======
->>>>>>> github/master
   use RedirectDestinationTrait;
   use StringTranslationTrait;
   use UrlGeneratorTrait;
@@ -116,8 +108,6 @@ abstract class ControllerBase implements ContainerInjectionInterface {
   protected $formBuilder;
 
   /**
-<<<<<<< HEAD
-=======
    * The logger factory.
    *
    * @var \Psr\Log\LoggerInterface
@@ -125,7 +115,6 @@ abstract class ControllerBase implements ContainerInjectionInterface {
   protected $loggerFactory;
 
   /**
->>>>>>> github/master
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
@@ -296,8 +285,6 @@ abstract class ControllerBase implements ContainerInjectionInterface {
   }
 
   /**
-<<<<<<< HEAD
-=======
    * Returns a channel logger object.
    *
    * @param string $channel
@@ -315,7 +302,6 @@ abstract class ControllerBase implements ContainerInjectionInterface {
   }
 
   /**
->>>>>>> github/master
    * Returns the service container.
    *
    * This method is marked private to prevent sub-classes from retrieving

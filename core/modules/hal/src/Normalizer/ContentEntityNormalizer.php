@@ -190,11 +190,7 @@ class ContentEntityNormalizer extends NormalizerBase {
   /**
    * Constructs the entity URI.
    *
-<<<<<<< HEAD
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-=======
    * @param \Drupal\Core\Entity\EntityInterface
->>>>>>> github/master
    *   The entity.
    * @return string
    *   The entity URI.

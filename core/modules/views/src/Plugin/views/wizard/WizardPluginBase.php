@@ -3,10 +3,6 @@
 namespace Drupal\views\Plugin\views\wizard;
 
 use Drupal\Component\Utility\NestedArray;
-<<<<<<< HEAD
-use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
-=======
->>>>>>> github/master
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\UrlGeneratorTrait;
 use Drupal\views\Entity\View;
@@ -14,10 +10,6 @@ use Drupal\views\Views;
 use Drupal\views_ui\ViewUI;
 use Drupal\views\Plugin\views\display\DisplayPluginBase;
 use Drupal\views\Plugin\views\PluginBase;
-<<<<<<< HEAD
-use Symfony\Component\DependencyInjection\ContainerInterface;
-=======
->>>>>>> github/master
 
 /**
  * @defgroup views_wizard_plugins Views wizard plugins
@@ -117,39 +109,11 @@ abstract class WizardPluginBase extends PluginBase implements WizardInterface {
   );
 
   /**
-<<<<<<< HEAD
-   * The bundle info service.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeBundleInfoInterface
-   */
-  protected $bundleInfoService;
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('entity_type.bundle.info')
-    );
-  }
-
-  /**
-   * Constructs a WizardPluginBase object.
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeBundleInfoInterface $bundle_info_service) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-
-    $this->bundleInfoService = $bundle_info_service;
-=======
    * Constructs a WizardPluginBase object.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
->>>>>>> github/master
     $this->base_table = $this->definition['base_table'];
 
     $entity_types = \Drupal::entityManager()->getDefinitions();
@@ -621,11 +585,7 @@ abstract class WizardPluginBase extends PluginBase implements WizardInterface {
   protected function buildFilters(&$form, FormStateInterface $form_state) {
     module_load_include('inc', 'views_ui', 'admin');
 
-<<<<<<< HEAD
-    $bundles = $this->bundleInfoService->getBundleInfo($this->entityTypeId);
-=======
     $bundles = entity_get_bundles($this->entityTypeId);
->>>>>>> github/master
     // If the current base table support bundles and has more than one (like user).
     if (!empty($bundles) && $this->entityType && $this->entityType->hasKey('bundle')) {
       // Get all bundles and their human readable names.

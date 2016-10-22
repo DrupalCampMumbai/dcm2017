@@ -3,14 +3,6 @@
 namespace Drupal\file\Plugin\migrate\destination;
 
 use Drupal\Component\Utility\Unicode;
-<<<<<<< HEAD
-use Drupal\Core\Field\Plugin\Field\FieldType\UriItem;
-use Drupal\migrate\Row;
-use Drupal\migrate\MigrateException;
-use Drupal\migrate\Plugin\migrate\destination\EntityContentBase;
-
-/**
-=======
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\FieldTypePluginManagerInterface;
@@ -28,7 +20,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Every migration that uses this destination must have an optional
  * dependency on the d6_file migration to ensure it runs first.
  *
->>>>>>> github/master
  * @MigrateDestination(
  *   id = "entity:file"
  * )
@@ -36,8 +27,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class EntityFile extends EntityContentBase {
 
   /**
-<<<<<<< HEAD
-=======
    * @var \Drupal\Core\StreamWrapper\StreamWrapperManagerInterface
    */
   protected $streamWrapperManager;
@@ -84,7 +73,6 @@ class EntityFile extends EntityContentBase {
   }
 
   /**
->>>>>>> github/master
    * {@inheritdoc}
    */
   protected function getEntity(Row $row, array $old_destination_id_values) {
@@ -94,16 +82,7 @@ class EntityFile extends EntityContentBase {
       return parent::getEntity($row, $old_destination_id_values);
     }
 
-<<<<<<< HEAD
-    // By default the entity key (fid) would be used, but we want to make sure
-    // we're loading the matching URI.
-    $destination = $row->getDestinationProperty('uri');
-    if (empty($destination)) {
-      throw new MigrateException('Destination property uri not provided');
-    }
-=======
     $destination = $row->getDestinationProperty($this->configuration['destination_path_property']);
->>>>>>> github/master
     $entity = $this->storage->loadByProperties(['uri' => $destination]);
     if ($entity) {
       return reset($entity);
@@ -116,8 +95,6 @@ class EntityFile extends EntityContentBase {
   /**
    * {@inheritdoc}
    */
-<<<<<<< HEAD
-=======
   public function import(Row $row, array $old_destination_id_values = array()) {
     // For stub rows, there is no real file to deal with, let the stubbing
     // process create the stub entity.
@@ -293,7 +270,6 @@ class EntityFile extends EntityContentBase {
   /**
    * {@inheritdoc}
    */
->>>>>>> github/master
   protected function processStubRow(Row $row) {
     // We stub the uri value ourselves so we can create a real stub file for it.
     if (!$row->getDestinationProperty('uri')) {

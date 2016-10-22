@@ -36,22 +36,6 @@ abstract class DatabaseTestBase extends KernelTestBase {
    */
   function ensureSampleDataNull() {
     db_insert('test_null')
-<<<<<<< HEAD
-      ->fields(array('name', 'age'))
-      ->values(array(
-      'name' => 'Kermit',
-      'age' => 25,
-    ))
-      ->values(array(
-      'name' => 'Fozzie',
-      'age' => NULL,
-    ))
-      ->values(array(
-      'name' => 'Gonzo',
-      'age' => 27,
-    ))
-      ->execute();
-=======
     ->fields(array('name', 'age'))
     ->values(array(
       'name' => 'Kermit',
@@ -66,7 +50,6 @@ abstract class DatabaseTestBase extends KernelTestBase {
       'age' => 27,
     ))
     ->execute();
->>>>>>> github/master
   }
 
   /**

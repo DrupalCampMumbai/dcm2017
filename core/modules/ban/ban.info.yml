@@ -2,11 +2,6 @@ name: Ban
 type: module
 description: 'Enables banning of IP addresses.'
 package: Core
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-configure: ban.admin_page
-=======
 # version: VERSION
 # core: 8.x
 configure: ban.admin_page
@@ -16,4 +11,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

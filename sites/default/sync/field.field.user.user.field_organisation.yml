@@ -1,0 +1,20 @@
+uuid: 08fe6a60-66c9-41d1-9988-d6fcfd87d997
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_organisation
+  module:
+    - user
+id: user.user.field_organisation
+field_name: field_organisation
+entity_type: user
+bundle: user
+label: Organisation
+description: 'enter NA, consultant, freelancer if not associated with any organisation.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

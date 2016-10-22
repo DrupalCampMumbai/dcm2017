@@ -34,8 +34,6 @@ class ChainedFastBackendTest extends UnitTestCase {
   protected $bin;
 
   /**
-<<<<<<< HEAD
-=======
    * Tests that chained fast backend cannot be constructed with two instances of
    * the same service.
    */
@@ -51,7 +49,6 @@ class ChainedFastBackendTest extends UnitTestCase {
   }
 
   /**
->>>>>>> github/master
    * Tests a get() on the fast backend, with no hit on the consistent backend.
    */
   public function testGetDoesntHitConsistentBackend() {

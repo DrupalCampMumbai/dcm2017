@@ -236,20 +236,9 @@ details.fieldset-no-legend {
 /* @group Rearrange filter criteria */
 
 .views-ui-rearrange-filter-form .action-links {
-<<<<<<< HEAD
-  float: left;
-  margin: 0 0 1em;
-  padding: 0;
-}
-.views-ui-rearrange-filter-form .tabledrag-toggle-weight-wrapper {
-  float: right;
-  margin-bottom: 1em;
-}
-=======
   margin: 0;
   padding: 0;
 }
->>>>>>> github/master
 
 .views-ui-rearrange-filter-form table {
   border: medium none;

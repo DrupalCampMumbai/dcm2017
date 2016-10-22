@@ -91,11 +91,7 @@ display:
           plugin_id: field
       filters:
         status:
-<<<<<<< HEAD
-          value: '1'
-=======
           value: true
->>>>>>> github/master
           table: node_field_data
           field: status
           id: status
@@ -181,11 +177,7 @@ display:
         filter_groups: false
       filters:
         status:
-<<<<<<< HEAD
-          value: '1'
-=======
           value: true
->>>>>>> github/master
           table: node_field_data
           field: status
           id: status
@@ -252,11 +244,7 @@ display:
         filter_groups: false
       filters:
         status:
-<<<<<<< HEAD
-          value: '1'
-=======
           value: true
->>>>>>> github/master
           table: node_field_data
           field: status
           id: status
@@ -323,11 +311,7 @@ display:
         filter_groups: false
       filters:
         status:
-<<<<<<< HEAD
-          value: '1'
-=======
           value: true
->>>>>>> github/master
           table: node_field_data
           field: status
           id: status

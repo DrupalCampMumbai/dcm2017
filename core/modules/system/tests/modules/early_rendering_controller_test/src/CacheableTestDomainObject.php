@@ -3,13 +3,6 @@
 namespace Drupal\early_rendering_controller_test;
 
 use Drupal\Core\Cache\CacheableDependencyInterface;
-<<<<<<< HEAD
-use Drupal\Core\Cache\UncacheableDependencyTrait;
-
-class CacheableTestDomainObject extends TestDomainObject implements CacheableDependencyInterface {
-
-  use UncacheableDependencyTrait;
-=======
 
 class CacheableTestDomainObject extends TestDomainObject implements CacheableDependencyInterface {
 
@@ -33,6 +26,5 @@ class CacheableTestDomainObject extends TestDomainObject implements CacheableDep
   public function getCacheMaxAge() {
     return 0;
   }
->>>>>>> github/master
 
 }

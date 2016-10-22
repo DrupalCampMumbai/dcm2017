@@ -16,11 +16,7 @@ use Drupal\Component\Utility\Crypt;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\StreamWrapper\StreamWrapperInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
-<<<<<<< HEAD
-use Drupal\Core\Entity\Entity\EntityViewDisplay;
-=======
 
->>>>>>> github/master
 /**
  * Defines an image style configuration entity.
  *
@@ -141,11 +137,7 @@ class ImageStyle extends ConfigEntityBase implements ImageStyleInterface, Entity
     if ($style->id() != $style->getOriginalId()) {
       // Loop through all entity displays looking for formatters / widgets using
       // the image style.
-<<<<<<< HEAD
-      foreach (EntityViewDisplay::loadMultiple() as $display) {
-=======
       foreach (entity_load_multiple('entity_view_display') as $display) {
->>>>>>> github/master
         foreach ($display->getComponents() as $name => $options) {
           if (isset($options['type']) && $options['type'] == 'image' && $options['settings']['image_style'] == $style->getOriginalId()) {
             $options['settings']['image_style'] = $style->id();
@@ -154,11 +146,7 @@ class ImageStyle extends ConfigEntityBase implements ImageStyleInterface, Entity
           }
         }
       }
-<<<<<<< HEAD
-      foreach (EntityViewDisplay::loadMultiple() as $display) {
-=======
       foreach (entity_load_multiple('entity_form_display') as $display) {
->>>>>>> github/master
         foreach ($display->getComponents() as $name => $options) {
           if (isset($options['type']) && $options['type'] == 'image_image' && $options['settings']['preview_image_style'] == $style->getOriginalId()) {
             $options['settings']['preview_image_style'] = $style->id();
@@ -174,30 +162,6 @@ class ImageStyle extends ConfigEntityBase implements ImageStyleInterface, Entity
    * {@inheritdoc}
    */
   public function buildUri($uri) {
-<<<<<<< HEAD
-    $source_scheme = $scheme = $this->fileUriScheme($uri);
-    $default_scheme = $this->fileDefaultScheme();
-
-    if ($source_scheme) {
-      $path = $this->fileUriTarget($uri);
-      // The scheme of derivative image files only needs to be computed for
-      // source files not stored in the default scheme.
-      if ($source_scheme != $default_scheme) {
-        $class = $this->getStreamWrapperManager()->getClass($source_scheme);
-        $is_writable = $class::getType() & StreamWrapperInterface::WRITE;
-
-        // Compute the derivative URI scheme. Derivatives created from writable
-        // source stream wrappers will inherit the scheme. Derivatives created
-        // from read-only stream wrappers will fall-back to the default scheme.
-        $scheme = $is_writable ? $source_scheme : $default_scheme;
-      }
-    }
-    else {
-      $path = $uri;
-      $source_scheme = $scheme = $default_scheme;
-    }
-    return "$scheme://styles/{$this->id()}/$source_scheme/{$this->addExtension($path)}";
-=======
     $scheme = $this->fileUriScheme($uri);
     if ($scheme) {
       $path = $this->fileUriTarget($uri);
@@ -207,7 +171,6 @@ class ImageStyle extends ConfigEntityBase implements ImageStyleInterface, Entity
       $scheme = $this->fileDefaultScheme();
     }
     return $scheme . '://styles/' . $this->id() . '/' . $scheme . '/' . $this->addExtension($path);
->>>>>>> github/master
   }
 
   /**
@@ -248,11 +211,7 @@ class ImageStyle extends ConfigEntityBase implements ImageStyleInterface, Entity
     // to the actual file path, this avoids bootstrapping PHP once the files are
     // built.
     if ($clean_urls === FALSE && file_uri_scheme($uri) == 'public' && !file_exists($uri)) {
-<<<<<<< HEAD
-      $directory_path = $this->getStreamWrapperManager()->getViaUri($uri)->getDirectoryPath();
-=======
       $directory_path = \Drupal::service('stream_wrapper_manager')->getViaUri($uri)->getDirectoryPath();
->>>>>>> github/master
       return Url::fromUri('base:' . $directory_path . '/' . file_uri_target($uri), array('absolute' => TRUE, 'query' => $token_query))->toString();
     }
 
@@ -279,11 +238,7 @@ class ImageStyle extends ConfigEntityBase implements ImageStyleInterface, Entity
     }
 
     // Delete the style directory in each registered wrapper.
-<<<<<<< HEAD
-    $wrappers = $this->getStreamWrapperManager()->getWrappers(StreamWrapperInterface::WRITE_VISIBLE);
-=======
     $wrappers = \Drupal::service('stream_wrapper_manager')->getWrappers(StreamWrapperInterface::WRITE_VISIBLE);
->>>>>>> github/master
     foreach ($wrappers as $wrapper => $wrapper_data) {
       if (file_exists($directory = $wrapper . '://styles/' . $this->id())) {
         file_unmanaged_delete_recursive($directory);
@@ -540,19 +495,4 @@ class ImageStyle extends ConfigEntityBase implements ImageStyleInterface, Entity
     return file_default_scheme();
   }
 
-<<<<<<< HEAD
-  /**
-   * Gets the stream wrapper manager service.
-   *
-   * @return \Drupal\Core\StreamWrapper\StreamWrapperManagerInterface
-   *   The stream wrapper manager service
-   *
-   * @todo Properly inject this service in Drupal 9.0.x.
-   */
-  protected function getStreamWrapperManager() {
-    return \Drupal::service('stream_wrapper_manager');
-  }
-
-=======
->>>>>>> github/master
 }

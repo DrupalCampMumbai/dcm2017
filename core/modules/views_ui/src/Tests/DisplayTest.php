@@ -191,11 +191,7 @@ class DisplayTest extends UITestBase {
    */
   public function testPageContextualLinks() {
     $this->drupalLogin($this->drupalCreateUser(array('administer views', 'access contextual links')));
-<<<<<<< HEAD
-    $view = View::load('test_display');
-=======
     $view = entity_load('view', 'test_display');
->>>>>>> github/master
     $view->enable()->save();
     $this->container->get('router.builder')->rebuildIfNeeded();
 

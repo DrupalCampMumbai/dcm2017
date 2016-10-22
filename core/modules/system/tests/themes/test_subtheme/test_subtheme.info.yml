@@ -1,13 +1,8 @@
 name: 'Theme test subtheme'
 type: theme
 description: 'Test theme which uses test_basetheme as the base theme.'
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-=======
 # version: VERSION
 # core: 8.x
->>>>>>> github/master
 base theme: test_basetheme
 libraries:
   - test_subtheme/global-styling
@@ -18,12 +13,9 @@ stylesheets-remove:
 libraries-extend:
   classy/base:
     - test_subtheme/global-styling
-<<<<<<< HEAD
-=======
 
 # Information added by Drupal.org packaging script on 2016-09-21
 version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

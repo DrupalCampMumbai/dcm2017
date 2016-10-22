@@ -26,10 +26,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed             $key
      * @param array|ArrayAccess $array
      * @param string            $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.0.0
      */
     public static function assertArrayHasKey($key, $array, $message = '')
@@ -60,10 +56,6 @@ abstract class PHPUnit_Framework_Assert
      * @param array|ArrayAccess $array
      * @param bool              $strict  Check for object identity
      * @param string            $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 4.4.0
      */
     public static function assertArraySubset($subset, $array, $strict = false, $message = '')
@@ -93,10 +85,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed             $key
      * @param array|ArrayAccess $array
      * @param string            $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function assertArrayNotHasKey($key, $array, $message = '')
@@ -131,10 +119,6 @@ abstract class PHPUnit_Framework_Assert
      * @param bool   $ignoreCase
      * @param bool   $checkForObjectIdentity
      * @param bool   $checkForNonObjectIdentity
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 2.1.0
      */
     public static function assertContains($needle, $haystack, $message = '', $ignoreCase = false, $checkForObjectIdentity = true, $checkForNonObjectIdentity = false)
@@ -179,10 +163,6 @@ abstract class PHPUnit_Framework_Assert
      * @param bool   $ignoreCase
      * @param bool   $checkForObjectIdentity
      * @param bool   $checkForNonObjectIdentity
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function assertAttributeContains($needle, $haystackAttributeName, $haystackClassOrObject, $message = '', $ignoreCase = false, $checkForObjectIdentity = true, $checkForNonObjectIdentity = false)
@@ -206,10 +186,6 @@ abstract class PHPUnit_Framework_Assert
      * @param bool   $ignoreCase
      * @param bool   $checkForObjectIdentity
      * @param bool   $checkForNonObjectIdentity
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 2.1.0
      */
     public static function assertNotContains($needle, $haystack, $message = '', $ignoreCase = false, $checkForObjectIdentity = true, $checkForNonObjectIdentity = false)
@@ -258,10 +234,6 @@ abstract class PHPUnit_Framework_Assert
      * @param bool   $ignoreCase
      * @param bool   $checkForObjectIdentity
      * @param bool   $checkForNonObjectIdentity
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function assertAttributeNotContains($needle, $haystackAttributeName, $haystackClassOrObject, $message = '', $ignoreCase = false, $checkForObjectIdentity = true, $checkForNonObjectIdentity = false)
@@ -283,10 +255,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed  $haystack
      * @param bool   $isNativeType
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.4
      */
     public static function assertContainsOnly($type, $haystack, $isNativeType = null, $message = '')
@@ -349,10 +317,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed  $haystackClassOrObject
      * @param bool   $isNativeType
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.4
      */
     public static function assertAttributeContainsOnly($type, $haystackAttributeName, $haystackClassOrObject, $isNativeType = null, $message = '')
@@ -372,10 +336,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed  $haystack
      * @param bool   $isNativeType
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.4
      */
     public static function assertNotContainsOnly($type, $haystack, $isNativeType = null, $message = '')
@@ -414,10 +374,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed  $haystackClassOrObject
      * @param bool   $isNativeType
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.4
      */
     public static function assertAttributeNotContainsOnly($type, $haystackAttributeName, $haystackClassOrObject, $isNativeType = null, $message = '')
@@ -464,10 +420,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $haystackAttributeName
      * @param mixed  $haystackClassOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.6.0
      */
     public static function assertAttributeCount($expectedCount, $haystackAttributeName, $haystackClassOrObject, $message = '')
@@ -513,10 +465,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $haystackAttributeName
      * @param mixed  $haystackClassOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.6.0
      */
     public static function assertAttributeNotCount($expectedCount, $haystackAttributeName, $haystackClassOrObject, $message = '')
@@ -587,10 +535,6 @@ abstract class PHPUnit_Framework_Assert
      * @param int    $maxDepth
      * @param bool   $canonicalize
      * @param bool   $ignoreCase
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 2.3.0
      */
     public static function assertNotEquals($expected, $actual, $message = '', $delta = 0.0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false)
@@ -636,14 +580,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Asserts that a variable is empty.
      *
-<<<<<<< HEAD
-     * @param mixed  $actual
-     * @param string $message
-     *
-=======
      * @param  mixed                                  $actual
      * @param  string                                 $message
->>>>>>> github/master
      * @throws PHPUnit_Framework_AssertionFailedError
      */
     public static function assertEmpty($actual, $message = '')
@@ -658,10 +596,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $haystackAttributeName
      * @param mixed  $haystackClassOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertAttributeEmpty($haystackAttributeName, $haystackClassOrObject, $message = '')
@@ -675,14 +609,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Asserts that a variable is not empty.
      *
-<<<<<<< HEAD
-     * @param mixed  $actual
-     * @param string $message
-     *
-=======
      * @param  mixed                                  $actual
      * @param  string                                 $message
->>>>>>> github/master
      * @throws PHPUnit_Framework_AssertionFailedError
      */
     public static function assertNotEmpty($actual, $message = '')
@@ -697,10 +625,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $haystackAttributeName
      * @param mixed  $haystackClassOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertAttributeNotEmpty($haystackAttributeName, $haystackClassOrObject, $message = '')
@@ -717,10 +641,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed  $expected
      * @param mixed  $actual
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertGreaterThan($expected, $actual, $message = '')
@@ -735,10 +655,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $actualAttributeName
      * @param string $actualClassOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertAttributeGreaterThan($expected, $actualAttributeName, $actualClassOrObject, $message = '')
@@ -756,10 +672,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed  $expected
      * @param mixed  $actual
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertGreaterThanOrEqual($expected, $actual, $message = '')
@@ -778,10 +690,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $actualAttributeName
      * @param string $actualClassOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertAttributeGreaterThanOrEqual($expected, $actualAttributeName, $actualClassOrObject, $message = '')
@@ -799,10 +707,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed  $expected
      * @param mixed  $actual
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertLessThan($expected, $actual, $message = '')
@@ -817,10 +721,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $actualAttributeName
      * @param string $actualClassOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertAttributeLessThan($expected, $actualAttributeName, $actualClassOrObject, $message = '')
@@ -838,10 +738,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed  $expected
      * @param mixed  $actual
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertLessThanOrEqual($expected, $actual, $message = '')
@@ -856,10 +752,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $actualAttributeName
      * @param string $actualClassOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertAttributeLessThanOrEqual($expected, $actualAttributeName, $actualClassOrObject, $message = '')
@@ -880,10 +772,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $message
      * @param bool   $canonicalize
      * @param bool   $ignoreCase
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.2.14
      */
     public static function assertFileEquals($expected, $actual, $message = '', $canonicalize = false, $ignoreCase = false)
@@ -911,10 +799,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $message
      * @param bool   $canonicalize
      * @param bool   $ignoreCase
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.2.14
      */
     public static function assertFileNotEquals($expected, $actual, $message = '', $canonicalize = false, $ignoreCase = false)
@@ -942,10 +826,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $message
      * @param bool   $canonicalize
      * @param bool   $ignoreCase
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      */
     public static function assertStringEqualsFile($expectedFile, $actualString, $message = '', $canonicalize = false, $ignoreCase = false)
@@ -972,10 +852,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $message
      * @param bool   $canonicalize
      * @param bool   $ignoreCase
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      */
     public static function assertStringNotEqualsFile($expectedFile, $actualString, $message = '', $canonicalize = false, $ignoreCase = false)
@@ -998,10 +874,6 @@ abstract class PHPUnit_Framework_Assert
      *
      * @param string $filename
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function assertFileExists($filename, $message = '')
@@ -1020,10 +892,6 @@ abstract class PHPUnit_Framework_Assert
      *
      * @param string $filename
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function assertFileNotExists($filename, $message = '')
@@ -1042,14 +910,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Asserts that a condition is true.
      *
-<<<<<<< HEAD
-     * @param bool   $condition
-     * @param string $message
-     *
-=======
      * @param  bool                                   $condition
      * @param  string                                 $message
->>>>>>> github/master
      * @throws PHPUnit_Framework_AssertionFailedError
      */
     public static function assertTrue($condition, $message = '')
@@ -1060,14 +922,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Asserts that a condition is not true.
      *
-<<<<<<< HEAD
-     * @param bool   $condition
-     * @param string $message
-     *
-=======
      * @param  bool                                   $condition
      * @param  string                                 $message
->>>>>>> github/master
      * @throws PHPUnit_Framework_AssertionFailedError
      */
     public static function assertNotTrue($condition, $message = '')
@@ -1078,14 +934,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Asserts that a condition is false.
      *
-<<<<<<< HEAD
-     * @param bool   $condition
-     * @param string $message
-     *
-=======
      * @param  bool                                   $condition
      * @param  string                                 $message
->>>>>>> github/master
      * @throws PHPUnit_Framework_AssertionFailedError
      */
     public static function assertFalse($condition, $message = '')
@@ -1096,14 +946,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Asserts that a condition is not false.
      *
-<<<<<<< HEAD
-     * @param bool   $condition
-     * @param string $message
-     *
-=======
      * @param  bool                                   $condition
      * @param  string                                 $message
->>>>>>> github/master
      * @throws PHPUnit_Framework_AssertionFailedError
      */
     public static function assertNotFalse($condition, $message = '')
@@ -1139,10 +983,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param string $className
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertClassHasAttribute($attributeName, $className, $message = '')
@@ -1172,10 +1012,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param string $className
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertClassNotHasAttribute($attributeName, $className, $message = '')
@@ -1205,10 +1041,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param string $className
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertClassHasStaticAttribute($attributeName, $className, $message = '')
@@ -1238,10 +1070,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param string $className
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertClassNotHasStaticAttribute($attributeName, $className, $message = '')
@@ -1273,10 +1101,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param object $object
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function assertObjectHasAttribute($attributeName, $object, $message = '')
@@ -1306,10 +1130,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param object $object
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function assertObjectNotHasAttribute($attributeName, $object, $message = '')
@@ -1419,10 +1239,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expected
      * @param mixed  $actual
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertInstanceOf($expected, $actual, $message = '')
@@ -1445,10 +1261,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param mixed  $classOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertAttributeInstanceOf($expected, $attributeName, $classOrObject, $message = '')
@@ -1466,10 +1278,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expected
      * @param mixed  $actual
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertNotInstanceOf($expected, $actual, $message = '')
@@ -1492,10 +1300,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param mixed  $classOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertAttributeNotInstanceOf($expected, $attributeName, $classOrObject, $message = '')
@@ -1513,10 +1317,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expected
      * @param mixed  $actual
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertInternalType($expected, $actual, $message = '')
@@ -1539,10 +1339,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param mixed  $classOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertAttributeInternalType($expected, $attributeName, $classOrObject, $message = '')
@@ -1560,10 +1356,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expected
      * @param mixed  $actual
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertNotInternalType($expected, $actual, $message = '')
@@ -1586,10 +1378,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $attributeName
      * @param mixed  $classOrObject
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     public static function assertAttributeNotInternalType($expected, $attributeName, $classOrObject, $message = '')
@@ -1629,10 +1417,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $pattern
      * @param string $string
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 2.1.0
      */
     public static function assertNotRegExp($pattern, $string, $message = '')
@@ -1716,10 +1500,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $format
      * @param string $string
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.5.0
      */
     public static function assertStringMatchesFormat($format, $string, $message = '')
@@ -1743,10 +1523,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $format
      * @param string $string
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.5.0
      */
     public static function assertStringNotMatchesFormat($format, $string, $message = '')
@@ -1772,10 +1548,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $formatFile
      * @param string $string
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.5.0
      */
     public static function assertStringMatchesFormatFile($formatFile, $string, $message = '')
@@ -1799,10 +1571,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $formatFile
      * @param string $string
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.5.0
      */
     public static function assertStringNotMatchesFormatFile($formatFile, $string, $message = '')
@@ -1828,10 +1596,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $prefix
      * @param string $string
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.4.0
      */
     public static function assertStringStartsWith($prefix, $string, $message = '')
@@ -1857,10 +1621,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $prefix
      * @param string $string
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.4.0
      */
     public static function assertStringStartsNotWith($prefix, $string, $message = '')
@@ -1886,10 +1646,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $suffix
      * @param string $string
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.4.0
      */
     public static function assertStringEndsWith($suffix, $string, $message = '')
@@ -1913,10 +1669,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $suffix
      * @param string $string
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.4.0
      */
     public static function assertStringEndsNotWith($suffix, $string, $message = '')
@@ -1942,10 +1694,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expectedFile
      * @param string $actualFile
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertXmlFileEqualsXmlFile($expectedFile, $actualFile, $message = '')
@@ -1962,10 +1710,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expectedFile
      * @param string $actualFile
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertXmlFileNotEqualsXmlFile($expectedFile, $actualFile, $message = '')
@@ -1982,10 +1726,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expectedFile
      * @param string $actualXml
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      */
     public static function assertXmlStringEqualsXmlFile($expectedFile, $actualXml, $message = '')
@@ -2002,10 +1742,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expectedFile
      * @param string $actualXml
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      */
     public static function assertXmlStringNotEqualsXmlFile($expectedFile, $actualXml, $message = '')
@@ -2022,10 +1758,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expectedXml
      * @param string $actualXml
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertXmlStringEqualsXmlString($expectedXml, $actualXml, $message = '')
@@ -2042,10 +1774,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $expectedXml
      * @param string $actualXml
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function assertXmlStringNotEqualsXmlString($expectedXml, $actualXml, $message = '')
@@ -2063,27 +1791,15 @@ abstract class PHPUnit_Framework_Assert
      * @param DOMElement $actualElement
      * @param bool       $checkAttributes
      * @param string     $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      */
     public static function assertEqualXMLStructure(DOMElement $expectedElement, DOMElement $actualElement, $checkAttributes = false, $message = '')
     {
-<<<<<<< HEAD
-        $tmp             = new DOMDocument;
-        $expectedElement = $tmp->importNode($expectedElement, true);
-
-        $tmp           = new DOMDocument;
-        $actualElement = $tmp->importNode($actualElement, true);
-=======
         $tmp = new DOMDocument;
         $expectedElement = $tmp->importNode($expectedElement, true);
 
         $tmp = new DOMDocument;
         $actualElement= $tmp->importNode($actualElement, true);
->>>>>>> github/master
 
         unset($tmp);
 
@@ -2169,10 +1885,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed          $actual
      * @param string         $message
      * @param bool           $isHtml
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      * @deprecated
      * @codeCoverageIgnore
@@ -2201,10 +1913,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed          $actual
      * @param string         $message
      * @param bool           $isHtml
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      * @deprecated
      * @codeCoverageIgnore
@@ -2233,10 +1941,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed          $actual
      * @param string         $message
      * @param bool           $isHtml
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      * @deprecated
      * @codeCoverageIgnore
@@ -2424,10 +2128,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $actual
      * @param string $message
      * @param bool   $isHtml
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      * @deprecated
      * @codeCoverageIgnore
@@ -2453,10 +2153,6 @@ abstract class PHPUnit_Framework_Assert
      * @param string $actual
      * @param string $message
      * @param bool   $isHtml
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      * @deprecated
      * @codeCoverageIgnore
@@ -2478,10 +2174,6 @@ abstract class PHPUnit_Framework_Assert
      * @param mixed                        $value
      * @param PHPUnit_Framework_Constraint $constraint
      * @param string                       $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function assertThat($value, PHPUnit_Framework_Constraint $constraint, $message = '')
@@ -2496,10 +2188,6 @@ abstract class PHPUnit_Framework_Assert
      *
      * @param string $actualJson
      * @param string $message
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.7.20
      */
     public static function assertJson($actualJson, $message = '')
@@ -2655,10 +2343,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_And matcher object.
      *
      * @return PHPUnit_Framework_Constraint_And
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function logicalAnd()
@@ -2675,10 +2359,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_Or matcher object.
      *
      * @return PHPUnit_Framework_Constraint_Or
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function logicalOr()
@@ -2694,15 +2374,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_Not matcher object.
      *
-<<<<<<< HEAD
-     * @param PHPUnit_Framework_Constraint $constraint
-     *
-     * @return PHPUnit_Framework_Constraint_Not
-     *
-=======
      * @param  PHPUnit_Framework_Constraint     $constraint
      * @return PHPUnit_Framework_Constraint_Not
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function logicalNot(PHPUnit_Framework_Constraint $constraint)
@@ -2714,10 +2387,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_Xor matcher object.
      *
      * @return PHPUnit_Framework_Constraint_Xor
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function logicalXor()
@@ -2734,10 +2403,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_IsAnything matcher object.
      *
      * @return PHPUnit_Framework_Constraint_IsAnything
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function anything()
@@ -2749,10 +2414,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_IsTrue matcher object.
      *
      * @return PHPUnit_Framework_Constraint_IsTrue
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      */
     public static function isTrue()
@@ -2763,12 +2424,7 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_Callback matcher object.
      *
-<<<<<<< HEAD
-     * @param callable $callback
-     *
-=======
      * @param  callable                              $callback
->>>>>>> github/master
      * @return PHPUnit_Framework_Constraint_Callback
      */
     public static function callback($callback)
@@ -2780,10 +2436,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_IsFalse matcher object.
      *
      * @return PHPUnit_Framework_Constraint_IsFalse
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      */
     public static function isFalse()
@@ -2795,10 +2447,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_IsJson matcher object.
      *
      * @return PHPUnit_Framework_Constraint_IsJson
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.7.20
      */
     public static function isJson()
@@ -2810,10 +2458,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_IsNull matcher object.
      *
      * @return PHPUnit_Framework_Constraint_IsNull
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.0
      */
     public static function isNull()
@@ -2824,17 +2468,9 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_Attribute matcher object.
      *
-<<<<<<< HEAD
-     * @param PHPUnit_Framework_Constraint $constraint
-     * @param string                       $attributeName
-     *
-     * @return PHPUnit_Framework_Constraint_Attribute
-     *
-=======
      * @param  PHPUnit_Framework_Constraint           $constraint
      * @param  string                                 $attributeName
      * @return PHPUnit_Framework_Constraint_Attribute
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function attribute(PHPUnit_Framework_Constraint $constraint, $attributeName)
@@ -2849,19 +2485,10 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_TraversableContains matcher
      * object.
      *
-<<<<<<< HEAD
-     * @param mixed $value
-     * @param bool  $checkForObjectIdentity
-     * @param bool  $checkForNonObjectIdentity
-     *
-     * @return PHPUnit_Framework_Constraint_TraversableContains
-     *
-=======
      * @param  mixed                                            $value
      * @param  bool                                             $checkForObjectIdentity
      * @param  bool                                             $checkForNonObjectIdentity
      * @return PHPUnit_Framework_Constraint_TraversableContains
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function contains($value, $checkForObjectIdentity = true, $checkForNonObjectIdentity = false)
@@ -2873,15 +2500,8 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_TraversableContainsOnly matcher
      * object.
      *
-<<<<<<< HEAD
-     * @param string $type
-     *
-     * @return PHPUnit_Framework_Constraint_TraversableContainsOnly
-     *
-=======
      * @param  string                                               $type
      * @return PHPUnit_Framework_Constraint_TraversableContainsOnly
->>>>>>> github/master
      * @since  Method available since Release 3.1.4
      */
     public static function containsOnly($type)
@@ -2893,12 +2513,7 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_TraversableContainsOnly matcher
      * object.
      *
-<<<<<<< HEAD
-     * @param string $classname
-     *
-=======
      * @param  string                                               $classname
->>>>>>> github/master
      * @return PHPUnit_Framework_Constraint_TraversableContainsOnly
      */
     public static function containsOnlyInstancesOf($classname)
@@ -2909,15 +2524,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_ArrayHasKey matcher object.
      *
-<<<<<<< HEAD
-     * @param mixed $key
-     *
-     * @return PHPUnit_Framework_Constraint_ArrayHasKey
-     *
-=======
      * @param  mixed                                    $key
      * @return PHPUnit_Framework_Constraint_ArrayHasKey
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function arrayHasKey($key)
@@ -2928,23 +2536,12 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_IsEqual matcher object.
      *
-<<<<<<< HEAD
-     * @param mixed $value
-     * @param float $delta
-     * @param int   $maxDepth
-     * @param bool  $canonicalize
-     * @param bool  $ignoreCase
-     *
-     * @return PHPUnit_Framework_Constraint_IsEqual
-     *
-=======
      * @param  mixed                                $value
      * @param  float                                $delta
      * @param  int                                  $maxDepth
      * @param  bool                                 $canonicalize
      * @param  bool                                 $ignoreCase
      * @return PHPUnit_Framework_Constraint_IsEqual
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function equalTo($value, $delta = 0.0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false)
@@ -2963,17 +2560,6 @@ abstract class PHPUnit_Framework_Assert
      * that is wrapped in a PHPUnit_Framework_Constraint_Attribute matcher
      * object.
      *
-<<<<<<< HEAD
-     * @param string $attributeName
-     * @param mixed  $value
-     * @param float  $delta
-     * @param int    $maxDepth
-     * @param bool   $canonicalize
-     * @param bool   $ignoreCase
-     *
-     * @return PHPUnit_Framework_Constraint_Attribute
-     *
-=======
      * @param  string                                 $attributeName
      * @param  mixed                                  $value
      * @param  float                                  $delta
@@ -2981,7 +2567,6 @@ abstract class PHPUnit_Framework_Assert
      * @param  bool                                   $canonicalize
      * @param  bool                                   $ignoreCase
      * @return PHPUnit_Framework_Constraint_Attribute
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function attributeEqualTo($attributeName, $value, $delta = 0.0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false)
@@ -3002,10 +2587,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_IsEmpty matcher object.
      *
      * @return PHPUnit_Framework_Constraint_IsEmpty
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.5.0
      */
     public static function isEmpty()
@@ -3017,10 +2598,6 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_FileExists matcher object.
      *
      * @return PHPUnit_Framework_Constraint_FileExists
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function fileExists()
@@ -3031,15 +2608,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_GreaterThan matcher object.
      *
-<<<<<<< HEAD
-     * @param mixed $value
-     *
-     * @return PHPUnit_Framework_Constraint_GreaterThan
-     *
-=======
      * @param  mixed                                    $value
      * @return PHPUnit_Framework_Constraint_GreaterThan
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function greaterThan($value)
@@ -3052,15 +2622,8 @@ abstract class PHPUnit_Framework_Assert
      * a PHPUnit_Framework_Constraint_IsEqual and a
      * PHPUnit_Framework_Constraint_GreaterThan matcher object.
      *
-<<<<<<< HEAD
-     * @param mixed $value
-     *
-     * @return PHPUnit_Framework_Constraint_Or
-     *
-=======
      * @param  mixed                           $value
      * @return PHPUnit_Framework_Constraint_Or
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function greaterThanOrEqual($value)
@@ -3074,15 +2637,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_ClassHasAttribute matcher object.
      *
-<<<<<<< HEAD
-     * @param string $attributeName
-     *
-     * @return PHPUnit_Framework_Constraint_ClassHasAttribute
-     *
-=======
      * @param  string                                         $attributeName
      * @return PHPUnit_Framework_Constraint_ClassHasAttribute
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function classHasAttribute($attributeName)
@@ -3096,15 +2652,8 @@ abstract class PHPUnit_Framework_Assert
      * Returns a PHPUnit_Framework_Constraint_ClassHasStaticAttribute matcher
      * object.
      *
-<<<<<<< HEAD
-     * @param string $attributeName
-     *
-     * @return PHPUnit_Framework_Constraint_ClassHasStaticAttribute
-     *
-=======
      * @param  string                                               $attributeName
      * @return PHPUnit_Framework_Constraint_ClassHasStaticAttribute
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function classHasStaticAttribute($attributeName)
@@ -3117,15 +2666,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_ObjectHasAttribute matcher object.
      *
-<<<<<<< HEAD
-     * @param string $attributeName
-     *
-     * @return PHPUnit_Framework_Constraint_ObjectHasAttribute
-     *
-=======
      * @param  string                                          $attributeName
      * @return PHPUnit_Framework_Constraint_ObjectHasAttribute
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function objectHasAttribute($attributeName)
@@ -3138,15 +2680,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_IsIdentical matcher object.
      *
-<<<<<<< HEAD
-     * @param mixed $value
-     *
-     * @return PHPUnit_Framework_Constraint_IsIdentical
-     *
-=======
      * @param  mixed                                    $value
      * @return PHPUnit_Framework_Constraint_IsIdentical
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function identicalTo($value)
@@ -3157,15 +2692,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_IsInstanceOf matcher object.
      *
-<<<<<<< HEAD
-     * @param string $className
-     *
-     * @return PHPUnit_Framework_Constraint_IsInstanceOf
-     *
-=======
      * @param  string                                    $className
      * @return PHPUnit_Framework_Constraint_IsInstanceOf
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function isInstanceOf($className)
@@ -3176,15 +2704,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_IsType matcher object.
      *
-<<<<<<< HEAD
-     * @param string $type
-     *
-     * @return PHPUnit_Framework_Constraint_IsType
-     *
-=======
      * @param  string                              $type
      * @return PHPUnit_Framework_Constraint_IsType
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function isType($type)
@@ -3195,15 +2716,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_LessThan matcher object.
      *
-<<<<<<< HEAD
-     * @param mixed $value
-     *
-     * @return PHPUnit_Framework_Constraint_LessThan
-     *
-=======
      * @param  mixed                                 $value
      * @return PHPUnit_Framework_Constraint_LessThan
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function lessThan($value)
@@ -3216,15 +2730,8 @@ abstract class PHPUnit_Framework_Assert
      * a PHPUnit_Framework_Constraint_IsEqual and a
      * PHPUnit_Framework_Constraint_LessThan matcher object.
      *
-<<<<<<< HEAD
-     * @param mixed $value
-     *
-     * @return PHPUnit_Framework_Constraint_Or
-     *
-=======
      * @param  mixed                           $value
      * @return PHPUnit_Framework_Constraint_Or
->>>>>>> github/master
      * @since  Method available since Release 3.1.0
      */
     public static function lessThanOrEqual($value)
@@ -3238,15 +2745,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_PCREMatch matcher object.
      *
-<<<<<<< HEAD
-     * @param string $pattern
-     *
-     * @return PHPUnit_Framework_Constraint_PCREMatch
-     *
-=======
      * @param  string                                 $pattern
      * @return PHPUnit_Framework_Constraint_PCREMatch
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function matchesRegularExpression($pattern)
@@ -3257,15 +2757,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_StringMatches matcher object.
      *
-<<<<<<< HEAD
-     * @param string $string
-     *
-     * @return PHPUnit_Framework_Constraint_StringMatches
-     *
-=======
      * @param  string                                     $string
      * @return PHPUnit_Framework_Constraint_StringMatches
->>>>>>> github/master
      * @since  Method available since Release 3.5.0
      */
     public static function matches($string)
@@ -3276,15 +2769,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_StringStartsWith matcher object.
      *
-<<<<<<< HEAD
-     * @param mixed $prefix
-     *
-     * @return PHPUnit_Framework_Constraint_StringStartsWith
-     *
-=======
      * @param  mixed                                         $prefix
      * @return PHPUnit_Framework_Constraint_StringStartsWith
->>>>>>> github/master
      * @since  Method available since Release 3.4.0
      */
     public static function stringStartsWith($prefix)
@@ -3295,17 +2781,9 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_StringContains matcher object.
      *
-<<<<<<< HEAD
-     * @param string $string
-     * @param bool   $case
-     *
-     * @return PHPUnit_Framework_Constraint_StringContains
-     *
-=======
      * @param  string                                      $string
      * @param  bool                                        $case
      * @return PHPUnit_Framework_Constraint_StringContains
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function stringContains($string, $case = true)
@@ -3316,15 +2794,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_StringEndsWith matcher object.
      *
-<<<<<<< HEAD
-     * @param mixed $suffix
-     *
-     * @return PHPUnit_Framework_Constraint_StringEndsWith
-     *
-=======
      * @param  mixed                                       $suffix
      * @return PHPUnit_Framework_Constraint_StringEndsWith
->>>>>>> github/master
      * @since  Method available since Release 3.4.0
      */
     public static function stringEndsWith($suffix)
@@ -3335,12 +2806,7 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Returns a PHPUnit_Framework_Constraint_Count matcher object.
      *
-<<<<<<< HEAD
-     * @param int $count
-     *
-=======
      * @param  int                                $count
->>>>>>> github/master
      * @return PHPUnit_Framework_Constraint_Count
      */
     public static function countOf($count)
@@ -3350,12 +2816,7 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Fails a test with the given message.
      *
-<<<<<<< HEAD
-     * @param string $message
-     *
-=======
      * @param  string                                 $message
->>>>>>> github/master
      * @throws PHPUnit_Framework_AssertionFailedError
      */
     public static function fail($message = '')
@@ -3367,17 +2828,9 @@ abstract class PHPUnit_Framework_Assert
      * Returns the value of an attribute of a class or an object.
      * This also works for attributes that are declared protected or private.
      *
-<<<<<<< HEAD
-     * @param mixed  $classOrObject
-     * @param string $attributeName
-     *
-     * @return mixed
-     *
-=======
      * @param  mixed                       $classOrObject
      * @param  string                      $attributeName
      * @return mixed
->>>>>>> github/master
      * @throws PHPUnit_Framework_Exception
      */
     public static function readAttribute($classOrObject, $attributeName)
@@ -3419,20 +2872,10 @@ abstract class PHPUnit_Framework_Assert
      * Returns the value of a static attribute.
      * This also works for attributes that are declared protected or private.
      *
-<<<<<<< HEAD
-     * @param string $className
-     * @param string $attributeName
-     *
-     * @return mixed
-     *
-     * @throws PHPUnit_Framework_Exception
-     *
-=======
      * @param  string                      $className
      * @param  string                      $attributeName
      * @return mixed
      * @throws PHPUnit_Framework_Exception
->>>>>>> github/master
      * @since  Method available since Release 4.0.0
      */
     public static function getStaticAttribute($className, $attributeName)
@@ -3477,20 +2920,10 @@ abstract class PHPUnit_Framework_Assert
      * Returns the value of an object's attribute.
      * This also works for attributes that are declared protected or private.
      *
-<<<<<<< HEAD
-     * @param object $object
-     * @param string $attributeName
-     *
-     * @return mixed
-     *
-     * @throws PHPUnit_Framework_Exception
-     *
-=======
      * @param  object                      $object
      * @param  string                      $attributeName
      * @return mixed
      * @throws PHPUnit_Framework_Exception
->>>>>>> github/master
      * @since  Method available since Release 4.0.0
      */
     public static function getObjectAttribute($object, $attributeName)
@@ -3544,15 +2977,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Mark the test as incomplete.
      *
-<<<<<<< HEAD
-     * @param string $message
-     *
-     * @throws PHPUnit_Framework_IncompleteTestError
-     *
-=======
      * @param  string                                $message
      * @throws PHPUnit_Framework_IncompleteTestError
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function markTestIncomplete($message = '')
@@ -3563,15 +2989,8 @@ abstract class PHPUnit_Framework_Assert
     /**
      * Mark the test as skipped.
      *
-<<<<<<< HEAD
-     * @param string $message
-     *
-     * @throws PHPUnit_Framework_SkippedTestError
-     *
-=======
      * @param  string                             $message
      * @throws PHPUnit_Framework_SkippedTestError
->>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function markTestSkipped($message = '')
@@ -3583,10 +3002,6 @@ abstract class PHPUnit_Framework_Assert
      * Return the current assertion count.
      *
      * @return int
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.3.3
      */
     public static function getCount()

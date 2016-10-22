@@ -1,14 +1,6 @@
 name: 'Field Third Party Settings Test'
 type: module
 description: 'Support module for the Field API tests.'
-<<<<<<< HEAD
-core: 8.x
-package: Testing
-version: VERSION
-dependencies:
-  - entity_test
-  - field_test
-=======
 # core: 8.x
 package: Testing
 # version: VERSION
@@ -21,4 +13,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

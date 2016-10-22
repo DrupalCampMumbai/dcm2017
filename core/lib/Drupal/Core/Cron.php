@@ -2,10 +2,6 @@
 
 namespace Drupal\Core;
 
-<<<<<<< HEAD
-use Drupal\Component\Utility\Timer;
-=======
->>>>>>> github/master
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Queue\QueueWorkerManagerInterface;
 use Drupal\Core\Queue\RequeueException;
@@ -86,11 +82,7 @@ class Cron implements CronInterface {
    *    The account switching service.
    * @param \Psr\Log\LoggerInterface $logger
    *   A logger instance.
-<<<<<<< HEAD
-   * @param \Drupal\Core\Queue\QueueWorkerManagerInterface $queue_manager
-=======
    * @param \Drupal\Core\Queue\QueueWorkerManagerInterface
->>>>>>> github/master
    *   The queue plugin manager.
    */
   public function __construct(ModuleHandlerInterface $module_handler, LockBackendInterface $lock, QueueFactory $queue_factory, StateInterface $state, AccountSwitcherInterface $account_switcher, LoggerInterface $logger, QueueWorkerManagerInterface $queue_manager) {
@@ -201,30 +193,8 @@ class Cron implements CronInterface {
    * Invokes any cron handlers implementing hook_cron.
    */
   protected function invokeCronHandlers() {
-<<<<<<< HEAD
-    $module_previous = '';
-
     // Iterate through the modules calling their cron handlers (if any):
     foreach ($this->moduleHandler->getImplementations('cron') as $module) {
-
-      if (!$module_previous) {
-        $this->logger->notice('Starting execution of @module_cron().', [
-          '@module' => $module,
-        ]);
-      }
-      else {
-        $this->logger->notice('Starting execution of @module_cron(), execution of @module_previous_cron() took @time.', [
-          '@module' => $module,
-          '@module_previous' => $module_previous,
-          '@time' => Timer::read('cron_' . $module_previous) . 'ms',
-        ]);
-      }
-      Timer::start('cron_' . $module);
-
-=======
-    // Iterate through the modules calling their cron handlers (if any):
-    foreach ($this->moduleHandler->getImplementations('cron') as $module) {
->>>>>>> github/master
       // Do not let an exception thrown by one module disturb another.
       try {
         $this->moduleHandler->invoke($module, 'cron');
@@ -232,18 +202,6 @@ class Cron implements CronInterface {
       catch (\Exception $e) {
         watchdog_exception('cron', $e);
       }
-<<<<<<< HEAD
-
-      Timer::stop('cron_' . $module);
-      $module_previous = $module;
-    }
-    if ($module_previous) {
-      $this->logger->notice('Execution of @module_previous_cron() took @time.', [
-        '@module_previous' => $module_previous,
-        '@time' => Timer::read('cron_' . $module_previous) . 'ms',
-      ]);
-=======
->>>>>>> github/master
     }
   }
 

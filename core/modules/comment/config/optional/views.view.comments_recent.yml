@@ -173,11 +173,7 @@ display:
           entity_field: changed
       filters:
         status:
-<<<<<<< HEAD
-          value: '1'
-=======
           value: true
->>>>>>> github/master
           table: comment_field_data
           field: status
           id: status
@@ -188,11 +184,7 @@ display:
           entity_type: comment
           entity_field: status
         status_node:
-<<<<<<< HEAD
-          value: '1'
-=======
           value: true
->>>>>>> github/master
           table: node_field_data
           field: status
           relationship: node

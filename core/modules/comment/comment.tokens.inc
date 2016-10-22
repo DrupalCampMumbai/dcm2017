@@ -7,11 +7,6 @@
 
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Datetime\Entity\DateFormat;
-<<<<<<< HEAD
-use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\Core\Entity\FieldableEntityInterface;
-=======
->>>>>>> github/master
 use Drupal\Core\Render\BubbleableMetadata;
 
 /**
@@ -24,30 +19,6 @@ function comment_token_info() {
     'needs-data' => 'comment',
   );
 
-<<<<<<< HEAD
-  $tokens = [];
-  // Provide a integration for each entity type except comment.
-  foreach (\Drupal::entityTypeManager()->getDefinitions() as $entity_type_id => $entity_type) {
-    if ($entity_type_id == 'comment' || !$entity_type->isSubclassOf(ContentEntityInterface::class)) {
-      continue;
-    }
-
-    if (\Drupal::service('comment.manager')->getFields($entity_type_id)) {
-      // Get the correct token type.
-      $token_type = ($entity_type_id == 'taxonomy_term') ? 'term' : $entity_type_id;
-
-      // @todo Make this work per field. See https://www.drupal.org/node/2031903.
-      $tokens[$token_type]['comment-count'] = [
-        'name' => t("Comment count"),
-        'description' => t("The number of comments posted on an entity."),
-      ];
-      $tokens[$token_type]['comment-count-new'] = [
-        'name' => t("New comment count"),
-        'description' => t("The number of comments posted on an entity since the reader last viewed it."),
-      ];
-    }
-  }
-=======
   // @todo Make this work per field. See https://www.drupal.org/node/2031903.
   $entity['comment-count'] = array(
     'name' => t("Comment count"),
@@ -57,7 +28,6 @@ function comment_token_info() {
     'name' => t("New comment count"),
     'description' => t("The number of comments posted on an entity since the reader last viewed it."),
   );
->>>>>>> github/master
 
   // Core comment tokens
   $comment['cid'] = array(
@@ -127,14 +97,9 @@ function comment_token_info() {
   return array(
     'types' => array('comment' => $type),
     'tokens' => array(
-<<<<<<< HEAD
-      'comment' => $comment,
-    ) + $tokens,
-=======
       'entity' => $entity,
       'comment' => $comment,
     ),
->>>>>>> github/master
   );
 }
 
@@ -270,16 +235,9 @@ function comment_tokens($type, $tokens, array $data, array $options, BubbleableM
       $replacements += $token_service->generate('user', $author_tokens, array('user' => $account), $options, $bubbleable_metadata);
     }
   }
-<<<<<<< HEAD
-  // Replacement tokens for any content entities that have comment field.
-  elseif (!empty($data[$type]) && $data[$type] instanceof FieldableEntityInterface) {
-    /** @var $entity \Drupal\Core\Entity\FieldableEntityInterface */
-    $entity = $data[$type];
-=======
   elseif ($type == 'entity' & !empty($data['entity'])) {
     /** @var $entity \Drupal\Core\Entity\FieldableEntityInterface */
     $entity = $data['entity'];
->>>>>>> github/master
 
     foreach ($tokens as $name => $original) {
       switch ($name) {

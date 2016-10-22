@@ -2,11 +2,8 @@ editor.filter_xss:
   path: '/editor/filter_xss/{filter_format}'
   defaults:
     _controller: '\Drupal\editor\EditorController::filterXss'
-<<<<<<< HEAD
-=======
   options:
     _theme: ajax_base_page
->>>>>>> github/master
   requirements:
     _entity_access: 'filter_format.use'
 
@@ -15,10 +12,7 @@ editor.field_untransformed_text:
   defaults:
     _controller: '\Drupal\editor\EditorController::getUntransformedText'
   options:
-<<<<<<< HEAD
-=======
     _theme: ajax_base_page
->>>>>>> github/master
     parameters:
       entity:
         type: entity:{entity_type}
@@ -27,22 +21,6 @@ editor.field_untransformed_text:
     _access_quickedit_entity_field: 'TRUE'
 
 editor.image_dialog:
-<<<<<<< HEAD
-  path: '/editor/dialog/image/{editor}'
-  defaults:
-    _form: '\Drupal\editor\Form\EditorImageDialog'
-    _title: 'Upload image'
-  requirements:
-    _entity_access: 'editor.use'
-
-editor.link_dialog:
-  path: '/editor/dialog/link/{editor}'
-  defaults:
-    _form: '\Drupal\editor\Form\EditorLinkDialog'
-    _title: 'Add link'
-  requirements:
-    _entity_access: 'editor.use'
-=======
   path: '/editor/dialog/image/{filter_format}'
   defaults:
     _form: '\Drupal\editor\Form\EditorImageDialog'
@@ -61,4 +39,3 @@ editor.link_dialog:
     _theme: ajax_base_page
   requirements:
     _entity_access: 'filter_format.use'
->>>>>>> github/master

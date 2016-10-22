@@ -172,15 +172,9 @@ class NodeController extends ControllerBase implements ContainerInjectionInterfa
     $delete_permission = (($account->hasPermission("delete $type revisions") || $account->hasPermission('delete all revisions') || $account->hasPermission('administer nodes')) && $node->access('delete'));
 
     $rows = array();
-<<<<<<< HEAD
-    $default_revision = $node->getRevisionId();
-
-    foreach ($this->getRevisionIds($node, $node_storage) as $vid) {
-=======
     $latest_revision = TRUE;
 
     foreach ($this->_getRevisionIds($node, $node_storage) as $vid) {
->>>>>>> github/master
       /** @var \Drupal\node\NodeInterface $revision */
       $revision = $node_storage->loadRevision($vid);
       // Only show revisions that are affected by the language that is being
@@ -188,11 +182,7 @@ class NodeController extends ControllerBase implements ContainerInjectionInterfa
       if ($revision->hasTranslation($langcode) && $revision->getTranslation($langcode)->isRevisionTranslationAffected()) {
         $username = [
           '#theme' => 'username',
-<<<<<<< HEAD
-          '#account' => $revision->getRevisionUser(),
-=======
           '#account' => $revision->getRevisionAuthor(),
->>>>>>> github/master
         ];
 
         // Use revision link to link to revisions that are not active.
@@ -220,11 +210,7 @@ class NodeController extends ControllerBase implements ContainerInjectionInterfa
         $this->renderer->addCacheableDependency($column['data'], $username);
         $row[] = $column;
 
-<<<<<<< HEAD
-        if ($vid == $default_revision) {
-=======
         if ($latest_revision) {
->>>>>>> github/master
           $row[] = [
             'data' => [
               '#prefix' => '<em>',
@@ -232,28 +218,16 @@ class NodeController extends ControllerBase implements ContainerInjectionInterfa
               '#suffix' => '</em>',
             ],
           ];
-<<<<<<< HEAD
-
-          $rows[] = [
-            'data' => $row,
-            'class' => ['revision-current'],
-          ];
-=======
           foreach ($row as &$current) {
             $current['class'] = ['revision-current'];
           }
           $latest_revision = FALSE;
->>>>>>> github/master
         }
         else {
           $links = [];
           if ($revert_permission) {
             $links['revert'] = [
-<<<<<<< HEAD
-              'title' => $vid < $node->getRevisionId() ? $this->t('Revert') : $this->t('Set as current revision'),
-=======
               'title' => $this->t('Revert'),
->>>>>>> github/master
               'url' => $has_translations ?
                 Url::fromRoute('node.revision_revert_translation_confirm', ['node' => $node->id(), 'node_revision' => $vid, 'langcode' => $langcode]) :
                 Url::fromRoute('node.revision_revert_confirm', ['node' => $node->id(), 'node_revision' => $vid]),
@@ -273,15 +247,9 @@ class NodeController extends ControllerBase implements ContainerInjectionInterfa
               '#links' => $links,
             ],
           ];
-<<<<<<< HEAD
-
-          $rows[] = $row;
-        }
-=======
         }
 
         $rows[] = $row;
->>>>>>> github/master
       }
     }
 
@@ -292,10 +260,6 @@ class NodeController extends ControllerBase implements ContainerInjectionInterfa
       '#attached' => array(
         'library' => array('node/drupal.node.admin'),
       ),
-<<<<<<< HEAD
-      '#attributes' => ['class' => 'node-revision-table'],
-=======
->>>>>>> github/master
     );
 
     $build['pager'] = array('#type' => 'pager');
@@ -319,11 +283,7 @@ class NodeController extends ControllerBase implements ContainerInjectionInterfa
   /**
    * Gets a list of node revision IDs for a specific node.
    *
-<<<<<<< HEAD
-   * @param \Drupal\node\NodeInterface $node
-=======
    * @param \Drupal\node\NodeInterface
->>>>>>> github/master
    *   The node entity.
    * @param \Drupal\node\NodeStorageInterface $node_storage
    *   The node storage handler.
@@ -331,11 +291,7 @@ class NodeController extends ControllerBase implements ContainerInjectionInterfa
    * @return int[]
    *   Node revision IDs (in descending order).
    */
-<<<<<<< HEAD
-  protected function getRevisionIds(NodeInterface $node, NodeStorageInterface $node_storage) {
-=======
   protected function _getRevisionIds(NodeInterface $node, NodeStorageInterface $node_storage) {
->>>>>>> github/master
     $result = $node_storage->getQuery()
       ->allRevisions()
       ->condition($node->getEntityType()->getKey('id'), $node->id())

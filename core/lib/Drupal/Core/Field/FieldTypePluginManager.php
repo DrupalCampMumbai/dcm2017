@@ -34,11 +34,7 @@ class FieldTypePluginManager extends DefaultPluginManager implements FieldTypePl
    *   keyed by the corresponding namespace to look for plugin implementations.
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache_backend
    *   Cache backend instance to use.
-<<<<<<< HEAD
-   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
-=======
    * @param \Drupal\Core\Extension\ModuleHandlerInterface
->>>>>>> github/master
    *   The module handler.
    * @param \Drupal\Core\TypedData\TypedDataManagerInterface $typed_data_manager
    *   The typed data manager.

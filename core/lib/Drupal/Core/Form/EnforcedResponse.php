@@ -37,11 +37,7 @@ class EnforcedResponse extends Response {
    * @param \Exception $e
    *   The exception where the enforced response is to be extracted from.
    *
-<<<<<<< HEAD
-   * @return \Drupal\Core\Form\EnforcedResponse|null
-=======
    * @return \Drupal\Core\Form\EnforcedResponse|NULL
->>>>>>> github/master
    *   The enforced response or NULL if the exception chain does not contain a
    *   \Drupal\Core\Form\EnforcedResponseException exception.
    */

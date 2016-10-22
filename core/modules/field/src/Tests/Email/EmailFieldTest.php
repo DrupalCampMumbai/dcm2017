@@ -3,10 +3,6 @@
 namespace Drupal\field\Tests\Email;
 
 use Drupal\Component\Utility\Unicode;
-<<<<<<< HEAD
-use Drupal\entity_test\Entity\EntityTest;
-=======
->>>>>>> github/master
 use Drupal\field\Entity\FieldConfig;
 use Drupal\simpletest\WebTestBase;
 use Drupal\field\Entity\FieldStorageConfig;
@@ -100,11 +96,7 @@ class EmailFieldTest extends WebTestBase {
     $this->assertRaw($value);
 
     // Verify that a mailto link is displayed.
-<<<<<<< HEAD
-    $entity = EntityTest::load($id);
-=======
     $entity = entity_load('entity_test', $id);
->>>>>>> github/master
     $display = entity_get_display($entity->getEntityTypeId(), $entity->bundle(), 'full');
     $content = $display->build($entity);
     $this->setRawContent(\Drupal::service('renderer')->renderRoot($content));

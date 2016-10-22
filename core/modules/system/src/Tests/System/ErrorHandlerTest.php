@@ -2,10 +2,6 @@
 
 namespace Drupal\system\Tests\System;
 
-<<<<<<< HEAD
-use Drupal\Component\Render\FormattableMarkup;
-=======
->>>>>>> github/master
 use Drupal\simpletest\WebTestBase;
 
 /**
@@ -187,11 +183,7 @@ class ErrorHandlerTest extends WebTestBase {
    * Helper function: assert that the error message is found.
    */
   function assertErrorMessage(array $error) {
-<<<<<<< HEAD
-    $message = new FormattableMarkup('%type: @message in %function (line ', $error);
-=======
     $message = t('%type: @message in %function (line ', $error);
->>>>>>> github/master
     $this->assertRaw($message, format_string('Found error message: @message.', array('@message' => $message)));
   }
 
@@ -199,11 +191,7 @@ class ErrorHandlerTest extends WebTestBase {
    * Helper function: assert that the error message is not found.
    */
   function assertNoErrorMessage(array $error) {
-<<<<<<< HEAD
-    $message = new FormattableMarkup('%type: @message in %function (line ', $error);
-=======
     $message = t('%type: @message in %function (line ', $error);
->>>>>>> github/master
     $this->assertNoRaw($message, format_string('Did not find error message: @message.', array('@message' => $message)));
   }
 

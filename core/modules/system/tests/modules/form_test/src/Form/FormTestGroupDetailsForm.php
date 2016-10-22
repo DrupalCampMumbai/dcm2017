@@ -20,19 +20,11 @@ class FormTestGroupDetailsForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-<<<<<<< HEAD
-  public function buildForm(array $form, FormStateInterface $form_state, $required = FALSE) {
-=======
   public function buildForm(array $form, FormStateInterface $form_state) {
->>>>>>> github/master
     $form['details'] = array(
       '#type' => 'details',
       '#title' => 'Root element',
       '#open' => TRUE,
-<<<<<<< HEAD
-      '#required' => !empty($required),
-=======
->>>>>>> github/master
     );
     $form['meta'] = array(
       '#type' => 'details',

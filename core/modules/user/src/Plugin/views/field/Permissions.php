@@ -112,8 +112,6 @@ class Permissions extends PrerenderList {
     return $item['permission'];
   }
 
-<<<<<<< HEAD
-=======
   /*
   protected function documentSelfTokens(&$tokens) {
     $tokens['[' . $this->options['id'] . '-role' . ']'] = $this->t('The name of the role.');
@@ -126,5 +124,4 @@ class Permissions extends PrerenderList {
   }
   */
 
->>>>>>> github/master
 }

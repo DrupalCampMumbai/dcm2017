@@ -23,8 +23,6 @@ use Drupal\Tests\UnitTestCase;
 class SafeMarkupTest extends UnitTestCase {
 
   /**
-<<<<<<< HEAD
-=======
    * The error message of the last error in the error handler.
    *
    * @var string
@@ -39,7 +37,6 @@ class SafeMarkupTest extends UnitTestCase {
   protected $lastErrorNumber;
 
   /**
->>>>>>> github/master
    * {@inheritdoc}
    */
   protected function tearDown() {
@@ -140,11 +137,7 @@ class SafeMarkupTest extends UnitTestCase {
     UrlHelper::setAllowedProtocols(['http', 'https', 'mailto']);
 
     $result = SafeMarkup::format($string, $args);
-<<<<<<< HEAD
-    $this->assertEquals($expected, (string) $result, $message);
-=======
     $this->assertEquals($expected, $result, $message);
->>>>>>> github/master
     $this->assertEquals($expected_is_safe, $result instanceof MarkupInterface, 'SafeMarkup::format correctly sets the result as safe or not safe.');
 
     foreach ($args as $arg) {
@@ -178,12 +171,6 @@ class SafeMarkupTest extends UnitTestCase {
     $tests['non-url-with-colon'] = ['Hey giraffe <a href=":url">MUUUH</a>', [':url' => "llamas: they are not URLs"], 'Hey giraffe <a href=" they are not URLs">MUUUH</a>', '', TRUE];
     $tests['non-url-with-html'] = ['Hey giraffe <a href=":url">MUUUH</a>', [':url' => "<span>not a url</span>"], 'Hey giraffe <a href="&lt;span&gt;not a url&lt;/span&gt;">MUUUH</a>', '', TRUE];
 
-<<<<<<< HEAD
-    // Tests non-standard placeholders that will not replace.
-    $tests['non-standard-placeholder'] = ['Hey hey', ['risky' => "<script>alert('foo');</script>"], 'Hey hey', '', TRUE];
-    return $tests;
-  }
-=======
     return $tests;
   }
     /**
@@ -220,7 +207,6 @@ class SafeMarkupTest extends UnitTestCase {
     $this->assertEquals(E_USER_ERROR, $this->lastErrorNumber);
     $this->assertEquals('Invalid placeholder (~placeholder) in string: Broken placeholder: ~placeholder', $this->lastErrorMessage);
   }
->>>>>>> github/master
 
 }
 

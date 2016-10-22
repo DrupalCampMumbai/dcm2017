@@ -109,11 +109,7 @@ class ConfigNamesMapper extends PluginBase implements ConfigMapperInterface, Con
    *   The locale configuration manager.
    * @param \Drupal\config_translation\ConfigMapperManagerInterface $config_mapper_manager
    *   The mapper plugin discovery service.
-<<<<<<< HEAD
-   * @param \Drupal\Core\Routing\RouteProviderInterface $route_provider
-=======
    * @param \Drupal\Core\Routing\RouteProviderInterface
->>>>>>> github/master
    *   The route provider.
    * @param \Drupal\Core\StringTranslation\TranslationInterface $string_translation
    *   The string translation manager.

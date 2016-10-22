@@ -2,22 +2,12 @@
 
 namespace Drupal\comment\Tests;
 
-<<<<<<< HEAD
-use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
-=======
->>>>>>> github/master
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\comment\Entity\Comment;
 use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\node\Entity\Node;
-<<<<<<< HEAD
-use Drupal\taxonomy\Entity\Term;
-use Drupal\taxonomy\Entity\Vocabulary;
-use Drupal\user\Entity\User;
-=======
->>>>>>> github/master
 
 /**
  * Generates text using placeholders for dummy content to check comment token
@@ -26,15 +16,6 @@ use Drupal\user\Entity\User;
  * @group comment
  */
 class CommentTokenReplaceTest extends CommentTestBase {
-<<<<<<< HEAD
-
-  /**
-   * {@inheritdoc}
-   */
-  public static $modules = ['taxonomy'];
-
-=======
->>>>>>> github/master
   /**
    * Creates a comment, then tests the tokens generated from it.
    */
@@ -46,15 +27,6 @@ class CommentTokenReplaceTest extends CommentTestBase {
       'language' => $language_interface,
     );
 
-<<<<<<< HEAD
-    // Setup vocabulary.
-    Vocabulary::create([
-      'vid' => 'tags',
-      'name' => 'Tags',
-    ])->save();
-
-=======
->>>>>>> github/master
     // Change the title of the admin user.
     $this->adminUser->name->value = 'This is a title with some special & > " stuff.';
     $this->adminUser->save();
@@ -150,45 +122,6 @@ class CommentTokenReplaceTest extends CommentTestBase {
     $input = '[comment:author]';
     $output = $token_service->replace($input, array('comment' => $comment), array('langcode' => $language_interface->getId()));
     $this->assertEqual($output, Html::escape($author_name), format_string('Comment author token %token replaced.', array('%token' => $input)));
-<<<<<<< HEAD
-    // Add comment field to user and term entities.
-    $this->addDefaultCommentField('user', 'user', 'comment', CommentItemInterface::OPEN, 'comment_user');
-    $this->addDefaultCommentField('taxonomy_term', 'tags', 'comment', CommentItemInterface::OPEN, 'comment_term');
-
-    // Create a user and a comment.
-    $user = User::create(['name' => 'alice']);
-    $user->save();
-    $this->postComment($user, 'user body', 'user subject', TRUE);
-
-    // Create a term and a comment.
-    $term = Term::create([
-      'vid' => 'tags',
-      'name' => 'term',
-    ]);
-    $term->save();
-    $this->postComment($term, 'term body', 'term subject', TRUE);
-
-    // Load node, user and term again so comment_count gets computed.
-    $node = Node::load($node->id());
-    $user = User::load($user->id());
-    $term = Term::load($term->id());
-
-    // Generate comment tokens for node (it has 2 comments, both new),
-    // user and term.
-    $tests = array();
-    $tests['[entity:comment-count]'] = 2;
-    $tests['[entity:comment-count-new]'] = 2;
-    $tests['[node:comment-count]'] = 2;
-    $tests['[node:comment-count-new]'] = 2;
-    $tests['[user:comment-count]'] = 1;
-    $tests['[user:comment-count-new]'] = 1;
-    $tests['[term:comment-count]'] = 1;
-    $tests['[term:comment-count-new]'] = 1;
-
-    foreach ($tests as $input => $expected) {
-      $output = $token_service->replace($input, ['entity' => $node, 'node' => $node, 'user' => $user, 'term' => $term], ['langcode' => $language_interface->getId()]);
-      $this->assertEqual($output, $expected, format_string('Comment token %token replaced.', ['%token' => $input]));
-=======
 
     // Load node so comment_count gets computed.
     $node = Node::load($node->id());
@@ -201,7 +134,6 @@ class CommentTokenReplaceTest extends CommentTestBase {
     foreach ($tests as $input => $expected) {
       $output = $token_service->replace($input, array('entity' => $node, 'node' => $node), array('langcode' => $language_interface->getId()));
       $this->assertEqual($output, $expected, format_string('Node comment token %token replaced.', array('%token' => $input)));
->>>>>>> github/master
     }
   }
 

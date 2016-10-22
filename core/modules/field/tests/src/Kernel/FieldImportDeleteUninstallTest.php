@@ -70,11 +70,7 @@ class FieldImportDeleteUninstallTest extends FieldKernelTestBase {
 
     // Verify entity has been created properly.
     $id = $entity->id();
-<<<<<<< HEAD
-    $entity = EntityTest::load($id);
-=======
     $entity = entity_load('entity_test', $id);
->>>>>>> github/master
     $this->assertEqual($entity->field_test->value, $value);
     $this->assertEqual($entity->field_test[0]->value, $value);
     $this->assertEqual($entity->field_int->value, '99');
@@ -138,11 +134,7 @@ class FieldImportDeleteUninstallTest extends FieldKernelTestBase {
 
       // Verify entity has been created properly.
       $id = $entity->id();
-<<<<<<< HEAD
-      $entity = EntityTest::load($id);
-=======
       $entity = entity_load('entity_test', $id);
->>>>>>> github/master
       $this->assertEqual($entity->field_test->value, $value);
     }
 

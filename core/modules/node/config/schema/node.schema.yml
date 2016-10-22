@@ -6,11 +6,7 @@ node.settings:
   mapping:
     use_admin_theme:
       type: boolean
-<<<<<<< HEAD
-      label: 'Use administration theme when editing or creating content'
-=======
       label: 'Use admin theme when editing or creating content'
->>>>>>> github/master
 
 node.type.*:
   type: config_entity

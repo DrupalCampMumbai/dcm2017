@@ -1,11 +1,6 @@
 name: 'Configuration schema test'
 type: module
 package: Testing
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-hidden: true
-=======
 # version: VERSION
 # core: 8.x
 hidden: true
@@ -15,4 +10,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

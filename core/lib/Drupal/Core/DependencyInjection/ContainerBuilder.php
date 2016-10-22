@@ -7,15 +7,11 @@ use Symfony\Component\DependencyInjection\ContainerBuilder as SymfonyContainerBu
 use Symfony\Component\DependencyInjection\Container as SymfonyContainer;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\LazyProxy\Instantiator\RealServiceInstantiator;
-<<<<<<< HEAD
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
-=======
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\InactiveScopeException;
->>>>>>> github/master
 
 /**
  * Drupal's dependency injection container builder.
@@ -40,8 +36,6 @@ class ContainerBuilder extends SymfonyContainerBuilder {
   }
 
   /**
-<<<<<<< HEAD
-=======
    * Creates a service for a service definition.
    *
    * Overrides the parent implementation, but just changes one line about
@@ -165,7 +159,6 @@ class ContainerBuilder extends SymfonyContainerBuilder {
   }
 
   /**
->>>>>>> github/master
    * Retrieves the currently set proxy instantiator or instantiates one.
    *
    * @return InstantiatorInterface

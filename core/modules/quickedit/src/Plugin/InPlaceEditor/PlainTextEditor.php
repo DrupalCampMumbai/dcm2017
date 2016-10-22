@@ -21,9 +21,6 @@ class PlainTextEditor extends InPlaceEditorBase {
     $field_definition = $items->getFieldDefinition();
 
     // This editor is incompatible with multivalued fields.
-<<<<<<< HEAD
-    return $field_definition->getFieldStorageDefinition()->getCardinality() == 1;
-=======
     if ($field_definition->getFieldStorageDefinition()->getCardinality() != 1) {
       return FALSE;
     }
@@ -34,7 +31,6 @@ class PlainTextEditor extends InPlaceEditorBase {
     else {
       return TRUE;
     }
->>>>>>> github/master
   }
 
   /**

@@ -1,12 +1,6 @@
 name: 'Color test theme'
 type: theme
 description: 'Theme for testing the color module'
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-libraries:
-  - color_test_theme/base
-=======
 # version: VERSION
 # core: 8.x
 libraries:
@@ -17,4 +11,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

@@ -117,13 +117,7 @@ class MenuLinkContent extends ContentEntityBase implements MenuLinkContentInterf
    * {@inheritdoc}
    */
   public function getParentId() {
-<<<<<<< HEAD
-    // Cast the parent ID to a string, only an empty string means no parent,
-    // NULL keeps the existing parent.
-    return (string) $this->get('parent')->value;
-=======
     return $this->get('parent')->value;
->>>>>>> github/master
   }
 
   /**
@@ -239,22 +233,6 @@ class MenuLinkContent extends ContentEntityBase implements MenuLinkContentInterf
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-<<<<<<< HEAD
-    /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
-    $fields = parent::baseFieldDefinitions($entity_type);
-
-    $fields['id']->setLabel(t('Entity ID'))
-      ->setDescription(t('The entity ID for this menu link content entity.'));
-
-    $fields['uuid']->setDescription(t('The content menu link UUID.'));
-
-    $fields['langcode']->setDescription(t('The menu link language code.'));
-
-    $fields['bundle']
-      ->setDescription(t('The content menu link bundle.'))
-      ->setSetting('max_length', EntityTypeInterface::BUNDLE_MAX_LENGTH)
-      ->setSetting('is_ascii', TRUE);
-=======
     $fields['id'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Entity ID'))
       ->setDescription(t('The entity ID for this menu link content entity.'))
@@ -272,7 +250,6 @@ class MenuLinkContent extends ContentEntityBase implements MenuLinkContentInterf
       ->setSetting('max_length', EntityTypeInterface::BUNDLE_MAX_LENGTH)
       ->setSetting('is_ascii', TRUE)
       ->setReadOnly(TRUE);
->>>>>>> github/master
 
     $fields['title'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Menu link title'))
@@ -357,11 +334,7 @@ class MenuLinkContent extends ContentEntityBase implements MenuLinkContentInterf
         'type' => 'boolean',
         'weight' => 0,
       ))
-<<<<<<< HEAD
-      ->setDisplayOptions('form', array(
-=======
     ->setDisplayOptions('form', array(
->>>>>>> github/master
         'settings' => array('display_label' => TRUE),
         'weight' => 0,
       ));
@@ -380,8 +353,6 @@ class MenuLinkContent extends ContentEntityBase implements MenuLinkContentInterf
         'weight' => -1,
       ));
 
-<<<<<<< HEAD
-=======
     $fields['langcode'] = BaseFieldDefinition::create('language')
       ->setLabel(t('Language'))
       ->setDescription(t('The menu link language code.'))
@@ -394,7 +365,6 @@ class MenuLinkContent extends ContentEntityBase implements MenuLinkContentInterf
         'weight' => 2,
       ));
 
->>>>>>> github/master
     $fields['parent'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Parent plugin ID'))
       ->setDescription(t('The ID of the parent menu link plugin, or empty string when at the top level of the hierarchy.'));

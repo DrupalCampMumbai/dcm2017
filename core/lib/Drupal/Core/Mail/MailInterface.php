@@ -30,11 +30,7 @@ interface MailInterface {
    *
    * @see \Drupal\Core\Mail\MailManagerInterface
    */
-<<<<<<< HEAD
-  public function format(array $message);
-=======
    public function format(array $message);
->>>>>>> github/master
 
   /**
    * Sends a message composed by \Drupal\Core\Mail\MailManagerInterface->mail().
@@ -64,10 +60,6 @@ interface MailInterface {
    * @return bool
    *   TRUE if the mail was successfully accepted for delivery, otherwise FALSE.
    */
-<<<<<<< HEAD
-  public function mail(array $message);
-=======
    public function mail(array $message);
->>>>>>> github/master
 
 }

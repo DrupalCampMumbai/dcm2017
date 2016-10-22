@@ -70,76 +70,20 @@ class CacheFactoryTest extends UnitTestCase {
   }
 
   /**
-<<<<<<< HEAD
-   * Test that the cache factory uses the correct default bin backend.
-   *
-   * @covers ::__construct
-   * @covers ::get
-   */
-  public function testCacheFactoryWithDefaultBinBackend() {
-    // Ensure the default bin backends are used before the configured default.
-    $settings = new Settings(array(
-      'cache' => array(
-        'default' => 'cache.backend.unused',
-      ),
-    ));
-
-    $default_bin_backends = [
-      'render' => 'cache.backend.custom',
-    ];
-
-    $cache_factory = new CacheFactory($settings, $default_bin_backends);
-
-    $container = new ContainerBuilder();
-    $cache_factory->setContainer($container);
-
-    $custom_default_backend_factory = $this->getMock('\Drupal\Core\Cache\CacheFactoryInterface');
-    $container->set('cache.backend.custom', $custom_default_backend_factory);
-
-    $render_bin = $this->getMock('\Drupal\Core\Cache\CacheBackendInterface');
-    $custom_default_backend_factory->expects($this->once())
-      ->method('get')
-      ->with('render')
-      ->will($this->returnValue($render_bin));
-
-    $actual_bin = $cache_factory->get('render');
-    $this->assertSame($render_bin, $actual_bin);
-  }
-
-  /**
-=======
->>>>>>> github/master
    * Test that the cache factory picks the correct per-bin service.
    *
    * @covers ::__construct
    * @covers ::get
    */
   public function testCacheFactoryWithSpecifiedPerBinBackend() {
-<<<<<<< HEAD
-    // Ensure the per-bin configuration is used before the configured default
-    // and per-bin defaults.
     $settings = new Settings(array(
       'cache' => array(
-        'default' => 'cache.backend.unused',
-=======
-    $settings = new Settings(array(
-      'cache' => array(
->>>>>>> github/master
         'bins' => array(
           'render' => 'cache.backend.custom',
         ),
       ),
     ));
-<<<<<<< HEAD
-
-    $default_bin_backends = [
-      'render' => 'cache.backend.unused',
-    ];
-
-    $cache_factory = new CacheFactory($settings, $default_bin_backends);
-=======
     $cache_factory = new CacheFactory($settings);
->>>>>>> github/master
 
     $container = new ContainerBuilder();
     $cache_factory->setContainer($container);

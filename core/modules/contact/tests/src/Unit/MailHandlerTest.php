@@ -299,11 +299,7 @@ class MailHandlerTest extends UnitTestCase {
       ->method('getEmail')
       ->willReturn($mail_address);
     $sender->expects($this->any())
-<<<<<<< HEAD
-      ->method('getDisplayName')
-=======
       ->method('getUsername')
->>>>>>> github/master
       ->willReturn('user');
     // User ID 1 has special implications, use 3 instead.
     $sender->expects($this->any())
@@ -373,11 +369,7 @@ class MailHandlerTest extends UnitTestCase {
       ->method('getEmail')
       ->willReturn('user2@drupal.org');
     $recipient->expects($this->once())
-<<<<<<< HEAD
-      ->method('getDisplayName')
-=======
       ->method('getUsername')
->>>>>>> github/master
       ->willReturn('user2');
     $recipient->expects($this->once())
       ->method('getPreferredLangcode')

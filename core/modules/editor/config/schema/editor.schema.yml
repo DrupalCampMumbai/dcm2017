@@ -34,15 +34,7 @@ editor.editor.*:
           mapping:
             width:
               type: integer
-<<<<<<< HEAD
-              nullable: true
               label: 'Maximum width'
             height:
               type: integer
-              nullable: true
-=======
-              label: 'Maximum width'
-            height:
-              type: integer
->>>>>>> github/master
               label: 'Maximum height'

@@ -2,10 +2,6 @@
 
 namespace Drupal\filter\Tests;
 
-<<<<<<< HEAD
-use Drupal\filter\Entity\FilterFormat;
-=======
->>>>>>> github/master
 use Drupal\simpletest\WebTestBase;
 use Drupal\filter\Plugin\FilterInterface;
 use Drupal\user\RoleInterface;
@@ -40,11 +36,7 @@ class FilterSecurityTest extends WebTestBase {
     $this->drupalCreateContentType(array('type' => 'page', 'name' => 'Basic page'));
 
     /** @var \Drupal\filter\Entity\FilterFormat $filtered_html_format */
-<<<<<<< HEAD
-    $filtered_html_format = FilterFormat::load('filtered_html');
-=======
     $filtered_html_format = entity_load('filter_format', 'filtered_html');
->>>>>>> github/master
     $filtered_html_permission = $filtered_html_format->getPermissionName();
     user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, array($filtered_html_permission));
 

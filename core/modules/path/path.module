@@ -5,10 +5,7 @@
  * Enables users to rename URLs.
  */
 
-<<<<<<< HEAD
-=======
 use Drupal\Core\Entity\EntityInterface;
->>>>>>> github/master
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
@@ -75,17 +72,11 @@ function path_entity_base_field_info(EntityTypeInterface $entity_type) {
         'weight' => 30,
       ))
       ->setDisplayConfigurable('form', TRUE)
-<<<<<<< HEAD
-      ->setComputed(TRUE);
-=======
       ->setCustomStorage(TRUE);
->>>>>>> github/master
 
     return $fields;
   }
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Implements hook_entity_translation_delete().
@@ -97,4 +88,3 @@ function path_entity_translation_delete(EntityInterface $translation) {
     \Drupal::service('path.alias_storage')->delete($conditions);
   }
 }
->>>>>>> github/master

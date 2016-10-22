@@ -8,11 +8,6 @@ dependencies:
   - comment
   - options
 package: Core
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-configure: forum.overview
-=======
 # version: VERSION
 # core: 8.x
 configure: forum.overview
@@ -22,4 +17,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

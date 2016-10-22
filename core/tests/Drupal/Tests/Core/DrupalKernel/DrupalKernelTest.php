@@ -126,20 +126,12 @@ EOD;
         ]
       ]]);
 
-<<<<<<< HEAD
-=======
       define('DRUPAL_ROOT', $vfs_root->url('drupal_root'));
->>>>>>> github/master
       $request = new Request();
       $request->server->set('SERVER_NAME', 'www.example.org');
       $request->server->set('SERVER_PORT', '8888');
       $request->server->set('SCRIPT_NAME', '/index.php');
-<<<<<<< HEAD
-      $this->assertEquals('sites/example', DrupalKernel::findSitePath($request, TRUE, $vfs_root->url('drupal_root')));
-      $this->assertEquals('sites/example', DrupalKernel::findSitePath($request, FALSE, $vfs_root->url('drupal_root')));
-=======
       $this->assertEquals('sites/example', DrupalKernel::findSitePath($request));
->>>>>>> github/master
     }
 
   }

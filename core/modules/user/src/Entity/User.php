@@ -425,19 +425,6 @@ class User extends ContentEntityBase implements UserInterface {
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-<<<<<<< HEAD
-    /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
-    $fields = parent::baseFieldDefinitions($entity_type);
-
-    $fields['uid']->setLabel(t('User ID'))
-      ->setDescription(t('The user ID.'));
-
-    $fields['uuid']->setDescription(t('The user UUID.'));
-
-    $fields['langcode']->setLabel(t('Language code'))
-      ->setDescription(t('The user language code.'))
-      ->setDisplayOptions('form', ['type' => 'hidden']);
-=======
     $fields['uid'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('User ID'))
       ->setDescription(t('The user ID.'))
@@ -453,7 +440,6 @@ class User extends ContentEntityBase implements UserInterface {
       ->setLabel(t('Language code'))
       ->setDescription(t('The user language code.'))
       ->setTranslatable(TRUE);
->>>>>>> github/master
 
     $fields['preferred_langcode'] = BaseFieldDefinition::create('language')
       ->setLabel(t('Preferred language code'))

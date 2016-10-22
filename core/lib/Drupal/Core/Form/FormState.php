@@ -11,11 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class FormState implements FormStateInterface {
 
-<<<<<<< HEAD
-  use FormStateValuesTrait;
-
-=======
->>>>>>> github/master
   /**
    * Tracks if any errors have been set on any form.
    *
@@ -251,12 +246,7 @@ class FormState implements FormStateInterface {
    *
    * This property is uncacheable.
    *
-<<<<<<< HEAD
-   * @var array|null
-   *   The submitted user input array, or NULL if no input was submitted yet.
-=======
    * @var array
->>>>>>> github/master
    */
   protected $input;
 
@@ -655,11 +645,7 @@ class FormState implements FormStateInterface {
    * {@inheritdoc}
    */
   public function isRedirectDisabled() {
-<<<<<<< HEAD
-    return $this->no_redirect;
-=======
    return $this->no_redirect;
->>>>>>> github/master
   }
 
   /**
@@ -994,8 +980,6 @@ class FormState implements FormStateInterface {
   /**
    * {@inheritdoc}
    */
-<<<<<<< HEAD
-=======
   public function &getValue($key, $default = NULL) {
     $exists = NULL;
     $value = &NestedArray::getValue($this->getValues(), (array) $key, $exists);
@@ -1057,7 +1041,6 @@ class FormState implements FormStateInterface {
   /**
    * {@inheritdoc}
    */
->>>>>>> github/master
   public function setResponse(Response $response) {
     $this->response = $response;
     return $this;

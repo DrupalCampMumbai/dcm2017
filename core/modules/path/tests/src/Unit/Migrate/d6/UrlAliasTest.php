@@ -15,10 +15,7 @@ class UrlAliasTest extends UrlAliasTestBase {
 
   protected $migrationConfiguration = array(
     'id' => 'test',
-<<<<<<< HEAD
-=======
     'highWaterProperty' => array('field' => 'test'),
->>>>>>> github/master
     'source' => array(
       'plugin' => 'd6_url_alias',
     ),

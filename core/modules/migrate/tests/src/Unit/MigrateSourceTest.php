@@ -10,11 +10,6 @@ namespace Drupal\Tests\migrate\Unit;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Extension\ModuleHandlerInterface;
-<<<<<<< HEAD
-use Drupal\Core\KeyValueStore\KeyValueFactoryInterface;
-use Drupal\Core\KeyValueStore\KeyValueStoreInterface;
-=======
->>>>>>> github/master
 use Drupal\migrate\MigrateExecutable;
 use Drupal\migrate\MigrateSkipRowException;
 use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
@@ -80,25 +75,7 @@ class MigrateSourceTest extends MigrateTestCase {
    * @return \Drupal\migrate\Plugin\MigrateSourceInterface
    *   A mocked source plugin.
    */
-<<<<<<< HEAD
-  protected function getSource($configuration = [], $migrate_config = [], $status = MigrateIdMapInterface::STATUS_NEEDS_UPDATE, $high_water_value = NULL) {
-    $container = new ContainerBuilder();
-    \Drupal::setContainer($container);
-
-    $key_value = $this->getMock(KeyValueStoreInterface::class);
-
-    $key_value_factory = $this->getMock(KeyValueFactoryInterface::class);
-    $key_value_factory
-      ->method('get')
-      ->with('migrate:high_water')
-      ->willReturn($key_value);
-    $container->set('keyvalue', $key_value_factory);
-
-    $container->set('cache.migrate', $this->getMock(CacheBackendInterface::class));
-
-=======
   protected function getSource($configuration = [], $migrate_config = [], $status = MigrateIdMapInterface::STATUS_NEEDS_UPDATE) {
->>>>>>> github/master
     $this->migrationConfiguration = $this->defaultMigrationConfiguration + $migrate_config;
     $this->migration = parent::getMigration();
     $this->executable = $this->getMigrateExecutable($this->migration);
@@ -113,39 +90,6 @@ class MigrateSourceTest extends MigrateTestCase {
       ->willReturn($id_map_array);
 
     $constructor_args = [$configuration, 'd6_action', [], $this->migration];
-<<<<<<< HEAD
-    $methods = ['getModuleHandler', 'fields', 'getIds', '__toString', 'prepareRow', 'initializeIterator'];
-    $source_plugin = $this->getMock(SourcePluginBase::class, $methods, $constructor_args);
-
-    $source_plugin
-      ->method('fields')
-      ->willReturn([]);
-    $source_plugin
-      ->method('getIds')
-      ->willReturn([]);
-    $source_plugin
-      ->method('__toString')
-      ->willReturn('');
-    $source_plugin
-      ->method('prepareRow')
-      ->willReturn(empty($migrate_config['prepare_row_false']));
-
-    $rows = [$this->row];
-    if (isset($configuration['high_water_property']) && isset($high_water_value)) {
-      $property = $configuration['high_water_property']['name'];
-      $rows = array_filter($rows, function (array $row) use ($property, $high_water_value) {
-        return $row[$property] >= $high_water_value;
-      });
-    }
-    $iterator = new \ArrayIterator($rows);
-
-    $source_plugin
-      ->method('initializeIterator')
-      ->willReturn($iterator);
-
-    $module_handler = $this->getMock(ModuleHandlerInterface::class);
-    $source_plugin
-=======
     $methods = ['getModuleHandler', 'fields', 'getIds', '__toString', 'getIterator', 'prepareRow', 'initializeIterator', 'calculateDependencies'];
     $source_plugin = $this->getMock('\Drupal\migrate\Plugin\migrate\source\SourcePluginBase', $methods, $constructor_args);
 
@@ -178,23 +122,15 @@ class MigrateSourceTest extends MigrateTestCase {
     $module_handler = $this->getMock('\Drupal\Core\Extension\ModuleHandlerInterface');
     $source_plugin
       ->expects($this->any())
->>>>>>> github/master
       ->method('getModuleHandler')
       ->willReturn($module_handler);
 
     $this->migration
-<<<<<<< HEAD
-      ->method('getSourcePlugin')
-      ->willReturn($source_plugin);
-
-    return $source_plugin;
-=======
       ->expects($this->any())
       ->method('getSourcePlugin')
       ->willReturn($source_plugin);
 
     return $this->migration->getSourcePlugin();
->>>>>>> github/master
   }
 
   /**
@@ -202,14 +138,9 @@ class MigrateSourceTest extends MigrateTestCase {
    * @expectedException \Drupal\migrate\MigrateException
    */
   public function testHighwaterTrackChangesIncompatible() {
-<<<<<<< HEAD
-    $source_config = ['track_changes' => TRUE, 'high_water_property' => ['name' => 'something']];
-    $this->getSource($source_config);
-=======
     $source_config = ['track_changes' => TRUE];
     $migration_config = ['highWaterProperty' => ['name' => 'something']];
     $this->getSource($source_config, $migration_config);
->>>>>>> github/master
   }
 
   /**
@@ -237,26 +168,9 @@ class MigrateSourceTest extends MigrateTestCase {
     // Test the skip argument.
     $source = $this->getSource(['skip_count' => TRUE]);
     $this->assertEquals(-1, $source->count());
-<<<<<<< HEAD
-
-    $this->migrationConfiguration['id'] = 'test_migration';
-    $migration = $this->getMigration();
-    $source = new StubSourceGeneratorPlugin([], '', [], $migration);
-
-    // Test the skipCount property's default value.
-    $this->assertEquals(-1, $source->count());
-
-    // Test the count value using a generator.
-    $source = new StubSourceGeneratorPlugin(['skip_count' => FALSE], '', [], $migration);
-    $this->assertEquals(3, $source->count());
-  }
-
-  /**
-=======
   }
 
    /**
->>>>>>> github/master
    * Test that the key can be set for the count cache.
    *
    * @covers ::count
@@ -305,14 +219,6 @@ class MigrateSourceTest extends MigrateTestCase {
    * Test that an outdated highwater mark does not cause a row to be imported.
    */
   public function testOutdatedHighwater() {
-<<<<<<< HEAD
-    $configuration = [
-      'high_water_property' => [
-        'name' => 'timestamp',
-      ],
-    ];
-    $source = $this->getSource($configuration, [], MigrateIdMapInterface::STATUS_IMPORTED, $this->row['timestamp'] + 1);
-=======
 
     $source = $this->getSource([], [], MigrateIdMapInterface::STATUS_IMPORTED);
 
@@ -321,7 +227,6 @@ class MigrateSourceTest extends MigrateTestCase {
       ->expects($this->any())
       ->method('getHighwater')
       ->willReturn($this->row['timestamp'] + 1);
->>>>>>> github/master
 
     // The current highwater mark is now higher than the row timestamp so no row
     // is expected.
@@ -335,19 +240,6 @@ class MigrateSourceTest extends MigrateTestCase {
    * @throws \Exception
    */
   public function testNewHighwater() {
-<<<<<<< HEAD
-    $configuration = [
-      'high_water_property' => [
-        'name' => 'timestamp',
-      ],
-    ];
-    // Set a highwater property field for source. Now we should have a row
-    // because the row timestamp is greater than the current highwater mark.
-    $source = $this->getSource($configuration, [], MigrateIdMapInterface::STATUS_IMPORTED, $this->row['timestamp'] - 1);
-
-    $source->rewind();
-    $this->assertInstanceOf(Row::class, $source->current(), 'Incoming row timestamp is greater than current highwater mark so we have a row.');
-=======
 
     // Set a highwater property field for source. Now we should have a row
     // because the row timestamp is greater than the current highwater mark.
@@ -355,7 +247,6 @@ class MigrateSourceTest extends MigrateTestCase {
 
     $source->rewind();
     $this->assertTrue(is_a($source->current(), 'Drupal\migrate\Row'), 'Incoming row timestamp is greater than current highwater mark so we have a row.');
->>>>>>> github/master
   }
 
   /**
@@ -497,24 +388,6 @@ class MigrateSourceTest extends MigrateTestCase {
   }
 
   /**
-<<<<<<< HEAD
-   * Test that cacheCounts, skipCount, trackChanges preserve their default
-   * values.
-   */
-  public function testDefaultPropertiesValues() {
-    $this->migrationConfiguration['id'] = 'test_migration';
-    $migration = $this->getMigration();
-    $source = new StubSourceGeneratorPlugin([], '', [], $migration);
-
-    // Test the default value of the skipCount Value;
-    $this->assertTrue($source->getSkipCount());
-    $this->assertTrue($source->getCacheCounts());
-    $this->assertTrue($source->getTrackChanges());
-  }
-
-  /**
-=======
->>>>>>> github/master
    * Gets a mock executable for the test.
    *
    * @param \Drupal\migrate\Plugin\MigrationInterface $migration
@@ -577,64 +450,3 @@ class StubSourcePlugin extends SourcePluginBase {
   }
 
 }
-<<<<<<< HEAD
-
-/**
- * Stubbed source plugin with a generator as iterator. Also it overwrites the
- * $skipCount, $cacheCounts and $trackChanges properties.
- */
-class StubSourceGeneratorPlugin extends StubSourcePlugin {
-
-  /**
-   * {@inheritdoc}
-   */
-  protected $skipCount = TRUE;
-
-  /**
-   * {@inheritdoc}
-   */
-  protected $cacheCounts = TRUE;
-
-  /**
-   * {@inheritdoc}
-   */
-  protected $trackChanges = TRUE;
-
-  /**
-   * Return the skipCount value.
-   */
-  public function getSkipCount() {
-    return $this->skipCount;
-  }
-
-  /**
-   * Return the cacheCounts value.
-   */
-  public function getCacheCounts() {
-    return $this->cacheCounts;
-  }
-
-  /**
-   * Return the trackChanges value.
-   */
-  public function getTrackChanges() {
-    return $this->trackChanges;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function initializeIterator() {
-    $data = [
-      ['title' => 'foo'],
-      ['title' => 'bar'],
-      ['title' => 'iggy'],
-    ];
-    foreach ($data as $row) {
-      yield $row;
-    }
-  }
-
-}
-=======
->>>>>>> github/master

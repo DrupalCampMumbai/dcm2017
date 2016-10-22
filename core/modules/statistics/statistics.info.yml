@@ -2,13 +2,6 @@ name: Statistics
 type: module
 description: 'Logs content statistics for your site.'
 package: Core
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-configure: statistics.settings
-dependencies:
-  - node
-=======
 # version: VERSION
 # core: 8.x
 configure: statistics.settings
@@ -20,4 +13,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

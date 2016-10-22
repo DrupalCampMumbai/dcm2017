@@ -3,10 +3,6 @@
 namespace Drupal\Core\Entity\Plugin\DataType\Deriver;
 
 use Drupal\Core\Entity\EntityManagerInterface;
-<<<<<<< HEAD
-use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
-=======
->>>>>>> github/master
 use Drupal\Core\Plugin\Discovery\ContainerDeriverInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -37,16 +33,6 @@ class EntityDeriver implements ContainerDeriverInterface {
   protected $entityManager;
 
   /**
-<<<<<<< HEAD
-   * The bundle info service.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeBundleInfoInterface
-   */
-  protected $bundleInfoService;
-
-  /**
-=======
->>>>>>> github/master
    * Constructs an EntityDeriver object.
    *
    * @param string $base_plugin_id
@@ -54,16 +40,9 @@ class EntityDeriver implements ContainerDeriverInterface {
    * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
    *   The entity manager.
    */
-<<<<<<< HEAD
-  public function __construct($base_plugin_id, EntityManagerInterface $entity_manager, EntityTypeBundleInfoInterface $bundle_info_service) {
-    $this->basePluginId = $base_plugin_id;
-    $this->entityManager = $entity_manager;
-    $this->bundleInfoService = $bundle_info_service;
-=======
   public function __construct($base_plugin_id, EntityManagerInterface $entity_manager) {
     $this->basePluginId = $base_plugin_id;
     $this->entityManager = $entity_manager;
->>>>>>> github/master
   }
 
   /**
@@ -72,12 +51,7 @@ class EntityDeriver implements ContainerDeriverInterface {
   public static function create(ContainerInterface $container, $base_plugin_id) {
     return new static(
       $base_plugin_id,
-<<<<<<< HEAD
-      $container->get('entity.manager'),
-      $container->get('entity_type.bundle.info')
-=======
       $container->get('entity.manager')
->>>>>>> github/master
     );
   }
 
@@ -108,11 +82,7 @@ class EntityDeriver implements ContainerDeriverInterface {
       ) + $base_plugin_definition;
 
       // Incorporate the bundles as entity:$entity_type:$bundle, if any.
-<<<<<<< HEAD
-      foreach ($this->bundleInfoService->getBundleInfo($entity_type_id) as $bundle => $bundle_info) {
-=======
       foreach (entity_get_bundles($entity_type_id) as $bundle => $bundle_info) {
->>>>>>> github/master
         if ($bundle !== $entity_type_id) {
           $this->derivatives[$entity_type_id . ':' . $bundle] = array(
             'label' => $bundle_info['label'],

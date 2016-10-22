@@ -121,16 +121,6 @@ class CacheableMetadataTest extends UnitTestCase {
    * Data provider for testSetCacheMaxAge.
    */
   public function providerSetCacheMaxAge() {
-<<<<<<< HEAD
-    return [
-      [0 , FALSE],
-      ['http', TRUE],
-      ['0', TRUE],
-      [new \stdClass(), TRUE],
-      [300, FALSE],
-      [[], TRUE],
-      [8.0, TRUE]
-=======
    return [
      [0 , FALSE],
      ['http', TRUE],
@@ -139,7 +129,6 @@ class CacheableMetadataTest extends UnitTestCase {
      [300, FALSE],
      [[], TRUE],
      [8.0, TRUE]
->>>>>>> github/master
    ];
   }
 

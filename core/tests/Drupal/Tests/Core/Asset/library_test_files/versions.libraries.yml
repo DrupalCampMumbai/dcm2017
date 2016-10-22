@@ -20,8 +20,6 @@ core-versioned:
       core-versioned.css: {}
   js:
     core-versioned.js: {}
-<<<<<<< HEAD
-=======
 
 invalid-version:
   version: 2014-12-13
@@ -32,4 +30,3 @@ valid-version:
   version: "2014-12-13"
   js:
     versioned.js: {}
->>>>>>> github/master

@@ -440,11 +440,7 @@ class OptimizedPhpArrayDumper extends Dumper {
    *
    * @param string $id
    *   The ID of the service to get a reference for.
-<<<<<<< HEAD
-   * @param \Symfony\Component\DependencyInjection\Reference|null $reference
-=======
    * @param \Symfony\Component\DependencyInjection\Reference|NULL $reference
->>>>>>> github/master
    *   (optional) The reference object to process; needed to get the invalid
    *   behavior value.
    *

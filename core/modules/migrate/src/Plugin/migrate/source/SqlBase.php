@@ -161,10 +161,7 @@ abstract class SqlBase extends SourcePluginBase implements ContainerFactoryPlugi
    */
   protected function initializeIterator() {
     $this->prepareQuery();
-<<<<<<< HEAD
-=======
     $high_water_property = $this->migration->getHighWaterProperty();
->>>>>>> github/master
 
     // Get the key values, for potential use in joining to the map table.
     $keys = array();
@@ -216,12 +213,6 @@ abstract class SqlBase extends SourcePluginBase implements ContainerFactoryPlugi
     }
     // 2. If we are using high water marks, also include rows above the mark.
     //    But, include all rows if the high water mark is not set.
-<<<<<<< HEAD
-    if ($this->getHighWaterProperty() && ($high_water = $this->getHighWater()) !== '') {
-      $high_water_field = $this->getHighWaterField();
-      $conditions->condition($high_water_field, $high_water, '>');
-      $this->query->orderBy($high_water_field);
-=======
     if (isset($high_water_property['name']) && ($high_water = $this->migration->getHighWater()) !== '') {
       if (isset($high_water_property['alias'])) {
         $high_water = $high_water_property['alias'] . '.' . $high_water_property['name'];
@@ -231,7 +222,6 @@ abstract class SqlBase extends SourcePluginBase implements ContainerFactoryPlugi
       }
       $conditions->condition($high_water, $high_water, '>');
       $condition_added = TRUE;
->>>>>>> github/master
     }
     if ($condition_added) {
       $this->query->condition($conditions);

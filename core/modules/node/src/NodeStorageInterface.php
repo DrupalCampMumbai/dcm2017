@@ -14,11 +14,7 @@ interface NodeStorageInterface extends ContentEntityStorageInterface {
   /**
    * Gets a list of node revision IDs for a specific node.
    *
-<<<<<<< HEAD
-   * @param \Drupal\node\NodeInterface $node
-=======
    * @param \Drupal\node\NodeInterface
->>>>>>> github/master
    *   The node entity.
    *
    * @return int[]
@@ -40,11 +36,7 @@ interface NodeStorageInterface extends ContentEntityStorageInterface {
   /**
    * Counts the number of revisions in the default language.
    *
-<<<<<<< HEAD
-   * @param \Drupal\node\NodeInterface $node
-=======
    * @param \Drupal\node\NodeInterface
->>>>>>> github/master
    *   The node entity.
    *
    * @return int

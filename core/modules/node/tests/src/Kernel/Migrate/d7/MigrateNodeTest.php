@@ -111,11 +111,7 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
     $revision = \Drupal::entityManager()->getStorage('node')->loadRevision($id);
     $this->assertTrue($revision instanceof NodeInterface);
     $this->assertIdentical($title, $revision->getTitle());
-<<<<<<< HEAD
-    $this->assertIdentical($uid, $revision->getRevisionUser()->id());
-=======
     $this->assertIdentical($uid, $revision->getRevisionAuthor()->id());
->>>>>>> github/master
     $this->assertIdentical($log, $revision->revision_log->value);
     $this->assertIdentical($timestamp, $revision->getRevisionCreationTime());
   }

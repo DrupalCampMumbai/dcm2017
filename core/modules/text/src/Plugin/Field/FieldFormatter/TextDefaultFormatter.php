@@ -15,12 +15,9 @@ use Drupal\Core\Field\FieldItemListInterface;
  *     "text",
  *     "text_long",
  *     "text_with_summary",
-<<<<<<< HEAD
-=======
  *   },
  *   quickedit = {
  *     "editor" = "plain_text"
->>>>>>> github/master
  *   }
  * )
  */

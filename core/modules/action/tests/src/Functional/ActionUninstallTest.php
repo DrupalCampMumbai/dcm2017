@@ -25,13 +25,7 @@ class ActionUninstallTest extends BrowserTestBase {
   public function testActionUninstall() {
     \Drupal::service('module_installer')->uninstall(array('action'));
 
-<<<<<<< HEAD
-    $storage = $this->container->get('entity_type.manager')->getStorage('action');
-    $storage->resetCache(['user_block_user_action']);
-    $this->assertTrue($storage->load('user_block_user_action'), 'Configuration entity \'user_block_user_action\' still exists after uninstalling action module.' );
-=======
     $this->assertTrue(entity_load('action', 'user_block_user_action', TRUE), 'Configuration entity \'user_block_user_action\' still exists after uninstalling action module.' );
->>>>>>> github/master
 
     $admin_user = $this->drupalCreateUser(array('administer users'));
     $this->drupalLogin($admin_user);

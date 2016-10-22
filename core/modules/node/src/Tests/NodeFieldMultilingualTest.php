@@ -119,11 +119,7 @@ class NodeFieldMultilingualTest extends WebTestBase {
 
     // Check if node body is showed.
     $this->drupalGet('node/' . $node->id());
-<<<<<<< HEAD
-    $body = $this->xpath('//article[contains(concat(" ", normalize-space(@class), " "), :node-class)]//div[contains(concat(" ", normalize-space(@class), " "), :content-class)]/descendant::p', array(
-=======
      $body = $this->xpath('//article[contains(concat(" ", normalize-space(@class), " "), :node-class)]//div[contains(concat(" ", normalize-space(@class), " "), :content-class)]/descendant::p', array(
->>>>>>> github/master
       ':node-class' => ' node ',
       ':content-class' => 'node__content',
     ));

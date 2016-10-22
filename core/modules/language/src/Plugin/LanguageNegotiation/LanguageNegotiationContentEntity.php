@@ -91,11 +91,7 @@ class LanguageNegotiationContentEntity extends LanguageNegotiationMethodBase imp
    * {@inheritdoc}
    */
   public function getLangcode(Request $request = NULL) {
-<<<<<<< HEAD
-    $langcode = $request->query->get(static::QUERY_PARAMETER);
-=======
     $langcode = $request->get(static::QUERY_PARAMETER);
->>>>>>> github/master
 
     $language_enabled = array_key_exists($langcode, $this->languageManager->getLanguages());
     return $language_enabled ? $langcode : NULL;

@@ -269,11 +269,7 @@ class SearchPageListBuilder extends DraggableListBuilder implements FormInterfac
     );
     $form['search_pages']['add_page']['add_search_submit'] = array(
       '#type' => 'submit',
-<<<<<<< HEAD
-      '#value' => $this->t('Add search page'),
-=======
       '#value' => $this->t('Add new page'),
->>>>>>> github/master
       '#validate' => array('::validateAddSearchPage'),
       '#submit' => array('::submitAddSearchPage'),
       '#limit_validation_errors' => array(array('search_type')),

@@ -3,11 +3,7 @@
 /*
  * This file is part of the Symfony CMF package.
  *
-<<<<<<< HEAD
- * (c) 2011-2015 Symfony CMF
-=======
  * (c) 2011-2014 Symfony CMF
->>>>>>> github/master
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -64,11 +60,7 @@ class Candidates implements CandidatesInterface
     }
 
     /**
-<<<<<<< HEAD
-     * {@inheritdoc}
-=======
      * {@inheritDoc}
->>>>>>> github/master
      *
      * Always returns true.
      */
@@ -78,11 +70,7 @@ class Candidates implements CandidatesInterface
     }
 
     /**
-<<<<<<< HEAD
-     * {@inheritdoc}
-=======
      * {@inheritDoc}
->>>>>>> github/master
      *
      * Does nothing.
      */
@@ -91,11 +79,7 @@ class Candidates implements CandidatesInterface
     }
 
     /**
-<<<<<<< HEAD
-     * {@inheritdoc}
-=======
      * {@inheritDoc}
->>>>>>> github/master
      */
     public function getCandidates(Request $request)
     {
@@ -115,11 +99,7 @@ class Candidates implements CandidatesInterface
      *
      * @param string $url The url to determine the locale from.
      *
-<<<<<<< HEAD
-     * @return string|bool The locale if $url starts with one of the allowed locales.
-=======
      * @return string|boolean The locale if $url starts with one of the allowed locales.
->>>>>>> github/master
      */
     protected function determineLocale($url)
     {
@@ -128,11 +108,7 @@ class Candidates implements CandidatesInterface
         }
 
         $matches = array();
-<<<<<<< HEAD
-        if (preg_match('#('.implode('|', $this->locales).')(/|$)#', $url, $matches)) {
-=======
         if (preg_match('#(' . implode('|', $this->locales) . ')(/|$)#', $url, $matches)) {
->>>>>>> github/master
             return $matches[1];
         }
 
@@ -156,11 +132,7 @@ class Candidates implements CandidatesInterface
         if ('/' !== $url) {
             // handle format extension, like .html or .json
             if (preg_match('/(.+)\.[a-z]+$/i', $url, $matches)) {
-<<<<<<< HEAD
-                $candidates[] = $prefix.$url;
-=======
                 $candidates[] = $prefix . $url;
->>>>>>> github/master
                 $url = $matches[1];
             }
 
@@ -170,11 +142,7 @@ class Candidates implements CandidatesInterface
                 if (++$count > $this->limit) {
                     return $candidates;
                 }
-<<<<<<< HEAD
-                $candidates[] = $prefix.$part;
-=======
                 $candidates[] = $prefix . $part;
->>>>>>> github/master
                 $part = substr($url, 0, $pos);
             }
         }

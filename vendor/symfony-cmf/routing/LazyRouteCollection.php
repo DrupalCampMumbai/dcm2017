@@ -3,11 +3,7 @@
 /*
  * This file is part of the Symfony CMF package.
  *
-<<<<<<< HEAD
- * (c) 2011-2015 Symfony CMF
-=======
  * (c) 2011-2014 Symfony CMF
->>>>>>> github/master
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -73,11 +69,7 @@ class LazyRouteCollection extends RouteCollection
         try {
             return $this->provider->getRouteByName($name);
         } catch (RouteNotFoundException $e) {
-<<<<<<< HEAD
-            return;
-=======
             return null;
->>>>>>> github/master
         }
     }
 }

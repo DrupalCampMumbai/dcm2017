@@ -100,11 +100,7 @@ class UserAdminTest extends WebTestBase {
     $config
       ->set('notify.status_blocked', TRUE)
       ->save();
-<<<<<<< HEAD
-    $this->drupalPostForm('admin/people', $edit, t('Apply to selected items'), array(
-=======
     $this->drupalPostForm('admin/people', $edit, t('Apply'), array(
->>>>>>> github/master
       // Sort the table by username so that we know reliably which user will be
       // targeted with the blocking action.
       'query' => array('order' => 'name', 'sort' => 'asc')
@@ -125,11 +121,7 @@ class UserAdminTest extends WebTestBase {
     $editunblock = array();
     $editunblock['action'] = 'user_unblock_user_action';
     $editunblock['user_bulk_form[4]'] = TRUE;
-<<<<<<< HEAD
-    $this->drupalPostForm('admin/people', $editunblock, t('Apply to selected items'), array(
-=======
     $this->drupalPostForm('admin/people', $editunblock, t('Apply'), array(
->>>>>>> github/master
       // Sort the table by username so that we know reliably which user will be
       // targeted with the blocking action.
       'query' => array('order' => 'name', 'sort' => 'asc')
@@ -182,13 +174,8 @@ class UserAdminTest extends WebTestBase {
       ->save();
     // Register a new user account.
     $edit = array();
-<<<<<<< HEAD
-    $edit['name'] = $this->randomMachineName();
-    $edit['mail'] = $edit['name'] . '@example.com';
-=======
     $edit['name'] = $name = $this->randomMachineName();
     $edit['mail'] = $mail = $edit['name'] . '@example.com';
->>>>>>> github/master
     $this->drupalPostForm('user/register', $edit, t('Create new account'));
     $subject = 'Account details for ' . $edit['name'] . ' at ' . $system->get('name') . ' (pending admin approval)';
     // Ensure that admin notification mail is sent to the configured

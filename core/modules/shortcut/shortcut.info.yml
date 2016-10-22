@@ -2,13 +2,6 @@ name: Shortcut
 type: module
 description: 'Allows users to manage customizable lists of shortcut links.'
 package: Core
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-configure: entity.shortcut_set.collection
-dependencies:
-  - link
-=======
 # version: VERSION
 # core: 8.x
 configure: entity.shortcut_set.collection
@@ -20,4 +13,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

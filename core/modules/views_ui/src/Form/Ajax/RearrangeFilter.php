@@ -331,11 +331,7 @@ class RearrangeFilter extends ViewsFormBase {
    *
    * For example array(0 => 'foo') would be array(1 => 'foo').
    *
-<<<<<<< HEAD
-   * @param array $array
-=======
    * @param array
->>>>>>> github/master
    *   The array to increment keys on.
    *
    * @return array

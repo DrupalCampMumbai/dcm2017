@@ -2,11 +2,6 @@ name: Testing
 type: module
 description: 'Provides a framework for unit and functional testing.'
 package: Core
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-configure: simpletest.settings
-=======
 # version: VERSION
 # core: 8.x
 configure: simpletest.settings
@@ -16,4 +11,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

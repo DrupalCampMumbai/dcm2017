@@ -16,11 +16,7 @@ class MigrateSystemRssTest extends MigrateDrupal6TestBase {
    */
   protected function setUp() {
     parent::setUp();
-<<<<<<< HEAD
-    $this->executeMigration('system_rss');
-=======
     $this->executeMigration('d6_system_rss');
->>>>>>> github/master
   }
 
   /**

@@ -2,13 +2,8 @@
 
 namespace Drupal\KernelTests\Core\Config;
 
-<<<<<<< HEAD
-use Drupal\KernelTests\KernelTestBase;
-use Drupal\Tests\Traits\Core\Config\SchemaConfigListenerTestTrait;
-=======
 use Drupal\Core\Config\Schema\SchemaIncompleteException;
 use Drupal\KernelTests\KernelTestBase;
->>>>>>> github/master
 
 /**
  * Tests the functionality of ConfigSchemaChecker in KernelTestBase tests.
@@ -17,27 +12,12 @@ use Drupal\KernelTests\KernelTestBase;
  */
 class SchemaConfigListenerTest extends KernelTestBase {
 
-<<<<<<< HEAD
-  use SchemaConfigListenerTestTrait;
-
-=======
->>>>>>> github/master
   /**
    * {@inheritdoc}
    */
   public static $modules = array('config_test');
 
   /**
-<<<<<<< HEAD
-   * {@inheritdoc}
-   */
-  protected function setUp() {
-    parent::setUp();
-    // Install configuration provided by the module so that the order of the
-    // config keys is the same as
-    // \Drupal\FunctionalTests\Core\Config\SchemaConfigListenerTest.
-    $this->installConfig(['config_test']);
-=======
    * Tests \Drupal\Core\Config\Testing\ConfigSchemaChecker.
    */
   public function testConfigSchemaChecker() {
@@ -76,7 +56,6 @@ class SchemaConfigListenerTest extends KernelTestBase {
       $this->pass($message);
       $this->assertEqual('Schema errors for config_test.types with the following errors: config_test.types:foo missing schema, config_test.types:array variable type is integer but applied schema class is Drupal\Core\Config\Schema\Sequence', $e->getMessage());
     }
->>>>>>> github/master
   }
 
 }

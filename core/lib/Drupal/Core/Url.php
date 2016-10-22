@@ -845,11 +845,7 @@ class Url {
   /**
    * Sets the URL generator.
    *
-<<<<<<< HEAD
-   * @param \Drupal\Core\Routing\UrlGeneratorInterface $url_generator
-=======
    * @param \Drupal\Core\Routing\UrlGeneratorInterface
->>>>>>> github/master
    *   (optional) The URL generator, specify NULL to reset it.
    *
    * @return $this
@@ -863,11 +859,7 @@ class Url {
   /**
    * Sets the unrouted URL assembler.
    *
-<<<<<<< HEAD
-   * @param \Drupal\Core\Utility\UnroutedUrlAssemblerInterface $url_assembler
-=======
    * @param \Drupal\Core\Utility\UnroutedUrlAssemblerInterface
->>>>>>> github/master
    *   The unrouted URL assembler.
    *
    * @return $this

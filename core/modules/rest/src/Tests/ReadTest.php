@@ -3,11 +3,6 @@
 namespace Drupal\rest\Tests;
 
 use Drupal\Component\Serialization\Json;
-<<<<<<< HEAD
-use Drupal\Core\Config\Entity\ConfigEntityInterface;
-use Drupal\Core\Entity\EntityInterface;
-=======
->>>>>>> github/master
 use Drupal\Core\Url;
 
 /**
@@ -22,19 +17,7 @@ class ReadTest extends RESTTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD
-  public static $modules = [
-    'hal',
-    'rest',
-    'node',
-    'entity_test',
-    'config_test',
-    'taxonomy',
-    'block',
-  ];
-=======
   public static $modules = array('hal', 'rest', 'entity_test');
->>>>>>> github/master
 
   /**
    * Tests several valid and invalid read requests on all entity types.
@@ -42,27 +25,13 @@ class ReadTest extends RESTTestBase {
   public function testRead() {
     // @todo Expand this at least to users.
     // Define the entity types we want to test.
-<<<<<<< HEAD
-    $entity_types = [
-      'entity_test',
-      'node',
-      'config_test',
-      'taxonomy_vocabulary',
-      'block',
-      'user_role',
-    ];
-=======
     $entity_types = array('entity_test', 'node');
->>>>>>> github/master
     foreach ($entity_types as $entity_type) {
       $this->enableService('entity:' . $entity_type, 'GET');
       // Create a user account that has the required permissions to read
       // resources via the REST API.
       $permissions = $this->entityPermissions($entity_type, 'view');
-<<<<<<< HEAD
-=======
       $permissions[] = 'restful get entity:' . $entity_type;
->>>>>>> github/master
       $account = $this->drupalCreateUser($permissions);
       $this->drupalLogin($account);
 
@@ -71,20 +40,12 @@ class ReadTest extends RESTTestBase {
       $entity->save();
 
       // Verify that it exists: use a HEAD request.
-<<<<<<< HEAD
-      $this->httpRequest($this->getReadUrl($entity), 'HEAD');
-=======
       $response = $this->httpRequest($entity->urlInfo()->setRouteParameter('_format', $this->defaultFormat), 'HEAD');
->>>>>>> github/master
       $this->assertResponseBody('');
       $head_headers = $this->drupalGetHeaders();
 
       // Read it over the REST API.
-<<<<<<< HEAD
-      $response = $this->httpRequest($this->getReadUrl($entity), 'GET');
-=======
       $response = $this->httpRequest($entity->urlInfo()->setRouteParameter('_format', $this->defaultFormat), 'GET');
->>>>>>> github/master
       $get_headers = $this->drupalGetHeaders();
       $this->assertResponse('200', 'HTTP response code is correct.');
 
@@ -103,46 +64,17 @@ class ReadTest extends RESTTestBase {
       $data = Json::decode($response);
       // Only assert one example property here, other properties should be
       // checked in serialization tests.
-<<<<<<< HEAD
-      if ($entity instanceof ConfigEntityInterface) {
-        $this->assertEqual($data['uuid'], $entity->uuid(), 'Entity UUID is correct');
-      }
-      else {
-        $this->assertEqual($data['uuid'][0]['value'], $entity->uuid(), 'Entity UUID is correct');
-      }
-
-      // Try to read the entity with an unsupported mime format.
-      $this->httpRequest($this->getReadUrl($entity, 'wrongformat'), 'GET');
-=======
       $this->assertEqual($data['uuid'][0]['value'], $entity->uuid(), 'Entity UUID is correct');
 
       // Try to read the entity with an unsupported mime format.
       $response = $this->httpRequest($entity->urlInfo()->setRouteParameter('_format', 'wrongformat'), 'GET');
->>>>>>> github/master
       $this->assertResponse(406);
       $this->assertHeader('Content-type', 'application/json');
 
       // Try to read an entity that does not exist.
-<<<<<<< HEAD
-      $response = $this->httpRequest($this->getReadUrl($entity, $this->defaultFormat, 9999), 'GET');
-      $this->assertResponse(404);
-      switch ($entity_type) {
-        case 'node':
-          $path = '/node/{node}';
-          break;
-
-        case 'entity_test':
-          $path = '/entity_test/{entity_test}';
-          break;
-
-        default:
-          $path = "/entity/$entity_type/{" . $entity_type . '}';
-      }
-=======
       $response = $this->httpRequest(Url::fromUri('base://' . $entity_type . '/9999', ['query' => ['_format' => $this->defaultFormat]]), 'GET');
       $this->assertResponse(404);
       $path = $entity_type == 'node' ? '/node/{node}' : '/entity_test/{entity_test}';
->>>>>>> github/master
       $expected_message = Json::encode(['message' => 'The "' . $entity_type . '" parameter was not converted for the path "' . $path . '" (route name: "rest.entity.' . $entity_type . '.GET.hal_json")']);
       $this->assertIdentical($expected_message, $response, 'Response message is correct.');
 
@@ -152,24 +84,12 @@ class ReadTest extends RESTTestBase {
       if ($entity_type == 'entity_test') {
         $entity->field_test_text->value = 'no access value';
         $entity->save();
-<<<<<<< HEAD
-        $response = $this->httpRequest($this->getReadUrl($entity), 'GET');
-=======
         $response = $this->httpRequest($entity->urlInfo()->setRouteParameter('_format', $this->defaultFormat), 'GET');
->>>>>>> github/master
         $this->assertResponse(200);
         $this->assertHeader('content-type', $this->defaultMimeType);
         $data = Json::decode($response);
         $this->assertFalse(isset($data['field_test_text']), 'Field access protected field is not visible in the response.');
       }
-<<<<<<< HEAD
-    }
-    // Try to read a resource, the user entity, which is not REST API enabled.
-    $account = $this->drupalCreateUser();
-    $this->drupalLogin($account);
-    $response = $this->httpRequest($this->getReadUrl($account), 'GET');
-
-=======
 
       // Try to read an entity without proper permissions.
       $this->drupalLogout();
@@ -181,7 +101,6 @@ class ReadTest extends RESTTestBase {
     $account = $this->drupalCreateUser();
     $this->drupalLogin($account);
     $response = $this->httpRequest($account->urlInfo()->setRouteParameter('_format', $this->defaultFormat), 'GET');
->>>>>>> github/master
     // \Drupal\Core\Routing\RequestFormatRouteFilter considers the canonical,
     // non-REST route a match, but a lower quality one: no format restrictions
     // means there's always a match and hence when there is no matching REST
@@ -202,10 +121,7 @@ class ReadTest extends RESTTestBase {
     // Create a user account that has the required permissions to read
     // resources via the REST API.
     $permissions = $this->entityPermissions('node', 'view');
-<<<<<<< HEAD
-=======
     $permissions[] = 'restful get entity:node';
->>>>>>> github/master
     $account = $this->drupalCreateUser($permissions);
     $this->drupalLogin($account);
 
@@ -214,57 +130,8 @@ class ReadTest extends RESTTestBase {
     $entity->save();
 
     // Read it over the REST API.
-<<<<<<< HEAD
-    $this->httpRequest($this->getReadUrl($entity, 'json'), 'GET');
-    $this->assertResponse('200', 'HTTP response code is correct.');
-  }
-
-  /**
-   * Gets the read URL object for the entity.
-   *
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-   *   The entity to get the URL for.
-   * @param string $format
-   *   The format to request the entity in.
-   * @param string $entity_id
-   *   The entity ID to use in the URL, defaults to the entity's ID if know
-   *   given.
-   *
-   * @return \Drupal\Core\Url
-   *   The Url object.
-   */
-  protected function getReadUrl(EntityInterface $entity, $format = NULL, $entity_id = NULL) {
-    if (!$format) {
-      $format = $this->defaultFormat;
-    }
-    if (!$entity_id) {
-      $entity_id = $entity->id();
-    }
-    $entity_type = $entity->getEntityTypeId();
-    if ($entity->hasLinkTemplate('canonical')) {
-      $url = $entity->toUrl('canonical');
-    }
-    else {
-      $route_name = 'rest.entity.' . $entity_type . ".GET.";
-      // If testing unsupported format don't use the format to construct route
-      // name. This would give a RouteNotFoundException.
-      if ($format == 'wrongformat') {
-        $route_name .= $this->defaultFormat;
-      }
-      else {
-        $route_name .= $format;
-      }
-      $url = Url::fromRoute($route_name);
-    }
-    $url->setRouteParameter($entity_type, $entity_id);
-    $url->setRouteParameter('_format', $format);
-    return $url;
-  }
-
-=======
     $response = $this->httpRequest($entity->urlInfo()->setRouteParameter('_format', 'json'), 'GET');
     $this->assertResponse('200', 'HTTP response code is correct.');
   }
 
->>>>>>> github/master
 }

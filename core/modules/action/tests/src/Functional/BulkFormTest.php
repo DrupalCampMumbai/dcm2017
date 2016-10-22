@@ -68,11 +68,7 @@ class BulkFormTest extends BrowserTestBase {
 
     // Set all nodes to sticky and check that.
     $edit += array('action' => 'node_make_sticky_action');
-<<<<<<< HEAD
-    $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
-=======
     $this->drupalPostForm(NULL, $edit, t('Apply'));
->>>>>>> github/master
 
     foreach ($nodes as $node) {
       $changed_node = $node_storage->load($node->id());
@@ -86,11 +82,7 @@ class BulkFormTest extends BrowserTestBase {
     $this->assertTrue($node->isPublished(), 'The node is published.');
 
     $edit = array('node_bulk_form[0]' => TRUE, 'action' => 'node_unpublish_action');
-<<<<<<< HEAD
-    $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
-=======
     $this->drupalPostForm(NULL, $edit, t('Apply'));
->>>>>>> github/master
 
     $this->assertText('Unpublish content was applied to 1 item.');
 
@@ -131,11 +123,7 @@ class BulkFormTest extends BrowserTestBase {
     // Check the default title.
     $this->drupalGet('test_bulk_form');
     $result = $this->xpath('//label[@for="edit-action"]');
-<<<<<<< HEAD
-    $this->assertEqual('Action', $result[0]->getText());
-=======
     $this->assertEqual('With selection', $result[0]->getText());
->>>>>>> github/master
 
     // Setup up a different bulk form title.
     $view = Views::getView('test_bulk_form');
@@ -154,11 +142,7 @@ class BulkFormTest extends BrowserTestBase {
       $edit["node_bulk_form[$i]"] = TRUE;
     }
     $edit += array('action' => 'node_delete_action');
-<<<<<<< HEAD
-    $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
-=======
     $this->drupalPostForm(NULL, $edit, t('Apply'));
->>>>>>> github/master
     // Make sure we don't show an action message while we are still on the
     // confirmation page.
     $errors = $this->xpath('//div[contains(@class, "messages--status")]');

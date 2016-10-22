@@ -68,11 +68,7 @@ class SerializerTest extends UnitTestCase {
       ->willReturn()
       ->shouldBeCalled();
 
-<<<<<<< HEAD
-    $view_serializer_style = new Serializer([], 'dummy_serializer', [], $mock_serializer->reveal(), ['json', 'xml'], ['json' => 'serialization', 'xml' => 'serialization']);
-=======
     $view_serializer_style = new Serializer([], 'dummy_serializer', [], $mock_serializer->reveal(), ['json', 'xml']);
->>>>>>> github/master
     $view_serializer_style->options = ['formats' => ['xml', 'json']];
     $view_serializer_style->view = $this->view;
     $view_serializer_style->displayHandler = $this->displayHandler;

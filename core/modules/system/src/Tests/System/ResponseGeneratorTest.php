@@ -16,11 +16,7 @@ class ResponseGeneratorTest extends RESTTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD
-  public static $modules = array('hal', 'rest', 'node', 'basic_auth');
-=======
   public static $modules = array('hal', 'rest', 'node');
->>>>>>> github/master
 
   /**
    * {@inheritdoc}
@@ -30,10 +26,7 @@ class ResponseGeneratorTest extends RESTTestBase {
     $this->drupalCreateContentType(array('type' => 'page', 'name' => 'Basic page'));
 
     $permissions = $this->entityPermissions('node', 'view');
-<<<<<<< HEAD
-=======
     $permissions[] = 'restful get entity:node';
->>>>>>> github/master
     $account = $this->drupalCreateUser($permissions);
     $this->drupalLogin($account);
   }
@@ -60,20 +53,6 @@ class ResponseGeneratorTest extends RESTTestBase {
     $this->assertEqual('text/html; charset=UTF-8', $this->drupalGetHeader('Content-Type'));
     $this->assertEqual($expectedGeneratorHeader, $this->drupalGetHeader('X-Generator'));
 
-<<<<<<< HEAD
-    // Enable cookie-based authentication for the entity:node REST resource.
-    /** @var \Drupal\rest\RestResourceConfigInterface $resource_config */
-    $resource_config = $this->resourceConfigStorage->load('entity.node');
-    $configuration = $resource_config->get('configuration');
-    $configuration['authentication'][] = 'cookie';
-    $resource_config->set('configuration', $configuration)->save();
-    $this->rebuildCache();
-
-    // Tests to see if this also works for a non-html request
-    $this->httpRequest($node->urlInfo()->setOption('query', ['_format' => 'hal_json']), 'GET');
-    $this->assertResponse(200);
-    $this->assertEqual('application/hal+json', $this->drupalGetHeader('Content-Type'));
-=======
     // Enable rest API for nodes
     $this->enableService('entity:node', 'GET', 'json');
 
@@ -81,7 +60,6 @@ class ResponseGeneratorTest extends RESTTestBase {
     $this->httpRequest($node->urlInfo()->setOption('query', ['_format' => 'json']), 'GET');
     $this->assertResponse(200);
     $this->assertEqual('application/json', $this->drupalGetHeader('Content-Type'));
->>>>>>> github/master
     $this->assertEqual($expectedGeneratorHeader, $this->drupalGetHeader('X-Generator'));
 
   }

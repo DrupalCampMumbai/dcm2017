@@ -16,11 +16,7 @@ class MigrateSystemImageTest extends MigrateDrupal6TestBase {
    */
   protected function setUp() {
     parent::setUp();
-<<<<<<< HEAD
-    $this->executeMigration('system_image');
-=======
     $this->executeMigration('d6_system_image');
->>>>>>> github/master
   }
 
   /**

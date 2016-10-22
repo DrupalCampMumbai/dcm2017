@@ -114,15 +114,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->with($row, array('test'))
       ->will($this->returnValue(array('id' => 'test')));
 
-<<<<<<< HEAD
-    $this->migration
-      ->method('getDestinationPlugin')
-      ->willReturn($destination);
-=======
     $this->migration->expects($this->once())
       ->method('getDestinationPlugin')
       ->will($this->returnValue($destination));
->>>>>>> github/master
 
     $this->assertSame(MigrationInterface::RESULT_COMPLETED, $this->executable->import());
   }
@@ -162,15 +156,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->with($row, array('test'))
       ->will($this->returnValue(TRUE));
 
-<<<<<<< HEAD
-    $this->migration
-      ->method('getDestinationPlugin')
-      ->willReturn($destination);
-=======
     $this->migration->expects($this->once())
       ->method('getDestinationPlugin')
       ->will($this->returnValue($destination));
->>>>>>> github/master
 
     $this->idMap->expects($this->never())
       ->method('saveIdMapping');
@@ -208,15 +196,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->with($row, array('test'))
       ->will($this->returnValue(array()));
 
-<<<<<<< HEAD
-    $this->migration
-      ->method('getDestinationPlugin')
-      ->willReturn($destination);
-=======
     $this->migration->expects($this->once())
       ->method('getDestinationPlugin')
       ->will($this->returnValue($destination));
->>>>>>> github/master
 
     $this->idMap->expects($this->once())
       ->method('saveIdMapping')
@@ -274,15 +256,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->with($row, array('test'))
       ->will($this->throwException(new MigrateException($exception_message)));
 
-<<<<<<< HEAD
-    $this->migration
-      ->method('getDestinationPlugin')
-      ->willReturn($destination);
-=======
     $this->migration->expects($this->once())
       ->method('getDestinationPlugin')
       ->will($this->returnValue($destination));
->>>>>>> github/master
 
     $this->idMap->expects($this->once())
       ->method('saveIdMapping')
@@ -330,11 +306,7 @@ class MigrateExecutableTest extends MigrateTestCase {
     $destination->expects($this->never())
       ->method('import');
 
-<<<<<<< HEAD
-    $this->migration
-=======
     $this->migration->expects($this->once())
->>>>>>> github/master
       ->method('getDestinationPlugin')
       ->willReturn($destination);
 
@@ -382,15 +354,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->with($row, array('test'))
       ->will($this->throwException(new \Exception($exception_message)));
 
-<<<<<<< HEAD
-    $this->migration
-      ->method('getDestinationPlugin')
-      ->willReturn($destination);
-=======
     $this->migration->expects($this->once())
       ->method('getDestinationPlugin')
       ->will($this->returnValue($destination));
->>>>>>> github/master
 
     $this->idMap->expects($this->once())
       ->method('saveIdMapping')

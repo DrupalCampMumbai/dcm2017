@@ -24,11 +24,7 @@ class PhpTransliterationTest extends UnitTestCase {
    *   The string which was not transliterated yet.
    * @param string $expected
    *   The string expected after the transliteration.
-<<<<<<< HEAD
-   * @param string|null $printable
-=======
    * @param string|NULL $printable
->>>>>>> github/master
    *   (optional) An alternative version of the original string which is
    *   printable in the output.
    *

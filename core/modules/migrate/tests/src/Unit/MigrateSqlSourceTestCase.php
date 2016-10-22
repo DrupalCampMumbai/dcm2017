@@ -3,22 +3,9 @@
 namespace Drupal\Tests\migrate\Unit;
 
 use Drupal\Core\Database\Query\SelectInterface;
-<<<<<<< HEAD
-use Drupal\Core\DependencyInjection\ContainerBuilder;
-use Drupal\Core\DependencyInjection\ContainerNotInitializedException;
-use Drupal\Core\KeyValueStore\KeyValueFactoryInterface;
-use Drupal\Core\KeyValueStore\KeyValueStoreInterface;
 
 /**
  * Base class for Migrate module source unit tests.
- *
- * @deprecated in Drupal 8.2.0, will be removed before Drupal 9.0.0. Use
- * \Drupal\Tests\migrate\Kernel\MigrateSqlSourceTestBase instead.
-=======
-
-/**
- * Base class for Migrate module source unit tests.
->>>>>>> github/master
  */
 abstract class MigrateSqlSourceTestCase extends MigrateTestCase {
 
@@ -57,15 +44,9 @@ abstract class MigrateSqlSourceTestCase extends MigrateTestCase {
    * Once the migration is run, we save a mark of the migrated sources, so the
    * migration can run again and update only new sources or changed sources.
    *
-<<<<<<< HEAD
-   * @var mixed
-   */
-  const ORIGINAL_HIGH_WATER = NULL;
-=======
    * @var string
    */
   const ORIGINAL_HIGH_WATER = '';
->>>>>>> github/master
 
   /**
    * Expected results after the source parsing.
@@ -96,30 +77,6 @@ abstract class MigrateSqlSourceTestCase extends MigrateTestCase {
     $state = $this->getMock('Drupal\Core\State\StateInterface');
     $entity_manager = $this->getMock('Drupal\Core\Entity\EntityManagerInterface');
 
-<<<<<<< HEAD
-    // Mock a key-value store to return high-water values.
-    $key_value = $this->getMock(KeyValueStoreInterface::class);
-
-    // SourcePluginBase does not yet support full dependency injection so we
-    // need to make sure that \Drupal::keyValue() works as expected by mocking
-    // the keyvalue service.
-    $key_value_factory = $this->getMock(KeyValueFactoryInterface::class);
-    $key_value_factory
-      ->method('get')
-      ->with('migrate:high_water')
-      ->willReturn($key_value);
-
-    try {
-      $container = \Drupal::getContainer();
-    }
-    catch (ContainerNotInitializedException $e) {
-      $container = new ContainerBuilder();
-    }
-    $container->set('keyvalue', $key_value_factory);
-    \Drupal::setContainer($container);
-
-=======
->>>>>>> github/master
     $migration = $this->getMigration();
     $migration->expects($this->any())
       ->method('getHighWater')

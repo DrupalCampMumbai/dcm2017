@@ -23,19 +23,11 @@ db_insert('contact')->fields(array(
   'weight',
   'selected'
 ))
-<<<<<<< HEAD
-  ->values(array(
-=======
 ->values(array(
->>>>>>> github/master
   'category' => 'Upgrade test',
   'recipients' => 'test1@example.com,test2@example.com',
   'reply' => 'Test reply',
   'weight' => 1,
   'selected' => 1,
 ))
-<<<<<<< HEAD
-  ->execute();
-=======
 ->execute();
->>>>>>> github/master

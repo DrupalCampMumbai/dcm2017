@@ -111,14 +111,6 @@ class CommentStatisticsUnitTest extends UnitTestCase {
     switch ($this->calls_to_fetch) {
       case 1:
         return 'something';
-<<<<<<< HEAD
-
-      case 2:
-        return 'something-else';
-
-      default:
-        return FALSE;
-=======
         break;
       case 2:
         return 'something-else';
@@ -126,7 +118,6 @@ class CommentStatisticsUnitTest extends UnitTestCase {
       default:
         return FALSE;
         break;
->>>>>>> github/master
     }
   }
 

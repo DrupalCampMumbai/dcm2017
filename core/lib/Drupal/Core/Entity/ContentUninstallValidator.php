@@ -5,10 +5,6 @@ namespace Drupal\Core\Entity;
 use Drupal\Core\Extension\ModuleUninstallValidatorInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
-<<<<<<< HEAD
-use Drupal\Core\Url;
-=======
->>>>>>> github/master
 
 /**
  * Validates module uninstall readiness based on existing content entities.
@@ -41,21 +37,10 @@ class ContentUninstallValidator implements ModuleUninstallValidatorInterface {
    */
   public function validate($module) {
     $entity_types = $this->entityManager->getDefinitions();
-<<<<<<< HEAD
-    $reasons = [];
-    foreach ($entity_types as $entity_type) {
-      if ($module == $entity_type->getProvider() && $entity_type instanceof ContentEntityTypeInterface && $this->entityManager->getStorage($entity_type->id())->hasData()) {
-        $reasons[] = $this->t('There is content for the entity type: @entity_type. <a href=":url">Remove @entity_type_plural</a>.', [
-          '@entity_type' => $entity_type->getLabel(),
-          '@entity_type_plural' => $entity_type->getPluralLabel(),
-          ':url' => Url::fromRoute('system.prepare_modules_entity_uninstall', ['entity_type_id' => $entity_type->id()])->toString(),
-        ]);
-=======
     $reasons = array();
     foreach ($entity_types as $entity_type) {
       if ($module == $entity_type->getProvider() && $entity_type instanceof ContentEntityTypeInterface && $this->entityManager->getStorage($entity_type->id())->hasData()) {
         $reasons[] = $this->t('There is content for the entity type: @entity_type', array('@entity_type' => $entity_type->getLabel()));
->>>>>>> github/master
       }
     }
     return $reasons;

@@ -113,15 +113,9 @@ class ForwardRevisionTest extends KernelTestBase {
 
   protected function getTaxonomyIndex() {
     return \Drupal::database()->select('taxonomy_index')
-<<<<<<< HEAD
-      ->fields('taxonomy_index')
-      ->execute()
-      ->fetchAllAssoc('nid');
-=======
      ->fields('taxonomy_index')
      ->execute()
      ->fetchAllAssoc('nid');
->>>>>>> github/master
   }
 
 }

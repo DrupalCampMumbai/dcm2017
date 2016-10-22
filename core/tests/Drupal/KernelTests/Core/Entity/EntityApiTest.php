@@ -60,42 +60,11 @@ class EntityApiTest extends EntityKernelTestBase {
       ->create(array('name' => 'test', 'user_id' => NULL));
     $entity->save();
 
-<<<<<<< HEAD
-    /** @var \Drupal\Core\Entity\EntityStorageInterface $storage */
-    $storage = $this->container->get('entity_type.manager')
-      ->getStorage($entity_type);
-
-    $entities = array_values($storage->loadByProperties(['name' => 'test']));
-=======
     $entities = array_values(entity_load_multiple_by_properties($entity_type, array('name' => 'test')));
->>>>>>> github/master
     $this->assertEqual($entities[0]->name->value, 'test', format_string('%entity_type: Created and loaded entity', array('%entity_type' => $entity_type)));
     $this->assertEqual($entities[1]->name->value, 'test', format_string('%entity_type: Created and loaded entity', array('%entity_type' => $entity_type)));
 
     // Test loading a single entity.
-<<<<<<< HEAD
-    $loaded_entity = $storage->load($entity->id());
-    $this->assertEqual($loaded_entity->id(), $entity->id(), format_string('%entity_type: Loaded a single entity by id.', array('%entity_type' => $entity_type)));
-
-    // Test deleting an entity.
-    $entities = array_values($storage->loadByProperties(['name' => 'test2']));
-    $entities[0]->delete();
-    $entities = array_values($storage->loadByProperties(['name' => 'test2']));
-    $this->assertEqual($entities, array(), format_string('%entity_type: Entity deleted.', array('%entity_type' => $entity_type)));
-
-    // Test updating an entity.
-    $entities = array_values($storage->loadByProperties(['name' => 'test']));
-    $entities[0]->name->value = 'test3';
-    $entities[0]->save();
-    $entity = $storage->load($entities[0]->id());
-    $this->assertEqual($entity->name->value, 'test3', format_string('%entity_type: Entity updated.', array('%entity_type' => $entity_type)));
-
-    // Try deleting multiple test entities by deleting all.
-    $ids = array_keys($storage->loadMultiple());
-    entity_delete_multiple($entity_type, $ids);
-
-    $all = $storage->loadMultiple();
-=======
     $loaded_entity = entity_load($entity_type, $entity->id());
     $this->assertEqual($loaded_entity->id(), $entity->id(), format_string('%entity_type: Loaded a single entity by id.', array('%entity_type' => $entity_type)));
 
@@ -117,7 +86,6 @@ class EntityApiTest extends EntityKernelTestBase {
     entity_delete_multiple($entity_type, $ids);
 
     $all = entity_load_multiple($entity_type);
->>>>>>> github/master
     $this->assertTrue(empty($all), format_string('%entity_type: Deleted all entities.', array('%entity_type' => $entity_type)));
 
     // Verify that all data got deleted.
@@ -142,11 +110,7 @@ class EntityApiTest extends EntityKernelTestBase {
     $controller->delete($entities);
 
     // Verify that entities got deleted.
-<<<<<<< HEAD
-    $all = $storage->loadMultiple();
-=======
     $all = entity_load_multiple($entity_type);
->>>>>>> github/master
     $this->assertTrue(empty($all), format_string('%entity_type: Deleted all entities.', array('%entity_type' => $entity_type)));
 
     // Verify that all data got deleted from the tables.

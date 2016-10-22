@@ -2,14 +2,8 @@
 
 namespace Drupal\Core\Config;
 
-<<<<<<< HEAD
-use Drupal\Component\FileCache\FileCacheFactory;
-use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
-use Drupal\Core\Serialization\Yaml;
-=======
 use Drupal\Component\Serialization\Yaml;
 use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
->>>>>>> github/master
 
 /**
  * Defines the file storage.
@@ -31,16 +25,6 @@ class FileStorage implements StorageInterface {
   protected $directory = '';
 
   /**
-<<<<<<< HEAD
-   * The file cache object.
-   *
-   * @var \Drupal\Component\FileCache\FileCacheInterface
-   */
-  protected $fileCache;
-
-  /**
-=======
->>>>>>> github/master
    * Constructs a new FileStorage.
    *
    * @param string $directory
@@ -52,14 +36,6 @@ class FileStorage implements StorageInterface {
   public function __construct($directory, $collection = StorageInterface::DEFAULT_COLLECTION) {
     $this->directory = $directory;
     $this->collection = $collection;
-<<<<<<< HEAD
-
-    // Use a NULL File Cache backend by default. This will ensure only the
-    // internal statc caching of FileCache is used and thus avoids blowing up
-    // the APCu cache.
-    $this->fileCache = FileCacheFactory::get('config', ['cache_backend_class' => NULL]);
-=======
->>>>>>> github/master
   }
 
   /**
@@ -114,16 +90,7 @@ class FileStorage implements StorageInterface {
     if (!$this->exists($name)) {
       return FALSE;
     }
-<<<<<<< HEAD
-
     $filepath = $this->getFilePath($name);
-    if ($data = $this->fileCache->get($filepath)) {
-      return $data;
-    }
-
-=======
-    $filepath = $this->getFilePath($name);
->>>>>>> github/master
     $data = file_get_contents($filepath);
     try {
       $data = $this->decode($data);
@@ -131,11 +98,6 @@ class FileStorage implements StorageInterface {
     catch (InvalidDataTypeException $e) {
       throw new UnsupportedDataTypeConfigException('Invalid data type in config ' . $name . ', found in file' . $filepath . ' : ' . $e->getMessage());
     }
-<<<<<<< HEAD
-    $this->fileCache->set($filepath, $data);
-
-=======
->>>>>>> github/master
     return $data;
   }
 
@@ -157,30 +119,18 @@ class FileStorage implements StorageInterface {
    */
   public function write($name, array $data) {
     try {
-<<<<<<< HEAD
-      $encoded_data = $this->encode($data);
-=======
       $data = $this->encode($data);
->>>>>>> github/master
     }
     catch (InvalidDataTypeException $e) {
       throw new StorageException("Invalid data type in config $name: {$e->getMessage()}");
     }
 
     $target = $this->getFilePath($name);
-<<<<<<< HEAD
-    $status = @file_put_contents($target, $encoded_data);
-    if ($status === FALSE) {
-      // Try to make sure the directory exists and try writing again.
-      $this->ensureStorage();
-      $status = @file_put_contents($target, $encoded_data);
-=======
     $status = @file_put_contents($target, $data);
     if ($status === FALSE) {
       // Try to make sure the directory exists and try writing again.
       $this->ensureStorage();
       $status = @file_put_contents($target, $data);
->>>>>>> github/master
     }
     if ($status === FALSE) {
       throw new StorageException('Failed to write configuration file: ' . $this->getFilePath($name));
@@ -188,12 +138,6 @@ class FileStorage implements StorageInterface {
     else {
       drupal_chmod($target);
     }
-<<<<<<< HEAD
-
-    $this->fileCache->set($target, $data);
-
-=======
->>>>>>> github/master
     return TRUE;
   }
 
@@ -208,10 +152,6 @@ class FileStorage implements StorageInterface {
       }
       return FALSE;
     }
-<<<<<<< HEAD
-    $this->fileCache->delete($this->getFilePath($name));
-=======
->>>>>>> github/master
     return drupal_unlink($this->getFilePath($name));
   }
 
@@ -223,11 +163,6 @@ class FileStorage implements StorageInterface {
     if ($status === FALSE) {
       throw new StorageException('Failed to rename configuration file from: ' . $this->getFilePath($name) . ' to: ' . $this->getFilePath($new_name));
     }
-<<<<<<< HEAD
-    $this->fileCache->delete($this->getFilePath($name));
-    $this->fileCache->delete($this->getFilePath($new_name));
-=======
->>>>>>> github/master
     return TRUE;
   }
 

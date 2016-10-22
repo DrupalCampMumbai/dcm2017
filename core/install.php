@@ -5,11 +5,6 @@
  * Initiates a browser-based installation of Drupal.
  */
 
-<<<<<<< HEAD
-use Drupal\Component\Utility\OpCodeCache;
-
-=======
->>>>>>> github/master
 // Change the directory to the Drupal root.
 chdir('..');
 // Store the Drupal root path.
@@ -33,23 +28,12 @@ if (version_compare(PHP_VERSION, '5.5.9') < 0) {
   exit;
 }
 
-<<<<<<< HEAD
-// Initialize the autoloader.
-$class_loader = require_once $root_path . '/autoload.php';
-
-// If OPCache is in use, ensure opcache.save_comments is enabled.
-if (OpCodeCache::isEnabled() && !ini_get('opcache.save_comments')) {
-=======
 if (function_exists('opcache_get_status') && opcache_get_status()['opcache_enabled'] && !ini_get('opcache.save_comments')) {
->>>>>>> github/master
   print 'Systems with OPcache installed must have <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments">opcache.save_comments</a> enabled.';
   exit();
 }
 
 // Start the installer.
-<<<<<<< HEAD
-=======
 $class_loader = require_once $root_path . '/autoload.php';
->>>>>>> github/master
 require_once $root_path . '/core/includes/install.core.inc';
 install_drupal($class_loader);

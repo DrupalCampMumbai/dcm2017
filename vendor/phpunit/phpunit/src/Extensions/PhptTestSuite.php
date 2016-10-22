@@ -18,12 +18,7 @@ class PHPUnit_Extensions_PhptTestSuite extends PHPUnit_Framework_TestSuite
     /**
      * Constructs a new TestSuite for .phpt test cases.
      *
-<<<<<<< HEAD
-     * @param string $directory
-     *
-=======
      * @param  string                      $directory
->>>>>>> github/master
      * @throws PHPUnit_Framework_Exception
      */
     public function __construct($directory)

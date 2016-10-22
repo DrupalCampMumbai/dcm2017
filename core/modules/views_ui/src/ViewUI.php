@@ -1160,15 +1160,9 @@ class ViewUI implements ViewEntityInterface {
   /**
    * {@inheritdoc}
    */
-<<<<<<< HEAD
-  public function referencedEntities() {
-    return $this->storage->referencedEntities();
-  }
-=======
    public function referencedEntities() {
      return $this->storage->referencedEntities();
    }
->>>>>>> github/master
 
   /**
    * {@inheritdoc}

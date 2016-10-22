@@ -35,25 +35,12 @@ ajax_test.render:
   requirements:
     _access: 'TRUE'
 
-<<<<<<< HEAD
-ajax_test.admin.theme:
-  path: '/admin/ajax-test/theme'
-  defaults:
-    _controller: '\Drupal\ajax_test\Controller\AjaxTestController::theme'
-  requirements:
-    _access: 'TRUE'
-
-=======
->>>>>>> github/master
 ajax_test.order:
   path: '/ajax-test/order'
   defaults:
     _controller: '\Drupal\ajax_test\Controller\AjaxTestController::order'
-<<<<<<< HEAD
-=======
   options:
     _theme: ajax_base_page
->>>>>>> github/master
   requirements:
     _access: 'TRUE'
 

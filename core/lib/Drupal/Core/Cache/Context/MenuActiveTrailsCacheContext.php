@@ -3,12 +3,7 @@
 namespace Drupal\Core\Cache\Context;
 
 use Drupal\Core\Cache\CacheableMetadata;
-<<<<<<< HEAD
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-=======
 use Symfony\Component\DependencyInjection\ContainerAware;
->>>>>>> github/master
 
 /**
  * Defines the MenuActiveTrailsCacheContext service.
@@ -16,13 +11,7 @@ use Symfony\Component\DependencyInjection\ContainerAware;
  * This class is container-aware to avoid initializing the 'menu.active_trails'
  * service (and its dependencies) when it is not necessary.
  */
-<<<<<<< HEAD
-class MenuActiveTrailsCacheContext implements CalculatedCacheContextInterface, ContainerAwareInterface {
-
-  use ContainerAwareTrait;
-=======
 class MenuActiveTrailsCacheContext extends ContainerAware implements CalculatedCacheContextInterface {
->>>>>>> github/master
 
   /**
    * {@inheritdoc}

@@ -154,11 +154,7 @@ class UrlTest extends UnitTestCase {
     return $urls;
   }
 
-<<<<<<< HEAD
-  /**
-=======
    /**
->>>>>>> github/master
    * This constraint checks whether a Request object has the right path.
    *
    * @param string $path
@@ -815,11 +811,7 @@ class UrlTest extends UnitTestCase {
    * Creates a mock access manager for the access tests.
    *
    * @param bool $access
-<<<<<<< HEAD
-   * @param \Drupal\Core\Session\AccountInterface|null $account
-=======
    * @param \Drupal\Core\Session\AccountInterface|NULL $account
->>>>>>> github/master
    *
    * @return \Drupal\Core\Access\AccessManagerInterface|\PHPUnit_Framework_MockObject_MockObject
    */

@@ -10,13 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 /**
  * Provides a wrapper around many other services relating to entities.
  *
-<<<<<<< HEAD
- * Deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0. We cannot
- * use the deprecated PHPDoc tag because this service class is still used in
- * legacy code paths. Symfony would fail test cases with deprecation warnings.
-=======
  * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
->>>>>>> github/master
  *
  * @todo Enforce the deprecation of each method once
  *   https://www.drupal.org/node/2578361 is in.

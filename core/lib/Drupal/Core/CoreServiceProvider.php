@@ -4,13 +4,7 @@ namespace Drupal\Core;
 
 use Drupal\Core\Cache\Context\CacheContextsPass;
 use Drupal\Core\Cache\ListCacheBinsPass;
-<<<<<<< HEAD
-use Drupal\Core\DependencyInjection\Compiler\AuthenticationProviderPass;
 use Drupal\Core\DependencyInjection\Compiler\BackendCompilerPass;
-use Drupal\Core\DependencyInjection\Compiler\CorsCompilerPass;
-=======
-use Drupal\Core\DependencyInjection\Compiler\BackendCompilerPass;
->>>>>>> github/master
 use Drupal\Core\DependencyInjection\Compiler\GuzzleMiddlewarePass;
 use Drupal\Core\DependencyInjection\Compiler\ContextProvidersPass;
 use Drupal\Core\DependencyInjection\Compiler\ProxyServicesPass;
@@ -21,10 +15,6 @@ use Drupal\Core\DependencyInjection\Compiler\StackedKernelPass;
 use Drupal\Core\DependencyInjection\Compiler\StackedSessionHandlerPass;
 use Drupal\Core\DependencyInjection\Compiler\RegisterStreamWrappersPass;
 use Drupal\Core\DependencyInjection\Compiler\TwigExtensionPass;
-<<<<<<< HEAD
-use Drupal\Core\DependencyInjection\ServiceModifierInterface;
-=======
->>>>>>> github/master
 use Drupal\Core\DependencyInjection\ServiceProviderInterface;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\DependencyInjection\Compiler\ModifyServiceDefinitionsPass;
@@ -49,20 +39,12 @@ use Symfony\Component\DependencyInjection\Compiler\PassConfig;
  *
  * @ingroup container
  */
-<<<<<<< HEAD
-class CoreServiceProvider implements ServiceProviderInterface, ServiceModifierInterface {
-
-=======
 class CoreServiceProvider implements ServiceProviderInterface {
->>>>>>> github/master
   /**
    * {@inheritdoc}
    */
   public function register(ContainerBuilder $container) {
-<<<<<<< HEAD
-=======
     $this->registerUuid($container);
->>>>>>> github/master
     $this->registerTest($container);
 
     // Only register the private file stream wrapper if a file path has been set.
@@ -80,11 +62,6 @@ class CoreServiceProvider implements ServiceProviderInterface {
 
     $container->addCompilerPass(new BackendCompilerPass());
 
-<<<<<<< HEAD
-    $container->addCompilerPass(new CorsCompilerPass());
-
-=======
->>>>>>> github/master
     $container->addCompilerPass(new StackedKernelPass());
 
     $container->addCompilerPass(new StackedSessionHandlerPass());
@@ -112,10 +89,6 @@ class CoreServiceProvider implements ServiceProviderInterface {
     $container->addCompilerPass(new ListCacheBinsPass());
     $container->addCompilerPass(new CacheContextsPass());
     $container->addCompilerPass(new ContextProvidersPass());
-<<<<<<< HEAD
-    $container->addCompilerPass(new AuthenticationProviderPass());
-=======
->>>>>>> github/master
 
     // Register plugin managers.
     $container->addCompilerPass(new PluginManagerPass());
@@ -124,15 +97,6 @@ class CoreServiceProvider implements ServiceProviderInterface {
   }
 
   /**
-<<<<<<< HEAD
-   * Alters the UUID service to use the most efficient method available.
-   *
-   * @param \Drupal\Core\DependencyInjection\ContainerBuilder $container
-   *   The container builder.
-   */
-  public function alter(ContainerBuilder $container) {
-    $uuid_service = $container->getDefinition('uuid');
-=======
    * Determines and registers the UUID service.
    *
    * @param \Drupal\Core\DependencyInjection\ContainerBuilder $container
@@ -144,19 +108,10 @@ class CoreServiceProvider implements ServiceProviderInterface {
   public static function registerUuid(ContainerBuilder $container) {
     $uuid_class = 'Drupal\Component\Uuid\Php';
 
->>>>>>> github/master
     // Debian/Ubuntu uses the (broken) OSSP extension as their UUID
     // implementation. The OSSP implementation is not compatible with the
     // PECL functions.
     if (function_exists('uuid_create') && !function_exists('uuid_make')) {
-<<<<<<< HEAD
-      $uuid_service->setClass('Drupal\Component\Uuid\Pecl');
-    }
-    // Try to use the COM implementation for Windows users.
-    elseif (function_exists('com_create_guid')) {
-      $uuid_service->setClass('Drupal\Component\Uuid\Com');
-    }
-=======
       $uuid_class = 'Drupal\Component\Uuid\Pecl';
     }
     // Try to use the COM implementation for Windows users.
@@ -166,7 +121,6 @@ class CoreServiceProvider implements ServiceProviderInterface {
 
     $container->register('uuid', $uuid_class);
     return $uuid_class;
->>>>>>> github/master
   }
 
   /**

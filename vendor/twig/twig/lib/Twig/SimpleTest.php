@@ -54,14 +54,6 @@ class Twig_SimpleTest
 
     public function isDeprecated()
     {
-<<<<<<< HEAD
-        return (bool) $this->options['deprecated'];
-    }
-
-    public function getDeprecatedVersion()
-    {
-=======
->>>>>>> github/master
         return $this->options['deprecated'];
     }
 

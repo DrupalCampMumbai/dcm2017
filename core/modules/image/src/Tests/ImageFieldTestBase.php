@@ -2,14 +2,9 @@
 
 namespace Drupal\image\Tests;
 
-<<<<<<< HEAD
-use Drupal\Tests\image\Kernel\ImageFieldCreationTrait;
-use Drupal\simpletest\WebTestBase;
-=======
 use Drupal\field\Entity\FieldConfig;
 use Drupal\simpletest\WebTestBase;
 use Drupal\field\Entity\FieldStorageConfig;
->>>>>>> github/master
 
 /**
  * TODO: Test the following functions.
@@ -29,11 +24,6 @@ use Drupal\field\Entity\FieldStorageConfig;
  */
 abstract class ImageFieldTestBase extends WebTestBase {
 
-<<<<<<< HEAD
-  use ImageFieldCreationTrait;
-
-=======
->>>>>>> github/master
   /**
    * Modules to enable.
    *
@@ -62,8 +52,6 @@ abstract class ImageFieldTestBase extends WebTestBase {
   }
 
   /**
-<<<<<<< HEAD
-=======
    * Create a new image field.
    *
    * @param string $name
@@ -120,7 +108,6 @@ abstract class ImageFieldTestBase extends WebTestBase {
   }
 
   /**
->>>>>>> github/master
    * Preview an image in a node.
    *
    * @param \Drupal\Core\Image\ImageInterface $image

@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-=======
->>>>>>> github/master
 /**
  * @file
  * Contains \Drupal\Tests\Core\Mail\MailManagerTest.
@@ -10,11 +6,6 @@
 
 namespace Drupal\Tests\Core\Mail;
 
-<<<<<<< HEAD
-use Drupal\Core\Render\RenderContext;
-use Drupal\Core\Render\RendererInterface;
-=======
->>>>>>> github/master
 use Drupal\Tests\UnitTestCase;
 use Drupal\Core\Mail\MailManager;
 use Drupal\Component\Plugin\Discovery\DiscoveryInterface;
@@ -54,16 +45,6 @@ class MailManagerTest extends UnitTestCase {
   protected $discovery;
 
   /**
-<<<<<<< HEAD
-   * The renderer.
-   *
-   * @var \Drupal\Core\Render\RendererInterface|\PHPUnit_Framework_MockObject_MockObject
-   */
-  protected $renderer;
-
-  /**
-=======
->>>>>>> github/master
    * The mail manager under test.
    *
    * @var \Drupal\Tests\Core\Mail\TestMailManager
@@ -115,14 +96,8 @@ class MailManagerTest extends UnitTestCase {
     ));
     $logger_factory = $this->getMock('\Drupal\Core\Logger\LoggerChannelFactoryInterface');
     $string_translation = $this->getStringTranslationStub();
-<<<<<<< HEAD
-    $this->renderer = $this->getMock(RendererInterface::class);
-    // Construct the manager object and override its discovery.
-    $this->mailManager = new TestMailManager(new \ArrayObject(), $this->cache, $this->moduleHandler, $this->configFactory, $logger_factory, $string_translation, $this->renderer);
-=======
     // Construct the manager object and override its discovery.
     $this->mailManager = new TestMailManager(new \ArrayObject(), $this->cache, $this->moduleHandler, $this->configFactory, $logger_factory, $string_translation);
->>>>>>> github/master
     $this->mailManager->setDiscovery($this->discovery);
   }
 
@@ -134,11 +109,7 @@ class MailManagerTest extends UnitTestCase {
   public function testGetInstance() {
     $interface = array(
       'default' => 'php_mail',
-<<<<<<< HEAD
-      'default' => 'test_mail_collector',
-=======
       'example_testkey' => 'test_mail_collector',
->>>>>>> github/master
     );
     $this->setUpMailManager($interface);
 
@@ -153,31 +124,6 @@ class MailManagerTest extends UnitTestCase {
     $this->assertInstanceOf('Drupal\Core\Mail\Plugin\Mail\TestMailCollector', $instance);
   }
 
-<<<<<<< HEAD
-
-  /**
-   * Tests that mails are sent in a separate render context.
-   *
-   * @covers ::mail
-   */
-  public function testMailInRenderContext() {
-    $interface = array(
-      'default' => 'php_mail',
-      'example_testkey' => 'test_mail_collector',
-    );
-    $this->setUpMailManager($interface);
-
-    $this->renderer->expects($this->exactly(1))
-      ->method('executeInRenderContext')
-      ->willReturnCallback(function (RenderContext $render_context, $callback) {
-        $message = $callback();
-        $this->assertEquals('example', $message['module']);
-      });
-    $this->mailManager->mail('example', 'key', 'to@example.org', 'en');
-  }
-
-=======
->>>>>>> github/master
 }
 
 /**
@@ -194,29 +140,4 @@ class TestMailManager extends MailManager {
     $this->discovery = $discovery;
   }
 
-<<<<<<< HEAD
-  /**
-   * {@inheritdoc}
-   */
-  public function doMail($module, $key, $to, $langcode, $params = array(), $reply = NULL, $send = TRUE) {
-    // Build a simplified message array and return it.
-    $message = array(
-      'id' => $module . '_' . $key,
-      'module' => $module,
-      'key' => $key,
-      'to' => $to,
-      'from' => 'from@example.org',
-      'reply-to' => $reply,
-      'langcode' => $langcode,
-      'params' => $params,
-      'send' => TRUE,
-      'subject' => '',
-      'body' => array(),
-    );
-
-    return $message;
-  }
-
-=======
->>>>>>> github/master
 }

@@ -6,10 +6,6 @@ use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Core\Url;
 use Drupal\shortcut\Entity\Shortcut;
 use Drupal\shortcut\Entity\ShortcutSet;
-<<<<<<< HEAD
-use Drupal\views\Entity\View;
-=======
->>>>>>> github/master
 
 /**
  * Create, view, edit, delete, and change shortcut links.
@@ -237,11 +233,7 @@ class ShortcutLinksTest extends ShortcutTestBase {
     $this->drupalGet('admin/content');
     $this->assertResponse(200);
     // Disable the view.
-<<<<<<< HEAD
-    View::load('content')->disable()->save();
-=======
     entity_load('view', 'content')->disable()->save();
->>>>>>> github/master
     /** @var \Drupal\Core\Routing\RouteBuilderInterface $router_builder */
     $router_builder = \Drupal::service('router.builder');
     $router_builder->rebuildIfNeeded();

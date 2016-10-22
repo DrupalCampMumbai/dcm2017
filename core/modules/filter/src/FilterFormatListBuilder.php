@@ -139,11 +139,7 @@ class FilterFormatListBuilder extends DraggableListBuilder {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
-<<<<<<< HEAD
-    $form['actions']['submit']['#value'] = $this->t('Save');
-=======
     $form['actions']['submit']['#value'] = $this->t('Save changes');
->>>>>>> github/master
     return $form;
   }
 

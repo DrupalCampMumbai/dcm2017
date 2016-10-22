@@ -30,11 +30,7 @@ class MigrateUpgradeForm extends ConfirmFormBase {
    * @var array[]
    */
   protected $moduleUpgradePaths = [
-<<<<<<< HEAD
-    'action_settings' => [
-=======
     'd6_action_settings' => [
->>>>>>> github/master
       'source_module' => 'system',
       'destination_module' => 'action',
     ],
@@ -174,13 +170,6 @@ class MigrateUpgradeForm extends ConfirmFormBase {
       'source_module' => 'dblog',
       'destination_module' => 'dblog',
     ],
-<<<<<<< HEAD
-    'default_language' => [
-      'source_module' => 'locale',
-      'destination_module' => 'language',
-    ],
-=======
->>>>>>> github/master
     'd6_field' => [
       'source_module' => 'content',
       'destination_module' => 'field',
@@ -221,11 +210,7 @@ class MigrateUpgradeForm extends ConfirmFormBase {
       'source_module' => 'system',
       'destination_module' => 'file',
     ],
-<<<<<<< HEAD
-    'file_settings' => [
-=======
     'd6_file_settings' => [
->>>>>>> github/master
       'source_module' => 'system',
       'destination_module' => 'file',
     ],
@@ -433,21 +418,6 @@ class MigrateUpgradeForm extends ConfirmFormBase {
       'source_module' => 'system',
       'destination_module' => 'system',
     ],
-<<<<<<< HEAD
-    'system_image' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'system_image_gd' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'system_logging' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'system_maintenance' => [
-=======
     'd6_system_image' => [
       'source_module' => 'system',
       'destination_module' => 'system',
@@ -461,7 +431,6 @@ class MigrateUpgradeForm extends ConfirmFormBase {
       'destination_module' => 'system',
     ],
     'd6_system_maintenance' => [
->>>>>>> github/master
       'source_module' => 'system',
       'destination_module' => 'system',
     ],
@@ -469,43 +438,11 @@ class MigrateUpgradeForm extends ConfirmFormBase {
       'source_module' => 'system',
       'destination_module' => 'system',
     ],
-<<<<<<< HEAD
-    'system_rss' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'system_site' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'd7_system_authorize' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'd7_system_cron' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'd7_system_date' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'd7_system_file' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'd7_system_mail' => [
-      'source_module' => 'system',
-      'destination_module' => 'system',
-    ],
-    'd7_system_performance' => [
-=======
     'd6_system_rss' => [
       'source_module' => 'system',
       'destination_module' => 'system',
     ],
     'd6_system_site' => [
->>>>>>> github/master
       'source_module' => 'system',
       'destination_module' => 'system',
     ],
@@ -762,11 +699,7 @@ class MigrateUpgradeForm extends ConfirmFormBase {
    *   The form structure.
    */
   public function buildOverviewForm(array $form, FormStateInterface $form_state) {
-<<<<<<< HEAD
-    $form['#title'] = $this->t('Upgrade');
-=======
     $form['#title'] = $this->t('Drupal Upgrade');
->>>>>>> github/master
 
     if ($date_performed = $this->state->get('migrate_drupal_ui.performed')) {
       // @todo Add back support for rollbacks and incremental migrations.
@@ -781,11 +714,7 @@ class MigrateUpgradeForm extends ConfirmFormBase {
     }
     else {
       $form['info_header'] = [
-<<<<<<< HEAD
-        '#markup' => '<p>' . $this->t('Upgrade a site by importing it into a clean and empty new install of Drupal 8. You will lose any existing configuration once you import your site into it. See the <a href=":url">online documentation for Drupal site upgrades</a> for more detailed information.', [
-=======
         '#markup' => '<p>' . $this->t('Upgrade a Drupal site by importing it into a clean and empty new install of Drupal 8. You will lose any existing configuration once you import your site into it. See the <a href=":url">upgrading handbook</a> for more detailed information.', [
->>>>>>> github/master
           ':url' => 'https://www.drupal.org/upgrade/migrate',
         ]),
       ];
@@ -921,11 +850,7 @@ class MigrateUpgradeForm extends ConfirmFormBase {
     $form['source']['source_base_path'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Files directory'),
-<<<<<<< HEAD
-      '#description' => $this->t('To import files from your current Drupal site, enter a local file directory containing your site (e.g. /var/www/docroot), or your site address (for example http://example.com).'),
-=======
       '#description' => $this->t('To import files from your current Drupal site, enter a local file directory containing your site (e.g. /var/www/docroot), or your site address (e.g. http://example.com).'),
->>>>>>> github/master
     ];
 
     $form['actions'] = ['#type' => 'actions'];

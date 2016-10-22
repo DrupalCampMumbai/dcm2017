@@ -27,9 +27,3 @@ destination:
 migration_dependencies:
   required:
     - vocabularies
-<<<<<<< HEAD
-provider:
-  - migrate_drupal
-  - taxonomy
-=======
->>>>>>> github/master

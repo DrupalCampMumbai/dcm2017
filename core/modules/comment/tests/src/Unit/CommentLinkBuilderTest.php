@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-namespace Drupal\Tests\comment\Unit;
-=======
 namespace Drupal\Tests\comment\Unit {
->>>>>>> github/master
 
 use Drupal\comment\CommentLinkBuilder;
 use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
@@ -323,13 +319,6 @@ class CommentLinkBuilderTest extends UnitTestCase {
 
 }
 
-<<<<<<< HEAD
-namespace Drupal\comment;
-
-if (!function_exists('history_read')) {
-  function history_read() {
-    return 0;
-=======
 }
 
 namespace {
@@ -337,6 +326,5 @@ namespace {
     function history_read() {
       return 0;
     }
->>>>>>> github/master
   }
 }

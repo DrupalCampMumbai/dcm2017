@@ -85,11 +85,7 @@ class ContextDefinition implements ContextDefinitionInterface {
    *
    * @param string $data_type
    *   The required data type.
-<<<<<<< HEAD
-   * @param string|null $label
-=======
    * @param mixed string|null $label
->>>>>>> github/master
    *   The label of this context definition for the UI.
    * @param bool $required
    *   Whether the context definition is required.
@@ -249,11 +245,7 @@ class ContextDefinition implements ContextDefinitionInterface {
       ->setDescription($this->getDescription())
       ->setRequired($this->isRequired());
     $constraints = $definition->getConstraints() + $this->getConstraints();
-<<<<<<< HEAD
-    $definition->setConstraints($constraints);
-=======
       $definition->setConstraints($constraints);
->>>>>>> github/master
     return $definition;
   }
 

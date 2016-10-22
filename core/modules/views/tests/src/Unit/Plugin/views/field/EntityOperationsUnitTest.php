@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-namespace Drupal\Tests\views\Unit\Plugin\views\field;
-=======
 namespace Drupal\Tests\views\Unit\Plugin\views\field {
->>>>>>> github/master
 
 use Drupal\Tests\UnitTestCase;
 use Drupal\views\Plugin\views\field\EntityOperations;
@@ -169,8 +165,5 @@ class EntityOperationsUnitTest extends UnitTestCase {
   }
 
 }
-<<<<<<< HEAD
-=======
 
 }
->>>>>>> github/master

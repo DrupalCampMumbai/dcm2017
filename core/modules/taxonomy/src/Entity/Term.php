@@ -101,20 +101,6 @@ class Term extends ContentEntityBase implements TermInterface {
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-<<<<<<< HEAD
-    /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
-    $fields = parent::baseFieldDefinitions($entity_type);
-
-    $fields['tid']->setLabel(t('Term ID'))
-      ->setDescription(t('The term ID.'));
-
-    $fields['uuid']->setDescription(t('The term UUID.'));
-
-    $fields['vid']->setLabel(t('Vocabulary'))
-      ->setDescription(t('The vocabulary to which the term is assigned.'));
-
-    $fields['langcode']->setDescription(t('The term language code.'));
-=======
     $fields['tid'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Term ID'))
       ->setDescription(t('The term ID.'))
@@ -142,7 +128,6 @@ class Term extends ContentEntityBase implements TermInterface {
         'type' => 'language_select',
         'weight' => 2,
       ));
->>>>>>> github/master
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))

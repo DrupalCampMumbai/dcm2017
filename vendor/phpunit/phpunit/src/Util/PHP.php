@@ -17,10 +17,6 @@ abstract class PHPUnit_Util_PHP
 {
     /**
      * @return PHPUnit_Util_PHP
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since  Method available since Release 3.5.12
      */
     public static function factory()
@@ -35,16 +31,9 @@ abstract class PHPUnit_Util_PHP
     /**
      * Runs a single test in a separate PHP process.
      *
-<<<<<<< HEAD
-     * @param string                       $job
-     * @param PHPUnit_Framework_Test       $test
-     * @param PHPUnit_Framework_TestResult $result
-     *
-=======
      * @param  string                       $job
      * @param  PHPUnit_Framework_Test       $test
      * @param  PHPUnit_Framework_TestResult $result
->>>>>>> github/master
      * @throws PHPUnit_Framework_Exception
      */
     public function runTestJob($job, PHPUnit_Framework_Test $test, PHPUnit_Framework_TestResult $result)
@@ -64,31 +53,16 @@ abstract class PHPUnit_Util_PHP
     /**
      * Runs a single job (PHP code) using a separate PHP process.
      *
-<<<<<<< HEAD
-     * @param string $job
-     * @param array  $settings
-     *
-     * @return array
-     *
-=======
      * @param  string                      $job
      * @param  array                       $settings
      * @return array
->>>>>>> github/master
      * @throws PHPUnit_Framework_Exception
      */
     abstract public function runJob($job, array $settings = array());
 
     /**
-<<<<<<< HEAD
-     * @param array $settings
-     *
-     * @return string
-     *
-=======
      * @param  array  $settings
      * @return string
->>>>>>> github/master
      * @since Method available since Release 4.0.0
      */
     protected function settingsToParameters(array $settings)
@@ -109,10 +83,6 @@ abstract class PHPUnit_Util_PHP
      * @param PHPUnit_Framework_TestResult $result
      * @param string                       $stdout
      * @param string                       $stderr
-<<<<<<< HEAD
-     *
-=======
->>>>>>> github/master
      * @since Method available since Release 3.5.0
      */
     private function processChildResult(PHPUnit_Framework_Test $test, PHPUnit_Framework_TestResult $result, $stdout, $stderr)
@@ -214,15 +184,8 @@ abstract class PHPUnit_Util_PHP
     /**
      * Gets the thrown exception from a PHPUnit_Framework_TestFailure.
      *
-<<<<<<< HEAD
-     * @param PHPUnit_Framework_TestFailure $error
-     *
-     * @return Exception
-     *
-=======
      * @param  PHPUnit_Framework_TestFailure $error
      * @return Exception
->>>>>>> github/master
      * @since  Method available since Release 3.6.0
      * @see    https://github.com/sebastianbergmann/phpunit/issues/74
      */

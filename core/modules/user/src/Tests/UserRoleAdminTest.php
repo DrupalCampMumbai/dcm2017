@@ -113,11 +113,7 @@ class UserRoleAdminTest extends WebTestBase {
       $saved_rids[] = $role->id();
       $weight--;
     }
-<<<<<<< HEAD
-    $this->drupalPostForm('admin/people/roles', $edit, t('Save'));
-=======
     $this->drupalPostForm('admin/people/roles', $edit, t('Save order'));
->>>>>>> github/master
     $this->assertText(t('The role settings have been updated.'), 'The role settings form submitted successfully.');
 
     // Load up the user roles with the new weights.

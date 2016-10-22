@@ -2,13 +2,6 @@ name: Node
 type: module
 description: 'Allows content to be submitted to the site and displayed on pages.'
 package: Core
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-configure: entity.node_type.collection
-dependencies:
-  - text
-=======
 # version: VERSION
 # core: 8.x
 configure: entity.node_type.collection
@@ -20,4 +13,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

@@ -19,11 +19,7 @@ class NodeTest extends RESTTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD
-  public static $modules = array('hal', 'rest', 'comment', 'node');
-=======
   public static $modules = array('hal', 'rest', 'comment');
->>>>>>> github/master
 
   /**
    * Enables node specific REST API configuration and authentication.
@@ -36,10 +32,7 @@ class NodeTest extends RESTTestBase {
   protected function enableNodeConfiguration($method, $operation) {
     $this->enableService('entity:node', $method);
     $permissions = $this->entityPermissions('node', $operation);
-<<<<<<< HEAD
-=======
     $permissions[] = 'restful ' . strtolower($method) . ' entity:node';
->>>>>>> github/master
     $account = $this->drupalCreateUser($permissions);
     $this->drupalLogin($account);
   }
@@ -117,11 +110,7 @@ class NodeTest extends RESTTestBase {
     );
     $serialized = $this->container->get('serializer')->serialize($data, $this->defaultFormat);
     $this->httpRequest($node->urlInfo(), 'PATCH', $serialized, $this->defaultMimeType);
-<<<<<<< HEAD
-    $this->assertResponse(200);
-=======
     $this->assertResponse(204);
->>>>>>> github/master
 
     // Reload the node from the DB and check if the title was correctly updated.
     $node_storage->resetCache(array($node->id()));

@@ -916,11 +916,7 @@ class MenuTest extends MenuWebTestBase {
 
     // View tools menu customization page.
     $this->drupalGet('admin/structure/menu/manage/' . $this->menu->id());
-<<<<<<< HEAD
-    $this->assertResponse($response);
-=======
         $this->assertResponse($response);
->>>>>>> github/master
     if ($response == 200) {
       $this->assertText(t('Tools'), 'Tools menu page was displayed');
     }

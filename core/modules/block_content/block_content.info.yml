@@ -2,15 +2,6 @@ name: 'Custom Block'
 type: module
 description: 'Allows the creation of custom blocks through the user interface.'
 package: Core
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-dependencies:
-  - block
-  - text
-  - user
-configure: entity.block_content.collection
-=======
 # version: VERSION
 # core: 8.x
 dependencies:
@@ -23,4 +14,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

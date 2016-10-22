@@ -143,8 +143,6 @@ class FormStateTest extends UnitTestCase {
   }
 
   /**
-<<<<<<< HEAD
-=======
    * Tests that setting the value for an element adds to the values.
    *
    * @covers ::setValueForElement
@@ -214,7 +212,6 @@ class FormStateTest extends UnitTestCase {
   }
 
   /**
->>>>>>> github/master
    * @covers ::prepareCallback
    */
   public function testPrepareCallbackValidMethod() {
@@ -246,8 +243,6 @@ class FormStateTest extends UnitTestCase {
     $this->assertEquals($callback, $processed_callback);
   }
 
-<<<<<<< HEAD
-=======
   public function providerTestSetValue() {
     $data = array();
     $data[] = array(
@@ -344,7 +339,6 @@ class FormStateTest extends UnitTestCase {
     return $data;
   }
 
->>>>>>> github/master
   /**
    * @covers ::loadInclude
    */
@@ -590,22 +584,6 @@ class FormStateTest extends UnitTestCase {
     $this->assertSame($form_state->cleanValues()->getValues(), ['value_to_keep' => 'magic_ponies']);
   }
 
-<<<<<<< HEAD
-  /**
-   * @covers ::setValues
-   * @covers ::getValues
-   */
-  public function testGetValues() {
-    $values = [
-      'foo' => 'bar',
-    ];
-    $form_state = new FormState();
-    $form_state->setValues($values);
-    $this->assertSame($values, $form_state->getValues());
-  }
-
-=======
->>>>>>> github/master
 }
 
 /**

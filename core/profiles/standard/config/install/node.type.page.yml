@@ -5,10 +5,6 @@ name: 'Basic page'
 type: page
 description: 'Use <em>basic pages</em> for your static content, such as an ''About us'' page.'
 help: ''
-<<<<<<< HEAD
-new_revision: true
-=======
 new_revision: false
->>>>>>> github/master
 preview_mode: 1
 display_submitted: false

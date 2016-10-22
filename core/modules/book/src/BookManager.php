@@ -138,11 +138,7 @@ class BookManager implements BookManagerInterface {
   /**
    * Determine the relative depth of the children of a given book link.
    *
-<<<<<<< HEAD
-   * @param array $book_link
-=======
    * @param array
->>>>>>> github/master
    *   The book link.
    *
    * @return int

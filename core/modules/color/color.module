@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-=======
->>>>>>> github/master
 /**
  * @file
  * Allows users to change the color scheme of themes.

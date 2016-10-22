@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:fceeed1c-2f06-4ed9-b03a-c19f6c5d4724'
+  module:
+    - block_content
+    - system
+  theme:
+    - dcm17
+id: register
+theme: dcm17
+region: sidebar_first
+weight: -11
+provider: null
+plugin: 'block_content:fceeed1c-2f06-4ed9-b03a-c19f6c5d4724'
+settings:
+  id: 'block_content:fceeed1c-2f06-4ed9-b03a-c19f6c5d4724'
+  label: 'When and Where?'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/register
+    negate: false
+    context_mapping: {  }

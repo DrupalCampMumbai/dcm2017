@@ -15,14 +15,6 @@ use Drupal\Core\Render\BubbleableMetadata;
 class GeneratedLink extends BubbleableMetadata implements MarkupInterface, \Countable {
 
   /**
-<<<<<<< HEAD
-   * HTML tag to use when building the link.
-   */
-  const TAG = 'a';
-
-  /**
-=======
->>>>>>> github/master
    * The HTML string value containing a link.
    *
    * @var string

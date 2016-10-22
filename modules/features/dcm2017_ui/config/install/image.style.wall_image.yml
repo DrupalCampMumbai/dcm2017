@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: wall_image
+label: 'Wall Image'
+effects:
+  2a72deae-8425-481e-bb8d-e01de18b67d3:
+    uuid: 2a72deae-8425-481e-bb8d-e01de18b67d3
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: null
+      upscale: true

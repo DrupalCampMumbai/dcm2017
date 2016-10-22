@@ -1,11 +1,6 @@
 name: 'Theme test with valid base theme but no grandparent base theme'
 type: theme
 description: 'Test theme which has a non-existent base theme in the base chain.'
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-base theme: test_invalid_basetheme
-=======
 # version: VERSION
 # core: 8.x
 base theme: test_invalid_basetheme
@@ -15,4 +10,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

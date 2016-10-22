@@ -1,0 +1,22 @@
+uuid: a033fc12-4140-41d7-9022-8ee871958632
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dcm17
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: dcm17_breadcrumbs
+theme: dcm17
+region: navigation
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

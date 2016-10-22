@@ -8,10 +8,6 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\EventSubscriber\MainContentViewSubscriber;
 use Drupal\Core\Menu\LocalActionManagerInterface;
 use Drupal\Core\Plugin\Context\LazyContextRepository;
-<<<<<<< HEAD
-use Drupal\Core\Routing\RedirectDestinationInterface;
-=======
->>>>>>> github/master
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -51,16 +47,6 @@ class BlockLibraryController extends ControllerBase {
   protected $localActionManager;
 
   /**
-<<<<<<< HEAD
-   * The redirect destination.
-   *
-   * @var \Drupal\Core\Routing\RedirectDestinationInterface
-   */
-  protected $redirectDestination;
-
-  /**
-=======
->>>>>>> github/master
    * Constructs a BlockLibraryController object.
    *
    * @param \Drupal\Core\Block\BlockManagerInterface $block_manager
@@ -71,23 +57,12 @@ class BlockLibraryController extends ControllerBase {
    *   The current route match.
    * @param \Drupal\Core\Menu\LocalActionManagerInterface $local_action_manager
    *   The local action manager.
-<<<<<<< HEAD
-   * @param \Drupal\Core\Routing\RedirectDestinationInterface $redirect_destination
-   *   The redirect destination.
-   */
-  public function __construct(BlockManagerInterface $block_manager, LazyContextRepository $context_repository, RouteMatchInterface $route_match, LocalActionManagerInterface $local_action_manager, RedirectDestinationInterface $redirect_destination) {
-=======
    */
   public function __construct(BlockManagerInterface $block_manager, LazyContextRepository $context_repository, RouteMatchInterface $route_match, LocalActionManagerInterface $local_action_manager) {
->>>>>>> github/master
     $this->blockManager = $block_manager;
     $this->routeMatch = $route_match;
     $this->localActionManager = $local_action_manager;
     $this->contextRepository = $context_repository;
-<<<<<<< HEAD
-    $this->redirectDestination = $redirect_destination;
-=======
->>>>>>> github/master
   }
 
   /**
@@ -98,12 +73,7 @@ class BlockLibraryController extends ControllerBase {
       $container->get('plugin.manager.block'),
       $container->get('context.repository'),
       $container->get('current_route_match'),
-<<<<<<< HEAD
-      $container->get('plugin.manager.menu.local_action'),
-      $container->get('redirect.destination')
-=======
       $container->get('plugin.manager.menu.local_action')
->>>>>>> github/master
     );
   }
 
@@ -137,10 +107,6 @@ class BlockLibraryController extends ControllerBase {
     $definitions = $this->blockManager->getSortedDefinitions($definitions);
 
     $region = $request->query->get('region');
-<<<<<<< HEAD
-    $weight = $request->query->get('weight');
-=======
->>>>>>> github/master
     $rows = [];
     foreach ($definitions as $plugin_id => $plugin_definition) {
       $row = [];
@@ -166,16 +132,6 @@ class BlockLibraryController extends ControllerBase {
       if ($region) {
         $links['add']['query']['region'] = $region;
       }
-<<<<<<< HEAD
-      if (isset($weight)) {
-        $links['add']['query']['weight'] = $weight;
-      }
-      $destination = $this->redirectDestination->get();
-      if ($destination) {
-        $links['add']['query']['destination'] = $destination;
-      }
-=======
->>>>>>> github/master
       $row['operations']['data'] = [
         '#type' => 'operations',
         '#links' => $links,

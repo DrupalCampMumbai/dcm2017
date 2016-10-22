@@ -36,15 +36,9 @@ class EditorSelector implements EditorSelectorInterface {
   /**
    * Constructs a new EditorSelector.
    *
-<<<<<<< HEAD
-   * @param \Drupal\Component\Plugin\PluginManagerInterface $editor_manager
-   *   The manager for editor plugins.
-   * @param \Drupal\Core\Field\FormatterPluginManager $formatter_manager
-=======
    * @param \Drupal\Component\Plugin\PluginManagerInterface
    *   The manager for editor plugins.
    * @param \Drupal\Core\Field\FormatterPluginManager
->>>>>>> github/master
    *   The manager for formatter plugins.
    */
   public function __construct(PluginManagerInterface $editor_manager, FormatterPluginManager $formatter_manager) {
@@ -56,10 +50,6 @@ class EditorSelector implements EditorSelectorInterface {
    * {@inheritdoc}
    */
   public function getEditor($formatter_type, FieldItemListInterface $items) {
-<<<<<<< HEAD
-    // Check if the formatter defines an appropriate in-place editor. For
-    // example, text formatters displaying plain text can choose to use the
-=======
     // Build a static cache of the editors that have registered themselves as
     // alternatives to a certain editor.
     if (!isset($this->alternatives)) {
@@ -75,7 +65,6 @@ class EditorSelector implements EditorSelectorInterface {
 
     // Check if the formatter defines an appropriate in-place editor. For
     // example, text formatters displaying untrimmed text can choose to use the
->>>>>>> github/master
     // 'plain_text' editor. If the formatter doesn't specify, fall back to the
     // 'form' editor, since that can work for any field. Formatter definitions
     // can use 'disabled' to explicitly opt out of in-place editing.

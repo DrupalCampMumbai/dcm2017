@@ -10,11 +10,7 @@ views_ui.add:
   path: '/admin/structure/views/add'
   defaults:
     _entity_form: 'view.add'
-<<<<<<< HEAD
-    _title: 'Add view'
-=======
     _title: 'Add new view'
->>>>>>> github/master
   requirements:
     _entity_create_access: view
 

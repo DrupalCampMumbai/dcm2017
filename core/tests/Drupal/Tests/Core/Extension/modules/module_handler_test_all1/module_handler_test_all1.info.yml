@@ -2,11 +2,6 @@ name: module handler test all1
 type: module
 description: 'Test module used to test adding groups of modules with loadAll during runtime.'
 package: Testing
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-hidden: true
-=======
 # version: VERSION
 # core: 8.x
 hidden: true
@@ -16,4 +11,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479094
->>>>>>> github/master

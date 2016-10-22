@@ -1692,15 +1692,7 @@
  *     // Create a $form API array.
  *     $form['phone_number'] = array(
  *       '#type' => 'tel',
-<<<<<<< HEAD
- *       '#title' => $this->t('Your phone number'),
- *     );
- *     $form['save'] = array(
- *       '#type' => 'submit',
- *       '#value' => $this->t('Save'),
-=======
  *       '#title' => $this->t('Your phone number')
->>>>>>> github/master
  *     );
  *     return $form;
  *   }

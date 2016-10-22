@@ -37,11 +37,7 @@ class SiteSettingsForm extends FormBase {
   public function __construct($site_path, RendererInterface $renderer) {
     $this->sitePath = $site_path;
     $this->renderer = $renderer;
-<<<<<<< HEAD
-  }
-=======
 }
->>>>>>> github/master
 
   /**
     * {@inheritdoc}

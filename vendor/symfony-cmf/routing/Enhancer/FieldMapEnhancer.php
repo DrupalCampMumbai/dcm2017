@@ -3,11 +3,7 @@
 /*
  * This file is part of the Symfony CMF package.
  *
-<<<<<<< HEAD
- * (c) 2011-2015 Symfony CMF
-=======
  * (c) 2011-2014 Symfony CMF
->>>>>>> github/master
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -51,32 +47,19 @@ class FieldMapEnhancer implements RouteEnhancerInterface
     }
 
     /**
-<<<<<<< HEAD
-     * If the target field is not set but the source field is, map the field.
-     *
-     * {@inheritdoc}
-=======
      * If the target field is not set but the source field is, map the field
      *
      * {@inheritDoc}
->>>>>>> github/master
      */
     public function enhance(array $defaults, Request $request)
     {
         if (isset($defaults[$this->target])) {
             return $defaults;
         }
-<<<<<<< HEAD
-        if (!isset($defaults[$this->source])) {
-            return $defaults;
-        }
-        if (!isset($this->hashmap[$defaults[$this->source]])) {
-=======
         if (! isset($defaults[$this->source])) {
             return $defaults;
         }
         if (! isset($this->hashmap[$defaults[$this->source]])) {
->>>>>>> github/master
             return $defaults;
         }
 

@@ -2,13 +2,6 @@ name: Menu UI
 type: module
 description: 'Allows administrators to customize the site navigation menu.'
 package: Core
-<<<<<<< HEAD
-version: VERSION
-core: 8.x
-configure: entity.menu.collection
-dependencies:
-  - menu_link_content
-=======
 # version: VERSION
 # core: 8.x
 configure: entity.menu.collection
@@ -20,4 +13,3 @@ version: '8.1.10'
 core: '8.x'
 project: 'drupal'
 datestamp: 1474479093
->>>>>>> github/master

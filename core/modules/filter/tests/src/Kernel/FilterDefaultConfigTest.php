@@ -2,10 +2,6 @@
 
 namespace Drupal\Tests\filter\Kernel;
 
-<<<<<<< HEAD
-use Drupal\filter\Entity\FilterFormat;
-=======
->>>>>>> github/master
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\user\RoleInterface;
 
@@ -35,11 +31,7 @@ class FilterDefaultConfigTest extends KernelTestBase {
    */
   function testInstallation() {
     // Verify that the format was installed correctly.
-<<<<<<< HEAD
-    $format = FilterFormat::load('filter_test');
-=======
     $format = entity_load('filter_format', 'filter_test');
->>>>>>> github/master
     $this->assertTrue((bool) $format);
     $this->assertEqual($format->id(), 'filter_test');
     $this->assertEqual($format->label(), 'Test format');
@@ -79,11 +71,7 @@ class FilterDefaultConfigTest extends KernelTestBase {
    */
   function testUpdateRoles() {
     // Verify role permissions declared in default config.
-<<<<<<< HEAD
-    $format = FilterFormat::load('filter_test');
-=======
     $format = entity_load('filter_format', 'filter_test');
->>>>>>> github/master
     $this->assertEqual(array_keys(filter_get_roles_by_format($format)), array(
       RoleInterface::ANONYMOUS_ID,
       RoleInterface::AUTHENTICATED_ID,
@@ -96,11 +84,7 @@ class FilterDefaultConfigTest extends KernelTestBase {
     $format->save();
 
     // Verify that roles have not been updated.
-<<<<<<< HEAD
-    $format = FilterFormat::load('filter_test');
-=======
     $format = entity_load('filter_format', 'filter_test');
->>>>>>> github/master
     $this->assertEqual(array_keys(filter_get_roles_by_format($format)), array(
       RoleInterface::ANONYMOUS_ID,
       RoleInterface::AUTHENTICATED_ID,

@@ -5,10 +5,6 @@ namespace Drupal\Core\Form;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
-<<<<<<< HEAD
-use Drupal\Core\Logger\LoggerChannelTrait;
-=======
->>>>>>> github/master
 use Drupal\Core\Routing\LinkGeneratorTrait;
 use Drupal\Core\Routing\RedirectDestinationTrait;
 use Drupal\Core\Routing\UrlGeneratorTrait;
@@ -47,10 +43,6 @@ abstract class FormBase implements FormInterface, ContainerInjectionInterface {
 
   use DependencySerializationTrait;
   use LinkGeneratorTrait;
-<<<<<<< HEAD
-  use LoggerChannelTrait;
-=======
->>>>>>> github/master
   use RedirectDestinationTrait;
   use StringTranslationTrait;
   use UrlGeneratorTrait;
@@ -75,8 +67,6 @@ abstract class FormBase implements FormInterface, ContainerInjectionInterface {
   protected $configFactory;
 
   /**
-<<<<<<< HEAD
-=======
    * The logger factory.
    *
    * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
@@ -84,7 +74,6 @@ abstract class FormBase implements FormInterface, ContainerInjectionInterface {
   protected $loggerFactory;
 
   /**
->>>>>>> github/master
    * The route match.
    *
    * @var \Drupal\Core\Routing\RouteMatchInterface
@@ -226,20 +215,6 @@ abstract class FormBase implements FormInterface, ContainerInjectionInterface {
   /**
    * Gets the logger for a specific channel.
    *
-<<<<<<< HEAD
-   * This method exists for backward-compatibility between FormBase and
-   * LoggerChannelTrait. Use LoggerChannelTrait::getLogger() instead.
-   *
-   * @param string $channel
-   *   The name of the channel. Can be any string, but the general practice is
-   *   to use the name of the subsystem calling this.
-   *
-   * @return \Psr\Log\LoggerInterface
-   *   The logger for the given channel.
-   */
-  protected function logger($channel) {
-    return $this->getLogger($channel);
-=======
    * @param string $channel
    *   The name of the channel.
    *
@@ -251,7 +226,6 @@ abstract class FormBase implements FormInterface, ContainerInjectionInterface {
       $this->loggerFactory = $this->container()->get('logger.factory');
     }
     return $this->loggerFactory->get($channel);
->>>>>>> github/master
   }
 
 }

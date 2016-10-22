@@ -346,13 +346,8 @@ class EntityAccessControlHandler extends EntityHandlerBase implements EntityAcce
    *   is checked for the field definition, without any specific value
    *   available. Defaults to NULL.
    *
-<<<<<<< HEAD
-   * @return \Drupal\Core\Access\AccessResultInterface
-   *   The access result.
-=======
    * @return bool
    *   TRUE if access is allowed, FALSE otherwise.
->>>>>>> github/master
    */
   protected function checkFieldAccess($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
     return AccessResult::allowed();

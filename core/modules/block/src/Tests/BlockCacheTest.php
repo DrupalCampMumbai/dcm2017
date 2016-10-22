@@ -63,11 +63,7 @@ class BlockCacheTest extends WebTestBase {
     $this->normalUserAlt->save();
 
     // Enable our test block.
-<<<<<<< HEAD
-    $this->block = $this->drupalPlaceBlock('test_cache');
-=======
    $this->block = $this->drupalPlaceBlock('test_cache');
->>>>>>> github/master
   }
 
   /**

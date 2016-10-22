@@ -30,7 +30,11 @@ class EntityRouteAlterSubscriber implements EventSubscriberInterface {
   /**
    * Constructs an EntityRouteAlterSubscriber instance.
    *
+<<<<<<< HEAD
    * @param \Drupal\Core\Entity\EntityResolverManager $entity_resolver_manager
+=======
+   * @param \Drupal\Core\Entity\EntityResolverManager
+>>>>>>> github/master
    *   The entity resolver manager.
    */
   public function __construct(EntityResolverManager $entity_resolver_manager) {

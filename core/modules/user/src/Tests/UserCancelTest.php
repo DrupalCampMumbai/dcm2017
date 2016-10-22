@@ -124,7 +124,11 @@ class UserCancelTest extends WebTestBase {
       'action' => 'user_cancel_user_action',
       'user_bulk_form[0]' => TRUE,
     );
+<<<<<<< HEAD
     $this->drupalPostForm('admin/people', $edit, t('Apply to selected items'));
+=======
+    $this->drupalPostForm('admin/people', $edit, t('Apply'));
+>>>>>>> github/master
 
     // Verify that uid 1's account was not cancelled.
     $user_storage->resetCache(array(1));
@@ -353,7 +357,11 @@ class UserCancelTest extends WebTestBase {
     $test_node = $node_storage->load($node->id());
     $this->assertTrue(($test_node->getOwnerId() == 0 && $test_node->isPublished()), 'Node of the user has been attributed to anonymous user.');
     $test_node = node_revision_load($revision, TRUE);
+<<<<<<< HEAD
     $this->assertTrue(($test_node->getRevisionUser()->id() == 0 && $test_node->isPublished()), 'Node revision of the user has been attributed to anonymous user.');
+=======
+    $this->assertTrue(($test_node->getRevisionAuthor()->id() == 0 && $test_node->isPublished()), 'Node revision of the user has been attributed to anonymous user.');
+>>>>>>> github/master
     $node_storage->resetCache(array($revision_node->id()));
     $test_node = $node_storage->load($revision_node->id());
     $this->assertTrue(($test_node->getOwnerId() != 0 && $test_node->isPublished()), "Current revision of the user's node was not attributed to anonymous user.");
@@ -567,7 +575,11 @@ class UserCancelTest extends WebTestBase {
     for ($i = 0; $i <= 4; $i++) {
       $edit['user_bulk_form[' . $i . ']'] = TRUE;
     }
+<<<<<<< HEAD
     $this->drupalPostForm('admin/people', $edit, t('Apply to selected items'));
+=======
+    $this->drupalPostForm('admin/people', $edit, t('Apply'));
+>>>>>>> github/master
     $this->assertText(t('Are you sure you want to cancel these user accounts?'), 'Confirmation form to cancel accounts displayed.');
     $this->assertText(t('When cancelling these accounts'), 'Allows to select account cancellation method.');
     $this->assertText(t('Require email confirmation to cancel account'), 'Allows to send confirmation mail.');

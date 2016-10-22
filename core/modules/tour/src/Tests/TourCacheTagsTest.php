@@ -29,7 +29,11 @@ class TourCacheTagsTest extends PageCacheTagsTestBase {
     // Give anonymous users permission to view nodes, so that we can verify the
     // cache tags of cached versions of node pages.
     Role::load(RoleInterface::ANONYMOUS_ID)->grantPermission('access tour')
+<<<<<<< HEAD
       ->save();
+=======
+     ->save();
+>>>>>>> github/master
   }
 
   /**

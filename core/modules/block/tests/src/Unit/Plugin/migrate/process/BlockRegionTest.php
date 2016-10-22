@@ -18,7 +18,11 @@ class BlockRegionTest extends UnitTestCase {
    *
    * @param array $value
    *   The value to transform.
+<<<<<<< HEAD
    * @param \Drupal\migrate\Row|null $row
+=======
+   * @param \Drupal\migrate\Row|NULL $row
+>>>>>>> github/master
    *   (optional) The mocked row.
    *
    * @return array|string
@@ -30,6 +34,7 @@ class BlockRegionTest extends UnitTestCase {
       $row = $this->prophesize(Row::class)->reveal();
     }
 
+<<<<<<< HEAD
     $configuration = [
       'map' => [
         'bartik' => [
@@ -44,6 +49,16 @@ class BlockRegionTest extends UnitTestCase {
     ];
 
     $plugin = new BlockRegion($configuration, 'block_region', [], $configuration['map']['bartik']['bartik']);
+=======
+    $regions = array(
+      'bartik' => array(
+        'triptych_first' => 'Triptych first',
+        'triptych_second' => 'Triptych second',
+        'triptych_third' => 'Triptych third',
+      ),
+    );
+    $plugin = new BlockRegion(['region_map' => []], 'block_region', [], $regions);
+>>>>>>> github/master
     return $plugin->transform($value, $executable, $row, 'foo');
   }
 
@@ -54,7 +69,11 @@ class BlockRegionTest extends UnitTestCase {
    * @covers ::transform
    */
   public function testTransformSameThemeRegionExists() {
+<<<<<<< HEAD
     $this->assertSame('triptych_second', $this->transform(['bartik', 'bartik', 'triptych_middle']));
+=======
+    $this->assertSame('triptych_second', $this->transform(['triptych_second', 'bartik', 'bartik']));
+>>>>>>> github/master
   }
 
   /**
@@ -64,7 +83,11 @@ class BlockRegionTest extends UnitTestCase {
    * @covers ::transform
    */
   public function testTransformSameThemeRegionNotExists() {
+<<<<<<< HEAD
     $this->assertSame('content', $this->transform(['bartik', 'bartik', 'footer']));
+=======
+    $this->assertSame('content', $this->transform(['footer', 'bartik', 'bartik']));
+>>>>>>> github/master
   }
 
 }

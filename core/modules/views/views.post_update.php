@@ -182,6 +182,7 @@ function views_post_update_taxonomy_index_tid() {
 /**
  * @} End of "addtogroup updates-8.1.x".
  */
+<<<<<<< HEAD
 
 /**
  * @addtogroup updates-8.2.x
@@ -239,3 +240,5 @@ function views_post_update_boolean_filter_values() {
 /**
  * @} End of "addtogroup updates-8.2.x".
  */
+=======
+>>>>>>> github/master

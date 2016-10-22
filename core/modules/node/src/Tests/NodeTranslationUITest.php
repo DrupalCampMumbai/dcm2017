@@ -83,10 +83,14 @@ class NodeTranslationUITest extends ContentTranslationUITestBase {
     $default_langcode = $this->langcodes[0];
     $values[$default_langcode] = array('title' => array(array('value' => $this->randomMachineName())));
     $entity_id = $this->createEntity($values[$default_langcode], $default_langcode);
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $entity_id, TRUE);
+>>>>>>> github/master
 
     // Add a content translation.
     $langcode = 'fr';
@@ -101,8 +105,12 @@ class NodeTranslationUITest extends ContentTranslationUITestBase {
     ], array('language' => $language));
     $this->drupalPostForm($add_url, $this->getEditValues($values, $langcode), t('Save and unpublish (this translation)'));
 
+<<<<<<< HEAD
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $translation = $entity->getTranslation($langcode);
     // Make sure we unpublished the node correctly.
     $this->assertFalse($this->manager->getTranslationMetadata($translation)->isPublished(), 'The translation has been correctly unpublished.');
@@ -152,10 +160,14 @@ class NodeTranslationUITest extends ContentTranslationUITestBase {
    * {@inheritdoc}
    */
   protected function doTestPublishedStatus() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $languages = $this->container->get('language_manager')->getLanguages();
 
     $actions = array(
@@ -171,8 +183,12 @@ class NodeTranslationUITest extends ContentTranslationUITestBase {
         $url = $entity->urlInfo('edit-form', $options);
         $this->drupalPostForm($url, array(), $action . $this->getFormSubmitSuffix($entity, $langcode), $options);
       }
+<<<<<<< HEAD
       $storage->resetCache([$this->entityId]);
       $entity = $storage->load($this->entityId);
+=======
+      $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
       foreach ($this->langcodes as $langcode) {
         // The node is created as unpublished thus we switch to the published
         // status first.
@@ -187,10 +203,14 @@ class NodeTranslationUITest extends ContentTranslationUITestBase {
    * {@inheritdoc}
    */
   protected function doTestAuthoringInfo() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $languages = $this->container->get('language_manager')->getLanguages();
     $values = array();
 
@@ -215,8 +235,12 @@ class NodeTranslationUITest extends ContentTranslationUITestBase {
       $this->drupalPostForm($url, $edit, $this->getFormSubmitAction($entity, $langcode), $options);
     }
 
+<<<<<<< HEAD
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     foreach ($this->langcodes as $langcode) {
       $translation = $entity->getTranslation($langcode);
       $metadata = $this->manager->getTranslationMetadata($translation);
@@ -436,10 +460,14 @@ class NodeTranslationUITest extends ContentTranslationUITestBase {
    * {@inheritdoc}
    */
   protected function doTestTranslationEdit() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $languages = $this->container->get('language_manager')->getLanguages();
     $type_name = node_get_type_label($entity);
 

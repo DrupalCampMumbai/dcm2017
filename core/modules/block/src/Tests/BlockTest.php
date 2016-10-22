@@ -4,7 +4,10 @@ namespace Drupal\block\Tests;
 
 use Drupal\Component\Utility\Html;
 use Drupal\block\Entity\Block;
+<<<<<<< HEAD
 use Drupal\Core\Url;
+=======
+>>>>>>> github/master
 use Drupal\user\Entity\Role;
 use Drupal\user\RoleInterface;
 
@@ -129,6 +132,7 @@ class BlockTest extends BlockTestBase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests adding a block from the library page with a destination query string.
    */
   public function testAddBlockFromLibrary() {
@@ -217,6 +221,8 @@ class BlockTest extends BlockTestBase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Test configuring and moving a module-define block to specific regions.
    */
   function testBlock() {

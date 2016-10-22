@@ -11,10 +11,16 @@ class TestPageTestController {
    * Returns a test page and sets the title.
    */
   public function testPage() {
+<<<<<<< HEAD
     $link_text = t('Visually identical test links');
     return [
       '#title' => t('Test page'),
       '#markup' => t('Test page text.') . "<a href=\"/user/login\">$link_text</a><a href=\"/user/register\">$link_text</a>",
+=======
+    return [
+      '#title' => t('Test page'),
+      '#markup' => t('Test page text.'),
+>>>>>>> github/master
       '#attached' => [
         'drupalSettings' => [
           'test-setting' => 'azAZ09();.,\\\/-_{}',

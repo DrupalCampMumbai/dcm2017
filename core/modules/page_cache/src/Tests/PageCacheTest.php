@@ -3,11 +3,18 @@
 namespace Drupal\page_cache\Tests;
 
 use Drupal\Component\Datetime\DateTimePlus;
+<<<<<<< HEAD
 use Drupal\Core\Site\Settings;
+=======
+>>>>>>> github/master
 use Drupal\Core\Url;
 use Drupal\entity_test\Entity\EntityTest;
 use Drupal\simpletest\WebTestBase;
 use Drupal\Core\Cache\Cache;
+<<<<<<< HEAD
+=======
+use Drupal\user\Entity\Role;
+>>>>>>> github/master
 use Drupal\user\RoleInterface;
 
 /**
@@ -130,11 +137,22 @@ class PageCacheTest extends WebTestBase {
     $this->assertRaw('{"content":"oh hai this is json"}', 'The correct Json response was returned.');
 
     // Enable REST support for nodes and hal+json.
+<<<<<<< HEAD
     \Drupal::service('module_installer')->install(['node', 'rest', 'hal', 'basic_auth']);
+=======
+    \Drupal::service('module_installer')->install(['node', 'rest', 'hal']);
+>>>>>>> github/master
     $this->drupalCreateContentType(['type' => 'article']);
     $node = $this->drupalCreateNode(['type' => 'article']);
     $node_uri = $node->urlInfo();
     $node_url_with_hal_json_format = $node->urlInfo('canonical')->setRouteParameter('_format', 'hal_json');
+<<<<<<< HEAD
+=======
+    /** @var \Drupal\user\RoleInterface $role */
+    $role = Role::load('anonymous');
+    $role->grantPermission('restful get entity:node');
+    $role->save();
+>>>>>>> github/master
 
     $this->drupalGet($node_uri);
     $this->assertEqual($this->drupalGetHeader('X-Drupal-Cache'), 'MISS');
@@ -337,7 +355,10 @@ class PageCacheTest extends WebTestBase {
       403 => $admin_url,
       404 => $invalid_url,
     ];
+<<<<<<< HEAD
     $cache_ttl_4xx = Settings::get('cache_ttl_4xx', 3600);
+=======
+>>>>>>> github/master
     foreach ($tests as $code => $content_url) {
       // Anonymous user, without permissions.
       $this->drupalGet($content_url);
@@ -371,6 +392,7 @@ class PageCacheTest extends WebTestBase {
       $this->drupalGet($content_url);
       $this->assertResponse($code);
       $this->assertEqual($this->drupalGetHeader('X-Drupal-Cache'), 'MISS');
+<<<<<<< HEAD
 
       // Ensure the 'expire' field on the cache entry uses cache_ttl_4xx.
       $cache_item = \Drupal::service('cache.render')->get($this->getUrl() . ':html');
@@ -400,6 +422,8 @@ class PageCacheTest extends WebTestBase {
       $this->drupalGet($content_url);
       $this->assertResponse($code);
       $this->assertEqual($this->drupalGetHeader('X-Drupal-Cache'), 'MISS');
+=======
+>>>>>>> github/master
     }
   }
 

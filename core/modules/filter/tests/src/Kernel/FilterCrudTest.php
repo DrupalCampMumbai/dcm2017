@@ -93,7 +93,11 @@ class FilterCrudTest extends KernelTestBase {
     $default_langcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
 
     // Verify the loaded filter has all properties.
+<<<<<<< HEAD
     $filter_format = FilterFormat::load($format->id());
+=======
+    $filter_format = entity_load('filter_format', $format->id());
+>>>>>>> github/master
     $this->assertEqual($filter_format->id(), $format->id(), format_string('filter_format_load: Proper format id for text format %format.', $t_args));
     $this->assertEqual($filter_format->label(), $format->label(), format_string('filter_format_load: Proper title for text format %format.', $t_args));
     $this->assertEqual($filter_format->get('weight'), $format->get('weight'), format_string('filter_format_load: Proper weight for text format %format.', $t_args));

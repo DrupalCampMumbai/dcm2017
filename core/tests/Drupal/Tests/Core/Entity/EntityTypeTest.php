@@ -166,6 +166,7 @@ class EntityTypeTest extends UnitTestCase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests the setStorageClass() method.
    */
   public function testSetStorageClass() {
@@ -175,6 +176,8 @@ class EntityTypeTest extends UnitTestCase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Tests the getListBuilderClass() method.
    */
   public function testGetListBuilderClass() {

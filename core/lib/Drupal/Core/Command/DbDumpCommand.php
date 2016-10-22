@@ -33,7 +33,11 @@ class DbDumpCommand extends DbCommandBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   protected $excludeTables = ['test[0-9]+'];
+=======
+  protected $excludeTables = ['simpletest.+'];
+>>>>>>> github/master
 
   /**
    * {@inheritdoc}

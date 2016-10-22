@@ -30,7 +30,11 @@ class PHPUnit_Runner_Version
         }
 
         if (self::$version === null) {
+<<<<<<< HEAD
             $version       = new SebastianBergmann\Version('4.8.27', dirname(dirname(__DIR__)));
+=======
+            $version       = new SebastianBergmann\Version('4.8.11', dirname(dirname(__DIR__)));
+>>>>>>> github/master
             self::$version = $version->getVersion();
         }
 
@@ -39,6 +43,7 @@ class PHPUnit_Runner_Version
 
     /**
      * @return string
+<<<<<<< HEAD
      *
      * @since Method available since Release 4.8.13
      */
@@ -56,6 +61,8 @@ class PHPUnit_Runner_Version
 
     /**
      * @return string
+=======
+>>>>>>> github/master
      */
     public static function getVersionString()
     {
@@ -64,13 +71,25 @@ class PHPUnit_Runner_Version
 
     /**
      * @return string
+<<<<<<< HEAD
      *
+=======
+>>>>>>> github/master
      * @since  Method available since Release 4.0.0
      */
     public static function getReleaseChannel()
     {
+<<<<<<< HEAD
         if (strpos(self::$pharVersion, '-') !== false) {
             return '-nightly';
+=======
+        if (strpos(self::$pharVersion, 'alpha') !== false) {
+            return '-alpha';
+        }
+
+        if (strpos(self::$pharVersion, 'beta') !== false) {
+            return '-beta';
+>>>>>>> github/master
         }
 
         return '';

@@ -3,8 +3,13 @@
 namespace Drupal\Core\Plugin\Discovery;
 
 use Drupal\Component\Plugin\Discovery\DiscoveryInterface;
+<<<<<<< HEAD
 use Drupal\Component\Plugin\Discovery\DiscoveryTrait;
 use Drupal\Core\Discovery\YamlDiscovery as CoreYamlDiscovery;
+=======
+use Drupal\Component\Discovery\YamlDiscovery as ComponentYamlDiscovery;
+use Drupal\Component\Plugin\Discovery\DiscoveryTrait;
+>>>>>>> github/master
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
@@ -25,7 +30,11 @@ class YamlDiscovery implements DiscoveryInterface {
   /**
    * YAML file discovery and parsing handler.
    *
+<<<<<<< HEAD
    * @var \Drupal\Core\Discovery\YamlDiscovery
+=======
+   * @var \Drupal\Component\Discovery\YamlDiscovery
+>>>>>>> github/master
    */
   protected $discovery;
 
@@ -48,7 +57,11 @@ class YamlDiscovery implements DiscoveryInterface {
    *   An array of directories to scan.
    */
   function __construct($name, array $directories) {
+<<<<<<< HEAD
     $this->discovery = new CoreYamlDiscovery($name, $directories);
+=======
+    $this->discovery = new ComponentYamlDiscovery($name, $directories);
+>>>>>>> github/master
   }
 
   /**

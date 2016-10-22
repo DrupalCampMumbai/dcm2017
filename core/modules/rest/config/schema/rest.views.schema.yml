@@ -3,6 +3,7 @@
 views.display.rest_export:
   type: views_display_path
   label: 'REST display options'
+<<<<<<< HEAD
   mapping:
     auth:
       type: sequence
@@ -10,6 +11,8 @@ views.display.rest_export:
       sequence:
         type: string
         label: 'Authentication Provider'
+=======
+>>>>>>> github/master
 
 views.row.data_field:
   type: views_row

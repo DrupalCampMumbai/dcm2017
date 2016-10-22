@@ -78,6 +78,7 @@ class EntityFormDisplayEditForm extends EntityDisplayFormBase {
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
   protected function getDisplayModesLink() {
     return [
       '#type' => 'link',
@@ -89,6 +90,8 @@ class EntityFormDisplayEditForm extends EntityDisplayFormBase {
   /**
    * {@inheritdoc}
    */
+=======
+>>>>>>> github/master
   protected function getTableHeader() {
     return array(
       $this->t('Field'),

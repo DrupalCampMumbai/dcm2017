@@ -2,28 +2,44 @@
 
 namespace Drupal\rest;
 
+<<<<<<< HEAD
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Cache\CacheableResponseInterface;
+=======
+>>>>>>> github/master
 use Drupal\Core\Render\RenderContext;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\UnsupportedMediaTypeHttpException;
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 use Symfony\Component\Serializer\SerializerInterface;
+=======
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\UnsupportedMediaTypeHttpException;
+use Symfony\Component\Serializer\Exception\UnexpectedValueException;
+>>>>>>> github/master
 
 /**
  * Acts as intermediate request forwarder for resource plugins.
  */
+<<<<<<< HEAD
 class RequestHandler implements ContainerAwareInterface, ContainerInjectionInterface {
+=======
+class RequestHandler implements ContainerAwareInterface {
+>>>>>>> github/master
 
   use ContainerAwareTrait;
 
   /**
+<<<<<<< HEAD
    * The resource configuration storage.
    *
    * @var \Drupal\Core\Entity\EntityStorageInterface
@@ -48,6 +64,8 @@ class RequestHandler implements ContainerAwareInterface, ContainerInjectionInter
   }
 
   /**
+=======
+>>>>>>> github/master
    * Handles a web API request.
    *
    * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
@@ -59,6 +77,11 @@ class RequestHandler implements ContainerAwareInterface, ContainerInjectionInter
    *   The response object.
    */
   public function handle(RouteMatchInterface $route_match, Request $request) {
+<<<<<<< HEAD
+=======
+
+    $plugin = $route_match->getRouteObject()->getDefault('_plugin');
+>>>>>>> github/master
     $method = strtolower($request->getMethod());
 
     // Symfony is built to transparently map HEAD requests to a GET request. In
@@ -76,6 +99,7 @@ class RequestHandler implements ContainerAwareInterface, ContainerInjectionInter
       $method = 'get';
     }
 
+<<<<<<< HEAD
     $resource_config_id = $route_match->getRouteObject()->getDefault('_rest_resource_config');
     /** @var \Drupal\rest\RestResourceConfigInterface $resource_config */
     $resource_config = $this->resourceStorage->load($resource_config_id);
@@ -83,6 +107,13 @@ class RequestHandler implements ContainerAwareInterface, ContainerInjectionInter
 
     // Deserialize incoming data if available.
     /** @var \Symfony\Component\Serializer\SerializerInterface $serializer */
+=======
+    $resource = $this->container
+      ->get('plugin.manager.rest')
+      ->getInstance(array('id' => $plugin));
+
+    // Deserialize incoming data if available.
+>>>>>>> github/master
     $serializer = $this->container->get('serializer');
     $received = $request->getContent();
     $unserialized = NULL;
@@ -93,6 +124,7 @@ class RequestHandler implements ContainerAwareInterface, ContainerInjectionInter
       // formats are configured allow all and hope that the serializer knows the
       // format. If the serializer cannot handle it an exception will be thrown
       // that bubbles up to the client.
+<<<<<<< HEAD
       $request_method = $request->getMethod();
       if (in_array($format, $resource_config->getFormats($request_method))) {
         $definition = $resource->getPluginDefinition();
@@ -105,6 +137,15 @@ class RequestHandler implements ContainerAwareInterface, ContainerInjectionInter
           else {
             $unserialized = $serializer->decode($received, $format, array('request_method' => $method));
           }
+=======
+      $config = $this->container->get('config.factory')->get('rest.settings')->get('resources');
+      $method_settings = $config[$plugin][$request->getMethod()];
+      if (empty($method_settings['supported_formats']) || in_array($format, $method_settings['supported_formats'])) {
+        $definition = $resource->getPluginDefinition();
+        $class = $definition['serialization_class'];
+        try {
+          $unserialized = $serializer->deserialize($received, $class, $format, array('request_method' => $method));
+>>>>>>> github/master
         }
         catch (UnexpectedValueException $e) {
           $error['error'] = $e->getMessage();
@@ -129,6 +170,7 @@ class RequestHandler implements ContainerAwareInterface, ContainerInjectionInter
     }
 
     // Invoke the operation on the resource plugin.
+<<<<<<< HEAD
     $format = $this->getResponseFormat($route_match, $request);
     $response = call_user_func_array(array($resource, $method), array_merge($parameters, array($unserialized, $request)));
 
@@ -244,4 +286,57 @@ class RequestHandler implements ContainerAwareInterface, ContainerInjectionInter
     return $response;
   }
 
+=======
+    // All REST routes are restricted to exactly one format, so instead of
+    // parsing it out of the Accept headers again, we can simply retrieve the
+    // format requirement. If there is no format associated, just pick JSON.
+    $format = $route_match->getRouteObject()->getRequirement('_format') ?: 'json';
+    try {
+      $response = call_user_func_array(array($resource, $method), array_merge($parameters, array($unserialized, $request)));
+    }
+    catch (HttpException $e) {
+      $error['error'] = $e->getMessage();
+      $content = $serializer->serialize($error, $format);
+      // Add the default content type, but only if the headers from the
+      // exception have not specified it already.
+      $headers = $e->getHeaders() + array('Content-Type' => $request->getMimeType($format));
+      return new Response($content, $e->getStatusCode(), $headers);
+    }
+
+    if ($response instanceof ResourceResponse) {
+      $data = $response->getResponseData();
+      // Serialization can invoke rendering (e.g., generating URLs), but the
+      // serialization API does not provide a mechanism to collect the
+      // bubbleable metadata associated with that (e.g., language and other
+      // contexts), so instead, allow those to "leak" and collect them here in
+      // a render context.
+      // @todo Add test coverage for language negotiation contexts in
+      //   https://www.drupal.org/node/2135829.
+      $context = new RenderContext();
+      $output = $this->container->get('renderer')->executeInRenderContext($context, function() use ($serializer, $data, $format) {
+        return $serializer->serialize($data, $format);
+      });
+      $response->setContent($output);
+      if (!$context->isEmpty()) {
+        $response->addCacheableDependency($context->pop());
+      }
+
+      $response->headers->set('Content-Type', $request->getMimeType($format));
+      // Add rest settings config's cache tags.
+      $response->addCacheableDependency($this->container->get('config.factory')->get('rest.settings'));
+    }
+    return $response;
+  }
+
+  /**
+   * Generates a CSRF protecting session token.
+   *
+   * @return \Symfony\Component\HttpFoundation\Response
+   *   The response object.
+   */
+  public function csrfToken() {
+    return new Response(\Drupal::csrfToken()->get('rest'), 200, array('Content-Type' => 'text/plain'));
+  }
+
+>>>>>>> github/master
 }

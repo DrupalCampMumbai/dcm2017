@@ -121,7 +121,12 @@ class ForumTest extends WebTestBase {
     //Check that the basic forum install creates a default forum topic
     $this->drupalGet('/forum');
     // Look for the "General discussion" default forum
+<<<<<<< HEAD
     $this->assertRaw(Link::createFromRoute(t('General discussion'), 'forum.page', ['taxonomy_term' => 1])->toString(), "Found the default forum at the /forum listing");
+=======
+    $this->assertRaw(t('<a href="'. Url::fromRoute('forum.page', ['taxonomy_term' => 1])->toString() .'">General discussion</a>'), "Found the default forum at the /forum listing");
+
+>>>>>>> github/master
     // Check the presence of expected cache tags.
     $this->assertCacheTag('config:forum.settings');
 
@@ -415,18 +420,28 @@ class ForumTest extends WebTestBase {
     $this->drupalPostForm('admin/structure/forum/add/' . $type, $edit, t('Save'));
     $this->assertResponse(200);
     $type = ($type == 'container') ? 'forum container' : 'forum';
+<<<<<<< HEAD
     $this->assertText(
       t(
         'Created new @type @term.',
         array('@term' => $name, '@type' => t($type))
+=======
+    $this->assertRaw(
+      t(
+        'Created new @type %term.',
+        array('%term' => $name, '@type' => t($type))
+>>>>>>> github/master
       ),
       format_string('@type was created', array('@type' => ucfirst($type)))
     );
 
+<<<<<<< HEAD
     // Verify that the creation message contains a link to a term.
     $view_link = $this->xpath('//div[@class="messages"]//a[contains(@href, :href)]', array(':href' => 'term/'));
     $this->assert(isset($view_link), 'The message area contains a link to a term');
 
+=======
+>>>>>>> github/master
     // Verify forum.
     $term = db_query("SELECT * FROM {taxonomy_term_field_data} t WHERE t.vid = :vid AND t.name = :name AND t.description__value = :desc AND t.default_langcode = 1", array(':vid' => $this->config('forum.settings')->get('vocabulary'), ':name' => $name, ':desc' => $description))->fetchAssoc();
     $this->assertTrue(!empty($term), 'The ' . $type . ' exists in the database');
@@ -544,17 +559,26 @@ class ForumTest extends WebTestBase {
 
     $type = t('Forum topic');
     if ($container) {
+<<<<<<< HEAD
       $this->assertNoText(t('@type @title has been created.', array('@type' => $type, '@title' => $title)), 'Forum topic was not created');
+=======
+      $this->assertNoRaw(t('@type %title has been created.', array('@type' => $type, '%title' => $title)), 'Forum topic was not created');
+>>>>>>> github/master
       $this->assertRaw(t('The item %title is a forum container, not a forum.', array('%title' => $forum['name'])), 'Error message was shown');
       return;
     }
     else {
+<<<<<<< HEAD
       $this->assertText(t('@type @title has been created.', array('@type' => $type, '@title' => $title)), 'Forum topic was created');
       $this->assertNoRaw(t('The item %title is a forum container, not a forum.', array('%title' => $forum['name'])), 'No error message was shown');
 
       // Verify that the creation message contains a link to a term.
       $view_link = $this->xpath('//div[@class="messages"]//a[contains(@href, :href)]', array(':href' => 'term/'));
       $this->assert(isset($view_link), 'The message area contains a link to a term');
+=======
+      $this->assertRaw(t('@type %title has been created.', array('@type' => $type, '%title' => $title)), 'Forum topic was created');
+      $this->assertNoRaw(t('The item %title is a forum container, not a forum.', array('%title' => $forum['name'])), 'No error message was shown');
+>>>>>>> github/master
     }
 
     // Retrieve node object, ensure that the topic was created and in the proper forum.
@@ -630,7 +654,11 @@ class ForumTest extends WebTestBase {
       $edit['taxonomy_forums'] = $this->rootForum['tid'];
       $edit['shadow'] = TRUE;
       $this->drupalPostForm('node/' . $node->id() . '/edit', $edit, t('Save'));
+<<<<<<< HEAD
       $this->assertText(t('Forum topic @title has been updated.', array('@title' => $edit['title[0][value]'])), 'Forum node was edited');
+=======
+      $this->assertRaw(t('Forum topic %title has been updated.', array('%title' => $edit['title[0][value]'])), 'Forum node was edited');
+>>>>>>> github/master
 
       // Verify topic was moved to a different forum.
       $forum_tid = db_query("SELECT tid FROM {forum} WHERE nid = :nid AND vid = :vid", array(

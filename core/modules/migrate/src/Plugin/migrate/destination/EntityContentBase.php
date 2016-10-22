@@ -147,7 +147,11 @@ class EntityContentBase extends Entity {
    * @param \Drupal\migrate\Row $row
    *   The row object to update from.
    *
+<<<<<<< HEAD
    * @return \Drupal\Core\Entity\EntityInterface|null
+=======
+   * @return NULL|\Drupal\Core\Entity\EntityInterface
+>>>>>>> github/master
    *   An updated entity, or NULL if it's the same as the one passed in.
    */
   protected function updateEntity(EntityInterface $entity, Row $row) {

@@ -26,7 +26,11 @@ class DisplayPluginCollection extends DefaultLazyPluginCollection {
   /**
    * Constructs a DisplayPluginCollection object.
    *
+<<<<<<< HEAD
    * @param \Drupal\views\ViewExecutable $view
+=======
+   * @param \Drupal\views\ViewExecutable
+>>>>>>> github/master
    *   The view which has this displays attached.
    * @param \Drupal\Component\Plugin\PluginManagerInterface $manager
    *   The manager to be used for instantiating plugins.

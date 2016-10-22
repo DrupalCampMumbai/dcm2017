@@ -247,7 +247,11 @@ class EntityQueryTest extends EntityKernelTestBase {
       ->condition("$greetings.value", 'merhaba')
       ->sort('id')
       ->execute();
+<<<<<<< HEAD
     $entities = EntityTestMulRev::loadMultiple($ids);
+=======
+    $entities = entity_load_multiple('entity_test_mulrev', $ids);
+>>>>>>> github/master
     $first_entity = reset($entities);
     $old_name = $first_entity->name->value;
     foreach ($entities as $entity) {
@@ -481,7 +485,11 @@ class EntityQueryTest extends EntityKernelTestBase {
       ->exists("$field_name.color")
       ->count()
       ->execute();
+<<<<<<< HEAD
     $this->assertFalse($count);
+=======
+     $this->assertFalse($count);
+>>>>>>> github/master
   }
 
   /**

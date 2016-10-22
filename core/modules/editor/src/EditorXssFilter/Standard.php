@@ -120,7 +120,11 @@ class Standard extends Xss implements EditorXssFilterInterface {
   /**
    * Get all allowed tags from a restrictions data structure.
    *
+<<<<<<< HEAD
    * @param array|false $restrictions
+=======
+   * @param array|FALSE $restrictions
+>>>>>>> github/master
    *   Restrictions as returned by FilterInterface::getHTMLRestrictions().
    *
    * @return array
@@ -144,7 +148,11 @@ class Standard extends Xss implements EditorXssFilterInterface {
   /**
    * Get all forbidden tags from a restrictions data structure.
    *
+<<<<<<< HEAD
    * @param array|false $restrictions
+=======
+   * @param array|FALSE $restrictions
+>>>>>>> github/master
    *   Restrictions as returned by FilterInterface::getHTMLRestrictions().
    *
    * @return array

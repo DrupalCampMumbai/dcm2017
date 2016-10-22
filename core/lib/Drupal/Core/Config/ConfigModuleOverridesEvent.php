@@ -37,7 +37,11 @@ class ConfigModuleOverridesEvent extends Event {
    *
    * @param array $names
    *   A list of configuration names.
+<<<<<<< HEAD
    * @param \Drupal\Core\Language\LanguageInterface $language
+=======
+   * @param \Drupal\Core\Language\LanguageInterface
+>>>>>>> github/master
    *   (optional) The language for this configuration.
    */
   public function __construct(array $names, LanguageInterface $language = NULL) {

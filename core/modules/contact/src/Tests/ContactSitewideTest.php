@@ -5,7 +5,10 @@ namespace Drupal\contact\Tests;
 use Drupal\Component\Utility\Unicode;
 use Drupal\contact\Entity\ContactForm;
 use Drupal\Core\Mail\MailFormatHelper;
+<<<<<<< HEAD
 use Drupal\Core\Url;
+=======
+>>>>>>> github/master
 use Drupal\field_ui\Tests\FieldUiTestTrait;
 use Drupal\simpletest\WebTestBase;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -128,6 +131,7 @@ class ContactSitewideTest extends WebTestBase {
     $this->addContactForm($id = Unicode::strtolower($this->randomMachineName($max_length_exceeded)), $label = $this->randomMachineName($max_length_exceeded), implode(',', array($recipients[0])), '', TRUE);
     $this->assertText(format_string('Machine-readable name cannot be longer than @max characters but is currently @exceeded characters long.', array('@max' => $max_length, '@exceeded' => $max_length_exceeded)));
     $this->addContactForm($id = Unicode::strtolower($this->randomMachineName($max_length)), $label = $this->randomMachineName($max_length), implode(',', array($recipients[0])), '', TRUE);
+<<<<<<< HEAD
     $this->assertText(t('Contact form @label has been added.', array('@label' => $label)));
 
     // Verify that the creation message contains a link to a contact form.
@@ -141,6 +145,13 @@ class ContactSitewideTest extends WebTestBase {
     // Verify that the creation message contains a link to a contact form.
     $view_link = $this->xpath('//div[@class="messages"]//a[contains(@href, :href)]', array(':href' => 'contact/'));
     $this->assert(isset($view_link), 'The message area contains a link to a contact form.');
+=======
+    $this->assertRaw(t('Contact form %label has been added.', array('%label' => $label)));
+
+    // Create first valid form.
+    $this->addContactForm($id = Unicode::strtolower($this->randomMachineName(16)), $label = $this->randomMachineName(16), implode(',', array($recipients[0])), '', TRUE);
+    $this->assertRaw(t('Contact form %label has been added.', array('%label' => $label)));
+>>>>>>> github/master
 
     // Check that the form was created in site default language.
     $langcode = $this->config('contact.form.' . $id)->get('langcode');
@@ -155,13 +166,21 @@ class ContactSitewideTest extends WebTestBase {
     $this->assertEscaped($recipients[0]);
 
     // Test update contact form.
+<<<<<<< HEAD
     $this->updateContactForm($id, $label = $this->randomMachineName(16), $recipients_str = implode(',', array($recipients[0], $recipients[1])), $reply = $this->randomMachineName(30), FALSE, 'Your message has been sent.', '/user');
+=======
+    $this->updateContactForm($id, $label = $this->randomMachineName(16), $recipients_str = implode(',', array($recipients[0], $recipients[1])), $reply = $this->randomMachineName(30), FALSE);
+>>>>>>> github/master
     $config = $this->config('contact.form.' . $id)->get();
     $this->assertEqual($config['label'], $label);
     $this->assertEqual($config['recipients'], array($recipients[0], $recipients[1]));
     $this->assertEqual($config['reply'], $reply);
     $this->assertNotEqual($id, $this->config('contact.settings')->get('default_form'));
+<<<<<<< HEAD
     $this->assertText(t('Contact form @label has been updated.', array('@label' => $label)));
+=======
+    $this->assertRaw(t('Contact form %label has been updated.', array('%label' => $label)));
+>>>>>>> github/master
     // Ensure the label is displayed on the contact page for this form.
     $this->drupalGet('contact/' . $id);
     $this->assertText($label);
@@ -179,6 +198,7 @@ class ContactSitewideTest extends WebTestBase {
 
     // Add more forms.
     $this->addContactForm(Unicode::strtolower($this->randomMachineName(16)), $label = $this->randomMachineName(16), implode(',', array($recipients[0], $recipients[1])), '', FALSE);
+<<<<<<< HEAD
     $this->assertText(t('Contact form @label has been added.', array('@label' => $label)));
 
     $this->addContactForm($name = Unicode::strtolower($this->randomMachineName(16)), $label = $this->randomMachineName(16), implode(',', array($recipients[0], $recipients[1], $recipients[2])), '', FALSE);
@@ -187,6 +207,16 @@ class ContactSitewideTest extends WebTestBase {
     // Try adding a form that already exists.
     $this->addContactForm($name, $label, '', '', FALSE);
     $this->assertNoText(t('Contact form @label has been added.', array('@label' => $label)));
+=======
+    $this->assertRaw(t('Contact form %label has been added.', array('%label' => $label)));
+
+    $this->addContactForm($name = Unicode::strtolower($this->randomMachineName(16)), $label = $this->randomMachineName(16), implode(',', array($recipients[0], $recipients[1], $recipients[2])), '', FALSE);
+    $this->assertRaw(t('Contact form %label has been added.', array('%label' => $label)));
+
+    // Try adding a form that already exists.
+    $this->addContactForm($name, $label, '', '', FALSE);
+    $this->assertNoRaw(t('Contact form %label has been added.', array('%label' => $label)));
+>>>>>>> github/master
     $this->assertRaw(t('The machine-readable name is already in use. It must be unique.'));
 
     $this->drupalLogout();
@@ -299,6 +329,7 @@ class ContactSitewideTest extends WebTestBase {
     $this->assertEqual($mail['subject'], t('[@label] @subject', array('@label' => $label, '@subject' => $edit['subject[0][value]'])));
     $this->assertTrue(strpos($mail['body'], $field_label));
     $this->assertTrue(strpos($mail['body'], $edit[$field_name . '[0][value]']));
+<<<<<<< HEAD
 
     // Test messages and redirect.
     /** @var \Drupal\contact\ContactFormInterface $form */
@@ -339,6 +370,8 @@ class ContactSitewideTest extends WebTestBase {
     $result = $this->xpath('//div[@role=:role]', array(':role' => 'contentinfo'));
     $this->assertEqual(count($result), 0, 'Messages not found.');
     $this->assertUrl('user/' . $admin_user->id());
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -400,6 +433,7 @@ class ContactSitewideTest extends WebTestBase {
    *   form.
    * @param bool $selected
    *   A Boolean indicating whether the form should be selected by default.
+<<<<<<< HEAD
    * @param string $message
    *   The message that will be displayed to a user upon completing the contact
    *   form.
@@ -411,6 +445,15 @@ class ContactSitewideTest extends WebTestBase {
     $edit['label'] = $label;
     $edit['id'] = $id;
     $edit['message'] = $message;
+=======
+   * @param array $third_party_settings
+   *   Array of third party settings to be added to the posted form data.
+   */
+  function addContactForm($id, $label, $recipients, $reply, $selected, $third_party_settings = []) {
+    $edit = array();
+    $edit['label'] = $label;
+    $edit['id'] = $id;
+>>>>>>> github/master
     $edit['recipients'] = $recipients;
     $edit['reply'] = $reply;
     $edit['selected'] = ($selected ? TRUE : FALSE);
@@ -432,6 +475,7 @@ class ContactSitewideTest extends WebTestBase {
    *   form.
    * @param bool $selected
    *   A Boolean indicating whether the form should be selected by default.
+<<<<<<< HEAD
    * @param string $message
    *   The message that will be displayed to a user upon completing the contact
    *   form.
@@ -439,13 +483,20 @@ class ContactSitewideTest extends WebTestBase {
    *   The path where user will be redirect after this form has been submitted..
    */
   function updateContactForm($id, $label, $recipients, $reply, $selected, $message = 'Your message has been sent.', $redirect = '/') {
+=======
+   */
+  function updateContactForm($id, $label, $recipients, $reply, $selected) {
+>>>>>>> github/master
     $edit = array();
     $edit['label'] = $label;
     $edit['recipients'] = $recipients;
     $edit['reply'] = $reply;
     $edit['selected'] = ($selected ? TRUE : FALSE);
+<<<<<<< HEAD
     $edit['message'] = $message;
     $edit['redirect'] = $redirect;
+=======
+>>>>>>> github/master
     $this->drupalPostForm("admin/structure/contact/manage/$id", $edit, t('Save'));
   }
 

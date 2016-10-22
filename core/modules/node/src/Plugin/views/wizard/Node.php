@@ -49,7 +49,11 @@ class Node extends WizardPluginBase {
   public function getAvailableSorts() {
     // You can't execute functions in properties, so override the method
     return array(
+<<<<<<< HEAD
       'node_field_data-title:ASC' => $this->t('Title')
+=======
+      'node_field_data-title:DESC' => $this->t('Title')
+>>>>>>> github/master
     );
   }
 
@@ -217,7 +221,11 @@ class Node extends WizardPluginBase {
     // entities. If a particular entity type (i.e., bundle) has been
     // selected above, then we only search for taxonomy fields associated
     // with that bundle. Otherwise, we use all bundles.
+<<<<<<< HEAD
     $bundles = array_keys($this->bundleInfoService->getBundleInfo($this->entityTypeId));
+=======
+    $bundles = array_keys(entity_get_bundles($this->entityTypeId));
+>>>>>>> github/master
     // Double check that this is a real bundle before using it (since above
     // we added a dummy option 'all' to the bundle list on the form).
     if (isset($selected_bundle) && in_array($selected_bundle, $bundles)) {

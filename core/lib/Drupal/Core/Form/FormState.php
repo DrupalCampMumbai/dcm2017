@@ -11,8 +11,11 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class FormState implements FormStateInterface {
 
+<<<<<<< HEAD
   use FormStateValuesTrait;
 
+=======
+>>>>>>> github/master
   /**
    * Tracks if any errors have been set on any form.
    *
@@ -248,8 +251,12 @@ class FormState implements FormStateInterface {
    *
    * This property is uncacheable.
    *
+<<<<<<< HEAD
    * @var array|null
    *   The submitted user input array, or NULL if no input was submitted yet.
+=======
+   * @var array
+>>>>>>> github/master
    */
   protected $input;
 
@@ -648,7 +655,11 @@ class FormState implements FormStateInterface {
    * {@inheritdoc}
    */
   public function isRedirectDisabled() {
+<<<<<<< HEAD
     return $this->no_redirect;
+=======
+   return $this->no_redirect;
+>>>>>>> github/master
   }
 
   /**
@@ -983,6 +994,70 @@ class FormState implements FormStateInterface {
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
+=======
+  public function &getValue($key, $default = NULL) {
+    $exists = NULL;
+    $value = &NestedArray::getValue($this->getValues(), (array) $key, $exists);
+    if (!$exists) {
+      $value = $default;
+    }
+    return $value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setValues(array $values) {
+    $this->values = $values;
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setValue($key, $value) {
+    NestedArray::setValue($this->getValues(), (array) $key, $value, TRUE);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function unsetValue($key) {
+    NestedArray::unsetValue($this->getValues(), (array) $key);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function hasValue($key) {
+    $exists = NULL;
+    $value = NestedArray::getValue($this->getValues(), (array) $key, $exists);
+    return $exists && isset($value);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isValueEmpty($key) {
+    $exists = NULL;
+    $value = NestedArray::getValue($this->getValues(), (array) $key, $exists);
+    return !$exists || empty($value);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setValueForElement(array $element, $value) {
+    return $this->setValue($element['#parents'], $value);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+>>>>>>> github/master
   public function setResponse(Response $response) {
     $this->response = $response;
     return $this;

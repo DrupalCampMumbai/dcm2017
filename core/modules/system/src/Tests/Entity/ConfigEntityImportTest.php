@@ -3,7 +3,10 @@
 namespace Drupal\system\Tests\Entity;
 
 use Drupal\Core\Entity\EntityWithPluginCollectionInterface;
+<<<<<<< HEAD
 use Drupal\filter\Entity\FilterFormat;
+=======
+>>>>>>> github/master
 use Drupal\image\Entity\ImageStyle;
 use Drupal\search\Entity\SearchPage;
 use Drupal\simpletest\WebTestBase;
@@ -90,7 +93,11 @@ class ConfigEntityImportTest extends WebTestBase {
     $name = 'filter.format.plain_text';
 
     /** @var $entity \Drupal\filter\Entity\FilterFormat */
+<<<<<<< HEAD
     $entity = FilterFormat::load('plain_text');
+=======
+    $entity = entity_load('filter_format', 'plain_text');
+>>>>>>> github/master
     $plugin_collection = $entity->getPluginCollections()['filters'];
 
     $filters = $entity->get('filters');

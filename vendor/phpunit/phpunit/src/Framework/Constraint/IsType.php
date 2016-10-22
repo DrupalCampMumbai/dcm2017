@@ -57,8 +57,12 @@ class PHPUnit_Framework_Constraint_IsType extends PHPUnit_Framework_Constraint
     protected $type;
 
     /**
+<<<<<<< HEAD
      * @param string $type
      *
+=======
+     * @param  string                      $type
+>>>>>>> github/master
      * @throws PHPUnit_Framework_Exception
      */
     public function __construct($type)
@@ -82,8 +86,12 @@ class PHPUnit_Framework_Constraint_IsType extends PHPUnit_Framework_Constraint
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
+<<<<<<< HEAD
      * @param mixed $other Value or object to evaluate.
      *
+=======
+     * @param  mixed $other Value or object to evaluate.
+>>>>>>> github/master
      * @return bool
      */
     protected function matches($other)

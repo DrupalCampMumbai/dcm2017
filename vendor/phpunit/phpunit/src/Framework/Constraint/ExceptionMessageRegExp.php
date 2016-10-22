@@ -31,8 +31,12 @@ class PHPUnit_Framework_Constraint_ExceptionMessageRegExp extends PHPUnit_Framew
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
+<<<<<<< HEAD
      * @param Exception $other
      *
+=======
+     * @param  Exception $other
+>>>>>>> github/master
      * @return bool
      */
     protected function matches($other)
@@ -54,8 +58,12 @@ class PHPUnit_Framework_Constraint_ExceptionMessageRegExp extends PHPUnit_Framew
      * The beginning of failure messages is "Failed asserting that" in most
      * cases. This method should return the second part of that sentence.
      *
+<<<<<<< HEAD
      * @param mixed $other Evaluated value or object.
      *
+=======
+     * @param  mixed  $other Evaluated value or object.
+>>>>>>> github/master
      * @return string
      */
     protected function failureDescription($other)

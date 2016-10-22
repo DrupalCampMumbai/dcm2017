@@ -24,7 +24,11 @@ class ConfigCollectionInfo extends Event {
    *
    * @param string $collection
    *   Collection name to add.
+<<<<<<< HEAD
    * @param \Drupal\Core\Config\ConfigFactoryOverrideInterface $override_service
+=======
+   * @param \Drupal\Core\Config\ConfigFactoryOverrideInterface
+>>>>>>> github/master
    *   (optional) The configuration factory override service responsible for the
    *   collection.
    *
@@ -63,7 +67,11 @@ class ConfigCollectionInfo extends Event {
    * @param string $collection
    *   The configuration collection.
    *
+<<<<<<< HEAD
    * @return \Drupal\Core\Config\ConfigFactoryOverrideInterface|null
+=======
+   * @return \Drupal\Core\Config\ConfigFactoryOverrideInterface|NULL
+>>>>>>> github/master
    *   The override service responsible for the collection if one exists. NULL
    *   if not.
    */

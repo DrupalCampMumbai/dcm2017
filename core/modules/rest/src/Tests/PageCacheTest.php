@@ -4,7 +4,10 @@ namespace Drupal\rest\Tests;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Url;
+<<<<<<< HEAD
 use Drupal\system\Tests\Cache\AssertPageCacheContextsAndTagsTrait;
+=======
+>>>>>>> github/master
 
 /**
  * Tests page caching for REST GET requests.
@@ -13,8 +16,11 @@ use Drupal\system\Tests\Cache\AssertPageCacheContextsAndTagsTrait;
  */
 class PageCacheTest extends RESTTestBase {
 
+<<<<<<< HEAD
   use AssertPageCacheContextsAndTagsTrait;
 
+=======
+>>>>>>> github/master
   /**
    * Modules to install.
    *
@@ -23,6 +29,7 @@ class PageCacheTest extends RESTTestBase {
   public static $modules = array('hal');
 
   /**
+<<<<<<< HEAD
    * The 'serializer' service.
    *
    * @var \Symfony\Component\Serializer\Serializer
@@ -74,10 +81,31 @@ class PageCacheTest extends RESTTestBase {
     $this->assertResponse(200, 'HTTP response code is correct.');
     $this->assertHeader('x-drupal-cache', 'MISS');
     $this->assertCacheTag('config:rest.resource.entity.entity_test');
+=======
+   * Tests that configuration changes also clear the page cache.
+   */
+  public function testConfigChangePageCache() {
+    $this->enableService('entity:entity_test', 'GET');
+    // Allow anonymous users to issue GET requests.
+    $permissions = $this->entityPermissions('entity_test', 'view');
+    $permissions[] = 'restful get entity:entity_test';
+    user_role_grant_permissions('anonymous', $permissions);
+
+    // Create an entity programmatically.
+    $entity = $this->entityCreate('entity_test');
+    $entity->set('field_test_text', 'custom cache tag value');
+    $entity->save();
+    // Read it over the REST API.
+    $this->httpRequest($entity->urlInfo()->setRouteParameter('_format', $this->defaultFormat), 'GET', NULL, $this->defaultMimeType);
+    $this->assertResponse(200, 'HTTP response code is correct.');
+    $this->assertHeader('x-drupal-cache', 'MISS');
+    $this->assertCacheTag('config:rest.settings');
+>>>>>>> github/master
     $this->assertCacheTag('entity_test:1');
     $this->assertCacheTag('entity_test_access:field_test_text');
 
     // Read it again, should be page-cached now.
+<<<<<<< HEAD
     $this->httpRequest($url, 'GET', NULL, $this->defaultMimeType);
     $this->assertResponse(200, 'HTTP response code is correct.');
     $this->assertHeader('x-drupal-cache', 'HIT');
@@ -130,6 +158,24 @@ class PageCacheTest extends RESTTestBase {
     if ($this->getCacheHeaderValues('x-drupal-cache')) {
       $this->fail('Patch request is cached.');
     }
+=======
+    $this->httpRequest($entity->urlInfo()->setRouteParameter('_format', $this->defaultFormat), 'GET', NULL, $this->defaultMimeType);
+    $this->assertResponse(200, 'HTTP response code is correct.');
+    $this->assertHeader('x-drupal-cache', 'HIT');
+    $this->assertCacheTag('config:rest.settings');
+    $this->assertCacheTag('entity_test:1');
+    $this->assertCacheTag('entity_test_access:field_test_text');
+
+    // Trigger a config save which should clear the page cache, so we should get
+    // a cache miss now for the same request.
+    $this->config('rest.settings')->save();
+    $this->httpRequest($entity->urlInfo()->setRouteParameter('_format', $this->defaultFormat), 'GET', NULL, $this->defaultMimeType);
+    $this->assertResponse(200, 'HTTP response code is correct.');
+    $this->assertHeader('x-drupal-cache', 'MISS');
+    $this->assertCacheTag('config:rest.settings');
+    $this->assertCacheTag('entity_test:1');
+    $this->assertCacheTag('entity_test_access:field_test_text');
+>>>>>>> github/master
   }
 
   /**
@@ -153,7 +199,11 @@ class PageCacheTest extends RESTTestBase {
     $response = $this->httpRequest($url, 'GET', NULL, $this->defaultMimeType);
     $this->assertResponse(200, 'HTTP response code is correct.');
     $this->assertHeader('X-Drupal-Cache', 'HIT');
+<<<<<<< HEAD
     $this->assertCacheTag('config:rest.resource.entity.entity_test');
+=======
+    $this->assertCacheTag('config:rest.settings');
+>>>>>>> github/master
     $this->assertCacheTag('entity_test:1');
     $data = Json::decode($response);
     $this->assertEqual($data['type'][0]['value'], 'entity_test');

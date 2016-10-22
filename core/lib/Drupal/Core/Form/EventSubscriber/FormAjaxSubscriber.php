@@ -92,7 +92,11 @@ class FormAjaxSubscriber implements EventSubscriberInterface {
       $form_state = $exception->getFormState();
 
       // Set the build ID from the request as the old build ID on the form.
+<<<<<<< HEAD
       $form['#build_id_old'] = $request->request->get('form_build_id');
+=======
+      $form['#build_id_old'] = $request->get('form_build_id');
+>>>>>>> github/master
 
       try {
         $response = $this->formAjaxResponseBuilder->buildResponse($request, $form, $form_state, []);

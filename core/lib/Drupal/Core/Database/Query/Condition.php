@@ -300,7 +300,10 @@ class Condition implements ConditionInterface, \Countable {
     // $specials does not use drupal_static as its value never changes.
     static $specials = array(
       'BETWEEN' => array('delimiter' => ' AND '),
+<<<<<<< HEAD
       'NOT BETWEEN' => array('delimiter' => ' AND '),
+=======
+>>>>>>> github/master
       'IN' => array('delimiter' => ', ', 'prefix' => ' (', 'postfix' => ')'),
       'NOT IN' => array('delimiter' => ', ', 'prefix' => ' (', 'postfix' => ')'),
       'EXISTS' => array('prefix' => ' (', 'postfix' => ')'),

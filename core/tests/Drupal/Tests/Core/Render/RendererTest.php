@@ -140,6 +140,7 @@ class RendererTest extends RendererTestBase {
       '#children' => 'foo',
       'child' => ['#markup' => 'bar'],
     ], 'foo'];
+<<<<<<< HEAD
     // Ensure that content added to #markup via a #pre_render callback is safe.
     $data[] = [[
       '#markup' => 'foo',
@@ -166,6 +167,8 @@ class RendererTest extends RendererTestBase {
         return $elements;
       }]
     ], 'foo&lt;script&gt;alert(&quot;bar&quot;);&lt;/script&gt;'];
+=======
+>>>>>>> github/master
 
     // Part 2: render arrays using #theme and #theme_wrappers.
 

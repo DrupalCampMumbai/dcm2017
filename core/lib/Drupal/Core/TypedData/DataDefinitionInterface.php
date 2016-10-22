@@ -44,7 +44,11 @@ interface DataDefinitionInterface {
    *   If an unsupported data type gets passed to the class; e.g., 'string' to a
    *   definition class handling 'entity:* data types.
    */
+<<<<<<< HEAD
   public static function createFromDataType($data_type);
+=======
+   public static function createFromDataType($data_type);
+>>>>>>> github/master
 
   /**
    * Returns the data type of the data.

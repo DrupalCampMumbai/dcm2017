@@ -69,7 +69,11 @@ class CKEditorTest extends KernelTestBase {
    * Tests CKEditor::getJSSettings().
    */
   function testGetJSSettings() {
+<<<<<<< HEAD
     $editor = Editor::load('filtered_html');
+=======
+    $editor = entity_load('editor', 'filtered_html');
+>>>>>>> github/master
 
     // Default toolbar.
     $expected_config = $this->getDefaultInternalConfig() + array(
@@ -217,7 +221,11 @@ class CKEditorTest extends KernelTestBase {
    * Tests CKEditor::buildToolbarJSSetting().
    */
   function testBuildToolbarJSSetting() {
+<<<<<<< HEAD
     $editor = Editor::load('filtered_html');
+=======
+    $editor = entity_load('editor', 'filtered_html');
+>>>>>>> github/master
 
     // Default toolbar.
     $expected = $this->getDefaultToolbarConfig();
@@ -248,7 +256,11 @@ class CKEditorTest extends KernelTestBase {
    * Tests CKEditor::buildContentsCssJSSetting().
    */
   function testBuildContentsCssJSSetting() {
+<<<<<<< HEAD
     $editor = Editor::load('filtered_html');
+=======
+    $editor = entity_load('editor', 'filtered_html');
+>>>>>>> github/master
 
     // Default toolbar.
     $expected = $this->getDefaultContentsCssConfig();
@@ -285,7 +297,11 @@ class CKEditorTest extends KernelTestBase {
    * Tests Internal::getConfig().
    */
   function testInternalGetConfig() {
+<<<<<<< HEAD
     $editor = Editor::load('filtered_html');
+=======
+    $editor = entity_load('editor', 'filtered_html');
+>>>>>>> github/master
     $internal_plugin = $this->container->get('plugin.manager.ckeditor.plugin')->createInstance('internal');
 
     // Default toolbar.
@@ -306,7 +322,11 @@ class CKEditorTest extends KernelTestBase {
    * Tests StylesCombo::getConfig().
    */
   function testStylesComboGetConfig() {
+<<<<<<< HEAD
     $editor = Editor::load('filtered_html');
+=======
+    $editor = entity_load('editor', 'filtered_html');
+>>>>>>> github/master
     $stylescombo_plugin = $this->container->get('plugin.manager.ckeditor.plugin')->createInstance('stylescombo');
 
     // Styles dropdown/button enabled: new setting should be present.

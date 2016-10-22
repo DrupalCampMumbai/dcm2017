@@ -43,6 +43,10 @@ class CsrfTest extends RESTTestBase {
     // Create a user account that has the required permissions to create
     // resources via the REST API.
     $permissions = $this->entityPermissions($this->testEntityType, 'create');
+<<<<<<< HEAD
+=======
+    $permissions[] = 'restful post entity:' . $this->testEntityType;
+>>>>>>> github/master
     $this->account = $this->drupalCreateUser($permissions);
 
     // Serialize an entity to a string to use in the content body of the POST
@@ -71,10 +75,13 @@ class CsrfTest extends RESTTestBase {
 
   /**
    * Tests that CSRF check is triggered for Cookie Auth requests.
+<<<<<<< HEAD
    *
    * @deprecated as of Drupal 8.2.x, will be removed before Drupal 9.0.0. Use
    *   \Drupal\Tests\system\Functional\CsrfRequestHeaderTest::testRouteAccess
    *   instead.
+=======
+>>>>>>> github/master
    */
   public function testCookieAuth() {
     $this->drupalLogin($this->account);
@@ -87,10 +94,14 @@ class CsrfTest extends RESTTestBase {
     $this->curlExec($curl_options);
     $this->assertResponse(403);
     // Ensure that the entity was not created.
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->testEntityType);
     $storage->resetCache();
     $this->assertFalse($storage->loadMultiple(), 'No entity has been created in the database.');
+=======
+    $this->assertFalse(entity_load_multiple($this->testEntityType, NULL, TRUE), 'No entity has been created in the database.');
+>>>>>>> github/master
 
     // Create an entity with the CSRF token.
     $token = $this->drupalGet('rest/session/token');

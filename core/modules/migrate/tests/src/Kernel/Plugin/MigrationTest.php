@@ -33,6 +33,7 @@ class MigrationTest extends KernelTestBase {
    * @covers ::getMigrationDependencies
    */
   public function testGetMigrationDependencies() {
+<<<<<<< HEAD
     $plugin_manager = \Drupal::service('plugin.manager.migration');
     $plugin_definition = [
       'process' => [
@@ -54,6 +55,12 @@ class MigrationTest extends KernelTestBase {
     ];
     $migration = $plugin_manager->createStubMigration($plugin_definition);
     $this->assertSame(['required' => [], 'optional' => ['m1', 'm2']], $migration->getMigrationDependencies());
+=======
+    $migration = \Drupal::service('plugin.manager.migration')->createStubMigration([
+        'migration_dependencies' => NULL
+    ]);
+    $this->assertNotEmpty($migration->getMigrationDependencies(), 'Migration dependencies is not empty');
+>>>>>>> github/master
   }
 
   /**

@@ -5,6 +5,7 @@ namespace Drupal\Core\Access;
 /**
  * Value object indicating a forbidden access result, with cacheability metadata.
  */
+<<<<<<< HEAD
 class AccessResultForbidden extends AccessResult implements AccessResultReasonInterface {
 
   /**
@@ -24,6 +25,9 @@ class AccessResultForbidden extends AccessResult implements AccessResultReasonIn
     $this->reason = $reason;
   }
 
+=======
+class AccessResultForbidden extends AccessResult {
+>>>>>>> github/master
 
   /**
    * {@inheritdoc}
@@ -32,6 +36,7 @@ class AccessResultForbidden extends AccessResult implements AccessResultReasonIn
     return TRUE;
   }
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
@@ -47,4 +52,6 @@ class AccessResultForbidden extends AccessResult implements AccessResultReasonIn
     return $this;
   }
 
+=======
+>>>>>>> github/master
 }

@@ -112,7 +112,11 @@ class ErrorTest extends UnitTestCase {
   /**
    * Creates a mock backtrace item.
    *
+<<<<<<< HEAD
    * @param string|null $function
+=======
+   * @param string|NULL $function
+>>>>>>> github/master
    *   (optional) The function name to use in the backtrace item.
    * @param string $class
    *   (optional) The class to use in the backtrace item.

@@ -3,7 +3,10 @@
 namespace Drupal\views\Plugin\views\filter;
 
 use Drupal\Core\Entity\EntityManagerInterface;
+<<<<<<< HEAD
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
+=======
+>>>>>>> github/master
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\display\DisplayPluginBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -39,6 +42,7 @@ class Bundle extends InOperator {
   protected $entityManager;
 
   /**
+<<<<<<< HEAD
    * The bundle info service.
    *
    * @var \Drupal\Core\Entity\EntityTypeBundleInfoInterface
@@ -46,6 +50,8 @@ class Bundle extends InOperator {
   protected $bundleInfoService;
 
   /**
+=======
+>>>>>>> github/master
    * Constructs a Bundle object.
    *
    * @param array $configuration
@@ -57,11 +63,18 @@ class Bundle extends InOperator {
    * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
    *   The entity manager.
    */
+<<<<<<< HEAD
   public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityManagerInterface $entity_manager, EntityTypeBundleInfoInterface $bundle_info_service) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->entityManager = $entity_manager;
     $this->bundleInfoService = $bundle_info_service;
+=======
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityManagerInterface $entity_manager) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    $this->entityManager = $entity_manager;
+>>>>>>> github/master
   }
 
   /**
@@ -72,8 +85,12 @@ class Bundle extends InOperator {
       $configuration,
       $plugin_id,
       $plugin_definition,
+<<<<<<< HEAD
       $container->get('entity.manager'),
       $container->get('entity_type.bundle.info')
+=======
+      $container->get('entity.manager')
+>>>>>>> github/master
     );
   }
 
@@ -93,7 +110,11 @@ class Bundle extends InOperator {
    */
   public function getValueOptions() {
     if (!isset($this->valueOptions)) {
+<<<<<<< HEAD
       $types = $this->bundleInfoService->getBundleInfo($this->entityTypeId);
+=======
+      $types = entity_get_bundles($this->entityTypeId);
+>>>>>>> github/master
       $this->valueTitle = $this->t('@entity types', array('@entity' => $this->entityType->getLabel()));
 
       $options = array();

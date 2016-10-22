@@ -417,6 +417,7 @@ $settings['update_free_access'] = FALSE;
  */
 # $settings['omit_vary_cookie'] = TRUE;
 
+<<<<<<< HEAD
 
 /**
  * Cache TTL for client error (4xx) responses.
@@ -431,6 +432,8 @@ $settings['update_free_access'] = FALSE;
 # $settings['cache_ttl_4xx'] = 3600;
 
 
+=======
+>>>>>>> github/master
 /**
  * Class Loader.
  *
@@ -679,6 +682,7 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 # $settings['container_base_class'] = '\Drupal\Core\DependencyInjection\Container';
 
 /**
+<<<<<<< HEAD
  * Override the default yaml parser class.
  *
  * Provide a fully qualified class name here if you would like to provide an
@@ -688,6 +692,8 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 # $settings['yaml_parser_class'] = NULL;
 
 /**
+=======
+>>>>>>> github/master
  * Trusted host configuration.
  *
  * Drupal core can use the Symfony trusted host mechanism to prevent HTTP Host
@@ -725,6 +731,7 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  */
 
 /**
+<<<<<<< HEAD
  * The default list of directories that will be ignored by Drupal's file API.
  *
  * By default ignore node_modules and bower_components folders to avoid issues
@@ -753,6 +760,8 @@ if (file_exists(__DIR__ . '/settings.pantheon.php')) {
 }
 
 /**
+=======
+>>>>>>> github/master
  * Load local development override configuration, if available.
  *
  * Use settings.local.php to override variables on secondary (staging,
@@ -762,6 +771,12 @@ if (file_exists(__DIR__ . '/settings.pantheon.php')) {
  *
  * Keep this code block at the end of this file to take full effect.
  */
+<<<<<<< HEAD
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
+=======
+# if (file_exists(__DIR__ . '/settings.local.php')) {
+#   include __DIR__ . '/settings.local.php';
+# }
+>>>>>>> github/master

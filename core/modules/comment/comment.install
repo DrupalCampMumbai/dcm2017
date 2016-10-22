@@ -6,8 +6,11 @@
  */
 
 use Drupal\Core\Entity\EntityTypeInterface;
+<<<<<<< HEAD
 use Drupal\Core\StringTranslation\PluralTranslatableMarkup;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+=======
+>>>>>>> github/master
 use Drupal\field\Entity\FieldStorageConfig;
 
 /**
@@ -136,6 +139,7 @@ function comment_update_8001() {
 function comment_update_8002() {
   // Empty update to cause a cache flush.
 }
+<<<<<<< HEAD
 
 /**
  * @addtogroup updates-8.2.x
@@ -179,3 +183,5 @@ function comment_update_8200() {
 /**
  * @} End of "addtogroup updates-8.2.x".
  */
+=======
+>>>>>>> github/master

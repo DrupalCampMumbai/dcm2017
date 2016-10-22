@@ -1,8 +1,22 @@
 name: Toolbar
 type: module
 description: 'Provides a toolbar that shows the top-level administration menu items and links from other modules.'
+<<<<<<< HEAD
 core: 8.x
 package: Core
 version: VERSION
 dependencies:
   - breakpoint
+=======
+# core: 8.x
+package: Core
+# version: VERSION
+dependencies:
+  - breakpoint
+
+# Information added by Drupal.org packaging script on 2016-09-21
+version: '8.1.10'
+core: '8.x'
+project: 'drupal'
+datestamp: 1474479094
+>>>>>>> github/master

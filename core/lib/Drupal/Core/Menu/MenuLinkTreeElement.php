@@ -68,7 +68,11 @@ class MenuLinkTreeElement {
    * If the value is NULL the access was not determined yet, if an access result
    * object, it was determined already.
    *
+<<<<<<< HEAD
    * @var \Drupal\Core\Access\AccessResultInterface|null
+=======
+   * @var \Drupal\Core\Access\AccessResultInterface|NULL
+>>>>>>> github/master
    */
   public $access;
 

@@ -10,6 +10,7 @@ fieldset:not(.fieldgroup) {
   border-radius: 2px;
   margin: 1em 0;
   padding: 30px 18px 18px;
+<<<<<<< HEAD
   min-width: 0;
   position: relative;
 }
@@ -24,6 +25,10 @@ fieldset:not(.fieldgroup) {
     display: table-cell;
   }
 }
+=======
+  position: relative;
+}
+>>>>>>> github/master
 fieldset:not(.fieldgroup) > legend {
   font-size: 1em;
   font-weight: bold;
@@ -35,12 +40,15 @@ fieldset:not(.fieldgroup) > legend {
 .fieldgroup {
   min-width: 0;
 }
+<<<<<<< HEAD
 /**
  * We've temporarily added this Firefox specific rule here to fix fieldset
  * widths.
  * @todo remove once this Mozilla bug is fixed.
  * See https://bugzilla.mozilla.org/show_bug.cgi?id=504622
  */
+=======
+>>>>>>> github/master
 @-moz-document url-prefix() {
   .fieldgroup {
     display: table-cell;
@@ -109,6 +117,10 @@ label[for] {
   background-color: #fcf4f2;
 }
 .form-required:after {
+<<<<<<< HEAD
+=======
+  background-image: url(../../images/required.svg);
+>>>>>>> github/master
   background-size: 7px 7px;
   width: 7px;
   height: 7px;
@@ -328,9 +340,12 @@ select {
     display: block;
     margin: 10px 0 0 0;
   }
+<<<<<<< HEAD
   select {
     width: 100%;
   }
+=======
+>>>>>>> github/master
 }
 
 /* Exceptions */

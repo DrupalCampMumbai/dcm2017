@@ -8,14 +8,23 @@ use Behat\Mink\Mink;
 use Behat\Mink\Session;
 use Drupal\Component\FileCache\FileCacheFactory;
 use Drupal\Component\Serialization\Json;
+<<<<<<< HEAD
+=======
+use Drupal\Component\Serialization\Yaml;
+>>>>>>> github/master
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Cache\Cache;
+<<<<<<< HEAD
 use Drupal\Core\Config\Testing\ConfigSchemaChecker;
 use Drupal\Core\Database\Database;
 use Drupal\Core\DrupalKernel;
 use Drupal\Core\Serialization\Yaml;
+=======
+use Drupal\Core\Database\Database;
+use Drupal\Core\DrupalKernel;
+>>>>>>> github/master
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\AnonymousUserSession;
 use Drupal\Core\Session\UserSession;
@@ -57,7 +66,10 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   use ContentTypeCreationTrait {
     createContentType as drupalCreateContentType;
   }
+<<<<<<< HEAD
   use ConfigTestTrait;
+=======
+>>>>>>> github/master
   use UserCreationTrait {
     createRole as drupalCreateRole;
     createUser as drupalCreateUser;
@@ -156,6 +168,7 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   protected $configImporter;
 
   /**
+<<<<<<< HEAD
    * Set to TRUE to strict check all configuration saved.
    *
    * @see \Drupal\Core\Config\Testing\ConfigSchemaChecker
@@ -194,6 +207,8 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   );
 
   /**
+=======
+>>>>>>> github/master
    * The profile to install as a basis for testing.
    *
    * @var string
@@ -398,7 +413,11 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
     }
 
     if (is_array($this->minkDefaultDriverArgs)) {
+<<<<<<< HEAD
       // Use ReflectionClass to instantiate class with received params.
+=======
+       // Use ReflectionClass to instantiate class with received params.
+>>>>>>> github/master
       $reflector = new \ReflectionClass($this->minkDefaultDriverClass);
       $driver = $reflector->newInstanceArgs($this->minkDefaultDriverArgs);
     }
@@ -668,6 +687,7 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
    *   Drupal path or URL to load into Mink controlled browser.
    * @param array $options
    *   (optional) Options to be forwarded to the url generator.
+<<<<<<< HEAD
    * @param string[] $headers
    *   An array containing additional HTTP request headers, the array keys are
    *   the header names and the array values the header values. This is useful
@@ -676,21 +696,30 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
    *   example the "Accept" header is always overridden by the browser. For
    *   testing REST APIs it is recommended to directly use an HTTP client such
    *   as Guzzle instead.
+=======
+>>>>>>> github/master
    *
    * @return string
    *   The retrieved HTML string, also available as $this->getRawContent()
    */
+<<<<<<< HEAD
   protected function drupalGet($path, array $options = array(), array $headers = array()) {
+=======
+  protected function drupalGet($path, array $options = array()) {
+>>>>>>> github/master
     $options['absolute'] = TRUE;
     $url = $this->buildUrl($path, $options);
 
     $session = $this->getSession();
 
     $this->prepareRequest();
+<<<<<<< HEAD
     foreach ($headers as $header_name => $header_value) {
       $session->setRequestHeader($header_name, $header_value);
     }
 
+=======
+>>>>>>> github/master
     $session->visit($url);
     $out = $session->getPage()->getContent();
 
@@ -1041,6 +1070,7 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
     }
     // Copy the testing-specific service overrides in place.
     copy($settings_services_file, $directory . '/services.yml');
+<<<<<<< HEAD
     if ($this->strictConfigSchema) {
       // Add a listener to validate configuration schema on save.
       $content = file_get_contents($directory . '/services.yml');
@@ -1052,6 +1082,8 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
       ];
       file_put_contents($directory . '/services.yml', Yaml::encode($services));
     }
+=======
+>>>>>>> github/master
 
     // Since Drupal is bootstrapped already, install_begin_request() will not
     // bootstrap into DRUPAL_BOOTSTRAP_CONFIGURATION (again). Hence, we have to
@@ -1214,9 +1246,20 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
    * @see BrowserTestBase::prepareEnvironment()
    */
   private function prepareDatabasePrefix() {
+<<<<<<< HEAD
     $test_db = new TestDatabase();
     $this->siteDirectory = $test_db->getTestSitePath();
     $this->databasePrefix = $test_db->getDatabasePrefix();
+=======
+    // Ensure that the generated test site directory does not exist already,
+    // which may happen with a large amount of concurrent threads and
+    // long-running tests.
+    do {
+      $suffix = mt_rand(100000, 999999);
+      $this->siteDirectory = 'sites/simpletest/' . $suffix;
+      $this->databasePrefix = 'simpletest' . $suffix;
+    } while (is_dir(DRUPAL_ROOT . '/' . $this->siteDirectory));
+>>>>>>> github/master
   }
 
   /**
@@ -1623,6 +1666,7 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
    *
    * @param string|\Drupal\Component\Render\MarkupInterface $label
    *   Text between the anchor tags.
+<<<<<<< HEAD
    * @param int $index
    *   (optional) The index number for cases where multiple links have the same
    *   text. Defaults to 0.
@@ -1631,6 +1675,12 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
     $label = (string) $label;
     $links = $this->getSession()->getPage()->findAll('named', ['link', $label]);
     $links[$index]->click();
+=======
+   */
+  protected function clickLink($label) {
+    $label = (string) $label;
+    $this->getSession()->getPage()->clickLink($label);
+>>>>>>> github/master
   }
 
   /**
@@ -1747,6 +1797,7 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
     $file_cache->delete($filename);
   }
 
+<<<<<<< HEAD
   /**
    * Gets the config schema exclusions for this test.
    *
@@ -1766,4 +1817,6 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
     return array_unique($exceptions);
   }
 
+=======
+>>>>>>> github/master
 }

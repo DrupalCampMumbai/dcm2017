@@ -377,9 +377,13 @@ class EntityFieldTest extends EntityKernelTestBase {
     $entity->save();
     $this->assertTrue((bool) $entity->id(), format_string('%entity_type: Entity has received an id.', array('%entity_type' => $entity_type)));
 
+<<<<<<< HEAD
     $entity = $this->container->get('entity_type.manager')
       ->getStorage($entity_type)
       ->load($entity->id());
+=======
+    $entity = entity_load($entity_type, $entity->id());
+>>>>>>> github/master
     $this->assertTrue((bool) $entity->id(), format_string('%entity_type: Entity loaded.', array('%entity_type' => $entity_type)));
 
     // Access the name field.
@@ -746,9 +750,13 @@ class EntityFieldTest extends EntityKernelTestBase {
 
     // Save and load entity and make sure it still works.
     $entity->save();
+<<<<<<< HEAD
     $entity = $this->container->get('entity_type.manager')
       ->getStorage($entity_type)
       ->load($entity->id());
+=======
+    $entity = entity_load($entity_type, $entity->id());
+>>>>>>> github/master
     $this->assertEqual($entity->field_test_text->processed, $target, format_string('%entity_type: Text is processed with the default filter.', array('%entity_type' => $entity_type)));
   }
 

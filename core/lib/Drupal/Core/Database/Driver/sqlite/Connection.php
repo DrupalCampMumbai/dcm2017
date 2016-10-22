@@ -124,6 +124,7 @@ class Connection extends DatabaseConnection {
     // Create a user-space case-insensitive collation with UTF-8 support.
     $pdo->sqliteCreateCollation('NOCASE_UTF8', array('Drupal\Component\Utility\Unicode', 'strcasecmp'));
 
+<<<<<<< HEAD
     // Set SQLite init_commands if not already defined. Enable the Write-Ahead
     // Logging (WAL) for SQLite. See https://www.drupal.org/node/2348137 and
     // https://www.sqlite.org/wal.html.
@@ -134,6 +135,8 @@ class Connection extends DatabaseConnection {
       'wal' => "PRAGMA journal_mode=WAL",
     );
 
+=======
+>>>>>>> github/master
     // Execute sqlite init_commands.
     if (isset($connection_options['init_commands'])) {
       $pdo->exec(implode('; ', $connection_options['init_commands']));

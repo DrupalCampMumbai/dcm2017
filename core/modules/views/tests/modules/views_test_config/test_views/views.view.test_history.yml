@@ -107,7 +107,11 @@ display:
           comments: false
       filters:
         status:
+<<<<<<< HEAD
           value: '1'
+=======
+          value: true
+>>>>>>> github/master
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -152,7 +156,11 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
+<<<<<<< HEAD
           value: '1'
+=======
+          value: true
+>>>>>>> github/master
           group: 1
           exposed: false
           expose:

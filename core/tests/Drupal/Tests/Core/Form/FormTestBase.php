@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace Drupal\Tests\Core\Form;
+=======
+namespace Drupal\Tests\Core\Form {
+>>>>>>> github/master
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormBuilder;
@@ -147,9 +151,12 @@ abstract class FormTestBase extends UnitTestCase {
   protected function setUp() {
     parent::setUp();
 
+<<<<<<< HEAD
     // Add functions to the global namespace for testing.
     require_once __DIR__ . '/fixtures/form_base_test.inc';
 
+=======
+>>>>>>> github/master
     $this->moduleHandler = $this->getMock('Drupal\Core\Extension\ModuleHandlerInterface');
 
     $this->formCache = $this->getMock('Drupal\Core\Form\FormCacheInterface');
@@ -314,3 +321,38 @@ abstract class FormTestBase extends UnitTestCase {
   }
 
 }
+<<<<<<< HEAD
+=======
+
+}
+
+namespace {
+
+  function test_form_id() {
+    $form['test'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Test',
+    );
+    $form['options'] = array(
+      '#type' => 'radios',
+      '#options' => array(
+        'foo' => 'foo',
+        'bar' => 'bar',
+      ),
+    );
+    $form['value'] = array(
+      '#type' => 'value',
+      '#value' => 'bananas',
+    );
+    $form['actions'] = array(
+      '#type' => 'actions',
+    );
+    $form['actions']['submit'] = array(
+      '#type' => 'submit',
+      '#value' => 'Submit',
+    );
+    return $form;
+  }
+
+}
+>>>>>>> github/master

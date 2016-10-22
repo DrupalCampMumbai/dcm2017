@@ -80,7 +80,10 @@ function _drupal_error_handler_real($error_level, $message, $filename, $line, $c
       '%line' => $caller['line'],
       'severity_level' => $severity_level,
       'backtrace' => $backtrace,
+<<<<<<< HEAD
       '@backtrace_string' => (new \Exception())->getTraceAsString(),
+=======
+>>>>>>> github/master
     ), $recoverable || $to_string);
   }
 }
@@ -117,9 +120,15 @@ function error_displayable($error = NULL) {
  *
  * @param $error
  *   An array with the following keys: %type, @message, %function, %file,
+<<<<<<< HEAD
  *   %line, @backtrace_string, severity_level, and backtrace. All the parameters
  *   are plain-text, with the exception of @message, which needs to be an HTML
  *   string, and backtrace, which is a standard PHP backtrace.
+=======
+ *   %line, severity_level, and backtrace. All the parameters are plain-text,
+ *   with the exception of @message, which needs to be an HTML string, and
+ *   backtrace, which is a standard PHP backtrace.
+>>>>>>> github/master
  * @param bool $fatal
  *   TRUE for:
  *   - An exception is thrown and not caught by something else.
@@ -164,18 +173,30 @@ function _drupal_log_error($error, $fatal = FALSE) {
   // installer.
   if (\Drupal::hasService('logger.factory')) {
     try {
+<<<<<<< HEAD
       \Drupal::logger('php')->log($error['severity_level'], '%type: @message in %function (line %line of %file) @backtrace_string.', $error);
+=======
+      \Drupal::logger('php')->log($error['severity_level'], '%type: @message in %function (line %line of %file).', $error);
+>>>>>>> github/master
     }
     catch (\Exception $e) {
       // We can't log, for example because the database connection is not
       // available. At least try to log to PHP error log.
+<<<<<<< HEAD
       error_log(strtr('Failed to log error: %type: @message in %function (line %line of %file). @backtrace_string', $error));
+=======
+      error_log(strtr('Failed to log error: %type: @message in %function (line %line of %file).', $error));
+>>>>>>> github/master
     }
   }
 
   // Log fatal errors, so developers can find and debug them.
   if ($fatal) {
+<<<<<<< HEAD
     error_log(sprintf('%s: %s in %s on line %d %s', $error['%type'], $error['@message'], $error['%file'], $error['%line'], $error['@backtrace_string']));
+=======
+    error_log(sprintf('%s: %s in %s on line %d', $error['%type'], $error['@message'], $error['%file'], $error['%line']));
+>>>>>>> github/master
   }
 
   if (PHP_SAPI === 'cli') {

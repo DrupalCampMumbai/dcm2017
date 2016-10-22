@@ -14,7 +14,10 @@
  * We want a TestSuite object B that contains TestSuite objects C, D, ...
  * for the Tests tagged with @group C, @group D, ...
  * Running the Tests from TestSuite object B results in Tests tagged with both
+<<<<<<< HEAD
  *
+=======
+>>>>>>> github/master
  * @group C and @group D in TestSuite object A to be run twice .
  *
  * <code>

@@ -175,9 +175,15 @@ class StringDatabaseStorage implements StringStorageInterface {
     if ($string->getId() && $string->getVersion() != $version) {
       $string->setVersion($version);
       $this->connection->update('locales_source', $this->options)
+<<<<<<< HEAD
         ->condition('lid', $string->getId())
         ->fields(array('version' => $version))
         ->execute();
+=======
+      ->condition('lid', $string->getId())
+      ->fields(array('version' => $version))
+      ->execute();
+>>>>>>> github/master
     }
   }
 

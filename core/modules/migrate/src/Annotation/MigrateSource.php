@@ -24,7 +24,11 @@ use Drupal\Component\Annotation\Plugin;
  *
  * @Annotation
  */
+<<<<<<< HEAD
 class MigrateSource extends Plugin implements MultipleProviderAnnotationInterface {
+=======
+class MigrateSource extends Plugin {
+>>>>>>> github/master
 
   /**
    * A unique identifier for the process plugin.
@@ -66,6 +70,7 @@ class MigrateSource extends Plugin implements MultipleProviderAnnotationInterfac
    */
   public $minimum_version;
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
@@ -96,4 +101,6 @@ class MigrateSource extends Plugin implements MultipleProviderAnnotationInterfac
     $this->definition['provider'] = $providers;
   }
 
+=======
+>>>>>>> github/master
 }

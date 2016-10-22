@@ -18,7 +18,11 @@ use Drupal\Core\Render\Element;
  * Usage example:
  * @code
  * $form['quantity'] = array(
+<<<<<<< HEAD
  *   '#type' => 'range',
+=======
+ *   '#type' => 'number',
+>>>>>>> github/master
  *   '#title' => $this->t('Quantity'),
  * );
  * @endcode

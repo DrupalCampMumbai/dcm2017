@@ -2,9 +2,15 @@
 
 namespace Drupal\Core\Routing;
 
+<<<<<<< HEAD
 use Drupal\Core\Access\CheckProviderInterface;
 use Drupal\Core\Controller\ControllerResolverInterface;
 use Drupal\Core\Discovery\YamlDiscovery;
+=======
+use Drupal\Component\Discovery\YamlDiscovery;
+use Drupal\Core\Access\CheckProviderInterface;
+use Drupal\Core\Controller\ControllerResolverInterface;
+>>>>>>> github/master
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Lock\LockBackendInterface;
 use Drupal\Core\DestructableInterface;

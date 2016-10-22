@@ -3,8 +3,11 @@
 namespace Drupal\migrate_drupal_ui;
 
 use Drupal\Core\Link;
+<<<<<<< HEAD
 use Drupal\Core\StringTranslation\PluralTranslatableMarkup;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+=======
+>>>>>>> github/master
 use Drupal\Core\Url;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Event\MigrateEvents;
@@ -105,6 +108,7 @@ class MigrateUpgradeRunBatch {
     static::$numProcessed = 0;
 
     $migration_id = reset($context['sandbox']['migration_ids']);
+<<<<<<< HEAD
     $definition = \Drupal::service('plugin.manager.migration')->getDefinition($migration_id);
     $configuration = [];
 
@@ -117,6 +121,20 @@ class MigrateUpgradeRunBatch {
     /** @var \Drupal\migrate\Plugin\Migration $migration */
     $migration = \Drupal::service('plugin.manager.migration')->createInstance($migration_id, $configuration);
 
+=======
+    /** @var \Drupal\migrate\Plugin\Migration $migration */
+    $migration = \Drupal::service('plugin.manager.migration')->createInstance($migration_id);
+
+    // @TODO, remove this in https://www.drupal.org/node/2681869.
+    $destination = $migration->getDestinationConfiguration();
+    if ($destination['plugin'] === 'entity:file') {
+      // Make sure we have a single trailing slash.
+      $source_base_path = rtrim($config['source_base_path'], '/') . '/';
+      $destination['source_base_path'] = $source_base_path;
+      $migration->set('destination', $destination);
+    }
+
+>>>>>>> github/master
     if ($migration) {
       static::$messages = new MigrateMessageCapture();
       $executable = new MigrateExecutable($migration, static::$messages);
@@ -138,35 +156,61 @@ class MigrateUpgradeRunBatch {
           // Store the number processed in the sandbox.
           $context['sandbox']['num_processed'] += static::$numProcessed;
           if ($operation == 'import') {
+<<<<<<< HEAD
             $message = new PluralTranslatableMarkup(
               $context['sandbox']['num_processed'], 'Upgraded @migration (processed 1 item total)', 'Upgraded @migration (processed @count items total)',
               ['@migration' => $migration_name]);
           }
           $context['sandbox']['messages'][] = (string) $message;
+=======
+            $message = static::getTranslation()->formatPlural(
+              $context['sandbox']['num_processed'], 'Upgraded @migration (processed 1 item total)', 'Upgraded @migration (processed @num_processed items total)',
+              ['@migration' => $migration_name, '@num_processed' => $context['sandbox']['num_processed']]);
+          }
+          $context['sandbox']['messages'][] = $message;
+>>>>>>> github/master
           static::logger()->notice($message);
           $context['sandbox']['num_processed'] = 0;
           $context['results']['successes']++;
           break;
 
         case MigrationInterface::RESULT_INCOMPLETE:
+<<<<<<< HEAD
           $context['sandbox']['messages'][] = (string) new PluralTranslatableMarkup(
             static::$numProcessed, 'Continuing with @migration (processed 1 item)', 'Continuing with @migration (processed @count items)',
             ['@migration' => $migration_name]);
+=======
+          $context['sandbox']['messages'][] = static::getTranslation()->formatPlural(
+            static::$numProcessed, 'Continuing with @migration (processed 1 item)', 'Continuing with @migration (processed @num_processed items)',
+            ['@migration' => $migration_name, '@num_processed' => static::$numProcessed]);
+>>>>>>> github/master
           $context['sandbox']['num_processed'] += static::$numProcessed;
           break;
 
         case MigrationInterface::RESULT_STOPPED:
+<<<<<<< HEAD
           $context['sandbox']['messages'][] = (string) new TranslatableMarkup('Operation stopped by request');
           break;
 
         case MigrationInterface::RESULT_FAILED:
           $context['sandbox']['messages'][] = (string) new TranslatableMarkup('Operation on @migration failed', ['@migration' => $migration_name]);
+=======
+          $context['sandbox']['messages'][] = t('Operation stopped by request');
+          break;
+
+        case MigrationInterface::RESULT_FAILED:
+          $context['sandbox']['messages'][] = t('Operation on @migration failed', ['@migration' => $migration_name]);
+>>>>>>> github/master
           $context['results']['failures']++;
           static::logger()->error('Operation on @migration failed', ['@migration' => $migration_name]);
           break;
 
         case MigrationInterface::RESULT_SKIPPED:
+<<<<<<< HEAD
           $context['sandbox']['messages'][] = (string) new TranslatableMarkup('Operation on @migration skipped due to unfulfilled dependencies', ['@migration' => $migration_name]);
+=======
+          $context['sandbox']['messages'][] = t('Operation on @migration skipped due to unfulfilled dependencies', ['@migration' => $migration_name]);
+>>>>>>> github/master
           static::logger()->error('Operation on @migration skipped due to unfulfilled dependencies', ['@migration' => $migration_name]);
           break;
 
@@ -183,7 +227,11 @@ class MigrateUpgradeRunBatch {
 
       // Add and log any captured messages.
       foreach (static::$messages->getMessages() as $message) {
+<<<<<<< HEAD
         $context['sandbox']['messages'][] = (string) $message;
+=======
+        $context['sandbox']['messages'][] = $message;
+>>>>>>> github/master
         static::logger()->error($message);
       }
 
@@ -204,7 +252,11 @@ class MigrateUpgradeRunBatch {
         $migration = \Drupal::service('plugin.manager.migration')->createInstance($migration_id);
         $migration_name = $migration->label() ? $migration->label() : $migration_id;
         if ($operation == 'import') {
+<<<<<<< HEAD
           $context['message'] = (string) new TranslatableMarkup('Currently upgrading @migration (@current of @max total tasks)', [
+=======
+          $context['message'] = t('Currently upgrading @migration (@current of @max total tasks)', [
+>>>>>>> github/master
             '@migration' => $migration_name,
             '@current' => $context['sandbox']['current'],
             '@max' => $context['sandbox']['max'],
@@ -231,6 +283,19 @@ class MigrateUpgradeRunBatch {
   }
 
   /**
+<<<<<<< HEAD
+=======
+   * Wraps the translation manager.
+   *
+   * @return \Drupal\Core\StringTranslation\TranslationManager
+   *   The string translation manager.
+   */
+  protected static function getTranslation() {
+    return \Drupal::translation();
+  }
+
+  /**
+>>>>>>> github/master
    * Implements the Batch API finished method.
    */
   public static function finished($success, $results, $operations, $elapsed) {
@@ -250,28 +315,45 @@ class MigrateUpgradeRunBatch {
     // If we had any successes log that for the user.
     if ($successes > 0) {
       if ($results['operation'] == 'import') {
+<<<<<<< HEAD
         drupal_set_message(new PluralTranslatableMarkup($successes, 'Completed 1 upgrade task successfully', 'Completed @count upgrade tasks successfully'));
+=======
+        drupal_set_message(static::getTranslation()->formatPlural($successes, 'Completed 1 upgrade task successfully', 'Completed @count upgrade tasks successfully'));
+>>>>>>> github/master
       }
     }
 
     // If we had failures, log them and show the migration failed.
     if ($failures > 0) {
       if ($results['operation'] == 'import') {
+<<<<<<< HEAD
         drupal_set_message(new PluralTranslatableMarkup($failures, '1 upgrade failed', '@count upgrades failed'));
         drupal_set_message(new TranslatableMarkup('Upgrade process not completed'), 'error');
+=======
+        drupal_set_message(static::getTranslation()->formatPlural($failures, '1 upgrade failed', '@count upgrades failed'));
+        drupal_set_message(t('Upgrade process not completed'), 'error');
+>>>>>>> github/master
       }
     }
     else {
       if ($results['operation'] == 'import') {
         // Everything went off without a hitch. We may not have had successes
         // but we didn't have failures so this is fine.
+<<<<<<< HEAD
         drupal_set_message(new TranslatableMarkup('Congratulations, you upgraded Drupal!'));
+=======
+        drupal_set_message(t('Congratulations, you upgraded Drupal!'));
+>>>>>>> github/master
       }
     }
 
     if (\Drupal::moduleHandler()->moduleExists('dblog')) {
       $url = Url::fromRoute('migrate_drupal_ui.log');
+<<<<<<< HEAD
       drupal_set_message(Link::fromTextAndUrl(new TranslatableMarkup('Review the detailed upgrade log'), $url), $failures ? 'error' : 'status');
+=======
+      drupal_set_message(Link::fromTextAndUrl(t('Review the detailed upgrade log'), $url), $failures ? 'error' : 'status');
+>>>>>>> github/master
     }
   }
 
@@ -335,7 +417,11 @@ class MigrateUpgradeRunBatch {
       $type = 'error';
     }
     $source_id_string = implode(',', $event->getSourceIdValues());
+<<<<<<< HEAD
     $message = new TranslatableMarkup('Source ID @source_id: @message', ['@source_id' => $source_id_string, '@message' => $event->getMessage()]);
+=======
+    $message = t('Source ID @source_id: @message', ['@source_id' => $source_id_string, '@message' => $event->getMessage()]);
+>>>>>>> github/master
     static::$messages->display($message, $type);
   }
 

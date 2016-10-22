@@ -8,7 +8,10 @@ use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\entity_test\Entity\EntityTest;
+<<<<<<< HEAD
 use Symfony\Component\HttpFoundation\Response;
+=======
+>>>>>>> github/master
 
 /**
  * Tests the update of resources.
@@ -24,7 +27,11 @@ class UpdateTest extends RESTTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $modules = ['hal', 'rest', 'entity_test', 'node', 'comment'];
+=======
+  public static $modules = ['hal', 'rest', 'entity_test', 'comment'];
+>>>>>>> github/master
 
   /**
    * {@inheritdoc}
@@ -46,6 +53,10 @@ class UpdateTest extends RESTTestBase {
     // Create a user account that has the required permissions to create
     // resources via the REST API.
     $permissions = $this->entityPermissions($entity_type, 'update');
+<<<<<<< HEAD
+=======
+    $permissions[] = 'restful patch entity:' . $entity_type;
+>>>>>>> github/master
     $account = $this->drupalCreateUser($permissions);
     $this->drupalLogin($account);
 
@@ -67,6 +78,7 @@ class UpdateTest extends RESTTestBase {
     $patch_entity->set('uuid', NULL);
     $serialized = $serializer->serialize($patch_entity, $this->defaultFormat, $context);
 
+<<<<<<< HEAD
     // Update the entity over the REST API but forget to specify a Content-Type
     // header, this should throw the proper exception.
     $this->httpRequest($entity->toUrl(), 'PATCH', $serialized, 'none');
@@ -94,6 +106,14 @@ class UpdateTest extends RESTTestBase {
       ->getStorage($entity_type);
     $storage->resetCache([$entity->id()]);
     $entity = $storage->load($entity->id());
+=======
+    // Update the entity over the REST API.
+    $this->httpRequest($entity->urlInfo(), 'PATCH', $serialized, $this->defaultMimeType);
+    $this->assertResponse(204);
+
+    // Re-load updated entity from the database.
+    $entity = entity_load($entity_type, $entity->id(), TRUE);
+>>>>>>> github/master
     $this->assertEqual($entity->field_test_text->value, $patch_entity->field_test_text->value, 'Field was successfully updated.');
 
     // Make sure that the field does not get deleted if it is not present in the
@@ -102,10 +122,16 @@ class UpdateTest extends RESTTestBase {
     unset($normalized['field_test_text']);
     $serialized = $serializer->encode($normalized, $this->defaultFormat);
     $this->httpRequest($entity->urlInfo(), 'PATCH', $serialized, $this->defaultMimeType);
+<<<<<<< HEAD
     $this->assertResponse(200);
 
     $storage->resetCache([$entity->id()]);
     $entity = $storage->load($entity->id());
+=======
+    $this->assertResponse(204);
+
+    $entity = entity_load($entity_type, $entity->id(), TRUE);
+>>>>>>> github/master
     $this->assertNotNull($entity->field_test_text->value . 'Test field has not been deleted.');
 
     // Try to empty a field.
@@ -114,11 +140,18 @@ class UpdateTest extends RESTTestBase {
 
     // Update the entity over the REST API.
     $this->httpRequest($entity->urlInfo(), 'PATCH', $serialized, $this->defaultMimeType);
+<<<<<<< HEAD
     $this->assertResponse(200);
 
     // Re-load updated entity from the database.
     $storage->resetCache([$entity->id()]);
     $entity = $storage->load($entity->id(), TRUE);
+=======
+    $this->assertResponse(204);
+
+    // Re-load updated entity from the database.
+    $entity = entity_load($entity_type, $entity->id(), TRUE);
+>>>>>>> github/master
     $this->assertNull($entity->field_test_text->value, 'Test field has been cleared.');
 
     // Enable access protection for the text field.
@@ -132,8 +165,12 @@ class UpdateTest extends RESTTestBase {
     $this->assertResponse(403);
 
     // Re-load the entity from the database.
+<<<<<<< HEAD
     $storage->resetCache([$entity->id()]);
     $entity = $storage->load($entity->id());
+=======
+    $entity = entity_load($entity_type, $entity->id(), TRUE);
+>>>>>>> github/master
     $this->assertEqual($entity->field_test_text->value, 'no edit access value', 'Text field was not deleted.');
 
     // Try to update an access protected field.
@@ -144,8 +181,12 @@ class UpdateTest extends RESTTestBase {
     $this->assertResponse(403);
 
     // Re-load the entity from the database.
+<<<<<<< HEAD
     $storage->resetCache([$entity->id()]);
     $entity = $storage->load($entity->id());
+=======
+    $entity = entity_load($entity_type, $entity->id(), TRUE);
+>>>>>>> github/master
     $this->assertEqual($entity->field_test_text->value, 'no edit access value', 'Text field was not updated.');
 
     // Try to update the field with a text format this user has no access to.
@@ -161,8 +202,12 @@ class UpdateTest extends RESTTestBase {
     $this->assertResponse(422);
 
     // Re-load the entity from the database.
+<<<<<<< HEAD
     $storage->resetCache([$entity->id()]);
     $entity = $storage->load($entity->id());
+=======
+    $entity = entity_load($entity_type, $entity->id(), TRUE);
+>>>>>>> github/master
     $this->assertEqual($entity->field_test_text->format, 'plain_text', 'Text format was not updated.');
 
     // Restore the valid test value.
@@ -176,18 +221,29 @@ class UpdateTest extends RESTTestBase {
     // Try to update a non-existing entity with ID 9999.
     $this->httpRequest($entity_type . '/9999', 'PATCH', $serialized, $this->defaultMimeType);
     $this->assertResponse(404);
+<<<<<<< HEAD
     $storage->resetCache([9999]);
     $loaded_entity = $storage->load(9999);
+=======
+    $loaded_entity = entity_load($entity_type, 9999, TRUE);
+>>>>>>> github/master
     $this->assertFalse($loaded_entity, 'Entity 9999 was not created.');
 
     // Try to send invalid data to trigger the entity validation constraints.
     // Send a UUID that is too long.
     $entity->set('uuid', $this->randomMachineName(129));
     $invalid_serialized = $serializer->serialize($entity, $this->defaultFormat, $context);
+<<<<<<< HEAD
     $response = $this->httpRequest($entity->toUrl()->setRouteParameter('_format', $this->defaultFormat), 'PATCH', $invalid_serialized, $this->defaultMimeType);
     $this->assertResponse(422);
     $error = Json::decode($response);
     $this->assertEqual($error['message'], "Unprocessable Entity: validation failed.\nuuid.0.value: <em class=\"placeholder\">UUID</em>: may not be longer than 128 characters.\n");
+=======
+    $response = $this->httpRequest($entity->urlInfo(), 'PATCH', $invalid_serialized, $this->defaultMimeType);
+    $this->assertResponse(422);
+    $error = Json::decode($response);
+    $this->assertEqual($error['error'], "Unprocessable Entity: validation failed.\nuuid.0.value: <em class=\"placeholder\">UUID</em>: may not be longer than 128 characters.\n");
+>>>>>>> github/master
 
     // Try to update an entity without proper permissions.
     $this->drupalLogout();
@@ -210,6 +266,10 @@ class UpdateTest extends RESTTestBase {
     // Enables the REST service for 'user' entity type.
     $this->enableService('entity:' . $entity_type, 'PATCH');
     $permissions = $this->entityPermissions($entity_type, 'update');
+<<<<<<< HEAD
+=======
+    $permissions[] = 'restful patch entity:' . $entity_type;
+>>>>>>> github/master
     $account = $this->drupalCreateUser($permissions);
     $account->set('mail', 'old-email@example.com');
     $this->drupalLogin($account);
@@ -223,40 +283,69 @@ class UpdateTest extends RESTTestBase {
     $context = ['account' => $account];
     $normalized = $serializer->normalize($account, $this->defaultFormat, $context);
     $serialized = $serializer->serialize($normalized, $this->defaultFormat, $context);
+<<<<<<< HEAD
     $response = $this->httpRequest($account->toUrl()->setRouteParameter('_format', $this->defaultFormat), 'PATCH', $serialized, $this->defaultMimeType);
     $this->assertResponse(422);
     $error = Json::decode($response);
     $this->assertEqual($error['message'], "Unprocessable Entity: validation failed.\nmail: Your current password is missing or incorrect; it's required to change the <em class=\"placeholder\">Email</em>.\n");
+=======
+    $response = $this->httpRequest($account->urlInfo(), 'PATCH', $serialized, $this->defaultMimeType);
+    $this->assertResponse(422);
+    $error = Json::decode($response);
+    $this->assertEqual($error['error'], "Unprocessable Entity: validation failed.\nmail: Your current password is missing or incorrect; it's required to change the <em class=\"placeholder\">Email</em>.\n");
+>>>>>>> github/master
 
     // Try and send the new email with a password.
     $normalized['pass'][0]['existing'] = 'wrong';
     $serialized = $serializer->serialize($normalized, $this->defaultFormat, $context);
+<<<<<<< HEAD
     $response = $this->httpRequest($account->toUrl()->setRouteParameter('_format', $this->defaultFormat), 'PATCH', $serialized, $this->defaultMimeType);
     $this->assertResponse(422);
     $error = Json::decode($response);
     $this->assertEqual($error['message'], "Unprocessable Entity: validation failed.\nmail: Your current password is missing or incorrect; it's required to change the <em class=\"placeholder\">Email</em>.\n");
+=======
+    $response = $this->httpRequest($account->urlInfo(), 'PATCH', $serialized, $this->defaultMimeType);
+    $this->assertResponse(422);
+    $error = Json::decode($response);
+    $this->assertEqual($error['error'], "Unprocessable Entity: validation failed.\nmail: Your current password is missing or incorrect; it's required to change the <em class=\"placeholder\">Email</em>.\n");
+>>>>>>> github/master
 
     // Try again with the password.
     $normalized['pass'][0]['existing'] = $account->pass_raw;
     $serialized = $serializer->serialize($normalized, $this->defaultFormat, $context);
     $this->httpRequest($account->urlInfo(), 'PATCH', $serialized, $this->defaultMimeType);
+<<<<<<< HEAD
     $this->assertResponse(200);
+=======
+    $this->assertResponse(204);
+>>>>>>> github/master
 
     // Try to change the password without providing the current password.
     $new_password = $this->randomString();
     $normalized = $serializer->normalize($account, $this->defaultFormat, $context);
     $normalized['pass'][0]['value'] = $new_password;
     $serialized = $serializer->serialize($normalized, $this->defaultFormat, $context);
+<<<<<<< HEAD
     $response = $this->httpRequest($account->toUrl()->setRouteParameter('_format', $this->defaultFormat), 'PATCH', $serialized, $this->defaultMimeType);
     $this->assertResponse(422);
     $error = Json::decode($response);
     $this->assertEqual($error['message'], "Unprocessable Entity: validation failed.\npass: Your current password is missing or incorrect; it's required to change the <em class=\"placeholder\">Password</em>.\n");
+=======
+    $response = $this->httpRequest($account->urlInfo(), 'PATCH', $serialized, $this->defaultMimeType);
+    $this->assertResponse(422);
+    $error = Json::decode($response);
+    $this->assertEqual($error['error'], "Unprocessable Entity: validation failed.\npass: Your current password is missing or incorrect; it's required to change the <em class=\"placeholder\">Password</em>.\n");
+>>>>>>> github/master
 
     // Try again with the password.
     $normalized['pass'][0]['existing'] = $account->pass_raw;
     $serialized = $serializer->serialize($normalized, $this->defaultFormat, $context);
     $this->httpRequest($account->urlInfo(), 'PATCH', $serialized, $this->defaultMimeType);
+<<<<<<< HEAD
     $this->assertResponse(200);
+=======
+    $this->assertResponse(204);
+>>>>>>> github/master
 
     // Verify that we can log in with the new password.
     $account->pass_raw = $new_password;
@@ -271,6 +360,10 @@ class UpdateTest extends RESTTestBase {
     // Enables the REST service for 'comment' entity type.
     $this->enableService('entity:' . $entity_type, 'PATCH', ['hal_json', 'json']);
     $permissions = $this->entityPermissions($entity_type, 'update');
+<<<<<<< HEAD
+=======
+    $permissions[] = 'restful patch entity:' . $entity_type;
+>>>>>>> github/master
     $account = $this->drupalCreateUser($permissions);
     $account->set('mail', 'old-email@example.com');
     $this->drupalLogin($account);
@@ -342,7 +435,11 @@ class UpdateTest extends RESTTestBase {
   protected function patchEntity(EntityInterface $entity, array $read_only_fields, AccountInterface $account, $format, $mime_type) {
     $serializer = $this->container->get('serializer');
 
+<<<<<<< HEAD
     $url = $entity->toUrl()->setRouteParameter('_format', $this->defaultFormat);
+=======
+    $url = $entity->toUrl();
+>>>>>>> github/master
     $context = ['account' => $account];
     // Certain fields are always read-only, others this user simply is not
     // allowed to modify. For all of them, ensure they are not serialized, else
@@ -365,7 +462,11 @@ class UpdateTest extends RESTTestBase {
 
       $this->httpRequest($url, 'PATCH', $serialized, $mime_type);
       $this->assertResponse(403);
+<<<<<<< HEAD
       $this->assertResponseBody('{"message":"Access denied on updating field \\u0027' . $field . '\\u0027."}');
+=======
+      $this->assertResponseBody('{"error":"Access denied on updating field \'' . $field . '\'."}');
+>>>>>>> github/master
 
       if ($format === 'hal_json') {
         // We've just tried with this read-only field, now unset it.
@@ -380,6 +481,7 @@ class UpdateTest extends RESTTestBase {
     }
     $serialized = $serializer->serialize($normalized, $format, $context);
 
+<<<<<<< HEAD
     // Try first without CSRF token which should fail.
     $this->httpRequest($url, 'PATCH', $serialized, $mime_type, TRUE);
     $this->assertResponse(403, 'X-CSRF-Token request header is missing');
@@ -387,6 +489,11 @@ class UpdateTest extends RESTTestBase {
     // Then try with CSRF token.
     $this->httpRequest($url, 'PATCH', $serialized, $mime_type);
     $this->assertResponse(200);
+=======
+    $this->httpRequest($url, 'PATCH', $serialized, $mime_type);
+    $this->assertResponse(204);
+    $this->assertResponseBody('');
+>>>>>>> github/master
   }
 
 }

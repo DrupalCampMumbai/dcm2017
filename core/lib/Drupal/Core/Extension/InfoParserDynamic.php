@@ -2,8 +2,13 @@
 
 namespace Drupal\Core\Extension;
 
+<<<<<<< HEAD
 use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
 use Drupal\Core\Serialization\Yaml;
+=======
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
+>>>>>>> github/master
 
 /**
  * Parses dynamic .info.yml files that might change during the page request.

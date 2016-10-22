@@ -10,7 +10,10 @@ namespace Drupal\Tests\Core\Access;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Access\AccessResultInterface;
 use Drupal\Core\Access\AccessResultNeutral;
+<<<<<<< HEAD
 use Drupal\Core\Access\AccessResultReasonInterface;
+=======
+>>>>>>> github/master
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
@@ -114,6 +117,7 @@ class AccessResultTest extends UnitTestCase {
   }
 
   /**
+<<<<<<< HEAD
    * @covers ::forbidden
    */
   public function testAccessForbiddenReason() {
@@ -131,6 +135,8 @@ class AccessResultTest extends UnitTestCase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * @covers ::allowedIf
    * @covers ::isAllowed
    * @covers ::isForbidden

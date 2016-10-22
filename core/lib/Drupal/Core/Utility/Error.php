@@ -71,7 +71,11 @@ class Error {
       '%line' => $caller['line'],
       'severity_level' => static::ERROR,
       'backtrace' => $backtrace,
+<<<<<<< HEAD
       '@backtrace_string' => $exception->getTraceAsString(),
+=======
+      'backtrace_string' => $exception->getTraceAsString(),
+>>>>>>> github/master
     );
   }
 

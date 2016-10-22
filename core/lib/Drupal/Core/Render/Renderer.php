@@ -365,6 +365,14 @@ class Renderer implements RendererInterface {
       $elements['#lazy_builder_built'] = TRUE;
     }
 
+<<<<<<< HEAD
+=======
+    // All render elements support #markup and #plain_text.
+    if (!empty($elements['#markup']) || !empty($elements['#plain_text'])) {
+      $elements = $this->ensureMarkupIsSafe($elements);
+    }
+
+>>>>>>> github/master
     // Make any final changes to the element before it is rendered. This means
     // that the $element or the children can be altered or corrected before the
     // element is rendered into the final text.
@@ -377,11 +385,14 @@ class Renderer implements RendererInterface {
       }
     }
 
+<<<<<<< HEAD
     // All render elements support #markup and #plain_text.
     if (!empty($elements['#markup']) || !empty($elements['#plain_text'])) {
       $elements = $this->ensureMarkupIsSafe($elements);
     }
 
+=======
+>>>>>>> github/master
     // Defaults for bubbleable rendering metadata.
     $elements['#cache']['tags'] = isset($elements['#cache']['tags']) ? $elements['#cache']['tags'] : array();
     $elements['#cache']['max-age'] = isset($elements['#cache']['max-age']) ? $elements['#cache']['max-age'] : Cache::PERMANENT;
@@ -733,7 +744,11 @@ class Renderer implements RendererInterface {
    *
    * @see \Drupal\Component\Utility\Html::escape()
    * @see \Drupal\Component\Utility\Xss::filter()
+<<<<<<< HEAD
    * @see \Drupal\Component\Utility\Xss::filterAdmin()
+=======
+   * @see \Drupal\Component\Utility\Xss::adminFilter()
+>>>>>>> github/master
    */
   protected function ensureMarkupIsSafe(array $elements) {
     if (empty($elements['#markup']) && empty($elements['#plain_text'])) {

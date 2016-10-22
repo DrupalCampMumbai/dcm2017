@@ -1,8 +1,11 @@
 services:
+<<<<<<< HEAD
   migrate.plugin_event_subscriber:
     class: Drupal\migrate\Plugin\PluginEventSubscriber
     tags:
       - { name: event_subscriber }
+=======
+>>>>>>> github/master
   cache.migrate:
     class: Drupal\Core\Cache\CacheBackendInterface
     tags:
@@ -10,8 +13,13 @@ services:
     factory: cache_factory:get
     arguments: [migrate]
   plugin.manager.migrate.source:
+<<<<<<< HEAD
     class: Drupal\migrate\Plugin\MigrateSourcePluginManager
     arguments: [source, '@container.namespaces', '@cache.discovery', '@module_handler']
+=======
+    class: Drupal\migrate\Plugin\MigratePluginManager
+    arguments: [source, '@container.namespaces', '@cache.discovery', '@module_handler', 'Drupal\migrate\Annotation\MigrateSource']
+>>>>>>> github/master
   plugin.manager.migrate.process:
     class: Drupal\migrate\Plugin\MigratePluginManager
     arguments: [process, '@container.namespaces', '@cache.discovery', '@module_handler', 'Drupal\migrate\Annotation\MigrateProcessPlugin']

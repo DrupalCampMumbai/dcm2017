@@ -40,7 +40,11 @@
     {% set title_attributes = title_attributes.addClass('visually-hidden') %}
   {% endif %}
   {{ title_prefix }}
+<<<<<<< HEAD
   <h2{{ title_attributes.setAttribute('id', heading_id) }}>{{ configuration.label }}</h2>
+=======
+  <h2{{ title_attributes }}>{{ configuration.label }}</h2>
+>>>>>>> github/master
   {{ title_suffix }}
 
   {# Menu. #}

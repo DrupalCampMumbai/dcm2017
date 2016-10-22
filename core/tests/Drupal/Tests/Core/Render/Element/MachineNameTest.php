@@ -1,11 +1,20 @@
 <?php
 
+<<<<<<< HEAD
 namespace Drupal\Tests\Core\Render\Element;
 
 use Drupal\Core\Form\FormState;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
+=======
+namespace Drupal\Tests\Core\Render\Element {
+
+  use Drupal\Core\Form\FormState;
+  use Drupal\Core\Form\FormStateInterface;
+  use Drupal\Core\Language\LanguageInterface;
+  use Drupal\Core\Language\LanguageManagerInterface;
+>>>>>>> github/master
 use Drupal\Core\Render\Element\MachineName;
 use Drupal\Tests\UnitTestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -103,10 +112,20 @@ class MachineNameTest extends UnitTestCase {
 
 }
 
+<<<<<<< HEAD
 namespace Drupal\Core\Render\Element;
 
 if (!function_exists('t')) {
   function t($string, array $args = []) {
     return strtr($string, $args);
+=======
+}
+
+namespace Drupal\Core\Render\Element {
+  if (!function_exists('t')) {
+    function t($string, array $args = []) {
+      return strtr($string, $args);
+    }
+>>>>>>> github/master
   }
 }

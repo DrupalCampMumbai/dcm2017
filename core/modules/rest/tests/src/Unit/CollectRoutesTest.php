@@ -67,8 +67,11 @@ class CollectRoutesTest extends UnitTestCase {
       ->getMock();
     $container->set('router.route_provider', $route_provider);
 
+<<<<<<< HEAD
     $container->setParameter('authentication_providers', ['basic_auth' => 'basic_auth']);
 
+=======
+>>>>>>> github/master
     $state = $this->getMock('\Drupal\Core\State\StateInterface');
     $container->set('state', $state);
 
@@ -78,12 +81,15 @@ class CollectRoutesTest extends UnitTestCase {
     $container->set('plugin.manager.views.style', $style_manager);
     $container->set('renderer', $this->getMock('Drupal\Core\Render\RendererInterface'));
 
+<<<<<<< HEAD
     $authentication_collector = $this->getMock('\Drupal\Core\Authentication\AuthenticationCollectorInterface');
     $container->set('authentication_collector', $authentication_collector);
     $authentication_collector->expects($this->any())
       ->method('getSortedProviders')
       ->will($this->returnValue(['basic_auth' => 'data', 'cookie' => 'data']));
 
+=======
+>>>>>>> github/master
     \Drupal::setContainer($container);
 
     $this->restExport = RestExport::create($container, array(), "test_routes", array());
@@ -95,9 +101,12 @@ class CollectRoutesTest extends UnitTestCase {
     // Set the style option.
     $this->restExport->setOption('style', array('type' => 'serializer'));
 
+<<<<<<< HEAD
     // Set the auth option.
     $this->restExport->setOption('auth', ['basic_auth']);
 
+=======
+>>>>>>> github/master
     $display_manager->expects($this->once())
       ->method('getDefinition')
       ->will($this->returnValue(array('id' => 'test', 'provider' => 'test')));
@@ -143,11 +152,14 @@ class CollectRoutesTest extends UnitTestCase {
 
     $this->assertEquals(count($requirements_1), 0, 'First route has no requirement.');
     $this->assertEquals(count($requirements_2), 2, 'Views route with rest export had the format and method requirements added.');
+<<<<<<< HEAD
 
     // Check auth options.
     $auth = $this->routes->get('view.test_view.page_1')->getOption('_auth');
     $this->assertEquals(count($auth), 1, 'View route with rest export has an auth option added');
     $this->assertEquals($auth[0], 'basic_auth', 'View route with rest export has the correct auth option added');
+=======
+>>>>>>> github/master
   }
 
 }

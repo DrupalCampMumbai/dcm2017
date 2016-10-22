@@ -152,8 +152,14 @@ class ThemeSettingsForm extends ConfigFormBase {
 
     $form['theme_settings'] = array(
       '#type' => 'details',
+<<<<<<< HEAD
       '#title' => t('Page element display'),
       '#open' => TRUE,
+=======
+      '#title' => t('Toggle display'),
+      '#open' => TRUE,
+      '#description' => t('Enable or disable the display of certain page elements.'),
+>>>>>>> github/master
     );
     foreach ($toggles as $name => $title) {
       if ((!$theme) || in_array($name, $features)) {
@@ -175,12 +181,20 @@ class ThemeSettingsForm extends ConfigFormBase {
     if ((!$theme || in_array('logo', $features)) && $this->moduleHandler->moduleExists('file')) {
       $form['logo'] = array(
         '#type' => 'details',
+<<<<<<< HEAD
         '#title' => t('Logo image'),
+=======
+        '#title' => t('Logo image settings'),
+>>>>>>> github/master
         '#open' => TRUE,
       );
       $form['logo']['default_logo'] = array(
         '#type' => 'checkbox',
+<<<<<<< HEAD
         '#title' => t('Use the logo supplied by the theme'),
+=======
+        '#title' => t('Use the default logo supplied by the theme'),
+>>>>>>> github/master
         '#default_value' => theme_get_setting('logo.use_default', $theme),
         '#tree' => FALSE,
       );
@@ -209,9 +223,15 @@ class ThemeSettingsForm extends ConfigFormBase {
     if (((!$theme) || in_array('favicon', $features)) && $this->moduleHandler->moduleExists('file')) {
       $form['favicon'] = array(
         '#type' => 'details',
+<<<<<<< HEAD
         '#title' => t('Favicon'),
         '#open' => TRUE,
         '#description' => t("Your shortcut icon, or favicon, is displayed in the address bar and bookmarks of most browsers."),
+=======
+        '#title' => t('Shortcut icon settings'),
+        '#open' => TRUE,
+        '#description' => t("Your shortcut icon, or 'favicon', is displayed in the address bar and bookmarks of most browsers."),
+>>>>>>> github/master
         '#states' => array(
           // Hide the shortcut icon settings fieldset when shortcut icon display
           // is disabled.
@@ -222,7 +242,11 @@ class ThemeSettingsForm extends ConfigFormBase {
       );
       $form['favicon']['default_favicon'] = array(
         '#type' => 'checkbox',
+<<<<<<< HEAD
         '#title' => t('Use the favicon supplied by the theme'),
+=======
+        '#title' => t('Use the default shortcut icon supplied by the theme'),
+>>>>>>> github/master
         '#default_value' => theme_get_setting('favicon.use_default', $theme),
       );
       $form['favicon']['settings'] = array(
@@ -241,7 +265,11 @@ class ThemeSettingsForm extends ConfigFormBase {
       );
       $form['favicon']['settings']['favicon_upload'] = array(
         '#type' => 'file',
+<<<<<<< HEAD
         '#title' => t('Upload favicon image'),
+=======
+        '#title' => t('Upload icon image'),
+>>>>>>> github/master
         '#description' => t("If you don't have direct file access to the server, use this field to upload your shortcut icon.")
       );
     }

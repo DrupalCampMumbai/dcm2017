@@ -9,7 +9,10 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Plugin\Discovery\ContainerDerivativeDiscoveryDecorator;
+<<<<<<< HEAD
 use Drupal\migrate\Plugin\Discovery\ProviderFilterDecorator;
+=======
+>>>>>>> github/master
 use Drupal\Core\Plugin\Discovery\YamlDirectoryDiscovery;
 use Drupal\Core\Plugin\Factory\ContainerFactory;
 use Drupal\migrate\MigrateBuildDependencyInterface;
@@ -69,6 +72,7 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
       }, $this->moduleHandler->getModuleDirectories());
 
       $yaml_discovery = new YamlDirectoryDiscovery($directories, 'migrate');
+<<<<<<< HEAD
       // This gets rid of migrations which try to use a non-existent source
       // plugin. The common case for this is if the source plugin has, or
       // specifies, a non-existent provider.
@@ -78,6 +82,9 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
       // deriver. This is a rare case.
       $filtered_discovery = new ProviderFilterDecorator($only_with_source_discovery, [$this->moduleHandler, 'moduleExists']);
       $this->discovery = new ContainerDerivativeDiscoveryDecorator($filtered_discovery);
+=======
+      $this->discovery = new ContainerDerivativeDiscoveryDecorator($yaml_discovery);
+>>>>>>> github/master
     }
     return $this->discovery;
   }
@@ -86,7 +93,11 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
    * {@inheritdoc}
    */
   public function createInstance($plugin_id, array $configuration = array()) {
+<<<<<<< HEAD
     $instances = $this->createInstances([$plugin_id], [$plugin_id => $configuration]);
+=======
+    $instances = $this->createInstances([$plugin_id], $configuration);
+>>>>>>> github/master
     return reset($instances);
   }
 
@@ -237,6 +248,7 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
     return Migration::create(\Drupal::getContainer(), [], $id, $definition);
   }
 
+<<<<<<< HEAD
   /**
    * Finds plugin definitions.
    *
@@ -258,4 +270,6 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
     });
   }
 
+=======
+>>>>>>> github/master
 }

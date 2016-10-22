@@ -42,7 +42,11 @@ class UpdateReady extends FormBase {
    *
    * @var string
    */
+<<<<<<< HEAD
   protected $sitePath;
+=======
+   protected $sitePath;
+>>>>>>> github/master
 
   /**
    * Constructs a new UpdateReady object.

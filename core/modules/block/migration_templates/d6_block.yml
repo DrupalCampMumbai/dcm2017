@@ -63,6 +63,7 @@ process:
   region:
     plugin: block_region
     source:
+<<<<<<< HEAD
       - theme
       - '@theme'
       - region
@@ -76,6 +77,19 @@ process:
           right: sidebar_second
     # If mapping fails, put the block in the content region.
     default_value: content
+=======
+      - region
+      - theme
+      - '@theme'
+    region_map:
+      left: sidebar_first
+      right: sidebar_second
+      sidebar_first: sidebar_first
+      sidebar_second: sidebar_second
+      help: help
+      header: header
+      footer: footer
+>>>>>>> github/master
   weight: weight
   settings:
     plugin: block_settings

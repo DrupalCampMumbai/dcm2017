@@ -98,6 +98,7 @@ class Date extends NumericFilter {
   }
 
   /**
+<<<<<<< HEAD
    * {@inheritdoc}
    */
   protected function hasValidGroupedValue(array $group) {
@@ -116,6 +117,35 @@ class Date extends NumericFilter {
     return $actual == $expected;
   }
 
+=======
+   * Validate the build group options form.
+   */
+  protected function buildGroupValidate($form, FormStateInterface $form_state) {
+    // Special case to validate grouped date filters, this is because the
+    // $group['value'] array contains the type of filter (date or offset)
+    // and therefore the number of items the comparison has to be done
+    // against 'one' instead of 'zero'.
+    foreach ($form_state->getValue(array('options', 'group_info', 'group_items')) as $id => $group) {
+      if (empty($group['remove'])) {
+        // Check if the title is defined but value wasn't defined.
+        if (!empty($group['title'])) {
+          if ((!is_array($group['value']) && empty($group['value'])) || (is_array($group['value']) && count(array_filter($group['value'])) == 1)) {
+            $form_state->setError($form['group_info']['group_items'][$id]['value'], $this->t('The value is required if title for this item is defined.'));
+          }
+        }
+
+        // Check if the value is defined but title wasn't defined.
+        if ((!is_array($group['value']) && !empty($group['value'])) || (is_array($group['value']) && count(array_filter($group['value'])) > 1)) {
+          if (empty($group['title'])) {
+            $form_state->setError($form['group_info']['group_items'][$id]['title'], $this->t('The title is required if value for this item is defined.'));
+          }
+        }
+      }
+    }
+  }
+
+
+>>>>>>> github/master
   public function acceptExposedInput($input) {
     if (empty($this->options['exposed'])) {
       return TRUE;

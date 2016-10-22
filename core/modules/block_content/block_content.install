@@ -39,6 +39,7 @@ function block_content_update_8002() {
   // are stable.
   // @see https://www.drupal.org/node/2569469
 }
+<<<<<<< HEAD
 
 /**
  * Add 'revision_created' and 'revision_user' fields to 'block_content' entities.
@@ -61,3 +62,5 @@ function block_content_update_8003() {
   \Drupal::entityDefinitionUpdateManager()
     ->installFieldStorageDefinition('revision_user', 'block_content', 'block_content', $revision_user);
 }
+=======
+>>>>>>> github/master

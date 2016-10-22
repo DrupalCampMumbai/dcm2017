@@ -26,7 +26,11 @@ class DblogFilterForm extends FormBase {
     $form['filters'] = array(
       '#type' => 'details',
       '#title' => $this->t('Filter log messages'),
+<<<<<<< HEAD
       '#open' => TRUE,
+=======
+      '#open' => !empty($_SESSION['dblog_overview_filter']),
+>>>>>>> github/master
     );
     foreach ($filters as $key => $filter) {
       $form['filters']['status'][$key] = array(

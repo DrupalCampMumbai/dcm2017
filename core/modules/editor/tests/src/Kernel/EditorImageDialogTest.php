@@ -17,11 +17,19 @@ use Drupal\node\Entity\NodeType;
 class EditorImageDialogTest extends EntityKernelTestBase {
 
   /**
+<<<<<<< HEAD
    * Text editor config entity for testing.
    *
    * @var \Drupal\editor\EditorInterface
    */
   protected $editor;
+=======
+   * Filter format for testing.
+   *
+   * @var \Drupal\filter\FilterFormatInterface
+   */
+  protected $format;
+>>>>>>> github/master
 
   /**
    * Modules to enable.
@@ -42,7 +50,11 @@ class EditorImageDialogTest extends EntityKernelTestBase {
     $this->installConfig(['node']);
 
     // Add text formats.
+<<<<<<< HEAD
     $format = FilterFormat::create([
+=======
+    $this->format = FilterFormat::create([
+>>>>>>> github/master
       'format' => 'filtered_html',
       'name' => 'Filtered HTML',
       'weight' => 0,
@@ -51,7 +63,11 @@ class EditorImageDialogTest extends EntityKernelTestBase {
         'filter_caption' => ['status' => TRUE],
       ],
     ]);
+<<<<<<< HEAD
     $format->save();
+=======
+    $this->format->save();
+>>>>>>> github/master
 
     // Set up text editor.
     $editor = Editor::create([
@@ -65,7 +81,10 @@ class EditorImageDialogTest extends EntityKernelTestBase {
       ],
     ]);
     $editor->save();
+<<<<<<< HEAD
     $this->editor = $editor;
+=======
+>>>>>>> github/master
 
     // Create a node type for testing.
     $type = NodeType::create(['type' => 'page', 'name' => 'page']);
@@ -105,7 +124,11 @@ class EditorImageDialogTest extends EntityKernelTestBase {
     $form_state = (new FormState())
       ->setRequestMethod('POST')
       ->setUserInput($input)
+<<<<<<< HEAD
       ->addBuildInfo('args', [$this->editor]);
+=======
+      ->addBuildInfo('args', [$this->format]);
+>>>>>>> github/master
 
     $form_builder = $this->container->get('form_builder');
     $form_object = new EditorImageDialog(\Drupal::entityManager()->getStorage('file'));

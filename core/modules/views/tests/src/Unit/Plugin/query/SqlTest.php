@@ -239,7 +239,11 @@ class SqlTest extends UnitTestCase {
 
   /**
    * @covers ::loadEntities
+<<<<<<< HEAD
    * @covers ::assignEntitiesToResult
+=======
+   * @covers ::_assignEntitiesToResult
+>>>>>>> github/master
    */
   public function testLoadEntitiesWithEmptyResult() {
     $view = $this->prophesize('Drupal\views\ViewExecutable')->reveal();
@@ -261,7 +265,11 @@ class SqlTest extends UnitTestCase {
 
   /**
    * @covers ::loadEntities
+<<<<<<< HEAD
    * @covers ::assignEntitiesToResult
+=======
+   * @covers ::_assignEntitiesToResult
+>>>>>>> github/master
    */
   public function testLoadEntitiesWithNoRelationshipAndNoRevision() {
     $view = $this->prophesize('Drupal\views\ViewExecutable')->reveal();
@@ -317,7 +325,11 @@ class SqlTest extends UnitTestCase {
 
   /**
    * @covers ::loadEntities
+<<<<<<< HEAD
    * @covers ::assignEntitiesToResult
+=======
+   * @covers ::_assignEntitiesToResult
+>>>>>>> github/master
    */
   public function testLoadEntitiesWithRelationship() {
     // We don't use prophecy, because prophecy enforces methods.
@@ -375,7 +387,11 @@ class SqlTest extends UnitTestCase {
 
   /**
    * @covers ::loadEntities
+<<<<<<< HEAD
    * @covers ::assignEntitiesToResult
+=======
+   * @covers ::_assignEntitiesToResult
+>>>>>>> github/master
    */
   public function testLoadEntitiesWithNonEntityRelationship() {
     // We don't use prophecy, because prophecy enforces methods.
@@ -424,7 +440,11 @@ class SqlTest extends UnitTestCase {
 
   /**
    * @covers ::loadEntities
+<<<<<<< HEAD
    * @covers ::assignEntitiesToResult
+=======
+   * @covers ::_assignEntitiesToResult
+>>>>>>> github/master
    */
   public function testLoadEntitiesWithRevision() {
     // We don't use prophecy, because prophecy enforces methods.
@@ -469,7 +489,11 @@ class SqlTest extends UnitTestCase {
 
   /**
    * @covers ::loadEntities
+<<<<<<< HEAD
    * @covers ::assignEntitiesToResult
+=======
+   * @covers ::_assignEntitiesToResult
+>>>>>>> github/master
    */
   public function testLoadEntitiesWithRevisionOfSameEntityType() {
     // We don't use prophecy, because prophecy enforces methods.
@@ -529,7 +553,11 @@ class SqlTest extends UnitTestCase {
 
   /**
    * @covers ::loadEntities
+<<<<<<< HEAD
    * @covers ::assignEntitiesToResult
+=======
+   * @covers ::_assignEntitiesToResult
+>>>>>>> github/master
    */
   public function testLoadEntitiesWithRelationshipAndRevision() {
     // We don't use prophecy, because prophecy enforces methods.

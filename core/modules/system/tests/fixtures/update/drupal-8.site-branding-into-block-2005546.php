@@ -6,8 +6,13 @@
  * upgrade path of https://www.drupal.org/node/2005546.
  */
 
+<<<<<<< HEAD
 use Drupal\Core\Database\Database;
 use Drupal\Core\Serialization\Yaml;
+=======
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\Database\Database;
+>>>>>>> github/master
 
 $connection = Database::getConnection();
 

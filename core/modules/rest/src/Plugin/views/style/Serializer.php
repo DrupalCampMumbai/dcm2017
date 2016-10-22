@@ -48,6 +48,7 @@ class Serializer extends StylePluginBase implements CacheableDependencyInterface
   protected $formats = array();
 
   /**
+<<<<<<< HEAD
    * The serialization format providers, keyed by format.
    *
    * @var string[]
@@ -55,6 +56,8 @@ class Serializer extends StylePluginBase implements CacheableDependencyInterface
   protected $formatProviders;
 
   /**
+=======
+>>>>>>> github/master
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
@@ -63,21 +66,32 @@ class Serializer extends StylePluginBase implements CacheableDependencyInterface
       $plugin_id,
       $plugin_definition,
       $container->get('serializer'),
+<<<<<<< HEAD
       $container->getParameter('serializer.formats'),
       $container->getParameter('serializer.format_providers')
+=======
+      $container->getParameter('serializer.formats')
+>>>>>>> github/master
     );
   }
 
   /**
    * Constructs a Plugin object.
    */
+<<<<<<< HEAD
   public function __construct(array $configuration, $plugin_id, $plugin_definition, SerializerInterface $serializer, array $serializer_formats, array $serializer_format_providers) {
+=======
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, SerializerInterface $serializer, array $serializer_formats) {
+>>>>>>> github/master
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->definition = $plugin_definition + $configuration;
     $this->serializer = $serializer;
     $this->formats = $serializer_formats;
+<<<<<<< HEAD
     $this->formatProviders = $serializer_format_providers;
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -100,7 +114,11 @@ class Serializer extends StylePluginBase implements CacheableDependencyInterface
       '#type' => 'checkboxes',
       '#title' => $this->t('Accepted request formats'),
       '#description' => $this->t('Request formats that will be allowed in responses. If none are selected all formats will be allowed.'),
+<<<<<<< HEAD
       '#options' => $this->getFormatOptions(),
+=======
+      '#options' => array_combine($this->formats, $this->formats),
+>>>>>>> github/master
       '#default_value' => $this->options['formats'],
     );
   }
@@ -176,6 +194,7 @@ class Serializer extends StylePluginBase implements CacheableDependencyInterface
     return [];
   }
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
@@ -202,4 +221,6 @@ class Serializer extends StylePluginBase implements CacheableDependencyInterface
     return array_combine($formats, $formats);
   }
 
+=======
+>>>>>>> github/master
 }

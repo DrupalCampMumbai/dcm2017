@@ -29,7 +29,11 @@ class MigrateUserRoleTest extends MigrateDrupal7TestBase {
    *   The role ID.
    * @param string $label
    *   The role's expected label.
+<<<<<<< HEAD
    * @param int|null $original_rid
+=======
+   * @param int|NULL $original_rid
+>>>>>>> github/master
    *   The original (integer) ID of the role, to check permissions.
    */
   protected function assertEntity($id, $label, $original_rid) {

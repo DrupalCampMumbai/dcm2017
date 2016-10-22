@@ -12,7 +12,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a filter to track images uploaded via a Text Editor.
  *
+<<<<<<< HEAD
  * Generates file URLs and associates the cache tags of referenced files.
+=======
+ * Passes the text unchanged, but associates the cache tags of referenced files.
+>>>>>>> github/master
  *
  * @Filter(
  *   id = "editor_file_reference",
@@ -71,6 +75,7 @@ class EditorFileReference extends FilterBase implements ContainerFactoryPluginIn
       $processed_uuids = array();
       foreach ($xpath->query('//*[@data-entity-type="file" and @data-entity-uuid]') as $node) {
         $uuid = $node->getAttribute('data-entity-uuid');
+<<<<<<< HEAD
 
         // If there is a 'src' attribute, set it to the file entity's current
         // URL. This ensures the URL works even after the file location changes.
@@ -81,6 +86,8 @@ class EditorFileReference extends FilterBase implements ContainerFactoryPluginIn
           }
         }
 
+=======
+>>>>>>> github/master
         // Only process the first occurrence of each file UUID.
         if (!isset($processed_uuids[$uuid])) {
           $processed_uuids[$uuid] = TRUE;
@@ -91,7 +98,10 @@ class EditorFileReference extends FilterBase implements ContainerFactoryPluginIn
           }
         }
       }
+<<<<<<< HEAD
       $result->setProcessedText(Html::serialize($dom));
+=======
+>>>>>>> github/master
     }
 
     return $result;

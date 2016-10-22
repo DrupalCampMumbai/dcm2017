@@ -49,7 +49,10 @@ class MigrateBlockTest extends MigrateDrupal6TestBase {
       'd6_user_role',
       'd6_block',
     ]);
+<<<<<<< HEAD
     block_rebuild();
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -69,6 +72,7 @@ class MigrateBlockTest extends MigrateDrupal6TestBase {
    *   The block label.
    * @param string $label_display
    *   The block label display setting.
+<<<<<<< HEAD
    * @param bool $status
    *   (optional) Whether the block is expected to be enabled.
    */
@@ -84,6 +88,20 @@ class MigrateBlockTest extends MigrateDrupal6TestBase {
     $config = $this->config('block.block.' . $id);
     $this->assertSame($label, $config->get('settings.label'));
     $this->assertSame($label_display, $config->get('settings.label_display'));
+=======
+   */
+  public function assertEntity($id, $visibility, $region, $theme, $weight, $label, $label_display) {
+    $block = Block::load($id);
+    $this->assertTrue($block instanceof Block);
+    $this->assertIdentical($visibility, $block->getVisibility());
+    $this->assertIdentical($region, $block->getRegion());
+    $this->assertIdentical($theme, $block->getTheme());
+    $this->assertIdentical($weight, $block->getWeight());
+
+    $config = $this->config('block.block.' . $id);
+    $this->assertIdentical($label, $config->get('settings.label'));
+    $this->assertIdentical($label_display, $config->get('settings.label_display'));
+>>>>>>> github/master
   }
 
   /**
@@ -126,7 +144,11 @@ class MigrateBlockTest extends MigrateDrupal6TestBase {
     $visibility['request_path']['id'] = 'request_path';
     $visibility['request_path']['negate'] = TRUE;
     $visibility['request_path']['pages'] = '/node/1';
+<<<<<<< HEAD
     $this->assertEntity('system', $visibility, 'footer_fifth', 'bartik', -5, '', '0');
+=======
+    $this->assertEntity('system', $visibility, 'footer', 'bartik', -5, '', '0');
+>>>>>>> github/master
 
     // Check menu blocks
     $visibility = [];
@@ -141,10 +163,14 @@ class MigrateBlockTest extends MigrateDrupal6TestBase {
     $visibility['request_path']['id'] = 'request_path';
     $visibility['request_path']['negate'] = FALSE;
     $visibility['request_path']['pages'] = '/node';
+<<<<<<< HEAD
     // bluemarine does not exist in Drupal 8 and the d6_block migration defines
     // no mapping for its regions, so this block should have been defaulted
     // to the 'content' region.
     $this->assertEntity('block_1', $visibility, 'content', 'bluemarine', -4, 'Another Static Block', 'visible');
+=======
+    $this->assertEntity('block_1', $visibility, 'sidebar_second', 'bluemarine', -4, 'Another Static Block', 'visible');
+>>>>>>> github/master
 
     $visibility = [];
     $this->assertEntity('block_2', $visibility, 'right', 'test_theme', -7, '', '0');

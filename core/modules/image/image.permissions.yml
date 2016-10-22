@@ -1,2 +1,6 @@
 administer image styles:
   title: 'Administer image styles'
+<<<<<<< HEAD
+=======
+  description: 'Create and modify styles for generating image modifications such as thumbnails.'
+>>>>>>> github/master

@@ -45,7 +45,11 @@ abstract class UpdatePathTestBase extends WebTestBase {
    */
   protected static $modules = [];
 
+<<<<<<< HEAD
   /**
+=======
+ /**
+>>>>>>> github/master
    * The file path(s) to the dumped database(s) to load into the child site.
    *
    * The file system/tests/fixtures/update/drupal-8.bare.standard.php.gz is
@@ -250,6 +254,7 @@ abstract class UpdatePathTestBase extends WebTestBase {
     // Ensure there are no failed updates.
     if ($this->checkFailedUpdates) {
       $this->assertNoRaw('<strong>' . t('Failed:') . '</strong>');
+<<<<<<< HEAD
 
       // The config schema can be incorrect while the update functions are being
       // executed. But once the update has been completed, it needs to be valid
@@ -275,6 +280,24 @@ abstract class UpdatePathTestBase extends WebTestBase {
         }
       }
     }
+=======
+    }
+
+    // The config schema can be incorrect while the update functions are being
+    // executed. But once the update has been completed, it needs to be valid
+    // again. Assert the schema of all configuration objects now.
+    $names = $this->container->get('config.storage')->listAll();
+    /** @var \Drupal\Core\Config\TypedConfigManagerInterface $typed_config */
+    $typed_config = $this->container->get('config.typed');
+    $typed_config->clearCachedDefinitions();
+    foreach ($names as $name) {
+      $config = $this->config($name);
+      $this->assertConfigSchema($typed_config, $name, $config->get());
+    }
+
+    // Ensure that the update hooks updated all entity schema.
+    $this->assertFalse(\Drupal::service('entity.definition_update_manager')->needsUpdates(), 'After all updates ran, entity schema is up to date.');
+>>>>>>> github/master
   }
 
   /**

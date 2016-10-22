@@ -2,9 +2,13 @@
 
 namespace Drupal\rest\Tests;
 
+<<<<<<< HEAD
 use Drupal\Core\Config\Entity\ConfigEntityType;
 use Drupal\node\NodeInterface;
 use Drupal\rest\RestResourceConfigInterface;
+=======
+use Drupal\node\NodeInterface;
+>>>>>>> github/master
 use Drupal\simpletest\WebTestBase;
 
 /**
@@ -13,6 +17,7 @@ use Drupal\simpletest\WebTestBase;
 abstract class RESTTestBase extends WebTestBase {
 
   /**
+<<<<<<< HEAD
    * The REST resource config storage.
    *
    * @var \Drupal\Core\Entity\EntityStorageInterface
@@ -20,6 +25,8 @@ abstract class RESTTestBase extends WebTestBase {
   protected $resourceConfigStorage;
 
   /**
+=======
+>>>>>>> github/master
    * The default serialization format to use for testing REST operations.
    *
    * @var string
@@ -60,18 +67,27 @@ abstract class RESTTestBase extends WebTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $modules = array('rest', 'entity_test');
+=======
+  public static $modules = array('rest', 'entity_test', 'node');
+>>>>>>> github/master
 
   protected function setUp() {
     parent::setUp();
     $this->defaultFormat = 'hal_json';
     $this->defaultMimeType = 'application/hal+json';
     $this->defaultAuth = array('cookie');
+<<<<<<< HEAD
     $this->resourceConfigStorage = $this->container->get('entity_type.manager')->getStorage('rest_resource_config');
     // Create a test content type for node testing.
     if (in_array('node', static::$modules)) {
       $this->drupalCreateContentType(array('name' => 'resttest', 'type' => 'resttest'));
     }
+=======
+    // Create a test content type for node testing.
+    $this->drupalCreateContentType(array('name' => 'resttest', 'type' => 'resttest'));
+>>>>>>> github/master
   }
 
   /**
@@ -85,19 +101,30 @@ abstract class RESTTestBase extends WebTestBase {
    *   The body for POST and PUT.
    * @param string $mime_type
    *   The MIME type of the transmitted content.
+<<<<<<< HEAD
    * @param bool $forget_xcsrf_token
    *   If TRUE, the CSRF token won't be included in request.
+=======
+>>>>>>> github/master
    *
    * @return string
    *   The content returned from the request.
    */
+<<<<<<< HEAD
   protected function httpRequest($url, $method, $body = NULL, $mime_type = NULL, $forget_xcsrf_token = FALSE) {
+=======
+  protected function httpRequest($url, $method, $body = NULL, $mime_type = NULL) {
+>>>>>>> github/master
     if (!isset($mime_type)) {
       $mime_type = $this->defaultMimeType;
     }
     if (!in_array($method, array('GET', 'HEAD', 'OPTIONS', 'TRACE'))) {
       // GET the CSRF token first for writing requests.
+<<<<<<< HEAD
       $token = $this->drupalGet('session/token');
+=======
+      $token = $this->drupalGet('rest/session/token');
+>>>>>>> github/master
     }
 
     $url = $this->buildUrl($url);
@@ -115,6 +142,7 @@ abstract class RESTTestBase extends WebTestBase {
         );
         break;
 
+<<<<<<< HEAD
       case 'HEAD':
         $curl_options = array(
           CURLOPT_HTTPGET => FALSE,
@@ -124,6 +152,17 @@ abstract class RESTTestBase extends WebTestBase {
           CURLOPT_HTTPHEADER => array('Accept: ' . $mime_type),
         );
         break;
+=======
+        case 'HEAD':
+          $curl_options = array(
+            CURLOPT_HTTPGET => FALSE,
+            CURLOPT_CUSTOMREQUEST => 'HEAD',
+            CURLOPT_URL => $url,
+            CURLOPT_NOBODY => TRUE,
+            CURLOPT_HTTPHEADER => array('Accept: ' . $mime_type),
+          );
+          break;
+>>>>>>> github/master
 
       case 'POST':
         $curl_options = array(
@@ -132,11 +171,17 @@ abstract class RESTTestBase extends WebTestBase {
           CURLOPT_POSTFIELDS => $body,
           CURLOPT_URL => $url,
           CURLOPT_NOBODY => FALSE,
+<<<<<<< HEAD
           CURLOPT_HTTPHEADER => !$forget_xcsrf_token ? array(
             'Content-Type: ' . $mime_type,
             'X-CSRF-Token: ' . $token,
           ) : array(
             'Content-Type: ' . $mime_type,
+=======
+          CURLOPT_HTTPHEADER => array(
+            'Content-Type: ' . $mime_type,
+            'X-CSRF-Token: ' . $token,
+>>>>>>> github/master
           ),
         );
         break;
@@ -148,11 +193,17 @@ abstract class RESTTestBase extends WebTestBase {
           CURLOPT_POSTFIELDS => $body,
           CURLOPT_URL => $url,
           CURLOPT_NOBODY => FALSE,
+<<<<<<< HEAD
           CURLOPT_HTTPHEADER => !$forget_xcsrf_token ? array(
             'Content-Type: ' . $mime_type,
             'X-CSRF-Token: ' . $token,
           ) : array(
             'Content-Type: ' . $mime_type,
+=======
+          CURLOPT_HTTPHEADER => array(
+            'Content-Type: ' . $mime_type,
+            'X-CSRF-Token: ' . $token,
+>>>>>>> github/master
           ),
         );
         break;
@@ -164,11 +215,17 @@ abstract class RESTTestBase extends WebTestBase {
           CURLOPT_POSTFIELDS => $body,
           CURLOPT_URL => $url,
           CURLOPT_NOBODY => FALSE,
+<<<<<<< HEAD
           CURLOPT_HTTPHEADER => !$forget_xcsrf_token ? array(
             'Content-Type: ' . $mime_type,
             'X-CSRF-Token: ' . $token,
           ) : array(
             'Content-Type: ' . $mime_type,
+=======
+          CURLOPT_HTTPHEADER => array(
+            'Content-Type: ' . $mime_type,
+            'X-CSRF-Token: ' . $token,
+>>>>>>> github/master
           ),
         );
         break;
@@ -179,15 +236,22 @@ abstract class RESTTestBase extends WebTestBase {
           CURLOPT_CUSTOMREQUEST => 'DELETE',
           CURLOPT_URL => $url,
           CURLOPT_NOBODY => FALSE,
+<<<<<<< HEAD
           CURLOPT_HTTPHEADER => !$forget_xcsrf_token ? array('X-CSRF-Token: ' . $token) : array(),
+=======
+          CURLOPT_HTTPHEADER => array('X-CSRF-Token: ' . $token),
+>>>>>>> github/master
         );
         break;
     }
 
+<<<<<<< HEAD
     if ($mime_type === 'none') {
       unset($curl_options[CURLOPT_HTTPHEADER]['Content-Type']);
     }
 
+=======
+>>>>>>> github/master
     $this->responseBody = $this->curlExec($curl_options);
 
     // Ensure that any changes to variables in the other thread are picked up.
@@ -224,14 +288,24 @@ abstract class RESTTestBase extends WebTestBase {
    * Required properties differ from entity type to entity type, so we keep a
    * minimum mapping here.
    *
+<<<<<<< HEAD
    * @param string $entity_type_id
    *   The ID of the type of entity that should be created.
+=======
+   * @param string $entity_type
+   *   The type of the entity that should be created.
+>>>>>>> github/master
    *
    * @return array
    *   An array of values keyed by property name.
    */
+<<<<<<< HEAD
   protected function entityValues($entity_type_id) {
     switch ($entity_type_id) {
+=======
+  protected function entityValues($entity_type) {
+    switch ($entity_type) {
+>>>>>>> github/master
       case 'entity_test':
         return array(
           'name' => $this->randomMachineName(),
@@ -241,11 +315,14 @@ abstract class RESTTestBase extends WebTestBase {
             'format' => 'plain_text',
           )),
         );
+<<<<<<< HEAD
       case 'config_test':
         return [
           'id' => $this->randomMachineName(),
           'label' => 'Test label',
         ];
+=======
+>>>>>>> github/master
       case 'node':
         return array('title' => $this->randomString(), 'type' => 'resttest');
       case 'node_type':
@@ -265,6 +342,7 @@ abstract class RESTTestBase extends WebTestBase {
           'entity_id' => 'invalid',
           'field_name' => 'comment',
         ];
+<<<<<<< HEAD
       case 'taxonomy_vocabulary':
         return [
           'vid' => 'tags',
@@ -274,6 +352,10 @@ abstract class RESTTestBase extends WebTestBase {
         if ($this->isConfigEntity($entity_type_id)) {
           return $this->configEntityValues($entity_type_id);
         }
+=======
+
+      default:
+>>>>>>> github/master
         return array();
     }
   }
@@ -281,7 +363,11 @@ abstract class RESTTestBase extends WebTestBase {
   /**
    * Enables the REST service interface for a specific entity type.
    *
+<<<<<<< HEAD
    * @param string|false $resource_type
+=======
+   * @param string|FALSE $resource_type
+>>>>>>> github/master
    *   The resource type that should get REST API enabled or FALSE to disable all
    *   resource types.
    * @param string $method
@@ -291,6 +377,7 @@ abstract class RESTTestBase extends WebTestBase {
    * @param array $auth
    *   (Optional) The list of valid authentication methods.
    */
+<<<<<<< HEAD
   protected function enableService($resource_type, $method = 'GET', $format = NULL, array $auth = []) {
     if ($resource_type) {
       // Enable REST API for this entity type.
@@ -311,11 +398,22 @@ abstract class RESTTestBase extends WebTestBase {
         for ($i = 0; $i < count($format); $i++) {
           $configuration[$method]['supported_formats'][] = $format[$i];
         }
+=======
+  protected function enableService($resource_type, $method = 'GET', $format = NULL, $auth = NULL) {
+    // Enable REST API for this entity type.
+    $config = $this->config('rest.settings');
+    $settings = array();
+
+    if ($resource_type) {
+      if (is_array($format)) {
+        $settings[$resource_type][$method]['supported_formats'] = $format;
+>>>>>>> github/master
       }
       else {
         if ($format == NULL) {
           $format = $this->defaultFormat;
         }
+<<<<<<< HEAD
         $configuration[$method]['supported_formats'][] = $format;
       }
 
@@ -334,6 +432,18 @@ abstract class RESTTestBase extends WebTestBase {
         $resource_config->delete();
       }
     }
+=======
+        $settings[$resource_type][$method]['supported_formats'][] = $format;
+      }
+
+      if ($auth == NULL) {
+        $auth = $this->defaultAuth;
+      }
+      $settings[$resource_type][$method]['supported_auth'] = $auth;
+    }
+    $config->set('resources', $settings);
+    $config->save();
+>>>>>>> github/master
     $this->rebuildCache();
   }
 
@@ -367,7 +477,11 @@ abstract class RESTTestBase extends WebTestBase {
   /**
    * Provides the necessary user permissions for entity operations.
    *
+<<<<<<< HEAD
    * @param string $entity_type_id
+=======
+   * @param string $entity_type
+>>>>>>> github/master
    *   The entity type.
    * @param string $operation
    *   The operation, one of 'view', 'create', 'update' or 'delete'.
@@ -375,8 +489,13 @@ abstract class RESTTestBase extends WebTestBase {
    * @return array
    *   The set of user permission strings.
    */
+<<<<<<< HEAD
   protected function entityPermissions($entity_type_id, $operation) {
     switch ($entity_type_id) {
+=======
+  protected function entityPermissions($entity_type, $operation) {
+    switch ($entity_type) {
+>>>>>>> github/master
       case 'entity_test':
         switch ($operation) {
           case 'view':
@@ -421,6 +540,7 @@ abstract class RESTTestBase extends WebTestBase {
 
           default:
             return ['administer users'];
+<<<<<<< HEAD
         }
 
       default:
@@ -432,6 +552,11 @@ abstract class RESTTestBase extends WebTestBase {
         }
     }
     return [];
+=======
+
+        }
+    }
+>>>>>>> github/master
   }
 
   /**
@@ -440,14 +565,22 @@ abstract class RESTTestBase extends WebTestBase {
    * @param string $location_url
    *   The URL returned in the Location header.
    *
+<<<<<<< HEAD
    * @return \Drupal\Core\Entity\Entity|false
+=======
+   * @return \Drupal\Core\Entity\Entity|FALSE.
+>>>>>>> github/master
    *   The entity or FALSE if there is no matching entity.
    */
   protected function loadEntityFromLocationHeader($location_url) {
     $url_parts = explode('/', $location_url);
     $id = end($url_parts);
+<<<<<<< HEAD
     return $this->container->get('entity_type.manager')
       ->getStorage($this->testEntityType)->load($id);
+=======
+    return entity_load($this->testEntityType, $id);
+>>>>>>> github/master
   }
 
   /**
@@ -496,6 +629,7 @@ abstract class RESTTestBase extends WebTestBase {
     return $this->assertIdentical($expected, $this->responseBody, $message ? $message : strtr('Response body @expected (expected) is equal to @response (actual).', array('@expected' => var_export($expected, TRUE), '@response' => var_export($this->responseBody, TRUE))), $group);
   }
 
+<<<<<<< HEAD
   /**
    * Checks if an entity type id is for a Config Entity.
    *
@@ -541,4 +675,6 @@ abstract class RESTTestBase extends WebTestBase {
     return $values;
   }
 
+=======
+>>>>>>> github/master
 }

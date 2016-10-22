@@ -2,7 +2,11 @@ aggregator.admin_overview:
   path: '/admin/config/services/aggregator'
   defaults:
     _controller: '\Drupal\aggregator\Controller\AggregatorController::adminOverview'
+<<<<<<< HEAD
     _title: 'Aggregator'
+=======
+    _title: 'Feed aggregator'
+>>>>>>> github/master
   requirements:
     _permission: 'administer news feeds'
 
@@ -10,7 +14,11 @@ aggregator.admin_settings:
   path: '/admin/config/services/aggregator/settings'
   defaults:
     _form: '\Drupal\aggregator\Form\SettingsForm'
+<<<<<<< HEAD
     _title: 'Aggregator settings'
+=======
+    _title: 'Feed aggregator settings'
+>>>>>>> github/master
   requirements:
     _permission: 'administer news feeds'
 
@@ -53,6 +61,10 @@ aggregator.page_last:
   path: '/aggregator'
   defaults:
     _controller: '\Drupal\aggregator\Controller\AggregatorController::pageLast'
+<<<<<<< HEAD
     _title: 'Aggregator'
+=======
+    _title: 'Feed aggregator'
+>>>>>>> github/master
   requirements:
     _permission: 'access news feeds'

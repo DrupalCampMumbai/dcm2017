@@ -54,7 +54,11 @@ class InOperator extends FilterPluginBase {
    * This can use a guard to be used to reduce database hits as much as
    * possible.
    *
+<<<<<<< HEAD
    * @return array|null
+=======
+   * @return array|NULL
+>>>>>>> github/master
    *   The stored values from $this->valueOptions.
    */
   public function getValueOptions() {
@@ -282,17 +286,28 @@ class InOperator extends FilterPluginBase {
     return $options;
   }
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
   public function acceptExposedInput($input) {
+=======
+  public function acceptExposedInput($input) {
+    // A very special override because the All state for this type of
+    // filter could have a default:
+>>>>>>> github/master
     if (empty($this->options['exposed'])) {
       return TRUE;
     }
 
+<<<<<<< HEAD
     // The "All" state for this type of filter could have a default value. If
     // this is a non-multiple and non-required option, then this filter will
     // participate by using the default settings *if* 'limit' is true.
+=======
+    // If this is non-multiple and non-required, then this filter will
+    // participate, but using the default settings, *if* 'limit is true.
+>>>>>>> github/master
     if (empty($this->options['expose']['multiple']) && empty($this->options['expose']['required']) && !empty($this->options['expose']['limit'])) {
       $identifier = $this->options['expose']['identifier'];
       if ($input[$identifier] == 'All') {

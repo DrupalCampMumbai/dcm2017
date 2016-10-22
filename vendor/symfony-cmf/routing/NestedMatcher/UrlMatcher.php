@@ -3,7 +3,11 @@
 /*
  * This file is part of the Symfony CMF package.
  *
+<<<<<<< HEAD
  * (c) 2011-2015 Symfony CMF
+=======
+ * (c) 2011-2014 Symfony CMF
+>>>>>>> github/master
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,6 +20,10 @@ use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Matcher\UrlMatcher as SymfonyUrlMatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RequestContext;
+<<<<<<< HEAD
+=======
+
+>>>>>>> github/master
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 
 /**

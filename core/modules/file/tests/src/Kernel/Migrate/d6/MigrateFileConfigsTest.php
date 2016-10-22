@@ -19,7 +19,11 @@ class MigrateFileConfigsTest extends MigrateDrupal6TestBase {
    */
   protected function setUp() {
     parent::setUp();
+<<<<<<< HEAD
     $this->executeMigration('file_settings');
+=======
+    $this->executeMigration('d6_file_settings');
+>>>>>>> github/master
   }
 
   /**

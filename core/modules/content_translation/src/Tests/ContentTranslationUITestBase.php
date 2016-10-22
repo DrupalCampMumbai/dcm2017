@@ -77,10 +77,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
     $this->drupalLogin($this->editor);
     $this->entityId = $this->createEntity($values[$default_langcode], $default_langcode);
     $this->drupalLogin($this->translator);
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $this->assertTrue($entity, 'Entity found in the database.');
     $this->drupalGet($entity->urlInfo());
     $this->assertResponse(200, 'Entity URL is valid.');
@@ -122,10 +126,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
 
     // Ensure that the content language cache context is not yet added to the
     // page.
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $this->drupalGet($entity->urlInfo());
     $this->assertCacheContexts(Cache::mergeContexts(['languages:language_content'], $this->defaultCacheContexts));
 
@@ -160,8 +168,12 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
     if ($this->testLanguageSelector) {
       $this->assertNoFieldByXPath('//select[@id="edit-langcode-0-value"]', NULL, 'Language selector correctly disabled on translations.');
     }
+<<<<<<< HEAD
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $this->drupalGet($entity->urlInfo('drupal:content-translation-overview'));
     $this->assertNoText('Source language', 'Source language column correctly hidden.');
 
@@ -191,8 +203,12 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
       'target' => $langcode
     ], array('language' => $language));
     $this->drupalPostForm($add_url, $edit, $this->getFormSubmitActionForNewTranslation($entity, $langcode));
+<<<<<<< HEAD
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $this->drupalGet($entity->urlInfo('drupal:content-translation-overview'));
     $this->assertText('Source language', 'Source language column correctly shown.');
 
@@ -212,10 +228,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
    * Tests that the translation overview shows the correct values.
    */
   protected function doTestTranslationOverview() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $translate_url = $entity->urlInfo('drupal:content-translation-overview');
     $this->drupalGet($translate_url);
     $translate_url->setAbsolute(FALSE);
@@ -237,10 +257,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
    * Tests up-to-date status tracking.
    */
   protected function doTestOutdatedStatus() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $langcode = 'fr';
     $languages = \Drupal::languageManager()->getLanguages();
 
@@ -248,8 +272,12 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
     $edit = array('content_translation[retranslate]' => TRUE);
     $edit_path = $entity->urlInfo('edit-form', array('language' => $languages[$langcode]));
     $this->drupalPostForm($edit_path, $edit, $this->getFormSubmitAction($entity, $langcode));
+<<<<<<< HEAD
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
 
     // Check that every translation has the correct "outdated" status, and that
     // the Translation fieldset is open if the translation is "outdated".
@@ -267,10 +295,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
         $this->drupalPostForm($url, $edit, $this->getFormSubmitAction($entity, $added_langcode));
         $this->drupalGet($url);
         $this->assertFieldByXPath('//input[@name="content_translation[retranslate]"]', FALSE, 'The retranslate flag is now shown.');
+<<<<<<< HEAD
         $storage = $this->container->get('entity_type.manager')
           ->getStorage($this->entityTypeId);
         $storage->resetCache([$this->entityId]);
         $entity = $storage->load($this->entityId);
+=======
+        $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
         $this->assertFalse($this->manager->getTranslationMetadata($entity->getTranslation($added_langcode))->isOutdated(), 'The "outdated" status has been correctly stored.');
       }
     }
@@ -280,10 +312,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
    * Tests the translation publishing status.
    */
   protected function doTestPublishedStatus() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
 
     // Unpublish translations.
     foreach ($this->langcodes as $index => $langcode) {
@@ -291,10 +327,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
         $url = $entity->urlInfo('edit-form', array('language' => ConfigurableLanguage::load($langcode)));
         $edit = array('content_translation[status]' => FALSE);
         $this->drupalPostForm($url, $edit, $this->getFormSubmitAction($entity, $langcode));
+<<<<<<< HEAD
         $storage = $this->container->get('entity_type.manager')
           ->getStorage($this->entityTypeId);
         $storage->resetCache([$this->entityId]);
         $entity = $storage->load($this->entityId);
+=======
+        $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
         $this->assertFalse($this->manager->getTranslationMetadata($entity->getTranslation($langcode))->isPublished(), 'The translation has been correctly unpublished.');
       }
     }
@@ -308,10 +348,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
    * Tests the translation authoring information.
    */
   protected function doTestAuthoringInfo() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $values = array();
 
     // Post different authoring information for each translation.
@@ -329,10 +373,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
       $this->drupalPostForm($url, $edit, $this->getFormSubmitAction($entity, $langcode));
     }
 
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     foreach ($this->langcodes as $langcode) {
       $metadata = $this->manager->getTranslationMetadata($entity->getTranslation($langcode));
       $this->assertEqual($metadata->getAuthor()->id(), $values[$langcode]['uid'], 'Translation author correctly stored.');
@@ -360,16 +408,24 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
     // Confirm and delete a translation.
     $this->drupalLogin($this->translator);
     $langcode = 'fr';
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $language = ConfigurableLanguage::load($langcode);
     $url = $entity->urlInfo('edit-form', array('language' => $language));
     $this->drupalPostForm($url, array(), t('Delete translation'));
     $this->drupalPostForm(NULL, array(), t('Delete @language translation', array('@language' => $language->getName())));
+<<<<<<< HEAD
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId, TRUE);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     if ($this->assertTrue(is_object($entity), 'Entity found')) {
       $translations = $entity->getTranslationLanguages();
       $this->assertTrue(count($translations) == 2 && empty($translations[$langcode]), 'Translation successfully deleted.');
@@ -499,10 +555,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
    * Tests edit content translation.
    */
   protected function doTestTranslationEdit() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $languages = $this->container->get('language_manager')->getLanguages();
 
     foreach ($this->langcodes as $langcode) {
@@ -521,10 +581,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
    * Tests the basic translation workflow.
    */
   protected function doTestTranslationChanged() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $changed_field_name = $this->getChangedFieldName($entity);
     $definition = $entity->getFieldDefinition($changed_field_name);
     $config = $definition->getConfig($entity->bundle());
@@ -557,10 +621,14 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
         $edit_path = $entity->urlInfo('edit-form', array('language' => $language));
         $this->drupalPostForm($edit_path, $edit, $this->getFormSubmitAction($entity, $langcode));
 
+<<<<<<< HEAD
         $storage = $this->container->get('entity_type.manager')
           ->getStorage($this->entityTypeId);
         $storage->resetCache([$this->entityId]);
         $entity = $storage->load($this->entityId);
+=======
+        $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
         $this->assertEqual(
           $entity->getChangedTimeAcrossTranslations(), $entity->getTranslation($langcode)->getChangedTime(),
           format_string('Changed time for language %language is the latest change over all languages.', array('%language' => $language->getName()))
@@ -594,19 +662,27 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
    * Test the changed time after API and FORM save without changes.
    */
   public function doTestChangedTimeAfterSaveWithoutChanges() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     // Test only entities, which implement the EntityChangedInterface.
     if ($entity->getEntityType()->isSubclassOf('Drupal\Core\Entity\EntityChangedInterface')) {
       $changed_timestamp = $entity->getChangedTime();
 
       $entity->save();
+<<<<<<< HEAD
       $storage = $this->container->get('entity_type.manager')
         ->getStorage($this->entityTypeId);
       $storage->resetCache([$this->entityId]);
       $entity = $storage->load($this->entityId);
+=======
+      $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
       $this->assertEqual($changed_timestamp, $entity->getChangedTime(), 'The entity\'s changed time wasn\'t updated after API save without changes.');
 
       // Ensure different save timestamps.
@@ -617,8 +693,12 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
       $edit_path = $entity->urlInfo('edit-form', array('language' => $language));
       $this->drupalPostForm($edit_path, [], $this->getFormSubmitAction($entity, $language->getId()));
 
+<<<<<<< HEAD
       $storage->resetCache([$this->entityId]);
       $entity = $storage->load($this->entityId);
+=======
+      $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
       $this->assertNotEqual($changed_timestamp, $entity->getChangedTime(), 'The entity\'s changed time was updated after form save without changes.');
     }
   }

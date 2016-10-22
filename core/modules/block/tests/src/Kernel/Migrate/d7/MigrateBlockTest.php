@@ -13,7 +13,11 @@ use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
  */
 class MigrateBlockTest extends MigrateDrupal7TestBase {
 
+<<<<<<< HEAD
   /**
+=======
+ /**
+>>>>>>> github/master
    * {@inheritdoc}
    */
   public static $modules = [
@@ -53,7 +57,10 @@ class MigrateBlockTest extends MigrateDrupal7TestBase {
       'd7_custom_block',
       'd7_block',
     ]);
+<<<<<<< HEAD
     block_rebuild();
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -77,6 +84,7 @@ class MigrateBlockTest extends MigrateDrupal7TestBase {
    *   The block label.
    * @param string $label_display
    *   The block label display setting.
+<<<<<<< HEAD
    * @param bool $status
    *   (optional) Whether the block is expected to be enabled.
    */
@@ -103,6 +111,31 @@ class MigrateBlockTest extends MigrateDrupal7TestBase {
     $config = $this->config('block.block.' . $id);
     $this->assertSame($label, $config->get('settings.label'));
     $this->assertSame($label_display, $config->get('settings.label_display'));
+=======
+   */
+  public function assertEntity($id, $plugin_id, array $roles, $pages, $region, $theme, $weight, $label, $label_display) {
+    $block = Block::load($id);
+    $this->assertTrue($block instanceof Block);
+    /** @var \Drupal\block\BlockInterface $block */
+    $this->assertIdentical($plugin_id, $block->getPluginId());
+
+    $visibility = $block->getVisibility();
+    if ($roles) {
+      $this->assertIdentical($roles, array_values($visibility['user_role']['roles']));
+      $this->assertIdentical('@user.current_user_context:current_user', $visibility['user_role']['context_mapping']['user']);
+    }
+    if ($pages) {
+      $this->assertIdentical($pages, $visibility['request_path']['pages']);
+    }
+
+    $this->assertIdentical($region, $block->getRegion());
+    $this->assertIdentical($theme, $block->getTheme());
+    $this->assertIdentical($weight, $block->getWeight());
+
+    $config = $this->config('block.block.' . $id);
+    $this->assertIdentical($label, $config->get('settings.label'));
+    $this->assertIdentical($label_display, $config->get('settings.label_display'));
+>>>>>>> github/master
   }
 
   /**
@@ -112,7 +145,11 @@ class MigrateBlockTest extends MigrateDrupal7TestBase {
     $this->assertEntity('bartik_system_main', 'system_main_block', [], '', 'content', 'bartik', 0, '', '0');
     $this->assertEntity('bartik_search_form', 'search_form_block', [], '', 'sidebar_first', 'bartik', -1, '', '0');
     $this->assertEntity('bartik_user_login', 'user_login_block', [], '', 'sidebar_first', 'bartik', 0, '', '0');
+<<<<<<< HEAD
     $this->assertEntity('bartik_system_powered_by', 'system_powered_by_block', [], '', 'footer_fifth', 'bartik', 10, '', '0');
+=======
+    $this->assertEntity('bartik_system_powered_by', 'system_powered_by_block', [], '', 'footer', 'bartik', 10, '', '0');
+>>>>>>> github/master
     $this->assertEntity('seven_system_main', 'system_main_block', [], '', 'content', 'seven', 0, '', '0');
     $this->assertEntity('seven_user_login', 'user_login_block', [], '', 'content', 'seven', 10, '', '0');
 

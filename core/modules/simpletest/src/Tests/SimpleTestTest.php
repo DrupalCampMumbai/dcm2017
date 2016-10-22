@@ -3,7 +3,10 @@
 namespace Drupal\simpletest\Tests;
 
 use Drupal\Component\Utility\Crypt;
+<<<<<<< HEAD
 use Drupal\Core\Test\TestDatabase;
+=======
+>>>>>>> github/master
 use Drupal\simpletest\WebTestBase;
 
 /**
@@ -155,8 +158,12 @@ EOD;
     // test in a test since the prefix has changed.
     // @see \Drupal\Core\Test\HttpClientMiddleware\TestHttpClientMiddleware::onBeforeSendRequest()
     // @see drupal_generate_test_ua();
+<<<<<<< HEAD
     $test_db = new TestDatabase($this->databasePrefix);
     $key_file = DRUPAL_ROOT . '/' . $test_db->getTestSitePath() . '/.htkey';
+=======
+    $key_file = DRUPAL_ROOT . '/sites/simpletest/' . substr($this->databasePrefix, 10) . '/.htkey';
+>>>>>>> github/master
     $private_key = Crypt::randomBytesBase64(55);
     $site_path = $this->container->get('site.path');
     file_put_contents($key_file, $private_key);

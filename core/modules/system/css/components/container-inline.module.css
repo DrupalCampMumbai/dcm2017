@@ -5,7 +5,11 @@
 
 .container-inline div,
 .container-inline label {
+<<<<<<< HEAD
   display: inline-block;
+=======
+  display: inline;
+>>>>>>> github/master
 }
 /* Details contents always need to be rendered as block. */
 .container-inline .details-wrapper {

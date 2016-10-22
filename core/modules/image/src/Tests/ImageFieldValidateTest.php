@@ -12,6 +12,7 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
    * Test min/max resolution settings.
    */
   function testResolution() {
+<<<<<<< HEAD
     $field_names = [
       0 => strtolower($this->randomMachineName()),
       1 => strtolower($this->randomMachineName()),
@@ -49,6 +50,17 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     $this->createImageField($field_names[0], 'article', [], $field_settings[0]);
     $this->createImageField($field_names[1], 'article', [], $field_settings[1]);
     $this->createImageField($field_names[2], 'article', [], $field_settings[2]);
+=======
+    $field_name = strtolower($this->randomMachineName());
+    $min_resolution = 50;
+    $max_resolution = 100;
+    $field_settings = array(
+      'max_resolution' => $max_resolution . 'x' . $max_resolution,
+      'min_resolution' => $min_resolution . 'x' . $min_resolution,
+      'alt_field' => 0,
+    );
+    $this->createImageField($field_name, 'article', array(), $field_settings);
+>>>>>>> github/master
 
     // We want a test image that is too small, and a test image that is too
     // big, so cycle through test image files until we have what we need.
@@ -57,16 +69,24 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     $image_factory = $this->container->get('image.factory');
     foreach ($this->drupalGetTestFiles('image') as $image) {
       $image_file = $image_factory->get($image->uri);
+<<<<<<< HEAD
       if ($image_file->getWidth() > $max_resolution['width']) {
         $image_that_is_too_big = $image;
       }
       if ($image_file->getWidth() < $min_resolution['width']) {
+=======
+      if ($image_file->getWidth() > $max_resolution) {
+        $image_that_is_too_big = $image;
+      }
+      if ($image_file->getWidth() < $min_resolution) {
+>>>>>>> github/master
         $image_that_is_too_small = $image;
       }
       if ($image_that_is_too_small && $image_that_is_too_big) {
         break;
       }
     }
+<<<<<<< HEAD
     $this->uploadNodeImage($image_that_is_too_small, $field_names[0], 'article');
     $this->assertRaw(t('The specified file %name could not be uploaded.', ['%name' => $image_that_is_too_small->filename]));
     $this->assertRaw(t('The image is too small; the minimum dimensions are %dimensions pixels.', ['%dimensions' => '50x50']));
@@ -80,6 +100,13 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     $this->assertRaw(t('The specified file %name could not be uploaded.', ['%name' => $image_that_is_too_small->filename]));
     $this->uploadNodeImage($image_that_is_too_big, $field_names[2], 'article');
     $this->assertText(t('The image was resized to fit within the maximum allowed height of 100 pixels.'));
+=======
+    $this->uploadNodeImage($image_that_is_too_small, $field_name, 'article');
+    $this->assertRaw(t('The specified file %name could not be uploaded.', array('%name' => $image_that_is_too_small->filename)));
+    $this->assertRaw(t('The image is too small; the minimum dimensions are %dimensions pixels.', array('%dimensions' => '50x50')));
+    $this->uploadNodeImage($image_that_is_too_big, $field_name, 'article');
+    $this->assertText(t('The image was resized to fit within the maximum allowed dimensions of 100x100 pixels.'));
+>>>>>>> github/master
   }
 
   /**
@@ -138,6 +165,7 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     $this->assertNoText(t('Title field is required.'));
   }
 
+<<<<<<< HEAD
   /**
    * Returns field settings.
    *
@@ -156,4 +184,6 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     ];
   }
 
+=======
+>>>>>>> github/master
 }

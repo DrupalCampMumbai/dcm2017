@@ -85,7 +85,11 @@ class BigPipeTestController {
    */
   public static function currentTime() {
     return [
+<<<<<<< HEAD
       '#markup' => '<time datetime="' . date('Y-m-d', 668948400) . '"></time>',
+=======
+      '#markup' => '<time datetime=' . date('Y-m-d', 668948400) . '"></time>',
+>>>>>>> github/master
       '#cache' => ['max-age' => 0]
     ];
   }

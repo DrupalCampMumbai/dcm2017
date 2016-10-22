@@ -3,18 +3,29 @@
 namespace Drupal\block;
 
 use Drupal\Component\Utility\Html;
+<<<<<<< HEAD
 use Drupal\Core\Plugin\PluginFormFactoryInterface;
 use Drupal\Core\Block\BlockPluginInterface;
+=======
+>>>>>>> github/master
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Executable\ExecutableManagerInterface;
 use Drupal\Core\Extension\ThemeHandlerInterface;
+<<<<<<< HEAD
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\SubformState;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Plugin\ContextAwarePluginInterface;
 use Drupal\Core\Plugin\Context\ContextRepositoryInterface;
 use Drupal\Core\Plugin\PluginWithFormsInterface;
+=======
+use Drupal\Core\Form\FormState;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Plugin\ContextAwarePluginInterface;
+use Drupal\Core\Plugin\Context\ContextRepositoryInterface;
+>>>>>>> github/master
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -72,6 +83,7 @@ class BlockForm extends EntityForm {
   protected $contextRepository;
 
   /**
+<<<<<<< HEAD
    * The plugin form manager.
    *
    * @var \Drupal\Core\Plugin\PluginFormFactoryInterface
@@ -79,6 +91,8 @@ class BlockForm extends EntityForm {
   protected $pluginFormFactory;
 
   /**
+=======
+>>>>>>> github/master
    * Constructs a BlockForm object.
    *
    * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
@@ -91,16 +105,24 @@ class BlockForm extends EntityForm {
    *   The language manager.
    * @param \Drupal\Core\Extension\ThemeHandlerInterface $theme_handler
    *   The theme handler.
+<<<<<<< HEAD
    * @param \Drupal\Core\Plugin\PluginFormFactoryInterface $plugin_form_manager
    *   The plugin form manager.
    */
   public function __construct(EntityManagerInterface $entity_manager, ExecutableManagerInterface $manager, ContextRepositoryInterface $context_repository, LanguageManagerInterface $language, ThemeHandlerInterface $theme_handler, PluginFormFactoryInterface $plugin_form_manager) {
+=======
+   */
+  public function __construct(EntityManagerInterface $entity_manager, ExecutableManagerInterface $manager, ContextRepositoryInterface $context_repository, LanguageManagerInterface $language, ThemeHandlerInterface $theme_handler) {
+>>>>>>> github/master
     $this->storage = $entity_manager->getStorage('block');
     $this->manager = $manager;
     $this->contextRepository = $context_repository;
     $this->language = $language;
     $this->themeHandler = $theme_handler;
+<<<<<<< HEAD
     $this->pluginFormFactory = $plugin_form_manager;
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -112,8 +134,12 @@ class BlockForm extends EntityForm {
       $container->get('plugin.manager.condition'),
       $container->get('context.repository'),
       $container->get('language_manager'),
+<<<<<<< HEAD
       $container->get('theme_handler'),
       $container->get('plugin_form.factory')
+=======
+      $container->get('theme_handler')
+>>>>>>> github/master
     );
   }
 
@@ -134,9 +160,13 @@ class BlockForm extends EntityForm {
     $form_state->setTemporaryValue('gathered_contexts', $this->contextRepository->getAvailableContexts());
 
     $form['#tree'] = TRUE;
+<<<<<<< HEAD
     $form['settings'] = [];
     $subform_state = SubformState::createForSubform($form['settings'], $form, $form_state);
     $form['settings'] = $this->getPluginForm($entity->getPlugin())->buildConfigurationForm($form['settings'], $subform_state);
+=======
+    $form['settings'] = $entity->getPlugin()->buildConfigurationForm(array(), $form_state);
+>>>>>>> github/master
     $form['visibility'] = $this->buildVisibilityInterface([], $form_state);
 
     // If creating a new block, calculate a safe default machine name.
@@ -180,6 +210,7 @@ class BlockForm extends EntityForm {
       );
     }
 
+<<<<<<< HEAD
     // Hidden weight setting.
     $weight = $entity->isNew() ? $this->getRequest()->query->get('weight', 0) : $entity->getWeight();
     $form['weight'] = array(
@@ -187,6 +218,8 @@ class BlockForm extends EntityForm {
       '#default_value' => $weight,
     );
 
+=======
+>>>>>>> github/master
     // Region settings.
     $entity_region = $entity->getRegion();
     $region = $entity->isNew() ? $this->getRequest()->query->get('region', $entity_region) : $entity_region;
@@ -301,10 +334,20 @@ class BlockForm extends EntityForm {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
 
+<<<<<<< HEAD
     $form_state->setValue('weight', (int) $form_state->getValue('weight'));
     // The Block Entity form puts all block plugin form elements in the
     // settings form element, so just pass that to the block for validation.
     $this->getPluginForm($this->entity->getPlugin())->validateConfigurationForm($form['settings'], SubformState::createForSubform($form['settings'], $form, $form_state));
+=======
+    // The Block Entity form puts all block plugin form elements in the
+    // settings form element, so just pass that to the block for validation.
+    $settings = (new FormState())->setValues($form_state->getValue('settings'));
+    // Call the plugin validate handler.
+    $this->entity->getPlugin()->validateConfigurationForm($form, $settings);
+    // Update the original form values.
+    $form_state->setValue('settings', $settings->getValues());
+>>>>>>> github/master
     $this->validateVisibility($form, $form_state);
   }
 
@@ -323,12 +366,24 @@ class BlockForm extends EntityForm {
       // However, certain form elements may return it as 0/1. Cast here to
       // ensure the data is in the expected type.
       if (array_key_exists('negate', $values)) {
+<<<<<<< HEAD
         $form_state->setValue(['visibility', $condition_id, 'negate'], (bool) $values['negate']);
+=======
+        $values['negate'] = (bool) $values['negate'];
+>>>>>>> github/master
       }
 
       // Allow the condition to validate the form.
       $condition = $form_state->get(['conditions', $condition_id]);
+<<<<<<< HEAD
       $condition->validateConfigurationForm($form['visibility'][$condition_id], SubformState::createForSubform($form['visibility'][$condition_id], $form, $form_state));
+=======
+      $condition_values = (new FormState())
+        ->setValues($values);
+      $condition->validateConfigurationForm($form, $condition_values);
+      // Update the original form values.
+      $form_state->setValue(['visibility', $condition_id], $condition_values->getValues());
+>>>>>>> github/master
     }
   }
 
@@ -341,6 +396,7 @@ class BlockForm extends EntityForm {
     $entity = $this->entity;
     // The Block Entity form puts all block plugin form elements in the
     // settings form element, so just pass that to the block for submission.
+<<<<<<< HEAD
     $sub_form_state = SubformState::createForSubform($form['settings'], $form, $form_state);
     // Call the plugin submit handler.
     $block = $entity->getPlugin();
@@ -352,6 +408,39 @@ class BlockForm extends EntityForm {
     }
 
     $this->submitVisibility($form, $form_state);
+=======
+    // @todo Find a way to avoid this manipulation.
+    $settings = (new FormState())->setValues($form_state->getValue('settings'));
+
+    // Call the plugin submit handler.
+    $entity->getPlugin()->submitConfigurationForm($form, $settings);
+    $block = $entity->getPlugin();
+    // If this block is context-aware, set the context mapping.
+    if ($block instanceof ContextAwarePluginInterface && $block->getContextDefinitions()) {
+      $context_mapping = $settings->getValue('context_mapping', []);
+      $block->setContextMapping($context_mapping);
+    }
+    // Update the original form values.
+    $form_state->setValue('settings', $settings->getValues());
+
+    // Submit visibility condition settings.
+    foreach ($form_state->getValue('visibility') as $condition_id => $values) {
+      // Allow the condition to submit the form.
+      $condition = $form_state->get(['conditions', $condition_id]);
+      $condition_values = (new FormState())
+        ->setValues($values);
+      $condition->submitConfigurationForm($form, $condition_values);
+      if ($condition instanceof ContextAwarePluginInterface) {
+        $context_mapping = isset($values['context_mapping']) ? $values['context_mapping'] : [];
+        $condition->setContextMapping($context_mapping);
+      }
+      // Update the original form values.
+      $condition_configuration = $condition->getConfiguration();
+      $form_state->setValue(['visibility', $condition_id], $condition_configuration);
+      // Update the visibility conditions on the block.
+      $entity->getVisibilityConditions()->addInstanceId($condition_id, $condition_configuration);
+    }
+>>>>>>> github/master
 
     // Save the settings of the plugin.
     $entity->save();
@@ -367,6 +456,7 @@ class BlockForm extends EntityForm {
   }
 
   /**
+<<<<<<< HEAD
    * Helper function to independently submit the visibility UI.
    *
    * @param array $form
@@ -397,6 +487,8 @@ class BlockForm extends EntityForm {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Generates a unique machine name for a block.
    *
    * @param \Drupal\block\BlockInterface $block
@@ -428,6 +520,7 @@ class BlockForm extends EntityForm {
     return $machine_default;
   }
 
+<<<<<<< HEAD
   /**
    * Retrieves the plugin form for a given block and operation.
    *
@@ -444,4 +537,6 @@ class BlockForm extends EntityForm {
     return $block;
   }
 
+=======
+>>>>>>> github/master
 }

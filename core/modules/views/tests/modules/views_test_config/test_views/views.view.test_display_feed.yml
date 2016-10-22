@@ -115,7 +115,11 @@ display:
           group: 1
           id: status
           table: node_field_data
+<<<<<<< HEAD
           value: '1'
+=======
+          value: true
+>>>>>>> github/master
           plugin_id: boolean
           entity_type: node
           entity_field: status

@@ -4,7 +4,10 @@ namespace Drupal\rest\Plugin\views\display;
 
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Cache\CacheableResponse;
+<<<<<<< HEAD
 use Drupal\Core\Form\FormStateInterface;
+=======
+>>>>>>> github/master
 use Drupal\Core\Render\RenderContext;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Routing\RouteProviderInterface;
@@ -79,6 +82,7 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
   protected $renderer;
 
   /**
+<<<<<<< HEAD
    * The collector of authentication providers.
    *
    * @var \Drupal\Core\Authentication\AuthenticationCollectorInterface
@@ -93,6 +97,8 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
   protected $authenticationProviders;
 
   /**
+=======
+>>>>>>> github/master
    * Constructs a RestExport object.
    *
    * @param array $configuration
@@ -107,6 +113,7 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
    *   The state key value store.
    * @param \Drupal\Core\Render\RendererInterface $renderer
    *   The renderer.
+<<<<<<< HEAD
    * @param string[] $authentication_providers
    *   The authentication providers, keyed by ID.
    */
@@ -115,6 +122,13 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
 
     $this->renderer = $renderer;
     $this->authenticationProviders = $authentication_providers;
+=======
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, RouteProviderInterface $route_provider, StateInterface $state, RendererInterface $renderer) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $route_provider, $state);
+
+    $this->renderer = $renderer;
+>>>>>>> github/master
   }
 
   /**
@@ -127,9 +141,13 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
       $plugin_definition,
       $container->get('router.route_provider'),
       $container->get('state'),
+<<<<<<< HEAD
       $container->get('renderer'),
       $container->getParameter('authentication_providers')
 
+=======
+      $container->get('renderer')
+>>>>>>> github/master
     );
   }
   /**
@@ -220,6 +238,7 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
   }
 
   /**
+<<<<<<< HEAD
    * Gets the auth options available.
    *
    * @return string[]
@@ -230,14 +249,19 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
   }
 
   /**
+=======
+>>>>>>> github/master
    * {@inheritdoc}
    */
   protected function defineOptions() {
     $options = parent::defineOptions();
 
+<<<<<<< HEAD
     // Options for REST authentication.
     $options['auth'] = ['default' => []];
 
+=======
+>>>>>>> github/master
     // Set the default style plugin to 'json'.
     $options['style']['contains']['type']['default'] = 'serializer';
     $options['row']['contains']['type']['default'] = 'data_entity';
@@ -258,9 +282,12 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
   public function optionsSummary(&$categories, &$options) {
     parent::optionsSummary($categories, $options);
 
+<<<<<<< HEAD
     // Authentication.
     $auth = $this->getOption('auth') ? implode(', ', $this->getOption('auth')) : $this->t('No authentication is set');
 
+=======
+>>>>>>> github/master
     unset($categories['page'], $categories['exposed']);
     // Hide some settings, as they aren't useful for pure data output.
     unset($options['show_admin_links'], $options['analyze-theme']);
@@ -275,11 +302,14 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
 
     $options['path']['category'] = 'path';
     $options['path']['title'] = $this->t('Path');
+<<<<<<< HEAD
     $options['auth'] = array(
       'category' => 'path',
       'title' => $this->t('Authentication'),
       'value' => views_ui_truncate($auth, 24),
     );
+=======
+>>>>>>> github/master
 
     // Remove css/exposed form settings, as they are not used for the data
     // display.
@@ -291,6 +321,7 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     parent::buildOptionsForm($form, $form_state);
     if ($form_state->get('section') === 'auth') {
@@ -319,6 +350,8 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
   /**
    * {@inheritdoc}
    */
+=======
+>>>>>>> github/master
   public function collectRoutes(RouteCollection $collection) {
     parent::collectRoutes($collection);
     $view_id = $this->view->storage->id();
@@ -337,6 +370,7 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
         // anyway.
         $route->setRequirement('_format', implode('|', $formats + ['html']));
       }
+<<<<<<< HEAD
       // Add authentication to the route if it was set. If no authentication was
       // set, the default authentication will be used, which is cookie based by
       // default.
@@ -344,6 +378,8 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
       if (!empty($auth)) {
         $route->setOption('_auth', $auth);
       }
+=======
+>>>>>>> github/master
     }
   }
 
@@ -353,6 +389,7 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
   public static function buildResponse($view_id, $display_id, array $args = []) {
     $build = static::buildBasicRenderable($view_id, $display_id, $args);
 
+<<<<<<< HEAD
     // Setup an empty response so headers can be added as needed during views
     // rendering and processing.
     $response = new CacheableResponse('', 200);
@@ -364,6 +401,14 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
     $output = (string) $renderer->renderRoot($build);
 
     $response->setContent($output);
+=======
+    /** @var \Drupal\Core\Render\RendererInterface $renderer */
+    $renderer = \Drupal::service('renderer');
+
+    $output = $renderer->renderRoot($build);
+
+    $response = new CacheableResponse($output, 200);
+>>>>>>> github/master
     $cache_metadata = CacheableMetadata::createFromRenderArray($build);
     $response->addCacheableDependency($cache_metadata);
 
@@ -429,6 +474,7 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
     return $this->view->render();
   }
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
@@ -444,4 +490,6 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
     return $dependencies;
   }
 
+=======
+>>>>>>> github/master
 }

@@ -33,6 +33,7 @@ parameters:
     - sftp
     - webcal
     - rtsp
+<<<<<<< HEAD
   cors.config:
     enabled: false
     allowedHeaders: []
@@ -41,6 +42,8 @@ parameters:
     exposedHeaders: false
     maxAge: false
     supportsCredentials: false
+=======
+>>>>>>> github/master
 services:
   # Simple cache contexts, directly derived from the request context.
   cache_context.ip:
@@ -432,7 +435,11 @@ services:
     class: Drupal\Core\Path\AliasWhitelist
     tags:
       - { name: needs_destruction }
+<<<<<<< HEAD
     arguments: [path_alias_whitelist, '@cache.bootstrap', '@lock', '@state', '@path.alias_storage']
+=======
+    arguments: [path_alias_whitelist, '@cache.default', '@lock', '@state', '@path.alias_storage']
+>>>>>>> github/master
   path.alias_manager:
     class: Drupal\Core\Path\AliasManager
     arguments: ['@path.alias_storage', '@path.alias_whitelist', '@language_manager', '@cache.data']
@@ -512,6 +519,7 @@ services:
   theme_installer:
     class: Drupal\Core\Extension\ThemeInstaller
     arguments: ['@theme_handler', '@config.factory', '@config.installer', '@module_handler', '@config.manager', '@asset.css.collection_optimizer', '@router.builder', '@logger.channel.default', '@state']
+<<<<<<< HEAD
   # @deprecated in Drupal 8.0.x and will be removed before 9.0.0. Use the other
   #   entity* services instead.
   entity.manager:
@@ -519,6 +527,12 @@ services:
     # rely on this service and they would fail with deprecation warnings.
     class: Drupal\Core\Entity\EntityManager
     parent: container.trait
+=======
+  entity.manager:
+    class: Drupal\Core\Entity\EntityManager
+    parent: container.trait
+    deprecated: '%service_id%-no-warning'
+>>>>>>> github/master
     # @todo Remove this tag in https://www.drupal.org/node/2549143.
     tags:
       - { name: plugin_manager_cache_clear }
@@ -577,9 +591,12 @@ services:
   entity.autocomplete_matcher:
     class: Drupal\Core\Entity\EntityAutocompleteMatcher
     arguments: ['@plugin.manager.entity_reference_selection']
+<<<<<<< HEAD
   plugin_form.factory:
     class: Drupal\Core\Plugin\PluginFormFactory
     arguments: ['@class_resolver']
+=======
+>>>>>>> github/master
   plugin.manager.entity_reference_selection:
     class: Drupal\Core\Entity\EntityReferenceSelection\SelectionPluginManager
     parent: default_plugin_manager
@@ -714,11 +731,14 @@ services:
       - { name: http_middleware, priority: 50 }
     calls:
       - [setContainer, ['@service_container']]
+<<<<<<< HEAD
   http_middleware.cors:
      class: Asm89\Stack\Cors
      arguments: ['%cors.config%']
      tags:
        - { name: http_middleware }
+=======
+>>>>>>> github/master
   psr7.http_foundation_factory:
     class: Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory
   psr7.http_message_factory:
@@ -918,10 +938,13 @@ services:
     class: Drupal\Core\Routing\RequestFormatRouteFilter
     tags:
       - { name: route_filter }
+<<<<<<< HEAD
   method_filter:
     class: Drupal\Core\Routing\MethodFilter
     tags:
       - { name: route_filter, priority: 1 }
+=======
+>>>>>>> github/master
   content_type_header_matcher:
     class: Drupal\Core\Routing\ContentTypeHeaderMatcher
     tags:
@@ -1120,11 +1143,14 @@ services:
     tags:
       - { name: access_check, applies_to: _csrf_token, needs_incoming_request: TRUE }
     arguments: ['@csrf_token']
+<<<<<<< HEAD
   access_check.header.csrf:
     class: Drupal\Core\Access\CsrfRequestHeaderAccessCheck
     arguments: ['@session_configuration', '@csrf_token']
     tags:
       - { name: access_check }
+=======
+>>>>>>> github/master
   maintenance_mode:
     class: Drupal\Core\Site\MaintenanceMode
     arguments: ['@state', '@current_user']
@@ -1284,7 +1310,11 @@ services:
       - { name: backend_overridable }
   plugin.manager.mail:
     class: Drupal\Core\Mail\MailManager
+<<<<<<< HEAD
     arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@config.factory', '@logger.factory', '@string_translation', '@renderer']
+=======
+    arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@config.factory', '@logger.factory', '@string_translation']
+>>>>>>> github/master
   plugin.manager.condition:
     class: Drupal\Core\Condition\ConditionManager
     parent: default_plugin_manager
@@ -1455,7 +1485,11 @@ services:
     arguments: ['@current_user', '@session_handler.write_safe']
   user_permissions_hash_generator:
     class: Drupal\Core\Session\PermissionsHashGenerator
+<<<<<<< HEAD
     arguments: ['@private_key', '@cache.bootstrap', '@cache.static']
+=======
+    arguments: ['@private_key', '@cache.default', '@cache.static']
+>>>>>>> github/master
   current_user:
     class: Drupal\Core\Session\AccountProxy
   session_configuration:
@@ -1591,6 +1625,7 @@ services:
     tags:
       - { name: mime_type_guesser }
     lazy: true
+<<<<<<< HEAD
   # Currently needs to be public as it is called by
   # \Drupal\Core\Render\Element\StatusMessages.
   # @todo Consider making this service private again after
@@ -1598,6 +1633,12 @@ services:
   render_placeholder_generator:
     class: Drupal\Core\Render\PlaceholderGenerator
     arguments: ['%renderer.config%']
+=======
+  render_placeholder_generator:
+    class: Drupal\Core\Render\PlaceholderGenerator
+    arguments: ['%renderer.config%']
+    public: false
+>>>>>>> github/master
   render_cache:
     class: Drupal\Core\Render\PlaceholderingRenderCache
     arguments: ['@request_stack', '@cache_factory', '@cache_contexts_manager', '@render_placeholder_generator']
@@ -1631,8 +1672,12 @@ services:
   update.post_update_registry_factory:
     class: Drupal\Core\Update\UpdateRegistryFactory
     parent: container.trait
+<<<<<<< HEAD
   uuid:
     class: Drupal\Component\Uuid\Php
+=======
+
+>>>>>>> github/master
   response_filter.active_link:
     class: Drupal\Core\EventSubscriber\ActiveLinkResponseFilter
     arguments: ['@current_user', '@path.current', '@path.matcher', '@language_manager']

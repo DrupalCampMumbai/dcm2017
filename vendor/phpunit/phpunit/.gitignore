@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /.ant_targets
 /.idea
 /build/documentation
@@ -14,3 +15,27 @@
 /cache.properties
 /composer.lock
 /vendor
+=======
+build/api
+build/code-browser
+build/coverage
+build/logs
+build/pdepend
+build/phar
+build/phpdox
+build/*.phar
+build/*.phar.asc
+tests/TextUI/*.diff
+tests/TextUI/*.exp
+tests/TextUI/*.log
+tests/TextUI/*.out
+tests/TextUI/*.php
+/bin
+/vendor
+/composer.lock
+/composer.phar
+phpunit.xml
+cache.properties
+.idea
+.ant_targets
+>>>>>>> github/master

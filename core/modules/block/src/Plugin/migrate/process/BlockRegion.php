@@ -4,7 +4,11 @@ namespace Drupal\block\Plugin\migrate\process;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
+<<<<<<< HEAD
 use Drupal\migrate\Plugin\migrate\process\StaticMap;
+=======
+use Drupal\migrate\ProcessPluginBase;
+>>>>>>> github/master
 use Drupal\migrate\Row;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -13,7 +17,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "block_region"
  * )
  */
+<<<<<<< HEAD
 class BlockRegion extends StaticMap implements ContainerFactoryPluginInterface {
+=======
+class BlockRegion extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+>>>>>>> github/master
 
   /**
    * List of regions, keyed by theme.
@@ -56,7 +64,11 @@ class BlockRegion extends StaticMap implements ContainerFactoryPluginInterface {
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     // Set the destination region, based on the source region and theme as well
     // as the current destination default theme.
+<<<<<<< HEAD
     list($source_theme, $destination_theme, $region) = $value;
+=======
+    list($region, $source_theme, $destination_theme) = $value;
+>>>>>>> github/master
 
     // Theme is the same on both source and destination, so ensure that the
     // region exists in the destination theme.
@@ -66,8 +78,20 @@ class BlockRegion extends StaticMap implements ContainerFactoryPluginInterface {
       }
     }
 
+<<<<<<< HEAD
     // Fall back to static mapping.
     return parent::transform($value, $migrate_executable, $row, $destination_property);
+=======
+    // If the source and destination theme are different, try to use the
+    // mappings defined in the configuration.
+    $region_map = $this->configuration['region_map'];
+    if (isset($region_map[$region])) {
+      return $region_map[$region];
+    }
+
+    // Oh well, we tried. Put the block in the main content region.
+    return 'content';
+>>>>>>> github/master
   }
 
 }

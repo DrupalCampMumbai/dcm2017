@@ -111,14 +111,22 @@ class DerivativeDiscoveryDecoratorTest extends UnitTestCase {
    * @see \Drupal\Component\Plugin\Discovery\DerivativeDiscoveryDecorator::getDeriver().\
    *
    * @expectedException \Drupal\Component\Plugin\Exception\InvalidDeriverException
+<<<<<<< HEAD
    * @expectedExceptionMessage Plugin (invalid_discovery) deriver "\Drupal\KernelTests\Core\Plugin\DerivativeTest" must implement \Drupal\Component\Plugin\Derivative\DeriverInterface.
+=======
+   * @expectedExceptionMessage Plugin (invalid_discovery) deriver "\Drupal\system\Tests\Plugin\DerivativeTest" must implement \Drupal\Component\Plugin\Derivative\DeriverInterface.
+>>>>>>> github/master
    */
   public function testInvalidDerivativeFetcher() {
     $definitions = array();
     // Do this with a class that doesn't implement the interface.
     $definitions['invalid_discovery'] = array(
       'id' => 'invalid_discovery',
+<<<<<<< HEAD
       'deriver' => '\Drupal\KernelTests\Core\Plugin\DerivativeTest',
+=======
+      'deriver' => '\Drupal\system\Tests\Plugin\DerivativeTest',
+>>>>>>> github/master
     );
     $this->discoveryMain->expects($this->any())
       ->method('getDefinitions')

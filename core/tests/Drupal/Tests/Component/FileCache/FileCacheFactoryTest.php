@@ -2,8 +2,11 @@
 
 namespace Drupal\Tests\Component\FileCache;
 
+<<<<<<< HEAD
 use Drupal\Component\FileCache\FileCache;
 use Drupal\Component\FileCache\NullFileCache;
+=======
+>>>>>>> github/master
 use Drupal\Component\FileCache\FileCacheFactory;
 use Drupal\Tests\UnitTestCase;
 
@@ -19,6 +22,7 @@ class FileCacheFactoryTest extends UnitTestCase {
   protected function setUp() {
     parent::setUp();
 
+<<<<<<< HEAD
     $configuration = [
       'test_foo_settings' => [
         'collection' => 'test-23',
@@ -28,6 +32,20 @@ class FileCacheFactoryTest extends UnitTestCase {
         ],
       ],
     ];
+=======
+    $settings = [
+      'collection' => 'test-23',
+      'cache_backend_class' => '\Drupal\Tests\Component\FileCache\StaticFileCacheBackend',
+      'cache_backend_configuration' => [
+        'bin' => 'dog',
+      ],
+    ];
+    $configuration = FileCacheFactory::getConfiguration();
+    if (!$configuration) {
+      $configuration = [];
+    }
+    $configuration += [ 'test_foo_settings' => $settings ];
+>>>>>>> github/master
     FileCacheFactory::setConfiguration($configuration);
     FileCacheFactory::setPrefix('prefix');
   }
@@ -65,6 +83,7 @@ class FileCacheFactoryTest extends UnitTestCase {
   }
 
   /**
+<<<<<<< HEAD
    * @covers ::get
    */
   public function testGetDisabledFileCache() {
@@ -156,6 +175,8 @@ class FileCacheFactoryTest extends UnitTestCase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * @covers ::getConfiguration
    * @covers ::setConfiguration
    */

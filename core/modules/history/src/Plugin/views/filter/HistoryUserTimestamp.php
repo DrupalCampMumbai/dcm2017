@@ -2,7 +2,10 @@
 
 namespace Drupal\history\Plugin\views\filter;
 
+<<<<<<< HEAD
 use Drupal\Core\Cache\UncacheableDependencyTrait;
+=======
+>>>>>>> github/master
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\filter\FilterPluginBase;
 
@@ -18,8 +21,11 @@ use Drupal\views\Plugin\views\filter\FilterPluginBase;
  */
 class HistoryUserTimestamp extends FilterPluginBase {
 
+<<<<<<< HEAD
   use UncacheableDependencyTrait;
 
+=======
+>>>>>>> github/master
   // Don't display empty space where the operator would be.
   public $no_operator = TRUE;
 
@@ -96,4 +102,15 @@ class HistoryUserTimestamp extends FilterPluginBase {
     }
   }
 
+<<<<<<< HEAD
+=======
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheMaxAge() {
+    // This filter depends on the current time and therefore is never cacheable.
+    return 0;
+  }
+
+>>>>>>> github/master
 }

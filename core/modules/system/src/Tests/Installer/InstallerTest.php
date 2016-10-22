@@ -74,6 +74,7 @@ class InstallerTest extends InstallerTestBase {
     parent::setUpSite();
   }
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
@@ -84,4 +85,6 @@ class InstallerTest extends InstallerTestBase {
     $this->assertTitle('Choose language | Drupal');
   }
 
+=======
+>>>>>>> github/master
 }

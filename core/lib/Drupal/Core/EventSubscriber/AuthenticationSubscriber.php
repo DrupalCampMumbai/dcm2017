@@ -30,14 +30,22 @@ class AuthenticationSubscriber implements EventSubscriberInterface {
   /**
    * Authentication provider filter.
    *
+<<<<<<< HEAD
    * @var \Drupal\Core\Authentication\AuthenticationProviderFilterInterface|null
+=======
+   * @var \Drupal\Core\Authentication\AuthenticationProviderFilterInterface|NULL
+>>>>>>> github/master
    */
   protected $filter;
 
   /**
    * Authentication challenge provider.
    *
+<<<<<<< HEAD
    * @var \Drupal\Core\Authentication\AuthenticationProviderChallengeInterface|null
+=======
+   * @var \Drupal\Core\Authentication\AuthenticationProviderChallengeInterface|NULL
+>>>>>>> github/master
    */
   protected $challengeProvider;
 

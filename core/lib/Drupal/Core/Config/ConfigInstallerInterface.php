@@ -40,7 +40,11 @@ interface ConfigInstallerInterface {
    * - it's a configuration entity.
    * - its dependencies can be met.
    *
+<<<<<<< HEAD
    * @param \Drupal\Core\Config\StorageInterface $storage
+=======
+   * @param \Drupal\Core\Config\StorageInterface
+>>>>>>> github/master
    *   (optional) The configuration storage to search for optional
    *   configuration. If not provided, all enabled extension's optional
    *   configuration directories will be searched.

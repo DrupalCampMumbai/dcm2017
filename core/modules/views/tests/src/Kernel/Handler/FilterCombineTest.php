@@ -13,16 +13,23 @@ use Drupal\views\Views;
 class FilterCombineTest extends ViewsKernelTestBase {
 
   /**
+<<<<<<< HEAD
    * {@inheritdoc}
    */
   public static $modules = array('entity_test');
 
   /**
+=======
+>>>>>>> github/master
    * Views used by this test.
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $testViews = array('test_view', 'entity_test_fields');
+=======
+  public static $testViews = array('test_view');
+>>>>>>> github/master
 
   /**
    * Map column names.
@@ -34,6 +41,7 @@ class FilterCombineTest extends ViewsKernelTestBase {
     'views_test_data_job' => 'job',
   );
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
@@ -43,6 +51,8 @@ class FilterCombineTest extends ViewsKernelTestBase {
     $this->installEntitySchema('entity_test');
   }
 
+=======
+>>>>>>> github/master
   public function testFilterCombineContains() {
     $view = Views::getView('test_view');
     $view->setDisplay();
@@ -140,6 +150,7 @@ class FilterCombineTest extends ViewsKernelTestBase {
     $this->assertTrue($view->build_info['fail'], "View build has been marked as failed.");
     // Make sure this view does not pass validation with the right error.
     $errors = $view->validate();
+<<<<<<< HEAD
     $this->assertEquals(t('Field %field set in %filter is not set in display %display.', array('%field' => 'dummy', '%filter' => 'Global: Combine fields filter', '%display' => 'Master')), reset($errors['default']));
   }
 
@@ -176,6 +187,9 @@ class FilterCombineTest extends ViewsKernelTestBase {
     $errors = $view->validate();
     // Check that the right error is shown.
     $this->assertEquals(t('%display: %filter can only be used on displays that use fields. Set the style or row format for that display to one using fields to use the combine field filter.', array('%filter' => 'Global: Combine fields filter', '%display' => 'Master')), reset($errors['default']));
+=======
+    $this->assertEqual(reset($errors['default']), t('Field %field set in %filter is not set in this display.', array('%field' => 'dummy', '%filter' => 'Global: Combine fields filter')));
+>>>>>>> github/master
   }
 
   /**

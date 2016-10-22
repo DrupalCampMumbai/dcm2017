@@ -2,12 +2,19 @@
 
 namespace Drupal\Core\Extension;
 
+<<<<<<< HEAD
+=======
+use Drupal\Component\Serialization\Yaml;
+>>>>>>> github/master
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\DrupalKernelInterface;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Entity\FieldableEntityInterface;
+<<<<<<< HEAD
 use Drupal\Core\Serialization\Yaml;
+=======
+>>>>>>> github/master
 
 /**
  * Default implementation of the module installer.

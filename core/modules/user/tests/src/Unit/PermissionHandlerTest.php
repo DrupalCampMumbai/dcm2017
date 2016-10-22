@@ -105,15 +105,25 @@ class PermissionHandlerTest extends UnitTestCase {
 
     $url = vfsStream::url('modules');
     mkdir($url . '/module_a');
+<<<<<<< HEAD
     file_put_contents($url . '/module_a/module_a.permissions.yml', "access_module_a: single_description");
     mkdir($url . '/module_b');
     file_put_contents($url . '/module_b/module_b.permissions.yml', <<<EOF
 'access module b':
+=======
+    file_put_contents($url . '/module_a/module_a.permissions.yml',
+"access_module_a: single_description"
+    );
+    mkdir($url . '/module_b');
+    file_put_contents($url . '/module_b/module_b.permissions.yml',
+"'access module b':
+>>>>>>> github/master
   title: 'Access B'
   description: 'bla bla'
 'access module a via module b':
   title: 'Access A via B'
   provider: 'module_a'
+<<<<<<< HEAD
 EOF
     );
     mkdir($url . '/module_c');
@@ -124,6 +134,16 @@ EOF
   'restrict access': TRUE
 EOF
     );
+=======
+");
+    mkdir($url . '/module_c');
+    file_put_contents($url . '/module_c/module_c.permissions.yml',
+"'access_module_c':
+  title: 'Access C'
+  description: 'bla bla'
+  'restrict access': TRUE
+");
+>>>>>>> github/master
     $modules = array('module_a', 'module_b', 'module_c');
     $extensions = array(
       'module_a' => $this->mockModuleExtension('module_a', 'Module a'),
@@ -187,10 +207,16 @@ EOF
 
     $url = vfsStream::url('modules');
     mkdir($url . '/module_a');
+<<<<<<< HEAD
     file_put_contents($url . '/module_a/module_a.permissions.yml', <<<EOF
 access_module_a2: single_description2
 access_module_a1: single_description1
 EOF
+=======
+    file_put_contents($url . '/module_a/module_a.permissions.yml',
+"access_module_a2: single_description2
+access_module_a1: single_description1"
+>>>>>>> github/master
     );
     mkdir($url . '/module_b');
     file_put_contents($url . '/module_b/module_b.permissions.yml',
@@ -235,6 +261,7 @@ EOF
 
     $url = vfsStream::url('modules');
     mkdir($url . '/module_a');
+<<<<<<< HEAD
     file_put_contents($url . '/module_a/module_a.permissions.yml', <<<EOF
 permission_callbacks:
   - 'Drupal\\user\\Tests\\TestPermissionCallbacks::singleDescription'
@@ -253,6 +280,23 @@ permission_callbacks:
   - 'Drupal\\user\\Tests\\TestPermissionCallbacks::titleDescriptionRestrictAccess'
 EOF
     );
+=======
+    file_put_contents($url . '/module_a/module_a.permissions.yml',
+"permission_callbacks:
+  - 'Drupal\\user\\Tests\\TestPermissionCallbacks::singleDescription'
+");
+    mkdir($url . '/module_b');
+    file_put_contents($url . '/module_b/module_b.permissions.yml',
+"permission_callbacks:
+  - 'Drupal\\user\\Tests\\TestPermissionCallbacks::titleDescription'
+  - 'Drupal\\user\\Tests\\TestPermissionCallbacks::titleProvider'
+");
+    mkdir($url . '/module_c');
+    file_put_contents($url . '/module_c/module_c.permissions.yml',
+"permission_callbacks:
+  - 'Drupal\\user\\Tests\\TestPermissionCallbacks::titleDescriptionRestrictAccess'
+");
+>>>>>>> github/master
 
     $modules = array('module_a', 'module_b', 'module_c');
     $extensions = array(
@@ -313,14 +357,23 @@ EOF
 
     $url = vfsStream::url('modules');
     mkdir($url . '/module_a');
+<<<<<<< HEAD
     file_put_contents($url . '/module_a/module_a.permissions.yml', <<<EOF
 'access module a':
+=======
+    file_put_contents($url . '/module_a/module_a.permissions.yml',
+"'access module a':
+>>>>>>> github/master
   title: 'Access A'
   description: 'bla bla'
 permission_callbacks:
   - 'Drupal\\user\\Tests\\TestPermissionCallbacks::titleDescription'
+<<<<<<< HEAD
 EOF
     );
+=======
+");
+>>>>>>> github/master
 
     $modules = array('module_a');
     $extensions = array(

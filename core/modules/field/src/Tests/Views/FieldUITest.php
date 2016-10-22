@@ -146,6 +146,7 @@ class FieldUITest extends FieldTestBase {
     $this->assertEqual(t('True'), (string) $option[0]);
     $option = $this->xpath('//label[@for="edit-options-value-0"]');
     $this->assertEqual(t('False'), (string) $option[0]);
+<<<<<<< HEAD
 
     // Expose the filter and see if the 'Any' option is added and if we can save
     // it.
@@ -156,6 +157,8 @@ class FieldUITest extends FieldTestBase {
     $this->drupalPostForm(NULL, [], 'Save');
     $this->drupalGet('/admin/structure/views/nojs/handler/test_view_fieldapi/default/filter/field_boolean_value');
     $this->assertFieldChecked('edit-options-value-all');
+=======
+>>>>>>> github/master
   }
 
 }

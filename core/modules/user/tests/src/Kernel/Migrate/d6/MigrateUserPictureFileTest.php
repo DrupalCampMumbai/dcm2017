@@ -3,7 +3,10 @@
 namespace Drupal\Tests\user\Kernel\Migrate\d6;
 
 use Drupal\file\Entity\File;
+<<<<<<< HEAD
 use Drupal\Tests\file\Kernel\Migrate\d6\FileMigrationTestTrait;
+=======
+>>>>>>> github/master
 use Drupal\Tests\migrate_drupal\Kernel\d6\MigrateDrupal6TestBase;
 
 /**
@@ -13,8 +16,11 @@ use Drupal\Tests\migrate_drupal\Kernel\d6\MigrateDrupal6TestBase;
  */
 class MigrateUserPictureFileTest extends MigrateDrupal6TestBase {
 
+<<<<<<< HEAD
   use FileMigrationTestTrait;
 
+=======
+>>>>>>> github/master
   /**
    * {@inheritdoc}
    */
@@ -22,7 +28,17 @@ class MigrateUserPictureFileTest extends MigrateDrupal6TestBase {
     parent::setUp();
 
     $this->installEntitySchema('file');
+<<<<<<< HEAD
     $this->executeMigration('d6_user_picture_file');
+=======
+
+    /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
+    $migration = $this->getMigration('d6_user_picture_file');
+    $source = $migration->getSourceConfiguration();
+    $source['site_path'] = 'core/modules/simpletest';
+    $migration->set('source', $source);
+    $this->executeMigration($migration);
+>>>>>>> github/master
   }
 
   /**

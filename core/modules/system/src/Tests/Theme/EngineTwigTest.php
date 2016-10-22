@@ -72,7 +72,11 @@ class EngineTwigTest extends WebTestBase {
   public function testTwigLinkGenerator() {
     $this->drupalGet('twig-theme-test/link-generator');
 
+<<<<<<< HEAD
     /** @var \Drupal\Core\Utility\LinkGenerator $link_generator */
+=======
+     /** @var \Drupal\Core\Utility\LinkGenerator $link_generator */
+>>>>>>> github/master
     $link_generator = $this->container->get('link_generator');
 
     $expected = [

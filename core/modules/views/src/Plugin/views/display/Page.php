@@ -294,7 +294,11 @@ class Page extends PathPluginBase {
           '#title' => $this->t('Show as expanded'),
           '#type' => 'checkbox',
           '#default_value' => !empty($menu['expanded']),
+<<<<<<< HEAD
           '#description' => $this->t('If selected and this menu link has children, the menu will always appear expanded.'),
+=======
+          '#description' => $this->t('If selected and this menu link has children, the menu will always appear expanded. '),
+>>>>>>> github/master
         ];
 
         // Only display the parent selector if Menu UI module is enabled.
@@ -520,7 +524,11 @@ class Page extends PathPluginBase {
   public function getPagerText() {
     return array(
       'items per page title' => $this->t('Items per page'),
+<<<<<<< HEAD
       'items per page description' => $this->t('Enter 0 for no limit.')
+=======
+      'items per page description' => $this->t('The number of items to display per page. Enter 0 for no limit.')
+>>>>>>> github/master
     );
   }
 

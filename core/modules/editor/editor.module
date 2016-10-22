@@ -67,6 +67,7 @@ function editor_element_info_alter(&$types) {
 
 /**
  * Implements hook_form_FORM_ID_alter() for \Drupal\filter\FilterFormatListBuilder.
+<<<<<<< HEAD
  *
  * Implements hook_field_formatter_info_alter().
  *
@@ -81,6 +82,8 @@ function editor_field_formatter_info_alter(&$info) {
 
 /**
  * Implements hook_form_FORM_ID_alter().
+=======
+>>>>>>> github/master
  */
 function editor_form_filter_admin_overview_alter(&$form, FormStateInterface $form_state) {
   // @todo Cleanup column injection: https://www.drupal.org/node/1876718.
@@ -263,7 +266,11 @@ function editor_load($format_id) {
   // than one editor will be needed on a page (such as having multiple text
   // formats for administrators). Loading a small number of editors all at once
   // is more efficient than loading multiple editors individually.
+<<<<<<< HEAD
   $editors = Editor::loadMultiple();
+=======
+  $editors = entity_load_multiple('editor');
+>>>>>>> github/master
   return isset($editors[$format_id]) ? $editors[$format_id] : NULL;
 }
 

@@ -3,7 +3,10 @@
 namespace Drupal\views_ui\Tests;
 
 use Drupal\Component\Serialization\Json;
+<<<<<<< HEAD
 use Drupal\Core\EventSubscriber\MainContentViewSubscriber;
+=======
+>>>>>>> github/master
 
 /**
  * Tests the UI preview functionality.
@@ -325,7 +328,11 @@ class PreviewTest extends UITestBase {
     );
     $url = $this->getAbsoluteUrl($url);
     $post = array('js' => 'true') + $this->getAjaxPageStatePostData();
+<<<<<<< HEAD
     $result = Json::decode($this->drupalPost($url, '', $post, ['query' => [MainContentViewSubscriber::WRAPPER_FORMAT => 'drupal_ajax']]));
+=======
+    $result = Json::decode($this->drupalPost($url, 'application/vnd.drupal-ajax', $post));
+>>>>>>> github/master
     if (!empty($result)) {
       $this->drupalProcessAjaxResponse($content, $result, $ajax_settings, $drupal_settings);
     }

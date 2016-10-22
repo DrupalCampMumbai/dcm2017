@@ -18,6 +18,7 @@ function quickedit_test_quickedit_render_field(EntityInterface $entity, $field_n
     '#suffix' => '</div>',
   );
 }
+<<<<<<< HEAD
 
 /**
  * Implements hook_field_formatter_info_alter().
@@ -31,3 +32,5 @@ function quickedit_test_field_formatter_info_alter(&$info) {
   // provided by this module.
   $info['text_default']['quickedit'] = ['editor' => 'wysiwyg'];
 }
+=======
+>>>>>>> github/master

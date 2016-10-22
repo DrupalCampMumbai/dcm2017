@@ -91,6 +91,7 @@ class CommentPagerTest extends CommentTestBase {
   }
 
   /**
+<<<<<<< HEAD
    * Confirms comment paging works correctly with flat and threaded comments.
    */
   function testCommentPermalink() {
@@ -123,6 +124,8 @@ class CommentPagerTest extends CommentTestBase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Tests comment ordering and threading.
    */
   function testCommentOrderingThreading() {
@@ -315,7 +318,10 @@ class CommentPagerTest extends CommentTestBase {
         'weight' => 30,
         'settings' => array(
           'pager_id' => 1,
+<<<<<<< HEAD
           'view_mode' => 'default',
+=======
+>>>>>>> github/master
         )
       ))
       ->save();

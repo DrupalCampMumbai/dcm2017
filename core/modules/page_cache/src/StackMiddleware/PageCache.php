@@ -7,7 +7,10 @@ use Drupal\Core\Cache\CacheableResponseInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\PageCache\RequestPolicyInterface;
 use Drupal\Core\PageCache\ResponsePolicyInterface;
+<<<<<<< HEAD
 use Drupal\Core\Site\Settings;
+=======
+>>>>>>> github/master
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -244,14 +247,19 @@ class PageCache implements HttpKernelInterface {
       return $response;
     }
 
+<<<<<<< HEAD
     $request_time = $request->server->get('REQUEST_TIME');
     // The response passes all of the above checks, so cache it. Page cache
     // entries default to Cache::PERMANENT since they will be expired via cache
     // tags locally. Because of this, page cache ignores max age.
+=======
+    // The response passes all of the above checks, so cache it.
+>>>>>>> github/master
     // - Get the tags from CacheableResponseInterface per the earlier comments.
     // - Get the time expiration from the Expires header, rather than the
     //   interface, but see https://www.drupal.org/node/2352009 about possibly
     //   changing that.
+<<<<<<< HEAD
     $expire = 0;
     // 403 and 404 responses can fill non-LRU cache backends and generally are
     // likely to have a low cache hit rate. So do not cache them permanently.
@@ -272,6 +280,12 @@ class PageCache implements HttpKernelInterface {
       $tags = $response->getCacheableMetadata()->getCacheTags();
       $this->set($request, $response, $expire, $tags);
     }
+=======
+    $tags = $response->getCacheableMetadata()->getCacheTags();
+    $date = $response->getExpires()->getTimestamp();
+    $expire = ($date > time()) ? $date : Cache::PERMANENT;
+    $this->set($request, $response, $expire, $tags);
+>>>>>>> github/master
 
     // Mark response as a cache miss.
     $response->headers->set('X-Drupal-Cache', 'MISS');

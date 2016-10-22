@@ -179,7 +179,11 @@ class AccountProxy implements AccountProxyInterface {
    * @param int $account_id
    *   The id of an account to load.
    *
+<<<<<<< HEAD
    * @return \Drupal\Core\Session\AccountInterface|null
+=======
+   * @return \Drupal\Core\Session\AccountInterface|NULL
+>>>>>>> github/master
    *   An account or NULL if none is found.
    */
   protected function loadUserEntity($account_id) {

@@ -93,12 +93,15 @@ seven.drupal.dialog:
     theme:
       css/components/dialog.css: {}
 
+<<<<<<< HEAD
 ckeditor-dialog:
   version: VERSION
   css:
     theme:
       css/theme/ckeditor-dialog.css: {}
 
+=======
+>>>>>>> github/master
 tour-styling:
   version: VERSION
   css:

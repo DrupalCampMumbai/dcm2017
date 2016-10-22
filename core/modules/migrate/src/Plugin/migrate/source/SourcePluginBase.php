@@ -3,8 +3,11 @@
 namespace Drupal\migrate\Plugin\migrate\source;
 
 use Drupal\Core\Plugin\PluginBase;
+<<<<<<< HEAD
 use Drupal\migrate\Event\MigrateRollbackEvent;
 use Drupal\migrate\Event\RollbackAwareInterface;
+=======
+>>>>>>> github/master
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\MigrateException;
 use Drupal\migrate\MigrateSkipRowException;
@@ -22,7 +25,11 @@ use Drupal\migrate\Row;
  *
  * @ingroup migration
  */
+<<<<<<< HEAD
 abstract class SourcePluginBase extends PluginBase implements MigrateSourceInterface, RollbackAwareInterface {
+=======
+abstract class SourcePluginBase extends PluginBase implements MigrateSourceInterface {
+>>>>>>> github/master
 
   /**
    * The module handler service.
@@ -39,6 +46,18 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
   protected $migration;
 
   /**
+<<<<<<< HEAD
+=======
+   * The name and type of the highwater property in the source.
+   *
+   * @var array
+   *
+   * @see $originalHighwater
+   */
+  protected $highWaterProperty;
+
+  /**
+>>>>>>> github/master
    * The current row from the query.
    *
    * @var \Drupal\Migrate\Row
@@ -53,6 +72,7 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
   protected $currentSourceIds;
 
   /**
+<<<<<<< HEAD
    * Information on the property used as the high-water mark.
    *
    * Array of 'name' and (optional) db 'alias' properties used for high-water
@@ -73,6 +93,11 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
    * The high water mark at the beginning of the import operation.
    *
    * If the source has a property for tracking changes (like Drupal has
+=======
+   * The high water mark at the beginning of the import operation.
+   *
+   * If the source has a property for tracking changes (like Drupal ha
+>>>>>>> github/master
    * node.changed) then this is the highest value of those imported so far.
    *
    * @var int
@@ -151,6 +176,7 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
     $this->migration = $migration;
 
     // Set up some defaults based on the source configuration.
+<<<<<<< HEAD
     foreach (['cacheCounts' => 'cache_counts', 'skipCount' => 'skip_count', 'trackChanges' => 'track_changes'] as $property => $config_key) {
       if (isset($configuration[$config_key])) {
         $this->$property = (bool) $configuration[$config_key];
@@ -163,6 +189,17 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
     // Pull out the current highwater mark if we have a highwater property.
     if ($this->highWaterProperty) {
       $this->originalHighWater = $this->getHighWater();
+=======
+    $this->cacheCounts = !empty($configuration['cache_counts']);
+    $this->skipCount = !empty($configuration['skip_count']);
+    $this->cacheKey = !empty($configuration['cache_key']) ? $configuration['cache_key'] : NULL;
+    $this->trackChanges = !empty($configuration['track_changes']) ? $configuration['track_changes'] : FALSE;
+    $this->idMap = $this->migration->getIdMap();
+
+    // Pull out the current highwater mark if we have a highwater property.
+    if ($this->highWaterProperty = $this->migration->getHighWaterProperty()) {
+      $this->originalHighWater = $this->migration->getHighWater();
+>>>>>>> github/master
     }
 
     // Don't allow the use of both highwater and track changes together.
@@ -337,10 +374,13 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
       if (!$row->getIdMap() || $row->needsUpdate() || $this->aboveHighwater($row) || $this->rowChanged($row)) {
         $this->currentRow = $row->freezeSource();
       }
+<<<<<<< HEAD
 
       if ($this->getHighWaterProperty()) {
         $this->saveHighWater($row->getSourceProperty($this->highWaterProperty['name']));
       }
+=======
+>>>>>>> github/master
     }
   }
 
@@ -354,7 +394,11 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
    *   TRUE if the highwater value in the row is greater than our current value.
    */
   protected function aboveHighwater(Row $row) {
+<<<<<<< HEAD
     return $this->getHighWaterProperty() && $row->getSourceProperty($this->highWaterProperty['name']) > $this->originalHighWater;
+=======
+    return $this->highWaterProperty && $row->getSourceProperty($this->highWaterProperty['name']) > $this->originalHighWater;
+>>>>>>> github/master
   }
 
   /**
@@ -401,7 +445,11 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
     // If a refresh is requested, or we're not caching counts, ask the derived
     // class to get the count from the source.
     if ($refresh || !$this->cacheCounts) {
+<<<<<<< HEAD
       $count = $this->doCount();
+=======
+      $count = $this->getIterator()->count();
+>>>>>>> github/master
       $this->getCache()->set($this->cacheKey, $count);
     }
     else {
@@ -414,7 +462,11 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
       else {
         // No cached count, ask the derived class to count 'em up, and cache
         // the result.
+<<<<<<< HEAD
         $count = $this->doCount();
+=======
+        $count = $this->getIterator()->count();
+>>>>>>> github/master
         $this->getCache()->set($this->cacheKey, $count);
       }
     }
@@ -434,6 +486,7 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
     return $this->cache;
   }
 
+<<<<<<< HEAD
   /**
    * Gets the source count checking if the source is countable or using the
    * iterator_count function.
@@ -531,4 +584,6 @@ abstract class SourcePluginBase extends PluginBase implements MigrateSourceInter
     $this->saveHighWater(NULL);
   }
 
+=======
+>>>>>>> github/master
 }

@@ -2,8 +2,13 @@ name: Stable
 type: theme
 description: A default base theme using Drupal 8.0.0's core markup and CSS.
 package: Core
+<<<<<<< HEAD
 version: VERSION
 core: 8.x
+=======
+# version: VERSION
+# core: 8.x
+>>>>>>> github/master
 base theme: false
 hidden: true
 
@@ -237,3 +242,12 @@ libraries-override:
       theme:
         css/views_ui.admin.theme.css: css/views_ui/views_ui.admin.theme.css
         css/views_ui.contextual.css: css/views_ui/views_ui.contextual.css
+<<<<<<< HEAD
+=======
+
+# Information added by Drupal.org packaging script on 2016-09-21
+version: '8.1.10'
+core: '8.x'
+project: 'drupal'
+datestamp: 1474479094
+>>>>>>> github/master

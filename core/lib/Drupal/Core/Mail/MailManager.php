@@ -8,8 +8,11 @@ use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
+<<<<<<< HEAD
 use Drupal\Core\Render\RenderContext;
 use Drupal\Core\Render\RendererInterface;
+=======
+>>>>>>> github/master
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
 
@@ -39,6 +42,7 @@ class MailManager extends DefaultPluginManager implements MailManagerInterface {
   protected $loggerFactory;
 
   /**
+<<<<<<< HEAD
    * The renderer.
    *
    * @var \Drupal\Core\Render\RendererInterface
@@ -46,6 +50,8 @@ class MailManager extends DefaultPluginManager implements MailManagerInterface {
   protected $renderer;
 
   /**
+=======
+>>>>>>> github/master
    * List of already instantiated mail plugins.
    *
    * @var array
@@ -68,17 +74,25 @@ class MailManager extends DefaultPluginManager implements MailManagerInterface {
    *   The logger channel factory.
    * @param \Drupal\Core\StringTranslation\TranslationInterface $string_translation
    *   The string translation service.
+<<<<<<< HEAD
    * @param \Drupal\Core\Render\RendererInterface $renderer
    *   The renderer.
    */
   public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, ConfigFactoryInterface $config_factory, LoggerChannelFactoryInterface $logger_factory, TranslationInterface $string_translation, RendererInterface $renderer) {
+=======
+   */
+  public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, ConfigFactoryInterface $config_factory, LoggerChannelFactoryInterface $logger_factory, TranslationInterface $string_translation) {
+>>>>>>> github/master
     parent::__construct('Plugin/Mail', $namespaces, $module_handler, 'Drupal\Core\Mail\MailInterface', 'Drupal\Core\Annotation\Mail');
     $this->alterInfo('mail_backend_info');
     $this->setCacheBackend($cache_backend, 'mail_backend_plugins');
     $this->configFactory = $config_factory;
     $this->loggerFactory = $logger_factory;
     $this->stringTranslation = $string_translation;
+<<<<<<< HEAD
     $this->renderer = $renderer;
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -164,6 +178,7 @@ class MailManager extends DefaultPluginManager implements MailManagerInterface {
    * {@inheritdoc}
    */
   public function mail($module, $key, $to, $langcode, $params = array(), $reply = NULL, $send = TRUE) {
+<<<<<<< HEAD
     // Mailing can invoke rendering (e.g., generating URLs, replacing tokens),
     // but e-mails are not HTTP responses: they're not cached, they don't have
     // attachments. Therefore we perform mailing inside its own render context,
@@ -216,6 +231,8 @@ class MailManager extends DefaultPluginManager implements MailManagerInterface {
    * @see \Drupal\Core\Mail\MailManagerInterface::mail()
    */
   public function doMail($module, $key, $to, $langcode, $params = array(), $reply = NULL, $send = TRUE) {
+=======
+>>>>>>> github/master
     $site_config = $this->configFactory->get('system.site');
     $site_mail = $site_config->get('mail');
     if (empty($site_mail)) {

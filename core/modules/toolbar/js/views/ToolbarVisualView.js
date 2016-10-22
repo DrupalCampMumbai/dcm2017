@@ -23,9 +23,15 @@
       };
 
       return {
+<<<<<<< HEAD
         'click .toolbar-bar .toolbar-tab .trigger': 'onTabClick',
         'click .toolbar-toggle-orientation button': 'onOrientationToggleClick',
         'touchend .toolbar-bar .toolbar-tab .trigger': touchEndToClick,
+=======
+        'click .toolbar-bar .toolbar-tab': 'onTabClick',
+        'click .toolbar-toggle-orientation button': 'onOrientationToggleClick',
+        'touchend .toolbar-bar .toolbar-tab': touchEndToClick,
+>>>>>>> github/master
         'touchend .toolbar-toggle-orientation button': touchEndToClick
       };
     },

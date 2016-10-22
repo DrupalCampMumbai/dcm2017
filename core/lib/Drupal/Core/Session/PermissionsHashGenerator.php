@@ -40,7 +40,11 @@ class PermissionsHashGenerator implements PermissionsHashGeneratorInterface {
    *   The private key service.
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache
    *   The cache backend interface to use for the persistent cache.
+<<<<<<< HEAD
    * @param \Drupal\Core\Cache\CacheBackendInterface $static
+=======
+   * @param \Drupal\Core\Cache\CacheBackendInterface
+>>>>>>> github/master
    *   The cache backend interface to use for the static cache.
    */
   public function __construct(PrivateKey $private_key, CacheBackendInterface $cache, CacheBackendInterface $static) {

@@ -348,6 +348,7 @@ class SystemTestController extends ControllerBase {
     return $response;
   }
 
+<<<<<<< HEAD
   /**
    * Returns a response with a test header set from the request.
    *
@@ -360,4 +361,6 @@ class SystemTestController extends ControllerBase {
     return $response;
   }
 
+=======
+>>>>>>> github/master
 }

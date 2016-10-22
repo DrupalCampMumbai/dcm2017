@@ -28,7 +28,11 @@ class PathItem extends FieldItemBase {
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties['alias'] = DataDefinition::create('string')
       ->setLabel(t('Path alias'));
+<<<<<<< HEAD
     $properties['pid'] = DataDefinition::create('integer')
+=======
+    $properties['pid'] = DataDefinition::create('string')
+>>>>>>> github/master
       ->setLabel(t('Path id'));
     return $properties;
   }
@@ -75,6 +79,18 @@ class PathItem extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
+=======
+  public function delete() {
+    // Delete all aliases associated with this entity.
+    $entity = $this->getEntity();
+    \Drupal::service('path.alias_storage')->delete(array('source' => '/' . $entity->urlInfo()->getInternalPath()));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+>>>>>>> github/master
   public static function generateSampleValue(FieldDefinitionInterface $field_definition) {
     $random = new Random();
     $values['alias'] = str_replace(' ', '-', strtolower($random->sentences(3)));

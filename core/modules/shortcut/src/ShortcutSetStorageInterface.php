@@ -46,7 +46,11 @@ interface ShortcutSetStorageInterface extends ConfigEntityStorageInterface {
   /**
    * Get the name of the set assigned to this user.
    *
+<<<<<<< HEAD
    * @param \Drupal\user\Entity\User $account
+=======
+   * @param \Drupal\user\Entity\User
+>>>>>>> github/master
    *   The user account.
    *
    * @return string

@@ -3,7 +3,10 @@
 namespace Drupal\field\Tests\Boolean;
 
 use Drupal\Component\Utility\Unicode;
+<<<<<<< HEAD
 use Drupal\entity_test\Entity\EntityTest;
+=======
+>>>>>>> github/master
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\simpletest\WebTestBase;
@@ -95,8 +98,12 @@ class BooleanFieldTest extends WebTestBase {
     // Display creation form.
     $this->drupalGet('entity_test/add');
     $this->assertFieldByName("{$field_name}[value]", '', 'Widget found.');
+<<<<<<< HEAD
     $this->assertText($this->field->label(), 'Uses field label by default.');
     $this->assertNoRaw($on, 'Does not use the "On" label.');
+=======
+    $this->assertRaw($on);
+>>>>>>> github/master
 
     // Submit and ensure it is accepted.
     $edit = array(
@@ -108,24 +115,47 @@ class BooleanFieldTest extends WebTestBase {
     $this->assertText(t('entity_test @id has been created.', array('@id' => $id)));
 
     // Verify that boolean value is displayed.
+<<<<<<< HEAD
     $entity = EntityTest::load($id);
+=======
+    $entity = entity_load('entity_test', $id);
+>>>>>>> github/master
     $display = entity_get_display($entity->getEntityTypeId(), $entity->bundle(), 'full');
     $content = $display->build($entity);
     $this->setRawContent(\Drupal::service('renderer')->renderRoot($content));
     $this->assertRaw('<div class="field__item">' . $on . '</div>');
 
+<<<<<<< HEAD
     // Test with "On" label option.
+=======
+    // Test if we can change the on label.
+    $on = $this->randomMachineName();
+    $edit = array(
+      'settings[on_label]' => $on,
+    );
+    $this->drupalPostForm('entity_test/structure/entity_test/fields/entity_test.entity_test.' . $field_name, $edit, t('Save settings'));
+    // Check if we see the updated labels in the creation form.
+    $this->drupalGet('entity_test/add');
+    $this->assertRaw($on);
+
+    // Test the display_label option.
+>>>>>>> github/master
     entity_get_form_display('entity_test', 'entity_test', 'default')
       ->setComponent($field_name, array(
         'type' => 'boolean_checkbox',
         'settings' => array(
+<<<<<<< HEAD
           'display_label' => FALSE,
+=======
+          'display_label' => TRUE,
+>>>>>>> github/master
         )
       ))
       ->save();
 
     $this->drupalGet('entity_test/add');
     $this->assertFieldByName("{$field_name}[value]", '', 'Widget found.');
+<<<<<<< HEAD
     $this->assertRaw($on);
     $this->assertNoText($this->field->label());
 
@@ -138,6 +168,10 @@ class BooleanFieldTest extends WebTestBase {
     // Check if we see the updated labels in the creation form.
     $this->drupalGet('entity_test/add');
     $this->assertRaw($on);
+=======
+    $this->assertNoRaw($on);
+    $this->assertText($this->field->label());
+>>>>>>> github/master
 
     // Go to the form display page and check if the default settings works as
     // expected.

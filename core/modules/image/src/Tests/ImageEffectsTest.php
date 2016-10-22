@@ -2,7 +2,10 @@
 
 namespace Drupal\image\Tests;
 
+<<<<<<< HEAD
 use Drupal\image\Entity\ImageStyle;
+=======
+>>>>>>> github/master
 use Drupal\system\Tests\Image\ToolkitTestBase;
 
 /**
@@ -164,6 +167,7 @@ class ImageEffectsTest extends ToolkitTestBase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests if validation errors are passed plugin form to the parent form.
    */
   public function testEffectFormValidationErrors() {
@@ -184,6 +188,8 @@ class ImageEffectsTest extends ToolkitTestBase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Asserts the effect processing of an image effect plugin.
    *
    * @param string $effect_name

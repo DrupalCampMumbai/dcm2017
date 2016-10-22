@@ -18,8 +18,12 @@ class PHPUnit_Util_String
     /**
      * Converts a string to UTF-8 encoding.
      *
+<<<<<<< HEAD
      * @param string $string
      *
+=======
+     * @param  string $string
+>>>>>>> github/master
      * @return string
      */
     public static function convertToUtf8($string)
@@ -38,8 +42,12 @@ class PHPUnit_Util_String
     /**
      * Checks a string for UTF-8 encoding.
      *
+<<<<<<< HEAD
      * @param string $string
      *
+=======
+     * @param  string $string
+>>>>>>> github/master
      * @return bool
      */
     protected static function isUtf8($string)

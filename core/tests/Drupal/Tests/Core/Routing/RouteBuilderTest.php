@@ -7,8 +7,13 @@
 
 namespace Drupal\Tests\Core\Routing;
 
+<<<<<<< HEAD
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Discovery\YamlDiscovery;
+=======
+use Drupal\Component\Discovery\YamlDiscovery;
+use Drupal\Core\DependencyInjection\ContainerBuilder;
+>>>>>>> github/master
 use Drupal\Core\Routing\RouteBuilder;
 use Drupal\Core\Routing\RouteBuildEvent;
 use Drupal\Core\Routing\RoutingEvents;
@@ -53,7 +58,11 @@ class RouteBuilderTest extends UnitTestCase {
   /**
    * The mocked YAML discovery.
    *
+<<<<<<< HEAD
    * @var \Drupal\Core\Discovery\YamlDiscovery|\PHPUnit_Framework_MockObject_MockObject
+=======
+   * @var \Drupal\Component\Discovery\YamlDiscovery|\PHPUnit_Framework_MockObject_MockObject
+>>>>>>> github/master
    */
   protected $yamlDiscovery;
 
@@ -82,7 +91,11 @@ class RouteBuilderTest extends UnitTestCase {
     $this->dispatcher = $this->getMock('\Symfony\Component\EventDispatcher\EventDispatcherInterface');
     $this->moduleHandler = $this->getMock('Drupal\Core\Extension\ModuleHandlerInterface');
     $this->controllerResolver = $this->getMock('Drupal\Core\Controller\ControllerResolverInterface');
+<<<<<<< HEAD
     $this->yamlDiscovery = $this->getMockBuilder('\Drupal\Core\Discovery\YamlDiscovery')
+=======
+    $this->yamlDiscovery = $this->getMockBuilder('\Drupal\Component\Discovery\YamlDiscovery')
+>>>>>>> github/master
       ->disableOriginalConstructor()
       ->getMock();
     $this->checkProvider = $this->getMock('\Drupal\Core\Access\CheckProviderInterface');
@@ -284,14 +297,22 @@ class TestRouteBuilder extends RouteBuilder {
   /**
    * The mocked YAML discovery.
    *
+<<<<<<< HEAD
    * @var \Drupal\Core\Discovery\YamlDiscovery|\PHPUnit_Framework_MockObject_MockObject
+=======
+   * @var \Drupal\Component\Discovery\YamlDiscovery|\PHPUnit_Framework_MockObject_MockObject
+>>>>>>> github/master
    */
   protected $yamlDiscovery;
 
   /**
    * Sets the YAML discovery.
    *
+<<<<<<< HEAD
    * @param \Drupal\Core\Discovery\YamlDiscovery $yaml_discovery
+=======
+   * @param \Drupal\Component\Discovery\YamlDiscovery $yaml_discovery
+>>>>>>> github/master
    *   The YAML discovery to set.
    */
   public function setYamlDiscovery(YamlDiscovery $yaml_discovery) {

@@ -138,6 +138,7 @@ class ElementTest extends WebTestBase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests the #required property on details and fieldset elements.
    */
   public function testRequiredFieldsetsAndDetails() {
@@ -152,6 +153,8 @@ class ElementTest extends WebTestBase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Tests a form with a autocomplete setting..
    */
   public function testFormAutocomplete() {

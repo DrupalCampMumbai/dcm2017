@@ -2,9 +2,12 @@
 
 namespace Drupal\Tests\user\Kernel\Migrate\d7;
 
+<<<<<<< HEAD
 use Drupal\comment\Entity\CommentType;
 use Drupal\node\Entity\NodeType;
 use Drupal\taxonomy\Entity\Vocabulary;
+=======
+>>>>>>> github/master
 use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
 use Drupal\user\Entity\User;
 use Drupal\user\RoleInterface;
@@ -20,6 +23,7 @@ class MigrateUserTest extends MigrateDrupal7TestBase {
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
   public static $modules = [
     'comment',
     'datetime',
@@ -32,6 +36,9 @@ class MigrateUserTest extends MigrateDrupal7TestBase {
     'telephone',
     'text',
   ];
+=======
+  public static $modules = ['file', 'image'];
+>>>>>>> github/master
 
   /**
    * {@inheritdoc}
@@ -41,6 +48,7 @@ class MigrateUserTest extends MigrateDrupal7TestBase {
 
     // Prepare to migrate user pictures as well.
     $this->installEntitySchema('file');
+<<<<<<< HEAD
     $this->createType('page');
     $this->createType('article');
     $this->createType('blog');
@@ -48,17 +56,23 @@ class MigrateUserTest extends MigrateDrupal7TestBase {
     $this->createType('forum');
     $this->createType('test_content_type');
     Vocabulary::create(['vid' => 'test_vocabulary'])->save();
+=======
+>>>>>>> github/master
     $this->executeMigrations([
       'user_picture_field',
       'user_picture_field_instance',
       'd7_user_role',
+<<<<<<< HEAD
       'd7_field',
       'd7_field_instance',
+=======
+>>>>>>> github/master
       'd7_user',
     ]);
   }
 
   /**
+<<<<<<< HEAD
    * Creates a node type with a corresponding comment type.
    *
    * @param string $id
@@ -78,6 +92,8 @@ class MigrateUserTest extends MigrateDrupal7TestBase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Asserts various aspects of a user account.
    *
    * @param string $id
@@ -102,10 +118,15 @@ class MigrateUserTest extends MigrateDrupal7TestBase {
    *   Role IDs the user account is expected to have.
    * @param bool $has_picture
    *   Whether the user is expected to have a picture attached.
+<<<<<<< HEAD
    * @param int $field_integer
    *   The value of the integer field.
    */
   protected function assertEntity($id, $label, $mail, $password, $access, $login, $blocked, $langcode, $init, array $roles = [RoleInterface::AUTHENTICATED_ID], $has_picture = FALSE, $field_integer = NULL) {
+=======
+   */
+  protected function assertEntity($id, $label, $mail, $password, $access, $login, $blocked, $langcode, $init, array $roles = [RoleInterface::AUTHENTICATED_ID], $has_picture = FALSE) {
+>>>>>>> github/master
     /** @var \Drupal\user\UserInterface $user */
     $user = User::load($id);
     $this->assertTrue($user instanceof UserInterface);
@@ -124,10 +145,13 @@ class MigrateUserTest extends MigrateDrupal7TestBase {
     $this->assertIdentical($roles, $user->getRoles());
     $this->assertIdentical($has_picture, !$user->user_picture->isEmpty());
     $this->assertIdentical($password, $user->getPassword());
+<<<<<<< HEAD
     if (!is_null($field_integer)) {
       $this->assertTrue($user->hasField('field_integer'));
       $this->assertEquals($field_integer, $user->field_integer->value);
     }
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -135,7 +159,11 @@ class MigrateUserTest extends MigrateDrupal7TestBase {
    */
   public function testUser() {
     $password = '$S$DGFZUE.FhrXbe4y52eC7p0ZVRGD/gOPtVctDlmC89qkujnBokAlJ';
+<<<<<<< HEAD
     $this->assertEntity(2, 'Odo', 'odo@local.host', $password, '0', '0', FALSE, 'en', 'odo@local.host', [RoleInterface::AUTHENTICATED_ID], FALSE, 99);
+=======
+    $this->assertEntity(2, 'Odo', 'odo@local.host', $password, '0', '0', FALSE, '', 'odo@local.host');
+>>>>>>> github/master
 
     // Ensure that the user can authenticate.
     $this->assertEquals(2, \Drupal::service('user.auth')->authenticate('Odo', 'a password'));

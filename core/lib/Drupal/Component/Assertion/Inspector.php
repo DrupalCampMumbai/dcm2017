@@ -108,7 +108,11 @@ class Inspector {
    * Use this instead of is_string() alone unless the argument being an object
    * in any way will cause a problem.
    *
+<<<<<<< HEAD
    * @param mixed $string
+=======
+   * @param mixed string
+>>>>>>> github/master
    *   Variable to be examined
    *
    * @return bool

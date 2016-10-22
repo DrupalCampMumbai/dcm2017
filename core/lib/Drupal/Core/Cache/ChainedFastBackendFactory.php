@@ -28,14 +28,24 @@ class ChainedFastBackendFactory implements CacheFactoryInterface {
   /**
    * Constructs ChainedFastBackendFactory object.
    *
+<<<<<<< HEAD
    * @param \Drupal\Core\Site\Settings|null $settings
    *   (optional) The settings object.
    * @param string|null $consistent_service_name
+=======
+   * @param \Drupal\Core\Site\Settings|NULL $settings
+   *   (optional) The settings object.
+   * @param string|NULL $consistent_service_name
+>>>>>>> github/master
    *   (optional) The service name of the consistent backend factory. Defaults
    *   to:
    *   - $settings->get('cache')['default'] (if specified)
    *   - 'cache.backend.database' (if the above isn't specified)
+<<<<<<< HEAD
    * @param string|null $fast_service_name
+=======
+   * @param string|NULL $fast_service_name
+>>>>>>> github/master
    *   (optional) The service name of the fast backend factory. Defaults to:
    *   - 'cache.backend.apcu' (if the PHP process has APCu enabled)
    *   - NULL (if the PHP process doesn't have APCu enabled)

@@ -3,7 +3,10 @@
 namespace Drupal\Tests\user\Kernel\Migrate\d6;
 
 use Drupal\migrate\MigrateExecutable;
+<<<<<<< HEAD
 use Drupal\Tests\file\Kernel\Migrate\d6\FileMigrationTestTrait;
+=======
+>>>>>>> github/master
 use Drupal\user\Entity\User;
 use Drupal\file\Entity\File;
 use Drupal\Core\Database\Database;
@@ -17,8 +20,11 @@ use Drupal\Tests\migrate_drupal\Kernel\d6\MigrateDrupal6TestBase;
  */
 class MigrateUserTest extends MigrateDrupal6TestBase {
 
+<<<<<<< HEAD
   use FileMigrationTestTrait;
 
+=======
+>>>>>>> github/master
   /**
    * {@inheritdoc}
    */

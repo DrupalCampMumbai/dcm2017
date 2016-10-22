@@ -4,7 +4,10 @@ namespace Drupal\contact\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
 use Drupal\contact\ContactFormInterface;
+<<<<<<< HEAD
 use Drupal\Core\Url;
+=======
+>>>>>>> github/master
 
 /**
  * Defines the contact form entity.
@@ -40,8 +43,11 @@ use Drupal\Core\Url;
  *     "recipients",
  *     "reply",
  *     "weight",
+<<<<<<< HEAD
  *     "message",
  *     "redirect",
+=======
+>>>>>>> github/master
  *   }
  * )
  */
@@ -62,6 +68,7 @@ class ContactForm extends ConfigEntityBundleBase implements ContactFormInterface
   protected $label;
 
   /**
+<<<<<<< HEAD
    * The message displayed to user on form submission.
    *
    * @var string
@@ -69,6 +76,8 @@ class ContactForm extends ConfigEntityBundleBase implements ContactFormInterface
   protected $message;
 
   /**
+=======
+>>>>>>> github/master
    * List of recipient email addresses.
    *
    * @var array
@@ -76,6 +85,7 @@ class ContactForm extends ConfigEntityBundleBase implements ContactFormInterface
   protected $recipients = array();
 
   /**
+<<<<<<< HEAD
    * The path to redirect to on form submission.
    *
    * @var string
@@ -83,6 +93,8 @@ class ContactForm extends ConfigEntityBundleBase implements ContactFormInterface
   protected $redirect;
 
   /**
+=======
+>>>>>>> github/master
    * An auto-reply message.
    *
    * @var string
@@ -99,6 +111,7 @@ class ContactForm extends ConfigEntityBundleBase implements ContactFormInterface
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
   public function getMessage() {
     return $this->message;
   }
@@ -114,6 +127,8 @@ class ContactForm extends ConfigEntityBundleBase implements ContactFormInterface
   /**
    * {@inheritdoc}
    */
+=======
+>>>>>>> github/master
   public function getRecipients() {
     return $this->recipients;
   }
@@ -129,6 +144,7 @@ class ContactForm extends ConfigEntityBundleBase implements ContactFormInterface
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
   public function getRedirectPath() {
     return $this->redirect;
   }
@@ -157,6 +173,8 @@ class ContactForm extends ConfigEntityBundleBase implements ContactFormInterface
   /**
    * {@inheritdoc}
    */
+=======
+>>>>>>> github/master
   public function getReply() {
     return $this->reply;
   }

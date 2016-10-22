@@ -93,13 +93,20 @@ function _content_translation_form_language_content_settings_form_alter(array &$
   $form['#attached']['library'][] = 'content_translation/drupal.content_translation.admin';
 
   $entity_manager = Drupal::entityManager();
+<<<<<<< HEAD
   $bundle_info_service = \Drupal::service('entity_type.bundle.info');
+=======
+>>>>>>> github/master
   foreach ($form['#labels'] as $entity_type_id => $label) {
     $entity_type = $entity_manager->getDefinition($entity_type_id);
     $storage_definitions = $entity_type instanceof ContentEntityTypeInterface ? $entity_manager->getFieldStorageDefinitions($entity_type_id) : array();
 
     $entity_type_translatable = $content_translation_manager->isSupported($entity_type_id);
+<<<<<<< HEAD
     foreach ($bundle_info_service->getBundleInfo($entity_type_id) as $bundle => $bundle_info) {
+=======
+    foreach (entity_get_bundles($entity_type_id) as $bundle => $bundle_info) {
+>>>>>>> github/master
       // Here we do not want the widget to be altered and hold also the "Enable
       // translation" checkbox, which would be redundant. Hence we add this key
       // to be able to skip alterations. Alter the title and display the message
@@ -113,7 +120,11 @@ function _content_translation_form_language_content_settings_form_alter(array &$
       $fields = $entity_manager->getFieldDefinitions($entity_type_id, $bundle);
       if ($fields) {
         foreach ($fields as $field_name => $definition) {
+<<<<<<< HEAD
           if ($definition->isComputed() || (!empty($storage_definitions[$field_name]) && _content_translation_is_field_translatability_configurable($entity_type, $storage_definitions[$field_name]))) {
+=======
+          if (!empty($storage_definitions[$field_name]) && _content_translation_is_field_translatability_configurable($entity_type, $storage_definitions[$field_name])) {
+>>>>>>> github/master
             $form['settings'][$entity_type_id][$bundle]['fields'][$field_name] = array(
               '#label' => $definition->getLabel(),
               '#type' => 'checkbox',

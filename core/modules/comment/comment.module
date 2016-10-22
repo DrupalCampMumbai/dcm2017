@@ -14,7 +14,10 @@ use Drupal\comment\CommentInterface;
 use Drupal\comment\Entity\CommentType;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
+<<<<<<< HEAD
 use Drupal\Core\Entity\Entity\EntityViewMode;
+=======
+>>>>>>> github/master
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -657,7 +660,11 @@ function template_preprocess_comment(&$variables) {
     $variables['permalink'] = \Drupal::l(t('Permalink'), new Url('<front>'));
   }
   else {
+<<<<<<< HEAD
     $uri = $comment->permalink();
+=======
+    $uri = $comment->urlInfo();
+>>>>>>> github/master
     $attributes = $uri->getOption('attributes') ?: array();
     $attributes += array('class' => array('permalink'), 'rel' => 'bookmark');
     $uri->setOption('attributes', $attributes);
@@ -757,6 +764,7 @@ function comment_preprocess_field(&$variables) {
 function comment_ranking() {
   return \Drupal::service('comment.statistics')->getRankingInfo();
 }
+<<<<<<< HEAD
 
 /**
  * Implements hook_ENTITY_TYPE_presave() for entity_view_display entities.
@@ -797,3 +805,5 @@ function comment_entity_view_display_presave(EntityViewDisplayInterface $display
     }
   }
 }
+=======
+>>>>>>> github/master

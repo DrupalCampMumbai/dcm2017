@@ -153,6 +153,7 @@ parameters:
     - sftp
     - webcal
     - rtsp
+<<<<<<< HEAD
 
    # Configure Cross-Site HTTP requests (CORS).
    # Read https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
@@ -172,3 +173,5 @@ parameters:
     maxAge: false
     # Sets the Access-Control-Allow-Credentials header.
     supportsCredentials: false
+=======
+>>>>>>> github/master

@@ -14,6 +14,7 @@ use Drupal\Tests\UnitTestCase;
 class FormattableMarkupTest extends UnitTestCase {
 
   /**
+<<<<<<< HEAD
    * The error message of the last error in the error handler.
    *
    * @var string
@@ -28,6 +29,8 @@ class FormattableMarkupTest extends UnitTestCase {
   protected $lastErrorNumber;
 
   /**
+=======
+>>>>>>> github/master
    * @covers ::__toString
    * @covers ::jsonSerialize
    */
@@ -49,6 +52,7 @@ class FormattableMarkupTest extends UnitTestCase {
     $this->assertEquals(strlen($string), $formattable_string->count());
   }
 
+<<<<<<< HEAD
   /**
    * Custom error handler that saves the last error.
    *
@@ -99,4 +103,6 @@ class FormattableMarkupTest extends UnitTestCase {
     ];
   }
 
+=======
+>>>>>>> github/master
 }

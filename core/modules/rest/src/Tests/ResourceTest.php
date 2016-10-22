@@ -2,10 +2,16 @@
 
 namespace Drupal\rest\Tests;
 
+<<<<<<< HEAD
 use Drupal\Core\Session\AccountInterface;
 use Drupal\rest\RestResourceConfigInterface;
 use Drupal\user\Entity\Role;
 use Drupal\user\RoleInterface;
+=======
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\user\Entity\Role;
+>>>>>>> github/master
 
 /**
  * Tests the structure of a REST resource.
@@ -19,7 +25,11 @@ class ResourceTest extends RESTTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $modules = array('hal', 'rest', 'entity_test', 'rest_test');
+=======
+  public static $modules = array('hal', 'rest', 'entity_test');
+>>>>>>> github/master
 
   /**
    * The entity.
@@ -33,7 +43,13 @@ class ResourceTest extends RESTTestBase {
    */
   protected function setUp() {
     parent::setUp();
+<<<<<<< HEAD
     // Create an entity programmatic.
+=======
+    $this->config = $this->config('rest.settings');
+
+    // Create an entity programmatically.
+>>>>>>> github/master
     $this->entity = $this->entityCreate('entity_test');
     $this->entity->save();
 
@@ -46,6 +62,7 @@ class ResourceTest extends RESTTestBase {
    * Tests that a resource without formats cannot be enabled.
    */
   public function testFormats() {
+<<<<<<< HEAD
     $this->resourceConfigStorage->create([
       'id' => 'entity.entity_test',
       'granularity' => RestResourceConfigInterface::METHOD_GRANULARITY,
@@ -57,6 +74,22 @@ class ResourceTest extends RESTTestBase {
         ],
       ],
     ])->save();
+=======
+    $settings = array(
+      'entity:entity_test' => array(
+        'GET' => array(
+          'supported_auth' => array(
+            'basic_auth',
+          ),
+        ),
+      ),
+    );
+
+    // Attempt to enable the resource.
+    $this->config->set('resources', $settings);
+    $this->config->save();
+    $this->rebuildCache();
+>>>>>>> github/master
 
     // Verify that accessing the resource returns 406.
     $response = $this->httpRequest($this->entity->urlInfo()->setRouteParameter('_format', $this->defaultFormat), 'GET');
@@ -73,6 +106,7 @@ class ResourceTest extends RESTTestBase {
    * Tests that a resource without authentication cannot be enabled.
    */
   public function testAuthentication() {
+<<<<<<< HEAD
     $this->resourceConfigStorage->create([
       'id' => 'entity.entity_test',
       'granularity' => RestResourceConfigInterface::METHOD_GRANULARITY,
@@ -84,6 +118,22 @@ class ResourceTest extends RESTTestBase {
         ],
       ],
     ])->save();
+=======
+    $settings = array(
+      'entity:entity_test' => array(
+        'GET' => array(
+          'supported_formats' => array(
+            'hal_json',
+          ),
+        ),
+      ),
+    );
+
+    // Attempt to enable the resource.
+    $this->config->set('resources', $settings);
+    $this->config->save();
+    $this->rebuildCache();
+>>>>>>> github/master
 
     // Verify that accessing the resource returns 401.
     $response = $this->httpRequest($this->entity->urlInfo()->setRouteParameter('_format', $this->defaultFormat), 'GET');
@@ -97,6 +147,7 @@ class ResourceTest extends RESTTestBase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests that serialization_class is optional.
    */
   public function testSerializationClassIsOptional() {
@@ -113,6 +164,8 @@ class ResourceTest extends RESTTestBase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Tests that resource URI paths are formatted properly.
    */
   public function testUriPaths() {
@@ -127,4 +180,33 @@ class ResourceTest extends RESTTestBase {
     }
   }
 
+<<<<<<< HEAD
+=======
+  /**
+   * Tests that a resource with a missing plugin does not cause an exception.
+   */
+  public function testMissingPlugin() {
+    $settings = array(
+      'entity:nonexisting' => array(
+        'GET' => array(
+          'supported_formats' => array(
+            'hal_json',
+          ),
+        ),
+      ),
+    );
+
+    try {
+      // Attempt to enable the resource.
+      $this->config->set('resources', $settings);
+      $this->config->save();
+      $this->rebuildCache();
+      $this->pass('rest.settings referencing a missing REST resource plugin does not cause an exception.');
+    }
+    catch (PluginNotFoundException $e) {
+      $this->fail('rest.settings referencing a missing REST resource plugin caused an exception.');
+    }
+  }
+
+>>>>>>> github/master
 }

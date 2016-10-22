@@ -316,11 +316,14 @@ class Schema extends DatabaseSchema {
           ->fields(array($field => $specification['initial']))
           ->execute();
       }
+<<<<<<< HEAD
       if (isset($specification['initial_from_field'])) {
         $this->connection->update($table)
           ->expression($field, $specification['initial_from_field'])
           ->execute();
       }
+=======
+>>>>>>> github/master
     }
     else {
       // We cannot add the field directly. Use the slower table alteration
@@ -340,6 +343,7 @@ class Schema extends DatabaseSchema {
           'arguments' => array(':newfieldinitial' => $specification['initial']),
         );
       }
+<<<<<<< HEAD
       elseif (isset($specification['initial_from_field'])) {
         // If we have a initial value, copy it over.
         $mapping[$field] = array(
@@ -347,6 +351,8 @@ class Schema extends DatabaseSchema {
           'arguments' => [],
         );
       }
+=======
+>>>>>>> github/master
       else {
         // Else use the default of the field.
         $mapping[$field] = NULL;

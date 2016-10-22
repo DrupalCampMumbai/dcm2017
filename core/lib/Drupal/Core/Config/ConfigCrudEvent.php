@@ -19,7 +19,11 @@ class ConfigCrudEvent extends Event {
   /**
    * Constructs a configuration event object.
    *
+<<<<<<< HEAD
    * @param \Drupal\Core\Config\Config $config
+=======
+   * @param \Drupal\Core\Config\Config
+>>>>>>> github/master
    *   Configuration object.
    */
   public function __construct(Config $config) {

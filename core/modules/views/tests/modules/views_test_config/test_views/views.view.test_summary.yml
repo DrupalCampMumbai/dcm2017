@@ -96,6 +96,10 @@ display:
       footer: {  }
       empty: {  }
       relationships: {  }
+<<<<<<< HEAD
+=======
+      fields: {  }
+>>>>>>> github/master
       display_extenders: {  }
     cache_metadata:
       contexts:

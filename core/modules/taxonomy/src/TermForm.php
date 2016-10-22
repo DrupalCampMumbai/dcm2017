@@ -123,6 +123,7 @@ class TermForm extends ContentEntityForm {
 
     $result = $term->save();
 
+<<<<<<< HEAD
     $edit_link = $term->link($this->t('Edit'), 'edit-form');
     $view_link = $term->link($term->getName());
     switch ($result) {
@@ -133,6 +134,17 @@ class TermForm extends ContentEntityForm {
       case SAVED_UPDATED:
         drupal_set_message($this->t('Updated term %term.', array('%term' => $view_link)));
         $this->logger('taxonomy')->notice('Updated term %term.', array('%term' => $term->getName(), 'link' => $edit_link));
+=======
+    $link = $term->link($this->t('Edit'), 'edit-form');
+    switch ($result) {
+      case SAVED_NEW:
+        drupal_set_message($this->t('Created new term %term.', array('%term' => $term->getName())));
+        $this->logger('taxonomy')->notice('Created new term %term.', array('%term' => $term->getName(), 'link' => $link));
+        break;
+      case SAVED_UPDATED:
+        drupal_set_message($this->t('Updated term %term.', array('%term' => $term->getName())));
+        $this->logger('taxonomy')->notice('Updated term %term.', array('%term' => $term->getName(), 'link' => $link));
+>>>>>>> github/master
         break;
     }
 

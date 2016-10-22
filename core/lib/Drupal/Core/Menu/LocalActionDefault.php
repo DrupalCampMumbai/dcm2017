@@ -24,7 +24,11 @@ class LocalActionDefault extends PluginBase implements LocalActionInterface, Con
    *
    * @var \Drupal\Core\Routing\RouteProviderInterface
    */
+<<<<<<< HEAD
   protected $routeProvider;
+=======
+   protected $routeProvider;
+>>>>>>> github/master
 
   /**
    * Constructs a LocalActionDefault object.

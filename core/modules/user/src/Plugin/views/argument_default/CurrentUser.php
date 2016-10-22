@@ -9,7 +9,11 @@ use Drupal\views\Plugin\views\argument_default\ArgumentDefaultPluginBase;
 /**
  * Default argument plugin to extract the current user
  *
+<<<<<<< HEAD
  * This plugin actually has no options so it does not need to do a great deal.
+=======
+ * This plugin actually has no options so it odes not need to do a great deal.
+>>>>>>> github/master
  *
  * @ViewsArgumentDefault(
  *   id = "current_user",

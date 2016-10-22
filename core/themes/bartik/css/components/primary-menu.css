@@ -200,6 +200,7 @@ body:not(:target) .region-primary-menu .menu-toggle-target-show:target ~ .menu .
     display: none;
   }
 }
+<<<<<<< HEAD
 
 /**
  * Ensures that the open mobile menu hides when the screen dimensions become
@@ -210,3 +211,5 @@ body:not(:target) .region-primary-menu .menu-toggle-target-show:target ~ .menu .
     display: none;
   }
 }
+=======
+>>>>>>> github/master

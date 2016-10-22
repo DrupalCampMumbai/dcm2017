@@ -6,7 +6,10 @@ use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
 use Drupal\comment\Tests\CommentTestTrait;
 use Drupal\Core\Url;
 use Drupal\filter\Entity\FilterFormat;
+<<<<<<< HEAD
 use Drupal\search\Entity\SearchPage;
+=======
+>>>>>>> github/master
 
 /**
  * Indexes content and tests ranking factors.
@@ -35,7 +38,11 @@ class SearchRankingTest extends SearchTestBase {
     parent::setUp();
 
     // Create a plugin instance.
+<<<<<<< HEAD
     $this->nodeSearch = SearchPage::load('node_search');
+=======
+    $this->nodeSearch = entity_load('search_page', 'node_search');
+>>>>>>> github/master
 
     // Log in with sufficient privileges.
     $this->drupalLogin($this->drupalCreateUser(array('post comments', 'skip comment approval', 'create page content', 'administer search')));
@@ -127,7 +134,11 @@ class SearchRankingTest extends SearchTestBase {
       $this->assertTrue($this->xpath('//select[@id="edit-rankings-' . $node_rank . '-value"]//option[@value="10"]'), 'Select list to prioritize ' . $node_rank . ' for node ranks is visible and set to 10.');
 
       // Reload the plugin to get the up-to-date values.
+<<<<<<< HEAD
       $this->nodeSearch = SearchPage::load('node_search');
+=======
+      $this->nodeSearch = entity_load('search_page', 'node_search');
+>>>>>>> github/master
       // Do the search and assert the results.
       $this->nodeSearch->getPlugin()->setSearch('rocks', array(), array());
       $set = $this->nodeSearch->getPlugin()->execute();

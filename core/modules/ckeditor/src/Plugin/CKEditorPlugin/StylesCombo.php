@@ -115,7 +115,11 @@ class StylesCombo extends CKEditorPluginBase implements CKEditorPluginConfigurab
    *
    * @param string $styles
    *   The "styles" setting.
+<<<<<<< HEAD
    * @return array|false
+=======
+   * @return array|FALSE
+>>>>>>> github/master
    *   An array containing the "stylesSet" configuration, or FALSE when the
    *   syntax is invalid.
    */

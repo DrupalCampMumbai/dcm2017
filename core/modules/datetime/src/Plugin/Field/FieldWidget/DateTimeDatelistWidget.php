@@ -61,6 +61,7 @@ class DateTimeDatelistWidget extends DateTimeWidgetBase {
         break;
     }
     switch ($time_type) {
+<<<<<<< HEAD
       case '24':
         $date_part_order = array_merge($date_part_order, array('hour', 'minute'));
         break;
@@ -71,6 +72,18 @@ class DateTimeDatelistWidget extends DateTimeWidgetBase {
 
       case 'none':
         break;
+=======
+       case '24':
+         $date_part_order = array_merge($date_part_order, array('hour', 'minute'));
+         break;
+
+       case '12':
+         $date_part_order = array_merge($date_part_order, array('hour', 'minute', 'ampm'));
+         break;
+
+       case 'none':
+         break;
+>>>>>>> github/master
     }
 
     $element['value'] = array(

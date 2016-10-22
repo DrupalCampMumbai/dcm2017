@@ -24,6 +24,7 @@ class SortDateTest extends ViewsKernelTestBase {
     $expected = array();
     if (!$reverse) {
       switch ($granularity) {
+<<<<<<< HEAD
         case 'second':
           $expected = array(
             array('name' => 'John'),
@@ -79,6 +80,63 @@ class SortDateTest extends ViewsKernelTestBase {
           );
           break;
       }
+=======
+          case 'second':
+            $expected = array(
+              array('name' => 'John'),
+              array('name' => 'Paul'),
+              array('name' => 'Meredith'),
+              array('name' => 'Ringo'),
+              array('name' => 'George'),
+            );
+            break;
+          case 'minute':
+            $expected = array(
+              array('name' => 'John'),
+              array('name' => 'Paul'),
+              array('name' => 'Ringo'),
+              array('name' => 'Meredith'),
+              array('name' => 'George'),
+            );
+            break;
+          case 'hour':
+            $expected = array(
+              array('name' => 'John'),
+              array('name' => 'Ringo'),
+              array('name' => 'Paul'),
+              array('name' => 'Meredith'),
+              array('name' => 'George'),
+            );
+            break;
+          case 'day':
+            $expected = array(
+              array('name' => 'John'),
+              array('name' => 'Ringo'),
+              array('name' => 'Paul'),
+              array('name' => 'Meredith'),
+              array('name' => 'George'),
+            );
+            break;
+          case 'month':
+            $expected = array(
+              array('name' => 'John'),
+              array('name' => 'George'),
+              array('name' => 'Ringo'),
+              array('name' => 'Paul'),
+              array('name' => 'Meredith'),
+            );
+            break;
+          case 'year':
+            $expected = array(
+              array('name' => 'John'),
+              array('name' => 'George'),
+              array('name' => 'Ringo'),
+              array('name' => 'Paul'),
+              array('name' => 'Meredith'),
+            );
+            break;
+        }
+>>>>>>> github/master
     }
     else {
       switch ($granularity) {

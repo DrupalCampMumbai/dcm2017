@@ -3,7 +3,11 @@
 /*
  * This file is part of the Symfony CMF package.
  *
+<<<<<<< HEAD
  * (c) 2011-2015 Symfony CMF
+=======
+ * (c) 2011-2014 Symfony CMF
+>>>>>>> github/master
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -38,8 +42,12 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
     private $context;
 
     /**
+<<<<<<< HEAD
      * Array of arrays of routers grouped by priority.
      *
+=======
+     * Array of arrays of routers grouped by priority
+>>>>>>> github/master
      * @var array
      */
     private $routers = array();
@@ -118,7 +126,11 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
 
     /**
      * Sort routers by priority.
+<<<<<<< HEAD
      * The highest priority number is the highest priority (reverse sorting).
+=======
+     * The highest priority number is the highest priority (reverse sorting)
+>>>>>>> github/master
      *
      * @return RouterInterface[]
      */
@@ -141,9 +153,15 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
      *
      * Note: You should use matchRequest if you can.
      */
+<<<<<<< HEAD
     public function match($pathinfo)
     {
         return $this->doMatch($pathinfo);
+=======
+    public function match($url)
+    {
+        return $this->doMatch($url);
+>>>>>>> github/master
     }
 
     /**
@@ -162,14 +180,22 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
      * At least the  url must be provided, if a request is additionally provided
      * the request takes precedence.
      *
+<<<<<<< HEAD
      * @param string  $pathinfo
+=======
+     * @param string  $url
+>>>>>>> github/master
      * @param Request $request
      *
      * @return array An array of parameters
      *
      * @throws ResourceNotFoundException If no router matched.
      */
+<<<<<<< HEAD
     private function doMatch($pathinfo, Request $request = null)
+=======
+    private function doMatch($url, Request $request = null)
+>>>>>>> github/master
     {
         $methodNotAllowed = null;
 
@@ -180,14 +206,23 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
                 // matching requests is more powerful than matching URLs only, so try that first
                 if ($router instanceof RequestMatcherInterface) {
                     if (empty($requestForMatching)) {
+<<<<<<< HEAD
                         $requestForMatching = $this->rebuildRequest($pathinfo);
+=======
+                        $requestForMatching = Request::create($url);
+>>>>>>> github/master
                     }
 
                     return $router->matchRequest($requestForMatching);
                 }
+<<<<<<< HEAD
 
                 // every router implements the match method
                 return $router->match($pathinfo);
+=======
+                // every router implements the match method
+                return $router->match($url);
+>>>>>>> github/master
             } catch (ResourceNotFoundException $e) {
                 if ($this->logger) {
                     $this->logger->debug('Router '.get_class($router).' was not able to match, message "'.$e->getMessage().'"');
@@ -203,7 +238,11 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
 
         $info = $request
             ? "this request\n$request"
+<<<<<<< HEAD
             : "url '$pathinfo'";
+=======
+            : "url '$url'";
+>>>>>>> github/master
         throw $methodNotAllowed ?: new ResourceNotFoundException("None of the routers in the chain matched $info");
     }
 
@@ -213,7 +252,11 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
      * Loops through all registered routers and returns a router if one is found.
      * It will always return the first route generated.
      */
+<<<<<<< HEAD
     public function generate($name, $parameters = array(), $absolute = UrlGeneratorInterface::ABSOLUTE_PATH)
+=======
+    public function generate($name, $parameters = array(), $absolute = false)
+>>>>>>> github/master
     {
         $debug = array();
 
@@ -250,6 +293,7 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
         throw new RouteNotFoundException(sprintf('None of the chained routers were able to generate route: %s', $info));
     }
 
+<<<<<<< HEAD
     /**
      * Rebuild the request object from a URL with the help of the RequestContext.
      *
@@ -285,6 +329,8 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
         return Request::create($uri, $this->context->getMethod(), $this->context->getParameters(), array(), array(), $server);
     }
 
+=======
+>>>>>>> github/master
     private function getErrorMessage($name, $router = null, $parameters = null)
     {
         if ($router instanceof VersatileGeneratorInterface) {
@@ -343,6 +389,7 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
 
         return $this->routeCollection;
     }
+<<<<<<< HEAD
 
     /**
      * Identify if any routers have been added into the chain yet.
@@ -353,4 +400,6 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
     {
         return !empty($this->routers);
     }
+=======
+>>>>>>> github/master
 }

@@ -101,7 +101,11 @@ class RedirectDestinationTest extends UnitTestCase {
     // A request with a destination query.
     $data[] = [$request, '/example'];
 
+<<<<<<< HEAD
     // A request without a destination query,
+=======
+      // A request without a destination query,
+>>>>>>> github/master
     $request = Request::create('/');
     $data[] = [$request, '/current-path'];
 

@@ -14,7 +14,11 @@ class AggregatorAdminTest extends AggregatorTestBase {
    */
   public function testSettingsPage() {
     $this->drupalGet('admin/config');
+<<<<<<< HEAD
     $this->clickLink('Aggregator');
+=======
+    $this->clickLink('Feed aggregator');
+>>>>>>> github/master
     $this->clickLink('Settings');
     // Make sure that test plugins are present.
     $this->assertText('Test fetcher');

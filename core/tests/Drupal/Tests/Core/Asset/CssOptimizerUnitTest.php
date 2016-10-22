@@ -1,6 +1,52 @@
 <?php
 
+<<<<<<< HEAD
 namespace Drupal\Tests\Core\Asset;
+=======
+namespace {
+
+/**
+ * CssOptimizer uses file_create_url(), file_uri_scheme() and
+ * file_url_transform_relative(), which *are* available when using the
+ * Simpletest test runner, but not when using the PHPUnit test runner; hence
+ * this hack.
+ */
+if (!function_exists('file_create_url')) {
+
+  /**
+   * Temporary mock for file_create_url(), until that is moved into
+   * Component/Utility.
+   */
+  function file_create_url($uri) {
+    return 'file_create_url:' . $uri;
+  }
+
+}
+
+if (!function_exists('file_uri_scheme')) {
+
+  function file_uri_scheme($uri) {
+    return FALSE;
+  }
+
+}
+if (!function_exists('file_url_transform_relative')) {
+
+  /**
+   * Temporary mock of file_url_transform_relative, until that is moved into
+   * Component/Utility.
+   */
+  function file_url_transform_relative($uri) {
+    return 'file_url_transform_relative:' . $uri;
+  }
+
+}
+
+}
+
+
+namespace Drupal\Tests\Core\Asset {
+>>>>>>> github/master
 
 use Drupal\Core\Asset\CssOptimizer;
 use Drupal\Tests\UnitTestCase;
@@ -250,6 +296,7 @@ class CssOptimizerUnitTest extends UnitTestCase {
   }
 
 }
+<<<<<<< HEAD
 
 /**
  * Temporary mock for file_create_url(), until that is moved into
@@ -306,4 +353,6 @@ if (!function_exists('Drupal\Core\Asset\file_uri_scheme')) {
     return FALSE;
   }
 
+=======
+>>>>>>> github/master
 }

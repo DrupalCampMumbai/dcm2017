@@ -10,8 +10,11 @@ use Drupal\Core\Plugin\ContextAwarePluginBase;
 use Drupal\Component\Utility\Unicode;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Language\LanguageInterface;
+<<<<<<< HEAD
 use Drupal\Core\Plugin\PluginWithFormsInterface;
 use Drupal\Core\Plugin\PluginWithFormsTrait;
+=======
+>>>>>>> github/master
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Component\Transliteration\TransliterationInterface;
 
@@ -24,10 +27,16 @@ use Drupal\Component\Transliteration\TransliterationInterface;
  *
  * @ingroup block_api
  */
+<<<<<<< HEAD
 abstract class BlockBase extends ContextAwarePluginBase implements BlockPluginInterface, PluginWithFormsInterface {
 
   use ContextAwarePluginAssignmentTrait;
   use PluginWithFormsTrait;
+=======
+abstract class BlockBase extends ContextAwarePluginBase implements BlockPluginInterface {
+
+  use ContextAwarePluginAssignmentTrait;
+>>>>>>> github/master
 
   /**
    * The transliteration service.

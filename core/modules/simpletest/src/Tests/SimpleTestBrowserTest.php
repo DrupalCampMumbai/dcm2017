@@ -89,7 +89,11 @@ class SimpleTestBrowserTest extends WebTestBase {
     $HTTP_path = $system_path . '/tests/http.php/user/login';
     $https_path = $system_path . '/tests/https.php/user/login';
     // Generate a valid simpletest User-Agent to pass validation.
+<<<<<<< HEAD
     $this->assertTrue(preg_match('/test\d+/', $this->databasePrefix, $matches), 'Database prefix contains test prefix.');
+=======
+    $this->assertTrue(preg_match('/simpletest\d+/', $this->databasePrefix, $matches), 'Database prefix contains simpletest prefix.');
+>>>>>>> github/master
     $test_ua = drupal_generate_test_ua($matches[0]);
     $this->additionalCurlOptions = array(CURLOPT_USERAGENT => $test_ua);
 
@@ -131,7 +135,11 @@ class SimpleTestBrowserTest extends WebTestBase {
       // A PHPUnit unit test.
       'Drupal\Tests\action\Unit\Menu\ActionLocalTasksTest',
       // A PHPUnit functional test.
+<<<<<<< HEAD
       'Drupal\FunctionalTests\BrowserTestBaseTest',
+=======
+      'Drupal\Tests\simpletest\Functional\BrowserTestBaseTest',
+>>>>>>> github/master
     );
 
     foreach ($tests as $test) {

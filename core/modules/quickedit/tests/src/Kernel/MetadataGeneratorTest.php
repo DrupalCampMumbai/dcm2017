@@ -93,7 +93,11 @@ class MetadataGeneratorTest extends QuickEditTestBase {
     $entity->{$field_1_name}->value = 'Test';
     $entity->{$field_2_name}->value = 42;
     $entity->save();
+<<<<<<< HEAD
     $entity = EntityTest::load($entity->id());
+=======
+    $entity = entity_load('entity_test', $entity->id());
+>>>>>>> github/master
 
     // Verify metadata for field 1.
     $items_1 = $entity->get($field_1_name);
@@ -159,7 +163,11 @@ class MetadataGeneratorTest extends QuickEditTestBase {
     $entity->{$field_name}->value = 'Test';
     $entity->{$field_name}->format = 'full_html';
     $entity->save();
+<<<<<<< HEAD
     $entity = EntityTest::load($entity->id());
+=======
+    $entity = entity_load('entity_test', $entity->id());
+>>>>>>> github/master
 
     // Verify metadata.
     $items = $entity->get($field_name);

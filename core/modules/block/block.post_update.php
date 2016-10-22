@@ -77,6 +77,7 @@ function block_post_update_disable_blocks_with_missing_contexts() {
 /**
  * @} End of "addtogroup updates-8.0.0-beta".
  */
+<<<<<<< HEAD
 
 /**
  * @addtogroup updates-8.2.x
@@ -110,3 +111,5 @@ function block_post_update_fix_negate_in_conditions() {
 /**
  * @} End of "addtogroup updates-8.2.x".
  */
+=======
+>>>>>>> github/master

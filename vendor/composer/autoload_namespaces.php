@@ -21,5 +21,8 @@ return array(
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src'),
+<<<<<<< HEAD
     'Asm89\\Stack' => array($vendorDir . '/asm89/stack-cors/src'),
+=======
+>>>>>>> github/master
 );

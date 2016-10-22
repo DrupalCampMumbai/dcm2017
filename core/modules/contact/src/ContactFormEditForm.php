@@ -2,7 +2,10 @@
 
 namespace Drupal\contact;
 
+<<<<<<< HEAD
 use Drupal\Component\Utility\Unicode;
+=======
+>>>>>>> github/master
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityForm;
@@ -10,8 +13,11 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\ConfigFormBaseTrait;
 use Drupal\Core\Form\FormStateInterface;
 use Egulias\EmailValidator\EmailValidator;
+<<<<<<< HEAD
 use Drupal\Core\Path\PathValidatorInterface;
 use Drupal\Core\Render\Element\PathElement;
+=======
+>>>>>>> github/master
 
 /**
  * Base form for contact form edit forms.
@@ -27,6 +33,7 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
   protected $emailValidator;
 
   /**
+<<<<<<< HEAD
    * The path validator.
    *
    * @var \Drupal\Core\Path\PathValidatorInterface
@@ -34,16 +41,24 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
   protected $pathValidator;
 
   /**
+=======
+>>>>>>> github/master
    * Constructs a new ContactFormEditForm.
    *
    * @param \Egulias\EmailValidator\EmailValidator $email_validator
    *   The email validator.
+<<<<<<< HEAD
    * @param \Drupal\Core\Path\PathValidatorInterface $path_validator
    *   The path validator service.
    */
   public function __construct(EmailValidator $email_validator, PathValidatorInterface $path_validator) {
     $this->emailValidator = $email_validator;
     $this->pathValidator = $path_validator;
+=======
+   */
+  public function __construct(EmailValidator $email_validator) {
+   $this->emailValidator = $email_validator;
+>>>>>>> github/master
   }
 
   /**
@@ -51,8 +66,12 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
    */
   public static function create(ContainerInterface $container) {
     return new static(
+<<<<<<< HEAD
       $container->get('email.validator'),
       $container->get('path.validator')
+=======
+      $container->get('email.validator')
+>>>>>>> github/master
     );
   }
 
@@ -96,6 +115,7 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
       '#description' => $this->t("Example: 'webmaster@example.com' or 'sales@example.com,support@example.com' . To specify multiple recipients, separate each email address with a comma."),
       '#required' => TRUE,
     );
+<<<<<<< HEAD
     $form['message'] = array(
       '#type' => 'textarea',
       '#title' => $this->t('Message'),
@@ -109,6 +129,8 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
       '#default_value' => $contact_form->getRedirectPath(),
       '#description' => $this->t('Path to redirect the user to after submission of this form. For example, type "/about" to redirect to that page. Use a relative path with a slash in front.'),
     );
+=======
+>>>>>>> github/master
     $form['reply'] = array(
       '#type' => 'textarea',
       '#title' => $this->t('Auto-reply'),
@@ -146,12 +168,15 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
       }
     }
     $form_state->setValue('recipients', $recipients);
+<<<<<<< HEAD
     $redirect_url = $form_state->getValue('redirect');
     if ($redirect_url && $this->pathValidator->isValid($redirect_url)) {
       if (Unicode::substr($redirect_url, 0, 1) !== '/') {
         $form_state->setErrorByName('redirect', $this->t('The path should start with /.'));
       }
     }
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -163,6 +188,7 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
     $contact_settings = $this->config('contact.settings');
 
     $edit_link = $this->entity->link($this->t('Edit'));
+<<<<<<< HEAD
     $view_link = $contact_form->link($contact_form->label(), 'canonical');
     if ($status == SAVED_UPDATED) {
       drupal_set_message($this->t('Contact form %label has been updated.', array('%label' => $view_link)));
@@ -170,6 +196,14 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
     }
     else {
       drupal_set_message($this->t('Contact form %label has been added.', array('%label' => $view_link)));
+=======
+    if ($status == SAVED_UPDATED) {
+      drupal_set_message($this->t('Contact form %label has been updated.', array('%label' => $contact_form->label())));
+      $this->logger('contact')->notice('Contact form %label has been updated.', array('%label' => $contact_form->label(), 'link' => $edit_link));
+    }
+    else {
+      drupal_set_message($this->t('Contact form %label has been added.', array('%label' => $contact_form->label())));
+>>>>>>> github/master
       $this->logger('contact')->notice('Contact form %label has been added.', array('%label' => $contact_form->label(), 'link' => $edit_link));
     }
 

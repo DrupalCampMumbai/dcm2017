@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 namespace Drupal\Tests\rest\Kernel;
 
 use Drupal\Component\Serialization\Json;
@@ -12,6 +13,21 @@ use Drupal\rest\ResourceResponse;
 use Drupal\rest\RestResourceConfigInterface;
 use Prophecy\Argument;
 use Prophecy\Prophecy\MethodProphecy;
+=======
+/**
+ * @file
+ * Contains \Drupal\Tests\rest\Kernel\RequestHandlerTest.
+ */
+
+namespace Drupal\Tests\rest\Kernel;
+
+use Drupal\Core\Routing\RouteMatch;
+use Drupal\KernelTests\KernelTestBase;
+use Drupal\rest\Plugin\ResourceBase;
+use Drupal\rest\Plugin\Type\ResourcePluginManager;
+use Drupal\rest\RequestHandler;
+use Drupal\rest\ResourceResponse;
+>>>>>>> github/master
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Route;
 
@@ -31,6 +47,7 @@ class RequestHandlerTest extends KernelTestBase {
   public static $modules = ['serialization', 'rest'];
 
   /**
+<<<<<<< HEAD
    * The entity storage.
    *
    * @var \Prophecy\Prophecy\ObjectProphecy
@@ -38,12 +55,18 @@ class RequestHandlerTest extends KernelTestBase {
   protected $entityStorage;
 
   /**
+=======
+>>>>>>> github/master
    * {@inheritdoc}
    */
   public function setUp() {
     parent::setUp();
+<<<<<<< HEAD
     $this->entityStorage = $this->prophesize(EntityStorageInterface::class);
     $this->requestHandler = new RequestHandler($this->entityStorage->reveal());
+=======
+    $this->requestHandler = new RequestHandler();
+>>>>>>> github/master
     $this->requestHandler->setContainer($this->container);
   }
 
@@ -54,12 +77,17 @@ class RequestHandlerTest extends KernelTestBase {
    */
   public function testBaseHandler() {
     $request = new Request();
+<<<<<<< HEAD
     $route_match = new RouteMatch('test', new Route('/rest/test', ['_rest_resource_config' => 'restplugin'], ['_format' => 'json']));
+=======
+    $route_match = new RouteMatch('test', new Route('/rest/test', ['_plugin' => 'restplugin', '_format' => 'json']));
+>>>>>>> github/master
 
     $resource = $this->prophesize(StubRequestHandlerResourcePlugin::class);
     $resource->get(NULL, $request)
       ->shouldBeCalled();
 
+<<<<<<< HEAD
     // Setup the configuration.
     $config = $this->prophesize(RestResourceConfigInterface::class);
     $config->getResourcePlugin()->willReturn($resource->reveal());
@@ -67,6 +95,13 @@ class RequestHandlerTest extends KernelTestBase {
     $config->getCacheTags()->willReturn([]);
     $config->getCacheMaxAge()->willReturn(12);
     $this->entityStorage->load('restplugin')->willReturn($config->reveal());
+=======
+    // Setup stub plugin manager that will return our plugin.
+    $stub = $this->prophesize(ResourcePluginManager::class);
+    $stub->getInstance(['id' => 'restplugin'])
+      ->willReturn($resource->reveal());
+    $this->container->set('plugin.manager.rest', $stub->reveal());
+>>>>>>> github/master
 
     // Response returns NULL this time because response from plugin is not
     // a ResourceResponse so it is passed through directly.
@@ -81,7 +116,10 @@ class RequestHandlerTest extends KernelTestBase {
     $this->assertEquals($response, $handler_response);
 
     // We will call the patch method this time.
+<<<<<<< HEAD
     $route_match = new RouteMatch('test', new Route('/rest/test', ['_rest_resource_config' => 'restplugin'], ['_content_type_format' => 'json']));
+=======
+>>>>>>> github/master
     $request->setMethod('PATCH');
     $response = new ResourceResponse([]);
     $resource->patch(NULL, $request)
@@ -97,6 +135,7 @@ class RequestHandlerTest extends KernelTestBase {
    * @dataProvider providerTestSerialization
    * @covers ::handle
    */
+<<<<<<< HEAD
   public function testSerialization($data, $expected_response = FALSE) {
     $request = new Request();
     $route_match = new RouteMatch('test', new Route('/rest/test', ['_rest_resource_config' => 'restplugin'], ['_format' => 'json']));
@@ -110,19 +149,40 @@ class RequestHandlerTest extends KernelTestBase {
     $config->getCacheTags()->willReturn([]);
     $config->getCacheMaxAge()->willReturn(12);
     $this->entityStorage->load('restplugin')->willReturn($config->reveal());
+=======
+  public function testSerialization($data) {
+    $request = new Request();
+    $route_match = new RouteMatch('test', new Route('/rest/test', ['_plugin' => 'restplugin', '_format' => 'json']));
+
+    $resource = $this->prophesize(StubRequestHandlerResourcePlugin::class);
+
+    // Setup stub plugin manager that will return our plugin.
+    $stub = $this->prophesize(ResourcePluginManager::class);
+    $stub->getInstance(['id' => 'restplugin'])
+      ->willReturn($resource->reveal());
+    $this->container->set('plugin.manager.rest', $stub->reveal());
+>>>>>>> github/master
 
     $response = new ResourceResponse($data);
     $resource->get(NULL, $request)
       ->willReturn($response);
     $handler_response = $this->requestHandler->handle($route_match, $request);
     // Content is a serialized version of the data we provided.
+<<<<<<< HEAD
     $this->assertEquals($expected_response !== FALSE ? $expected_response : json_encode($data), $handler_response->getContent());
+=======
+    $this->assertEquals(json_encode($data), $handler_response->getContent());
+>>>>>>> github/master
   }
 
   public function providerTestSerialization() {
     return [
+<<<<<<< HEAD
       // The default data for \Drupal\rest\ResourceResponse.
       [NULL, ''],
+=======
+      [NULL],
+>>>>>>> github/master
       [''],
       ['string'],
       ['Complex \ string $%^&@ with unicode ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΣὨ'],
@@ -137,6 +197,7 @@ class RequestHandlerTest extends KernelTestBase {
     ];
   }
 
+<<<<<<< HEAD
   /**
    * @covers ::getResponseFormat
    *
@@ -334,6 +395,8 @@ class RequestHandlerTest extends KernelTestBase {
     return $safe_method_test_cases + $unsafe_method_bodied_test_cases + $unsafe_method_bodyless_test_cases;
   }
 
+=======
+>>>>>>> github/master
 }
 
 /**
@@ -342,8 +405,12 @@ class RequestHandlerTest extends KernelTestBase {
 class StubRequestHandlerResourcePlugin extends ResourceBase {
 
   function get() {}
+<<<<<<< HEAD
   function post() {}
   function patch() {}
   function delete() {}
+=======
+  function patch() {}
+>>>>>>> github/master
 
 }

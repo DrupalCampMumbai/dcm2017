@@ -70,6 +70,7 @@ class CacheFactoryTest extends UnitTestCase {
   }
 
   /**
+<<<<<<< HEAD
    * Test that the cache factory uses the correct default bin backend.
    *
    * @covers ::__construct
@@ -106,28 +107,39 @@ class CacheFactoryTest extends UnitTestCase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Test that the cache factory picks the correct per-bin service.
    *
    * @covers ::__construct
    * @covers ::get
    */
   public function testCacheFactoryWithSpecifiedPerBinBackend() {
+<<<<<<< HEAD
     // Ensure the per-bin configuration is used before the configured default
     // and per-bin defaults.
     $settings = new Settings(array(
       'cache' => array(
         'default' => 'cache.backend.unused',
+=======
+    $settings = new Settings(array(
+      'cache' => array(
+>>>>>>> github/master
         'bins' => array(
           'render' => 'cache.backend.custom',
         ),
       ),
     ));
+<<<<<<< HEAD
 
     $default_bin_backends = [
       'render' => 'cache.backend.unused',
     ];
 
     $cache_factory = new CacheFactory($settings, $default_bin_backends);
+=======
+    $cache_factory = new CacheFactory($settings);
+>>>>>>> github/master
 
     $container = new ContainerBuilder();
     $cache_factory->setContainer($container);

@@ -81,7 +81,11 @@ class ViewsData {
   protected $moduleHandler;
 
   /**
+<<<<<<< HEAD
    * The language manager.
+=======
+   * The language manager
+>>>>>>> github/master
    *
    * @var \Drupal\Core\Language\LanguageManagerInterface
    */
@@ -109,6 +113,7 @@ class ViewsData {
   }
 
   /**
+<<<<<<< HEAD
    * Gets all table data.
    *
    * @see https://www.drupal.org/node/2723553
@@ -129,21 +134,27 @@ class ViewsData {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Gets data for a particular table, or all tables.
    *
    * @param string|null $key
    *   The key of the cache entry to retrieve. Defaults to NULL, this will
    *   return all table data.
    *
+<<<<<<< HEAD
    * @deprecated NULL $key deprecated in Drupal 8.2.x and will be removed in
    * 9.0.0. Use getAll() instead.
    *
    * @see https://www.drupal.org/node/2723553
    *
+=======
+>>>>>>> github/master
    * @return array $data
    *   An array of table data.
    */
   public function get($key = NULL) {
+<<<<<<< HEAD
     if (!$key) {
       return $this->getAll();
     }
@@ -179,6 +190,55 @@ class ViewsData {
       }
     }
     return $this->storage[$key];
+=======
+    if ($key) {
+      if (!isset($this->storage[$key])) {
+        // Prepare a cache ID for get and set.
+        $cid = $this->baseCid . ':' . $key;
+        $from_cache = FALSE;
+
+        if ($data = $this->cacheGet($cid)) {
+          $this->storage[$key] = $data->data;
+          $from_cache = TRUE;
+        }
+        // If there is no cached entry and data is not already fully loaded,
+        // rebuild. This will stop requests for invalid tables calling getData.
+        elseif (!$this->fullyLoaded) {
+          $this->allStorage = $this->getData();
+        }
+
+        if (!$from_cache) {
+          if (!isset($this->allStorage[$key])) {
+            // Write an empty cache entry if no information for that table
+            // exists to avoid repeated cache get calls for this table and
+            // prevent loading all tables unnecessarily.
+            $this->storage[$key] = array();
+            $this->allStorage[$key] = array();
+          }
+          else {
+            $this->storage[$key] = $this->allStorage[$key];
+          }
+
+          // Create a cache entry for the requested table.
+          $this->cacheSet($cid, $this->allStorage[$key]);
+        }
+      }
+
+      return $this->storage[$key];
+    }
+    else {
+      if (!$this->fullyLoaded) {
+        $this->allStorage = $this->getData();
+      }
+
+      // Set storage from allStorage outside of the fullyLoaded check to prevent
+      // cache calls on requests that have requested all data to get a single
+      // tables data. Make sure $this->storage is populated in this case.
+      $this->storage = $this->allStorage;
+    }
+
+    return $this->allStorage;
+>>>>>>> github/master
   }
 
   /**

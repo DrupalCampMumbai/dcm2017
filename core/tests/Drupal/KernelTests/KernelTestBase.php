@@ -7,6 +7,12 @@ use Drupal\Component\FileCache\FileCache;
 use Drupal\Component\FileCache\FileCacheFactory;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\SafeMarkup;
+<<<<<<< HEAD
+=======
+use Drupal\Core\Config\ConfigImporter;
+use Drupal\Core\Config\StorageComparer;
+use Drupal\Core\Config\StorageInterface;
+>>>>>>> github/master
 use Drupal\Core\Database\Database;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\DependencyInjection\ServiceProviderInterface;
@@ -15,10 +21,15 @@ use Drupal\Core\Entity\Sql\SqlEntityStorageInterface;
 use Drupal\Core\Extension\ExtensionDiscovery;
 use Drupal\Core\Language\Language;
 use Drupal\Core\Site\Settings;
+<<<<<<< HEAD
 use Drupal\Core\Test\TestDatabase;
 use Drupal\simpletest\AssertContentTrait;
 use Drupal\simpletest\AssertHelperTrait;
 use Drupal\Tests\ConfigTestTrait;
+=======
+use Drupal\simpletest\AssertContentTrait;
+use Drupal\simpletest\AssertHelperTrait;
+>>>>>>> github/master
 use Drupal\Tests\RandomGeneratorTrait;
 use Drupal\simpletest\TestServiceProvider;
 use Symfony\Component\DependencyInjection\Reference;
@@ -54,7 +65,10 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
   use AssertContentTrait;
   use AssertHelperTrait;
   use RandomGeneratorTrait;
+<<<<<<< HEAD
   use ConfigTestTrait;
+=======
+>>>>>>> github/master
 
   /**
    * {@inheritdoc}
@@ -252,14 +266,41 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
     require_once $this->root . '/core/includes/bootstrap.inc';
 
     // Set up virtual filesystem.
+<<<<<<< HEAD
     Database::addConnectionInfo('default', 'test-runner', $this->getDatabaseConnectionInfo()['default']);
     $test_db = new TestDatabase();
     $this->siteDirectory = $test_db->getTestSitePath();
+=======
+    // Ensure that the generated test site directory does not exist already,
+    // which may happen with a large amount of concurrent threads and
+    // long-running tests.
+    do {
+      $suffix = mt_rand(100000, 999999);
+      $this->siteDirectory = 'sites/simpletest/' . $suffix;
+      $this->databasePrefix = 'simpletest' . $suffix;
+    } while (is_dir($this->root . '/' . $this->siteDirectory));
+
+    $this->vfsRoot = vfsStream::setup('root', NULL, array(
+      'sites' => array(
+        'simpletest' => array(
+          $suffix => array(),
+        ),
+      ),
+    ));
+    $this->siteDirectory = vfsStream::url('root/sites/simpletest/' . $suffix);
+
+    mkdir($this->siteDirectory . '/files', 0775);
+    mkdir($this->siteDirectory . '/files/config/' . CONFIG_SYNC_DIRECTORY, 0775, TRUE);
+>>>>>>> github/master
 
     // Ensure that all code that relies on drupal_valid_test_ua() can still be
     // safely executed. This primarily affects the (test) site directory
     // resolution (used by e.g. LocalStream and PhpStorage).
+<<<<<<< HEAD
     $this->databasePrefix = $test_db->getDatabasePrefix();
+=======
+    $this->databasePrefix = 'simpletest' . $suffix;
+>>>>>>> github/master
     drupal_valid_test_ua($this->databasePrefix);
 
     $settings = array(
@@ -271,7 +312,13 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
     );
     new Settings($settings);
 
+<<<<<<< HEAD
     $this->setUpFilesystem();
+=======
+    $GLOBALS['config_directories'] = array(
+      CONFIG_SYNC_DIRECTORY => $this->siteDirectory . '/files/config/sync',
+    );
+>>>>>>> github/master
 
     foreach (Database::getAllConnectionInfo() as $key => $targets) {
       Database::removeConnection($key);
@@ -280,6 +327,7 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
   }
 
   /**
+<<<<<<< HEAD
    * Sets up the filesystem, so things like the file directory.
    */
   protected function setUpFilesystem() {
@@ -303,6 +351,8 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
   }
 
   /**
+=======
+>>>>>>> github/master
    * @return string
    */
   public function getDatabasePrefix() {
@@ -535,6 +585,14 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
 
     // Provide a default configuration, if not set.
     if (!isset($configuration['default'])) {
+<<<<<<< HEAD
+=======
+      $configuration['default'] = [
+        'class' => FileCache::class,
+        'cache_backend_class' => NULL,
+        'cache_backend_configuration' => [],
+      ];
+>>>>>>> github/master
       // @todo Use extension_loaded('apcu') for non-testbot
       //  https://www.drupal.org/node/2447753.
       if (function_exists('apcu_fetch')) {
@@ -662,7 +720,11 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
     }
 
     // Shut down the kernel (if bootKernel() was called).
+<<<<<<< HEAD
     // @see \Drupal\KernelTests\Core\DrupalKernel\DrupalKernelTest
+=======
+    // @see \Drupal\system\Tests\DrupalKernel\DrupalKernelTest
+>>>>>>> github/master
     if ($this->container) {
       $this->container->get('kernel')->shutdown();
     }
@@ -997,12 +1059,67 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
    *   \Drupal\Core\Site\Settings::get() to perform custom merges.
    */
   protected function setSetting($name, $value) {
+<<<<<<< HEAD
     $settings = Settings::getInstance() ? Settings::getAll() : [];
+=======
+    $settings = Settings::getAll();
+>>>>>>> github/master
     $settings[$name] = $value;
     new Settings($settings);
   }
 
   /**
+<<<<<<< HEAD
+=======
+   * Returns a ConfigImporter object to import test configuration.
+   *
+   * @return \Drupal\Core\Config\ConfigImporter
+   *
+   * @todo Move into Config-specific test base class.
+   */
+  protected function configImporter() {
+    if (!$this->configImporter) {
+      // Set up the ConfigImporter object for testing.
+      $storage_comparer = new StorageComparer(
+        $this->container->get('config.storage.sync'),
+        $this->container->get('config.storage'),
+        $this->container->get('config.manager')
+      );
+      $this->configImporter = new ConfigImporter(
+        $storage_comparer,
+        $this->container->get('event_dispatcher'),
+        $this->container->get('config.manager'),
+        $this->container->get('lock'),
+        $this->container->get('config.typed'),
+        $this->container->get('module_handler'),
+        $this->container->get('module_installer'),
+        $this->container->get('theme_handler'),
+        $this->container->get('string_translation')
+      );
+    }
+    // Always recalculate the changelist when called.
+    return $this->configImporter->reset();
+  }
+
+  /**
+   * Copies configuration objects from a source storage to a target storage.
+   *
+   * @param \Drupal\Core\Config\StorageInterface $source_storage
+   *   The source config storage.
+   * @param \Drupal\Core\Config\StorageInterface $target_storage
+   *   The target config storage.
+   *
+   * @todo Move into Config-specific test base class.
+   */
+  protected function copyConfig(StorageInterface $source_storage, StorageInterface $target_storage) {
+    $target_storage->deleteAll();
+    foreach ($source_storage->listAll() as $name) {
+      $target_storage->write($name, $source_storage->read($name));
+    }
+  }
+
+  /**
+>>>>>>> github/master
    * Stops test execution.
    */
   protected function stop() {
@@ -1097,7 +1214,11 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
           return Settings::get('file_public_path', \Drupal::service('site.path') . '/files');
 
         case 'private_files_directory':
+<<<<<<< HEAD
           return Settings::get('file_private_path');
+=======
+          return $this->container->get('config.factory')->get('system.file')->get('path.private');
+>>>>>>> github/master
 
         case 'temp_files_directory':
           return file_directory_temp();

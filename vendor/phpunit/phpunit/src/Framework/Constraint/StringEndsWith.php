@@ -34,8 +34,12 @@ class PHPUnit_Framework_Constraint_StringEndsWith extends PHPUnit_Framework_Cons
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
+<<<<<<< HEAD
      * @param mixed $other Value or object to evaluate.
      *
+=======
+     * @param  mixed $other Value or object to evaluate.
+>>>>>>> github/master
      * @return bool
      */
     protected function matches($other)

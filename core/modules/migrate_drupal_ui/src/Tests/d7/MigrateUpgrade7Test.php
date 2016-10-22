@@ -43,13 +43,22 @@ class MigrateUpgrade7Test extends MigrateUpgradeTestBase {
       'configurable_language' => 4,
       'contact_form' => 3,
       'editor' => 2,
+<<<<<<< HEAD
       'field_config' => 44,
       'field_storage_config' => 33,
+=======
+      'field_config' => 43,
+      'field_storage_config' => 32,
+>>>>>>> github/master
       'file' => 1,
       'filter_format' => 7,
       'image_style' => 6,
       'language_content_settings' => 2,
+<<<<<<< HEAD
       'migration' => 73,
+=======
+      'migration' => 59,
+>>>>>>> github/master
       'node' => 3,
       'node_type' => 6,
       'rdf_mapping' => 5,

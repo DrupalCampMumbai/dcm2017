@@ -58,6 +58,7 @@ test_page_test.error:
     code: 200
   requirements:
     _access: 'TRUE'
+<<<<<<< HEAD
 
 test_page_test.encoded:
   path: '/test-encoded'
@@ -66,3 +67,5 @@ test_page_test.encoded:
     _controller: '\Drupal\test_page_test\Controller\Test::renderEncodedMarkup'
   requirements:
     _access: 'TRUE'
+=======
+>>>>>>> github/master

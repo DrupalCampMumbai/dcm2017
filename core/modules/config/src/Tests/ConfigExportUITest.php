@@ -2,8 +2,13 @@
 
 namespace Drupal\config\Tests;
 
+<<<<<<< HEAD
 use Drupal\Core\Archiver\Tar;
 use Drupal\Core\Serialization\Yaml;
+=======
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\Archiver\Tar;
+>>>>>>> github/master
 use Drupal\simpletest\WebTestBase;
 
 /**

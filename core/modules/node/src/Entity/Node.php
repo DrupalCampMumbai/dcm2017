@@ -102,8 +102,13 @@ class Node extends ContentEntityBase implements NodeInterface {
 
     // If no revision author has been set explicitly, make the node owner the
     // revision author.
+<<<<<<< HEAD
     if (!$this->getRevisionUser()) {
       $this->setRevisionUserId($this->getOwnerId());
+=======
+    if (!$this->getRevisionAuthor()) {
+      $this->setRevisionAuthorId($this->getOwnerId());
+>>>>>>> github/master
     }
   }
 
@@ -178,8 +183,18 @@ class Node extends ContentEntityBase implements NodeInterface {
    * {@inheritdoc}
    */
   public function access($operation = 'view', AccountInterface $account = NULL, $return_as_object = FALSE) {
+<<<<<<< HEAD
     // This override exists to set the operation to the default value "view".
     return parent::access($operation, $account, $return_as_object);
+=======
+    if ($operation == 'create') {
+      return parent::access($operation, $account, $return_as_object);
+    }
+
+    return \Drupal::entityManager()
+      ->getAccessControlHandler($this->entityTypeId)
+      ->access($this, $operation, $account, $return_as_object);
+>>>>>>> github/master
   }
 
   /**
@@ -306,6 +321,7 @@ class Node extends ContentEntityBase implements NodeInterface {
    * {@inheritdoc}
    */
   public function getRevisionAuthor() {
+<<<<<<< HEAD
     return $this->getRevisionUser();
   }
 
@@ -313,6 +329,8 @@ class Node extends ContentEntityBase implements NodeInterface {
    * {@inheritdoc}
    */
   public function getRevisionUser() {
+=======
+>>>>>>> github/master
     return $this->get('revision_uid')->entity;
   }
 
@@ -320,6 +338,7 @@ class Node extends ContentEntityBase implements NodeInterface {
    * {@inheritdoc}
    */
   public function setRevisionAuthorId($uid) {
+<<<<<<< HEAD
     $this->setRevisionUserId($uid);
     return $this;
   }
@@ -359,6 +378,9 @@ class Node extends ContentEntityBase implements NodeInterface {
    */
   public function setRevisionLogMessage($revision_log_message) {
     $this->set('revision_log', $revision_log_message);
+=======
+    $this->set('revision_uid', $uid);
+>>>>>>> github/master
     return $this;
   }
 

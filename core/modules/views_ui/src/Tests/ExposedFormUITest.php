@@ -18,6 +18,7 @@ class ExposedFormUITest extends UITestBase {
    */
   public static $testViews = array('test_exposed_admin_ui');
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
@@ -32,6 +33,8 @@ class ExposedFormUITest extends UITestBase {
    */
   protected $groupFormUiErrors = [];
 
+=======
+>>>>>>> github/master
   protected function setUp() {
     parent::setUp();
 
@@ -42,11 +45,14 @@ class ExposedFormUITest extends UITestBase {
     for ($i = 0; $i < 5; $i++) {
       $this->drupalCreateNode();
     }
+<<<<<<< HEAD
 
     // Error strings used in the grouped filter form validation.
     $this->groupFormUiErrors['missing_value'] = t('A value is required if the label for this item is defined.');
     $this->groupFormUiErrors['missing_title'] = t('A label is required if the value for this item is defined.');
     $this->groupFormUiErrors['missing_title_empty_operator'] = t('A label is required for the specified operator.');
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -70,6 +76,11 @@ class ExposedFormUITest extends UITestBase {
     $this->drupalPostForm('admin/structure/views/nojs/handler/test_exposed_admin_ui/default/filter/type', $edit, t('Expose filter'));
     // Check the label of the expose button.
     $this->helperButtonHasLabel('edit-options-expose-button-button', t('Hide filter'));
+<<<<<<< HEAD
+=======
+    // Check the label of the grouped exposed button
+    $this->helperButtonHasLabel('edit-options-group-button-button', t('Grouped filters'));
+>>>>>>> github/master
 
     // After exposing the filter, Operator and Value should be still here.
     $this->assertFieldById('edit-options-operator-in', '', 'Operator In exists');
@@ -93,6 +104,7 @@ class ExposedFormUITest extends UITestBase {
     $this->helperButtonHasLabel('edit-options-expose-button-button', t('Expose sort'));
     $this->assertNoFieldById('edit-options-expose-label', '', 'Make sure no label field is shown');
 
+<<<<<<< HEAD
     // Un-expose the filter.
     $this->drupalGet('admin/structure/views/nojs/handler/test_exposed_admin_ui/default/filter/type');
     $this->drupalPostForm(NULL, array(), t('Hide filter'));
@@ -144,6 +156,8 @@ class ExposedFormUITest extends UITestBase {
     // Check the label of the grouped filters button.
     $this->helperButtonHasLabel('edit-options-group-button-button', t('Grouped filters'));
 
+=======
+>>>>>>> github/master
     // Click the Grouped Filters button.
     $this->drupalGet('admin/structure/views/nojs/handler/test_exposed_admin_ui/default/filter/type');
     $this->drupalPostForm(NULL, array(), t('Grouped filters'));
@@ -159,11 +173,16 @@ class ExposedFormUITest extends UITestBase {
     // add more items to the list.
     $this->helperButtonHasLabel('edit-options-group-info-add-group', t('Add another item'));
 
+<<<<<<< HEAD
     // Validate a single entry for a grouped filter.
+=======
+    // Create a grouped filter
+>>>>>>> github/master
     $this->drupalGet('admin/structure/views/nojs/handler/test_exposed_admin_ui/default/filter/type');
     $edit = array();
     $edit["options[group_info][group_items][1][title]"] = 'Is Article';
     $edit["options[group_info][group_items][1][value][article]"] = 'article';
+<<<<<<< HEAD
     $this->drupalPostForm(NULL, $edit, t('Apply'));
     $this->assertUrl('admin/structure/views/view/test_exposed_admin_ui/edit/default');
     $this->assertNoGroupedFilterErrors();
@@ -263,6 +282,80 @@ class ExposedFormUITest extends UITestBase {
       }
     }
     return TRUE;
+=======
+
+    $edit["options[group_info][group_items][2][title]"] = 'Is Page';
+    $edit["options[group_info][group_items][2][value][page]"] = TRUE;
+
+    $edit["options[group_info][group_items][3][title]"] = 'Is Page and Article';
+    $edit["options[group_info][group_items][3][value][article]"] = TRUE;
+    $edit["options[group_info][group_items][3][value][page]"] = TRUE;
+    $this->drupalPostForm(NULL, $edit, t('Apply'));
+
+    // Select the empty operator, so the empty value should not trigger a form
+    // error.
+    $this->drupalGet('admin/structure/views/nojs/handler/test_exposed_admin_ui/default/filter/body_value');
+    $edit = array();
+    $edit["options[group_info][group_items][1][title]"] = $this->randomMachineName();
+    $edit["options[group_info][group_items][1][operator]"] = 'empty';
+    $this->drupalPostForm(NULL, $edit, t('Apply'));
+    $this->assertUrl('admin/structure/views/view/test_exposed_admin_ui/edit/default', array(), 'Validation did not run for the empty operator.');
+    // Test the validation error message text is not shown.
+    $this->assertNoText(t('The value is required if title for this item is defined.'));
+
+    // Validate that all the titles are defined for each group
+    $this->drupalGet('admin/structure/views/nojs/handler/test_exposed_admin_ui/default/filter/type');
+    $edit = array();
+    $edit["options[group_info][group_items][1][title]"] = 'Is Article';
+    $edit["options[group_info][group_items][1][value][article]"] = TRUE;
+
+    // This should trigger an error
+    $edit["options[group_info][group_items][2][title]"] = '';
+    $edit["options[group_info][group_items][2][value][page]"] = TRUE;
+
+    $edit["options[group_info][group_items][3][title]"] = 'Is Page and Article';
+    $edit["options[group_info][group_items][3][value][article]"] = TRUE;
+    $edit["options[group_info][group_items][3][value][page]"] = TRUE;
+    $this->drupalPostForm(NULL, $edit, t('Apply'));
+    $this->assertRaw(t('The title is required if value for this item is defined.'), 'Group items should have a title');
+
+    // Un-expose the filter.
+    $this->drupalGet('admin/structure/views/nojs/handler/test_exposed_admin_ui/default/filter/type');
+    $this->drupalPostForm(NULL, array(), t('Hide filter'));
+
+    // After Un-exposing the filter, Operator and Value should be shown again.
+    $this->assertFieldById('edit-options-operator-in', '', 'Operator In exists after hide filter');
+    $this->assertFieldById('edit-options-operator-not-in', '', 'Operator Not In exists after hide filter');
+    $this->assertFieldById('edit-options-value-page', '', 'Checkbox for Page exists after hide filter');
+    $this->assertFieldById('edit-options-value-article', '', 'Checkbox for Article exists after hide filter');
+
+    // Click the Expose sort button.
+    $edit = array();
+    $this->drupalPostForm('admin/structure/views/nojs/handler/test_exposed_admin_ui/default/sort/created', $edit, t('Expose sort'));
+    // Check the label of the expose button.
+    $this->helperButtonHasLabel('edit-options-expose-button-button', t('Hide sort'));
+    $this->assertFieldById('edit-options-expose-label', '', 'Make sure a label field is shown');
+
+    // Test adding a new exposed sort criteria.
+    $view_id = $this->randomView()['id'];
+    $this->drupalGet("admin/structure/views/nojs/add-handler/$view_id/default/sort");
+    $this->drupalPostForm(NULL, ['name[node_field_data.created]' => 1], t('Add and configure @handler', ['@handler' => t('sort criteria')]));
+    $this->assertFieldByXPath('//input[@name="options[order]" and @checked="checked"]', 'ASC', 'The default order is set.');
+    // Change the order and expose the sort.
+    $this->drupalPostForm(NULL, ['options[order]' => 'DESC'], t('Apply'));
+    $this->drupalPostForm("admin/structure/views/nojs/handler/$view_id/default/sort/created", [], t('Expose sort'));
+    $this->assertFieldByXPath('//input[@name="options[order]" and @checked="checked"]', 'DESC');
+    $this->assertFieldByName('options[expose][label]', 'Authored on', 'The default label is set.');
+    // Change the label and save the view.
+    $edit = ['options[expose][label]' => $this->randomString()];
+    $this->drupalPostForm(NULL, $edit, t('Apply'));
+    $this->drupalPostForm(NULL, [], t('Save'));
+    // Check that the values were saved.
+    $display = View::load($view_id)->getDisplay('default');
+    $this->assertTrue($display['display_options']['sorts']['created']['exposed']);
+    $this->assertEqual($display['display_options']['sorts']['created']['expose'], ['label' => $edit['options[expose][label]']]);
+    $this->assertEqual($display['display_options']['sorts']['created']['order'], 'DESC');
+>>>>>>> github/master
   }
 
 }

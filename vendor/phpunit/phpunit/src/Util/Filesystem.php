@@ -25,10 +25,15 @@ class PHPUnit_Util_Filesystem
      *   - PEAR CS:   Foo_Bar_Baz -> Foo/Bar/Baz.php
      *   - Namespace: Foo\Bar\Baz -> Foo/Bar/Baz.php
      *
+<<<<<<< HEAD
      * @param string $className
      *
      * @return string
      *
+=======
+     * @param  string $className
+     * @return string
+>>>>>>> github/master
      * @since  Method available since Release 3.4.0
      */
     public static function classNameToFilename($className)

@@ -42,7 +42,11 @@ class UserPermissionsForm extends FormBase {
    *   The permission handler.
    * @param \Drupal\user\RoleStorageInterface $role_storage
    *   The role storage.
+<<<<<<< HEAD
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+=======
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface
+>>>>>>> github/master
    *   The module handler.
    */
   public function __construct(PermissionHandlerInterface $permission_handler, RoleStorageInterface $role_storage, ModuleHandlerInterface $module_handler) {
@@ -100,6 +104,10 @@ class UserPermissionsForm extends FormBase {
       '#value' => $role_names,
     );
     // Render role/permission overview:
+<<<<<<< HEAD
+=======
+    $options = array();
+>>>>>>> github/master
     $hide_descriptions = system_admin_compact_mode();
 
     $form['system_compact_link'] = array(
@@ -144,6 +152,10 @@ class UserPermissionsForm extends FormBase {
           'restrict access' => FALSE,
           'warning' => !empty($perm_item['restrict access']) ? $this->t('Warning: Give to trusted roles only; this permission has security implications.') : '',
         );
+<<<<<<< HEAD
+=======
+        $options[$perm] = $perm_item['title'];
+>>>>>>> github/master
         $form['permissions'][$perm]['description'] = array(
           '#type' => 'inline_template',
           '#template' => '<div class="permission"><span class="title">{{ title }}</span>{% if description or warning %}<div class="description">{% if warning %}<em class="permission-warning">{{ warning }}</em> {% endif %}{{ description }}</div>{% endif %}</div>',
@@ -156,6 +168,10 @@ class UserPermissionsForm extends FormBase {
           $form['permissions'][$perm]['description']['#context']['description'] = $perm_item['description'];
           $form['permissions'][$perm]['description']['#context']['warning'] = $perm_item['warning'];
         }
+<<<<<<< HEAD
+=======
+        $options[$perm] = '';
+>>>>>>> github/master
         foreach ($role_names as $rid => $name) {
           $form['permissions'][$perm][$rid] = array(
             '#title' => $name . ': ' . $perm_item['title'],

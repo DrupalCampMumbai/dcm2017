@@ -5,7 +5,11 @@ namespace Drupal\editor\Form;
 use Drupal\Component\Utility\Bytes;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+<<<<<<< HEAD
 use Drupal\editor\Entity\Editor;
+=======
+use Drupal\filter\Entity\FilterFormat;
+>>>>>>> github/master
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\editor\Ajax\EditorDialogSave;
@@ -54,10 +58,17 @@ class EditorImageDialog extends FormBase {
   /**
    * {@inheritdoc}
    *
+<<<<<<< HEAD
    * @param \Drupal\editor\Entity\Editor $editor
    *   The text editor to which this dialog corresponds.
    */
   public function buildForm(array $form, FormStateInterface $form_state, Editor $editor = NULL) {
+=======
+   * @param \Drupal\filter\Entity\FilterFormat $filter_format
+   *   The filter format for which this dialog corresponds.
+   */
+  public function buildForm(array $form, FormStateInterface $form_state, FilterFormat $filter_format = NULL) {
+>>>>>>> github/master
     // This form is special, in that the default values do not come from the
     // server side, but from the client side, from a text editor. We must cache
     // this data in form state, because when the form is rebuilt, we will be
@@ -81,6 +92,11 @@ class EditorImageDialog extends FormBase {
     $form['#prefix'] = '<div id="editor-image-dialog-form">';
     $form['#suffix'] = '</div>';
 
+<<<<<<< HEAD
+=======
+    $editor = editor_load($filter_format->id());
+
+>>>>>>> github/master
     // Construct strings to use in the upload validators.
     $image_upload = $editor->getImageUploadSettings();
     if (!empty($image_upload['max_dimensions']['width']) || !empty($image_upload['max_dimensions']['height'])) {
@@ -149,7 +165,11 @@ class EditorImageDialog extends FormBase {
 
     // When Drupal core's filter_align is being used, the text editor may
     // offer the ability to change the alignment.
+<<<<<<< HEAD
     if (isset($image_element['data-align']) && $editor->getFilterFormat()->filters('filter_align')->status) {
+=======
+    if (isset($image_element['data-align']) && $filter_format->filters('filter_align')->status) {
+>>>>>>> github/master
       $form['align'] = array(
         '#title' => $this->t('Align'),
         '#type' => 'radios',
@@ -168,7 +188,11 @@ class EditorImageDialog extends FormBase {
 
     // When Drupal core's filter_caption is being used, the text editor may
     // offer the ability to in-place edit the image's caption: show a toggle.
+<<<<<<< HEAD
     if (isset($image_element['hasCaption']) && $editor->getFilterFormat()->filters('filter_caption')->status) {
+=======
+    if (isset($image_element['hasCaption']) && $filter_format->filters('filter_caption')->status) {
+>>>>>>> github/master
       $form['caption'] = array(
         '#title' => $this->t('Caption'),
         '#type' => 'checkbox',

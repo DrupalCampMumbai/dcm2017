@@ -434,7 +434,11 @@ class LocaleConfigManager {
    * @param string $context
    *   The string context.
    *
+<<<<<<< HEAD
    * @return \Drupal\locale\TranslationString|false
+=======
+   * @return \Drupal\locale\TranslationString|FALSE
+>>>>>>> github/master
    *   The translation object if the string was not empty or FALSE otherwise.
    */
   public function getStringTranslation($name, $langcode, $source, $context) {

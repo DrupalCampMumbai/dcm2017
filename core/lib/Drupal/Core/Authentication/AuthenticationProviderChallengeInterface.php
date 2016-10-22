@@ -21,7 +21,11 @@ interface AuthenticationProviderChallengeInterface {
    * @param \Exception $previous
    *   The previous exception.
    *
+<<<<<<< HEAD
    * @return \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface|null
+=======
+   * @return \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface|NULL
+>>>>>>> github/master
    *   An exception to be used in order to generate an authentication challenge.
    */
   public function challengeException(Request $request, \Exception $previous);

@@ -5,9 +5,12 @@
  * Install, update and uninstall functions for the rest module.
  */
 
+<<<<<<< HEAD
 use Drupal\Core\Config\Entity\ConfigEntityType;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 
+=======
+>>>>>>> github/master
 /**
  * Implements hook_requirements().
  */
@@ -24,6 +27,7 @@ function rest_requirements($phase) {
   }
   return $requirements;
 }
+<<<<<<< HEAD
 
 /**
  * @defgroup updates-8.1.x-to-8.2.x
@@ -94,3 +98,5 @@ function rest_update_8203() {
 /**
  * @} End of "defgroup updates-8.1.x-to-8.2.x".
  */
+=======
+>>>>>>> github/master

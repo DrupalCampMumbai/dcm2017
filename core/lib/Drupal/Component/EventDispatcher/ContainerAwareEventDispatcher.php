@@ -159,6 +159,7 @@ class ContainerAwareEventDispatcher implements EventDispatcherInterface {
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
   public function getListenerPriority($eventName, $listener) {
     // Parts copied from \Symfony\Component\EventDispatcher, that's why you see
     // a yoda condition here.
@@ -188,6 +189,8 @@ class ContainerAwareEventDispatcher implements EventDispatcherInterface {
   /**
    * {@inheritdoc}
    */
+=======
+>>>>>>> github/master
   public function hasListeners($event_name = NULL) {
     return (bool) count($this->getListeners($event_name));
   }

@@ -22,8 +22,12 @@ class PHPUnit_Framework_Constraint_ObjectHasAttribute extends PHPUnit_Framework_
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
+<<<<<<< HEAD
      * @param mixed $other Value or object to evaluate.
      *
+=======
+     * @param  mixed $other Value or object to evaluate.
+>>>>>>> github/master
      * @return bool
      */
     protected function matches($other)

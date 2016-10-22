@@ -2,7 +2,11 @@
 
 namespace Drupal\system\Tests\Installer;
 
+<<<<<<< HEAD
 use Drupal\Core\Serialization\Yaml;
+=======
+use Drupal\Component\Serialization\Yaml;
+>>>>>>> github/master
 use Drupal\simpletest\InstallerTestBase;
 
 /**

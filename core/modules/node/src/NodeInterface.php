@@ -2,7 +2,10 @@
 
 namespace Drupal\node;
 
+<<<<<<< HEAD
 use Drupal\Core\Entity\RevisionLogInterface;
+=======
+>>>>>>> github/master
 use Drupal\user\EntityOwnerInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
@@ -10,7 +13,11 @@ use Drupal\Core\Entity\ContentEntityInterface;
 /**
  * Provides an interface defining a node entity.
  */
+<<<<<<< HEAD
 interface NodeInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface, RevisionLogInterface {
+=======
+interface NodeInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface {
+>>>>>>> github/master
 
   /**
    * Gets the node type.
@@ -141,9 +148,12 @@ interface NodeInterface extends ContentEntityInterface, EntityChangedInterface, 
    *
    * @return \Drupal\user\UserInterface
    *   The user entity for the revision author.
+<<<<<<< HEAD
    *
    * @deprecated in Drupal 8.2.0, will be removed before Drupal 9.0.0. Use
    *   \Drupal\Core\Entity\RevisionLogInterface::getRevisionUser() instead.
+=======
+>>>>>>> github/master
    */
   public function getRevisionAuthor();
 
@@ -155,9 +165,12 @@ interface NodeInterface extends ContentEntityInterface, EntityChangedInterface, 
    *
    * @return \Drupal\node\NodeInterface
    *   The called node entity.
+<<<<<<< HEAD
    *
    * @deprecated in Drupal 8.2.0, will be removed before Drupal 9.0.0. Use
    *   \Drupal\Core\Entity\RevisionLogInterface::setRevisionUserId() instead.
+=======
+>>>>>>> github/master
    */
   public function setRevisionAuthorId($uid);
 

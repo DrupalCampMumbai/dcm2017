@@ -8,7 +8,10 @@ use Drupal\system\Tests\Cache\AssertPageCacheContextsAndTagsTrait;
 use Drupal\views\Tests\ViewTestBase;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Views;
+<<<<<<< HEAD
 use Drupal\views\Entity\View;
+=======
+>>>>>>> github/master
 
 /**
  * Tests exposed forms functionality.
@@ -210,6 +213,7 @@ class ExposedFormTest extends ViewTestBase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests overriding the default render option with checkboxes.
    */
   public function testExposedFormRenderCheckboxes() {
@@ -252,6 +256,8 @@ class ExposedFormTest extends ViewTestBase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Tests the exposed block functionality.
    */
   public function testExposedBlock() {
@@ -287,7 +293,11 @@ class ExposedFormTest extends ViewTestBase {
    * Test the input required exposed form type.
    */
   public function testInputRequired() {
+<<<<<<< HEAD
     $view = View::load('test_exposed_form_buttons');
+=======
+    $view = entity_load('view', 'test_exposed_form_buttons');
+>>>>>>> github/master
     $display = &$view->getDisplay('default');
     $display['display_options']['exposed_form']['type'] = 'input_required';
     $view->save();

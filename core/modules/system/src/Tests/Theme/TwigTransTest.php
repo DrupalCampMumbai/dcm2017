@@ -92,6 +92,7 @@ class TwigTransTest extends WebTestBase {
   }
 
   /**
+<<<<<<< HEAD
    * Test empty Twig "trans" tags.
    */
   public function testEmptyTwigTransTags() {
@@ -116,6 +117,8 @@ class TwigTransTest extends WebTestBase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Asserts Twig trans tags.
    */
   protected function assertTwigTransTags() {
@@ -229,7 +232,11 @@ class TwigTransTest extends WebTestBase {
    * @param string $langcode
    *   The langcode of the specified language.
    *
+<<<<<<< HEAD
    * @return string|false
+=======
+   * @return string|FALSE
+>>>>>>> github/master
    *   The .po contents for the specified language or FALSE if none exists.
    */
   protected function poFileContents($langcode) {

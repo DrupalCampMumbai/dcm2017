@@ -2,9 +2,23 @@ name: 'Action bulk form test'
 type: module
 description: 'Support module for action bulk form testing.'
 package: Testing
+<<<<<<< HEAD
 version: VERSION
 core: 8.x
+=======
+# version: VERSION
+# core: 8.x
+>>>>>>> github/master
 dependencies:
   - action
   - views
   - node
+<<<<<<< HEAD
+=======
+
+# Information added by Drupal.org packaging script on 2016-09-21
+version: '8.1.10'
+core: '8.x'
+project: 'drupal'
+datestamp: 1474479093
+>>>>>>> github/master

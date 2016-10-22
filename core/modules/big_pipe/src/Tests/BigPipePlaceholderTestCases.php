@@ -244,7 +244,11 @@ class BigPipePlaceholderTestCases {
         'command' => 'insert',
         'method' => 'replaceWith',
         'selector' => '[data-big-pipe-placeholder-id="timecurrent-timetime"]',
+<<<<<<< HEAD
         'data' => '<time datetime="1991-03-14"></time>',
+=======
+        'data' => '<time datetime=1991-03-14"></time>',
+>>>>>>> github/master
         'settings' => NULL,
       ],
     ];
@@ -258,7 +262,11 @@ class BigPipePlaceholderTestCases {
         ],
       ],
     ];
+<<<<<<< HEAD
     $current_time->embeddedHtmlResponse = '<time datetime="1991-03-14"></time>';
+=======
+    $current_time->embeddedHtmlResponse = '<time datetime=1991-03-14"></time>';
+>>>>>>> github/master
 
 
     // 6. Edge case: #lazy_builder that throws an exception.

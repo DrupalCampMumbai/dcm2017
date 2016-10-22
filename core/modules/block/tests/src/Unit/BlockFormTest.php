@@ -3,7 +3,10 @@
 namespace Drupal\Tests\block\Unit;
 
 use Drupal\block\BlockForm;
+<<<<<<< HEAD
 use Drupal\Core\Plugin\PluginFormFactoryInterface;
+=======
+>>>>>>> github/master
 use Drupal\Tests\UnitTestCase;
 
 /**
@@ -56,6 +59,7 @@ class BlockFormTest extends UnitTestCase {
   protected $contextRepository;
 
   /**
+<<<<<<< HEAD
    * The plugin form manager.
    *
    * @var \Drupal\Core\Plugin\PluginFormFactoryInterface|\Prophecy\Prophecy\ProphecyInterface
@@ -63,6 +67,8 @@ class BlockFormTest extends UnitTestCase {
   protected $pluginFormFactory;
 
   /**
+=======
+>>>>>>> github/master
    * {@inheritdoc}
    */
   protected function setUp() {
@@ -79,7 +85,10 @@ class BlockFormTest extends UnitTestCase {
       ->method('getStorage')
       ->will($this->returnValue($this->storage));
 
+<<<<<<< HEAD
     $this->pluginFormFactory = $this->prophesize(PluginFormFactoryInterface::class);
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -108,7 +117,11 @@ class BlockFormTest extends UnitTestCase {
       ->method('getQuery')
       ->will($this->returnValue($query));
 
+<<<<<<< HEAD
     $block_form_controller = new BlockForm($this->entityManager, $this->conditionManager, $this->contextRepository, $this->language, $this->themeHandler, $this->pluginFormFactory->reveal());
+=======
+    $block_form_controller = new BlockForm($this->entityManager, $this->conditionManager, $this->contextRepository, $this->language, $this->themeHandler);
+>>>>>>> github/master
 
     // Ensure that the block with just one other instance gets the next available
     // name suggestion.

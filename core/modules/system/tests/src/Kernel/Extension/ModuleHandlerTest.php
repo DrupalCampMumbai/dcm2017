@@ -3,6 +3,10 @@
 namespace Drupal\Tests\system\Kernel\Extension;
 
 use Drupal\Core\Extension\MissingDependencyException;
+<<<<<<< HEAD
+=======
+use Drupal\Core\DependencyInjection\ContainerBuilder;
+>>>>>>> github/master
 use \Drupal\Core\Extension\ModuleUninstallValidatorException;
 use Drupal\entity_test\Entity\EntityTest;
 use Drupal\KernelTests\KernelTestBase;
@@ -36,6 +40,19 @@ class ModuleHandlerTest extends KernelTestBase {
   }
 
   /**
+<<<<<<< HEAD
+=======
+   * {@inheritdoc}
+   */
+  public function register(ContainerBuilder $container) {
+    parent::register($container);
+    // Put a fake route bumper on the container to be called during uninstall.
+    $container
+      ->register('router.dumper', 'Drupal\Core\Routing\NullMatcherDumper');
+  }
+
+  /**
+>>>>>>> github/master
    * The basic functionality of retrieving enabled modules.
    */
   function testModuleList() {

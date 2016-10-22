@@ -122,6 +122,7 @@ class Checkboxes extends FormElement {
     }
   }
 
+<<<<<<< HEAD
   /**
    * Determines which checkboxes were checked when a form is submitted.
    *
@@ -158,4 +159,6 @@ class Checkboxes extends FormElement {
     return empty(static::getCheckedCheckboxes($input));
   }
 
+=======
+>>>>>>> github/master
 }

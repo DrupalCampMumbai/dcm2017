@@ -77,11 +77,19 @@ class UnroutedUrlAssemblerTest extends UnitTestCase {
    * @dataProvider providerTestAssembleWithExternalUrl
    */
   public function testAssembleWithExternalUrl($uri, array $options, $expected) {
+<<<<<<< HEAD
     $this->setupRequestStack(FALSE);
     $this->assertEquals($expected, $this->unroutedUrlAssembler->assemble($uri, $options));
     $generated_url = $this->unroutedUrlAssembler->assemble($uri, $options, TRUE);
     $this->assertEquals($expected, $generated_url->getGeneratedUrl());
     $this->assertInstanceOf('\Drupal\Core\Render\BubbleableMetadata', $generated_url);
+=======
+   $this->setupRequestStack(FALSE);
+   $this->assertEquals($expected, $this->unroutedUrlAssembler->assemble($uri, $options));
+   $generated_url = $this->unroutedUrlAssembler->assemble($uri, $options, TRUE);
+   $this->assertEquals($expected, $generated_url->getGeneratedUrl());
+   $this->assertInstanceOf('\Drupal\Core\Render\BubbleableMetadata', $generated_url);
+>>>>>>> github/master
   }
 
   /**

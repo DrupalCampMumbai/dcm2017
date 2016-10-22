@@ -158,7 +158,11 @@ class EntityFormDisplayTest extends KernelTestBase {
     $this->assertFalse(isset($data['hidden']['test_display_non_configurable']));
 
     // Check that defaults are correctly filled when loading the display.
+<<<<<<< HEAD
     $display = EntityFormDisplay::load($display->id());
+=======
+    $display = entity_load('entity_form_display', $display->id());
+>>>>>>> github/master
     foreach ($expected as $field_name => $options) {
       $this->assertEqual($display->getComponent($field_name), $options);
     }
@@ -168,7 +172,11 @@ class EntityFormDisplayTest extends KernelTestBase {
     $data['content']['test_display_non_configurable'] = $expected['test_display_non_configurable'];
     $data['content']['test_display_non_configurable']['weight']++;
     $config->setData($data)->save();
+<<<<<<< HEAD
     $display = EntityFormDisplay::load($display->id());
+=======
+    $display = entity_load('entity_form_display', $display->id());
+>>>>>>> github/master
     foreach ($expected as $field_name => $options) {
       $this->assertEqual($display->getComponent($field_name), $options);
     }

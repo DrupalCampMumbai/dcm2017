@@ -35,6 +35,10 @@ function contextual_toolbar() {
       '#value' => t('Edit'),
       '#attributes' => array(
         'class' => array('toolbar-icon', 'toolbar-icon-edit'),
+<<<<<<< HEAD
+=======
+        'role' => 'button',
+>>>>>>> github/master
         'aria-pressed' => 'false',
       ),
     ),

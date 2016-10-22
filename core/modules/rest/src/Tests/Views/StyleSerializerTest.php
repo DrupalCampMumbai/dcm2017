@@ -3,7 +3,10 @@
 namespace Drupal\rest\Tests\Views;
 
 use Drupal\Core\Cache\Cache;
+<<<<<<< HEAD
 use Drupal\Core\EventSubscriber\MainContentViewSubscriber;
+=======
+>>>>>>> github/master
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\entity_test\Entity\EntityTest;
 use Drupal\field\Entity\FieldConfig;
@@ -40,7 +43,11 @@ class StyleSerializerTest extends PluginTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $modules = array('views_ui', 'entity_test', 'hal', 'rest_test_views', 'node', 'text', 'field', 'language', 'basic_auth');
+=======
+  public static $modules = array('views_ui', 'entity_test', 'hal', 'rest_test_views', 'node', 'text', 'field', 'language');
+>>>>>>> github/master
 
   /**
    * Views used by this test.
@@ -70,6 +77,7 @@ class StyleSerializerTest extends PluginTestBase {
   }
 
   /**
+<<<<<<< HEAD
    * Checks that the auth options restricts access to a REST views display.
    */
   public function testRestViewsAuthentication() {
@@ -103,6 +111,8 @@ class StyleSerializerTest extends PluginTestBase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Checks the behavior of the Serializer callback paths and row plugins.
    */
   public function testSerializerResponses() {
@@ -353,7 +363,11 @@ class StyleSerializerTest extends PluginTestBase {
     $this->drupalGetWithFormat('test/serialize/field', 'json');
     $this->assertHeader('content-type', 'application/json');
     $this->assertResponse(406, 'A 406 response was returned when JSON was requested.');
+<<<<<<< HEAD
     // Should return a 200.
+=======
+     // Should return a 200.
+>>>>>>> github/master
     $this->drupalGetWithFormat('test/serialize/field', 'xml');
     $this->assertHeader('content-type', 'text/xml; charset=UTF-8');
     $this->assertResponse(200, 'A 200 response was returned when XML was requested.');
@@ -550,8 +564,14 @@ class StyleSerializerTest extends PluginTestBase {
   public function testLivePreview() {
     // We set up a request so it looks like an request in the live preview.
     $request = new Request();
+<<<<<<< HEAD
     $request->query->add([MainContentViewSubscriber::WRAPPER_FORMAT => 'drupal_ajax']);
     /** @var \Symfony\Component\HttpFoundation\RequestStack $request_stack */
+=======
+    $request->setFormat('drupal_ajax', 'application/vnd.drupal-ajax');
+    $request->headers->set('Accept', 'application/vnd.drupal-ajax');
+      /** @var \Symfony\Component\HttpFoundation\RequestStack $request_stack */
+>>>>>>> github/master
     $request_stack = \Drupal::service('request_stack');
     $request_stack->push($request);
 

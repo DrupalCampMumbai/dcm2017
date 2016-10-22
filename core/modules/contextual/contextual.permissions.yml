@@ -1,2 +1,6 @@
 access contextual links:
   title: 'Use contextual links'
+<<<<<<< HEAD
+=======
+  description: 'Use contextual links to perform actions related to elements on a page.'
+>>>>>>> github/master

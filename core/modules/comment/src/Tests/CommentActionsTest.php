@@ -29,12 +29,20 @@ class CommentActionsTest extends CommentTestBase {
     $comment = $this->postComment($this->node, $comment_text, $subject);
 
     // Unpublish a comment.
+<<<<<<< HEAD
     $action = Action::load('comment_unpublish_action');
+=======
+    $action = entity_load('action', 'comment_unpublish_action');
+>>>>>>> github/master
     $action->execute(array($comment));
     $this->assertTrue($comment->isPublished() === FALSE, 'Comment was unpublished');
 
     // Publish a comment.
+<<<<<<< HEAD
     $action = Action::load('comment_publish_action');
+=======
+    $action = entity_load('action', 'comment_publish_action');
+>>>>>>> github/master
     $action->execute(array($comment));
     $this->assertTrue($comment->isPublished() === TRUE, 'Comment was published');
   }

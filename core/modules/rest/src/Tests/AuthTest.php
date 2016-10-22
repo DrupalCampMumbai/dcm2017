@@ -16,7 +16,11 @@ class AuthTest extends RESTTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $modules = array('basic_auth', 'hal', 'rest', 'entity_test');
+=======
+  public static $modules = array('basic_auth', 'hal', 'rest', 'entity_test', 'comment');
+>>>>>>> github/master
 
   /**
    * Tests reading from an authenticated resource.
@@ -43,6 +47,10 @@ class AuthTest extends RESTTestBase {
     // resources via the REST API, but the request is authenticated
     // with session cookies.
     $permissions = $this->entityPermissions($entity_type, 'view');
+<<<<<<< HEAD
+=======
+    $permissions[] = 'restful get entity:' . $entity_type;
+>>>>>>> github/master
     $account = $this->drupalCreateUser($permissions);
     $this->drupalLogin($account);
 

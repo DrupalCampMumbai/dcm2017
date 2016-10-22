@@ -1,6 +1,7 @@
 CKEditor 4 Changelog
 ====================
 
+<<<<<<< HEAD
 ## CKEditor 4.5.11
 
 **Security Updates:**
@@ -25,6 +26,8 @@ Fixed Issues:
 * [#14659](http://dev.ckeditor.com/ticket/14659): [Blink] Fixed: Content scrolled to the top after closing the dialog in a [`<div>`-based editor](http://ckeditor.com/addon/divarea).
 * [#14825](http://dev.ckeditor.com/ticket/14825): [Edge] Fixed: Focusing the editor causes unwanted scrolling due to dropped support for the `setActive` method.
 
+=======
+>>>>>>> github/master
 ## CKEditor 4.5.10
 
 Fixed Issues:
@@ -39,6 +42,10 @@ Fixed Issues:
 * [#14252](http://dev.ckeditor.com/ticket/14252): [IE] Fixed: Styles drop-down list does not always reflect the current style of the text line.
 * [#14275](http://dev.ckeditor.com/ticket/14275): [IE9+] Fixed: `onerror` and `onload` events are not used in browsers it could have been used when loading scripts dynamically.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> github/master
 ## CKEditor 4.5.9
 
 Fixed Issues:

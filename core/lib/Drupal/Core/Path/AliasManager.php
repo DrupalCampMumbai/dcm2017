@@ -283,7 +283,11 @@ class AliasManager implements AliasManagerInterface, CacheDecoratorInterface {
     if (!empty($path)) {
       if ($this->whitelist->get(strtok($path, '/'))) {
         return;
+<<<<<<< HEAD
       }
+=======
+     }
+>>>>>>> github/master
     }
     $this->whitelist->clear();
   }

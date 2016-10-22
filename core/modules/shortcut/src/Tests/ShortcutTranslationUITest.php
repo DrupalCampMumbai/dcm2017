@@ -65,10 +65,14 @@ class ShortcutTranslationUITest extends ContentTranslationUITestBase {
   protected function doTestBasicTranslation() {
     parent::doTestBasicTranslation();
 
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     foreach ($this->langcodes as $langcode) {
       if ($entity->hasTranslation($langcode)) {
         $language = new Language(array('id' => $langcode));
@@ -87,10 +91,14 @@ class ShortcutTranslationUITest extends ContentTranslationUITestBase {
    * {@inheritdoc}
    */
   protected function doTestTranslationEdit() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
     $languages = $this->container->get('language_manager')->getLanguages();
 
     foreach ($this->langcodes as $langcode) {
@@ -113,10 +121,14 @@ class ShortcutTranslationUITest extends ContentTranslationUITestBase {
    * Tests the basic translation workflow.
    */
   protected function doTestTranslationChanged() {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')
       ->getStorage($this->entityTypeId);
     $storage->resetCache([$this->entityId]);
     $entity = $storage->load($this->entityId);
+=======
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+>>>>>>> github/master
 
     $this->assertFalse(
       $entity instanceof EntityChangedInterface,

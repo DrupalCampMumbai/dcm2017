@@ -25,7 +25,11 @@ class BooleanCheckboxWidget extends WidgetBase {
    */
   public static function defaultSettings() {
     return array(
+<<<<<<< HEAD
       'display_label' => TRUE,
+=======
+      'display_label' => FALSE,
+>>>>>>> github/master
     ) + parent::defaultSettings();
   }
 

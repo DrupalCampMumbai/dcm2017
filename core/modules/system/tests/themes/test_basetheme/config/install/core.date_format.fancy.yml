@@ -1,6 +1,10 @@
 # Themes are not supposed to provide/install this kind of config normally.
 # This exists for testing purposes only.
+<<<<<<< HEAD
 # @see \Drupal\KernelTests\Core\Theme\ThemeInstallerTest
+=======
+# @see \Drupal\system\Tests\Extension\ThemeInstallerTest
+>>>>>>> github/master
 id: fancy
 label: 'Fancy date'
 status: true

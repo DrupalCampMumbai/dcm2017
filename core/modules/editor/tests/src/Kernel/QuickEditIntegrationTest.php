@@ -121,9 +121,13 @@ class QuickEditIntegrationTest extends QuickEditTestBase {
    *   Returns the selected in-place editor.
    */
   protected function getSelectedEditor($entity_id, $field_name, $view_mode = 'default') {
+<<<<<<< HEAD
     $storage = $this->container->get('entity_type.manager')->getStorage('entity_test');
     $storage->resetCache([$entity_id]);
     $entity = $storage->load($entity_id);
+=======
+    $entity = entity_load('entity_test', $entity_id, TRUE);
+>>>>>>> github/master
     $items = $entity->get($field_name);
     $options = entity_get_display('entity_test', 'entity_test', $view_mode)->getComponent($field_name);
     return $this->editorSelector->getEditor($options['type'], $items);
@@ -174,7 +178,11 @@ class QuickEditIntegrationTest extends QuickEditTestBase {
     $entity->{$this->fieldName}->value = 'Test';
     $entity->{$this->fieldName}->format = 'full_html';
     $entity->save();
+<<<<<<< HEAD
     $entity = EntityTest::load($entity->id());
+=======
+    $entity = entity_load('entity_test', $entity->id());
+>>>>>>> github/master
 
     // Verify metadata.
     $items = $entity->get($this->fieldName);
@@ -211,7 +219,11 @@ class QuickEditIntegrationTest extends QuickEditTestBase {
     $entity->{$this->fieldName}->value = 'Test';
     $entity->{$this->fieldName}->format = 'full_html';
     $entity->save();
+<<<<<<< HEAD
     $entity = EntityTest::load($entity->id());
+=======
+    $entity = entity_load('entity_test', $entity->id());
+>>>>>>> github/master
 
     // Verify AJAX response.
     $controller = new EditorController();

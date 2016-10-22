@@ -2,7 +2,10 @@
 
 namespace Drupal\user\Tests\Views;
 
+<<<<<<< HEAD
 use Drupal\user\Entity\User;
+=======
+>>>>>>> github/master
 use Drupal\user\RoleInterface;
 use Drupal\views\Views;
 
@@ -46,7 +49,11 @@ class BulkFormTest extends UserTestBase {
     $edit = array(
       'action' => 'user_block_user_action',
     );
+<<<<<<< HEAD
     $this->drupalPostForm('test-user-bulk-form', $edit, t('Apply to selected items'));
+=======
+    $this->drupalPostForm('test-user-bulk-form', $edit, t('Apply'));
+>>>>>>> github/master
     $this->assertText(t('No users selected.'));
 
     // Assign a role to a user.
@@ -60,7 +67,11 @@ class BulkFormTest extends UserTestBase {
       'user_bulk_form[1]' => TRUE,
       'action' => 'user_add_role_action.' . $role,
     );
+<<<<<<< HEAD
     $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
+=======
+    $this->drupalPostForm(NULL, $edit, t('Apply'));
+>>>>>>> github/master
     // Re-load the user and check their roles.
     $user_storage->resetCache(array($account->id()));
     $account = $user_storage->load($account->id());
@@ -70,7 +81,11 @@ class BulkFormTest extends UserTestBase {
       'user_bulk_form[1]' => TRUE,
       'action' => 'user_remove_role_action.' . $role,
     );
+<<<<<<< HEAD
     $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
+=======
+    $this->drupalPostForm(NULL, $edit, t('Apply'));
+>>>>>>> github/master
     // Re-load the user and check their roles.
     $user_storage->resetCache(array($account->id()));
     $account = $user_storage->load($account->id());
@@ -83,7 +98,11 @@ class BulkFormTest extends UserTestBase {
       'user_bulk_form[1]' => TRUE,
       'action' => 'user_block_user_action',
     );
+<<<<<<< HEAD
     $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
+=======
+    $this->drupalPostForm(NULL, $edit, t('Apply'));
+>>>>>>> github/master
     // Re-load the user and check their status.
     $user_storage->resetCache(array($account->id()));
     $account = $user_storage->load($account->id());
@@ -104,7 +123,11 @@ class BulkFormTest extends UserTestBase {
       'user_bulk_form[0]' => TRUE,
       'action' => 'user_block_user_action',
     );
+<<<<<<< HEAD
     $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
+=======
+    $this->drupalPostForm(NULL, $edit, t('Apply'));
+>>>>>>> github/master
     $anonymous_account = $user_storage->load(0);
     $this->assertTrue($anonymous_account->isBlocked(), 'Ensure the anonymous user got blocked.');
 
@@ -131,7 +154,11 @@ class BulkFormTest extends UserTestBase {
    */
   public function testBulkFormCombineFilter() {
     // Add a user.
+<<<<<<< HEAD
     User::load($this->users[0]->id());
+=======
+    $account = entity_load('user', $this->users[0]->id());
+>>>>>>> github/master
     $view = Views::getView('test_user_bulk_form_combine_filter');
     $errors = $view->validate();
     $this->assertEqual(reset($errors['default']), t('Field %field set in %filter is not usable for this filter type. Combined field filter only works for simple fields.', array('%field' => 'User: Bulk update', '%filter' => 'Global: Combine fields filter')));

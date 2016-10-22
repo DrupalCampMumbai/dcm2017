@@ -5,7 +5,10 @@ namespace Drupal\rest\Tests;
 use Drupal\comment\Tests\CommentTestTrait;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\EntityInterface;
+<<<<<<< HEAD
 use Drupal\Core\Url;
+=======
+>>>>>>> github/master
 use Drupal\entity_test\Entity\EntityTest;
 use Drupal\node\Entity\Node;
 use Drupal\user\Entity\User;
@@ -24,7 +27,11 @@ class CreateTest extends RESTTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $modules = array('hal', 'rest', 'entity_test', 'comment', 'node');
+=======
+  public static $modules = array('hal', 'rest', 'entity_test', 'comment');
+>>>>>>> github/master
 
   /**
    * The 'serializer' service.
@@ -50,6 +57,11 @@ class CreateTest extends RESTTestBase {
 
     // Get the necessary user permissions to create the current entity type.
     $permissions = $this->entityPermissions($entity_type, 'create');
+<<<<<<< HEAD
+=======
+    // POST method must be allowed for the current entity type.
+    $permissions[] = 'restful post entity:' . $entity_type;
+>>>>>>> github/master
 
     // Create the user.
     $account = $this->drupalCreateUser($permissions);
@@ -76,11 +88,15 @@ class CreateTest extends RESTTestBase {
   /**
    * Ensure that an entity cannot be created without the restful permission.
    */
+<<<<<<< HEAD
   public function testCreateWithoutPermissionIfBcFlagIsOn() {
     $rest_settings = $this->config('rest.settings');
     $rest_settings->set('bc_entity_resource_permissions', TRUE)
       ->save(TRUE);
 
+=======
+  public function testCreateWithoutPermission() {
+>>>>>>> github/master
     $entity_type = 'entity_test';
     // Enables the REST service for 'entity_test' entity type.
     $this->enableService('entity:' . $entity_type, 'POST');
@@ -99,6 +115,7 @@ class CreateTest extends RESTTestBase {
     $this->httpRequest('entity/' . $entity_type, 'POST', $serialized, $this->defaultMimeType);
     $this->assertResponse(403);
     $this->assertFalse(EntityTest::loadMultiple(), 'No entity has been created in the database.');
+<<<<<<< HEAD
 
     // Create a user with the 'restful post entity:entity_test permission and
     // try again. This time, we should be able to create an entity.
@@ -107,6 +124,8 @@ class CreateTest extends RESTTestBase {
     $this->drupalLogin($account);
     $this->httpRequest('entity/' . $entity_type, 'POST', $serialized, $this->defaultMimeType);
     $this->assertResponse(201);
+=======
+>>>>>>> github/master
   }
 
   /**
@@ -342,6 +361,11 @@ class CreateTest extends RESTTestBase {
     $accounts = array();
     // Get the necessary user permissions for the current $entity_type creation.
     $permissions = $this->entityPermissions($entity_type, 'create');
+<<<<<<< HEAD
+=======
+    // POST method must be allowed for the current entity type.
+    $permissions[] = 'restful post entity:' . $entity_type;
+>>>>>>> github/master
     // Create user without administrative permissions.
     $accounts[] = $this->drupalCreateUser($permissions);
     // Add administrative permissions for nodes and users.
@@ -365,10 +389,13 @@ class CreateTest extends RESTTestBase {
   public function assertCreateEntityOverRestApi($entity_type, $serialized = NULL) {
     // Note: this will fail with PHP 5.6 when always_populate_raw_post_data is
     // set to something other than -1. See https://www.drupal.org/node/2456025.
+<<<<<<< HEAD
     // Try first without the CSRF token, which should fail.
     $this->httpRequest('entity/' . $entity_type, 'POST', $serialized, $this->defaultMimeType, TRUE);
     $this->assertResponse(403, 'X-CSRF-Token request header is missing');
     // Then try with the CSRF token.
+=======
+>>>>>>> github/master
     $response = $this->httpRequest('entity/' . $entity_type, 'POST', $serialized, $this->defaultMimeType);
     $this->assertResponse(201);
 
@@ -449,14 +476,22 @@ class CreateTest extends RESTTestBase {
     $entity->set('uuid', $this->randomMachineName(129));
     $invalid_serialized = $this->serializer->serialize($entity, $this->defaultFormat, $context);
 
+<<<<<<< HEAD
     $response = $this->httpRequest(Url::fromRoute("rest.entity.$entity_type.POST")->setRouteParameter('_format', $this->defaultFormat), 'POST', $invalid_serialized, $this->defaultMimeType);
+=======
+    $response = $this->httpRequest('entity/' . $entity_type, 'POST', $invalid_serialized, $this->defaultMimeType);
+>>>>>>> github/master
 
     // Unprocessable Entity as response.
     $this->assertResponse(422);
 
     // Verify that the text of the response is correct.
     $error = Json::decode($response);
+<<<<<<< HEAD
     $this->assertEqual($error['message'], "Unprocessable Entity: validation failed.\nuuid.0.value: <em class=\"placeholder\">UUID</em>: may not be longer than 128 characters.\n");
+=======
+    $this->assertEqual($error['error'], "Unprocessable Entity: validation failed.\nuuid.0.value: <em class=\"placeholder\">UUID</em>: may not be longer than 128 characters.\n");
+>>>>>>> github/master
   }
 
   /**

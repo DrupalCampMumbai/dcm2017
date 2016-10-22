@@ -2,8 +2,13 @@
 
 namespace Drupal\config\Tests;
 
+<<<<<<< HEAD
 use Drupal\Core\Config\InstallStorage;
 use Drupal\Core\Serialization\Yaml;
+=======
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\Config\InstallStorage;
+>>>>>>> github/master
 use Drupal\simpletest\InstallerTestBase;
 
 /**

@@ -83,8 +83,12 @@ class EntityRevisionsTest extends WebTestBase {
       $legacy_name = $entity->name->value;
       $legacy_text = $entity->field_test_text->value;
 
+<<<<<<< HEAD
       $entity = $this->container->get('entity_type.manager')
         ->getStorage($entity_type)->load($entity->id->value);
+=======
+      $entity = entity_load($entity_type, $entity->id->value);
+>>>>>>> github/master
       $entity->setNewRevision(TRUE);
       $names[] = $entity->name->value = $this->randomMachineName(32);
       $texts[] = $entity->field_test_text->value = $this->randomMachineName(32);
@@ -113,9 +117,13 @@ class EntityRevisionsTest extends WebTestBase {
     }
 
     // Confirm the correct revision text appears in the edit form.
+<<<<<<< HEAD
     $entity = $this->container->get('entity_type.manager')
       ->getStorage($entity_type)
       ->load($entity->id->value);
+=======
+    $entity = entity_load($entity_type, $entity->id->value);
+>>>>>>> github/master
     $this->drupalGet($entity_type . '/manage/' . $entity->id->value . '/edit');
     $this->assertFieldById('edit-name-0-value', $entity->name->value, format_string('%entity_type: Name matches in UI.', array('%entity_type' => $entity_type)));
     $this->assertFieldById('edit-field-test-text-0-value', $entity->field_test_text->value, format_string('%entity_type: Text matches in UI.', array('%entity_type' => $entity_type)));

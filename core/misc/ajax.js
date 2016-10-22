@@ -1203,6 +1203,7 @@
       var ajaxSettings = drupalSettings.ajax;
 
       // Clean up drupalSettings.ajax.
+<<<<<<< HEAD
       if (ajaxSettings) {
         Drupal.ajax.expired().forEach(function (instance) {
           // If the Ajax object has been created through drupalSettings.ajax
@@ -1218,6 +1219,20 @@
           }
         });
       }
+=======
+      Drupal.ajax.expired().forEach(function (instance) {
+        // If the Ajax object has been created through drupalSettings.ajax
+        // it will have a selector. When there is no selector the object
+        // has been initialized with a special class name picked up by the
+        // Ajax behavior.
+        if (instance.selector) {
+          var selector = instance.selector.replace('#', '');
+          if (ajaxSettings && selector in ajaxSettings) {
+            delete ajaxSettings[selector];
+          }
+        }
+      });
+>>>>>>> github/master
 
       if (response.merge) {
         $.extend(true, drupalSettings, response.settings);

@@ -2,7 +2,10 @@
 
 namespace Drupal\Core\Test;
 
+<<<<<<< HEAD
 use Drupal\Component\FileSystem\FileSystem;
+=======
+>>>>>>> github/master
 use Drupal\Core\Database\ConnectionNotDefinedException;
 use Drupal\Core\Database\Database;
 
@@ -12,6 +15,7 @@ use Drupal\Core\Database\Database;
 class TestDatabase {
 
   /**
+<<<<<<< HEAD
    * A random number used to ensure that test fixtures are unique to each test
    * method.
    *
@@ -27,6 +31,8 @@ class TestDatabase {
   protected $databasePrefix;
 
   /**
+=======
+>>>>>>> github/master
    * Returns the database connection to the site running Simpletest.
    *
    * @return \Drupal\Core\Database\Connection
@@ -57,6 +63,7 @@ class TestDatabase {
     return $connection;
   }
 
+<<<<<<< HEAD
   /**
    * TestDatabase constructor.
    *
@@ -157,4 +164,6 @@ class TestDatabase {
     return FileSystem::getOsTemporaryDirectory() . '/test_' . $lock_id;
   }
 
+=======
+>>>>>>> github/master
 }

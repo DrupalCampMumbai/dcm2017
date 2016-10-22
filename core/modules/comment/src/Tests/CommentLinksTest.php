@@ -66,7 +66,11 @@ class CommentLinksTest extends CommentTestBase {
       'subject' => $this->randomMachineName(),
       'hostname' => '127.0.0.1',
       'langcode' => LanguageInterface::LANGCODE_NOT_SPECIFIED,
+<<<<<<< HEAD
       'comment_body' => array(array('value' => $this->randomMachineName())),
+=======
+      'comment_body' => array(LanguageInterface::LANGCODE_NOT_SPECIFIED => array($this->randomMachineName())),
+>>>>>>> github/master
     ));
     $comment->save();
     $this->comment = $comment;
@@ -101,6 +105,7 @@ class CommentLinksTest extends CommentTestBase {
       $this->assertLink('Add new comment');
     }
 
+<<<<<<< HEAD
     // Change weight to make links go before comment body.
     entity_get_display('comment', 'comment', 'default')
       ->setComponent('links', array('weight' => -100))
@@ -121,6 +126,8 @@ class CommentLinksTest extends CommentTestBase {
     $element = end($element[0]);
     $this->assertIdentical($element[0]->getName(), 'ul', 'Last element is comment links.');
 
+=======
+>>>>>>> github/master
     // Make sure we can hide node links.
     entity_get_display('node', $this->node->bundle(), 'default')
       ->removeComponent('links')

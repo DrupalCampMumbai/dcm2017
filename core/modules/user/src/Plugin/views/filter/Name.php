@@ -96,9 +96,15 @@ class Name extends InOperator {
     // prevent array filter from removing our anonymous user.
   }
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
+=======
+/**
+ * {@inheritdoc}
+ */
+>>>>>>> github/master
   public function getValueOptions() {
     return $this->valueOptions;
   }
@@ -108,8 +114,12 @@ class Name extends InOperator {
     $this->valueOptions = array();
 
     if ($this->value) {
+<<<<<<< HEAD
       $result = \Drupal::entityTypeManager()->getStorage('user')
         ->loadByProperties(['uid' => $this->value]);
+=======
+      $result = entity_load_multiple_by_properties('user', array('uid' => $this->value));
+>>>>>>> github/master
       foreach ($result as $account) {
         if ($account->id()) {
           $this->valueOptions[$account->id()] = $account->label();

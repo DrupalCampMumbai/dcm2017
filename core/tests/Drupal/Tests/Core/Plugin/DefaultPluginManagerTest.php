@@ -2,9 +2,12 @@
 
 namespace Drupal\Tests\Core\Plugin;
 
+<<<<<<< HEAD
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\PluginFormInterface;
+=======
+>>>>>>> github/master
 use Drupal\Tests\UnitTestCase;
 
 /**
@@ -61,6 +64,7 @@ class DefaultPluginManagerTest extends UnitTestCase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests the plugin manager with a plugin that extends a non-installed class.
    */
   public function testDefaultPluginManagerWithPluginExtendingNonInstalledClass() {
@@ -80,6 +84,8 @@ class DefaultPluginManagerTest extends UnitTestCase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Tests the plugin manager with a disabled module.
    */
   public function testDefaultPluginManagerWithDisabledModule() {
@@ -323,6 +329,7 @@ class DefaultPluginManagerTest extends UnitTestCase {
     $this->assertInternalType('array', $plugin_manager->getDefinitions());
   }
 
+<<<<<<< HEAD
   /**
    * @covers ::getCacheContexts
    */
@@ -452,4 +459,6 @@ class TestPluginForm implements PluginFormInterface {
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
   }
 
+=======
+>>>>>>> github/master
 }

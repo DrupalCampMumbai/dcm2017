@@ -18,6 +18,7 @@ const SIMPLETEST_MINIMUM_PHP_MEMORY_LIMIT = '128M';
 function simpletest_requirements($phase) {
   $requirements = array();
 
+<<<<<<< HEAD
   $has_phpunit = class_exists('\PHPUnit_Framework_TestCase');
   $has_curl = function_exists('curl_init');
   $open_basedir = ini_get('open_basedir');
@@ -31,6 +32,11 @@ function simpletest_requirements($phase) {
     $requirements['phpunit']['description'] = t("The testing framework requires the PHPUnit package. Please run 'composer install --dev' to ensure it is present.");
   }
 
+=======
+  $has_curl = function_exists('curl_init');
+  $open_basedir = ini_get('open_basedir');
+
+>>>>>>> github/master
   $requirements['curl'] = array(
     'title' => t('cURL'),
     'value' => $has_curl ? t('Enabled') : t('Not found'),

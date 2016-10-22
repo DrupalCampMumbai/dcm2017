@@ -16,16 +16,25 @@
 interface PHPUnit_Runner_TestSuiteLoader
 {
     /**
+<<<<<<< HEAD
      * @param string $suiteClassName
      * @param string $suiteClassFile
      *
+=======
+     * @param  string          $suiteClassName
+     * @param  string          $suiteClassFile
+>>>>>>> github/master
      * @return ReflectionClass
      */
     public function load($suiteClassName, $suiteClassFile = '');
 
     /**
+<<<<<<< HEAD
      * @param ReflectionClass $aClass
      *
+=======
+     * @param  ReflectionClass $aClass
+>>>>>>> github/master
      * @return ReflectionClass
      */
     public function reload(ReflectionClass $aClass);

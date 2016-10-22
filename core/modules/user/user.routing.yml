@@ -129,6 +129,7 @@ user.login:
   options:
     _maintenance_access: TRUE
 
+<<<<<<< HEAD
 user.login.http:
   path: '/user/login'
   defaults:
@@ -157,6 +158,8 @@ user.logout.http:
     _format: 'json'
     _csrf_token: 'TRUE'
 
+=======
+>>>>>>> github/master
 user.cancel_confirm:
   path: '/user/{user}/cancel/confirm/{timestamp}/{hashed_pass}'
   defaults:

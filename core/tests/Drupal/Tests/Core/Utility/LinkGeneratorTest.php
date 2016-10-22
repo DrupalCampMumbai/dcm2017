@@ -1,9 +1,15 @@
 <?php
 
+<<<<<<< HEAD
 namespace Drupal\Tests\Core\Utility;
 
 use Drupal\Component\Render\MarkupInterface;
 use Drupal\Core\GeneratedNoLink;
+=======
+namespace Drupal\Tests\Core\Utility {
+
+use Drupal\Component\Render\MarkupInterface;
+>>>>>>> github/master
 use Drupal\Core\GeneratedUrl;
 use Drupal\Core\Language\Language;
 use Drupal\Core\Link;
@@ -150,6 +156,7 @@ class LinkGeneratorTest extends UnitTestCase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests the generate() method with the <nolink> route.
    *
    * @covers ::generate
@@ -170,6 +177,8 @@ class LinkGeneratorTest extends UnitTestCase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Tests the generate() method with an external URL.
    *
    * The set_active_class option is set to TRUE to ensure this does not cause
@@ -596,3 +605,8 @@ class LinkGeneratorTest extends UnitTestCase {
   }
 
 }
+<<<<<<< HEAD
+=======
+
+}
+>>>>>>> github/master

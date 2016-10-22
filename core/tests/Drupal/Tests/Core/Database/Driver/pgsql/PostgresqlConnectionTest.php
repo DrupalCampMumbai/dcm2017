@@ -40,11 +40,14 @@ class PostgresqlConnectionTest extends UnitTestCase {
       array('"camelCase"', 'camelCase'),
       array('"camelCase"', '"camelCase"'),
       array('"camelCase"', 'camel/Case'),
+<<<<<<< HEAD
       // Sometimes, table names are following the pattern database.schema.table.
       array('"camelCase".nocase.nocase', 'camelCase.nocase.nocase'),
       array('nocase."camelCase".nocase', 'nocase.camelCase.nocase'),
       array('nocase.nocase."camelCase"', 'nocase.nocase.camelCase'),
       array('"camelCase"."camelCase"."camelCase"', 'camelCase.camelCase.camelCase'),
+=======
+>>>>>>> github/master
     );
   }
 

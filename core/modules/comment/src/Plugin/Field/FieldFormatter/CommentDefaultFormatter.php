@@ -3,7 +3,10 @@
 namespace Drupal\comment\Plugin\Field\FieldFormatter;
 
 use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
+<<<<<<< HEAD
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
+=======
+>>>>>>> github/master
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityFormBuilderInterface;
 use Drupal\Core\Field\FieldItemListInterface;
@@ -37,7 +40,10 @@ class CommentDefaultFormatter extends FormatterBase implements ContainerFactoryP
    */
   public static function defaultSettings() {
     return array(
+<<<<<<< HEAD
       'view_mode' => 'default',
+=======
+>>>>>>> github/master
       'pager_id' => 0,
     ) + parent::defaultSettings();
   }
@@ -169,7 +175,11 @@ class CommentDefaultFormatter extends FormatterBase implements ContainerFactoryP
           $comments_per_page = $comment_settings['per_page'];
           $comments = $this->storage->loadThread($entity, $field_name, $mode, $comments_per_page, $this->getSetting('pager_id'));
           if ($comments) {
+<<<<<<< HEAD
             $build = $this->viewBuilder->viewMultiple($comments, $this->getSetting('view_mode'));
+=======
+            $build = $this->viewBuilder->viewMultiple($comments);
+>>>>>>> github/master
             $build['pager']['#type'] = 'pager';
             // CommentController::commentPermalink() calculates the page number
             // where a specific comment appears and does a subrequest pointing to
@@ -219,6 +229,7 @@ class CommentDefaultFormatter extends FormatterBase implements ContainerFactoryP
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
     $element = array();
+<<<<<<< HEAD
     $view_modes = $this->getViewModes();
     $element['view_mode'] = [
       '#type' => 'select',
@@ -229,6 +240,8 @@ class CommentDefaultFormatter extends FormatterBase implements ContainerFactoryP
       // Only show the select element when there are more than one options.
       '#access' => count($view_modes) > 1,
     ];
+=======
+>>>>>>> github/master
     $element['pager_id'] = array(
       '#type' => 'select',
       '#title' => $this->t('Pager ID'),
@@ -243,6 +256,7 @@ class CommentDefaultFormatter extends FormatterBase implements ContainerFactoryP
    * {@inheritdoc}
    */
   public function settingsSummary() {
+<<<<<<< HEAD
     $view_mode = $this->getSetting('view_mode');
     $view_modes = $this->getViewModes();
     $view_mode_label = isset($view_modes[$view_mode]) ? $view_modes[$view_mode] : 'default';
@@ -278,6 +292,15 @@ class CommentDefaultFormatter extends FormatterBase implements ContainerFactoryP
    */
   protected function getViewModes() {
     return $this->entityManager->getViewModeOptionsByBundle('comment', $this->getFieldSetting('comment_type'));
+=======
+    // Only show a summary if we're using a non-standard pager id.
+    if ($this->getSetting('pager_id')) {
+      return array($this->t('Pager ID: @id', array(
+        '@id' => $this->getSetting('pager_id'),
+      )));
+    }
+    return array();
+>>>>>>> github/master
   }
 
 }

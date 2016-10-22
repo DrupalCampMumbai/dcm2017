@@ -64,6 +64,7 @@ class CacheFactory implements CacheFactoryInterface, ContainerAwareInterface {
    */
   public function get($bin) {
     $cache_settings = $this->settings->get('cache');
+<<<<<<< HEAD
     // First, look for a cache bin specific setting.
     if (isset($cache_settings['bins'][$bin])) {
       $service_name = $cache_settings['bins'][$bin];
@@ -78,6 +79,18 @@ class CacheFactory implements CacheFactoryInterface, ContainerAwareInterface {
     }
     else {
       // Fall back to the database backend if nothing else is configured.
+=======
+    if (isset($cache_settings['bins'][$bin])) {
+      $service_name = $cache_settings['bins'][$bin];
+    }
+    elseif (isset($cache_settings['default'])) {
+      $service_name = $cache_settings['default'];
+    }
+    elseif (isset($this->defaultBinBackends[$bin])) {
+      $service_name = $this->defaultBinBackends[$bin];
+    }
+    else {
+>>>>>>> github/master
       $service_name = 'cache.backend.database';
     }
     return $this->container->get($service_name)->get($bin);

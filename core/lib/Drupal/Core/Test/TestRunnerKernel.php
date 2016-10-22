@@ -15,18 +15,28 @@ class TestRunnerKernel extends DrupalKernel {
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
   public static function createFromRequest(Request $request, $class_loader, $environment = 'test_runner', $allow_dumping = TRUE, $app_root = NULL) {
     return parent::createFromRequest($request, $class_loader, $environment, $allow_dumping, $app_root);
+=======
+  public static function createFromRequest(Request $request, $class_loader, $environment = 'test_runner', $allow_dumping = TRUE) {
+    return parent::createFromRequest($request, $class_loader, $environment);
+>>>>>>> github/master
   }
 
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
   public function __construct($environment, $class_loader, $allow_dumping = FALSE, $app_root = NULL) {
     // Force $allow_dumping to FALSE, because the test runner kernel should
     // always have to rebuild its container, and potentially avoid isolation
     // issues against the tests.
     parent::__construct($environment, $class_loader, FALSE, $app_root);
+=======
+  public function __construct($environment, $class_loader) {
+    parent::__construct($environment, $class_loader, FALSE);
+>>>>>>> github/master
 
     // Prime the module list and corresponding Extension objects.
     // @todo Remove System module. Needed because
@@ -76,7 +86,11 @@ class TestRunnerKernel extends DrupalKernel {
     $this->getContainer()->get('stream_wrapper_manager')->register();
 
     // Create the build/artifacts directory if necessary.
+<<<<<<< HEAD
     include_once $this->getAppRoot() . '/core/includes/file.inc';
+=======
+    include_once DRUPAL_ROOT . '/core/includes/file.inc';
+>>>>>>> github/master
     if (!is_dir('public://simpletest')) {
       mkdir('public://simpletest', 0777, TRUE);
     }

@@ -25,9 +25,12 @@ class FileTest extends MigrateSqlSourceTestCase {
     'id' => 'test',
     'source' => array(
       'plugin' => 'd7_file',
+<<<<<<< HEAD
       'constants' => array(
         'source_base_path' => '/path/to/files',
       ),
+=======
+>>>>>>> github/master
       // Used by testFilteringByScheme().
       'scheme' => array(
         'public',
@@ -36,6 +39,10 @@ class FileTest extends MigrateSqlSourceTestCase {
     ),
     'destination' => array(
       'plugin' => 'entity:file',
+<<<<<<< HEAD
+=======
+      'source_base_path' => '/path/to/files',
+>>>>>>> github/master
     ),
   );
 

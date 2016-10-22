@@ -51,8 +51,11 @@ class ForumNodeBreadcrumbBuilderTest extends UnitTestCase {
       ->method('checkNodeType')
       ->will($this->returnValue(TRUE));
 
+<<<<<<< HEAD
     $translation_manager = $this->getMock('Drupal\Core\StringTranslation\TranslationInterface');
 
+=======
+>>>>>>> github/master
     // Make an object to test.
     $builder = $this->getMockBuilder('Drupal\forum\Breadcrumb\ForumNodeBreadcrumbBuilder')
       ->setConstructorArgs(
@@ -60,7 +63,10 @@ class ForumNodeBreadcrumbBuilderTest extends UnitTestCase {
           $entity_manager,
           $config_factory,
           $forum_manager,
+<<<<<<< HEAD
           $translation_manager,
+=======
+>>>>>>> github/master
         )
       )
       ->setMethods(NULL)
@@ -126,10 +132,13 @@ class ForumNodeBreadcrumbBuilderTest extends UnitTestCase {
    */
   public function testBuild() {
     // Build all our dependencies, backwards.
+<<<<<<< HEAD
     $translation_manager = $this->getMockBuilder('Drupal\Core\StringTranslation\TranslationInterface')
       ->disableOriginalConstructor()
       ->getMock();
 
+=======
+>>>>>>> github/master
     $prophecy = $this->prophesize('Drupal\taxonomy\Entity\Term');
     $prophecy->label()->willReturn('Something');
     $prophecy->id()->willReturn(1);
@@ -192,7 +201,10 @@ class ForumNodeBreadcrumbBuilderTest extends UnitTestCase {
         $entity_manager,
         $config_factory,
         $forum_manager,
+<<<<<<< HEAD
         $translation_manager,
+=======
+>>>>>>> github/master
       )
     );
 

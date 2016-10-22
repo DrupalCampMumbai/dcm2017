@@ -5,14 +5,20 @@
  * This script runs Drupal tests from command line.
  */
 
+<<<<<<< HEAD
 use Drupal\Component\FileSystem\FileSystem;
+=======
+>>>>>>> github/master
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\Timer;
 use Drupal\Component\Uuid\Php;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\StreamWrapper\PublicStream;
+<<<<<<< HEAD
 use Drupal\Core\Test\TestDatabase;
+=======
+>>>>>>> github/master
 use Drupal\Core\Test\TestRunnerKernel;
 use Drupal\simpletest\Form\SimpletestResultsForm;
 use Drupal\simpletest\TestBase;
@@ -36,11 +42,14 @@ const SIMPLETEST_SCRIPT_EXIT_SUCCESS = 0;
 const SIMPLETEST_SCRIPT_EXIT_FAILURE = 1;
 const SIMPLETEST_SCRIPT_EXIT_EXCEPTION = 2;
 
+<<<<<<< HEAD
 if (!class_exists('\PHPUnit_Framework_TestCase')) {
   echo "\nrun-tests.sh requires the PHPUnit testing framework. Please use 'composer install --dev' to ensure that it is present.\n\n";
   exit(SIMPLETEST_SCRIPT_EXIT_FAILURE);
 }
 
+=======
+>>>>>>> github/master
 // Set defaults and get overrides.
 list($args, $count) = simpletest_script_parse_args();
 
@@ -76,7 +85,10 @@ if ($args['list']) {
     $groups = simpletest_test_get_all($args['module']);
   }
   catch (Exception $e) {
+<<<<<<< HEAD
     error_log((string) $e);
+=======
+>>>>>>> github/master
     echo (string) $e;
     exit(SIMPLETEST_SCRIPT_EXIT_EXCEPTION);
   }
@@ -127,12 +139,15 @@ $status = simpletest_script_execute_batch($tests_to_run);
 // Stop the timer.
 simpletest_script_reporter_timer_stop();
 
+<<<<<<< HEAD
 // Ensure all test locks are released once finished. If tests are run with a
 // concurrency of 1 the each test will clean up it's own lock. Test locks are
 // not released if using a higher concurrency to ensure each test method has
 // unique fixtures.
 TestDatabase::releaseAllTestLocks();
 
+=======
+>>>>>>> github/master
 // Display results before database is cleared.
 if ($args['browser']) {
   simpletest_script_open_browser();
@@ -456,6 +471,7 @@ function simpletest_script_init() {
   $_SERVER['PHP_SELF'] = $path . '/index.php';
   $_SERVER['HTTP_USER_AGENT'] = 'Drupal command line';
 
+<<<<<<< HEAD
   if ($args['concurrency'] > 1) {
     $directory = FileSystem::getOsTemporaryDirectory();
     $test_symlink = @symlink(__FILE__, $directory . '/test_symlink');
@@ -466,6 +482,8 @@ function simpletest_script_init() {
     putenv('RUN_TESTS_CONCURRENCY=' . $args['concurrency']);
   }
 
+=======
+>>>>>>> github/master
   if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
     // Ensure that any and all environment variables are changed to https://.
     foreach ($_SERVER as $key => $value) {
@@ -671,10 +689,13 @@ function simpletest_script_execute_batch($test_classes) {
         elseif ($status['exitcode']) {
           $message = 'FATAL ' . $child['class'] . ': test runner returned a non-zero error code (' . $status['exitcode'] . ').';
           echo $message . "\n";
+<<<<<<< HEAD
           // @todo Return SIMPLETEST_SCRIPT_EXIT_EXCEPTION instead, when
           // DrupalCI supports this.
           // @see https://www.drupal.org/node/2780087
           $total_status = max(SIMPLETEST_SCRIPT_EXIT_FAILURE, $total_status);
+=======
+>>>>>>> github/master
           // Insert a fail for xml results.
           TestBase::insertAssert($child['test_id'], $child['class'], FALSE, $message, 'run-tests.sh check');
           // Ensure that an error line is displayed for the class.
@@ -684,8 +705,12 @@ function simpletest_script_execute_batch($test_classes) {
           );
           if ($args['die-on-fail']) {
             list($db_prefix) = simpletest_last_test_get($child['test_id']);
+<<<<<<< HEAD
             $test_db = new TestDatabase($db_prefix);
             $test_directory = $test_db->getTestSitePath();
+=======
+            $test_directory = 'sites/simpletest/' . substr($db_prefix, 10);
+>>>>>>> github/master
             echo 'Simpletest database and files kept and test exited immediately on fail so should be reproducible if you change settings.php to use the database prefix ' . $db_prefix . ' and config directories in ' . $test_directory . "\n";
             $args['keep-results'] = TRUE;
             // Exit repeat loop immediately.
@@ -861,8 +886,12 @@ function simpletest_script_cleanup($test_id, $test_class, $exitcode) {
 
   // Check whether a test site directory was setup already.
   // @see \Drupal\simpletest\TestBase::prepareEnvironment()
+<<<<<<< HEAD
   $test_db = new TestDatabase($db_prefix);
   $test_directory = DRUPAL_ROOT . '/' . $test_db->getTestSitePath();
+=======
+  $test_directory = DRUPAL_ROOT . '/sites/simpletest/' . substr($db_prefix, 10);
+>>>>>>> github/master
   if (is_dir($test_directory)) {
     // Output the error_log.
     if (is_file($test_directory . '/error.log')) {

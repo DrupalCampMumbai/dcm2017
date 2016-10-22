@@ -72,6 +72,10 @@ abstract class NormalizerBase extends SerializerAwareNormalizer implements Norma
     }
 
     return in_array($format, (array) $this->format);
+<<<<<<< HEAD
   }
+=======
+   }
+>>>>>>> github/master
 
 }

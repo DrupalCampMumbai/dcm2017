@@ -22,7 +22,11 @@
         "doctrine/common": "2.5.*",
         "doctrine/annotations": "1.2.*",
         "guzzlehttp/guzzle": "^6.2.1",
+<<<<<<< HEAD
         "symfony-cmf/routing": "~1.4",
+=======
+        "symfony-cmf/routing": "1.3.*",
+>>>>>>> github/master
         "easyrdf/easyrdf": "0.9.*",
         "zendframework/zend-feed": "~2.4",
         "stack/builder": "1.0.*",
@@ -31,8 +35,12 @@
         "symfony/psr-http-message-bridge": "v0.2",
         "zendframework/zend-diactoros": "~1.1",
         "composer/semver": "~1.0",
+<<<<<<< HEAD
         "paragonie/random_compat": "~1.0",
         "asm89/stack-cors": "~1.0"
+=======
+        "paragonie/random_compat": "~1.0"
+>>>>>>> github/master
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -53,7 +61,10 @@
         "drupal/big_pipe": "self.version",
         "drupal/block": "self.version",
         "drupal/block_content": "self.version",
+<<<<<<< HEAD
         "drupal/block_place": "self.version",
+=======
+>>>>>>> github/master
         "drupal/book": "self.version",
         "drupal/breakpoint": "self.version",
         "drupal/ckeditor": "self.version",
@@ -63,7 +74,10 @@
         "drupal/config": "self.version",
         "drupal/config_translation": "self.version",
         "drupal/contact": "self.version",
+<<<<<<< HEAD
         "drupal/content_moderation": "self.version",
+=======
+>>>>>>> github/master
         "drupal/content_translation": "self.version",
         "drupal/contextual": "self.version",
         "drupal/core-annotation": "self.version",
@@ -88,7 +102,10 @@
         "drupal/core-utility": "self.version",
         "drupal/core-uuid": "self.version",
         "drupal/datetime": "self.version",
+<<<<<<< HEAD
         "drupal/datetime_range": "self.version",
+=======
+>>>>>>> github/master
         "drupal/dblog": "self.version",
         "drupal/dynamic_page_cache": "self.version",
         "drupal/editor": "self.version",
@@ -114,7 +131,10 @@
         "drupal/migrate_drupal_ui": "self.version",
         "drupal/node": "self.version",
         "drupal/options": "self.version",
+<<<<<<< HEAD
         "drupal/outside_in": "self.version",
+=======
+>>>>>>> github/master
         "drupal/page_cache": "self.version",
         "drupal/path": "self.version",
         "drupal/quickedit": "self.version",

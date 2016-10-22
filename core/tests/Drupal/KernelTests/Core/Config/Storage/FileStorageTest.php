@@ -2,9 +2,15 @@
 
 namespace Drupal\KernelTests\Core\Config\Storage;
 
+<<<<<<< HEAD
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Config\UnsupportedDataTypeConfigException;
 use Drupal\Core\Serialization\Yaml;
+=======
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\Config\FileStorage;
+use Drupal\Core\Config\UnsupportedDataTypeConfigException;
+>>>>>>> github/master
 use Drupal\Core\StreamWrapper\PublicStream;
 
 /**

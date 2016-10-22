@@ -64,7 +64,11 @@ class FieldStorageConfigStorage extends ConfigEntityStorage {
    *   The module handler.
    * @param \Drupal\Core\State\StateInterface $state
    *   The state key value store.
+<<<<<<< HEAD
    * @param \Drupal\Component\Plugin\PluginManagerInterface\FieldTypePluginManagerInterface $field_type_manager
+=======
+   * @param \Drupal\Component\Plugin\PluginManagerInterface\FieldTypePluginManagerInterface
+>>>>>>> github/master
    *   The field type plugin manager.
    */
   public function __construct(EntityTypeInterface $entity_type, ConfigFactoryInterface $config_factory, UuidInterface $uuid_service, LanguageManagerInterface $language_manager, EntityManagerInterface $entity_manager, ModuleHandlerInterface $module_handler, StateInterface $state, FieldTypePluginManagerInterface $field_type_manager) {

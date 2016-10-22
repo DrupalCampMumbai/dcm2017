@@ -2,7 +2,11 @@
 
 namespace Drupal\config\Tests;
 
+<<<<<<< HEAD
 use Drupal\Core\Serialization\Yaml;
+=======
+use Drupal\Component\Serialization\Yaml;
+>>>>>>> github/master
 use Drupal\simpletest\WebTestBase;
 
 /**
@@ -48,8 +52,12 @@ class ConfigSingleImportExportTest extends WebTestBase {
     ];
 
     $this->drupalPostForm('admin/config/development/configuration/single/import', $edit, t('Import'));
+<<<<<<< HEAD
     // Assert the static portion of the error since different parsers could give different text in their error.
     $this->assertText('The import failed with the following message: ');
+=======
+    $this->assertText('The import failed with the following message: Malformed inline YAML string ({{{) at line 1 (near &quot;{{{&quot;)');
+>>>>>>> github/master
 
     $import = <<<EOD
 label: First
@@ -220,8 +228,13 @@ EOD;
     $this->assertFieldByXPath('//select[@name="config_name"]//option[@selected="selected"]', t('Fallback date format (fallback)'), 'The fallback date format config entity is selected when specified in the URL.');
 
     $fallback_date = \Drupal::entityManager()->getStorage('date_format')->load('fallback');
+<<<<<<< HEAD
     $yaml_text = (string) $this->xpath('//textarea[@name="export"]')[0];
     $this->assertEqual(Yaml::decode($yaml_text), $fallback_date->toArray(), 'The fallback date format config entity export code is displayed.');
+=======
+    $data = Yaml::encode($fallback_date->toArray());
+    $this->assertFieldByXPath('//textarea[@name="export"]', $data, 'The fallback date format config entity export code is displayed.');
+>>>>>>> github/master
   }
 
 }

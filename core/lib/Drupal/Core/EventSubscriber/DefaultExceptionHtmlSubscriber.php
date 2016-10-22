@@ -133,6 +133,7 @@ class DefaultExceptionHtmlSubscriber extends HttpExceptionSubscriberBase {
       // would execute a subrequest with the 404 route's URL, then it'd be
       // generated for *that* URL, not the *original* URL.
       $sub_request = clone $request;
+<<<<<<< HEAD
 
       // The routing to the 404 page should be done as GET request because it is
       // restricted to GET and POST requests only. Otherwise a DELETE request
@@ -141,6 +142,8 @@ class DefaultExceptionHtmlSubscriber extends HttpExceptionSubscriberBase {
       $request_context->setMethod('GET');
       $this->accessUnawareRouter->setContext($request_context);
 
+=======
+>>>>>>> github/master
       $sub_request->attributes->add($this->accessUnawareRouter->match($url));
 
       // Add to query (GET) or request (POST) parameters:

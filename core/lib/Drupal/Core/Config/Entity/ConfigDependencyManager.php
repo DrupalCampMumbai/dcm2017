@@ -174,12 +174,17 @@ class ConfigDependencyManager {
     // always after field storages. This is because field storages need to be
     // created before a field.
     $graph = $this->getGraph();
+<<<<<<< HEAD
     $sorts = $this->prepareMultisort($graph, ['weight', 'name']);
     array_multisort($sorts['weight'], SORT_DESC, SORT_NUMERIC, $sorts['name'], SORT_ASC, SORT_NATURAL | SORT_FLAG_CASE, $graph);
+=======
+    uasort($graph, array($this, 'sortGraph'));
+>>>>>>> github/master
     return array_replace(array_intersect_key($graph, $dependencies), $dependencies);
   }
 
   /**
+<<<<<<< HEAD
    * Extracts data from the graph for use in array_multisort().
    *
    * @param array $graph
@@ -203,6 +208,8 @@ class ConfigDependencyManager {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Sorts the dependencies in order of most dependent last.
    *
    * @return array
@@ -213,8 +220,12 @@ class ConfigDependencyManager {
     $graph = $this->getGraph();
     // Sort by weight and alphabetically. The most dependent entities
     // are last and entities with the same weight are alphabetically ordered.
+<<<<<<< HEAD
     $sorts = $this->prepareMultisort($graph, ['weight', 'name']);
     array_multisort($sorts['weight'], SORT_ASC, SORT_NUMERIC, $sorts['name'], SORT_ASC, SORT_NATURAL | SORT_FLAG_CASE, $graph);
+=======
+    uasort($graph, array($this, 'sortGraphByWeight'));
+>>>>>>> github/master
     // Use array_intersect_key() to exclude modules and themes from the list.
     return array_keys(array_intersect_key($graph, $this->data));
   }
@@ -222,10 +233,13 @@ class ConfigDependencyManager {
   /**
    * Sorts the dependency graph by weight and alphabetically.
    *
+<<<<<<< HEAD
    * @deprecated in Drupal 8.2.0, will be removed before Drupal 9.0.0. Use
    * \Drupal\Core\Config\Entity\ConfigDependencyManager::prepareMultisort() and
    * array_multisort() instead.
    *
+=======
+>>>>>>> github/master
    * @param array $a
    *   First item for comparison. The compared items should be associative
    *   arrays that include a 'weight' and a 'name' key.
@@ -247,10 +261,13 @@ class ConfigDependencyManager {
   /**
    * Sorts the dependency graph by reverse weight and alphabetically.
    *
+<<<<<<< HEAD
    * @deprecated in Drupal 8.2.0, will be removed before Drupal 9.0.0. Use
    * \Drupal\Core\Config\Entity\ConfigDependencyManager::prepareMultisort() and
    * array_multisort() instead.
    *
+=======
+>>>>>>> github/master
    * @param array $a
    *   First item for comparison. The compared items should be associative
    *   arrays that include a 'weight' and a 'name' key.

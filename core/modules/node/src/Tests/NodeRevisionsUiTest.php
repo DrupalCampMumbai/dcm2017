@@ -121,6 +121,7 @@ class NodeRevisionsUiTest extends NodeTestBase {
     $this->assertRaw($nodes[1]->link($date) . ' by ' . $editor . '<p class="revision-log">' . $revision_log . '</p>');
   }
 
+<<<<<<< HEAD
   /**
    * Checks the Revisions tab.
    */
@@ -160,4 +161,6 @@ class NodeRevisionsUiTest extends NodeTestBase {
     $this->assertLinkByHref('/node/' . $node_id . '/revisions/1/revert');
   }
 
+=======
+>>>>>>> github/master
 }

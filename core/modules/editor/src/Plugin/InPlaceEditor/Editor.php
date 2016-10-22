@@ -4,7 +4,10 @@ namespace Drupal\editor\Plugin\InPlaceEditor;
 
 use Drupal\Component\Plugin\PluginBase;
 use Drupal\Core\Field\FieldItemListInterface;
+<<<<<<< HEAD
 use Drupal\filter\Entity\FilterFormat;
+=======
+>>>>>>> github/master
 use Drupal\quickedit\Plugin\InPlaceEditorInterface;
 use Drupal\filter\Plugin\FilterInterface;
 
@@ -12,7 +15,12 @@ use Drupal\filter\Plugin\FilterInterface;
  * Defines the formatted text in-place editor.
  *
  * @InPlaceEditor(
+<<<<<<< HEAD
  *   id = "editor"
+=======
+ *   id = "editor",
+ *   alternativeTo = {"plain_text"}
+>>>>>>> github/master
  * )
  */
 class Editor extends PluginBase implements InPlaceEditorInterface {
@@ -30,6 +38,7 @@ class Editor extends PluginBase implements InPlaceEditorInterface {
     // This editor is compatible with formatted ("rich") text fields; but only
     // if there is a currently active text format, that text format has an
     // associated editor and that editor supports inline editing.
+<<<<<<< HEAD
     elseif ($editor = editor_load($items[0]->format)) {
       $definition = \Drupal::service('plugin.manager.editor')->getDefinition($editor->getEditor());
       if ($definition['supports_inline_editing'] === TRUE) {
@@ -38,6 +47,18 @@ class Editor extends PluginBase implements InPlaceEditorInterface {
     }
 
     return FALSE;
+=======
+    elseif (in_array($field_definition->getType(), array('text', 'text_long', 'text_with_summary'), TRUE)) {
+      if ($editor = editor_load($items[0]->format)) {
+        $definition = \Drupal::service('plugin.manager.editor')->getDefinition($editor->getEditor());
+        if ($definition['supports_inline_editing'] === TRUE) {
+          return TRUE;
+        }
+      }
+
+      return FALSE;
+    }
+>>>>>>> github/master
   }
 
   /**
@@ -59,7 +80,11 @@ class Editor extends PluginBase implements InPlaceEditorInterface {
    * @return bool
    */
   protected function textFormatHasTransformationFilters($format_id) {
+<<<<<<< HEAD
     $format = FilterFormat::load($format_id);
+=======
+    $format = entity_load('filter_format', $format_id);
+>>>>>>> github/master
     return (bool) count(array_intersect(array(FilterInterface::TYPE_TRANSFORM_REVERSIBLE, FilterInterface::TYPE_TRANSFORM_IRREVERSIBLE), $format->getFiltertypes()));
   }
 

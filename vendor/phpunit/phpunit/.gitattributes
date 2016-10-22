@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /build export-ignore
+=======
+>>>>>>> github/master
 *.php diff=php
 composer.json merge=ours
 src/Runner/Version.php merge=ours

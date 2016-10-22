@@ -19,10 +19,15 @@ class PHPUnit_Util_Fileloader
      * Checks if a PHP sourcefile is readable.
      * The sourcefile is loaded through the load() method.
      *
+<<<<<<< HEAD
      * @param string $filename
      *
      * @return string
      *
+=======
+     * @param  string                      $filename
+     * @return string
+>>>>>>> github/master
      * @throws PHPUnit_Framework_Exception
      */
     public static function checkAndLoad($filename)
@@ -43,10 +48,15 @@ class PHPUnit_Util_Fileloader
     /**
      * Loads a PHP sourcefile.
      *
+<<<<<<< HEAD
      * @param string $filename
      *
      * @return mixed
      *
+=======
+     * @param  string $filename
+     * @return mixed
+>>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public static function load($filename)

@@ -20,7 +20,11 @@ namespace Drupal\Core\Menu;
  *   a tree transformation, because menu links themselves are responsible
  *   for translation. Transformations are performed by "menu link tree
  *   manipulators", which are functions or methods; see
+<<<<<<< HEAD
  *   \Drupal\Core\Menu\DefaultMenuLinkTreeManipulators for examples.
+=======
+ *   \Drupal\menu_link\DefaultMenuTreeManipulators for examples.
+>>>>>>> github/master
  * - Create a render array using MenuLinkTreeInterface::build().
  */
 interface MenuLinkTreeInterface {

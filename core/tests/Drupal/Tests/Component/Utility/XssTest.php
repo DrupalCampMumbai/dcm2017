@@ -506,6 +506,7 @@ class XssTest extends UnitTestCase {
         array('img')
       ),
       array(
+<<<<<<< HEAD
         '<a href="https://www.drupal.org/" rel="dc:publisher">Drupal</a>',
         '<a href="https://www.drupal.org/" rel="dc:publisher">Drupal</a>',
         'Link tag with rel attribute',
@@ -518,6 +519,8 @@ class XssTest extends UnitTestCase {
         array('span')
       ),
       array(
+=======
+>>>>>>> github/master
         '<img src="http://example.com/foo.jpg" data-caption="Drupal 8: The best release ever.">',
         '<img src="http://example.com/foo.jpg" data-caption="Drupal 8: The best release ever.">',
         'Image tag with data attribute',

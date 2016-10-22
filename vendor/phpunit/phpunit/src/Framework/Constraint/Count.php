@@ -31,8 +31,12 @@ class PHPUnit_Framework_Constraint_Count extends PHPUnit_Framework_Constraint
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
+<<<<<<< HEAD
      * @param mixed $other
      *
+=======
+     * @param  mixed $other
+>>>>>>> github/master
      * @return bool
      */
     protected function matches($other)
@@ -41,8 +45,12 @@ class PHPUnit_Framework_Constraint_Count extends PHPUnit_Framework_Constraint
     }
 
     /**
+<<<<<<< HEAD
      * @param mixed $other
      *
+=======
+     * @param  mixed $other
+>>>>>>> github/master
      * @return bool
      */
     protected function getCountOf($other)
@@ -78,8 +86,12 @@ class PHPUnit_Framework_Constraint_Count extends PHPUnit_Framework_Constraint
      * The beginning of failure messages is "Failed asserting that" in most
      * cases. This method should return the second part of that sentence.
      *
+<<<<<<< HEAD
      * @param mixed $other Evaluated value or object.
      *
+=======
+     * @param  mixed  $other Evaluated value or object.
+>>>>>>> github/master
      * @return string
      */
     protected function failureDescription($other)

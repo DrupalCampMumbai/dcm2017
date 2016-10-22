@@ -90,7 +90,11 @@ interface StatementInterface extends \Traversable {
    *   If $mode is PDO::FETCH_CLASS, the optional arguments to pass to the
    *   constructor.
    */
+<<<<<<< HEAD
   public function setFetchMode($mode, $a1 = NULL, $a2 = array());
+=======
+   public function setFetchMode($mode, $a1 = NULL, $a2 = array());
+>>>>>>> github/master
 
   /**
    * Fetches the next row from a result set.
@@ -109,7 +113,11 @@ interface StatementInterface extends \Traversable {
    * @return
    *   A result, formatted according to $mode.
    */
+<<<<<<< HEAD
   public function fetch($mode = NULL, $cursor_orientation = NULL, $cursor_offset = NULL);
+=======
+   public function fetch($mode = NULL, $cursor_orientation = NULL, $cursor_offset = NULL);
+>>>>>>> github/master
 
   /**
    * Returns a single field from the next record of a result set.
@@ -128,7 +136,11 @@ interface StatementInterface extends \Traversable {
    * The object will be of the class specified by StatementInterface::setFetchMode()
    * or stdClass if not specified.
    */
+<<<<<<< HEAD
   public function fetchObject();
+=======
+   public function fetchObject();
+>>>>>>> github/master
 
   /**
    * Fetches the next row and returns it as an associative array.
@@ -155,7 +167,11 @@ interface StatementInterface extends \Traversable {
    * @return
    *   An array of results.
    */
+<<<<<<< HEAD
   function fetchAll($mode = NULL, $column_index = NULL, $constructor_arguments = NULL);
+=======
+   function fetchAll($mode = NULL, $column_index = NULL, $constructor_arguments = NULL);
+>>>>>>> github/master
 
   /**
    * Returns an entire single column of a result set as an indexed array.

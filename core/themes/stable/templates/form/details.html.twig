@@ -15,6 +15,7 @@
  */
 #}
 <details{{ attributes }}>
+<<<<<<< HEAD
   {%
     set summary_classes = [
       required ? 'js-form-required',
@@ -23,6 +24,10 @@
   %}
   {%- if title -%}
     <summary{{ summary_attributes.addClass(summary_classes) }}>{{ title }}</summary>
+=======
+  {%- if title -%}
+    <summary{{ summary_attributes }}>{{ title }}</summary>
+>>>>>>> github/master
   {%- endif -%}
 
   {% if errors %}

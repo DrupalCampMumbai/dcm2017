@@ -3,7 +3,10 @@
 namespace Drupal\views\Tests;
 
 use Drupal\Component\Serialization\Json;
+<<<<<<< HEAD
 use Drupal\Core\EventSubscriber\MainContentViewSubscriber;
+=======
+>>>>>>> github/master
 
 /**
  * Tests the ajax view functionality.
@@ -47,7 +50,11 @@ class ViewAjaxTest extends ViewTestBase {
       'view_display_id' => 'page_1',
     );
     $post += $this->getAjaxPageStatePostData();
+<<<<<<< HEAD
     $response = $this->drupalPost('views/ajax', '', $post, ['query' => [MainContentViewSubscriber::WRAPPER_FORMAT => 'drupal_ajax']]);
+=======
+    $response = $this->drupalPost('views/ajax', 'application/vnd.drupal-ajax', $post);
+>>>>>>> github/master
     $data = Json::decode($response);
 
     $this->assertTrue(isset($data[0]['settings']['views']['ajaxViews']));

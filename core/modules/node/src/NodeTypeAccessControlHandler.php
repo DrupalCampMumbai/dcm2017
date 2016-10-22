@@ -21,6 +21,10 @@ class NodeTypeAccessControlHandler extends EntityAccessControlHandler {
     switch ($operation) {
       case 'view':
         return AccessResult::allowedIfHasPermission($account, 'access content');
+<<<<<<< HEAD
+=======
+        break;
+>>>>>>> github/master
 
       case 'delete':
         if ($entity->isLocked()) {
@@ -33,7 +37,11 @@ class NodeTypeAccessControlHandler extends EntityAccessControlHandler {
 
       default:
         return parent::checkAccess($entity, $operation, $account);
+<<<<<<< HEAD
 
+=======
+        break;
+>>>>>>> github/master
     }
   }
 

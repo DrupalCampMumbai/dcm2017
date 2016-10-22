@@ -1443,7 +1443,11 @@ class SqlContentEntityStorageSchema implements DynamicallyFieldableEntityStorage
    *
    * @param array $entity_schema
    *   The entity schema definition.
+<<<<<<< HEAD
    * @param \Drupal\Core\Field\FieldStorageDefinitionInterface|null $storage_definition
+=======
+   * @param \Drupal\Core\Field\FieldStorageDefinitionInterface|NULL $storage_definition
+>>>>>>> github/master
    *   (optional) If a field storage definition is specified, only indexes and
    *   keys involving its columns will be processed. Otherwise all defined
    *   entity indexes and keys will be processed.
@@ -1500,7 +1504,11 @@ class SqlContentEntityStorageSchema implements DynamicallyFieldableEntityStorage
    *
    * @param array $entity_schema_data
    *   The entity schema data definition.
+<<<<<<< HEAD
    * @param \Drupal\Core\Field\FieldStorageDefinitionInterface|null $storage_definition
+=======
+   * @param \Drupal\Core\Field\FieldStorageDefinitionInterface|NULL $storage_definition
+>>>>>>> github/master
    *   (optional) If a field storage definition is specified, only indexes and
    *   keys involving its columns will be processed. Otherwise all defined
    *   entity indexes and keys will be processed.

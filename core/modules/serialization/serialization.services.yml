@@ -64,6 +64,7 @@ services:
     class: Drupal\serialization\EntityResolver\TargetIdResolver
     tags:
       - { name: entity_resolver}
+<<<<<<< HEAD
   serialization.exception.default:
     class: Drupal\serialization\EventSubscriber\DefaultExceptionSubscriber
     tags:
@@ -74,3 +75,5 @@ services:
     tags:
       - { name: event_subscriber }
     arguments: ['@serializer', '%serializer.formats%']
+=======
+>>>>>>> github/master

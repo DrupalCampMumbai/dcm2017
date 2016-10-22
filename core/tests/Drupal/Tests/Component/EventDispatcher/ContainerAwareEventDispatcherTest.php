@@ -172,6 +172,7 @@ class ContainerAwareEventDispatcherTest extends SymfonyContainerAwareEventDispat
         $this->assertTrue($otherService->preFooInvoked);
     }
 
+<<<<<<< HEAD
     public function testGetListenerPriorityWithServices()
     {
         $container = new ContainerBuilder();
@@ -190,6 +191,12 @@ class ContainerAwareEventDispatcherTest extends SymfonyContainerAwareEventDispat
         $actualPriority = $dispatcher->getListenerPriority('test_event', [$listenerService, 'preFoo']);
 
         $this->assertSame(5, $actualPriority);
+=======
+    public function testGetListenerPriority()
+    {
+        // Override the parent test as our implementation doesn't define
+        // getListenerPriority().
+>>>>>>> github/master
     }
 
  }

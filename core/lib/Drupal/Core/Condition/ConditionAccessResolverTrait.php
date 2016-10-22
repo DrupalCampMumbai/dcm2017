@@ -26,9 +26,14 @@ trait ConditionAccessResolverTrait {
         $pass = $condition->execute();
       }
       catch (ContextException $e) {
+<<<<<<< HEAD
         // If a condition is missing context and is not negated, consider that a
         // fail.
         $pass = $condition->isNegated();
+=======
+        // If a condition is missing context, consider that a fail.
+        $pass = FALSE;
+>>>>>>> github/master
       }
 
       // If a condition fails and all conditions were needed, deny access.

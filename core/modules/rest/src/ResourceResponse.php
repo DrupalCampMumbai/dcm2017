@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
  * our response data. $content implies that the provided data must either be a
  * string or an object with a __toString() method, which is not a requirement
  * for data used here.
+<<<<<<< HEAD
  *
  * @see \Drupal\rest\ModifiedResourceResponse
  */
@@ -20,6 +21,19 @@ class ResourceResponse extends Response implements CacheableResponseInterface, R
 
   use CacheableResponseTrait;
   use ResourceResponseTrait;
+=======
+ */
+class ResourceResponse extends Response implements CacheableResponseInterface {
+
+  use CacheableResponseTrait;
+
+  /**
+   * Response data that should be serialized.
+   *
+   * @var mixed
+   */
+  protected $responseData;
+>>>>>>> github/master
 
   /**
    * Constructor for ResourceResponse objects.
@@ -36,4 +50,17 @@ class ResourceResponse extends Response implements CacheableResponseInterface, R
     parent::__construct('', $status, $headers);
   }
 
+<<<<<<< HEAD
+=======
+  /**
+   * Returns response data that should be serialized.
+   *
+   * @return mixed
+   *   Response data that should be serialized.
+   */
+  public function getResponseData() {
+    return $this->responseData;
+  }
+
+>>>>>>> github/master
 }

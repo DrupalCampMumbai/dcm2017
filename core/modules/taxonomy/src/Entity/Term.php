@@ -101,6 +101,7 @@ class Term extends ContentEntityBase implements TermInterface {
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+<<<<<<< HEAD
     /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -113,6 +114,35 @@ class Term extends ContentEntityBase implements TermInterface {
       ->setDescription(t('The vocabulary to which the term is assigned.'));
 
     $fields['langcode']->setDescription(t('The term language code.'));
+=======
+    $fields['tid'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Term ID'))
+      ->setDescription(t('The term ID.'))
+      ->setReadOnly(TRUE)
+      ->setSetting('unsigned', TRUE);
+
+    $fields['uuid'] = BaseFieldDefinition::create('uuid')
+      ->setLabel(t('UUID'))
+      ->setDescription(t('The term UUID.'))
+      ->setReadOnly(TRUE);
+
+    $fields['vid'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Vocabulary'))
+      ->setDescription(t('The vocabulary to which the term is assigned.'))
+      ->setSetting('target_type', 'taxonomy_vocabulary');
+
+    $fields['langcode'] = BaseFieldDefinition::create('language')
+      ->setLabel(t('Language'))
+      ->setDescription(t('The term language code.'))
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('view', array(
+        'type' => 'hidden',
+      ))
+      ->setDisplayOptions('form', array(
+        'type' => 'language_select',
+        'weight' => 2,
+      ));
+>>>>>>> github/master
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))

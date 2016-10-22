@@ -21,6 +21,7 @@ class PathFieldItemList extends FieldItemList {
     return AccessResult::allowedIfHasPermissions($account, ['create url aliases', 'administer url aliases'], 'OR')->cachePerPermissions();
   }
 
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
@@ -34,4 +35,6 @@ class PathFieldItemList extends FieldItemList {
     \Drupal::service('path.alias_storage')->delete($conditions);
   }
 
+=======
+>>>>>>> github/master
 }

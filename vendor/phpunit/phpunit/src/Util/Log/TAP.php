@@ -34,10 +34,15 @@ class PHPUnit_Util_Log_TAP extends PHPUnit_Util_Printer implements PHPUnit_Frame
     /**
      * Constructor.
      *
+<<<<<<< HEAD
      * @param mixed $out
      *
      * @throws PHPUnit_Framework_Exception
      *
+=======
+     * @param  mixed                       $out
+     * @throws PHPUnit_Framework_Exception
+>>>>>>> github/master
      * @since  Method available since Release 3.3.4
      */
     public function __construct($out = null)
@@ -118,7 +123,10 @@ class PHPUnit_Util_Log_TAP extends PHPUnit_Util_Printer implements PHPUnit_Frame
      * @param PHPUnit_Framework_Test $test
      * @param Exception              $e
      * @param float                  $time
+<<<<<<< HEAD
      *
+=======
+>>>>>>> github/master
      * @since  Method available since Release 4.0.0
      */
     public function addRiskyTest(PHPUnit_Framework_Test $test, Exception $e, $time)
@@ -140,7 +148,10 @@ class PHPUnit_Util_Log_TAP extends PHPUnit_Util_Printer implements PHPUnit_Frame
      * @param PHPUnit_Framework_Test $test
      * @param Exception              $e
      * @param float                  $time
+<<<<<<< HEAD
      *
+=======
+>>>>>>> github/master
      * @since  Method available since Release 3.0.0
      */
     public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)

@@ -86,7 +86,11 @@ class DateTimeDefaultFormatter extends DateTimeFormatterBase {
    */
   protected function formatDate($date) {
     $format_type = $this->getSetting('format_type');
+<<<<<<< HEAD
     $timezone = $this->getSetting('timezone_override') ?: $date->getTimezone()->getName();
+=======
+    $timezone = $this->getSetting('timezone_override');
+>>>>>>> github/master
     return $this->dateFormatter->format($date->getTimestamp(), $format_type, '', $timezone != '' ? $timezone : NULL);
   }
 

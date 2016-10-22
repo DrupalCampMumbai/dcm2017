@@ -138,6 +138,7 @@ class ThemeHandlerTest extends UnitTestCase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests empty libraries in theme.info.yml file.
    */
   public function testThemeLibrariesEmpty() {
@@ -152,6 +153,8 @@ class ThemeHandlerTest extends UnitTestCase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Tests rebuild the theme data with theme parents.
    */
   public function testRebuildThemeDataWithThemeParents() {

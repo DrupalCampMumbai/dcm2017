@@ -12,11 +12,14 @@ use Symfony\Component\Routing\RouteCollection;
 /**
  * Common base class for resource plugins.
  *
+<<<<<<< HEAD
  * Note that this base class' implementation of the permissions() method
  * generates a permission for every method for a resource. If your resource
  * already has its own access control mechanism, you should opt out from this
  * default permissions() method by overriding it.
  *
+=======
+>>>>>>> github/master
  * @see \Drupal\rest\Annotation\RestResource
  * @see \Drupal\rest\Plugin\Type\ResourcePluginManager
  * @see \Drupal\rest\Plugin\ResourceInterface
@@ -184,7 +187,11 @@ abstract class ResourceBase extends PluginBase implements ContainerFactoryPlugin
   }
 
   /**
+<<<<<<< HEAD
    * Gets the base route for a particular method.
+=======
+   * Setups the base route for all HTTP methods.
+>>>>>>> github/master
    *
    * @param string $canonical_path
    *   The canonical path for the resource.
@@ -195,16 +202,29 @@ abstract class ResourceBase extends PluginBase implements ContainerFactoryPlugin
    *   The created base route.
    */
   protected function getBaseRoute($canonical_path, $method) {
+<<<<<<< HEAD
     return new Route($canonical_path, array(
       '_controller' => 'Drupal\rest\RequestHandler::handle',
     ),
       $this->getBaseRouteRequirements($method),
+=======
+    $lower_method = strtolower($method);
+
+    $route = new Route($canonical_path, array(
+      '_controller' => 'Drupal\rest\RequestHandler::handle',
+      // Pass the resource plugin ID along as default property.
+      '_plugin' => $this->pluginId,
+    ), array(
+      '_permission' => "restful $lower_method $this->pluginId",
+    ),
+>>>>>>> github/master
       array(),
       '',
       array(),
       // The HTTP method is a requirement for this route.
       array($method)
     );
+<<<<<<< HEAD
   }
 
   /**
@@ -237,6 +257,9 @@ abstract class ResourceBase extends PluginBase implements ContainerFactoryPlugin
     }
 
     return $requirements;
+=======
+    return $route;
+>>>>>>> github/master
   }
 
 }

@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> github/master
 /**
  * @file
  * Test module setting up two tests, one for checking if the entity $langcode is

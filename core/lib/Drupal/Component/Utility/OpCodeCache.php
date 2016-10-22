@@ -10,6 +10,7 @@ namespace Drupal\Component\Utility;
 class OpCodeCache {
 
   /**
+<<<<<<< HEAD
    * Checks if OpCodeCache is enabled.
    *
    * @return bool
@@ -20,6 +21,8 @@ class OpCodeCache {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Invalidates a PHP file from a possibly active opcode cache.
    *
    * In case the opcode cache does not support to invalidate an individual file,

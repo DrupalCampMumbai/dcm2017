@@ -126,6 +126,7 @@ class LoggingTest extends DatabaseTestBase {
     $this->assertEqual(count($queries2), 1, 'Correct number of queries recorded for second connection.');
   }
 
+<<<<<<< HEAD
   /**
    * Tests that getLog with a wrong key return an empty array.
    */
@@ -135,4 +136,6 @@ class LoggingTest extends DatabaseTestBase {
     $this->assertEqual($result, [], 'The function getLog with a wrong key returns an empty array.');
   }
 
+=======
+>>>>>>> github/master
 }

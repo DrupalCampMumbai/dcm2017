@@ -707,7 +707,11 @@ function update_language_list($flags = LanguageInterface::STATE_CONFIGURABLE) {
   // Initialize master language list.
   if (!isset($languages)) {
     // Initialize local language list cache.
+<<<<<<< HEAD
     $languages = array();
+=======
+   $languages = array();
+>>>>>>> github/master
 
     // Fill in master language list based on current configuration.
     $default = \Drupal::languageManager()->getDefaultLanguage();

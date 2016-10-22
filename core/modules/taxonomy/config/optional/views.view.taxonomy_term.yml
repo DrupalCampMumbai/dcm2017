@@ -182,7 +182,11 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
+<<<<<<< HEAD
           value: '1'
+=======
+          value: true
+>>>>>>> github/master
           group: 1
           exposed: false
           expose:

@@ -198,10 +198,15 @@ class ThemeHandler implements ThemeHandlerInterface {
    * {@inheritdoc}
    */
   public function addTheme(Extension $theme) {
+<<<<<<< HEAD
     if (!empty($theme->info['libraries'])) {
       foreach ($theme->info['libraries'] as $library => $name) {
         $theme->libraries[$library] = $name;
       }
+=======
+    foreach ($theme->info['libraries'] as $library => $name) {
+      $theme->libraries[$library] = $name;
+>>>>>>> github/master
     }
     if (isset($theme->info['engine'])) {
       $theme->engine = $theme->info['engine'];

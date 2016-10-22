@@ -3,7 +3,11 @@
 /*
  * This file is part of the Symfony CMF package.
  *
+<<<<<<< HEAD
  * (c) 2011-2015 Symfony CMF
+=======
+ * (c) 2011-2014 Symfony CMF
+>>>>>>> github/master
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +18,11 @@ namespace Symfony\Cmf\Component\Routing\Enhancer;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
+<<<<<<< HEAD
  * A route enhancer can change the values in the route data arrays.
+=======
+ * A route enhancer can change the values in the route data arrays
+>>>>>>> github/master
  *
  * This is useful to provide information to the rest of the routing system
  * that can be inferred from other parameters rather than hardcode that

@@ -27,7 +27,11 @@ display:
       access:
         type: perm
         options:
+<<<<<<< HEAD
           perm: 'administer views'
+=======
+          perm: 'access content'
+>>>>>>> github/master
       cache:
         type: tag
       query:
@@ -149,6 +153,7 @@ display:
         type: serializer
       row:
         type: data_field
+<<<<<<< HEAD
 
   rest_export_2:
     display_plugin: rest_export
@@ -170,3 +175,5 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
+=======
+>>>>>>> github/master

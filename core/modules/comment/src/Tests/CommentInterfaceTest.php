@@ -5,9 +5,12 @@ namespace Drupal\comment\Tests;
 use Drupal\comment\CommentManagerInterface;
 use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
 use Drupal\comment\Entity\Comment;
+<<<<<<< HEAD
 use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\Core\Entity\Entity\EntityViewMode;
+=======
+>>>>>>> github/master
 use Drupal\user\RoleInterface;
 use Drupal\filter\Entity\FilterFormat;
 
@@ -295,6 +298,7 @@ class CommentInterfaceTest extends CommentTestBase {
     $this->assertEqual('(No subject)', Comment::load(2)->getSubject());
   }
 
+<<<<<<< HEAD
   /**
    * Tests the comment formatter configured with a custom comment view mode.
    */
@@ -344,4 +348,6 @@ class CommentInterfaceTest extends CommentTestBase {
     $this->assertNoRaw('<p>' . $comment_text . '</p>');
   }
 
+=======
+>>>>>>> github/master
 }

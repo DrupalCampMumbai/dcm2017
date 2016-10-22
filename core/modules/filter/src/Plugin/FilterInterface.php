@@ -77,6 +77,7 @@ use Drupal\Core\Form\FormStateInterface;
  */
 interface FilterInterface extends ConfigurablePluginInterface, PluginInspectionInterface {
 
+<<<<<<< HEAD
   /**
    * Non-HTML markup language filters that generate HTML.
    */
@@ -96,6 +97,27 @@ interface FilterInterface extends ConfigurablePluginInterface, PluginInspectionI
    * Irreversible transformation filters.
    */
   const TYPE_TRANSFORM_IRREVERSIBLE = 3;
+=======
+   /**
+    * Non-HTML markup language filters that generate HTML.
+    */
+   const TYPE_MARKUP_LANGUAGE = 0;
+
+   /**
+    * HTML tag and attribute restricting filters to prevent XSS attacks.
+    */
+   const TYPE_HTML_RESTRICTOR = 1;
+
+   /**
+    * Reversible transformation filters.
+    */
+   const TYPE_TRANSFORM_REVERSIBLE = 2;
+
+   /**
+    * Irreversible transformation filters.
+    */
+   const TYPE_TRANSFORM_IRREVERSIBLE = 3;
+>>>>>>> github/master
 
   /**
    * Returns the processing type of this filter plugin.
@@ -182,7 +204,11 @@ interface FilterInterface extends ConfigurablePluginInterface, PluginInspectionI
    * a generic manner into which HTML tags and attributes are allowed by a
    * format.
    *
+<<<<<<< HEAD
    * @return array|false
+=======
+   * @return array|FALSE
+>>>>>>> github/master
    *   A nested array with *either* of the following keys:
    *     - 'allowed': (optional) the allowed tags as keys, and for each of those
    *       tags (keys) either of the following values:

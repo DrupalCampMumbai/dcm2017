@@ -2,11 +2,15 @@
 
 namespace Drupal\Tests\Component\Serialization;
 
+<<<<<<< HEAD
 use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
 use Drupal\Component\Serialization\SerializationInterface;
 use Drupal\Component\Serialization\Yaml;
 use Drupal\Component\Serialization\YamlPecl;
 use Drupal\Component\Serialization\YamlSymfony;
+=======
+use Drupal\Component\Serialization\Yaml;
+>>>>>>> github/master
 use Drupal\Tests\UnitTestCase;
 
 /**
@@ -16,6 +20,7 @@ use Drupal\Tests\UnitTestCase;
 class YamlTest extends UnitTestCase {
 
   /**
+<<<<<<< HEAD
    * @var \PHPUnit_Framework_MockObject_MockObject
    */
   protected $mockParser;
@@ -128,6 +133,49 @@ class YamlParserProxy implements SerializationInterface {
 
   public static function getFileExtension() {
     return static::$mock->getFileExtension();
+=======
+   * @covers ::decode
+   */
+  public function testDecode() {
+    // Test that files without line break endings are properly interpreted.
+    $yaml = 'foo: bar';
+    $expected = array(
+      'foo' => 'bar',
+    );
+    $this->assertSame($expected, Yaml::decode($yaml));
+    $yaml .= "\n";
+    $this->assertSame($expected, Yaml::decode($yaml));
+    $yaml .= "\n";
+    $this->assertSame($expected, Yaml::decode($yaml));
+
+    $yaml = "{}\n";
+    $expected = array();
+    $this->assertSame($expected, Yaml::decode($yaml));
+
+    $yaml = '';
+    $this->assertNULL(Yaml::decode($yaml));
+    $yaml .= "\n";
+    $this->assertNULL(Yaml::decode($yaml));
+    $yaml .= "\n";
+    $this->assertNULL(Yaml::decode($yaml));
+  }
+
+  /**
+   * @covers ::encode
+   */
+  public function testEncode() {
+    $decoded = array(
+      'foo' => 'bar',
+    );
+    $this->assertSame('foo: bar' . "\n", Yaml::encode($decoded));
+  }
+
+  /**
+   * @covers ::getFileExtension
+   */
+  public function testGetFileExtension() {
+    $this->assertEquals('yml', Yaml::getFileExtension());
+>>>>>>> github/master
   }
 
 }

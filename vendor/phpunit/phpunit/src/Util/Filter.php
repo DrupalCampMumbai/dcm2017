@@ -18,9 +18,14 @@ class PHPUnit_Util_Filter
     /**
      * Filters stack frames from PHPUnit classes.
      *
+<<<<<<< HEAD
      * @param Exception $e
      * @param bool      $asString
      *
+=======
+     * @param  Exception $e
+     * @param  bool      $asString
+>>>>>>> github/master
      * @return string
      */
     public static function getFilteredStacktrace(Exception $e, $asString = true)
@@ -85,12 +90,19 @@ class PHPUnit_Util_Filter
     }
 
     /**
+<<<<<<< HEAD
      * @param array  $trace
      * @param string $file
      * @param int    $line
      *
      * @return bool
      *
+=======
+     * @param  array  $trace
+     * @param  string $file
+     * @param  int    $line
+     * @return bool
+>>>>>>> github/master
      * @since  Method available since Release 3.3.2
      */
     private static function frameExists(array $trace, $file, $line)

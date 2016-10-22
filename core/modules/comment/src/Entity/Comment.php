@@ -208,6 +208,7 @@ class Comment extends ContentEntityBase implements CommentInterface {
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+<<<<<<< HEAD
     /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -220,6 +221,18 @@ class Comment extends ContentEntityBase implements CommentInterface {
       ->setDescription(t('The comment type.'));
 
     $fields['langcode']->setDescription(t('The comment language code.'));
+=======
+    $fields['cid'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Comment ID'))
+      ->setDescription(t('The comment ID.'))
+      ->setReadOnly(TRUE)
+      ->setSetting('unsigned', TRUE);
+
+    $fields['uuid'] = BaseFieldDefinition::create('uuid')
+      ->setLabel(t('UUID'))
+      ->setDescription(t('The comment UUID.'))
+      ->setReadOnly(TRUE);
+>>>>>>> github/master
 
     $fields['pid'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Parent ID'))
@@ -231,6 +244,21 @@ class Comment extends ContentEntityBase implements CommentInterface {
       ->setDescription(t('The ID of the entity of which this comment is a reply.'))
       ->setRequired(TRUE);
 
+<<<<<<< HEAD
+=======
+    $fields['langcode'] = BaseFieldDefinition::create('language')
+      ->setLabel(t('Language'))
+      ->setDescription(t('The comment language code.'))
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('view', array(
+        'type' => 'hidden',
+      ))
+      ->setDisplayOptions('form', array(
+        'type' => 'language_select',
+        'weight' => 2,
+      ));
+
+>>>>>>> github/master
     $fields['subject'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Subject'))
       ->setTranslatable(TRUE)
@@ -302,6 +330,14 @@ class Comment extends ContentEntityBase implements CommentInterface {
       ->setSetting('is_ascii', TRUE)
       ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
 
+<<<<<<< HEAD
+=======
+    $fields['comment_type'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Comment Type'))
+      ->setDescription(t('The comment type.'))
+      ->setSetting('target_type', 'comment_type');
+
+>>>>>>> github/master
     $fields['field_name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Comment field name'))
       ->setDescription(t('The field name through which this comment was added.'))

@@ -28,7 +28,11 @@ interface StackedRouteMatchInterface extends RouteMatchInterface {
   /**
    * Returns the parent route match of the current.
    *
+<<<<<<< HEAD
    * @return \Drupal\Core\Routing\RouteMatchInterface|null
+=======
+   * @return \Drupal\Core\Routing\RouteMatchInterface|NULL
+>>>>>>> github/master
    *   The parent route match or NULL, if it the master route match.
    */
   public function getParentRouteMatch();
@@ -36,10 +40,17 @@ interface StackedRouteMatchInterface extends RouteMatchInterface {
   /**
    * Returns a route match from a given request, if possible.
    *
+<<<<<<< HEAD
    * @param \Symfony\Component\HttpFoundation\Request $request
    *   The request.
    *
    * @return \Drupal\Core\Routing\RouteMatchInterface|null
+=======
+   * @param \Symfony\Component\HttpFoundation\Request
+   *   The request.
+   *
+   * @return \Drupal\Core\Routing\RouteMatchInterface|NULL
+>>>>>>> github/master
    *   THe matching route match, or NULL if there is no matching one.
    */
   public function getRouteMatchFromRequest(Request $request);

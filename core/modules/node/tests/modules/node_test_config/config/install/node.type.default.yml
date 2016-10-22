@@ -2,7 +2,11 @@ type: default
 name: Default
 description: 'Default description.'
 help: ''
+<<<<<<< HEAD
 new_revision: true
+=======
+new_revision: false
+>>>>>>> github/master
 display_submitted: true
 preview_mode: 1
 status: true

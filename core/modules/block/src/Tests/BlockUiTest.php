@@ -288,6 +288,7 @@ class BlockUiTest extends WebTestBase {
     $this->assertUrl('admin/structure/block/list/classy');
   }
 
+<<<<<<< HEAD
   /**
    * Tests if validation errors are passed plugin form to the parent form.
    */
@@ -304,4 +305,6 @@ class BlockUiTest extends WebTestBase {
     $this->assertTrue($error_class, 'Plugin error class found in parent form.');
   }
 
+=======
+>>>>>>> github/master
 }

@@ -17,6 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 /**
  * Manages entity type plugin definitions.
  *
+<<<<<<< HEAD
  * Each entity type definition array is set in the entity type's annotation and
  * altered by hook_entity_type_alter().
  *
@@ -26,12 +27,19 @@ use Symfony\Component\DependencyInjection\ContainerAwareTrait;
  * - You need to dynamically add information only in certain circumstances.
  * - Your hook needs to run after hook_entity_type_build() implementations.
  * Use hook_entity_type_build() instead in all other cases.
+=======
+ * Each entity type definition array is set in the entity type's
+ * annotation and altered by hook_entity_type_alter().
+>>>>>>> github/master
  *
  * @see \Drupal\Core\Entity\Annotation\EntityType
  * @see \Drupal\Core\Entity\EntityInterface
  * @see \Drupal\Core\Entity\EntityTypeInterface
  * @see hook_entity_type_alter()
+<<<<<<< HEAD
  * @see hook_entity_type_build()
+=======
+>>>>>>> github/master
  */
 class EntityTypeManager extends DefaultPluginManager implements EntityTypeManagerInterface, ContainerAwareInterface {
 

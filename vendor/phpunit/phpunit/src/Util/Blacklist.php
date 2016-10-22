@@ -50,7 +50,10 @@ class PHPUnit_Util_Blacklist
 
     /**
      * @return array
+<<<<<<< HEAD
      *
+=======
+>>>>>>> github/master
      * @since  Method available since Release 4.1.0
      */
     public function getBlacklistedDirectories()
@@ -61,8 +64,12 @@ class PHPUnit_Util_Blacklist
     }
 
     /**
+<<<<<<< HEAD
      * @param string $file
      *
+=======
+     * @param  string $file
+>>>>>>> github/master
      * @return bool
      */
     public function isBlacklisted($file)

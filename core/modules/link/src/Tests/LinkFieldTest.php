@@ -624,7 +624,11 @@ class LinkFieldTest extends WebTestBase {
     if ($reset) {
       $this->container->get('entity.manager')->getStorage('entity_test')->resetCache(array($id));
     }
+<<<<<<< HEAD
     $entity = EntityTest::load($id);
+=======
+    $entity = entity_load('entity_test', $id);
+>>>>>>> github/master
     $display = entity_get_display($entity->getEntityTypeId(), $entity->bundle(), $view_mode);
     $content = $display->build($entity);
     $output = \Drupal::service('renderer')->renderRoot($content);

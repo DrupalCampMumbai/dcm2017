@@ -8,7 +8,10 @@ use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\block_content\BlockContentInterface;
+<<<<<<< HEAD
 use Drupal\user\UserInterface;
+=======
+>>>>>>> github/master
 
 /**
  * Defines the custom block entity class.
@@ -120,7 +123,11 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
    * {@inheritdoc}
    */
   public function getInstances() {
+<<<<<<< HEAD
     return \Drupal::entityTypeManager()->getStorage('block')->loadByProperties(array('plugin' => 'block_content:' . $this->uuid()));
+=======
+    return entity_load_multiple_by_properties('block', array('plugin' => 'block_content:' . $this->uuid()));
+>>>>>>> github/master
   }
 
   /**
@@ -133,7 +140,11 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
       // If we are updating an existing block_content without adding a new
       // revision and the user did not supply a revision log, keep the existing
       // one.
+<<<<<<< HEAD
       $record->revision_log = $this->original->getRevisionLogMessage();
+=======
+      $record->revision_log = $this->original->getRevisionLog();
+>>>>>>> github/master
     }
   }
 
@@ -151,6 +162,7 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+<<<<<<< HEAD
     /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -165,6 +177,37 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
 
     $fields['type']->setLabel(t('Block type'))
       ->setDescription(t('The block type.'));
+=======
+    $fields['id'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Custom block ID'))
+      ->setDescription(t('The custom block ID.'))
+      ->setReadOnly(TRUE)
+      ->setSetting('unsigned', TRUE);
+
+    $fields['uuid'] = BaseFieldDefinition::create('uuid')
+      ->setLabel(t('UUID'))
+      ->setDescription(t('The custom block UUID.'))
+      ->setReadOnly(TRUE);
+
+    $fields['revision_id'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Revision ID'))
+      ->setDescription(t('The revision ID.'))
+      ->setReadOnly(TRUE)
+      ->setSetting('unsigned', TRUE);
+
+    $fields['langcode'] = BaseFieldDefinition::create('language')
+      ->setLabel(t('Language'))
+      ->setDescription(t('The custom block language code.'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
+      ->setDisplayOptions('view', array(
+        'type' => 'hidden',
+      ))
+      ->setDisplayOptions('form', array(
+        'type' => 'language_select',
+        'weight' => 2,
+      ));
+>>>>>>> github/master
 
     $fields['info'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Block description'))
@@ -179,6 +222,15 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->addConstraint('UniqueField', []);
 
+<<<<<<< HEAD
+=======
+
+    $fields['type'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Block type'))
+      ->setDescription(t('The block type.'))
+      ->setSetting('target_type', 'block_content_type');
+
+>>>>>>> github/master
     $fields['revision_log'] = BaseFieldDefinition::create('string_long')
       ->setLabel(t('Revision log message'))
       ->setDescription(t('The log entry explaining the changes in this revision.'))
@@ -190,6 +242,7 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
       ->setTranslatable(TRUE)
       ->setRevisionable(TRUE);
 
+<<<<<<< HEAD
     $fields['revision_created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Revision create time'))
       ->setDescription(t('The time that the current revision was created.'))
@@ -201,6 +254,8 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
       ->setSetting('target_type', 'user')
       ->setRevisionable(TRUE);
 
+=======
+>>>>>>> github/master
     $fields['revision_translation_affected'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Revision translation affected'))
       ->setDescription(t('Indicates if the last edit of a translation belongs to current revision.'))
@@ -215,7 +270,11 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
    * {@inheritdoc}
    */
   public function getRevisionLog() {
+<<<<<<< HEAD
     return $this->getRevisionLogMessage();
+=======
+    return $this->get('revision_log')->value;
+>>>>>>> github/master
   }
 
   /**
@@ -230,6 +289,7 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
    * {@inheritdoc}
    */
   public function setRevisionLog($revision_log) {
+<<<<<<< HEAD
     return $this->setRevisionLogMessage($revision_log);
   }
 
@@ -287,6 +347,9 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
    */
   public function setRevisionLogMessage($revision_log_message) {
     $this->set('revision_log', $revision_log_message);
+=======
+    $this->set('revision_log', $revision_log);
+>>>>>>> github/master
     return $this;
   }
 

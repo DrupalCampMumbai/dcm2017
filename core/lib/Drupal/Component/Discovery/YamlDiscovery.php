@@ -61,7 +61,11 @@ class YamlDiscovery implements DiscoverableInterface {
       foreach ($provider_by_files as $file => $provider) {
         // If a file is empty or its contents are commented out, return an empty
         // array instead of NULL for type consistency.
+<<<<<<< HEAD
         $all[$provider] = $this->decode($file);
+=======
+        $all[$provider] = Yaml::decode(file_get_contents($file)) ?: [];
+>>>>>>> github/master
         $file_cache->set($file, $all[$provider]);
       }
     }
@@ -70,6 +74,7 @@ class YamlDiscovery implements DiscoverableInterface {
   }
 
   /**
+<<<<<<< HEAD
    * Decode a YAML file.
    *
    * @param string $file
@@ -81,6 +86,8 @@ class YamlDiscovery implements DiscoverableInterface {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Returns an array of file paths, keyed by provider.
    *
    * @return array

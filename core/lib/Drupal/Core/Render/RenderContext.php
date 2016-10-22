@@ -10,6 +10,11 @@ namespace Drupal\Core\Render;
  * @see \Drupal\Core\Render\RendererInterface
  * @see \Drupal\Core\Render\Renderer
  * @see \Drupal\Core\Render\BubbleableMetadata
+<<<<<<< HEAD
+=======
+ *
+ * @internal
+>>>>>>> github/master
  */
 class RenderContext extends \SplStack {
 

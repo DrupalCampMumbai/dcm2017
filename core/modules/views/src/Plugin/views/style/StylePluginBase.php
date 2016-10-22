@@ -345,7 +345,11 @@ abstract class StylePluginBase extends PluginBase {
 
       $form['default_row_class'] = array(
         '#title' => $this->t('Add views row classes'),
+<<<<<<< HEAD
         '#description' => $this->t('Add the default row classes like @classes to the output. You can use this to quickly reduce the amount of markup the view provides by default, at the cost of making it more difficult to apply CSS.', array('@classes' => 'views-row')),
+=======
+        '#description' => $this->t('Add the default row classes like views-row-1 to the output. You can use this to quickly reduce the amount of markup the view provides by default, at the cost of making it more difficult to apply CSS.'),
+>>>>>>> github/master
         '#type' => 'checkbox',
         '#default_value' => $this->options['default_row_class'],
       );

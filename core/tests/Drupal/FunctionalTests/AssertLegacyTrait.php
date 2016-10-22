@@ -2,8 +2,11 @@
 
 namespace Drupal\FunctionalTests;
 
+<<<<<<< HEAD
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Utility\Xss;
+=======
+>>>>>>> github/master
 use Drupal\KernelTests\AssertLegacyTrait as BaseAssertLegacyTrait;
 
 /**
@@ -55,6 +58,7 @@ trait AssertLegacyTrait {
    *   Plain text to look for.
    *
    * @deprecated Scheduled for removal in Drupal 9.0.0.
+<<<<<<< HEAD
    *   Use instead:
    *     - $this->assertSession()->responseContains() for non-HTML responses,
    *       like XML or Json.
@@ -66,6 +70,12 @@ trait AssertLegacyTrait {
     // Cast MarkupInterface to string.
     $text = (string) $text;
 
+=======
+   *   Use $this->assertSession()->pageTextContains() or
+   *   $this->assertSession()->responseContains() instead.
+   */
+  protected function assertText($text) {
+>>>>>>> github/master
     $content_type = $this->getSession()->getResponseHeader('Content-type');
     // In case of a Non-HTML response (example: XML) check the original
     // response.
@@ -73,7 +83,11 @@ trait AssertLegacyTrait {
       $this->assertSession()->responseContains($text);
     }
     else {
+<<<<<<< HEAD
       $this->assertTextHelper($text, FALSE);
+=======
+      $this->assertSession()->pageTextContains($text);
+>>>>>>> github/master
     }
   }
 
@@ -87,6 +101,7 @@ trait AssertLegacyTrait {
    *   Plain text to look for.
    *
    * @deprecated Scheduled for removal in Drupal 9.0.0.
+<<<<<<< HEAD
    *   Use instead:
    *     - $this->assertSession()->responseNotContains() for non-HTML responses,
    *       like XML or Json.
@@ -98,6 +113,12 @@ trait AssertLegacyTrait {
     // Cast MarkupInterface to string.
     $text = (string) $text;
 
+=======
+   *   Use $this->assertSession()->pageTextNotContains() or
+   *   $this->assertSession()->responseNotContains() instead.
+   */
+  protected function assertNoText($text) {
+>>>>>>> github/master
     $content_type = $this->getSession()->getResponseHeader('Content-type');
     // In case of a Non-HTML response (example: XML) check the original
     // response.
@@ -105,11 +126,16 @@ trait AssertLegacyTrait {
       $this->assertSession()->responseNotContains($text);
     }
     else {
+<<<<<<< HEAD
       $this->assertTextHelper($text);
+=======
+      $this->assertSession()->pageTextNotContains($text);
+>>>>>>> github/master
     }
   }
 
   /**
+<<<<<<< HEAD
    * Helper for assertText and assertNoText.
    *
    * @param string $text
@@ -140,6 +166,8 @@ trait AssertLegacyTrait {
   }
 
   /**
+=======
+>>>>>>> github/master
    * Passes if the text is found ONLY ONCE on the text version of the page.
    *
    * The text version is the equivalent of what a user would see when viewing

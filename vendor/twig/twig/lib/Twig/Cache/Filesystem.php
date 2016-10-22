@@ -27,7 +27,11 @@ class Twig_Cache_Filesystem implements Twig_CacheInterface
      */
     public function __construct($directory, $options = 0)
     {
+<<<<<<< HEAD
         $this->directory = rtrim($directory, '\/').'/';
+=======
+        $this->directory = $directory;
+>>>>>>> github/master
         $this->options = $options;
     }
 
@@ -38,7 +42,11 @@ class Twig_Cache_Filesystem implements Twig_CacheInterface
     {
         $hash = hash('sha256', $className);
 
+<<<<<<< HEAD
         return $this->directory.$hash[0].$hash[1].'/'.$hash.'.php';
+=======
+        return $this->directory.'/'.$hash[0].$hash[1].'/'.$hash.'.php';
+>>>>>>> github/master
     }
 
     /**

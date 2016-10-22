@@ -5,7 +5,11 @@
  * Contains \Drupal\Tests\simpletest\Unit\TestInfoParsingTest.
  */
 
+<<<<<<< HEAD
 namespace Drupal\Tests\simpletest\Unit;
+=======
+namespace Drupal\Tests\simpletest\Unit {
+>>>>>>> github/master
 
 use Composer\Autoload\ClassLoader;
 use Drupal\Core\Extension\Extension;
@@ -60,13 +64,22 @@ class TestInfoParsingTest extends UnitTestCase {
     $tests[] = [
       // Expected result.
       [
+<<<<<<< HEAD
         'name' => 'Drupal\FunctionalTests\BrowserTestBaseTest',
         'group' => 'browsertestbase',
+=======
+        'name' => 'Drupal\Tests\simpletest\Functional\BrowserTestBaseTest',
+        'group' => 'simpletest',
+>>>>>>> github/master
         'description' => 'Tests BrowserTestBase functionality.',
         'type' => 'PHPUnit-Functional',
       ],
       // Classname.
+<<<<<<< HEAD
       'Drupal\FunctionalTests\BrowserTestBaseTest',
+=======
+      'Drupal\Tests\simpletest\Functional\BrowserTestBaseTest',
+>>>>>>> github/master
     ];
 
     // kernel PHPUnit test.
@@ -400,7 +413,11 @@ class TestTestDiscovery extends TestDiscovery {
     $data['simpletest-kerneltest'] = ['\Drupal\hal\Tests\FileNormalizeTest', FALSE];
     $data['module-unittest'] = [static::class, 'Unit'];
     $data['module-kerneltest'] = ['\Drupal\KernelTests\Core\Theme\TwigMarkupInterfaceTest', 'Kernel'];
+<<<<<<< HEAD
     $data['module-functionaltest'] = ['\Drupal\FunctionalTests\BrowserTestBaseTest', 'Functional'];
+=======
+    $data['module-functionaltest'] = ['\Drupal\Tests\simpletest\Functional\BrowserTestBaseTest', 'Functional'];
+>>>>>>> github/master
     $data['module-functionaljavascripttest'] = ['\Drupal\Tests\toolbar\FunctionalJavascript\ToolbarIntegrationTest', 'FunctionalJavascript'];
     $data['core-unittest'] = ['\Drupal\Tests\ComposerIntegrationTest', 'Unit'];
     $data['core-unittest2'] = ['Drupal\Tests\Core\DrupalTest', 'Unit'];
@@ -413,7 +430,13 @@ class TestTestDiscovery extends TestDiscovery {
 
 }
 
+<<<<<<< HEAD
 namespace Drupal\simpletest\Tests;
+=======
+}
+
+namespace Drupal\simpletest\Tests {
+>>>>>>> github/master
 
 use Drupal\simpletest\WebTestBase;
 
@@ -424,3 +447,8 @@ use Drupal\simpletest\WebTestBase;
  */
 class ExampleSimpleTest extends WebTestBase {
 }
+<<<<<<< HEAD
+=======
+
+}
+>>>>>>> github/master

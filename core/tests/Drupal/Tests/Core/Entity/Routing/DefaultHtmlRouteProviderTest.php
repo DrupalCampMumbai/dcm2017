@@ -253,6 +253,7 @@ class DefaultHtmlRouteProviderTest extends UnitTestCase {
   }
 
   /**
+<<<<<<< HEAD
    * @covers ::getCollectionRoute
    * @dataProvider providerTestGetCollectionRoute
    */
@@ -299,6 +300,8 @@ class DefaultHtmlRouteProviderTest extends UnitTestCase {
   }
 
   /**
+=======
+>>>>>>> github/master
    * @covers ::getEntityTypeIdKeyType
    */
   public function testGetEntityTypeIdKeyType() {
@@ -359,8 +362,11 @@ class TestDefaultHtmlRouteProvider extends DefaultHtmlRouteProvider {
   public function getCanonicalRoute(EntityTypeInterface $entity_type) {
     return parent::getCanonicalRoute($entity_type);
   }
+<<<<<<< HEAD
   public function getCollectionRoute(EntityTypeInterface $entity_type) {
     return parent::getCollectionRoute($entity_type);
   }
+=======
+>>>>>>> github/master
 
 }

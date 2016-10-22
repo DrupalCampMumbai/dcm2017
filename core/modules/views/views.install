@@ -392,6 +392,7 @@ function views_update_8101() {
 /**
  * @} End of "addtogroup updates-8.1.0".
  */
+<<<<<<< HEAD
 
 /**
  * @addtogroup updates-8.2.0
@@ -408,3 +409,5 @@ function views_update_8200() {
 /**
  * @} End of "addtogroup updates-8.2.0".
  */
+=======
+>>>>>>> github/master

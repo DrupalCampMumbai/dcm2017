@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace Drupal\Tests\views\Unit\Controller;
+=======
+namespace Drupal\Tests\views\Unit\Controller {
+>>>>>>> github/master
 
 use Drupal\Core\Render\RenderContext;
 use Drupal\Tests\UnitTestCase;
@@ -358,3 +362,8 @@ class ViewAjaxControllerTest extends UnitTestCase {
   }
 
 }
+<<<<<<< HEAD
+=======
+
+}
+>>>>>>> github/master

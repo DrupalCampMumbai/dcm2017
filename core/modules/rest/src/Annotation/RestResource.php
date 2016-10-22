@@ -38,6 +38,7 @@ class RestResource extends Plugin {
    */
   public $label;
 
+<<<<<<< HEAD
   /**
    * The serialization class to deserialize serialized data into.
    *
@@ -45,4 +46,6 @@ class RestResource extends Plugin {
    */
   public $serialization_class;
 
+=======
+>>>>>>> github/master
 }

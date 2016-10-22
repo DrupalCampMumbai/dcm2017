@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace Drupal\Tests\language\Unit;
+=======
+namespace Drupal\Tests\language\Unit {
+>>>>>>> github/master
 
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Language\LanguageInterface;
@@ -252,11 +256,22 @@ class LanguageNegotiationUrlTest extends UnitTestCase {
 
 }
 
+<<<<<<< HEAD
 // @todo Remove as part of https://www.drupal.org/node/2481833.
 namespace Drupal\language\Plugin\LanguageNegotiation;
 
 if (!function_exists('base_path')) {
   function base_path() {
     return '/';
+=======
+}
+
+// @todo Remove as part of https://www.drupal.org/node/2481833.
+namespace {
+  if (!function_exists('base_path')) {
+    function base_path() {
+      return '/';
+    }
+>>>>>>> github/master
   }
 }

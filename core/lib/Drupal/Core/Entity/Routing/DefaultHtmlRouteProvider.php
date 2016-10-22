@@ -23,7 +23,10 @@ use Symfony\Component\Routing\RouteCollection;
  * - add-form
  * - edit-form
  * - delete-form
+<<<<<<< HEAD
  * - collection
+=======
+>>>>>>> github/master
  *
  * @see \Drupal\Core\Entity\Routing\AdminHtmlRouteProvider.
  *
@@ -96,10 +99,13 @@ class DefaultHtmlRouteProvider implements EntityRouteProviderInterface, EntityHa
       $collection->add("entity.{$entity_type_id}.delete_form", $delete_route);
     }
 
+<<<<<<< HEAD
     if ($collection_route = $this->getCollectionRoute($entity_type)) {
       $collection->add("entity.{$entity_type_id}.collection", $collection_route);
     }
 
+=======
+>>>>>>> github/master
     return $collection;
   }
 
@@ -304,6 +310,7 @@ class DefaultHtmlRouteProvider implements EntityRouteProviderInterface, EntityHa
   }
 
   /**
+<<<<<<< HEAD
    * Gets the collection route.
    *
    * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
@@ -331,6 +338,8 @@ class DefaultHtmlRouteProvider implements EntityRouteProviderInterface, EntityHa
   }
 
   /**
+=======
+>>>>>>> github/master
    * Gets the type of the ID key for a given entity type.
    *
    * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type

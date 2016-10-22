@@ -88,6 +88,7 @@ class Test {
     ];
   }
 
+<<<<<<< HEAD
   /**
    * Renders a page with encoded markup.
    *
@@ -98,4 +99,6 @@ class Test {
     return ['#plain_text' => 'Bad html <script>alert(123);</script>'];
   }
 
+=======
+>>>>>>> github/master
 }

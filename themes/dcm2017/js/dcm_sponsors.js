@@ -22,4 +22,14 @@ jQuery(document).ready(function($){
 		sticky_relocate();
 	}); */
 	/*End Sticky menu*/
+	$('.view-volunteers .views-row').each(function() {
+		$(this).hover(
+			function(){
+				$(this).addClass('hover').siblings('.views-row').addClass('nohover');
+			},
+			function(){ 
+				$(this).removeClass('hover').siblings('.views-row').removeClass('nohover');
+			}
+		);
+	});
 });

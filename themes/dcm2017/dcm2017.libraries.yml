@@ -18,4 +18,4 @@ bootstrap-scripts:
     bootstrap/assets/javascripts/bootstrap/scrollspy.js: {}
     bootstrap/assets/javascripts/bootstrap/tab.js: {}
     bootstrap/assets/javascripts/bootstrap/transition.js: {}
-    js/dcm_sponsors.js: {}
+    js/dcm_custom.js: {}

@@ -168,6 +168,7 @@ header.container, .navbar.container {
 	max-width: inherit;
 	border: 0;
 	border-radius: 0;
+	z-index: 2;
 }
 .path-frontpage header#navbar {
 	background-image: url(../images/screen-4.jpg);
@@ -197,50 +198,6 @@ header.container, .navbar.container {
 				border-bottom: 1px dashed #fff;
 				border-top: 1px dashed #fff;
 				margin: 25px 0;
-				.menu {
-					margin: 0 auto;
-					padding: 0;
-					transition: all 0.5s linear 0s;
-					text-align: center;
-					li {
-						margin: 0;
-						padding: 0;
-						display: inline-block;
-						a {
-							text-transform: uppercase;
-							color: #fff;
-							transition: all 0.3s linear 0s;
-							font-family: $proxima-semibold;
-							font-size: 16px;
-							position: relative;
-							display: block;
-							&:hover, &.is-active {
-								color: #fef5cc;
-								border-color: #fef5cc;
-								transition: all 0.3s linear 0s;
-								&:before {
-									right: 0;
-								}
-							}
-							&:before {
-								content: "";
-								position: absolute;
-								z-index: 0;
-								left: 0;
-								right: 100%;
-								bottom: 0;
-								background: #fef5cc;
-								height: 2px;
-								-webkit-transition-property: right;
-								transition-property: right;
-								-webkit-transition-duration: 0.4s;
-								transition-duration: 0.4s;
-								-webkit-transition-timing-function: linear;
-								transition-timing-function: linear;
-							} 
-						}
-					}
-				}
 			}
 		}
 	}
@@ -310,55 +267,89 @@ header#navbar {
 /*End Header*/
 
 /*Main menu*/
-#dcm-sticky-menu {
-    clear: both;
-    .menu {
-    	margin: 30px 0;
-    	padding: 0;
-    	transition: all 0.5s linear 0s;
-    	text-align: center;
-		border-bottom: 1px dashed #fff;
-		border-top: 1px dashed #fff;
-		background-color: rgba(0, 0, 0, 0.4);
-    	li {
-    		margin: 0;
-    		padding: 0;
-    		display: inline-block;
-    		a {
-    			text-transform: uppercase;
-    			color: #fff;
-    			transition: all 0.3s linear 0s;
-    			font-family: $proxima-semibold;
-    			font-size: 16px;
-    			position: relative;
-    			display: block;
-    			&:hover, &.is-active {
-    				color: #fef5cc;
-    				border-color: #fef5cc;
-    				transition: all 0.3s linear 0s;
-    				&:before {
-    					right: 0;
-    				}
-    			}
-				&:before {
-				    content: "";
-				    position: absolute;
-				    z-index: 0;
-				    left: 0;
-				    right: 100%;
-				    bottom: 0;
-				    background: #fef5cc;
-				    height: 2px;
-				    -webkit-transition-property: right;
-				    transition-property: right;
-				    -webkit-transition-duration: 0.4s;
-				    transition-duration: 0.4s;
-				    -webkit-transition-timing-function: linear;
-				    transition-timing-function: linear;
-				} 
-    		}
-    	}
-    }
+header#navbar {
+	#dcm-sticky-menu {
+	    clear: both;
+	    .menu {
+	    	margin: 30px 0;
+	    	padding: 0;
+	    	transition: all 0.5s linear 0s;
+	    	text-align: center;
+			border-bottom: 1px dashed #fff;
+			border-top: 1px dashed #fff;
+			background-color: rgba(0, 0, 0, 0.4);
+	    	li {
+	    		margin: 0;
+	    		padding: 0;
+	    		display: inline-block;
+	    		&.open {
+	    			a {
+	    				color: #fef5cc;
+	    				background-color: transparent;
+	    			}
+	    		}
+	    		a {
+	    			text-transform: uppercase;
+	    			color: #fff;
+	    			transition: all 0.3s linear 0s;
+	    			font-family: $proxima-semibold;
+	    			font-size: 16px;
+	    			position: relative;
+	    			display: block;
+	    			&:hover, &.is-active {
+	    				color: #fef5cc;
+	    				border-color: #fef5cc;
+	    				transition: all 0.3s linear 0s;
+	    				&:before {
+	    					right: 0;
+	    				}
+	    			}
+					&:before {
+					    content: "";
+					    position: absolute;
+					    z-index: 0;
+					    left: 0;
+					    right: 100%;
+					    bottom: 0;
+					    background: #fef5cc;
+					    height: 2px;
+					    -webkit-transition-property: right;
+					    transition-property: right;
+					    -webkit-transition-duration: 0.4s;
+					    transition-duration: 0.4s;
+					    -webkit-transition-timing-function: linear;
+					    transition-timing-function: linear;
+					} 
+	    		}
+	    		.menu.dropdown-menu {
+	    			background-color: rgba(0, 0, 0, 0.56);
+	    			width: auto;
+	    			border-radius: 0;
+	    			text-align: left;
+	    			li {
+					    display: block;
+					    &:last-child {
+					    	a {
+					    		border-bottom: 0;
+					    	}
+					    }
+					    a {
+					    	border-bottom: 1px dashed #eee;
+					    	padding: 10px 15px;
+					    	color: #fff;
+					    	&:hover, &.is-active {
+					    		color: #fef5cc;
+					    		background-color: transparent;
+					    		&:before {
+			    					display: none;
+			    				}
+					    	}
+					    }
+					}
+	    		}
+	    	}
+	    }
+	}
 }
 /*End Main menu*/
 

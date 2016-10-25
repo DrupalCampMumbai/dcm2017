@@ -198,6 +198,13 @@ header.container, .navbar.container {
 				border-bottom: 1px dashed #fff;
 				border-top: 1px dashed #fff;
 				margin: 25px 0;
+				ul {
+					li {
+					.menu.dropdown-menu {
+					background-color: rgba(0, 0, 0, 0.56);
+					}
+					}
+				}
 			}
 		}
 	}
@@ -320,9 +327,19 @@ header#navbar {
 					    -webkit-transition-timing-function: linear;
 					    transition-timing-function: linear;
 					} 
+					.caret-up {
+						width: 0; 
+						height: 0; 
+						border-left: 4px solid rgba(0, 0, 0, 0);
+						border-right: 4px solid rgba(0, 0, 0, 0);
+						border-bottom: 4px solid;
+						display: inline-block;
+						margin-left: 2px;
+						vertical-align: middle;
+					}
 	    		}
 	    		.menu.dropdown-menu {
-	    			background-color: rgba(0, 0, 0, 0.56);
+	    			background-color: rgba(129, 115, 131, 0.79);
 	    			width: auto;
 	    			border-radius: 0;
 	    			text-align: left;
@@ -729,7 +746,7 @@ aside, .sidebar {
 	.views-row {
 		width: 200px;
 		display: inline-block;
-		margin: 0 30px 20px 0;
+		margin: 0 29px 20px 0;
 		position: relative;
 		transition: all 0.5s linear 0s;
 		vertical-align: top;
@@ -980,6 +997,83 @@ aside, .sidebar {
 	}
 }
 /*End About mumbai*/
+
+/*Sessions page*/
+#tracks {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 1px;
+    z-index: 100;
+    top: 30%;
+	li {
+	    display: block;
+	    width: 100%;
+	    margin: 0 0 0px;
+	    padding: 0 0 2px;
+    	a {
+		    padding: 10px;
+		    display: block;
+		    background: #ddd;
+		    text-align: left;
+		    color: rgba(0, 0, 0, 0.84);		
+		    font-family: $proxima-semibold;  
+		    position: relative; 
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+		    -webkit-transition-property: color;
+		    transition-property: color;
+		    -webkit-transition-duration: 0.5s;
+		    transition-duration: 0.5s;			
+		    &:hover {
+		    	color: #fff;
+		    	&:before {
+				    -webkit-transform: scaleX(1);
+				    transform: scaleX(1);
+				}
+		    }
+		    &:before {
+			    content: "";
+			    position: absolute;
+			    z-index: -1;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    bottom: 0;
+			    background: #2098D1;
+			    -webkit-transform: scaleX(0);
+			    transform: scaleX(0);
+			    -webkit-transform-origin: 0 50%;
+			    transform-origin: 0 50%;
+			    -webkit-transition-property: transform;
+			    transition-property: transform;
+			    -webkit-transition-duration: 0.5s;
+			    transition-duration: 0.5s;
+			    -webkit-transition-timing-function: ease-out;
+			    transition-timing-function: ease-out;
+			} 
+    	}
+    }
+}
+.track-row {
+	margin: 0 0 30px;
+	img {
+		display: none;
+	}
+	h2 {
+	    background-color: #2aa9de;
+	    color: #fff;
+	    padding: 10px 20px;
+	    margin: 0;
+	    border-bottom: 3px solid rgb(2, 159, 195);
+	    border-radius: 5px 5px 0 0;
+	}
+	.session-data {
+	    padding: 20px;
+	    background-color: rgba(94, 204, 229, 0.13);
+	}
+}
+/*End Sessions page*/
 
 /*Form*/
 .main-container {

@@ -18,8 +18,9 @@
     Drupal.behaviors.sessions_behavior = {
         attach: function (context, settings) {
 
-            $('.view-display-id-sessions_listing').find('.view-content').addClass('owl-carousel');
-            $('.view-content').owlCarousel({
+            var sessionSelector = $('.view-display-id-sessions_listing .view-content');
+            sessionSelector.addClass('owl-carousel');
+            sessionSelector.owlCarousel({
 
                 items: 1,
                 itemsDesktop : [1000,5],

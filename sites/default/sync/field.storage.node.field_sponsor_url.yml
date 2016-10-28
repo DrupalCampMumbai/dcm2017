@@ -1,0 +1,21 @@
+uuid: ba4dd348-caab-4379-956e-fced2c2b6c91
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+_core:
+  default_config_hash: rrIdqI5ePuX30wjXY-LXsVhKrLLMN98OKqv5wqNkq18
+id: node.field_sponsor_url
+field_name: field_sponsor_url
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

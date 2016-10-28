@@ -1,0 +1,11 @@
+uuid: 2b7ce1f7-8814-46f8-802d-9f04e2dc4c18
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: JiUPfP_gSCyO_15zUA_0v5xlzHJTPQg5eRrxI-fHga4
+name: 'Sponsors Catergory'
+vid: sponsors_catergory
+description: 'Describes the category of Sponsors'
+hierarchy: 0
+weight: 0

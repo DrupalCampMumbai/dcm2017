@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dcm17
+id: countdowntimer
+theme: dcm17
+region: footer
+weight: -7
+provider: null
+plugin: jquery_countdown_timer
+settings:
+  id: jquery_countdown_timer
+  label: 'Countdown Timer'
+  provider: jquery_countdown_timer
+  label_display: '0'
+  countdown_datetime: '2016-11-10 00:00:00'
+  font_size: '28'
+visibility:
+  request_path:
+    id: request_path
+    pages: /landing-page
+    negate: false
+    context_mapping: {  }

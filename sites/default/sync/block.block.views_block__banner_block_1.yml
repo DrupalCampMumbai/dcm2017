@@ -1,0 +1,32 @@
+uuid: 04164b50-c622-4d65-8fcf-b0cc9e234ad8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.banner
+  module:
+    - system
+    - views
+  theme:
+    - dcm17
+_core:
+  default_config_hash: ZmvgbDc28zW4pnhNqd-lXZ6vbcJbxJ6EQbHmwM3X8EA
+id: views_block__banner_block_1
+theme: dcm17
+region: highlighted
+weight: -10
+provider: null
+plugin: 'views_block:banner-block_1'
+settings:
+  id: 'views_block:banner-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

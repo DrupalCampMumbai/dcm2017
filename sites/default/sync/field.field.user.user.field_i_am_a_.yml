@@ -1,0 +1,21 @@
+uuid: a2c6c829-8ec6-43ff-9e74-6358fee4bc86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_i_am_a_
+  module:
+    - options
+    - user
+id: user.user.field_i_am_a_
+field_name: field_i_am_a_
+entity_type: user
+bundle: user
+label: 'I am a..'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

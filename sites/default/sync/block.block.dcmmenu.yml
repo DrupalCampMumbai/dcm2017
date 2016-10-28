@@ -1,0 +1,24 @@
+uuid: c130d6ac-bb34-4915-b890-52aca6099e62
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.dcm-menu
+  module:
+    - system
+  theme:
+    - bartik
+id: dcmmenu
+theme: bartik
+region: secondary_menu
+weight: null
+provider: null
+plugin: 'system_menu_block:dcm-menu'
+settings:
+  id: 'system_menu_block:dcm-menu'
+  label: DCM
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

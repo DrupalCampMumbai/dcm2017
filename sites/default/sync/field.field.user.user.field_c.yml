@@ -1,0 +1,24 @@
+uuid: 591964c3-facf-4e0e-b30a-a23a4faf43a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_c
+  module:
+    - user
+id: user.user.field_c
+field_name: field_c
+entity_type: user
+bundle: user
+label: 'Carrying my laptop?'
+description: 'Please note, you must bring your own laptop if you are attending one of the workshops, codesprint or hackathon.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

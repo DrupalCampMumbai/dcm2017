@@ -1,0 +1,51 @@
+uuid: 674d6976-fed6-4f29-8c72-b60338631791
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_i_learned_about_dcm2017_fr
+field_name: field_i_learned_about_dcm2017_fr
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Friend/colleague
+      label: Friend/colleague
+    -
+      value: groups.drupal.org
+      label: groups.drupal.org
+    -
+      value: Newsletter
+      label: Newsletter
+    -
+      value: 'Event I attended'
+      label: 'Event I attended'
+    -
+      value: Meetup.com
+      label: Meetup.com
+    -
+      value: Facebook
+      label: Facebook
+    -
+      value: Twitter
+      label: Twitter
+    -
+      value: Google+
+      label: Google+
+    -
+      value: Poster
+      label: Poster
+    -
+      value: Other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

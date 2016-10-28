@@ -168,6 +168,10 @@ header.container, .navbar.container {
 	max-width: inherit;
 	border: 0;
 	border-radius: 0;
+<<<<<<< HEAD
+=======
+	z-index: 2;
+>>>>>>> github/master
 }
 .path-frontpage header#navbar {
 	background-image: url(../images/screen-4.jpg);
@@ -197,6 +201,7 @@ header.container, .navbar.container {
 				border-bottom: 1px dashed #fff;
 				border-top: 1px dashed #fff;
 				margin: 25px 0;
+<<<<<<< HEAD
 				.menu {
 					margin: 0 auto;
 					padding: 0;
@@ -241,6 +246,8 @@ header.container, .navbar.container {
 						}
 					}
 				}
+=======
+>>>>>>> github/master
 			}
 		}
 	}
@@ -310,6 +317,7 @@ header#navbar {
 /*End Header*/
 
 /*Main menu*/
+<<<<<<< HEAD
 #dcm-sticky-menu {
     clear: both;
     .menu {
@@ -359,6 +367,91 @@ header#navbar {
     		}
     	}
     }
+=======
+header#navbar {
+	#dcm-sticky-menu {
+	    clear: both;
+	    .menu {
+	    	margin: 30px 0;
+	    	padding: 0;
+	    	transition: all 0.5s linear 0s;
+	    	text-align: center;
+			border-bottom: 1px dashed #fff;
+			border-top: 1px dashed #fff;
+			background-color: rgba(0, 0, 0, 0.4);
+	    	li {
+	    		margin: 0;
+	    		padding: 0;
+	    		display: inline-block;
+	    		&.open {
+	    			a {
+	    				color: #fef5cc;
+	    				background-color: transparent;
+	    			}
+	    		}
+	    		a {
+	    			text-transform: uppercase;
+	    			color: #fff;
+	    			transition: all 0.3s linear 0s;
+	    			font-family: $proxima-semibold;
+	    			font-size: 16px;
+	    			position: relative;
+	    			display: block;
+	    			&:hover, &.is-active {
+	    				color: #fef5cc;
+	    				border-color: #fef5cc;
+	    				transition: all 0.3s linear 0s;
+	    				&:before {
+	    					right: 0;
+	    				}
+	    			}
+					&:before {
+					    content: "";
+					    position: absolute;
+					    z-index: 0;
+					    left: 0;
+					    right: 100%;
+					    bottom: 0;
+					    background: #fef5cc;
+					    height: 2px;
+					    -webkit-transition-property: right;
+					    transition-property: right;
+					    -webkit-transition-duration: 0.4s;
+					    transition-duration: 0.4s;
+					    -webkit-transition-timing-function: linear;
+					    transition-timing-function: linear;
+					} 
+	    		}
+	    		.menu.dropdown-menu {
+	    			background-color: rgba(0, 0, 0, 0.56);
+	    			width: auto;
+	    			border-radius: 0;
+	    			text-align: left;
+	    			li {
+					    display: block;
+					    &:last-child {
+					    	a {
+					    		border-bottom: 0;
+					    	}
+					    }
+					    a {
+					    	border-bottom: 1px dashed #eee;
+					    	padding: 10px 15px;
+					    	color: #fff;
+					    	&:hover, &.is-active {
+					    		color: #fef5cc;
+					    		background-color: transparent;
+					    		&:before {
+			    					display: none;
+			    				}
+					    	}
+					    }
+					}
+	    		}
+	    	}
+	    }
+	}
+>>>>>>> github/master
 }
 /*End Main menu*/
 
@@ -730,6 +823,7 @@ aside, .sidebar {
 .view-volunteers {
 	h3 {
 		color: $link-color;
+<<<<<<< HEAD
 		background-color: #eee;
 		padding: 10px;
 		border-left: 5px solid;	
@@ -771,6 +865,71 @@ aside, .sidebar {
 				transition: all 0.5s linear 0s;
 				.pulls {
 					font-size: 20px;
+=======
+		padding: 10px;
+		border-bottom: 2px solid;
+		margin: 0 0 20px;	
+		font-family: $proxima-semibold;
+	}
+	.views-row {
+		width: 200px;
+		display: inline-block;
+		margin: 0 30px 20px 0;
+		position: relative;
+		transition: all 0.5s linear 0s;
+		vertical-align: top;
+		&:first-child {
+			display: none;
+		}
+		&.nohover {
+			//-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+			//filter: grayscale(100%);
+			//opacity: 0.5;
+		}
+		.team-card {
+			position: relative;
+			transition: all 0.5s linear 0s;
+			&:hover {
+				transition: all 0.5s linear 0s;
+				img {
+					transform: scale(1.03);
+				}
+				.card-info {
+					opacity: 1;
+					transform: scale(1);
+					transition: all 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
+				}
+			}
+			img {
+				display: block;
+				transform: scale(1);
+				transition: all 0.25s linear 0s;
+				border-radius: 50%;
+				height: 200px;
+    			border: 5px solid $link-color;
+    			padding: 2px;
+			}
+			.card-info {
+				opacity: 0;
+				position: absolute;
+				left: 10px;
+				top: 10px;
+				text-align: center;
+				border-radius: 50%;
+				width: calc(100% - 20px);
+				height: calc(100% - 20px);
+				transform: scale(0.7);
+				background-color: rgba(42, 169, 222, 0.79);
+				color: #fff;
+				padding: 10px 15px;
+				transition: all 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: center;				
+				.pulls {
+					font-size: 20px;
+					line-height: 24px;
+>>>>>>> github/master
 					margin: 0;
 				}
 				h4 {
@@ -782,6 +941,111 @@ aside, .sidebar {
 }
 /*End Volunteer*/
 
+<<<<<<< HEAD
+=======
+/*Attendee*/
+.view-attendees {
+	.views-row {
+		width: 197px;
+		display: inline-block;
+		margin: 0 15px 30px 15px;
+		position: relative;
+		transition: all 0.5s linear 0s;
+		vertical-align: top;
+		&:first-child {
+			display: none;
+		}
+		&:nth-child(5n) {
+			margin-right: 0;
+		}
+		.team-attendees {
+			position: relative;
+			transition: all 0.5s linear 0s;
+			box-shadow: 0 0 5px #333;
+			&:hover {
+				transition: all 0.5s linear 0s;
+				.user-image {
+					transition: all 0.5s linear 0s;	
+					border-color: transparent;
+					.border-animation {
+						transition: all 0.5s linear 0s;			
+					    &.top-left {
+						    height: 100%;
+						    width: 2px;
+						}
+						&.top-right {
+						    height: 2px;
+						    width: 100%;
+						}
+						&.bottom-left {
+						    height: 2px;
+						    width: 100%;
+						}
+						&.bottom-right {
+						    height: 100%;
+						    width: 2px;
+						}
+					}
+				}
+			}
+			.user-image {
+				position: relative;
+				border: 2px solid #fff;
+				img {
+					display: block;
+					transition: all 0.25s linear 0s;
+	    			padding: 2px;
+					height: 197px;
+					width: 197px;			
+				}
+				.border-animation {
+				    position: absolute;
+				    width: 0;
+				    height: 0;
+				    background-color: $link-color;
+				    transition: all 0.5s linear 0s;				
+				    &.top-left {
+					    top: 0;
+					    left: -2px;
+					}
+					&.top-right {
+					    top: -2px;
+					    right: 0;
+					}
+					&.bottom-left {
+					    bottom: -2px;
+					    left: 0;
+					}
+					&.bottom-right {
+					    bottom: 0;
+					    right: -2px;
+					}
+				}
+			}
+			.user-name {
+			    left: 0;
+			    width: 100%;
+			    background-color: rgba(42, 169, 222, 0.79);
+			    color: #fff;
+			    padding: 10px 15px;
+			    transition: all 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
+			    bottom: 0;				
+				.attendees-name {
+					font-size: 18px;
+					line-height: 20px;
+					margin: 0;
+				}
+				h3 {
+					margin-bottom: 0;
+					font-size: 13px;
+				}
+			}	
+		}	
+	}
+}
+/*End Attendee*/
+
+>>>>>>> github/master
 /*About mumbai*/
 .pattern {
 	.row-item {
@@ -872,6 +1136,10 @@ aside, .sidebar {
 		form {
 			.form-group {
 				margin-bottom: 15px;
+<<<<<<< HEAD
+=======
+				clear: both;
+>>>>>>> github/master
 			}
 			.form-item.form-group {
 				margin: 0 0 15px;
@@ -1286,7 +1554,11 @@ footer.footer {
 			position: absolute;
 			right: 0;
 			top: 0;
+<<<<<<< HEAD
 			z-index: 1000;
+=======
+			z-index: 1;
+>>>>>>> github/master
 			background-color: rgba(42, 169, 222, 0.69);
 			padding: 40px 20px 40px 50px;
 			height: 100%;
@@ -1307,7 +1579,11 @@ footer.footer {
 	.dcm2017-footer {
 		background-color: #343434;
 		.dcm2017-footer-bottom {
+<<<<<<< HEAD
 		    padding: 10px 0;
+=======
+		    padding: 15px 0;
+>>>>>>> github/master
 		    text-align: center;
 		    a {
 			    color: #fff;

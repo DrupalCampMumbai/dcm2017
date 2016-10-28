@@ -2,9 +2,13 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+<<<<<<< HEAD
       stylesheets/style.css: {}
       css/owl.theme.css: {}
       css/owl.tranistions.css: {}
+=======
+      stylesheets/style.css: {}  
+>>>>>>> github/master
 
 bootstrap-scripts:
   js:
@@ -20,6 +24,10 @@ bootstrap-scripts:
     bootstrap/assets/javascripts/bootstrap/scrollspy.js: {}
     bootstrap/assets/javascripts/bootstrap/tab.js: {}
     bootstrap/assets/javascripts/bootstrap/transition.js: {}
+<<<<<<< HEAD
     js/dcm_sponsors.js: {}
     js/owl.carousel.min.js: {}
     js/sessions.js: {}
+=======
+    js/dcm_custom.js: {}
+>>>>>>> github/master

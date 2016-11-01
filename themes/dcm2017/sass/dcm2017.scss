@@ -199,6 +199,7 @@ header.container, .navbar.container {
 				border-top: 1px dashed #fff;
 				margin: 25px 0;
 				ul {
+					text-align: center;
 					li {
 					.menu.dropdown-menu {
 					background-color: rgba(0, 0, 0, 0.56);
@@ -1151,6 +1152,132 @@ aside, .sidebar {
 	    background-color: rgba(94, 204, 229, 0.13);
 	}
 }
+/*Proposed sessions slider*/
+.view-sessions {
+	.view-content {
+		position: relative;
+		.owl-wrapper-outer {
+			.owl-wrapper {
+				.owl-item {
+					h3 {
+						color: #3aaddd;
+						padding: 10px 20px 10px 0;
+						width: 100%;
+						margin: 0;
+						border-bottom: 5px solid #626667;
+						font-size: 3.1em;
+						line-height: 1.15em;
+						text-transform: uppercase;
+						position: relative;
+						display: inline-block;
+						font-weight: 600;
+					    a {
+						    float: left;
+						    border: 5px solid #366693;
+						    border-radius: 50%;
+						    margin-right: 20px;
+						    img {
+								width: 90px;
+								border-radius: 50%;
+								height: 90px;
+								box-sizing: border-box;
+								border: 5px solid #fff;
+						    }
+					    }
+					    span {
+						    display: block;
+						    font-size: 1.5em;
+						    color: #366693;
+						}
+					}
+					ul {
+						margin: 20px 0;
+						padding: 20px;
+						background-color: rgba(143, 139, 136, 0.15);
+						clear: both;
+						border-radius: 8px;
+						border: 1px solid rgba(170, 170, 170, 0.27);
+						li {
+							padding: 30px 0px;
+							margin: 10px 0.5%;
+							color: #FFF;
+							-webkit-border-radius: 3px;
+							-moz-border-radius: 3px;
+							border-radius: 3px;
+							text-align: center;
+							display: inline-block;
+							width: 32%;
+							box-shadow: 0 5px 4px -1px rgba(0,0,0,0.5);
+							box-sizing: border-box;
+							min-height: 114px;
+						    &:nth-of-type(odd) {
+						    	background-color: rgba(42,169,222,0.9);
+						    }
+						    &:nth-of-type(even) {
+						    	background-color: rgba(37, 90, 140, 0.9);
+						    }
+						    a {
+						    	color: #fff;
+						    	display: block;
+						    }
+						    .views-field-title {
+								font-size: 1.2em;
+								text-transform: capitalize;
+								border-bottom: 1px solid #e0e0e0;
+								display: inline-block;
+								padding: 5px 17px 6px;
+								margin-bottom: 4px;
+								font-family: Proxima Nova Lt;
+								width: 80%;
+								a {
+								    color: #fff;
+								    display: block;
+								    width: 100%;
+								    overflow: hidden;
+								    text-overflow: ellipsis;
+								    white-space: nowrap;
+								}
+							}
+							.views-field-field-speakers {
+							    text-transform: lowercase;
+							    letter-spacing: 0.03em;
+							    color: #fff;
+							    position: relative;
+							    &:before {
+								    content: "\f0a1";
+								    font-size: 15px;
+								    background: #fff;
+								    display: inline-block;
+								    vertical-align: middle;
+								    border-radius: 50%;
+								    position: absolute;
+								    top: 50%;
+								    margin-top: -3px;
+								    margin-left: -14px;
+								}
+								.field-content {
+								    display: inline-block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.owl-controls {
+			.owl-buttons {
+			    position: absolute;
+			    width: 100%;
+			    top: 13%;
+			    text-align: right;
+			    > {
+				    cursor: pointer;
+				}
+			}
+		}
+	}
+}
+/*End Proposed sessions slider*/
 /*End Sessions page*/
 
 /*Form*/

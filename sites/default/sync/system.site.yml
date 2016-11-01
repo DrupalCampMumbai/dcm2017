@@ -1,0 +1,15 @@
+uuid: 3a6a1041-874f-44eb-a657-ed3370619e07
+name: DrupalCampMumbai2017
+mail: mayurj87@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: ''

@@ -1,0 +1,22 @@
+uuid: 93b51170-e91e-47e7-88f6-bbcaf3f5ce45
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dcm17
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: dcm17_content
+theme: dcm17
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

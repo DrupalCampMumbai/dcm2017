@@ -1,0 +1,12 @@
+uuid: 3d0465ac-7606-47e5-9a4c-3b0154ee3d61
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: c4zaT5cyPxuTXI6JOWt3qRtMvICT9tHB6d9a5VG-CmQ
+id: feedback
+label: 'Website feedback'
+recipients:
+  - mayurj87@gmail.com
+reply: ''
+weight: 0

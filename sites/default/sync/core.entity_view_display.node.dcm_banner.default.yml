@@ -1,0 +1,36 @@
+uuid: 1960fb6c-8f6b-431a-ae51-6c64ba4a1406
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dcm_banner.body
+    - field.field.node.dcm_banner.field_banner_image
+    - node.type.dcm_banner
+  module:
+    - image
+    - text
+    - user
+_core:
+  default_config_hash: hXWfUmzNz2B8OzphErhLPI9plJ0zozMFxuepkcxeV3A
+id: node.dcm_banner.default
+targetEntityType: node
+bundle: dcm_banner
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_banner_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  links:
+    weight: 100
+hidden: {  }

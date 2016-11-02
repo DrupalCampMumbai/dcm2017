@@ -12,4 +12,16 @@ jQuery(document).ready(function($){
         $('span', this).toggleClass("caret caret-up");                
     });
     /*End Navigation menu on hover*/
+
+    /*Propose session get heighest session height and apply to all session block*/
+    var highest = null;
+    var hi = 0;
+    $(".view-sessions .owl-item ul li").each(function(){
+        var h = $(this).height();
+        if(h > hi){
+         hi = h;
+        }    
+    });
+    $(".view-sessions .owl-item ul li").height(hi);
+    /*End Propose session get heighest session height and apply to all session block*/
 });

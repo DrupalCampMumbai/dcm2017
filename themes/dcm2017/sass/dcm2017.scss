@@ -128,7 +128,7 @@ table {
 				background-color: #eee;
 				color: #000;
 				font-weight: 600;
-				font-size: 14px;
+				font-size: 15px;
 				padding: 8px;
 				&:last-child {
 					border-right: 0;
@@ -156,7 +156,6 @@ table {
 }
 .label {
 	color: #000;
-	font-size: 14px;
 	padding: 0;
 	text-align: left;
 }
@@ -373,20 +372,23 @@ header#navbar {
 
 /*Main content*/
 .main-container {
-	background-color: rgba(255, 255, 255, 0.9);
 	border: 0 none;
 	margin: 0 auto;
     min-height: 550px;
-	max-width: $page-width;
-	width: $page-width;
+	width: 100%;
+	max-width: inherit;
+	padding-left: 0;
+	padding-right: 0;
+	clear: both;
 	.close {
 		line-height: 0.5;
 	}
 	.page-container {
 		.page-container-inner {
+			background-color: rgba(255,255,255,0.5);
 			width: $page-width;
 			margin: 0 auto;
-			padding: 30px 0;
+			padding: 30px 15px;
 			overflow: hidden;
 			.block {
 				margin: 0 0 20px;
@@ -542,7 +544,6 @@ aside, .sidebar {
 }
 .field .field-label, label {
     font-weight: 500;
-    font-size: 14px;
 }
 .row {
 	margin-left: 0;
@@ -562,10 +563,7 @@ aside, .sidebar {
 		display: none;
 	}
 	.main-container {
-		width: 100%;
-		max-width: inherit;
-		padding-left: 0;
-		padding-right: 0;
+		background-color: rgba(241, 241, 241, 0.5);
 		.col-sm-12[role="heading"] {
 			box-shadow: inset 0px 11px 8px -5px #cccccc,inset 0px -11px 8px -5px #dddddd;
 			padding: 30px 0 20px;
@@ -575,8 +573,8 @@ aside, .sidebar {
 			margin: 0 auto;
 		}
 		.page-container {
-			background-color: rgba(241, 241, 241, 0.5);
 			.page-container-inner {
+				background-color: transparent;
 			}
 		}
 	}
@@ -1317,65 +1315,81 @@ aside, .sidebar {
 /*End Sessions page*/
 
 /*Sponsers page*/
-.view-sponsors {
-	.view-content {
-		h3 {
-		    padding: 10px 15px;
-		    margin: 20px auto 0;
-		    display: table;
-		    position: relative;
-		    text-align: center;
-		    font-family: $proxima-semibold;
-		    &:before {
-			    content: '';
-			    width: 100px;
-			    display: inline-block;
-			    height: 2px;
-			    background-color: #333;
-			    position: absolute;
-			    margin: 10px 0 0 -110px;
-			    top: 8px;
-			}
-			&:after {
-			    content: '';
-			    width: 100px;
-			    display: inline-block;
-			    height: 2px;
-			    background-color: #333;
-			    position: absolute;
-			    margin: 12px 0 0 10px;
-			    top: 8px;
-			}
-		}
-		.views-row {
-			background-color: rgba(143, 139, 136, 0.15);
-			margin: 0 10px 10px;
-			transition: all 0.5s linear 0s;
-			&:hover {
-				box-shadow: 0 0 5px #ccc;
-			}
-			.views-field-field-sponsor-logo {
-				width: 50%;
-				display: inline-block;
-				vertical-align: top;
-				height: 100%;
-				background-color: rgba(255, 255, 255, 0.82);
-				.field-content {
-				    margin: 15% auto;
-				    text-align: center;
+.path-sponsors {
+	.view-sponsors {
+		.view-content {
+			h3 {
+			    padding: 10px 15px;
+			    margin: 20px auto 0;
+			    display: table;
+			    position: relative;
+			    text-align: center;
+			    font-family: $proxima-semibold;
+			    &:before {
+				    content: '';
+				    width: 100px;
+				    display: inline-block;
+				    height: 2px;
+				    background-color: #333;
+				    position: absolute;
+				    margin: 10px 0 0 -110px;
+				    top: 8px;
+				}
+				&:after {
+				    content: '';
+				    width: 100px;
+				    display: inline-block;
+				    height: 2px;
+				    background-color: #333;
+				    position: absolute;
+				    margin: 12px 0 0 10px;
+				    top: 8px;
 				}
 			}
-			.views-field-body {
-			    width: 50%;
-			    display: inline-block;
-			    text-align: center;
-			    padding: 20px;
-			    vertical-align: top;
+			.views-row {
+				background-color: rgba(143, 139, 136, 0.15);
+				margin: 0 10px 10px;
+				transition: all 0.5s linear 0s;
+				&:hover {
+					box-shadow: 0 0 5px #ccc;
+				}
+				.views-field-field-sponsor-logo {
+					width: 50%;
+					display: inline-block;
+					vertical-align: top;
+					height: 100%;
+					background-color: rgba(255, 255, 255, 0.82);
+					.field-content {
+					    margin: 15% auto;
+					    text-align: center;
+					}
+				}
+				.views-field-body {
+				    width: 50%;
+				    display: inline-block;
+				    text-align: center;
+				    padding: 20px;
+				    vertical-align: top;
+				}
 			}
 		}
 	}
 }
 /*End Sponsers page*/
+
+/*User page*/
+/*Login*/
+.path-user {
+	background-image: url(../images/drupalman.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: right bottom 249px;
+	.main-container {
+		min-height: inherit;
+	}
+}
+/*End Login*/
+/*End User page*/
 
 /*Form*/
 .main-container {
@@ -1477,7 +1491,6 @@ aside, .sidebar {
 	border-radius: 3px;
 	box-shadow: none;
 	color: #fff;
-	font-size: 14px;
 	padding: 10px 15px;
 	margin: 10px 10px 10px 0;
 	transition: all 0.5s linear 0s;

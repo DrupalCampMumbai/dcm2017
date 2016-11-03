@@ -24,4 +24,16 @@ jQuery(document).ready(function($){
     });
     $(".view-sessions .owl-item ul li").height(hi);
     /*End Propose session get heighest session height and apply to all session block*/
+
+    /*Propose session get heighest session height and apply to all session block*/
+    var highest1 = null;
+    var hi1 = 0;
+    $(".view-sponsors .views-field-body").each(function(){
+        var h1 = $(this).outerHeight(true);
+        if(h1 > hi1){
+         hi1 = h1;
+        }    
+    });
+    $(".view-sponsors .views-field-field-sponsor-logo, .view-sponsors .views-field-body").height(hi1);
+    /*End Propose session get heighest session height and apply to all session block*/
 });

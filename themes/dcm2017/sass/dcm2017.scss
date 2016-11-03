@@ -1199,13 +1199,14 @@ aside, .sidebar {
 						border: 1px solid rgba(170, 170, 170, 0.27);
 						li {
 							padding: 30px 0px;
-							margin: 10px 0.5%;
+							margin: 10px 0.5% 20px;
 							color: #FFF;
 							-webkit-border-radius: 3px;
 							-moz-border-radius: 3px;
 							border-radius: 3px;
 							text-align: center;
 							display: inline-block;
+							position: relative;
 							vertical-align: top;
 							width: 32%;
 							box-shadow: 0 5px 4px -1px rgba(0,0,0,0.5);
@@ -1217,6 +1218,35 @@ aside, .sidebar {
 						    &:nth-of-type(even) {
 						    	background-color: rgba(37, 90, 140, 0.9);
 						    }
+						    &:before {
+							    content: "\f08d";
+							    display: inline-block;
+							    font: normal normal normal 24px/0 FontAwesome;
+							    font-size: inherit;
+							    text-rendering: auto;
+							    -webkit-font-smoothing: antialiased;
+							    -moz-osx-font-smoothing: grayscale;
+							    font-size: 24px;
+							    position: absolute;
+							    top: -2px;
+							    transform: rotate(-31deg);
+							    color: #808080;
+							    left: 49%;
+							    z-index: 1;
+							}
+							&:after {
+							    content: '';
+							    display: inline-block;
+							    height: 5px;
+							    width: 5px;
+							    background-color: rgb(238, 238, 237);
+							    border-radius: 50%;
+							    position: absolute;
+							    top: 0;
+							    z-index: 0;
+							    left: 51.6%;
+							    box-shadow: 0 0 0 4px #eeeeed;
+							}
 						    a {
 						    	color: #fff;
 						    	display: block;
@@ -1285,6 +1315,67 @@ aside, .sidebar {
 }
 /*End Proposed sessions slider*/
 /*End Sessions page*/
+
+/*Sponsers page*/
+.view-sponsors {
+	.view-content {
+		h3 {
+		    padding: 10px 15px;
+		    margin: 20px auto 0;
+		    display: table;
+		    position: relative;
+		    text-align: center;
+		    font-family: $proxima-semibold;
+		    &:before {
+			    content: '';
+			    width: 100px;
+			    display: inline-block;
+			    height: 2px;
+			    background-color: #333;
+			    position: absolute;
+			    margin: 10px 0 0 -110px;
+			    top: 8px;
+			}
+			&:after {
+			    content: '';
+			    width: 100px;
+			    display: inline-block;
+			    height: 2px;
+			    background-color: #333;
+			    position: absolute;
+			    margin: 12px 0 0 10px;
+			    top: 8px;
+			}
+		}
+		.views-row {
+			background-color: rgba(143, 139, 136, 0.15);
+			margin: 0 10px 10px;
+			transition: all 0.5s linear 0s;
+			&:hover {
+				box-shadow: 0 0 5px #ccc;
+			}
+			.views-field-field-sponsor-logo {
+				width: 50%;
+				display: inline-block;
+				vertical-align: top;
+				height: 100%;
+				background-color: rgba(255, 255, 255, 0.82);
+				.field-content {
+				    margin: 15% auto;
+				    text-align: center;
+				}
+			}
+			.views-field-body {
+			    width: 50%;
+			    display: inline-block;
+			    text-align: center;
+			    padding: 20px;
+			    vertical-align: top;
+			}
+		}
+	}
+}
+/*End Sponsers page*/
 
 /*Form*/
 .main-container {

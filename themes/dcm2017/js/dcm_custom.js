@@ -34,6 +34,12 @@ jQuery(document).ready(function($){
          hi1 = h1;
         }    
     });
-    $(".view-sponsors .views-field-field-sponsor-logo, .view-sponsors .views-field-body").height(hi1);
+    $(".view-sponsors .views-field-field-sponsor-logo").height(hi1);
     /*End Propose session get heighest session height and apply to all session block*/
+
+    /*mCustom scrollbar*/
+    $("#block-twitterfeeds .timeline-Body").mCustomScrollbar({
+        theme:"dark-thin"
+    }); 
+    /*End mCustom scrollbar*/
 });

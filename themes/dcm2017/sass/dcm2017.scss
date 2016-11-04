@@ -385,7 +385,7 @@ header#navbar {
 	}
 	.page-container {
 		.page-container-inner {
-			background-color: rgba(255,255,255,0.5);
+			background-color: rgba(255,255,255,0.8);
 			width: $page-width;
 			margin: 0 auto;
 			padding: 30px 15px;
@@ -530,7 +530,16 @@ aside, .sidebar {
 		}
 	}
 }
-/*End */
+/*End Social media*/
+
+/*Twitter block*/
+#block-twitterfeeds {
+	.timeline-Body {
+		max-height: 400px;
+		overflow-y: auto;
+	}
+}
+/*End Twitter block*/
 /*end sidebars*/
 
 /*Node*/
@@ -574,6 +583,8 @@ aside, .sidebar {
 		}
 		.page-container {
 			.page-container-inner {
+				padding-right: 0;
+				padding-left: 0;		
 				background-color: transparent;
 			}
 		}
@@ -1321,16 +1332,16 @@ aside, .sidebar {
 			h3 {
 			    padding: 10px 15px;
 			    margin: 20px auto 0;
-			    display: table;
+			    color: rgba(51, 51, 51, 0.84);
 			    position: relative;
-			    text-align: center;
+			    text-align: left;
 			    font-family: $proxima-semibold;
 			    &:before {
 				    content: '';
 				    width: 100px;
 				    display: inline-block;
 				    height: 2px;
-				    background-color: #333;
+				    background-color: rgba(51, 51, 51, 0.84);
 				    position: absolute;
 				    margin: 10px 0 0 -110px;
 				    top: 8px;
@@ -1340,7 +1351,7 @@ aside, .sidebar {
 				    width: 100px;
 				    display: inline-block;
 				    height: 2px;
-				    background-color: #333;
+				    background-color: rgba(51, 51, 51, 0.84);
 				    position: absolute;
 				    margin: 12px 0 0 10px;
 				    top: 8px;
@@ -1354,7 +1365,7 @@ aside, .sidebar {
 					box-shadow: 0 0 5px #ccc;
 				}
 				.views-field-field-sponsor-logo {
-					width: 50%;
+					width: 35%;
 					display: inline-block;
 					vertical-align: top;
 					height: 100%;
@@ -1365,7 +1376,7 @@ aside, .sidebar {
 					}
 				}
 				.views-field-body {
-				    width: 50%;
+				    width: 65%;
 				    display: inline-block;
 				    text-align: center;
 				    padding: 20px;
@@ -1382,11 +1393,9 @@ aside, .sidebar {
 .path-user {
 	background-image: url(../images/drupalman.png);
 	background-repeat: no-repeat;
-	background-size: 100%;
-	background-position: right bottom 249px;
-	.main-container {
-		min-height: inherit;
-	}
+	background-size: cover;
+	background-position: right bottom;
+	background-attachment: fixed;
 }
 /*End Login*/
 /*End User page*/

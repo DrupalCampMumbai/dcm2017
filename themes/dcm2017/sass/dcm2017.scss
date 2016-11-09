@@ -10,6 +10,9 @@ body {
 	line-height: $baseline-height;
 	margin: 0;
 	padding: 0;
+	@media screen and (max-width: 320px) {
+		min-width: 320px;
+	}
 	div * {
 		outline: none;
 	}
@@ -21,22 +24,42 @@ h1, h2, h3, h4, h5, h6 {
 h1, .h1 {
 	font-size: 30px;
 	line-height: 30px;
+	@media screen and (max-width: 960px) {
+		font-size: 25px;
+		line-height: 25px;		
+	}
 }
 h2, .h2 {
 	font-size: 25px;
 	line-height: 25px;
+	@media screen and (max-width: 960px) {
+		font-size: 22px;
+		line-height: 22px;		
+	}	
 }
 h3, .h3 {
 	font-size: 20px;
 	line-height: 20px;
+	@media screen and (max-width: 960px) {
+		font-size: 18px;
+		line-height: 20px;		
+	}	
 }
 h4, .h4 {
 	font-size: 18px;
 	line-height: 20px;
+	@media screen and (max-width: 960px) {
+		font-size: 16px;
+		line-height: 18px;		
+	}	
 }
 h5, .h5 {
 	font-size: 16px;
 	line-height: 18px;
+	@media screen and (max-width: 960px) {
+		font-size: 14px;
+		line-height: 16px;		
+	}	
 }
 h4, .h4 {
 	font-size: 14px;
@@ -217,6 +240,9 @@ header#navbar {
 	background-attachment: fixed;	
 	height: 120px;
 	margin-bottom: 0;
+	@media screen and (max-width: 960px) {
+    	height: 110px;
+    }
 	.navbar-header {
 		float: none;
 		max-width: $page-width;
@@ -228,6 +254,9 @@ header#navbar {
 		    position: relative;
 		    img {
 			    width: 140px;
+			    @media screen and (max-width: 960px) {
+			    	width: 95px;
+			    }
 			}
 		}
 		#dcm-sticky-menu {
@@ -237,6 +266,9 @@ header#navbar {
 		    z-index: 0;
 		    left: 0;
 		    bottom: 0;
+		    @media screen and (max-width: 960px) {
+				display: none;
+			}
 		    nav {
 		    	background-color: rgba(0, 0, 0, 0.4);
 		    	.menu {
@@ -249,6 +281,14 @@ header#navbar {
 				    text-align: right;
 				}
 		    }
+		}
+	}
+	.navbar-collapse {
+		#dcm-sticky-menu {
+			display: none !important;
+			@media screen and (max-width: 960px) {
+				display: block !important;
+			}
 		}
 	}
 	.slogan {
@@ -285,6 +325,13 @@ header#navbar {
 			border-bottom: 1px dashed #fff;
 			border-top: 1px dashed #fff;
 			background-color: rgba(0, 0, 0, 0.4);
+			@media screen and (max-width: 768px) {
+				
+			}
+			.navbar-toggle {
+				margin-right: 0;
+				margin-top: 39px;			
+			}
 	    	li {
 	    		margin: 0;
 	    		padding: 0;
@@ -390,6 +437,10 @@ header#navbar {
 			margin: 0 auto;
 			padding: 30px 15px;
 			overflow: hidden;
+			@media screen and (max-width: 960px) {
+				width: 100%;
+				padding: 15px;
+			}
 			.block {
 				margin: 0 0 20px;
 			}
@@ -1843,11 +1894,17 @@ footer.footer {
 		.dcm2017-footer-bottom {
 		    padding: 15px 0;
 		    text-align: center;
+		    @media screen and (max-width: 960px) {
+		    	padding: 10px 0;
+		    }
 		    a {
 			    color: #fff;
 			    display: inline-block;
 			    letter-spacing: 8px;
 			    text-transform: uppercase;
+			    @media screen and (max-width: 960px) {
+			    	letter-spacing: 4px;
+			    }
 			}
 		}
 	}

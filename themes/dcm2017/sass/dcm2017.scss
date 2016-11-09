@@ -1206,10 +1206,18 @@ aside, .sidebar {
 	    margin: 0;
 	    border-bottom: 3px solid rgb(2, 159, 195);
 	    border-radius: 5px 5px 0 0;
+	    background-image: url(../images/dcm-logo.png), url(../images/dcm-logo.png);
+		background-position: -73px 0, 855px 0;
+    	background-repeat: no-repeat, no-repeat;
 	}
 	.session-data {
 	    padding: 20px;
 	    background-color: rgba(94, 204, 229, 0.13);
+		background-image: url(../images/dcm-logo.png);
+		background-position: right bottom;
+		background-repeat: no-repeat;
+		background-size: 80px;
+		background-origin: content-box;	    
 	}
 }
 /*Proposed sessions slider*/
@@ -1578,10 +1586,10 @@ div.error, table tr.error {
 
 /*Modal popup*/
 #modalContent {
-	margin-left: -1000px / 2;
+	margin-left: -500px / 2;
 	left: 50%;
 	.ctools-modal-dialog {
-		width: 1000px; 
+		width: 500px; 
 		border-radius: 0;
 		margin: 0;
 		height: 400px;
@@ -1613,7 +1621,7 @@ div.error, table tr.error {
 						}						
 					}
 				.modal-body {
-					color: #333;
+					color: $base-color;
 					height: auto;
 					max-height: inherit;
 					overflow-y: auto; 

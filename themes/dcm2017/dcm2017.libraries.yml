@@ -24,3 +24,4 @@ bootstrap-scripts:
     js/owl.carousel.min.js: {}
     js/sessions.js: {}
     js/dcm_custom.js: {}
+    js/jquery.mCustomScrollbar.concat.min.js: {}

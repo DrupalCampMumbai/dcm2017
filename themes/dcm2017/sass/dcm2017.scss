@@ -530,7 +530,11 @@ header#navbar {
 	max-width: inherit;
 	padding-left: 0;
 	padding-right: 0;
+	padding-bottom: 85px;
 	clear: both;
+	background-image: url(../images/footer-buildings.png);
+	background-repeat: repeat-x;
+	background-position: 0 bottom;	
 	.close {
 		line-height: 0.5;
 	}
@@ -560,7 +564,7 @@ aside, .sidebar {
 	h2.block-title {
 		background: transparent none repeat scroll 0 0;
 		font-size: 16px;
-		font-weight: 600;
+		font-family: $proxima-semibold;
 		line-height: 18px;
 		margin: 0 0 14px;
 		padding: 0;
@@ -747,9 +751,6 @@ aside, .sidebar {
 				background-color: transparent;
 			}
 		}
-	}
-	footer.footer {
-		margin-top: 0;
 	}
 }
 /*Banner slideshow*/
@@ -1522,6 +1523,76 @@ aside, .sidebar {
 	}
 }
 /*End Proposed sessions slider*/
+/*Session detail page*/
+#block-views-block-session-info-block-1, 
+#block-views-block-session-info-block-2, 
+#block-views-block-session-info-block-3 {
+	.block-title {
+		background: rgba(42, 169, 222, 0.9);
+		padding: 10px 10px 10px 35px;
+		margin: 0;
+		color: #fff;
+		position: relative;
+		&:before {
+			display: inline-block;
+			border-radius: 50%;
+			position: absolute;
+			top: 9px;
+			margin-top: 1px;
+			left: 8px;
+			font: normal normal normal 17px/1 FontAwesome;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		&:after {
+		    display: inline-block;
+		    border-left: 6px solid transparent;
+		    border-top: 6px solid #3eb1e1;
+		    border-right: 6px solid transparent;
+		    content: "";
+		    font-size: 0;
+		    height: 0;
+		    left: 11px;
+		    line-height: 0;
+		    margin-right: 7px;
+		    position: absolute;
+		    width: 0;
+		    bottom: -5px;
+		}		
+	}
+	.form-group {
+		background: rgb(249, 249, 249);
+		padding: 16px;
+		.views-field {
+		    display: list-item;
+		    margin: 0 0 5px 14px;
+		    padding: 0;
+		}
+	}
+}
+#block-views-block-session-info-block-1 {
+	.block-title {
+		&:before {
+			content: "\f0a1";
+		}
+	}
+}
+#block-views-block-session-info-block-2 {
+	.block-title {
+		&:before {
+			content: "\f022";
+		}
+	}
+}
+#block-views-block-session-info-block-3 {
+	.block-title {
+		&:before {
+			content: "\f073";
+		}
+	}
+}
+/*End Session detail page*/
 /*End Sessions page*/
 
 /*Sponsers page*/
@@ -2008,6 +2079,7 @@ body.maintenance-page {
 footer.footer {
 	padding: 0;
 	border: 0;
+	margin-top: 0;
 	width: 100%;
 	max-width: inherit;
 	@media screen and (max-width: 768px) {

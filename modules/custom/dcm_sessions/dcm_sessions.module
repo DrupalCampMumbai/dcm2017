@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ * This file contains logic to alter views field data.
+ */
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ */
+function dcm_sessions_preprocess_views_view_field(&$variables) {
+  // Set the user fullname for speakers instead of username.
+  if (($variables['view']->current_display == 'sessions_listing' || $variables['view']->current_display == 'rest_export_1') && $variables['field']->field == 'field_speakers') {
+    // Check if the field is set.
+    if (method_exists($variables['output'], '__toString')) {
+      $uids = $variables['output']->__toString();
+      if (isset($uids)) {
+        // Split the uids.
+        $speaker_ids = explode(',', $uids);
+        foreach ($speaker_ids as $each_speaker_id) {
+          // Get the user fullname.
+          $fullname_result = _dcm_sessions_get_full_name($each_speaker_id);
+          $fullname[] = $fullname_result['field_first_name_value'] . ' ' . $fullname_result['field_last_name_value'];
+        }
+        // Comma separate the speaker name into one string.
+        $result = implode(', ', $fullname);
+        // Return the result.
+        $variables['output'] = $result;
+      }
+    }
+  }
+}
+
+/**
+ * Get user fullname.
+ *
+ * @param int $uid
+ *   User uid.
+ *
+ * @return array
+ *   Return the user fullname.
+ */
+function _dcm_sessions_get_full_name($uid) {
+  if (!empty($uid) && $uid > 0) {
+    $user_fullname_query = db_select('user__field_first_name', 'fn');
+    $user_fullname_query->join('user__field_last_name', 'ln', 'fn.entity_id = ln.entity_id');
+    $user_fullname_query->fields('fn', array('field_first_name_value'));
+    $user_fullname_query->fields('ln', array('field_last_name_value'));
+    $user_fullname_query->condition('fn.entity_id', $uid);
+    $user_fullname = $user_fullname_query->execute()->fetchAssoc();
+  }
+  return $user_fullname;
+}

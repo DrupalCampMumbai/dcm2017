@@ -745,7 +745,7 @@ aside, .sidebar {
 aside h2.block-title, .sidebar h2.block-title {
   background: transparent none repeat scroll 0 0;
   font-size: 16px;
-  font-weight: 600;
+  font-family: "Proxima Nova Lt";
   line-height: 18px;
   margin: 0 0 14px;
   padding: 0;
@@ -1781,9 +1781,85 @@ aside .block, .sidebar .block {
 }
 
 /*End Proposed sessions slider*/
+/*Session detail page*/
+/* line 1529, ../sass/dcm2017.scss */
+#block-views-block-session-info-block-1 .block-title,
+#block-views-block-session-info-block-2 .block-title,
+#block-views-block-session-info-block-3 .block-title {
+  background: rgba(42, 169, 222, 0.9);
+  padding: 10px 10px 10px 35px;
+  margin: 0;
+  color: #fff;
+  position: relative;
+}
+/* line 1535, ../sass/dcm2017.scss */
+#block-views-block-session-info-block-1 .block-title:before,
+#block-views-block-session-info-block-2 .block-title:before,
+#block-views-block-session-info-block-3 .block-title:before {
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: 9px;
+  margin-top: 1px;
+  left: 8px;
+  font: normal normal normal 17px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* line 1547, ../sass/dcm2017.scss */
+#block-views-block-session-info-block-1 .block-title:after,
+#block-views-block-session-info-block-2 .block-title:after,
+#block-views-block-session-info-block-3 .block-title:after {
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-top: 6px solid #3eb1e1;
+  border-right: 6px solid transparent;
+  content: "";
+  font-size: 0;
+  height: 0;
+  left: 11px;
+  line-height: 0;
+  margin-right: 7px;
+  position: absolute;
+  width: 0;
+  bottom: -5px;
+}
+/* line 1563, ../sass/dcm2017.scss */
+#block-views-block-session-info-block-1 .form-group,
+#block-views-block-session-info-block-2 .form-group,
+#block-views-block-session-info-block-3 .form-group {
+  background: #f9f9f9;
+  padding: 16px;
+}
+/* line 1566, ../sass/dcm2017.scss */
+#block-views-block-session-info-block-1 .form-group .views-field,
+#block-views-block-session-info-block-2 .form-group .views-field,
+#block-views-block-session-info-block-3 .form-group .views-field {
+  display: list-item;
+  margin: 0 0 5px 14px;
+  padding: 0;
+}
+
+/* line 1575, ../sass/dcm2017.scss */
+#block-views-block-session-info-block-1 .block-title:before {
+  content: "\f0a1";
+}
+
+/* line 1582, ../sass/dcm2017.scss */
+#block-views-block-session-info-block-2 .block-title:before {
+  content: "\f022";
+}
+
+/* line 1589, ../sass/dcm2017.scss */
+#block-views-block-session-info-block-3 .block-title:before {
+  content: "\f073";
+}
+
+/*End Session detail page*/
 /*End Sessions page*/
 /*Sponsers page*/
-/* line 1531, ../sass/dcm2017.scss */
+/* line 1601, ../sass/dcm2017.scss */
 .path-sponsors .view-sponsors .view-content h3 {
   padding: 10px 15px;
   margin: 20px auto 0;
@@ -1792,7 +1868,7 @@ aside .block, .sidebar .block {
   text-align: left;
   font-family: "Proxima Nova Lt";
 }
-/* line 1538, ../sass/dcm2017.scss */
+/* line 1608, ../sass/dcm2017.scss */
 .path-sponsors .view-sponsors .view-content h3:before {
   content: '';
   width: 100px;
@@ -1803,7 +1879,7 @@ aside .block, .sidebar .block {
   margin: 10px 0 0 -110px;
   top: 8px;
 }
-/* line 1548, ../sass/dcm2017.scss */
+/* line 1618, ../sass/dcm2017.scss */
 .path-sponsors .view-sponsors .view-content h3:after {
   content: '';
   width: 100px;
@@ -1814,17 +1890,17 @@ aside .block, .sidebar .block {
   margin: 12px 0 0 10px;
   top: 8px;
 }
-/* line 1559, ../sass/dcm2017.scss */
+/* line 1629, ../sass/dcm2017.scss */
 .path-sponsors .view-sponsors .view-content .views-row {
   background-color: rgba(143, 139, 136, 0.15);
   margin: 0 10px 10px;
   transition: all 0.5s linear 0s;
 }
-/* line 1563, ../sass/dcm2017.scss */
+/* line 1633, ../sass/dcm2017.scss */
 .path-sponsors .view-sponsors .view-content .views-row:hover {
   box-shadow: 0 0 5px #ccc;
 }
-/* line 1566, ../sass/dcm2017.scss */
+/* line 1636, ../sass/dcm2017.scss */
 .path-sponsors .view-sponsors .view-content .views-row .views-field-field-sponsor-logo {
   width: 35%;
   display: inline-block;
@@ -1832,12 +1908,12 @@ aside .block, .sidebar .block {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.82);
 }
-/* line 1572, ../sass/dcm2017.scss */
+/* line 1642, ../sass/dcm2017.scss */
 .path-sponsors .view-sponsors .view-content .views-row .views-field-field-sponsor-logo .field-content {
   margin: 15% auto;
   text-align: center;
 }
-/* line 1577, ../sass/dcm2017.scss */
+/* line 1647, ../sass/dcm2017.scss */
 .path-sponsors .view-sponsors .view-content .views-row .views-field-body {
   width: 65%;
   display: inline-block;
@@ -1849,7 +1925,7 @@ aside .block, .sidebar .block {
 /*End Sponsers page*/
 /*User page*/
 /*Login*/
-/* line 1592, ../sass/dcm2017.scss */
+/* line 1662, ../sass/dcm2017.scss */
 .path-user {
   background-image: url(../images/drupalman.png);
   background-repeat: no-repeat;
@@ -1861,100 +1937,100 @@ aside .block, .sidebar .block {
 /*End Login*/
 /*End User page*/
 /*Form*/
-/* line 1606, ../sass/dcm2017.scss */
+/* line 1676, ../sass/dcm2017.scss */
 .main-container .region-content form .form-group {
   margin-bottom: 15px;
   clear: both;
 }
-/* line 1610, ../sass/dcm2017.scss */
+/* line 1680, ../sass/dcm2017.scss */
 .main-container .region-content form .form-item.form-group {
   margin: 0 0 15px;
   width: auto;
 }
-/* line 1613, ../sass/dcm2017.scss */
+/* line 1683, ../sass/dcm2017.scss */
 .main-container .region-content form .form-item.form-group .form-item {
   margin: 0;
   width: auto;
 }
-/* line 1618, ../sass/dcm2017.scss */
+/* line 1688, ../sass/dcm2017.scss */
 .main-container .region-content form label {
   float: left;
   margin: 8px 0;
   width: 20%;
 }
-/* line 1623, ../sass/dcm2017.scss */
+/* line 1693, ../sass/dcm2017.scss */
 .main-container .region-content form .form-control, .main-container .region-content form .form-select, .main-container .region-content form .input-group {
   background-color: transparent;
   display: inline-block;
   width: 54%;
 }
-/* line 1627, ../sass/dcm2017.scss */
+/* line 1697, ../sass/dcm2017.scss */
 .main-container .region-content form .form-control .form-autocomplete, .main-container .region-content form .form-select .form-autocomplete, .main-container .region-content form .input-group .form-autocomplete {
   width: 90%;
 }
-/* line 1630, ../sass/dcm2017.scss */
+/* line 1700, ../sass/dcm2017.scss */
 .main-container .region-content form .form-control .input-group-addon, .main-container .region-content form .form-select .input-group-addon, .main-container .region-content form .input-group .input-group-addon {
   padding: 7px 12px 8px;
 }
-/* line 1639, ../sass/dcm2017.scss */
+/* line 1709, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .panel-heading {
   text-align: left;
 }
-/* line 1641, ../sass/dcm2017.scss */
+/* line 1711, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .panel-heading .panel-title {
   font-weight: normal;
 }
-/* line 1646, ../sass/dcm2017.scss */
+/* line 1716, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .panel-body .form-item, .main-container .region-content form .fieldgroup .fieldset-wrapper .form-item {
   margin: 0;
   width: 100%;
 }
-/* line 1649, ../sass/dcm2017.scss */
+/* line 1719, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .panel-body .form-item label, .main-container .region-content form .fieldgroup .fieldset-wrapper .form-item label {
   margin: 5px 20px 0 0;
   display: inline-block;
   vertical-align: top;
   width: auto;
 }
-/* line 1656, ../sass/dcm2017.scss */
+/* line 1726, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .panel-body .help-block, .main-container .region-content form .fieldgroup .fieldset-wrapper .help-block {
   display: block;
   clear: both;
   padding: 8px 0 0;
   overflow: hidden;
 }
-/* line 1663, ../sass/dcm2017.scss */
+/* line 1733, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .container-inline-date {
   clear: none;
   float: none;
   width: 100%;
 }
-/* line 1667, ../sass/dcm2017.scss */
+/* line 1737, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .container-inline-date .date-padding {
   display: block;
   float: none;
   padding: 0;
 }
-/* line 1671, ../sass/dcm2017.scss */
+/* line 1741, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .container-inline-date .date-padding .form-control {
   width: 100%;
 }
-/* line 1675, ../sass/dcm2017.scss */
+/* line 1745, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .container-inline-date input {
   width: 100%;
 }
-/* line 1678, ../sass/dcm2017.scss */
+/* line 1748, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .container-inline-date .description {
   display: none;
 }
-/* line 1683, ../sass/dcm2017.scss */
+/* line 1753, ../sass/dcm2017.scss */
 .main-container .region-content form .fieldgroup .container-inline-date .form-item .form-item label {
   display: none;
 }
 
 /*End Form*/
 /*Buttons & message*/
-/* line 1696, ../sass/dcm2017.scss */
+/* line 1766, ../sass/dcm2017.scss */
 .btn, .btn-default {
   background: none repeat scroll 0 0 #2aa9de;
   border: 0 none;
@@ -1965,50 +2041,50 @@ aside .block, .sidebar .block {
   margin: 10px 10px 10px 0;
   transition: all 0.5s linear 0s;
 }
-/* line 1705, ../sass/dcm2017.scss */
+/* line 1775, ../sass/dcm2017.scss */
 .btn:hover, .btn:focus, .btn:active, .btn.active, .btn .open .dropdown-toggle.btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .btn-default .open .dropdown-toggle.btn-default {
   background: none repeat scroll 0 0 #000;
   color: #fff;
 }
 
-/* line 1710, ../sass/dcm2017.scss */
+/* line 1780, ../sass/dcm2017.scss */
 .btn-default:focus, .btn-default.focus {
   transition: all 0.5s linear 0s;
   background-color: #666;
 }
 
-/* line 1714, ../sass/dcm2017.scss */
+/* line 1784, ../sass/dcm2017.scss */
 a.btn:focus, a.btn:hover {
   transition: all 0.5s linear 0s;
   background-color: #000;
 }
 
-/* line 1718, ../sass/dcm2017.scss */
+/* line 1788, ../sass/dcm2017.scss */
 div.error, table tr.error {
   background-color: transparent;
   color: #a94442;
 }
 
-/* line 1722, ../sass/dcm2017.scss */
+/* line 1792, ../sass/dcm2017.scss */
 .alert {
   padding: 8px;
 }
 
 /*End Buttons & message*/
 /*Modal popup*/
-/* line 1728, ../sass/dcm2017.scss */
+/* line 1798, ../sass/dcm2017.scss */
 #modalContent {
   margin-left: -500px / 2;
   left: 50%;
 }
-/* line 1731, ../sass/dcm2017.scss */
+/* line 1801, ../sass/dcm2017.scss */
 #modalContent .ctools-modal-dialog {
   width: 500px;
   border-radius: 0;
   margin: 0;
   height: 400px;
 }
-/* line 1736, ../sass/dcm2017.scss */
+/* line 1806, ../sass/dcm2017.scss */
 #modalContent .ctools-modal-dialog .modal-content {
   background-color: #fff;
   border: 0 none;
@@ -2018,7 +2094,7 @@ div.error, table tr.error {
   padding: 0;
   position: relative;
 }
-/* line 1744, ../sass/dcm2017.scss */
+/* line 1814, ../sass/dcm2017.scss */
 #modalContent .ctools-modal-dialog .modal-content .modal-header {
   background-image: none;
   background-color: #ccc;
@@ -2028,19 +2104,19 @@ div.error, table tr.error {
   padding: 10px 20px;
   text-transform: uppercase;
 }
-/* line 1752, ../sass/dcm2017.scss */
+/* line 1822, ../sass/dcm2017.scss */
 #modalContent .ctools-modal-dialog .modal-content .modal-header .close {
   color: #fff;
   opacity: 1;
 }
-/* line 1756, ../sass/dcm2017.scss */
+/* line 1826, ../sass/dcm2017.scss */
 #modalContent .ctools-modal-dialog .modal-content .modal-header #modal-title {
   color: #fff;
   font-size: 20px;
   line-height: 22px;
   text-align: left;
 }
-/* line 1763, ../sass/dcm2017.scss */
+/* line 1833, ../sass/dcm2017.scss */
 #modalContent .ctools-modal-dialog .modal-content .modal-body {
   color: #333;
   height: auto;
@@ -2051,25 +2127,25 @@ div.error, table tr.error {
   width: 100%;
 }
 
-/* line 1775, ../sass/dcm2017.scss */
+/* line 1845, ../sass/dcm2017.scss */
 #modalBackdrop {
   background-color: #666;
 }
 
-/* line 1778, ../sass/dcm2017.scss */
+/* line 1848, ../sass/dcm2017.scss */
 .modal-open {
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-/* line 1782, ../sass/dcm2017.scss */
+/* line 1852, ../sass/dcm2017.scss */
 #freeze-height {
   height: 100%;
 }
 
 /*End Modal popup*/
 /*Comment form*/
-/* line 1788, ../sass/dcm2017.scss */
+/* line 1858, ../sass/dcm2017.scss */
 .comment {
   background-color: transparent;
   border: 0 none;
@@ -2083,60 +2159,60 @@ div.error, table tr.error {
   padding: 0 10px 15px;
   word-wrap: break-word;
 }
-/* line 1800, ../sass/dcm2017.scss */
+/* line 1870, ../sass/dcm2017.scss */
 .comment .user-picture {
   float: left;
   margin: 0 15px 5px 0;
 }
 
-/* line 1805, ../sass/dcm2017.scss */
+/* line 1875, ../sass/dcm2017.scss */
 #comments {
   margin: 20px 0 0;
 }
-/* line 1807, ../sass/dcm2017.scss */
+/* line 1877, ../sass/dcm2017.scss */
 #comments .comment {
   background-color: #f9f9f9;
   border-left: 1px solid #ccc;
   padding-left: 15px;
   padding-top: 10px;
 }
-/* line 1810, ../sass/dcm2017.scss */
+/* line 1880, ../sass/dcm2017.scss */
 #comments .comment .links.inline {
   display: none;
 }
-/* line 1818, ../sass/dcm2017.scss */
+/* line 1888, ../sass/dcm2017.scss */
 #comments .field-name-field-review-title {
   font-size: 18px;
   font-weight: 600;
   color: #333;
 }
-/* line 1823, ../sass/dcm2017.scss */
+/* line 1893, ../sass/dcm2017.scss */
 #comments .field-name-field-review-title .field-item:before {
   content: open-quote;
 }
-/* line 1826, ../sass/dcm2017.scss */
+/* line 1896, ../sass/dcm2017.scss */
 #comments .field-name-field-review-title .field-item:after {
   content: close-quote;
 }
-/* line 1831, ../sass/dcm2017.scss */
+/* line 1901, ../sass/dcm2017.scss */
 #comments h3 {
   margin: 0 0 3px;
 }
-/* line 1833, ../sass/dcm2017.scss */
+/* line 1903, ../sass/dcm2017.scss */
 #comments h3 .permalink {
   color: #333;
   font-size: 18px;
   font-weight: 500;
 }
-/* line 1837, ../sass/dcm2017.scss */
+/* line 1907, ../sass/dcm2017.scss */
 #comments h3 .permalink:before {
   content: open-quote;
 }
-/* line 1840, ../sass/dcm2017.scss */
+/* line 1910, ../sass/dcm2017.scss */
 #comments h3 .permalink:after {
   content: close-quote;
 }
-/* line 1845, ../sass/dcm2017.scss */
+/* line 1915, ../sass/dcm2017.scss */
 #comments .submitted {
   color: #333;
   font-style: italic;
@@ -2144,21 +2220,21 @@ div.error, table tr.error {
   margin-bottom: 5px;
   font-size: 11px;
 }
-/* line 1851, ../sass/dcm2017.scss */
+/* line 1921, ../sass/dcm2017.scss */
 #comments .submitted::before {
   content: "(";
 }
-/* line 1854, ../sass/dcm2017.scss */
+/* line 1924, ../sass/dcm2017.scss */
 #comments .submitted::after {
   content: ")";
 }
-/* line 1858, ../sass/dcm2017.scss */
+/* line 1928, ../sass/dcm2017.scss */
 #comments ul.links {
   margin: 5px 0 0;
   padding: 0;
   text-align: right;
 }
-/* line 1862, ../sass/dcm2017.scss */
+/* line 1932, ../sass/dcm2017.scss */
 #comments ul.links li {
   margin: 0;
   padding: 0 5px;
@@ -2166,35 +2242,35 @@ div.error, table tr.error {
   display: inline-block;
 }
 
-/* line 1870, ../sass/dcm2017.scss */
+/* line 1940, ../sass/dcm2017.scss */
 .field.field-name-field-your-message.field-type-text-long.field-label-hidden {
   font-size: 13px;
   margin: 15px 0 0;
 }
 
-/* line 1876, ../sass/dcm2017.scss */
+/* line 1946, ../sass/dcm2017.scss */
 [id^='comment-form'] [id^='edit-author'] .username {
   color: #333;
   font-size: 13px;
 }
-/* line 1882, ../sass/dcm2017.scss */
+/* line 1952, ../sass/dcm2017.scss */
 [id^='comment-form'] .form-item label {
   color: #333;
   float: left;
   font-weight: 500;
   width: 15%;
 }
-/* line 1888, ../sass/dcm2017.scss */
+/* line 1958, ../sass/dcm2017.scss */
 [id^='comment-form'] .form-item .form-text {
   height: auto;
   padding: 7px 10px;
   width: 635px;
 }
-/* line 1893, ../sass/dcm2017.scss */
+/* line 1963, ../sass/dcm2017.scss */
 [id^='comment-form'] .form-item .form-textarea-wrapper {
   width: 83%;
 }
-/* line 1895, ../sass/dcm2017.scss */
+/* line 1965, ../sass/dcm2017.scss */
 [id^='comment-form'] .form-item .form-textarea-wrapper textarea {
   font-weight: normal;
   min-height: 150px;
@@ -2202,39 +2278,39 @@ div.error, table tr.error {
   resize: vertical;
   width: 100%;
 }
-/* line 1906, ../sass/dcm2017.scss */
+/* line 1976, ../sass/dcm2017.scss */
 [id^='comment-form'] .field-name-field-review-title .form-item label {
   margin: 10px 0 0;
 }
-/* line 1911, ../sass/dcm2017.scss */
+/* line 1981, ../sass/dcm2017.scss */
 [id^='comment-form'] .form-actions.form-wrapper {
   margin-left: 143px;
 }
-/* line 1914, ../sass/dcm2017.scss */
+/* line 1984, ../sass/dcm2017.scss */
 [id^='comment-form'] .form-submit {
   margin: 0 10px 0 0;
   padding: 5px 20px;
   text-transform: uppercase;
 }
-/* line 1918, ../sass/dcm2017.scss */
+/* line 1988, ../sass/dcm2017.scss */
 [id^='comment-form'] .form-submit:hover {
   background-color: #cf2122;
 }
-/* line 1922, ../sass/dcm2017.scss */
+/* line 1992, ../sass/dcm2017.scss */
 [id^='comment-form'] .filter-wrapper {
   display: none;
 }
-/* line 1925, ../sass/dcm2017.scss */
+/* line 1995, ../sass/dcm2017.scss */
 [id^='comment-form'] [id^='edit-preview'] {
   display: none;
 }
 
-/* line 1930, ../sass/dcm2017.scss */
+/* line 2000, ../sass/dcm2017.scss */
 .resizable-textarea .grippie {
   display: none;
 }
 
-/* line 1935, ../sass/dcm2017.scss */
+/* line 2005, ../sass/dcm2017.scss */
 #review h2.title {
   font-size: 25px;
   font-weight: 600;
@@ -2242,29 +2318,29 @@ div.error, table tr.error {
   margin: 0 0 10px;
 }
 
-/* line 1942, ../sass/dcm2017.scss */
+/* line 2012, ../sass/dcm2017.scss */
 .comment-edit {
   border-left: 1px solid #005a8c;
   border-right: 1px solid #005a8c;
 }
 
-/* line 1946, ../sass/dcm2017.scss */
+/* line 2016, ../sass/dcm2017.scss */
 .field.field-name-field-rating.field-type-fivestar.field-label-above {
   clear: both;
   display: block;
   margin: 10px 0 0;
 }
 
-/* line 1951, ../sass/dcm2017.scss */
+/* line 2021, ../sass/dcm2017.scss */
 .indented {
   margin-left: 25px;
 }
 
-/* line 1954, ../sass/dcm2017.scss */
+/* line 2024, ../sass/dcm2017.scss */
 .reviews-back-to-page {
   margin: 20px 0 0;
 }
-/* line 1956, ../sass/dcm2017.scss */
+/* line 2026, ../sass/dcm2017.scss */
 .reviews-back-to-page a {
   background-color: #e42627;
   border-radius: 5px;
@@ -2275,7 +2351,7 @@ div.error, table tr.error {
   text-transform: none;
 }
 
-/* line 1967, ../sass/dcm2017.scss */
+/* line 2037, ../sass/dcm2017.scss */
 .reviews.no-reviews a {
   color: #333;
   text-decoration: underline;
@@ -2284,34 +2360,34 @@ div.error, table tr.error {
 
 /*End Comment form*/
 /*maintainace page*/
-/* line 1976, ../sass/dcm2017.scss */
+/* line 2046, ../sass/dcm2017.scss */
 body.maintenance-page {
   background-position: 0 0;
 }
-/* line 1978, ../sass/dcm2017.scss */
+/* line 2048, ../sass/dcm2017.scss */
 body.maintenance-page #header {
   background-color: #fff;
   padding: 0;
 }
-/* line 1981, ../sass/dcm2017.scss */
+/* line 2051, ../sass/dcm2017.scss */
 body.maintenance-page #header #logo-title {
   margin: 15px auto 0;
   padding: 0;
   text-align: center;
   width: 960px;
 }
-/* line 1986, ../sass/dcm2017.scss */
+/* line 2056, ../sass/dcm2017.scss */
 body.maintenance-page #header #logo-title img {
   width: 150px;
 }
-/* line 1991, ../sass/dcm2017.scss */
+/* line 2061, ../sass/dcm2017.scss */
 body.maintenance-page #container {
   margin: 20px auto;
   padding: 50px 20px;
   width: 960px;
   text-align: center;
 }
-/* line 1996, ../sass/dcm2017.scss */
+/* line 2066, ../sass/dcm2017.scss */
 body.maintenance-page #container #page-title {
   clear: both;
   font-size: 30px;
@@ -2322,7 +2398,7 @@ body.maintenance-page #container #page-title {
 
 /*end maintainace page*/
 /*Footer*/
-/* line 2008, ../sass/dcm2017.scss */
+/* line 2078, ../sass/dcm2017.scss */
 footer.footer {
   padding: 0;
   border: 0;
@@ -2330,26 +2406,26 @@ footer.footer {
   max-width: inherit;
 }
 @media screen and (max-width: 768px) {
-  /* line 2008, ../sass/dcm2017.scss */
+  /* line 2078, ../sass/dcm2017.scss */
   footer.footer {
     margin-top: 30px;
   }
 }
-/* line 2016, ../sass/dcm2017.scss */
+/* line 2086, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer {
   position: relative;
 }
-/* line 2018, ../sass/dcm2017.scss */
+/* line 2088, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer .google-maps {
   height: 200px;
 }
 @media screen and (max-width: 768px) {
-  /* line 2018, ../sass/dcm2017.scss */
+  /* line 2088, ../sass/dcm2017.scss */
   footer.footer #dcm2017-footer .google-maps {
     height: 245px;
   }
 }
-/* line 2024, ../sass/dcm2017.scss */
+/* line 2094, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer .footer-copy {
   position: absolute;
   right: 0;
@@ -2363,32 +2439,32 @@ footer.footer #dcm2017-footer .footer-copy {
   width: 50%;
   color: #fff;
 }
-/* line 2036, ../sass/dcm2017.scss */
+/* line 2106, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer .footer-copy a {
   color: #fff;
   text-decoration: underline;
   transition: all 0.3s linear 0s;
 }
-/* line 2040, ../sass/dcm2017.scss */
+/* line 2110, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer .footer-copy a:hover {
   color: #333;
 }
-/* line 2046, ../sass/dcm2017.scss */
+/* line 2116, ../sass/dcm2017.scss */
 footer.footer .dcm2017-footer {
   background-color: #343434;
 }
-/* line 2048, ../sass/dcm2017.scss */
+/* line 2118, ../sass/dcm2017.scss */
 footer.footer .dcm2017-footer .dcm2017-footer-bottom {
   padding: 15px 0;
   text-align: center;
 }
 @media screen and (max-width: 960px) {
-  /* line 2048, ../sass/dcm2017.scss */
+  /* line 2118, ../sass/dcm2017.scss */
   footer.footer .dcm2017-footer .dcm2017-footer-bottom {
     padding: 10px 0;
   }
 }
-/* line 2054, ../sass/dcm2017.scss */
+/* line 2124, ../sass/dcm2017.scss */
 footer.footer .dcm2017-footer .dcm2017-footer-bottom a {
   color: #fff;
   display: inline-block;
@@ -2396,7 +2472,7 @@ footer.footer .dcm2017-footer .dcm2017-footer-bottom a {
   text-transform: uppercase;
 }
 @media screen and (max-width: 960px) {
-  /* line 2054, ../sass/dcm2017.scss */
+  /* line 2124, ../sass/dcm2017.scss */
   footer.footer .dcm2017-footer .dcm2017-footer-bottom a {
     letter-spacing: 4px;
   }

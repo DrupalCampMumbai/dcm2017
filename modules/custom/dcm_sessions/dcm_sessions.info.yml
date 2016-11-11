@@ -1,0 +1,5 @@
+name:  'DCM Sessions'
+description: 'Sessions for Drupal Mumbai Camp'
+core: 8.x
+package: 'Custom'
+type: module

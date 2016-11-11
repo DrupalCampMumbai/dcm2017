@@ -3,7 +3,7 @@ type: theme
 base theme: bootstrap
 
 name: 'DCM 2017'
-description: 'Theme design for Drupal Camp Mumbai 2017'
+description: 'Theme design for Drupal Camp Mumbai 2017 website'
 package: 'Bootstrap'
 
 regions:

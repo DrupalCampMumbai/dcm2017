@@ -36,10 +36,4 @@ jQuery(document).ready(function($){
     });
     $(".view-sponsors .views-field-field-sponsor-logo").height(hi1);
     /*End Propose session get heighest session height and apply to all session block*/
-
-    /*mCustom scrollbar*/
-    $("#block-twitterfeeds .timeline-Body").mCustomScrollbar({
-        theme:"dark-thin"
-    }); 
-    /*End mCustom scrollbar*/
 });

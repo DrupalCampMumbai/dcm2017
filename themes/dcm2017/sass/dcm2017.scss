@@ -530,7 +530,11 @@ header#navbar {
 	max-width: inherit;
 	padding-left: 0;
 	padding-right: 0;
+	padding-bottom: 85px;
 	clear: both;
+	background-image: url(../images/footer-buildings.png);
+	background-repeat: repeat-x;
+	background-position: 0 bottom;	
 	.close {
 		line-height: 0.5;
 	}
@@ -747,9 +751,6 @@ aside, .sidebar {
 				background-color: transparent;
 			}
 		}
-	}
-	footer.footer {
-		margin-top: 0;
 	}
 }
 /*Banner slideshow*/
@@ -2078,6 +2079,7 @@ body.maintenance-page {
 footer.footer {
 	padding: 0;
 	border: 0;
+	margin-top: 0;
 	width: 100%;
 	max-width: inherit;
 	@media screen and (max-width: 768px) {

@@ -36,4 +36,35 @@ jQuery(document).ready(function($){
     });
     $(".view-sponsors .views-field-field-sponsor-logo").height(hi1);
     /*End Propose session get heighest session height and apply to all session block*/
+
+    /*For screen size*/
+    if ($(window).width() < 768) {
+        /*Responsive menu*/
+        $(window).load(function () {
+            //var userNametxt = $('.login-user h1').text();
+            $('header#navbar #dcm-sticky-menu .menu.nav').prepend('<h2 class="welcomeUserMenu"><span>Hello</span> <span class="uName">User</span></h2>');
+            //$('.user-logged-in .uName').text(userNametxt);            
+            $(window).resize(function () {
+                $('#navbar .navbar-toggle').on('click', function (e) {
+                    $('body').append('<div class="menuSlideOverlay"></div>');
+                    $('.welcomeUserMenu').append('<div class="menuSlideClose">X</div>');
+                    $('body').addClass('sliderO');
+                    if ($('.menuSlideOverlay').length > 0) {
+                        $('.menuSlideOverlay').on('click', function (e) {
+                            $('#navbar .navbar-collapse').removeClass('in');
+                            $('body').removeClass('sliderO');
+                            $('.menuSlideOverlay, .menuSlideClose').remove();
+                        });
+                    }
+                });
+                $('.menuSlideClose').live('click', function (e) {
+                    $('#navbar .navbar-collapse').removeClass('in');
+                    $('body').removeClass('sliderO');
+                    $('.menuSlideOverlay, .menuSlideClose').remove();
+                });                
+            });
+        });
+        /*End Responsive menu*/
+    }
+    /*End For screen size*/
 });

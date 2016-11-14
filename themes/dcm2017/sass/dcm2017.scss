@@ -197,51 +197,56 @@ header.container, .navbar.container {
 	border-radius: 0;
 	z-index: 2;
 }
-.path-frontpage header#navbar {
-	background-image: url(../images/screen-4.jpg);
-	background-position: 0 0;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	height: 85vh;
-	padding: 15px 0 0;
-	@media screen and (max-width: 768px) {
-		padding: 15px;
-		height: 60vh;
-	}
-	.navbar-header {
-		float: none;
-		max-width: inherit;
-		margin: 0;
-		.logo {
-			float: none !important;
-			display: table;
-			text-align: center;
-			margin: auto;
-		    img {
-			    width: 200px;
-			    @media screen and (max-width: 768px) {
-			    	width: 150px;
-			    }
-			}
+.path-frontpage {
+	header#navbar {
+		background-image: url(../images/screen-4.jpg);
+		background-position: 0 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		height: 85vh;
+		padding: 15px 0 0;
+		@media screen and (max-width: 768px) {
+			padding: 15px;
+			height: 60vh;
 		}
-		#dcm-sticky-menu {
-			clear: both;
-			position: static;
-			nav {
-				border-bottom: 1px dashed #fff;
-				border-top: 1px dashed #fff;
-				margin: 25px 0;
-				ul {
-					text-align: center;
-					li {
-					.menu.dropdown-menu {
-					background-color: rgba(0, 0, 0, 0.56);
-					}
+		.navbar-header {
+			float: none;
+			max-width: inherit;
+			margin: 0;
+			.logo {
+				float: none !important;
+				display: table;
+				text-align: center;
+				margin: auto;
+			    img {
+				    width: 200px;
+				    @media screen and (max-width: 768px) {
+				    	width: 150px;
+				    }
+				}
+			}
+			#dcm-sticky-menu {
+				clear: both;
+				position: static;
+				nav {
+					border-bottom: 1px dashed #fff;
+					border-top: 1px dashed #fff;
+					margin: 25px 0;
+					ul {
+						text-align: center;
+						li {
+						.menu.dropdown-menu {
+						background-color: rgba(0, 0, 0, 0.56);
+						}
+						}
 					}
 				}
 			}
 		}
+	}
+	.main-container {
+		background-image: none;
 	}
 }
 header#navbar {
@@ -255,13 +260,13 @@ header#navbar {
 	@media screen and (max-width: 960px) {
     	height: 110px;
     }
-     .navbar-toggle {
-     	@media screen and (max-width: 768px) {
+	.navbar-toggle {
+		@media screen and (max-width: 768px) {
 		    position: absolute;
 		    top: 0;
 		    right: 15px;     		
-     	}
-     }
+		}
+	}
 	.navbar-header {
 		float: none;
 		max-width: $page-width;
@@ -1811,6 +1816,28 @@ aside, .sidebar {
 	background-size: cover;
 	background-position: right bottom;
 	background-attachment: fixed;
+	.main-container {
+		background-image: none;
+		.region-content {
+			article {
+				.field {
+				    display: inline-block;
+				    width: 48%;
+				    vertical-align: top;
+				    margin: 0 10px 15px 0;
+				    &.field--name-user-picture {
+					    display: block;
+					    width: 100%;
+					}
+					.field--label {
+					    border-bottom: 1px dashed #ddd;
+					    padding: 0 0 2px;
+					    margin: 0 0 5px;
+					}				
+				}
+			}
+		}
+	}
 }
 /*End Login*/
 /*End User page*/

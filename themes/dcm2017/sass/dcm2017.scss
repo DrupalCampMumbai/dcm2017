@@ -10,6 +10,7 @@ body {
 	line-height: $baseline-height;
 	margin: 0;
 	padding: 0;
+	transition: all 0.35s linear 0s;
 	@media screen and (max-width: 320px) {
 		min-width: 320px;
 	}
@@ -198,6 +199,9 @@ header.container, .navbar.container {
 	z-index: 2;
 }
 .path-frontpage {
+	.page-header {
+		display: none;
+	}	
 	header#navbar {
 		background-image: url(../images/screen-4.jpg);
 		background-position: 0 0;
@@ -247,6 +251,32 @@ header.container, .navbar.container {
 	}
 	.main-container {
 		background-image: none;
+		background-color: rgba(241, 241, 241, 0.5);
+		@media screen and (max-width: 768px) {
+			padding-bottom: 30px;
+		}
+		.col-sm-12[role="heading"] {
+			box-shadow: inset 0px 11px 8px -5px #cccccc,inset 0px -11px 8px -5px #dddddd;
+			padding: 30px 0 20px;
+		}
+		.region-header {
+			max-width: $page-width;
+			margin: 0 auto;
+			@media screen and (max-width: 768px) {
+				max-width: inherit;
+			}
+		}
+		.page-container {
+			.page-container-inner {
+				padding-right: 0;
+				padding-left: 0;		
+				background-color: transparent;
+				@media screen and (max-width: 768px) {
+					padding-right: 15px;
+					padding-left: 15px;
+				}				
+			}
+		}				
 	}
 }
 header#navbar {
@@ -319,13 +349,14 @@ header#navbar {
 		    z-index: 100;
 		    left: -500px;
 		    margin: 0;
-		    border-bottom: 4px solid $link-color;
-		    box-shadow: 0 2px 5px #666;
-		    transition: all 0.5s linear 0s;		
+		    border-bottom: 4px solid $link-color !important;
+		    box-shadow: 0 2px 5px #666 !important;
+		    transition: all 0.35s linear 0s;		
 		}
 		&.in {
 			@media screen and (max-width: 768px) {
-		    	left: 0;
+		    	left: 0px;
+		    	transition: all 0.35s linear 0s;
 			}
 		}
 		#dcm-sticky-menu {
@@ -353,7 +384,7 @@ header#navbar {
 		    line-height: 40px;
 		    @media screen and (max-width: 768px) {
 			    font-size: 25px;
-			    margin-bottom: 20px;
+			    margin-bottom: 15px;
 			    line-height: 30px;		    	
 		    }
 		}
@@ -583,17 +614,20 @@ header#navbar {
     position: fixed;
     height: 100%;
     width: 100%;
+    margin-left: 250px;
+    transition: all 0.35s linear 0s;
 }
 .menuSlideOverlay {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.6);
     height: 100%;
     left: 0;
     position: fixed;
     top: 0;
     width: 100%;
     right: 0;
-    z-index: 1000;
+    z-index: 10;
     bottom: 0;
+    transition: all 1s linear 0s;
 }
 /*End Main menu*/
 
@@ -830,33 +864,6 @@ aside, .sidebar {
 /*End Node*/
 
 /*Homepage*/
-.path-frontpage {
-	.page-header {
-		display: none;
-	}
-	.main-container {
-		background-color: rgba(241, 241, 241, 0.5);
-		.col-sm-12[role="heading"] {
-			box-shadow: inset 0px 11px 8px -5px #cccccc,inset 0px -11px 8px -5px #dddddd;
-			padding: 30px 0 20px;
-		}
-		.region-header {
-			max-width: $page-width;
-			margin: 0 auto;
-			@media screen and (max-width: 768px) {
-				max-width: inherit;
-			}
-
-		}
-		.page-container {
-			.page-container-inner {
-				padding-right: 0;
-				padding-left: 0;		
-				background-color: transparent;
-			}
-		}
-	}
-}
 /*Banner slideshow*/
 #block-dcm2017-views-block-banner-block-1 {
 	.view-banner {

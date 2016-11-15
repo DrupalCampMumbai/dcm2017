@@ -62,7 +62,7 @@ jQuery(document).ready(function($){
         //$('.user-logged-in .uName').text(userNametxt);                    
         /*End Responsive menu*/
     } else {
-        $('.welcomeUserMenu, .menuSlideOverlay').remove();
+        $('.welcomeUserMenu').remove();
     }
     /*End For screen size*/
 });

@@ -1,0 +1,3 @@
+services:
+  dcm_sessions.speaker_data_display:
+    class: Drupal\dcm_sessions\SpeakerDataDisplay

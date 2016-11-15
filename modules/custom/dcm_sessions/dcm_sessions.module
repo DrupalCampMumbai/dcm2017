@@ -16,16 +16,17 @@ function dcm_sessions_preprocess_views_view_field(&$variables) {
       $uids = $variables['output']->__toString();
       if (isset($uids)) {
         // Split the uids.
-        $speaker_ids = explode(',', $uids);
+        $speaker_ids = array_map('trim', explode(',', $uids));
         foreach ($speaker_ids as $each_speaker_id) {
           // Get the user fullname.
           $fullname_result = _dcm_sessions_get_full_name($each_speaker_id);
-          $fullname[] = $fullname_result['field_first_name_value'] . ' ' . $fullname_result['field_last_name_value'];
+          $user_data[] = array(
+            'name' => $fullname_result['field_first_name_value'] . ' ' . $fullname_result['field_last_name_value'],
+            'uid' => $each_speaker_id,
+          );
         }
-        // Comma separate the speaker name into one string.
-        $result = implode(', ', $fullname);
-        // Return the result.
-        $variables['output'] = $result;
+        $render = \Drupal::service('dcm_sessions.speaker_data_display')->setUserLink($user_data);
+        $variables['output'] = $render;
       }
     }
   }
@@ -50,4 +51,20 @@ function _dcm_sessions_get_full_name($uid) {
     $user_fullname = $user_fullname_query->execute()->fetchAssoc();
   }
   return $user_fullname;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function dcm_sessions_theme($existing, $type, $theme, $path) {
+  return [
+    'session_speakers' => [
+      'render element' => 'elements',
+      'template' => 'session-speakers',
+      'variables' => [
+        'session_speakers_data' => [],
+      ],
+      'path' => drupal_get_path('module', 'dcm_sessions') . '/templates',
+    ],
+  ];
 }

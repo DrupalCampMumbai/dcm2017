@@ -1,0 +1,4 @@
+
+{% for each_speaker in session_speakers_data %}
+    <a href="/user/{{each_speaker['uid']}}">{{ each_speaker['name']|t }}</a>
+{% endfor %}

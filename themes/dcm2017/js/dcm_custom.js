@@ -39,31 +39,29 @@ jQuery(document).ready(function($){
 
     /*For screen size*/
     if ($(window).width() < 768) {
-        /*Responsive menu*/
-        $(window).load(function () {
-            //var userNametxt = $('.login-user h1').text();
-            $('header#navbar #dcm-sticky-menu .menu.nav').prepend('<h2 class="welcomeUserMenu"><span>Hello</span> <span class="uName">User</span></h2>');
-            //$('.user-logged-in .uName').text(userNametxt);            
-            $(window).resize(function () {
-                $('#navbar .navbar-toggle').on('click', function (e) {
-                    $('body').append('<div class="menuSlideOverlay"></div>');
-                    $('.welcomeUserMenu').append('<div class="menuSlideClose">X</div>');
-                    $('body').addClass('sliderO');
-                    if ($('.menuSlideOverlay').length > 0) {
-                        $('.menuSlideOverlay').on('click', function (e) {
-                            $('#navbar .navbar-collapse').removeClass('in');
-                            $('body').removeClass('sliderO');
-                            $('.menuSlideOverlay, .menuSlideClose').remove();
-                        });
-                    }
-                });
-                $('.menuSlideClose').live('click', function (e) {
-                    $('#navbar .navbar-collapse').removeClass('in');
+        /*Responsive menu*/       
+        $('#navbar .navbar-toggle').on('click', function (e) {
+            $('body').addClass('sliderO');
+            $('header#navbar').append('<div class="menuSlideOverlay"></div>');
+            $('.welcomeUserMenu').append('<div class="menuSlideClose">X</div>');
+            if ($('.menuSlideOverlay').length > 0) {
+                $('.menuSlideOverlay').on('click', function (e) {
+                    $('header#navbar .navbar-toggle').trigger('click');
+                    //$('#navbar .navbar-collapse').removeClass('in');
                     $('body').removeClass('sliderO');
                     $('.menuSlideOverlay, .menuSlideClose').remove();
-                });                
-            });
+                });
+            }
         });
+        $('body').on('click', '.menuSlideClose', function() {
+            $('header#navbar .navbar-toggle').trigger('click');
+            //$('#navbar .navbar-collapse').removeClass('in');
+            $('body').removeClass('sliderO');
+            $('.menuSlideOverlay, .menuSlideClose').remove();
+        });         
+        //var userNametxt = $('.login-user h1').text();
+        $('header#navbar #dcm-sticky-menu .menu.nav').prepend('<h2 class="welcomeUserMenu"><span>Hello</span> <span class="uName">User</span></h2>');
+        //$('.user-logged-in .uName').text(userNametxt);                    
         /*End Responsive menu*/
     }
     /*End For screen size*/

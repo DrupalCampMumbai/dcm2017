@@ -76,7 +76,7 @@ a:hover, a:focus {
 	outline: 0;
 }
 img {
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 960px) {
 		max-width: 100%;
 	}
 }
@@ -210,9 +210,9 @@ header.container, .navbar.container {
 		background-attachment: fixed;
 		height: 85vh;
 		padding: 15px 0 0;
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 960px) {
 			padding: 15px;
-			height: 60vh;
+			height: 380px;
 		}
 		.navbar-header {
 			float: none;
@@ -225,7 +225,7 @@ header.container, .navbar.container {
 				margin: auto;
 			    img {
 				    width: 200px;
-				    @media screen and (max-width: 768px) {
+				    @media screen and (max-width: 960px) {
 				    	width: 150px;
 				    }
 				}
@@ -252,7 +252,7 @@ header.container, .navbar.container {
 	.main-container {
 		background-image: none;
 		background-color: rgba(241, 241, 241, 0.5);
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 960px) {
 			padding-bottom: 30px;
 		}
 		.col-sm-12[role="heading"] {
@@ -262,7 +262,7 @@ header.container, .navbar.container {
 		.region-header {
 			max-width: $page-width;
 			margin: 0 auto;
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 960px) {
 				max-width: inherit;
 			}
 		}
@@ -271,7 +271,7 @@ header.container, .navbar.container {
 				padding-right: 0;
 				padding-left: 0;		
 				background-color: transparent;
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: 960px) {
 					padding-right: 15px;
 					padding-left: 15px;
 				}				
@@ -289,9 +289,10 @@ header#navbar {
 	margin-bottom: 0;
 	@media screen and (max-width: 960px) {
     	height: 110px;
+    	background-size: contain;
     }
 	.navbar-toggle {
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 960px) {
 		    position: absolute;
 		    top: 0;
 		    right: 15px;     		
@@ -338,7 +339,7 @@ header#navbar {
 		}
 	}
 	.navbar-collapse {
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 960px) {
 		    position: fixed;
 		    width: 250px;
 		    top: 0;
@@ -354,7 +355,7 @@ header#navbar {
 		    transition: all 0.35s linear 0s;		
 		}
 		&.in {
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 960px) {
 		    	left: 0px;
 		    	transition: all 0.35s linear 0s;
 			}
@@ -374,7 +375,7 @@ header#navbar {
 	    padding: 30px;
 	    max-width: $page-width;
 	    text-align: center;
-	    @media screen and (max-width: 768px) {
+	    @media screen and (max-width: 960px) {
 	    	padding: 10px;
 	    }
 	    h2 {
@@ -382,7 +383,7 @@ header#navbar {
 		    font-weight: 900;
 		    margin-bottom: 25px;
 		    line-height: 40px;
-		    @media screen and (max-width: 768px) {
+		    @media screen and (max-width: 960px) {
 			    font-size: 25px;
 			    margin-bottom: 15px;
 			    line-height: 30px;		    	
@@ -391,7 +392,7 @@ header#navbar {
 		p {
 		    font-size: 30px;
 		    font-weight: 100;
-		    @media screen and (max-width: 768px) {
+		    @media screen and (max-width: 960px) {
 			    font-size: 20px;	    	
 		    }
 		}
@@ -429,7 +430,7 @@ header#navbar {
 			border-bottom: 1px dashed #fff;
 			border-top: 1px dashed #fff;
 			background-color: rgba(0, 0, 0, 0.4);
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 960px) {
 				margin: 0;
 				border: 0;
 				background-color: #fff;
@@ -445,6 +446,9 @@ header#navbar {
 			    position: relative;
 			    line-height: 20px;
 			    text-align: left;
+			    @media (min-width: 960px) and (max-width: 2000px) {
+			    	display: none;
+			    }
 			    span {
 				    font-weight: 600;
 				    color: #fff;
@@ -480,7 +484,7 @@ header#navbar {
 	    		margin: 0;
 	    		padding: 0;
 	    		display: inline-block;
-	    		@media screen and (max-width: 768px) {
+	    		@media screen and (max-width: 960px) {
 					display: block;
 				}
 				&:last-child {
@@ -502,7 +506,7 @@ header#navbar {
 	    			font-size: 16px;
 	    			position: relative;
 	    			display: block;
-	    			@media screen and (max-width: 768px) {
+	    			@media screen and (max-width: 960px) {
 	    				font-family: $proxima-regular;
 						font-size: 14px;
 						color: $base-color;
@@ -514,7 +518,7 @@ header#navbar {
 	    				color: #fef5cc;
 	    				border-color: #fef5cc;
 	    				transition: all 0.3s linear 0s;
-	    				@media screen and (max-width: 768px) {
+	    				@media screen and (max-width: 960px) {
 	    					color: $link-color;
 	    					border-color: #ddd;
 	    				}
@@ -537,13 +541,13 @@ header#navbar {
 					    transition-duration: 0.4s;
 					    -webkit-transition-timing-function: linear;
 					    transition-timing-function: linear;
-					    @media screen and (max-width: 768px) {
+					    @media screen and (max-width: 960px) {
 					    	height: 1px;
 							background: $link-color;
 	    				}
 					} 
 					.caret {
-						@media screen and (max-width: 768px) {
+						@media screen and (max-width: 960px) {
 							float: right;
 							margin-top: 6px;
 	    				}
@@ -557,7 +561,7 @@ header#navbar {
 						display: inline-block;
 						margin-left: 2px;
 						vertical-align: middle;
-						@media screen and (max-width: 768px) {
+						@media screen and (max-width: 960px) {
 							float: right;
 							margin-top: 6px;
 	    				}
@@ -568,7 +572,7 @@ header#navbar {
 	    			width: auto;
 	    			border-radius: 0;
 	    			text-align: left;
-	    			@media screen and (max-width: 768px) {
+	    			@media screen and (max-width: 960px) {
 	    				background-color: rgb(255, 255, 255);
 						float: none;
 						width: 100%;
@@ -588,14 +592,14 @@ header#navbar {
 					    	border-bottom: 1px dashed #eee;
 					    	padding: 10px 15px;
 					    	color: #fff;
-					    	@media screen and (max-width: 768px) {
+					    	@media screen and (max-width: 960px) {
 					    		color: $base-color;
 			    				padding: 10px 20px;
 							}
 					    	&:hover, &.is-active {
 					    		color: #fef5cc;
 					    		background-color: transparent;
-					    		@media screen and (max-width: 768px) {
+					    		@media screen and (max-width: 960px) {
 			    					color: $link-color;
 			    				}
 					    		&:before {
@@ -772,14 +776,14 @@ aside, .sidebar {
 					padding: 8px;		
 					transition: all 0.5s linear 0s;
 					text-align: center;
-					@media screen and (max-width: 768px) {
+					@media screen and (max-width: 960px) {
 						width: 30px;
 					}
 					&:hover {
 						width: 50px;
 						background-color: $link-color;
 						text-align: left;	
-						@media screen and (max-width: 768px) {
+						@media screen and (max-width: 960px) {
 							width: 40px;
 						}				
 					}
@@ -787,7 +791,7 @@ aside, .sidebar {
 						&:before {
 							font-size: 19px;
 							content: "\f09a";
-							@media screen and (max-width: 768px) {
+							@media screen and (max-width: 960px) {
 								font-size: 15px;
 							}
 						}
@@ -796,7 +800,7 @@ aside, .sidebar {
 						&:before {
 							font-size: 19px;
 							content: "\f0d5";
-							@media screen and (max-width: 768px) {
+							@media screen and (max-width: 960px) {
 								font-size: 15px;
 							}
 						}
@@ -805,7 +809,7 @@ aside, .sidebar {
 						&:before {
 							font-size: 19px;
 							content: "\f0e1";
-							@media screen and (max-width: 768px) {
+							@media screen and (max-width: 960px) {
 								font-size: 15px;
 							}
 						}
@@ -814,7 +818,7 @@ aside, .sidebar {
 						&:before {
 							font-size: 19px;
 							content: "\f099";
-							@media screen and (max-width: 768px) {
+							@media screen and (max-width: 960px) {
 								font-size: 15px;
 							}
 						}
@@ -951,13 +955,13 @@ aside, .sidebar {
 /*End Banner slideshow*/
 /*Count down timer*/
 #block-dcm2017-countdowntimer, #block-countdowntimer-2 {
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 960px) {
 		margin: 20px 0 0;
 	}
 	.countdownHolder {
 		font: 40px/1.5 '$proxima-regular',sans-serif !important;
 		text-align: center;
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 960px) {
 			font: 20px/1.5 '$proxima-regular',sans-serif !important;
 		}
 	}
@@ -982,7 +986,7 @@ aside, .sidebar {
 		    background-color: $link-color;
 		    position: absolute;
 		    margin: 10px 0 0 -110px;		    
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 960px) {
 				width: 50px;
 				margin-left: -60px;
 			}
@@ -995,7 +999,7 @@ aside, .sidebar {
 		    background-color: $link-color;
 		    position: absolute;
 		    margin: 12px 0 0 10px;
-		    @media screen and (max-width: 768px) {
+		    @media screen and (max-width: 960px) {
 				width: 50px;
 			}
 		}
@@ -1013,6 +1017,14 @@ aside, .sidebar {
 		    min-height: 120px;
 		    position: relative;
 		    border-top: 5px solid #D4AF37;
+		    @media screen and (max-width: 960px) {
+		    	width: 40%;
+		    	margin: 0 15px 20px 0;
+		    }
+		    @media screen and (max-width: 360px) {
+				width: 90%;
+				margin-right: 0;
+		    }
 		    &:after {
 			    display: inline-block;
 			    content: '';
@@ -1028,7 +1040,7 @@ aside, .sidebar {
 			    position: absolute;
 			    bottom: -40px;
 			    width: 0;
-			    @media screen and (max-width: 768px) {
+			    @media screen and (max-width: 960px) {
 			    	display: none;
 			    }
 			}
@@ -1037,6 +1049,12 @@ aside, .sidebar {
 			}
 			&:last-child, &:nth-child(3n) {
 				margin-right: 0;
+				@media screen and (max-width: 960px) {
+			    	margin-right: 15px;
+			    }
+			    @media screen and (max-width: 360px) {
+			    	margin-right: 0;
+			    }
 			}
 			.views-field-field-sponsor-logo {
 				display: table;
@@ -1049,6 +1067,9 @@ aside, .sidebar {
 				}
 				.img-responsive {
 					margin: auto;
+					@media screen and (max-width: 960px) {
+						width: auto;
+					}
 				}
 			}
 		}
@@ -1092,7 +1113,7 @@ aside, .sidebar {
 		margin: 0 0 20px;
 		padding: 0 0 20px 20px;
 		border-bottom: 1px dashed #999;
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 960px) {
 			padding-left: 10px; 
 			word-wrap: break-word;
 		}
@@ -1123,7 +1144,7 @@ aside, .sidebar {
 		font-family: $proxima-semibold;
 	}
 	.view-content {
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 960px) {
 			text-align: center;
 		}
 		.views-row {
@@ -1133,7 +1154,7 @@ aside, .sidebar {
 			position: relative;
 			transition: all 0.5s linear 0s;
 			vertical-align: top;
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 960px) {
 			    width: 150px;
 			    margin: 0 10px 15px 0;
 			}
@@ -1167,7 +1188,7 @@ aside, .sidebar {
 					height: 200px;
 	    			border: 5px solid $link-color;
 	    			padding: 2px;
-	    			@media screen and (max-width: 768px) {
+	    			@media screen and (max-width: 960px) {
 					    height: 150px;
 					}
 				}
@@ -1206,7 +1227,7 @@ aside, .sidebar {
 /*Attendee*/
 .view-attendees {
 	.view-content {
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 960px) {
 			text-align: center;
 		}
 		.views-row {
@@ -1216,7 +1237,7 @@ aside, .sidebar {
 			position: relative;
 			transition: all 0.5s linear 0s;
 			vertical-align: top;
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 960px) {
 				margin: 0 8px 30px 8px;
 			}
 			&:first-child {
@@ -1224,92 +1245,106 @@ aside, .sidebar {
 			}
 			&:nth-child(5n) {
 				margin-right: 0;
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: 960px) {
 					margin-right: 8px;
 				}
 			}
-			.team-attendees {
-				position: relative;
-				transition: all 0.5s linear 0s;
-				box-shadow: 0 0 5px $base-color;
-				&:hover {
+			.attendees-page {
+			    background-image: url(../images/zigzak.png), url(../images/zigzak.png);
+			    background-repeat: repeat-x, repeat-x;
+			    background-position: 0 0, 0 bottom;
+			    padding: 9px 0 1px;
+			    background-origin: padding-box;				
+				.team-attendees {
+					position: relative;
 					transition: all 0.5s linear 0s;
+					border-right: 1px solid #ababab;
+					border-left: 1px solid #ababab;
+					padding: 8px 0;
+					&:hover {
+						transition: all 0.5s linear 0s;
+						.user-image {
+							transition: all 0.5s linear 0s;	
+							border-color: transparent;
+							.border-animation {
+								transition: all 0.5s linear 0s;			
+							    &.top-left {
+								    height: 100%;
+								    width: 2px;
+								}
+								&.top-right {
+								    height: 2px;
+								    width: 100%;
+								}
+								&.bottom-left {
+								    height: 2px;
+								    width: 100%;
+								}
+								&.bottom-right {
+								    height: 100%;
+								    width: 2px;
+								}
+							}
+						}
+					}
 					.user-image {
-						transition: all 0.5s linear 0s;	
-						border-color: transparent;
+						position: relative;
+						border: 2px solid #fff;
+						img {
+							display: block;
+							transition: all 0.25s linear 0s;
+			    			padding: 2px;
+							height: 197px;
+							width: 197px;			
+						}
 						.border-animation {
-							transition: all 0.5s linear 0s;			
+						    position: absolute;
+						    width: 0;
+						    height: 0;
+						    background-color: $link-color;
+						    transition: all 0.5s linear 0s;				
 						    &.top-left {
-							    height: 100%;
-							    width: 2px;
+							    top: 0;
+							    left: -2px;
 							}
 							&.top-right {
-							    height: 2px;
-							    width: 100%;
+							    top: -2px;
+							    right: 0;
 							}
 							&.bottom-left {
-							    height: 2px;
-							    width: 100%;
+							    bottom: -2px;
+							    left: 0;
 							}
 							&.bottom-right {
-							    height: 100%;
-							    width: 2px;
+							    bottom: 0;
+							    right: -2px;
 							}
 						}
 					}
+					.user-name {
+					    text-align: center;
+					    width: 100%;
+					    color: #000;
+					    padding: 10px 10px 15px;
+					    transition: all 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;			
+						.attendees-name {
+							font-size: 18px;
+							line-height: 20px;
+							margin: 0;
+							text-overflow: ellipsis;
+							overflow: hidden;
+							white-space: nowrap;
+						}
+						h3 {
+							margin-bottom: 0;
+							font-size: 13px;
+							text-overflow: ellipsis;
+							overflow: hidden;
+							white-space: nowrap;
+							color: $link-color;							
+						}
+					}	
 				}
-				.user-image {
-					position: relative;
-					border: 2px solid #fff;
-					img {
-						display: block;
-						transition: all 0.25s linear 0s;
-		    			padding: 2px;
-						height: 197px;
-						width: 197px;			
-					}
-					.border-animation {
-					    position: absolute;
-					    width: 0;
-					    height: 0;
-					    background-color: $link-color;
-					    transition: all 0.5s linear 0s;				
-					    &.top-left {
-						    top: 0;
-						    left: -2px;
-						}
-						&.top-right {
-						    top: -2px;
-						    right: 0;
-						}
-						&.bottom-left {
-						    bottom: -2px;
-						    left: 0;
-						}
-						&.bottom-right {
-						    bottom: 0;
-						    right: -2px;
-						}
-					}
-				}
-				.user-name {
-				    left: 0;
-				    width: 100%;
-				    background-color: rgba(42, 169, 222, 0.79);
-				    color: #fff;
-				    padding: 10px 15px;
-				    transition: all 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
-				    bottom: 0;				
-					.attendees-name {
-						font-size: 18px;
-						line-height: 20px;
-						margin: 0;
-					}
-					h3 {
-						margin-bottom: 0;
-						font-size: 13px;
-					}
-				}	
 			}	
 		}
 	}
@@ -1408,7 +1443,7 @@ aside, .sidebar {
     left: 1px;
     z-index: 100;
     top: 30%;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 960px) {
     	position: static;
     	margin-bottom: 15px;
     }
@@ -1417,7 +1452,7 @@ aside, .sidebar {
 	    width: 100%;
 	    margin: 0 0 0px;
 	    padding: 0 0 2px;
-	    @media screen and (max-width: 768px) {
+	    @media screen and (max-width: 960px) {
 		    display: block;
 		    width: 100%;    	
 	    }
@@ -1741,7 +1776,7 @@ aside, .sidebar {
 			    position: relative;
 			    text-align: left;
 			    font-family: $proxima-semibold;
-			    @media screen and (max-width: 768px) {
+			    @media screen and (max-width: 960px) {
 			    	padding-left: 0;
 			    }
 			    &:before {
@@ -1753,7 +1788,7 @@ aside, .sidebar {
 				    position: absolute;
 				    margin: 10px 0 0 -110px;
 				    top: 8px;
-				    @media screen and (max-width: 768px) {
+				    @media screen and (max-width: 960px) {
 				    	display: none;
 				    }
 				}
@@ -1772,7 +1807,7 @@ aside, .sidebar {
 				background-color: rgba(143, 139, 136, 0.15);
 				margin: 0 10px 10px;
 				transition: all 0.5s linear 0s;
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: 960px) {
 					margin: 0 0 10px;
 				}
 				&:hover {
@@ -1784,7 +1819,7 @@ aside, .sidebar {
 					vertical-align: top;
 					height: 100%;
 					background-color: rgba(255, 255, 255, 0.82);
-					@media screen and (max-width: 768px) {
+					@media screen and (max-width: 960px) {
 					    width: 100%;
 					    display: block;
 					    padding: 20px;
@@ -1793,8 +1828,9 @@ aside, .sidebar {
 					.field-content {
 					    margin: 15% auto;
 					    text-align: center;
-					    @media screen and (max-width: 768px) {
+					    @media screen and (max-width: 960px) {
 					    	margin: 0 auto;
+					    	display: table;
 					    }
 					}
 				}
@@ -1804,7 +1840,7 @@ aside, .sidebar {
 				    text-align: center;
 				    padding: 20px;
 				    vertical-align: top;
-				    @media screen and (max-width: 768px) {
+				    @media screen and (max-width: 960px) {
 					    width: 100%;
 					    display: block;					
 					}
@@ -1874,7 +1910,7 @@ aside, .sidebar {
 				float: left;
 				margin: 8px 0;
 				width: 20%;
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: 960px) {
 				    float: none;
 				    margin: 0 0 5px;
 				    width: 100%;
@@ -1885,7 +1921,7 @@ aside, .sidebar {
 				background-color: transparent;		
 				display: inline-block;
 				width: 54%;
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: 960px) {
 					display: block;
 					width: 100%;					
 				}
@@ -2280,7 +2316,7 @@ footer.footer {
 		position: relative;
 		.google-maps {
 			height: 200px;
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 960px) {
 		    	height: 245px;
 		    }
 		}
@@ -2296,6 +2332,17 @@ footer.footer {
     		line-height: 22px;
 			width: 50%;
 			color: #fff;
+			@media screen and (max-width: 960px) {
+				position: absolute;
+				right: inherit;
+				top: inherit;
+				padding: 15px;
+				height: 50%;
+				font-size: 14px;
+				line-height: 16px;
+				width: 100%;
+				bottom: 0;
+			}
 			a {
 				color: #fff;
 				text-decoration: underline;
@@ -2309,10 +2356,10 @@ footer.footer {
 	.dcm2017-footer {
 		background-color: #343434;
 		.dcm2017-footer-bottom {
-		    padding: 15px 0;
+		    padding: 15px 0 0;
 		    text-align: center;
 		    @media screen and (max-width: 960px) {
-		    	padding: 10px 0;
+		    	padding: 10px 0 0;
 		    }
 		    a {
 			    color: #fff;
@@ -2323,6 +2370,16 @@ footer.footer {
 			    	letter-spacing: 4px;
 			    }
 			}
+		}
+		.made-with {
+		    text-align: center;
+		    color: #fff;
+		    font-size: 11px;
+		    padding-bottom: 15px;
+		    line-height: 12px;
+		    @media screen and (max-width: 960px) {
+		    	padding-bottom: 10px;
+		    }
 		}
 	}
 }

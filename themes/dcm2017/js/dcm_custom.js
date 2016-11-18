@@ -38,7 +38,7 @@ jQuery(document).ready(function($){
     /*End Propose session get heighest session height and apply to all session block*/
 
     /*For screen size*/
-    if ($(window).width() < 768) {
+    if ($(window).width() < 960) {
         /*Responsive menu*/       
         $('#navbar .navbar-toggle').on('click', function (e) {
             $('body').addClass('sliderO');
@@ -47,7 +47,6 @@ jQuery(document).ready(function($){
             if ($('.menuSlideOverlay').length > 0) {
                 $('.menuSlideOverlay').on('click', function (e) {
                     $('header#navbar .navbar-toggle').trigger('click');
-                    //$('#navbar .navbar-collapse').removeClass('in');
                     $('body').removeClass('sliderO');
                     $('.menuSlideOverlay, .menuSlideClose').remove();
                 });
@@ -55,7 +54,6 @@ jQuery(document).ready(function($){
         });
         $('body').on('click', '.menuSlideClose', function() {
             $('header#navbar .navbar-toggle').trigger('click');
-            //$('#navbar .navbar-collapse').removeClass('in');
             $('body').removeClass('sliderO');
             $('.menuSlideOverlay, .menuSlideClose').remove();
         });         
@@ -63,6 +61,8 @@ jQuery(document).ready(function($){
         $('header#navbar #dcm-sticky-menu .menu.nav').prepend('<h2 class="welcomeUserMenu"><span>Hello</span> <span class="uName">User</span></h2>');
         //$('.user-logged-in .uName').text(userNametxt);                    
         /*End Responsive menu*/
+    } else {
+        $('.welcomeUserMenu').remove();
     }
     /*End For screen size*/
 });

@@ -1,0 +1,7 @@
+session-title-js:
+  version: 1.x
+  js:
+    js/dcm_sessions_title.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

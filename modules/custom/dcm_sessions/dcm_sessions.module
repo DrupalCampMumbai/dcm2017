@@ -68,3 +68,12 @@ function dcm_sessions_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function dcm_sessions_page_attachments(array &$attachments) {
+
+  // JS library attachment for Sessions page title.
+  $attachments['#attached']['library'][] = 'dcm_sessions/session-title-js';
+}

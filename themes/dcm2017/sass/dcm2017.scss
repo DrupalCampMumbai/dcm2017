@@ -280,8 +280,8 @@ header.container, .navbar.container {
 	}
 }
 header#navbar {
-	background-image: url(../images/screen-4.jpg);
-	background-position: 0 0;
+	background-image: url(../images/sea-link.jpg);
+	background-position: 0 -415px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;	
@@ -289,7 +289,7 @@ header#navbar {
 	margin-bottom: 0;
 	@media screen and (max-width: 960px) {
     	height: 110px;
-    	background-size: contain;
+    	background-position: -452px -327px;
     }
 	.navbar-toggle {
 		@media screen and (max-width: 960px) {
@@ -1236,14 +1236,15 @@ aside, .sidebar {
 					transition: all 0.25s cubic-bezier(0.2,0.3,0.25,0.9) 0s;
 					margin: -35px 0 4px;				
 					.pulls {
-						font-size: 18px;
+						font-size: 16px;
 						line-height: 20px;
 						margin: 0 0 3px;
 						color: #191919;
 						text-transform: uppercase;
 						text-overflow: ellipsis;
 						overflow: hidden;
-						white-space: nowrap;						
+						white-space: nowrap;
+						font-family: $proxima-semibold;						
 					}
 					h4 {
 						margin-bottom: 0;

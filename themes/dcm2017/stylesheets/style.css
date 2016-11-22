@@ -12380,42 +12380,29 @@ div.error, table tr.error {
 /* line 2393, ../sass/dcm2017.scss */
 body.maintenance-page {
   background-position: 0 0;
-}
-/* line 2395, ../sass/dcm2017.scss */
-body.maintenance-page #header {
-  background-color: #fff;
-  padding: 0;
-}
-/* line 2398, ../sass/dcm2017.scss */
-body.maintenance-page #header #logo-title {
-  margin: 15px auto 0;
-  padding: 0;
+  margin: 0 auto;
+  width: 650px;
   text-align: center;
-  width: 960px;
+  padding: 20px;
+  line-height: 22px;
+  font-size: 16px;
+}
+/* line 2401, ../sass/dcm2017.scss */
+body.maintenance-page header {
+  padding: 0;
 }
 /* line 2403, ../sass/dcm2017.scss */
-body.maintenance-page #header #logo-title img {
-  width: 150px;
+body.maintenance-page header h1 {
+  display: none;
 }
 /* line 2408, ../sass/dcm2017.scss */
-body.maintenance-page #container {
-  margin: 20px auto;
-  padding: 50px 20px;
-  width: 960px;
-  text-align: center;
-}
-/* line 2413, ../sass/dcm2017.scss */
-body.maintenance-page #container #page-title {
-  clear: both;
-  font-size: 30px;
-  line-height: 30px;
-  margin: 0 0 20px;
-  text-transform: uppercase;
+body.maintenance-page main h1 {
+  margin: 20px 0;
 }
 
 /*end maintainace page*/
 /*Footer*/
-/* line 2425, ../sass/dcm2017.scss */
+/* line 2416, ../sass/dcm2017.scss */
 footer.footer {
   padding: 0;
   border: 0;
@@ -12423,21 +12410,21 @@ footer.footer {
   width: 100%;
   max-width: inherit;
 }
-/* line 2431, ../sass/dcm2017.scss */
+/* line 2422, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer {
   position: relative;
 }
-/* line 2433, ../sass/dcm2017.scss */
+/* line 2424, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer .google-maps {
   height: 200px;
 }
 @media screen and (max-width: 960px) {
-  /* line 2433, ../sass/dcm2017.scss */
+  /* line 2424, ../sass/dcm2017.scss */
   footer.footer #dcm2017-footer .google-maps {
     height: 245px;
   }
 }
-/* line 2439, ../sass/dcm2017.scss */
+/* line 2430, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer .footer-copy {
   position: absolute;
   right: 0;
@@ -12452,7 +12439,7 @@ footer.footer #dcm2017-footer .footer-copy {
   color: #fff;
 }
 @media screen and (max-width: 960px) {
-  /* line 2439, ../sass/dcm2017.scss */
+  /* line 2430, ../sass/dcm2017.scss */
   footer.footer #dcm2017-footer .footer-copy {
     position: absolute;
     right: inherit;
@@ -12465,32 +12452,32 @@ footer.footer #dcm2017-footer .footer-copy {
     bottom: 0;
   }
 }
-/* line 2462, ../sass/dcm2017.scss */
+/* line 2453, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer .footer-copy a {
   color: #fff;
   text-decoration: underline;
   transition: all 0.3s linear 0s;
 }
-/* line 2466, ../sass/dcm2017.scss */
+/* line 2457, ../sass/dcm2017.scss */
 footer.footer #dcm2017-footer .footer-copy a:hover {
   color: #333;
 }
-/* line 2472, ../sass/dcm2017.scss */
+/* line 2463, ../sass/dcm2017.scss */
 footer.footer .dcm2017-footer {
   background-color: #343434;
 }
-/* line 2474, ../sass/dcm2017.scss */
+/* line 2465, ../sass/dcm2017.scss */
 footer.footer .dcm2017-footer .dcm2017-footer-bottom {
   padding: 15px 0 0;
   text-align: center;
 }
 @media screen and (max-width: 960px) {
-  /* line 2474, ../sass/dcm2017.scss */
+  /* line 2465, ../sass/dcm2017.scss */
   footer.footer .dcm2017-footer .dcm2017-footer-bottom {
     padding: 10px 0 0;
   }
 }
-/* line 2480, ../sass/dcm2017.scss */
+/* line 2471, ../sass/dcm2017.scss */
 footer.footer .dcm2017-footer .dcm2017-footer-bottom a {
   color: #fff;
   display: inline-block;
@@ -12498,12 +12485,12 @@ footer.footer .dcm2017-footer .dcm2017-footer-bottom a {
   text-transform: uppercase;
 }
 @media screen and (max-width: 960px) {
-  /* line 2480, ../sass/dcm2017.scss */
+  /* line 2471, ../sass/dcm2017.scss */
   footer.footer .dcm2017-footer .dcm2017-footer-bottom a {
     letter-spacing: 4px;
   }
 }
-/* line 2490, ../sass/dcm2017.scss */
+/* line 2481, ../sass/dcm2017.scss */
 footer.footer .dcm2017-footer .made-with {
   text-align: center;
   color: #fff;
@@ -12512,7 +12499,7 @@ footer.footer .dcm2017-footer .made-with {
   line-height: 12px;
 }
 @media screen and (max-width: 960px) {
-  /* line 2490, ../sass/dcm2017.scss */
+  /* line 2481, ../sass/dcm2017.scss */
   footer.footer .dcm2017-footer .made-with {
     padding-bottom: 10px;
   }

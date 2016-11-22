@@ -2392,31 +2392,22 @@ div.error, table tr.error {
 /*maintainace page*/
 body.maintenance-page {
 	background-position: 0 0;
-	#header {
-		background-color: #fff;
+    margin: 0 auto;
+    width: 650px;
+    text-align: center;
+    padding: 20px;
+    line-height: 22px;
+    font-size: 16px;
+	header {
 		padding: 0;
-			#logo-title {
-				margin: 15px auto 0;
-				padding: 0;
-				text-align: center;
-				width: $page-width;
-					img {
-						width: 150px;
-					}
-			}		
+		h1 {
+			display: none;
+		}		
 	}
-	#container {
-		margin: 20px auto;
-		padding: 50px 20px;
-		width: $page-width;
-		text-align: center;
-			#page-title {
-				clear: both;
-				font-size: 30px;
-				line-height: 30px;
-				margin: 0 0 20px;
-				text-transform: uppercase;
-			}		
+	main {
+		h1 {
+			margin: 20px 0;
+		}
 	}
 }
 /*end maintainace page*/

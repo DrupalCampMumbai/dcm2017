@@ -37,6 +37,11 @@ jQuery(document).ready(function($){
     $(".view-sponsors .views-field-field-sponsor-logo").height(hi1);
     /*End Propose session get heighest session height and apply to all session block*/
 
+    /*Sponcers page odd/even class*/
+    $('.path-sponsors .view-sponsors .view-content .views-row:odd').addClass('odd');
+    $('.path-sponsors .view-sponsors .view-content .views-row:even').addClass('even');
+    /*End Sponcers page odd/even class*/
+
     /*For screen size*/
     if ($(window).width() < 960) {
         /*Responsive menu*/       

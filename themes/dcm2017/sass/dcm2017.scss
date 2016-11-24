@@ -280,8 +280,8 @@ header.container, .navbar.container {
 	}
 }
 header#navbar {
-	background-image: url(../images/screen-4.jpg);
-	background-position: 0 0;
+	background-image: url(../images/sea-link.jpg);
+	background-position: 0 -415px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;	
@@ -289,7 +289,7 @@ header#navbar {
 	margin-bottom: 0;
 	@media screen and (max-width: 960px) {
     	height: 110px;
-    	background-size: contain;
+    	background-position: -345px -327px;
     }
 	.navbar-toggle {
 		@media screen and (max-width: 960px) {
@@ -1137,10 +1137,10 @@ aside, .sidebar {
 /*Volunteer*/
 .view-volunteers {
 	h3 {
-		color: $link-color;
+		color: rgba(51, 51, 51, 0.81);
 		padding: 10px;
 		border-bottom: 2px solid;
-		margin: 0 0 20px;	
+		margin: 15px 0 20px;	
 		font-family: $proxima-semibold;
 	}
 	.view-content {
@@ -1148,12 +1148,17 @@ aside, .sidebar {
 			text-align: center;
 		}
 		.views-row {
-			width: 200px;
-			display: inline-block;
-			margin: 0 29px 20px 0;
-			position: relative;
-			transition: all 0.5s linear 0s;
-			vertical-align: top;
+		    width: 200px;
+		    display: inline-block;
+		    margin: 0 29px 20px 0;
+		    padding: 80px 0 0;
+		    position: relative;
+		    transition: all 0.5s linear 0s;
+		    vertical-align: top;
+		    background-color: #2aa9de;
+		    border-radius: 15px 15px 8px 8px;
+		    box-shadow: 0 0 5px rgba(153, 153, 153, 0.35);
+		    overflow: hidden;
 			@media screen and (max-width: 960px) {
 			    width: 150px;
 			    margin: 0 10px 15px 0;
@@ -1161,14 +1166,38 @@ aside, .sidebar {
 			&:first-child {
 				display: none;
 			}
+			&:hover {
+				box-shadow: 0 0 5px rgb(90, 90, 90);
+			}
 			&.nohover {
 				//-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
 				//filter: grayscale(100%);
 				//opacity: 0.5;
 			}
 			.team-card {
-				position: relative;
 				transition: all 0.5s linear 0s;
+				background-color: #fff;
+				&:before {
+				    width: 53px;
+				    content: '';
+				    position: absolute;
+				    height: 121px;
+				    top: 22px;
+				    transform: rotate(-66deg);
+				    left: 10px;
+				    background-color: #fff;
+				}	
+				&:after {
+				    width: 53px;
+				    content: '';
+				    position: absolute;
+				    height: 121px;
+				    top: 22px;
+				    transform: rotate(66deg);
+				    right: 10px;
+				    z-index: 0;
+				    background-color: #fff;
+				}			
 				&:hover {
 					transition: all 0.5s linear 0s;
 					img {
@@ -1180,42 +1209,51 @@ aside, .sidebar {
 						transition: all 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
 					}
 				}
+				.card-photo {
+				    z-index: 1;
+				    position: relative;
+				    top: -45px;
+				    background-color: transparent;
+				}
 				img {
-					display: block;
-					transform: scale(1);
-					transition: all 0.25s linear 0s;
-					border-radius: 50%;
-					height: 200px;
-	    			border: 5px solid $link-color;
-	    			padding: 2px;
+				    display: block;
+				    transform: scale(1);
+				    transition: all 0.25s linear 0s;
+				    border-radius: 50%;
+				    height: 150px;
+				    width: 75%;
+				    border: 4px solid #2aa9de;
+				    padding: 2px;
+				    margin: auto;
 	    			@media screen and (max-width: 960px) {
-					    height: 150px;
+					    height: 140px;
+					    width: 140px;
 					}
 				}
 				.card-info {
-					opacity: 0;
-					position: absolute;
-					left: 10px;
-					top: 10px;
 					text-align: center;
-					border-radius: 50%;
-					width: calc(100% - 20px);
-					height: calc(100% - 20px);
-					transform: scale(0.7);
-					background-color: rgba(42, 169, 222, 0.79);
-					color: #fff;
-					padding: 10px 15px;
-					transition: all 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
-				    display: flex;
-				    flex-direction: column;
-				    justify-content: center;				
+					color: #000;
+					padding: 10px 15px 20px;
+					transition: all 0.25s cubic-bezier(0.2,0.3,0.25,0.9) 0s;
+					margin: -35px 0 4px;				
 					.pulls {
-						font-size: 20px;
-						line-height: 24px;
-						margin: 0;
+						font-size: 16px;
+						line-height: 20px;
+						margin: 0 0 3px;
+						color: #191919;
+						text-transform: uppercase;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						white-space: nowrap;
+						font-family: $proxima-semibold;						
 					}
 					h4 {
 						margin-bottom: 0;
+						font-size: 15px;
+						color: #747474;
+					    text-overflow: ellipsis;
+					    overflow: hidden;
+					    white-space: nowrap;						
 					}
 				}	
 			}	
@@ -1238,7 +1276,8 @@ aside, .sidebar {
 			transition: all 0.5s linear 0s;
 			vertical-align: top;
 			@media screen and (max-width: 960px) {
-				margin: 0 8px 30px 8px;
+				width: 150px;
+				margin: 0 8px 20px 8px;
 			}
 			&:first-child {
 				display: none;
@@ -1295,7 +1334,12 @@ aside, .sidebar {
 							transition: all 0.25s linear 0s;
 			    			padding: 2px;
 							height: 197px;
-							width: 197px;			
+							width: 197px;		
+							@media screen and (max-width: 960px) {
+								height: 140px;
+								width: 140px;
+								margin: auto;
+							}	
 						}
 						.border-animation {
 						    position: absolute;
@@ -1765,7 +1809,7 @@ aside, .sidebar {
 /*End Session detail page*/
 /*End Sessions page*/
 
-/*Sponsers page*/
+/*Sponcers page*/
 .path-sponsors {
 	.view-sponsors {
 		.view-content {
@@ -1804,21 +1848,44 @@ aside, .sidebar {
 				}
 			}
 			.views-row {
-				background-color: rgba(143, 139, 136, 0.15);
 				margin: 0 10px 10px;
 				transition: all 0.5s linear 0s;
 				@media screen and (max-width: 960px) {
 					margin: 0 0 10px;
 				}
 				&:hover {
-					box-shadow: 0 0 5px #ccc;
+					.views-field-field-sponsor-logo img {
+					    transform: scale(1.1);
+					}
+					.views-field-body {
+						&:before {
+					    	right: 0;
+						}
+						&:after {
+							left: 0;
+						}
+					}
+				}
+				&:before {
+				    content: '';
+				    display: table;
+				}
+				&:after {
+				    content: '';
+				    display: table;
+				    clear: both;
+				}
+				&.odd {
+					.views-field-field-sponsor-logo {
+					    float: right;
+					}
 				}
 				.views-field-field-sponsor-logo {
 					width: 35%;
-					display: inline-block;
-					vertical-align: top;
+					display: table;
+					float: left;
 					height: 100%;
-					background-color: rgba(255, 255, 255, 0.82);
+					border: 3px solid #535353;
 					@media screen and (max-width: 960px) {
 					    width: 100%;
 					    display: block;
@@ -1826,11 +1893,18 @@ aside, .sidebar {
 					    height: 100% !important;						
 					}
 					.field-content {
-					    margin: 15% auto;
-					    text-align: center;
+						margin: auto;
+						text-align: center;
+						display: table-cell;
+						vertical-align: middle;
+						height: 100%;
 					    @media screen and (max-width: 960px) {
 					    	margin: 0 auto;
 					    	display: table;
+					    }
+					    img {
+					    	margin: auto;
+					    	transition: all 0.5s linear 0s;
 					    }
 					}
 				}
@@ -1838,18 +1912,60 @@ aside, .sidebar {
 				    width: 65%;
 				    display: inline-block;
 				    text-align: center;
-				    padding: 20px;
 				    vertical-align: top;
+				    margin: 30px 0;
+				    padding: 20px 0 20px 20px;
+				    border-top: 2px solid #535353;
+				    border-bottom: 2px solid #535353;
+				    transition: all 0.7s linear 0s;
+				    position: relative;
+				    z-index: 0;
+				    &:before {
+					    content: "";
+					    position: absolute;
+					    z-index: -1;
+					    left: 0;
+					    right: 100%;
+					    bottom: 0;
+					    background: $link-color;
+					    height: 2px;
+					    -webkit-transition-property: right;
+					    transition-property: right;
+					    -webkit-transition-duration: 0.7s;
+					    transition-duration: 0.7s;
+					    -webkit-transition-timing-function: linear;
+					    transition-timing-function: linear;
+					}
+					&:after {
+						content: "";
+						position: absolute;
+						z-index: -1;
+						right: 0;
+						left: 100%;
+						top: 0;
+						background: $link-color;
+						height: 2px;
+						-webkit-transition-property: left;
+						transition-property: left;
+						-webkit-transition-duration: 0.7s;
+						transition-duration: 0.7s;
+						-webkit-transition-timing-function: linear;
+						transition-timing-function: linear;
+					}
 				    @media screen and (max-width: 960px) {
-					    width: 100%;
-					    display: block;					
+						width: 100%;
+						display: block;
+						clear: both;
+						margin: 0 0 20px;
+						padding: 20px;	
+						border-top: 0;		
 					}
 				}
 			}
 		}
 	}
 }
-/*End Sponsers page*/
+/*End Sponcers page*/
 
 /*User page*/
 /*Login*/
@@ -2276,31 +2392,22 @@ div.error, table tr.error {
 /*maintainace page*/
 body.maintenance-page {
 	background-position: 0 0;
-	#header {
-		background-color: #fff;
+    margin: 0 auto;
+    width: 650px;
+    text-align: center;
+    padding: 20px;
+    line-height: 22px;
+    font-size: 16px;
+	header {
 		padding: 0;
-			#logo-title {
-				margin: 15px auto 0;
-				padding: 0;
-				text-align: center;
-				width: $page-width;
-					img {
-						width: 150px;
-					}
-			}		
+		h1 {
+			display: none;
+		}		
 	}
-	#container {
-		margin: 20px auto;
-		padding: 50px 20px;
-		width: $page-width;
-		text-align: center;
-			#page-title {
-				clear: both;
-				font-size: 30px;
-				line-height: 30px;
-				margin: 0 0 20px;
-				text-transform: uppercase;
-			}		
+	main {
+		h1 {
+			margin: 20px 0;
+		}
 	}
 }
 /*end maintainace page*/

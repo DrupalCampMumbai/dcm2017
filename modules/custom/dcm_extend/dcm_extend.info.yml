@@ -1,0 +1,5 @@
+name:  'DCM Extend'
+description: 'Custom module to customize things on site.'
+core: 8.x
+package: 'Custom'
+type: module

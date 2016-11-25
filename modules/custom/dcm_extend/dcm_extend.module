@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_block_view_BASE_BLOCK_ID_alter().
+ */
+function dcm_extend_block_view_system_menu_block_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+
+  // Fetch current user object.
+  $current_user = \Drupal::currentUser();
+
+  // Load current user object.
+  $user_load = User::load($current_user->id());
+
+  // Fetch first name from field_first_name.
+  $first_name = $user_load->get('field_first_name')->getString();
+
+  // Pass user name to js.
+  $build['#attached'] = [
+    'drupalSettings' => [
+      'dcm_extend' => [
+        'site_menu' => [
+          'user_name' => !empty($first_name) ? $first_name : $current_user->getAccountName()
+        ]
+      ]
+    ]
+  ];
+
+  // Disable caching for this block.
+  $build['#cache'] = [
+    'max-age' => 0
+  ];
+
+}

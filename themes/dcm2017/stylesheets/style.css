@@ -11618,7 +11618,7 @@ aside .block, .sidebar .block {
 .view-sessions .view-content .owl-wrapper-outer .owl-wrapper .owl-item ul li .views-field-field-speakers .field-content a {
   display: inline-block;
   position: relative;
-  padding: 0 0 0 20px;
+  padding: 0 5px 0 20px;
 }
 /* line 1718, ../sass/dcm2017.scss */
 .view-sessions .view-content .owl-wrapper-outer .owl-wrapper .owl-item ul li .views-field-field-speakers .field-content a:before {

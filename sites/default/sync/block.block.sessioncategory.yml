@@ -1,0 +1,31 @@
+uuid: 5a25d81e-90a6-4f3b-8743-95920732033d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:176e46c8-53b5-48b2-ae84-432cc8505a50'
+  module:
+    - block_content
+    - system
+  theme:
+    - dcm2017
+id: sessioncategory
+theme: dcm2017
+region: sidebar_second
+weight: -19
+provider: null
+plugin: 'block_content:176e46c8-53b5-48b2-ae84-432cc8505a50'
+settings:
+  id: 'block_content:176e46c8-53b5-48b2-ae84-432cc8505a50'
+  label: 'Session Category'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/add/sessions
+    negate: false
+    context_mapping: {  }

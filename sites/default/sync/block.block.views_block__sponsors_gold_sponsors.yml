@@ -1,4 +1,4 @@
-uuid: 46179c7e-27a2-4750-951c-f48b13e2fc55
+uuid: fe841a93-ecf9-4c43-8f6c-96e613281816
 langcode: en
 status: true
 dependencies:
@@ -14,7 +14,7 @@ _core:
 id: views_block__sponsors_gold_sponsors
 theme: dcm17
 region: footer
-weight: -8
+weight: -10
 provider: null
 plugin: 'views_block:sponsors-gold_sponsors'
 settings:

@@ -1,8 +1,0 @@
-uuid: bcb5f503-db5c-45b8-a10d-f5d85c79efa9
-langcode: en
-status: true
-dependencies: {  }
-id: dcm-menu
-label: 'DCM menu'
-description: ''
-locked: false

@@ -1,0 +1,9 @@
+uuid: bd99cf59-5afa-423f-9b81-54d3cca7289e
+langcode: en
+status: true
+dependencies: {  }
+name: Departments
+vid: departments
+description: 'Dcm 2017 departments'
+hierarchy: 0
+weight: 0

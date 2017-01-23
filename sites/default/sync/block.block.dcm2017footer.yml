@@ -1,0 +1,25 @@
+uuid: b177264e-f0e5-4639-82a7-23f7aba5bcbe
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a8e61364-e2af-4118-8cee-49b567936fd7'
+  module:
+    - block_content
+  theme:
+    - dcm2017
+id: dcm2017footer
+theme: dcm2017
+region: footer
+weight: -13
+provider: null
+plugin: 'block_content:a8e61364-e2af-4118-8cee-49b567936fd7'
+settings:
+  id: 'block_content:a8e61364-e2af-4118-8cee-49b567936fd7'
+  label: 'Dcm-2017 Footer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

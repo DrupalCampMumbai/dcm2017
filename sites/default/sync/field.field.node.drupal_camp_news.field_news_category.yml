@@ -1,0 +1,28 @@
+uuid: e3b5fc50-20bd-45b6-89ff-05eb50e86c2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_category
+    - node.type.drupal_camp_news
+    - taxonomy.vocabulary.news_category
+id: node.drupal_camp_news.field_news_category
+field_name: field_news_category
+entity_type: node
+bundle: drupal_camp_news
+label: 'News Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_category: news_category
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

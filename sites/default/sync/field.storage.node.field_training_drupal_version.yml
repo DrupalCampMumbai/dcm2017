@@ -1,0 +1,37 @@
+uuid: fb47401b-7040-4f38-84c7-f808175f190d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_training_drupal_version
+field_name: field_training_drupal_version
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Drupal 7.x'
+      label: 'Drupal 7.x'
+    -
+      value: 'Drupal 8.x'
+      label: 'Drupal 8.x'
+    -
+      value: 'Drupal 8.1.x'
+      label: 'Drupal 8.1.x'
+    -
+      value: 'Drupal 9.x'
+      label: 'Drupal 9.x'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

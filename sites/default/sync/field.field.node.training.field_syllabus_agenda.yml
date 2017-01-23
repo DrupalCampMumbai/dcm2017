@@ -1,0 +1,22 @@
+uuid: 42f3d40e-223e-4f6e-8d41-9b9ed432d9f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_syllabus_agenda
+    - node.type.training
+  module:
+    - text
+id: node.training.field_syllabus_agenda
+field_name: field_syllabus_agenda
+entity_type: node
+bundle: training
+label: Syllabus/Agenda
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

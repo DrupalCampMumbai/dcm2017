@@ -1,0 +1,31 @@
+uuid: 85c2dfb1-187c-428f-96e6-04e8fad9d39e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:06875a73-2e56-4481-8497-cfa5de024894'
+  module:
+    - block_content
+    - system
+  theme:
+    - dcm2017
+id: twitterfeeds
+theme: dcm2017
+region: sidebar_second
+weight: -16
+provider: null
+plugin: 'block_content:06875a73-2e56-4481-8497-cfa5de024894'
+settings:
+  id: 'block_content:06875a73-2e56-4481-8497-cfa5de024894'
+  label: 'Twitter feeds'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

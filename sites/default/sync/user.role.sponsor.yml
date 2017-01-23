@@ -1,0 +1,12 @@
+uuid: fda0d997-b73a-4554-af2d-3e777b09f9ff
+langcode: en
+status: true
+dependencies: {  }
+id: sponsor
+label: Sponsor
+weight: 4
+is_admin: null
+permissions:
+  - 'create sessions content'
+  - 'delete own sessions content'
+  - 'edit own sessions content'

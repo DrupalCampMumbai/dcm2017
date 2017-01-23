@@ -1,0 +1,22 @@
+uuid: ac981f01-331a-4808-8379-5e7595b013c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.drupal_camp_news
+  module:
+    - text
+id: node.drupal_camp_news.body
+field_name: body
+entity_type: node
+bundle: drupal_camp_news
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

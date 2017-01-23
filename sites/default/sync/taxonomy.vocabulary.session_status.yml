@@ -1,0 +1,9 @@
+uuid: bf0dc14a-9a79-46d8-b667-98dfd4d7d337
+langcode: en
+status: true
+dependencies: {  }
+name: 'Session status'
+vid: session_status
+description: ''
+hierarchy: 0
+weight: 0

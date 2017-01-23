@@ -1,6 +1,6 @@
-uuid: a033fc12-4140-41d7-9022-8ee871958632
+uuid: fe55761d-cefb-404c-a6cb-d6fc6744883b
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: dcm17_breadcrumbs
 theme: dcm17
-region: navigation
-weight: 0
+region: '-1'
+weight: -10
 provider: null
 plugin: system_breadcrumb_block
 settings:

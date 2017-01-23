@@ -1,0 +1,32 @@
+uuid: d73439ae-eb8d-437f-bbcd-d0dd3ff24838
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sponsors
+  module:
+    - node
+    - views
+  theme:
+    - dcm2017
+id: views_block__sponsors_silver_sponsor_slideshow
+theme: dcm2017
+region: sidebar_second
+weight: -21
+provider: null
+plugin: 'views_block:sponsors-silver_sponsor_slideshow'
+settings:
+  id: 'views_block:sponsors-silver_sponsor_slideshow'
+  label: 'Silver Sponsors'
+  provider: views
+  label_display: visible
+  views_label: 'Silver Sponsors'
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      sessions: sessions
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

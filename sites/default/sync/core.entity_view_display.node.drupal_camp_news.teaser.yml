@@ -1,0 +1,26 @@
+uuid: fd245c57-f1f1-4c7b-84bc-119263ce2d84
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.drupal_camp_news.body
+    - node.type.drupal_camp_news
+  module:
+    - text
+    - user
+id: node.drupal_camp_news.teaser
+targetEntityType: node
+bundle: drupal_camp_news
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

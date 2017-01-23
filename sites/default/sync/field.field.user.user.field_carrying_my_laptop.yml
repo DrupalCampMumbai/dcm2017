@@ -1,0 +1,24 @@
+uuid: 136ca4e5-758a-4269-a735-a3eaa3de2f69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_carrying_my_laptop
+  module:
+    - user
+id: user.user.field_carrying_my_laptop
+field_name: field_carrying_my_laptop
+entity_type: user
+bundle: user
+label: 'Carrying my laptop?'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

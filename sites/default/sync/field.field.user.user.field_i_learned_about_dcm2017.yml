@@ -1,0 +1,21 @@
+uuid: 81da94b8-ba56-4266-834e-e7787dfb854b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_i_learned_about_dcm2017
+  module:
+    - options
+    - user
+id: user.user.field_i_learned_about_dcm2017
+field_name: field_i_learned_about_dcm2017
+entity_type: user
+bundle: user
+label: 'I learned about DCM2017 from...'
+description: 'Select all that apply'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

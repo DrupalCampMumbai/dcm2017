@@ -1,0 +1,9 @@
+uuid: 873eb30a-d63a-44af-8b57-b49ad0aed7aa
+langcode: en
+status: true
+dependencies: {  }
+name: 'Seminar Rooms'
+vid: seminar_rooms
+description: 'Rooms available for sessions'
+hierarchy: 0
+weight: 0

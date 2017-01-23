@@ -1,13 +1,18 @@
-uuid: 77543af2-c14b-496b-80cd-3f7c5c8915a6
+uuid: add84d3e-a197-4e57-849a-877ea9f75a14
 langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_wall_image
+    - image.style.wall_image
     - node.type.wall_image
   module:
+    - image
     - masonry_views
     - node
     - user
+_core:
+  default_config_hash: TuIHV-OLPYXORCx3OLeJMyUJEVRtoVC_JDELFMnI60I
 id: landing_page
 label: 'Landing page'
 module: views
@@ -60,7 +65,7 @@ display:
           default_row_class: true
           layoutColumnWidth: ''
           layoutColumnWidthUnit: px
-          gutterWidth: '0'
+          gutterWidth: ''
           stampSelector: ''
           isLayoutResizable: 1
           isLayoutAnimated: 1
@@ -178,7 +183,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Landing page'
+      title: '<none>'
       header: {  }
       footer: {  }
       empty: {  }
@@ -188,10 +193,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_wall_image'
   page_1:
     display_plugin: page
     id: page_1
@@ -204,7 +211,9 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_wall_image'

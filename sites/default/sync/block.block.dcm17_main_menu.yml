@@ -1,6 +1,6 @@
-uuid: 71679eb3-0544-4c59-a42b-9b8c405e96c6
+uuid: d75e6dee-2487-4091-8b02-c020d5ab984a
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,8 +12,8 @@ _core:
   default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
 id: dcm17_main_menu
 theme: dcm17
-region: navigation
-weight: 0
+region: '-1'
+weight: -7
 provider: null
 plugin: 'system_menu_block:main'
 settings:

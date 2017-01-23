@@ -1,0 +1,23 @@
+uuid: a38208e1-8b31-41e4-b513-b0e5b93832d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - link
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: user.field_linkedin_url
+field_name: field_linkedin_url
+entity_type: user
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

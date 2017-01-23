@@ -1,0 +1,30 @@
+uuid: 04b42aa8-7d54-4f41-bca4-dbfc1277b20c
+langcode: en
+status: true
+dependencies:
+  module:
+    - jquery_countdown_timer
+    - system
+  theme:
+    - dcm2017
+_core:
+  default_config_hash: AfSyED4QtQOeTIkQdB1DGd3oPCzPMwglJNDSV4gu1rE
+id: dcm2017_countdowntimer
+theme: dcm2017
+region: navigation
+weight: -20
+provider: null
+plugin: jquery_countdown_timer
+settings:
+  id: jquery_countdown_timer
+  label: 'Countdown Begins ...'
+  provider: jquery_countdown_timer
+  label_display: '0'
+  countdown_datetime: '2017-02-01 00:00:00'
+  font_size: '28'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/home-page\r\n<front>"
+    negate: false
+    context_mapping: {  }

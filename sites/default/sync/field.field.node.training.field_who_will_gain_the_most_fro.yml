@@ -1,0 +1,24 @@
+uuid: c2545c3b-38be-489b-b60e-98895fb667c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_who_will_gain_the_most_fro
+    - node.type.training
+  module:
+    - text
+id: node.training.field_who_will_gain_the_most_fro
+field_name: field_who_will_gain_the_most_fro
+entity_type: node
+bundle: training
+label: 'Who Will Gain the Most From This Training'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: "<p>Please be specific. Simply saying 'anyone' makes it difficult for students to know if this is really a fit for their skills and interest.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -3,18 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_c
-    - field.field.user.user.field_drupal_org_id_url_
-    - field.field.user.user.field_f
-    - field.field.user.user.field_how_likely_is_it_that_i_wi
-    - field.field.user.user.field_i_am_a_
-    - field.field.user.user.field_i_am_registering_as_a_
-    - field.field.user.user.field_i_learned_about_dcm2017_fr
-    - field.field.user.user.field_i_would_like_to_attend_thi
+    - field.field.user.user.field_carrying_my_laptop
+    - field.field.user.user.field_dcm_departments
+    - field.field.user.user.field_drupal_org_id_url
+    - field.field.user.user.field_facebook_url
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_how_likely_is_it_that
+    - field.field.user.user.field_i_am_a
+    - field.field.user.user.field_i_am_registering_as_a
+    - field.field.user.user.field_i_learned_about_dcm2017
+    - field.field.user.user.field_i_would_like_to_attend
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_my_drupal_persona_is_a_
+    - field.field.user.user.field_linkedin_url
+    - field.field.user.user.field_my_drupal_persona_is_a
     - field.field.user.user.field_organisation
-    - field.field.user.user.field_p
+    - field.field.user.user.field_phone_no
+    - field.field.user.user.field_twitter_url
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -29,17 +33,24 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_c:
-    weight: 19
+  field_carrying_my_laptop:
+    type: boolean
+    weight: 11
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
-  field_drupal_org_id_url_:
-    weight: 11
+  field_dcm_departments:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_drupal_org_id_url:
+    weight: 6
     label: above
     settings:
       trim_length: 80
@@ -49,74 +60,103 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_f:
-    weight: 8
+  field_facebook_url:
+    weight: 9
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_first_name:
+    weight: 1
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_how_likely_is_it_that_i_wi:
-    weight: 18
+  field_how_likely_is_it_that:
+    type: list_default
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_i_am_a:
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
-  field_i_am_a_:
-    weight: 12
+  field_i_am_registering_as_a:
+    type: list_default
+    weight: 13
     label: above
     settings: {  }
     third_party_settings: {  }
+  field_i_learned_about_dcm2017:
     type: list_default
-  field_i_am_registering_as_a_:
-    weight: 16
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-  field_i_learned_about_dcm2017_fr:
     weight: 15
     label: above
     settings: {  }
     third_party_settings: {  }
+  field_i_would_like_to_attend:
     type: list_default
-  field_i_would_like_to_attend_thi:
-    weight: 17
+    weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
   field_last_name:
-    weight: 7
+    weight: 2
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_my_drupal_persona_is_a_:
-    weight: 13
+  field_linkedin_url:
+    weight: 7
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_my_drupal_persona_is_a:
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
   field_organisation:
-    weight: 10
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-  field_p:
-    weight: 14
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-  member_for:
     weight: 5
-    settings: {  }
+    label: above
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
+    type: string
+  field_phone_no:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_twitter_url:
+    weight: 8
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
   user_picture:
     type: image
     weight: 0
@@ -125,4 +165,5 @@ content:
       image_link: content
     third_party_settings: {  }
     label: hidden
-hidden: {  }
+hidden:
+  member_for: true

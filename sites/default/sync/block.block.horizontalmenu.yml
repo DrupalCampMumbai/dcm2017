@@ -1,0 +1,20 @@
+uuid: a33f3814-a057-4225-a565-8d3ac4176467
+langcode: en
+status: true
+dependencies:
+  module:
+    - responsive_menu
+  theme:
+    - dcm17
+id: horizontalmenu
+theme: dcm17
+region: sidebar_first
+weight: -8
+provider: null
+plugin: responsive_menu_horizontal_menu
+settings:
+  id: responsive_menu_horizontal_menu
+  label: 'Horizontal menu'
+  provider: responsive_menu
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 32f6c1d2-f972-4449-bc8b-17a4fc3f314b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_how_likely_is_it_that
+  module:
+    - options
+    - user
+id: user.user.field_how_likely_is_it_that
+field_name: field_how_likely_is_it_that
+entity_type: user
+bundle: user
+label: 'How likely is it that I will attend DCM2017'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

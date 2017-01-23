@@ -1,9 +1,11 @@
-uuid: d05d0ea1-d6ef-441d-bdd5-fa3f8986202a
+uuid: 454ac0b5-1f3b-4d52-a2d8-acd8810538a5
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.wall_image
+_core:
+  default_config_hash: H9bly3OECuww-tA5VdjuTEx1N1fsZpErsQflKhxxtc8
 id: node.wall_image.promote
 field_name: promote
 entity_type: node

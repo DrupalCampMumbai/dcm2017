@@ -1,0 +1,10 @@
+uuid: 724f16d5-f270-4d9b-b567-612b662344bc
+langcode: en
+status: true
+dependencies: {  }
+id: sponsorship_contact
+label: 'Sponsorship Contact'
+recipients:
+  - ahmed.r@iksulaops.com
+reply: ',mk'
+weight: 0

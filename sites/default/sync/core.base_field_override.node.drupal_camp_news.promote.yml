@@ -1,0 +1,22 @@
+uuid: 707324b8-27c6-4269-ba07-14d537480c71
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.drupal_camp_news
+id: node.drupal_camp_news.promote
+field_name: promote
+entity_type: node
+bundle: drupal_camp_news
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

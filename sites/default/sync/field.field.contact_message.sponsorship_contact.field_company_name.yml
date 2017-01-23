@@ -1,0 +1,19 @@
+uuid: 0b750d07-e197-4d9e-8610-383732a0c34e
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.sponsorship_contact
+    - field.storage.contact_message.field_company_name
+id: contact_message.sponsorship_contact.field_company_name
+field_name: field_company_name
+entity_type: contact_message
+bundle: sponsorship_contact
+label: 'Company Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

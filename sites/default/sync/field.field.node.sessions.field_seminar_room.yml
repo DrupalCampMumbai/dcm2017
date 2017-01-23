@@ -1,0 +1,28 @@
+uuid: 242298ad-da80-414e-a2d1-0377a2ad7825
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seminar_room
+    - node.type.sessions
+    - taxonomy.vocabulary.seminar_rooms
+id: node.sessions.field_seminar_room
+field_name: field_seminar_room
+entity_type: node
+bundle: sessions
+label: 'Seminar Room'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      seminar_rooms: seminar_rooms
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

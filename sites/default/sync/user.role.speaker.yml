@@ -1,0 +1,12 @@
+uuid: db991716-55b3-4b79-85ba-9a54217ba5b0
+langcode: en
+status: true
+dependencies: {  }
+id: speaker
+label: Speaker
+weight: 5
+is_admin: null
+permissions:
+  - 'create sessions content'
+  - 'delete own sessions content'
+  - 'edit own sessions content'

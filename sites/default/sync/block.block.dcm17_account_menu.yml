@@ -1,4 +1,4 @@
-uuid: f1afc4e7-c7f4-4ef1-accd-18831f76697d
+uuid: 4a2d3eb2-1b8f-4985-88be-b058773664c5
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ _core:
   default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
 id: dcm17_account_menu
 theme: dcm17
-region: navigation
+region: sidebar_second
 weight: 0
 provider: null
 plugin: 'system_menu_block:account'

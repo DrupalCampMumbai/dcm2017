@@ -1,4 +1,4 @@
-uuid: efe0418c-09bc-45eb-a95a-2ff5df1bd46f
+uuid: 9877d89f-3218-471e-86ad-ca09ed178f44
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: dcm17_branding
 theme: dcm17
 region: header
-weight: 0
+weight: -9
 provider: null
 plugin: system_branding_block
 settings:

@@ -1,0 +1,31 @@
+uuid: 4a1e8877-f690-4a1d-9581-5d6ecb87e0f1
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:acdf62eb-6dac-4421-ae95-88da73b73e1c'
+  module:
+    - block_content
+    - system
+  theme:
+    - dcm2017
+id: whenandwhere
+theme: dcm2017
+region: '-1'
+weight: -1
+provider: null
+plugin: 'block_content:acdf62eb-6dac-4421-ae95-88da73b73e1c'
+settings:
+  id: 'block_content:acdf62eb-6dac-4421-ae95-88da73b73e1c'
+  label: 'When and Where?'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/register
+    negate: false
+    context_mapping: {  }

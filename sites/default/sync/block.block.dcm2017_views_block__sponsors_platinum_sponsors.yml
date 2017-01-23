@@ -1,0 +1,32 @@
+uuid: e41d65df-5316-481c-9173-c1b4922afcba
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.sponsors
+  module:
+    - system
+    - views
+  theme:
+    - dcm2017
+_core:
+  default_config_hash: LP882iGQ12Aoz9BMMGvB7m3jKhN97vtd53iZ95I11jc
+id: dcm2017_views_block__sponsors_platinum_sponsors
+theme: dcm2017
+region: '-1'
+weight: 0
+provider: null
+plugin: 'views_block:sponsors-platinum_sponsors'
+settings:
+  id: 'views_block:sponsors-platinum_sponsors'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /home-page
+    negate: false
+    context_mapping: {  }

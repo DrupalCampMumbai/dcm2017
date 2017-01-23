@@ -1,4 +1,4 @@
-uuid: 52dbffe8-c918-4dfe-8358-cf677f728d30
+uuid: 0fc98dc0-f780-456d-a90e-31b8a3396a25
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - node.type.wall_image
   module:
     - image
+_core:
+  default_config_hash: DlgLIEj8xOz6yEEHkks55kdIupsgNMtL9Q6pxLMfT6o
 id: node.wall_image.field_wall_image
 field_name: field_wall_image
 entity_type: node

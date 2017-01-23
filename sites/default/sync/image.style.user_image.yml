@@ -1,0 +1,14 @@
+uuid: 4ff36186-2ea3-4ed1-ad5b-e3f9809aefe2
+langcode: en
+status: true
+dependencies: {  }
+name: user_image
+label: 'User Image'
+effects:
+  18bc82ce-005c-4282-ac57-c34e44955130:
+    uuid: 18bc82ce-005c-4282-ac57-c34e44955130
+    id: image_resize
+    weight: 2
+    data:
+      width: 200
+      height: 267

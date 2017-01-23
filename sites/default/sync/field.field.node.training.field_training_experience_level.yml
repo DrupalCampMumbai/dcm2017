@@ -1,0 +1,21 @@
+uuid: d668d625-2967-4a51-be02-c2599676520e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_training_experience_level
+    - node.type.training
+  module:
+    - options
+id: node.training.field_training_experience_level
+field_name: field_training_experience_level
+entity_type: node
+bundle: training
+label: 'Experience Level'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,4 +1,4 @@
-uuid: 9731df3a-6d23-4cb6-9f01-938c2ca7cf8d
+uuid: 39596250-8c50-4174-896d-8383976707e0
 langcode: en
 status: true
 dependencies:
@@ -7,16 +7,23 @@ dependencies:
     - field.storage.node.field_sponsor_category
     - field.storage.node.field_sponsor_logo
     - image.style.medium
+    - image.style.sponsors_image
     - node.type.sponsor
     - taxonomy.vocabulary.sponsors_catergory
+  content:
+    - 'taxonomy_term:sponsors_catergory:3fdf0019-dcf4-41dd-9617-f1425f38f87b'
+    - 'taxonomy_term:sponsors_catergory:9cc0db4f-2bd2-4705-9eef-9dca57d39f3d'
+    - 'taxonomy_term:sponsors_catergory:e027d272-fc19-44e1-8866-c691c98ae47a'
+    - 'taxonomy_term:sponsors_catergory:ec30c24a-59c5-4717-b773-e97d7787f182'
   module:
     - image
     - node
     - taxonomy
     - text
     - user
+    - views_slideshow
 _core:
-  default_config_hash: YmLbUfT2uvrpg6igrcvPdwHqOIW-7Rf9e3Z9bDITsYw
+  default_config_hash: QiQkjJHxLKnUBQZYnwiHuEU2AcwjGn-XfoNEPkvu-s4
 id: sponsors
 label: Sponsors
 module: views
@@ -67,7 +74,7 @@ display:
           grouping:
             -
               field: field_sponsor_category
-              rendered: true
+              rendered: false
               rendered_strip: false
           row_class: ''
           default_row_class: true
@@ -264,7 +271,7 @@ display:
   gold_sponsor_detail_page_block:
     display_plugin: block
     id: gold_sponsor_detail_page_block
-    display_title: Block
+    display_title: 'Gold Sponsors Detail Page Block'
     position: 5
     display_options:
       display_extenders: {  }
@@ -275,6 +282,7 @@ display:
         filters: false
         filter_groups: false
         sorts: false
+        css_class: false
       block_description: 'Gold detail page block'
       fields:
         title:
@@ -393,7 +401,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: medium
+            image_style: sponsors_image
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -567,6 +575,8 @@ display:
           expose:
             label: ''
           granularity: second
+      css_class: ''
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -578,14 +588,14 @@ display:
       tags:
         - 'config:field.storage.node.field_sponsor_category'
         - 'config:field.storage.node.field_sponsor_logo'
-  gold_sponsors:
+  gold_sponsor_slideshow:
     display_plugin: block
-    id: gold_sponsors
-    display_title: Block
+    id: gold_sponsor_slideshow
+    display_title: 'Gold Sponsors slideshow'
     position: 3
     display_options:
       display_extenders: {  }
-      title: 'Gold Sponsors'
+      title: 'Gold Sponsors slideshow'
       defaults:
         title: false
         fields: false
@@ -593,6 +603,9 @@ display:
         filter_groups: false
         sorts: false
         pager: false
+        css_class: false
+        style: false
+        row: false
       fields:
         title:
           id: title
@@ -669,11 +682,11 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: "<div class=\"flip\"> \n    <div class=\"front\"> \n        {{ field_sponsor_logo }}\n    </div> \n    <div class=\"back\">\n        <h3>{{ title }}</h3>\n    </div> \n</div>"
-            make_link: false
-            path: ''
-            absolute: false
+            alter_text: false
+            text: ''
+            make_link: true
+            path: /contact/sponsorship_contact
+            absolute: true
             external: false
             replace_spaces: false
             path_case: none
@@ -710,8 +723,8 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: medium
-            image_link: content
+            image_style: sponsors_image
+            image_link: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -753,7 +766,345 @@ display:
           admin_label: ''
           operator: or
           value:
-            - 3
+            - 6
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: sponsors_catergory
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        created_1:
+          id: created_1
+          table: taxonomy_index
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: date
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      block_description: 'Gold Sponsors slideshow'
+      pager:
+        type: none
+        options:
+          offset: 0
+      css_class: ''
+      display_description: ''
+      style:
+        type: slideshow
+        options:
+          row_class: ''
+          default_row_class: true
+          slideshow_skin: default
+          slideshow_type: views_slideshow_cycle
+          views_slideshow_cycle:
+            effect: scrollLeft
+            transition_advanced: 0
+            timeout: '5000'
+            speed: '700'
+            delay: '0'
+            sync: 1
+            random: 0
+            pause: 1
+            pause_on_click: 0
+            action_advanced: 0
+            start_paused: 0
+            remember_slide: 0
+            remember_slide_days: '1'
+            pause_when_hidden: 0
+            pause_when_hidden_type: full
+            amount_allowed_visible: ''
+            nowrap: 0
+            fixed_height: 1
+            items_per_slide: '1'
+            wait_for_image_load: 1
+            wait_for_image_load_timeout: '3000'
+            cleartype: 0
+            cleartypenobg: 0
+          widgets:
+            top:
+              views_slideshow_slide_counter:
+                enable: 0
+                weight: '1'
+              views_slideshow_controls:
+                enable: 1
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_controls_text
+              views_slideshow_pager:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_pager_fields
+                views_slideshow_pager_fields:
+                  views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_sponsor_logo: 0
+                  views_slideshow_pager_fields_hover: 0
+            bottom:
+              views_slideshow_slide_counter:
+                enable: 0
+                weight: '1'
+              views_slideshow_controls:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_controls_text
+              views_slideshow_pager:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_pager_fields
+                views_slideshow_pager_fields:
+                  views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_sponsor_logo: 0
+                  views_slideshow_pager_fields_hover: 0
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
+  gold_sponsors:
+    display_plugin: block
+    id: gold_sponsors
+    display_title: 'Gold Sponsors'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      title: 'Gold Sponsors'
+      defaults:
+        title: false
+        fields: false
+        filters: false
+        filter_groups: false
+        sorts: false
+        pager: false
+        css_class: false
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_sponsor_logo:
+          id: field_sponsor_logo
+          table: node__field_sponsor_logo
+          field: field_sponsor_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: /contact/sponsorship_contact
+            absolute: true
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: sponsors_image
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsor: sponsor
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            - 6
           group: 1
           exposed: false
           expose:
@@ -826,6 +1177,8 @@ display:
         type: none
         options:
           offset: 0
+      css_class: ''
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -839,138 +1192,12 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: Sponsors
     position: 1
     display_options:
       display_extenders: {  }
       path: sponsors
       fields:
-        field_sponsor_logo:
-          id: field_sponsor_logo
-          table: node__field_sponsor_logo
-          field: field_sponsor_logo
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: medium
-            image_link: content
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        body:
-          id: body
-          table: node__body
-          field: body
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<div class=\"flip\"> \n    <div class=\"front\"> \n        {{ field_sponsor_logo }}\n    </div> \n    <div class=\"back\">\n        \n    </div> \n</div>"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         field_sponsor_category:
           id: field_sponsor_category
           table: node__field_sponsor_category
@@ -981,8 +1208,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: true
-            text: "<div class = \"sponsor-category\">\n   {{ field_sponsor_category }}\n</div>"
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -1034,6 +1261,132 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_sponsor_logo:
+          id: field_sponsor_logo
+          table: node__field_sponsor_logo
+          field: field_sponsor_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: ''
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       defaults:
         fields: false
         sorts: false
@@ -1051,6 +1404,7 @@ display:
             label: ''
           granularity: second
           plugin_id: date
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -1062,10 +1416,350 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_sponsor_category'
         - 'config:field.storage.node.field_sponsor_logo'
+  partners_slideshow:
+    display_plugin: block
+    id: partners_slideshow
+    display_title: 'Partners slideshow'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      title: 'Partners slideshow'
+      defaults:
+        title: false
+        fields: false
+        filters: false
+        filter_groups: false
+        sorts: false
+        pager: false
+        css_class: false
+        style: false
+        row: false
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_sponsor_logo:
+          id: field_sponsor_logo
+          table: node__field_sponsor_logo
+          field: field_sponsor_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: /contact/sponsorship_contact
+            absolute: true
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: sponsors_image
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsor: sponsor
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            - 36
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: sponsors_catergory
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        created_1:
+          id: created_1
+          table: taxonomy_index
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: date
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      block_description: 'Partners slideshow'
+      pager:
+        type: none
+        options:
+          offset: 0
+      css_class: ''
+      display_description: ''
+      style:
+        type: slideshow
+        options:
+          row_class: ''
+          default_row_class: true
+          slideshow_skin: default
+          slideshow_type: views_slideshow_cycle
+          views_slideshow_cycle:
+            effect: scrollLeft
+            transition_advanced: 0
+            timeout: '5000'
+            speed: '700'
+            delay: '0'
+            sync: 1
+            random: 0
+            pause: 1
+            pause_on_click: 0
+            action_advanced: 0
+            start_paused: 0
+            remember_slide: 0
+            remember_slide_days: '1'
+            pause_when_hidden: 0
+            pause_when_hidden_type: full
+            amount_allowed_visible: ''
+            nowrap: 0
+            fixed_height: 1
+            items_per_slide: '1'
+            wait_for_image_load: 1
+            wait_for_image_load_timeout: '3000'
+            cleartype: 0
+            cleartypenobg: 0
+          widgets:
+            top:
+              views_slideshow_slide_counter:
+                enable: 0
+                weight: '1'
+              views_slideshow_controls:
+                enable: 1
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_controls_text
+              views_slideshow_pager:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_pager_fields
+                views_slideshow_pager_fields:
+                  views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_sponsor_logo: 0
+                  views_slideshow_pager_fields_hover: 0
+            bottom:
+              views_slideshow_slide_counter:
+                enable: 0
+                weight: '1'
+              views_slideshow_controls:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_controls_text
+              views_slideshow_pager:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_pager_fields
+                views_slideshow_pager_fields:
+                  views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_sponsor_logo: 0
+                  views_slideshow_pager_fields_hover: 0
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
   platinum_sponsor_detail_page_block:
     display_plugin: block
     id: platinum_sponsor_detail_page_block
-    display_title: Block
+    display_title: 'Platinum Sponsors detail page block'
     position: 4
     display_options:
       display_extenders: {  }
@@ -1076,6 +1770,7 @@ display:
         filter_groups: false
         sorts: false
         fields: false
+        css_class: false
       block_description: 'Platinum detail page block'
       filters:
         status:
@@ -1292,7 +1987,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: medium
+            image_style: sponsors_image
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -1368,6 +2063,8 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      css_class: ''
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -1379,10 +2076,350 @@ display:
       tags:
         - 'config:field.storage.node.field_sponsor_category'
         - 'config:field.storage.node.field_sponsor_logo'
+  platinum_sponsor_slideshow:
+    display_plugin: block
+    id: platinum_sponsor_slideshow
+    display_title: 'platinum Sponsors slideshow'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      title: 'platinum Sponsors slideshow'
+      defaults:
+        title: false
+        fields: false
+        filters: false
+        filter_groups: false
+        sorts: false
+        pager: false
+        css_class: false
+        style: false
+        row: false
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_sponsor_logo:
+          id: field_sponsor_logo
+          table: node__field_sponsor_logo
+          field: field_sponsor_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: /contact/sponsorship_contact
+            absolute: true
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: sponsors_image
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsor: sponsor
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            - 1
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: sponsors_catergory
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        created_1:
+          id: created_1
+          table: taxonomy_index
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: date
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      block_description: 'Platinum Sponsors slideshow'
+      pager:
+        type: none
+        options:
+          offset: 0
+      css_class: ''
+      display_description: ''
+      style:
+        type: slideshow
+        options:
+          row_class: ''
+          default_row_class: true
+          slideshow_skin: default
+          slideshow_type: views_slideshow_cycle
+          views_slideshow_cycle:
+            effect: scrollLeft
+            transition_advanced: 0
+            timeout: '5000'
+            speed: '700'
+            delay: '0'
+            sync: 1
+            random: 0
+            pause: 1
+            pause_on_click: 0
+            action_advanced: 0
+            start_paused: 0
+            remember_slide: 0
+            remember_slide_days: '1'
+            pause_when_hidden: 0
+            pause_when_hidden_type: full
+            amount_allowed_visible: ''
+            nowrap: 0
+            fixed_height: 1
+            items_per_slide: '1'
+            wait_for_image_load: 1
+            wait_for_image_load_timeout: '3000'
+            cleartype: 0
+            cleartypenobg: 0
+          widgets:
+            top:
+              views_slideshow_slide_counter:
+                enable: 0
+                weight: '1'
+              views_slideshow_controls:
+                enable: 1
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_controls_text
+              views_slideshow_pager:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_pager_fields
+                views_slideshow_pager_fields:
+                  views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_sponsor_logo: 0
+                  views_slideshow_pager_fields_hover: 0
+            bottom:
+              views_slideshow_slide_counter:
+                enable: 0
+                weight: '1'
+              views_slideshow_controls:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_controls_text
+              views_slideshow_pager:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_pager_fields
+                views_slideshow_pager_fields:
+                  views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_sponsor_logo: 0
+                  views_slideshow_pager_fields_hover: 0
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
   platinum_sponsors:
     display_plugin: block
     id: platinum_sponsors
-    display_title: Block
+    display_title: 'Platinum Sponsors'
     position: 2
     display_options:
       display_extenders: {  }
@@ -1462,11 +2499,11 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: "<div class=\"flip\"> \n    <div class=\"front\"> \n        {{ field_sponsor_logo }}\n    </div> \n    <div class=\"back\">\n        <h3>{{ title }}</h3>\n    </div> \n</div>"
-            make_link: false
-            path: ''
-            absolute: false
+            alter_text: false
+            text: ''
+            make_link: true
+            path: /contact/sponsorship_contact
+            absolute: true
             external: false
             replace_spaces: false
             path_case: none
@@ -1503,8 +2540,8 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: medium
-            image_link: content
+            image_style: sponsors_image
+            image_link: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1522,6 +2559,7 @@ display:
         filters: false
         filter_groups: false
         sorts: false
+        css_class: false
       title: 'Platinum Sponsors'
       block_description: 'Platinum Sponsors'
       filters:
@@ -1622,6 +2660,609 @@ display:
           expose:
             label: ''
           granularity: second
+      css_class: ''
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
+  silver_sponsor:
+    display_plugin: block
+    id: silver_sponsor
+    display_title: 'Silver Sponsors'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      title: 'Silver Sponsors'
+      defaults:
+        title: false
+        fields: false
+        filters: false
+        filter_groups: false
+        sorts: false
+        pager: false
+        css_class: false
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_sponsor_logo:
+          id: field_sponsor_logo
+          table: node__field_sponsor_logo
+          field: field_sponsor_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: /contact/sponsorship_contact
+            absolute: true
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: sponsors_image
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsor: sponsor
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            - 11
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: sponsors_catergory
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        created_1:
+          id: created_1
+          table: taxonomy_index
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: date
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      block_description: 'Silver Sponsors'
+      pager:
+        type: none
+        options:
+          offset: 0
+      css_class: ''
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
+  silver_sponsor_slideshow:
+    display_plugin: block
+    id: silver_sponsor_slideshow
+    display_title: 'Silver Sponsors slideshow'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      title: 'Silver Sponsors slideshow'
+      defaults:
+        title: false
+        fields: false
+        filters: false
+        filter_groups: false
+        sorts: false
+        pager: false
+        css_class: false
+        style: false
+        row: false
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_sponsor_logo:
+          id: field_sponsor_logo
+          table: node__field_sponsor_logo
+          field: field_sponsor_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: /contact/sponsorship_contact
+            absolute: true
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: sponsors_image
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsor: sponsor
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            - 11
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: sponsors_catergory
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        created_1:
+          id: created_1
+          table: taxonomy_index
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: date
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      block_description: 'Silver Sponsors slideshow'
+      pager:
+        type: none
+        options:
+          offset: 0
+      css_class: ''
+      display_description: ''
+      style:
+        type: slideshow
+        options:
+          row_class: ''
+          default_row_class: true
+          slideshow_skin: default
+          slideshow_type: views_slideshow_cycle
+          views_slideshow_cycle:
+            effect: scrollLeft
+            transition_advanced: 0
+            timeout: '5000'
+            speed: '700'
+            delay: '0'
+            sync: 1
+            random: 0
+            pause: 1
+            pause_on_click: 0
+            action_advanced: 0
+            start_paused: 0
+            remember_slide: 0
+            remember_slide_days: '1'
+            pause_when_hidden: 0
+            pause_when_hidden_type: full
+            amount_allowed_visible: ''
+            nowrap: 0
+            fixed_height: 1
+            items_per_slide: '1'
+            wait_for_image_load: 1
+            wait_for_image_load_timeout: '3000'
+            cleartype: 0
+            cleartypenobg: 0
+          widgets:
+            top:
+              views_slideshow_slide_counter:
+                enable: 0
+                weight: '1'
+              views_slideshow_controls:
+                enable: 1
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_controls_text
+              views_slideshow_pager:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_pager_fields
+                views_slideshow_pager_fields:
+                  views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_sponsor_logo: 0
+                  views_slideshow_pager_fields_hover: 0
+            bottom:
+              views_slideshow_slide_counter:
+                enable: 0
+                weight: '1'
+              views_slideshow_controls:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_controls_text
+              views_slideshow_pager:
+                enable: 0
+                weight: '1'
+                hide_on_single_slide: 0
+                type: views_slideshow_pager_fields
+                views_slideshow_pager_fields:
+                  views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_sponsor_logo: 0
+                  views_slideshow_pager_fields_hover: 0
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
     cache_metadata:
       max-age: -1
       contexts:

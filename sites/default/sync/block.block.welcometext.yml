@@ -1,0 +1,31 @@
+uuid: 9757a7d1-2f98-494e-b361-0c34b83082d6
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8a20dd94-0f4c-45c9-9d86-c92d1a6c2309'
+  module:
+    - block_content
+    - system
+  theme:
+    - dcm2017
+id: welcometext
+theme: dcm2017
+region: navigation
+weight: -19
+provider: null
+plugin: 'block_content:8a20dd94-0f4c-45c9-9d86-c92d1a6c2309'
+settings:
+  id: 'block_content:8a20dd94-0f4c-45c9-9d86-c92d1a6c2309'
+  label: 'Welcome text'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

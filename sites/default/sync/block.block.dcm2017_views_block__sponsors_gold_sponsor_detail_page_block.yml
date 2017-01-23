@@ -1,0 +1,32 @@
+uuid: 74c64d88-8689-441f-a967-dd2ad9241a3f
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.sponsors
+  module:
+    - system
+    - views
+  theme:
+    - dcm2017
+_core:
+  default_config_hash: CRFh5M4tJiyHKvL5DpKwFLTSMmvSCTJBF3SA2km3wa8
+id: dcm2017_views_block__sponsors_gold_sponsor_detail_page_block
+theme: dcm2017
+region: '-1'
+weight: -11
+provider: null
+plugin: 'views_block:sponsors-gold_sponsor_detail_page_block'
+settings:
+  id: 'views_block:sponsors-gold_sponsor_detail_page_block'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/landing-page"
+    negate: true
+    context_mapping: {  }

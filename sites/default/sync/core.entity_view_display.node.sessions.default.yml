@@ -1,0 +1,48 @@
+uuid: a3c4901c-5422-4397-9c59-acc4d8a3358d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sessions.body
+    - field.field.node.sessions.field_drupal_version
+    - field.field.node.sessions.field_experience_level
+    - field.field.node.sessions.field_seminar_room
+    - field.field.node.sessions.field_session_time
+    - field.field.node.sessions.field_session_track
+    - field.field.node.sessions.field_slides
+    - field.field.node.sessions.field_speakers
+    - field.field.node.sessions.field_status
+    - node.type.sessions
+  module:
+    - file
+    - text
+    - user
+id: node.sessions.default
+targetEntityType: node
+bundle: sessions
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_slides:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_drupal_version: true
+  field_experience_level: true
+  field_seminar_room: true
+  field_session_time: true
+  field_session_track: true
+  field_speakers: true
+  field_status: true

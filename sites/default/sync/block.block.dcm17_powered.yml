@@ -1,6 +1,6 @@
-uuid: 29dc4edb-c069-4fb5-9718-7bb82526b3d6
+uuid: a7a922dd-047f-4bc2-a290-be9b95405634
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
 id: dcm17_powered
 theme: dcm17
-region: navigation
-weight: 10
+region: '-1'
+weight: -6
 provider: null
 plugin: system_powered_by_block
 settings:

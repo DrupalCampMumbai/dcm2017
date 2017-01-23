@@ -1,0 +1,24 @@
+uuid: bedf5915-c511-48ca-bf7f-744a8ce3b418
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.dcm2017
+  module:
+    - system
+  theme:
+    - dcm2017
+id: dcm2017_3
+theme: dcm2017
+region: navigation_collapsible
+weight: -19
+provider: null
+plugin: 'system_menu_block:dcm2017'
+settings:
+  id: 'system_menu_block:dcm2017'
+  label: DCM2017
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

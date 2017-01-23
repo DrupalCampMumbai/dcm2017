@@ -1,0 +1,19 @@
+uuid: e0989080-414b-497c-9491-0550e9a93ff7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_trainers
+    - node.type.training
+id: node.training.field_trainers
+field_name: field_trainers
+entity_type: node
+bundle: training
+label: Trainer(s)
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

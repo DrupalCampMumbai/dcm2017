@@ -1,0 +1,24 @@
+uuid: 09a54ba3-35b9-4fe3-aa00-4eb55bc16bbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prerequisites_for_this_cou
+    - node.type.training
+  module:
+    - text
+id: node.training.field_prerequisites_for_this_cou
+field_name: field_prerequisites_for_this_cou
+entity_type: node
+bundle: training
+label: 'Prerequisites for this Course'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: "<p>Please include detailed experience requirements. What skills/knowledge is needed to be able to follow the class?</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

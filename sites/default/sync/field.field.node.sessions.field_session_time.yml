@@ -1,0 +1,21 @@
+uuid: 0a2288ed-70fe-4c0d-84d1-78ad84c05f99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_session_time
+    - node.type.sessions
+  module:
+    - datetime_range
+id: node.sessions.field_session_time
+field_name: field_session_time
+entity_type: node
+bundle: sessions
+label: 'Session Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

@@ -1,0 +1,25 @@
+uuid: efdf8469-19fe-43ec-9f6c-1a72836ac3f4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5cf223a5-df0f-4c73-83ff-3a450a5e50b1'
+  module:
+    - block_content
+  theme:
+    - dcm2017
+id: dcm2017footertext
+theme: dcm2017
+region: footer
+weight: -12
+provider: null
+plugin: 'block_content:5cf223a5-df0f-4c73-83ff-3a450a5e50b1'
+settings:
+  id: 'block_content:5cf223a5-df0f-4c73-83ff-3a450a5e50b1'
+  label: 'DCM2017 footer text'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

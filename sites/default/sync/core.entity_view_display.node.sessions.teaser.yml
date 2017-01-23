@@ -1,0 +1,42 @@
+uuid: 7f7e6842-307b-46b4-b1b0-7e0f5f82c754
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sessions.body
+    - field.field.node.sessions.field_drupal_version
+    - field.field.node.sessions.field_experience_level
+    - field.field.node.sessions.field_seminar_room
+    - field.field.node.sessions.field_session_time
+    - field.field.node.sessions.field_session_track
+    - field.field.node.sessions.field_slides
+    - field.field.node.sessions.field_speakers
+    - field.field.node.sessions.field_status
+    - node.type.sessions
+  module:
+    - text
+    - user
+id: node.sessions.teaser
+targetEntityType: node
+bundle: sessions
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_drupal_version: true
+  field_experience_level: true
+  field_seminar_room: true
+  field_session_time: true
+  field_session_track: true
+  field_slides: true
+  field_speakers: true
+  field_status: true

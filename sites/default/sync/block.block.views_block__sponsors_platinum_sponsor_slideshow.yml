@@ -1,0 +1,38 @@
+uuid: de34c8e0-ce26-4b5f-8c46-34691f40aa8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sponsors
+  module:
+    - node
+    - system
+    - views
+  theme:
+    - dcm2017
+id: views_block__sponsors_platinum_sponsor_slideshow
+theme: dcm2017
+region: content
+weight: -20
+provider: null
+plugin: 'views_block:sponsors-platinum_sponsor_slideshow'
+settings:
+  id: 'views_block:sponsors-platinum_sponsor_slideshow'
+  label: 'platinum Sponsors'
+  provider: views
+  label_display: visible
+  views_label: 'platinum Sponsors'
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      sessions: sessions
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /contact/sponsorship_contact
+    negate: false
+    context_mapping: {  }

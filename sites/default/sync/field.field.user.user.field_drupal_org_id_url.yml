@@ -1,0 +1,23 @@
+uuid: 335b0bb7-9e11-4ff8-a2a9-df0dd6fd9046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_drupal_org_id_url
+  module:
+    - link
+    - user
+id: user.user.field_drupal_org_id_url
+field_name: field_drupal_org_id_url
+entity_type: user
+bundle: user
+label: 'Drupal.org ID URL'
+description: 'D.o ID is highly recommended to participate in the community. If you do not have drupal.org id, you can register for one <a href="https://register.drupal.org/user/register">here.</a>. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

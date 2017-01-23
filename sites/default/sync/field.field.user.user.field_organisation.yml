@@ -1,4 +1,4 @@
-uuid: 08fe6a60-66c9-41d1-9988-d6fcfd87d997
+uuid: b3a85a3c-a0e7-41e4-b684-ac4bf067663a
 langcode: en
 status: true
 dependencies:
@@ -11,8 +11,8 @@ field_name: field_organisation
 entity_type: user
 bundle: user
 label: Organisation
-description: 'enter NA, consultant, freelancer if not associated with any organisation.'
-required: true
+description: ''
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -1,0 +1,30 @@
+uuid: 9bb20771-ea49-4228-a032-70683ea5e998
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sponsors
+  module:
+    - system
+    - views
+  theme:
+    - dcm2017
+id: views_block__sponsors_gold_sponsors_2
+theme: dcm2017
+region: header
+weight: -21
+provider: null
+plugin: 'views_block:sponsors-gold_sponsors'
+settings:
+  id: 'views_block:sponsors-gold_sponsors'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

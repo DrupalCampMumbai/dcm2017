@@ -1,0 +1,22 @@
+uuid: 5059913e-f810-4381-9e35-72829ec5f95a
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - dcm2017
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: dcm2017_powered
+theme: dcm2017
+region: '-1'
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

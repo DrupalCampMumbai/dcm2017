@@ -1,0 +1,27 @@
+uuid: 93a8cd37-48e5-41ed-ac65-767189ca3909
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_training_slides
+    - node.type.training
+  module:
+    - file
+id: node.training.field_training_slides
+field_name: field_training_slides
+entity_type: node
+bundle: training
+label: Slides
+description: 'Upload your slides here as a PDF, or link to them from the description. (This is typically done after your training.)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'ppt pdf odt odp'
+  max_filesize: '50'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

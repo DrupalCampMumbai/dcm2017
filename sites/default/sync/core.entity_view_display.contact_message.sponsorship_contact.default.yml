@@ -1,0 +1,35 @@
+uuid: 16aaa67f-504e-40c2-ac02-708703f414f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.sponsorship_contact
+    - field.field.contact_message.sponsorship_contact.field_company_name
+    - field.field.contact_message.sponsorship_contact.field_contact_no
+id: contact_message.sponsorship_contact.default
+targetEntityType: contact_message
+bundle: sponsorship_contact
+mode: default
+content:
+  field_company_name:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_contact_no:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  message:
+    type: string
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

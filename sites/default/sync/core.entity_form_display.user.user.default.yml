@@ -3,18 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_c
-    - field.field.user.user.field_drupal_org_id_url_
-    - field.field.user.user.field_f
-    - field.field.user.user.field_how_likely_is_it_that_i_wi
-    - field.field.user.user.field_i_am_a_
-    - field.field.user.user.field_i_am_registering_as_a_
-    - field.field.user.user.field_i_learned_about_dcm2017_fr
-    - field.field.user.user.field_i_would_like_to_attend_thi
+    - field.field.user.user.field_carrying_my_laptop
+    - field.field.user.user.field_dcm_departments
+    - field.field.user.user.field_drupal_org_id_url
+    - field.field.user.user.field_facebook_url
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_how_likely_is_it_that
+    - field.field.user.user.field_i_am_a
+    - field.field.user.user.field_i_am_registering_as_a
+    - field.field.user.user.field_i_learned_about_dcm2017
+    - field.field.user.user.field_i_would_like_to_attend
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_my_drupal_persona_is_a_
+    - field.field.user.user.field_linkedin_url
+    - field.field.user.user.field_my_drupal_persona_is_a
     - field.field.user.user.field_organisation
-    - field.field.user.user.field_p
+    - field.field.user.user.field_phone_no
+    - field.field.user.user.field_twitter_url
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -32,47 +36,59 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
-  field_c:
-    weight: 13
+  field_carrying_my_laptop:
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-  field_drupal_org_id_url_:
-    weight: 6
+  field_dcm_departments:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_drupal_org_id_url:
+    weight: 14
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-  field_f:
+  field_facebook_url:
+    weight: 17
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_first_name:
     weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_how_likely_is_it_that_i_wi:
-    weight: 12
+  field_how_likely_is_it_that:
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-  field_i_am_a_:
-    weight: 7
+  field_i_am_a:
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-  field_i_am_registering_as_a_:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-  field_i_learned_about_dcm2017_fr:
+  field_i_am_registering_as_a:
     weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-  field_i_would_like_to_attend_thi:
-    weight: 11
+  field_i_learned_about_dcm2017:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_i_would_like_to_attend:
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -83,8 +99,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_my_drupal_persona_is_a_:
-    weight: 8
+  field_linkedin_url:
+    weight: 15
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_my_drupal_persona_is_a:
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -95,13 +118,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_p:
+  field_phone_no:
     weight: 4
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_twitter_url:
+    weight: 16
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
   user_picture:
     type: image_image
     settings:

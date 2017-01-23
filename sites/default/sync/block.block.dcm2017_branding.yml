@@ -1,0 +1,25 @@
+uuid: 2fcfa91b-2e4a-4ae0-aefd-0827d4e717de
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dcm2017
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: dcm2017_branding
+theme: dcm2017
+region: navigation
+weight: -22
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

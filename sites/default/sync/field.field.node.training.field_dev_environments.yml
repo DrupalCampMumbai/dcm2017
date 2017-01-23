@@ -1,0 +1,19 @@
+uuid: 61d659a4-d2f4-448d-8cc4-5e4b069deb8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dev_environments
+    - node.type.training
+id: node.training.field_dev_environments
+field_name: field_dev_environments
+entity_type: node
+bundle: training
+label: 'Dev Environments'
+description: 'If your course is not tested on all platforms, list which platforms it is tested for. This prevents frustration for students whose machine is not set up for the training.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

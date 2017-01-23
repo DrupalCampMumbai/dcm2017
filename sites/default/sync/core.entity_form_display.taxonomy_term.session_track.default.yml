@@ -1,0 +1,44 @@
+uuid: 3d6dc87e-1c20-448c-8f96-2951ef1585b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.session_track.field_session_track_image
+    - image.style.thumbnail
+    - taxonomy.vocabulary.session_track
+  module:
+    - image
+    - path
+    - text
+id: taxonomy_term.session_track.default
+targetEntityType: taxonomy_term
+bundle: session_track
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_session_track_image:
+    weight: 31
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

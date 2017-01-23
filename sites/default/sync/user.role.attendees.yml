@@ -1,0 +1,12 @@
+uuid: 116a9031-1266-4b4c-9a4a-ac4229b01f39
+langcode: en
+status: true
+dependencies: {  }
+id: attendees
+label: Attendees
+weight: 3
+is_admin: null
+permissions:
+  - 'create sessions content'
+  - 'delete own sessions content'
+  - 'edit own sessions content'

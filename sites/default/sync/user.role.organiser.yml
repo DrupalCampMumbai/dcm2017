@@ -1,0 +1,12 @@
+uuid: 2465ec72-1cce-42bf-9745-d9e357c88cb0
+langcode: en
+status: true
+dependencies: {  }
+id: organiser
+label: Organiser
+weight: 7
+is_admin: null
+permissions:
+  - 'create sessions content'
+  - 'delete own sessions content'
+  - 'edit own sessions content'

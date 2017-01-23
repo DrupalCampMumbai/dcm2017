@@ -1,4 +1,4 @@
-uuid: a1e62af7-8f6b-4f92-9e7b-be2db0cfedc8
+uuid: 47a75927-e41c-4296-9155-8666ef15bac2
 langcode: en
 status: true
 dependencies:
@@ -9,6 +9,8 @@ dependencies:
   module:
     - image
     - path
+_core:
+  default_config_hash: 8Ju0-ri7spJqZGrAAr47IcAvqBqHi7vpd2y81q3cfbg
 id: node.wall_image.default
 targetEntityType: node
 bundle: wall_image

@@ -1,4 +1,4 @@
-uuid: 9e32bb2e-a5ab-45ca-8f64-a9831467c1d4
+uuid: 13956e48-c04e-4c3a-bde2-b42e9f24fa76
 langcode: en
 status: false
 dependencies:
@@ -13,7 +13,7 @@ _core:
 id: dcm17_footer
 theme: dcm17
 region: '-1'
-weight: 0
+weight: -8
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

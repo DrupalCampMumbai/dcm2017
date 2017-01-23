@@ -1,4 +1,4 @@
-uuid: 14ccdeab-ffc1-49dd-896b-f2150e02664b
+uuid: df586a51-8010-48c2-959c-68d3af8407df
 langcode: en
 status: true
 dependencies:
@@ -14,7 +14,7 @@ _core:
 id: views_block__sponsors_platinum_sponsor_detail_page_block
 theme: dcm17
 region: header
-weight: -8
+weight: -11
 provider: null
 plugin: 'views_block:sponsors-platinum_sponsor_detail_page_block'
 settings:

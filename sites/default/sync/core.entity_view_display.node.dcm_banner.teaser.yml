@@ -1,4 +1,4 @@
-uuid: a84893cb-e348-4924-b382-e77d353d363f
+uuid: bd7b17f8-f1ba-4168-8028-c5cb42fb723f
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: aTshEP-sN4STOvF4XdJr9E9AN-A2eJx6HSKP9NO3UKU
+  default_config_hash: mIGlZlz1OF8Jp6RCYTSG2JRJo7eJ17vTINa8v7XcV5Q
 id: node.dcm_banner.teaser
 targetEntityType: node
 bundle: dcm_banner

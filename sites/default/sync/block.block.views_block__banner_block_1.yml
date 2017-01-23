@@ -1,6 +1,6 @@
-uuid: 04164b50-c622-4d65-8fcf-b0cc9e234ad8
+uuid: 021b2695-3a3f-4e34-994f-9e714a3b47bf
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.banner
@@ -13,8 +13,8 @@ _core:
   default_config_hash: ZmvgbDc28zW4pnhNqd-lXZ6vbcJbxJ6EQbHmwM3X8EA
 id: views_block__banner_block_1
 theme: dcm17
-region: highlighted
-weight: -10
+region: '-1'
+weight: -11
 provider: null
 plugin: 'views_block:banner-block_1'
 settings:

@@ -1,0 +1,21 @@
+uuid: 7bc4c892-3e7c-40e5-9dbf-d14fdf9e8ea7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_i_am_registering_as_a
+  module:
+    - options
+    - user
+id: user.user.field_i_am_registering_as_a
+field_name: field_i_am_registering_as_a
+entity_type: user
+bundle: user
+label: 'I am registering as a...'
+description: 'My role at DCM2017'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

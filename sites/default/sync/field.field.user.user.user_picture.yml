@@ -14,7 +14,7 @@ field_name: user_picture
 entity_type: user
 bundle: user
 label: Picture
-description: 'Your virtual face or picture.'
+description: ''
 required: false
 translatable: true
 default_value: {  }
@@ -22,19 +22,19 @@ default_value_callback: ''
 settings:
   file_directory: 'pictures/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
-  max_filesize: '30 KB'
-  max_resolution: 309x309
+  max_filesize: '150 KB'
+  max_resolution: 85x85
   min_resolution: ''
   alt_field: false
   alt_field_required: false
   title_field: false
   title_field_required: false
   default_image:
-    uuid: ''
+    uuid: ff399d11-7817-4fc5-acb6-e3a47e11a4be
     alt: ''
     title: ''
-    width: null
-    height: null
+    width: 462
+    height: 462
   handler: 'default:file'
   handler_settings: {  }
 field_type: image

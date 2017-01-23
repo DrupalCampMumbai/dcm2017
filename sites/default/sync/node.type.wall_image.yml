@@ -1,4 +1,4 @@
-uuid: accae6e3-a183-499d-a0a4-0b0a8cb2e473
+uuid: a15ed68d-895e-4d59-a4b3-c24a5ff4aeb3
 langcode: en
 status: true
 dependencies:
@@ -9,6 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
+_core:
+  default_config_hash: BVCYB30KUt6VKZDYowTvbEzRsGJ03D93qaadtJfFG0Y
 name: 'Wall Image'
 type: wall_image
 description: 'Content type to add images for wall image on landing page'

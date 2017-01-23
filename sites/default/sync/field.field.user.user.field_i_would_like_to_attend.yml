@@ -1,0 +1,21 @@
+uuid: 06195f49-960d-4905-8012-637c5875207a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_i_would_like_to_attend
+  module:
+    - options
+    - user
+id: user.user.field_i_would_like_to_attend
+field_name: field_i_would_like_to_attend
+entity_type: user
+bundle: user
+label: 'I would like to attend this workshop:'
+description: "Choose only 1 each for Day 1 and Day 2.\r\nSee the Event Program here - "
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

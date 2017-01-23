@@ -1,4 +1,4 @@
-uuid: 84d34c94-63f7-4483-8607-37d72df099f3
+uuid: 67751246-415b-4599-b31d-6d3be42dbd12
 langcode: en
 status: false
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: dcm17_search
 theme: dcm17
 region: '-1'
-weight: -1
+weight: -5
 provider: null
 plugin: search_form_block
 settings:

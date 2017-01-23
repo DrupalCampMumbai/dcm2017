@@ -1,0 +1,19 @@
+uuid: 695d82ef-d3b2-427b-b76b-db17e475709d
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - user
+id: user.field_drupal_org_id_url
+field_name: field_drupal_org_id_url
+entity_type: user
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

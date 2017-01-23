@@ -1159,6 +1159,9 @@ aside, .sidebar {
 	@media screen and (max-width: 720px) {
 		left: -90px;
 	}
+	@media screen and (max-width: 533px) {
+		left: -115px;
+	}
 }
 .views_slideshow_controls_text_next a:after{
     right: -100px;
@@ -1172,6 +1175,9 @@ aside, .sidebar {
 	}
 	@media screen and (max-width: 720px) {
 		right: -80px;
+	}
+	@media screen and (max-width: 533px) {
+		right: -105px;
 	}
 }
 .block-views-blocksponsors-platinum-sponsors {
@@ -2257,7 +2263,7 @@ aside, .sidebar {
 			.form-control, .form-select, .input-group {
 				background-color: transparent;		
 				display: inline-block;
-				width: 54%;
+				width: 100%;
 				@media screen and (max-width: 960px) {
 					display: block;
 					width: 100%;					
@@ -2327,6 +2333,95 @@ aside, .sidebar {
 			}			
 		}
 	}
+}
+.path-node{
+	.main-container {
+		.region-content {
+			form {
+				label {
+					float: none;
+					display: block;
+					width: 100%;
+				}
+				.field-edit-link {
+					clear: both;
+					display: inline-block;
+				}
+				.tabledrag-toggle-weight {
+					display: none;
+				}
+			}
+		}
+		.col-sm-3 {
+			.well {
+				.block-views-blocksessions-session-listing-block {
+					.block-title{
+						background: rgba(42, 169, 222, 0.9);
+						padding: 10px 10px 10px 35px;
+						margin: 0;
+					    color: #fff;
+					    position: relative;
+					}
+					.block-title:after {
+						display: inline-block;
+					    border-left: 6px solid transparent;
+					    border-top: 6px solid #3eb1e1;
+					    border-right: 6px solid transparent;
+					    content: "";
+					    font-size: 0;
+					    height: 0;
+					    left: 11px;
+					    line-height: 0;
+					    margin-right: 7px;
+					    position: absolute;
+					    width: 0;
+					    bottom: -5px;
+					    z-index: 99;	
+					}
+					.owl-carousel {
+						.views-col {
+							width: 100% !important;
+							background: #f9f9f9;
+							padding: 16px;
+							border-bottom: 1px dashed rgb(220, 221, 220);
+							.views-field-title, .views-field-uid, .views-field-field-session-track {
+								margin-left: 15px;
+								position: relative;
+								padding: 10px 0;
+							}
+							.views-field:before{
+								color: #3eb1e1;
+							    display: inline-block;
+							    border-radius: 50%;
+							    position: absolute;
+							    top: 0;
+							    padding: 10px 0;
+							    margin-top: 1px;
+							    left: -22px;
+							    font: normal normal normal 20px/1 FontAwesome;
+							    text-rendering: auto;
+							    -webkit-font-smoothing: antialiased;
+							}
+							.views-field-title:before{
+								content: "\f022";
+							}
+							.views-field-uid:before{
+								content: "\f0a1";	
+							}	
+							.views-field-field-session-track:before{
+								content: "\f073";
+							}						
+						}
+					}
+					.view-display-id-session_listing_block .more-link{
+						padding: 10px 16px;
+    					background-color: #f9f9f9;
+					}
+				}
+			}
+		}
+	}
+
 }
 /*End Form*/
 

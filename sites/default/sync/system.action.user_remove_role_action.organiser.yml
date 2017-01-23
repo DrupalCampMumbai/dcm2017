@@ -1,0 +1,14 @@
+uuid: 9aded727-41e8-45c0-9862-8c4e2de1da39
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.organiser
+  module:
+    - user
+id: user_remove_role_action.organiser
+label: 'Remove the Organiser role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: organiser

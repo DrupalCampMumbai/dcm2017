@@ -1,7 +1,9 @@
-uuid: abd60c3e-c415-48da-ae0c-b77b2c121ee2
+uuid: dad3dd43-15a3-4b26-ab60-2e398e0bb86e
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 3uIn3uJh2LTEo3HRlUiQTV9d8ABOF9pwgBV5G-MtKMA
 name: wall_image
 label: 'Wall Image'
 effects:
@@ -10,6 +12,6 @@ effects:
     id: image_scale
     weight: 1
     data:
-      width: 200
+      width: 296
       height: null
       upscale: true

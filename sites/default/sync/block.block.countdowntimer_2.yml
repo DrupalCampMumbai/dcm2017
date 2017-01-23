@@ -1,0 +1,28 @@
+uuid: 61e59643-a81c-4ef2-9695-e1f3b640f167
+langcode: en
+status: true
+dependencies:
+  module:
+    - jquery_countdown_timer
+    - system
+  theme:
+    - dcm2017
+id: countdowntimer_2
+theme: dcm2017
+region: content
+weight: -16
+provider: null
+plugin: jquery_countdown_timer
+settings:
+  id: jquery_countdown_timer
+  label: 'Countdown landing page'
+  provider: jquery_countdown_timer
+  label_display: '0'
+  countdown_datetime: '2016-10-15 00:00:00'
+  font_size: '28'
+visibility:
+  request_path:
+    id: request_path
+    pages: /landing-page
+    negate: false
+    context_mapping: {  }

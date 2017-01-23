@@ -1,0 +1,32 @@
+uuid: 05db9e36-56f3-4f2d-a50a-888a91536acc
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.sponsors
+  module:
+    - system
+    - views
+  theme:
+    - dcm2017
+_core:
+  default_config_hash: YUdLlX3BJ78SuAhS_vdq03zVZjKQtf8yDbV5YiqQv2c
+id: dcm2017_views_block__sponsors_platinum_sponsor_detail_page_block
+theme: dcm2017
+region: '-1'
+weight: -8
+provider: null
+plugin: 'views_block:sponsors-platinum_sponsor_detail_page_block'
+settings:
+  id: 'views_block:sponsors-platinum_sponsor_detail_page_block'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/landing-page\r\n/about-mumbai"
+    negate: true
+    context_mapping: {  }

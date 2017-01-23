@@ -1,0 +1,40 @@
+uuid: b5317af6-7283-45a6-aaa8-1c27a1d54588
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: private
+id: user.field_i_would_like_to_attend
+field_name: field_i_would_like_to_attend
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Drupal in a Day Training (beginners) [Day1]'
+      label: 'Drupal in a Day Training (beginners) [Day1]'
+    -
+      value: 'Workshop 1: D7 to D8 module porting (intermediate to advanced) [Day1]'
+      label: 'Workshop 1: D7 to D8 module porting (intermediate to advanced) [Day1]'
+    -
+      value: 'Workshop 2: Headless Drupal (intermediate to advanced) [Day1]'
+      label: 'Workshop 2: Headless Drupal (intermediate to advanced) [Day1]'
+    -
+      value: 'Codesprint (beginner) [Day2]'
+      label: 'Codesprint (beginner) [Day2]'
+    -
+      value: 'Hackathon (intermediate) [Day2]'
+      label: 'Hackathon (intermediate) [Day2]'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

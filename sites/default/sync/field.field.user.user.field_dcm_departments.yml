@@ -1,0 +1,29 @@
+uuid: 3ae3fd84-7f07-468a-8655-7559ef767d63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_dcm_departments
+    - taxonomy.vocabulary.departments
+  module:
+    - user
+id: user.user.field_dcm_departments
+field_name: field_dcm_departments
+entity_type: user
+bundle: user
+label: 'Dcm Departments'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      departments: departments
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

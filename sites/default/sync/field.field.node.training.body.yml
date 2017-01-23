@@ -1,0 +1,22 @@
+uuid: 61858847-9f25-431b-8fea-4506fdb4c49b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.training
+  module:
+    - text
+id: node.training.body
+field_name: body
+entity_type: node
+bundle: training
+label: 'Course Discription'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

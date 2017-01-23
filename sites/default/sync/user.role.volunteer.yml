@@ -1,0 +1,12 @@
+uuid: 14668bef-7eee-46b1-bee4-86393b010200
+langcode: en
+status: true
+dependencies: {  }
+id: volunteer
+label: Volunteer
+weight: 6
+is_admin: null
+permissions:
+  - 'create sessions content'
+  - 'delete own sessions content'
+  - 'edit own sessions content'

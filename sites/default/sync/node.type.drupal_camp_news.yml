@@ -1,0 +1,18 @@
+uuid: 089ccba5-617e-4b57-8946-b8a46187f786
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Drupal Camp News'
+type: drupal_camp_news
+description: 'News related to Drupal Camp 2017'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

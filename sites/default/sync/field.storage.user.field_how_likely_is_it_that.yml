@@ -1,0 +1,34 @@
+uuid: 4f17c9e6-e324-49b1-bade-8b2927658e6e
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: private
+id: user.field_how_likely_is_it_that
+field_name: field_how_likely_is_it_that
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Very Likely'
+      label: 'Very Likely'
+    -
+      value: 'Somewhat Likely'
+      label: 'Somewhat Likely'
+    -
+      value: 'May not make it'
+      label: 'May not make it'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

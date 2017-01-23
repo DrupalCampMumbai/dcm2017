@@ -1,0 +1,9 @@
+uuid: 7d8aedfb-d160-4ce7-89a9-4c5f35650dd3
+langcode: en
+status: true
+dependencies: {  }
+name: 'News Category'
+vid: news_category
+description: 'Category of news being displayed'
+hierarchy: 0
+weight: 0

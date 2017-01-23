@@ -1,4 +1,4 @@
-uuid: 8c953855-ca1d-4fd9-801a-4d04fcf0fef0
+uuid: 8022a458-f423-435b-b9a1-24ef13696a3a
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ _core:
 id: dcm17_tools
 theme: dcm17
 region: sidebar_first
-weight: 0
+weight: -10
 provider: null
 plugin: 'system_menu_block:tools'
 settings:

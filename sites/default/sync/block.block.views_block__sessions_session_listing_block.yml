@@ -1,0 +1,38 @@
+uuid: 70280163-40ed-445a-b6f2-ffa524b6ea6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sessions
+  module:
+    - node
+    - system
+    - views
+  theme:
+    - dcm2017
+id: views_block__sessions_session_listing_block
+theme: dcm2017
+region: sidebar_second
+weight: -18
+provider: null
+plugin: 'views_block:sessions-session_listing_block'
+settings:
+  id: 'views_block:sessions-session_listing_block'
+  label: 'Accepted Sessions'
+  provider: views
+  label_display: visible
+  views_label: 'Accepted Sessions'
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      sessions: sessions
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /node/add/sessions
+    negate: false
+    context_mapping: {  }

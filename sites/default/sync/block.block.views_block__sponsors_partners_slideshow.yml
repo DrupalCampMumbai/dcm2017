@@ -1,0 +1,32 @@
+uuid: 8a213963-609f-482f-a173-45841f895b87
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sponsors
+  module:
+    - node
+    - views
+  theme:
+    - dcm2017
+id: views_block__sponsors_partners_slideshow
+theme: dcm2017
+region: sidebar_second
+weight: -20
+provider: null
+plugin: 'views_block:sponsors-partners_slideshow'
+settings:
+  id: 'views_block:sponsors-partners_slideshow'
+  label: Partners
+  provider: views
+  label_display: visible
+  views_label: Partners
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      sessions: sessions
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

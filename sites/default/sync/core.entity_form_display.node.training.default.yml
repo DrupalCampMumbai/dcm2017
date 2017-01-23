@@ -1,0 +1,138 @@
+uuid: e24b8e27-5095-467f-b2d8-4196868d1a59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.training.body
+    - field.field.node.training.field_dev_environments
+    - field.field.node.training.field_learning_objectives
+    - field.field.node.training.field_prerequisites_for_this_cou
+    - field.field.node.training.field_syllabus_agenda
+    - field.field.node.training.field_trainers
+    - field.field.node.training.field_training_company
+    - field.field.node.training.field_training_drupal_version
+    - field.field.node.training.field_training_experience_level
+    - field.field.node.training.field_training_slides
+    - field.field.node.training.field_who_will_gain_the_most_fro
+    - node.type.training
+  module:
+    - file
+    - path
+    - text
+id: node.training.default
+targetEntityType: node
+bundle: training
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 31
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  field_dev_environments:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_learning_objectives:
+    weight: 36
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_prerequisites_for_this_cou:
+    weight: 38
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_syllabus_agenda:
+    weight: 35
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+  field_trainers:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_training_company:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_training_drupal_version:
+    weight: 40
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_training_experience_level:
+    weight: 39
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_training_slides:
+    weight: 34
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_who_will_gain_the_most_fro:
+    weight: 37
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

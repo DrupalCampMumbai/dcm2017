@@ -1,0 +1,21 @@
+uuid: 0a1c2460-bf51-4aa6-8154-068ebbc389d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drupal_version
+    - node.type.sessions
+  module:
+    - options
+id: node.sessions.field_drupal_version
+field_name: field_drupal_version
+entity_type: node
+bundle: sessions
+label: 'Drupal Version'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

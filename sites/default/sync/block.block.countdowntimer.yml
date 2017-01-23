@@ -1,15 +1,18 @@
-uuid: bbd1f66d-8311-4d85-8ce9-df1a807eb063
+uuid: b7f06aeb-4bd1-42f2-9b68-34c93c8d025a
 langcode: en
 status: true
 dependencies:
   module:
+    - jquery_countdown_timer
     - system
   theme:
     - dcm17
+_core:
+  default_config_hash: AfSyED4QtQOeTIkQdB1DGd3oPCzPMwglJNDSV4gu1rE
 id: countdowntimer
 theme: dcm17
 region: footer
-weight: -7
+weight: -9
 provider: null
 plugin: jquery_countdown_timer
 settings:

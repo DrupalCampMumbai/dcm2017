@@ -1,7 +1,7 @@
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
-  url: 'http://dcm2017.local/themes/bootstrap/favicon.ico'
+  url: 'http://drupalcampmumbai2017pwvdy4727i.devcloud.acquia-sites.com/themes/bootstrap/favicon.ico'
   use_default: true
 features:
   comment_user_picture: true

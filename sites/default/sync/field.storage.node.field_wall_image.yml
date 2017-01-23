@@ -1,4 +1,4 @@
-uuid: 8777b3d0-3a54-4c25-a74c-b1835fc43ecd
+uuid: eba99956-4386-48c7-b2e3-4b0a0f2305e3
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - file
     - image
     - node
+_core:
+  default_config_hash: 61YIU2s1_f6yp_DOUxNcBw9b_FvUnNSPmhFNPad1LPc
 id: node.field_wall_image
 field_name: field_wall_image
 entity_type: node

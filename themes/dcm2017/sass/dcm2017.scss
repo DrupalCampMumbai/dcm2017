@@ -253,6 +253,7 @@ header.container, .navbar.container {
 	.main-container {
 		background-image: none;
 		background-color: rgba(241, 241, 241, 0.5);
+		padding-bottom: 0;
 		@media screen and (max-width: 960px) {
 			padding-bottom: 30px;
 		}
@@ -715,6 +716,33 @@ header#navbar {
     } 
 }
 /*End Main content*/
+
+/*Content bottom*/
+.content_bottom {
+	clear: both;
+	.block-views-blocksponsors-gold-sponsor-slideshow, .block-views-blocksponsors-partners-slideshow {
+		@media screen and (max-width: 960px) {
+			width: 100%;
+		}
+		.block-title {
+
+		}
+		.view-content {
+			.views-row {
+				width: 25%;
+				@media screen and (max-width: 960px) {
+			    	width: 40%;
+			    	margin: 0 15px 30px 0 !important;
+			    }
+			    @media screen and (max-width: 480px) {
+					width: 90%;
+					margin-right: 0 !important;
+			    }
+			}
+		}
+	}
+}
+/*End Content bottom*/
 
 /*sidebars*/
 aside, .sidebar {
@@ -1188,7 +1216,7 @@ aside, .sidebar {
 			.views_slideshow_controls_text {
 				position: absolute;
 				width: 100%;
-				top: 50px;
+				top: 70px;
 				span {
 					a {
 						text-indent: -9999px;
@@ -1323,6 +1351,7 @@ aside, .sidebar {
 	.view-content {
 		.views-row {
       		width: 94%;
+      		padding: 10px 0;
       		@media screen and (max-width: 960px) {
 			    width: 100%;
 			    margin-right: 0 !important;
@@ -1330,9 +1359,9 @@ aside, .sidebar {
 		}
 	}
 	@media (max-width: 959px) and (min-width: 641px) {
-		float: left;
-	    width: 32.1%;
-	    margin: 0 10px 0 0 !important;
+		float: none;
+	    width: 50%;
+	    margin: 0 auto !important;
 	}
 	@media (max-width: 640px) and (min-width: 481px) {
 		float: none;
@@ -2926,6 +2955,16 @@ footer.footer {
 		    line-height: 12px;
 		    @media screen and (max-width: 960px) {
 		    	padding-bottom: 10px;
+		    }
+		}
+		.powered-by {
+		    position: absolute;
+		    right: 10px;
+		    bottom: 5px;
+		    img {
+		    	@media screen and (max-width: 960px) {
+			    	width: 120px;
+			    }
 		    }
 		}
 	}

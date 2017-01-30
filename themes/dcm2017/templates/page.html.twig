@@ -170,6 +170,14 @@
           </aside>
         {% endblock %}
       {% endif %}
+
+      {% if page.content_bottom %}
+        {% block content_bottom %}
+          <div class="content_bottom">
+            {{ page.content_bottom }}
+          </div>
+        {% endblock %}
+      {% endif %}
 	  </div>
 	  </div>
     </div>

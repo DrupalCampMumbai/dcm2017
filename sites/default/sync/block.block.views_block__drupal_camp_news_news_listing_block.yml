@@ -6,13 +6,14 @@ dependencies:
     - views.view.drupal_camp_news
   module:
     - node
+    - system
     - views
   theme:
     - dcm2017
 id: views_block__drupal_camp_news_news_listing_block
 theme: dcm2017
 region: sidebar_second
-weight: -17
+weight: -20
 provider: null
 plugin: 'views_block:drupal_camp_news-news_listing_block'
 settings:
@@ -26,9 +27,14 @@ visibility:
   node_type:
     id: node_type
     bundles:
+      page: page
       article: article
       drupal_camp_news: drupal_camp_news
-      page: page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

@@ -9,7 +9,7 @@ dependencies:
 id: dcm2017_responsivemenumobileicon
 theme: dcm2017
 region: '-1'
-weight: -6
+weight: -11
 provider: null
 plugin: responsive_menu_toggle
 settings:

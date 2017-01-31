@@ -11,7 +11,7 @@ _core:
 id: dcm2017_breadcrumbs
 theme: dcm2017
 region: '-1'
-weight: -14
+weight: -21
 provider: null
 plugin: system_breadcrumb_block
 settings:

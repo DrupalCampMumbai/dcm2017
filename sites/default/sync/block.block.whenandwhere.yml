@@ -12,7 +12,7 @@ dependencies:
 id: whenandwhere
 theme: dcm2017
 region: '-1'
-weight: -1
+weight: -6
 provider: null
 plugin: 'block_content:acdf62eb-6dac-4421-ae95-88da73b73e1c'
 settings:

@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_sponsor_category
     - field.storage.node.field_sponsor_logo
     - image.style.medium
+    - image.style.sponcers
     - image.style.sponsors_image
     - node.type.sponsor
     - taxonomy.vocabulary.sponsors_catergory
@@ -723,7 +724,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: sponsors_image
+            image_style: sponcers
             image_link: ''
           group_column: ''
           group_columns: {  }
@@ -842,75 +843,11 @@ display:
       css_class: ''
       display_description: ''
       style:
-        type: slideshow
+        type: default
         options:
+          grouping: {  }
           row_class: ''
           default_row_class: true
-          slideshow_skin: default
-          slideshow_type: views_slideshow_cycle
-          views_slideshow_cycle:
-            effect: scrollLeft
-            transition_advanced: 0
-            timeout: '5000'
-            speed: '700'
-            delay: '0'
-            sync: 1
-            random: 0
-            pause: 1
-            pause_on_click: 0
-            action_advanced: 0
-            start_paused: 0
-            remember_slide: 0
-            remember_slide_days: '1'
-            pause_when_hidden: 0
-            pause_when_hidden_type: full
-            amount_allowed_visible: ''
-            nowrap: 0
-            fixed_height: 1
-            items_per_slide: '1'
-            wait_for_image_load: 1
-            wait_for_image_load_timeout: '3000'
-            cleartype: 0
-            cleartypenobg: 0
-          widgets:
-            top:
-              views_slideshow_slide_counter:
-                enable: 0
-                weight: '1'
-              views_slideshow_controls:
-                enable: 1
-                weight: '1'
-                hide_on_single_slide: 0
-                type: views_slideshow_controls_text
-              views_slideshow_pager:
-                enable: 0
-                weight: '1'
-                hide_on_single_slide: 0
-                type: views_slideshow_pager_fields
-                views_slideshow_pager_fields:
-                  views_slideshow_pager_fields_fields:
-                    title: 0
-                    field_sponsor_logo: 0
-                  views_slideshow_pager_fields_hover: 0
-            bottom:
-              views_slideshow_slide_counter:
-                enable: 0
-                weight: '1'
-              views_slideshow_controls:
-                enable: 0
-                weight: '1'
-                hide_on_single_slide: 0
-                type: views_slideshow_controls_text
-              views_slideshow_pager:
-                enable: 0
-                weight: '1'
-                hide_on_single_slide: 0
-                type: views_slideshow_pager_fields
-                views_slideshow_pager_fields:
-                  views_slideshow_pager_fields_fields:
-                    title: 0
-                    field_sponsor_logo: 0
-                  views_slideshow_pager_fields_hover: 0
       row:
         type: fields
         options:
@@ -1551,7 +1488,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: sponsors_image
+            image_style: sponcers
             image_link: ''
           group_column: ''
           group_columns: {  }
@@ -1670,75 +1607,11 @@ display:
       css_class: ''
       display_description: ''
       style:
-        type: slideshow
+        type: default
         options:
+          grouping: {  }
           row_class: ''
           default_row_class: true
-          slideshow_skin: default
-          slideshow_type: views_slideshow_cycle
-          views_slideshow_cycle:
-            effect: scrollLeft
-            transition_advanced: 0
-            timeout: '5000'
-            speed: '700'
-            delay: '0'
-            sync: 1
-            random: 0
-            pause: 1
-            pause_on_click: 0
-            action_advanced: 0
-            start_paused: 0
-            remember_slide: 0
-            remember_slide_days: '1'
-            pause_when_hidden: 0
-            pause_when_hidden_type: full
-            amount_allowed_visible: ''
-            nowrap: 0
-            fixed_height: 1
-            items_per_slide: '1'
-            wait_for_image_load: 1
-            wait_for_image_load_timeout: '3000'
-            cleartype: 0
-            cleartypenobg: 0
-          widgets:
-            top:
-              views_slideshow_slide_counter:
-                enable: 0
-                weight: '1'
-              views_slideshow_controls:
-                enable: 1
-                weight: '1'
-                hide_on_single_slide: 0
-                type: views_slideshow_controls_text
-              views_slideshow_pager:
-                enable: 0
-                weight: '1'
-                hide_on_single_slide: 0
-                type: views_slideshow_pager_fields
-                views_slideshow_pager_fields:
-                  views_slideshow_pager_fields_fields:
-                    title: 0
-                    field_sponsor_logo: 0
-                  views_slideshow_pager_fields_hover: 0
-            bottom:
-              views_slideshow_slide_counter:
-                enable: 0
-                weight: '1'
-              views_slideshow_controls:
-                enable: 0
-                weight: '1'
-                hide_on_single_slide: 0
-                type: views_slideshow_controls_text
-              views_slideshow_pager:
-                enable: 0
-                weight: '1'
-                hide_on_single_slide: 0
-                type: views_slideshow_pager_fields
-                views_slideshow_pager_fields:
-                  views_slideshow_pager_fields_fields:
-                    title: 0
-                    field_sponsor_logo: 0
-                  views_slideshow_pager_fields_hover: 0
       row:
         type: fields
         options:
@@ -2540,7 +2413,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: sponsors_image
+            image_style: sponcers
             image_link: ''
           group_column: ''
           group_columns: {  }
@@ -3068,7 +2941,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: sponsors_image
+            image_style: sponcers
             image_link: ''
           group_column: ''
           group_columns: {  }

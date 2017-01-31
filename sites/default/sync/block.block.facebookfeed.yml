@@ -1,23 +1,23 @@
-uuid: 85c2dfb1-187c-428f-96e6-04e8fad9d39e
+uuid: 4c776502-98a2-4fb6-90fe-9d23239874d4
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:06875a73-2e56-4481-8497-cfa5de024894'
+    - 'block_content:basic:b36d3df4-1e1f-4dbc-a72f-695a700cf6e7'
   module:
     - block_content
     - system
   theme:
     - dcm2017
-id: twitterfeeds
+id: facebookfeed
 theme: dcm2017
 region: content_bottom
-weight: -22
+weight: -23
 provider: null
-plugin: 'block_content:06875a73-2e56-4481-8497-cfa5de024894'
+plugin: 'block_content:b36d3df4-1e1f-4dbc-a72f-695a700cf6e7'
 settings:
-  id: 'block_content:06875a73-2e56-4481-8497-cfa5de024894'
-  label: 'Twitter feeds'
+  id: 'block_content:b36d3df4-1e1f-4dbc-a72f-695a700cf6e7'
+  label: 'Facebook Feed'
   provider: block_content
   label_display: '0'
   status: true

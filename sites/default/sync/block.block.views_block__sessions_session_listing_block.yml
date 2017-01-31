@@ -13,7 +13,7 @@ dependencies:
 id: views_block__sessions_session_listing_block
 theme: dcm2017
 region: sidebar_second
-weight: -18
+weight: -21
 provider: null
 plugin: 'views_block:sessions-session_listing_block'
 settings:

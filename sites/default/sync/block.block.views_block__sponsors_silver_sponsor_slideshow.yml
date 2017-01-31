@@ -5,14 +5,14 @@ dependencies:
   config:
     - views.view.sponsors
   module:
-    - node
+    - system
     - views
   theme:
     - dcm2017
 id: views_block__sponsors_silver_sponsor_slideshow
 theme: dcm2017
 region: sidebar_second
-weight: -21
+weight: -23
 provider: null
 plugin: 'views_block:sponsors-silver_sponsor_slideshow'
 settings:
@@ -23,10 +23,8 @@ settings:
   views_label: 'Silver Sponsors'
   items_per_page: none
 visibility:
-  node_type:
-    id: node_type
-    bundles:
-      sessions: sessions
+  request_path:
+    id: request_path
+    pages: "/contact/sponsorship_contact\r\n<front>"
     negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
+    context_mapping: {  }

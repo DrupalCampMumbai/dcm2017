@@ -14,7 +14,7 @@ _core:
 id: dcm2017_views_block__banner_block_1
 theme: dcm2017
 region: '-1'
-weight: -15
+weight: -22
 provider: null
 plugin: 'views_block:banner-block_1'
 settings:

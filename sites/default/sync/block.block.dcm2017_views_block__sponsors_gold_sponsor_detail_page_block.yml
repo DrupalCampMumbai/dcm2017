@@ -14,7 +14,7 @@ _core:
 id: dcm2017_views_block__sponsors_gold_sponsor_detail_page_block
 theme: dcm2017
 region: '-1'
-weight: -11
+weight: -17
 provider: null
 plugin: 'views_block:sponsors-gold_sponsor_detail_page_block'
 settings:

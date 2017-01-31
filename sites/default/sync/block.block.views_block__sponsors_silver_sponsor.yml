@@ -1,6 +1,6 @@
 uuid: 59699184-3746-47f9-b261-924800c2be5f
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.sponsors
@@ -11,8 +11,8 @@ dependencies:
     - dcm2017
 id: views_block__sponsors_silver_sponsor
 theme: dcm2017
-region: header
-weight: -20
+region: '-1'
+weight: -4
 provider: null
 plugin: 'views_block:sponsors-silver_sponsor'
 settings:

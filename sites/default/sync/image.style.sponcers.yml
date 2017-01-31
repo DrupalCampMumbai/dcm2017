@@ -1,0 +1,14 @@
+uuid: 74485c30-9f79-4632-a1de-2070e2e72fe1
+langcode: en
+status: true
+dependencies: {  }
+name: sponcers
+label: Sponcers
+effects:
+  dbb2b520-bad1-40e1-a8d1-6572005b2625:
+    uuid: dbb2b520-bad1-40e1-a8d1-6572005b2625
+    id: image_resize
+    weight: 1
+    data:
+      width: 170
+      height: 120

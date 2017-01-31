@@ -946,6 +946,54 @@ aside, .sidebar {
 }
 /*End Twitter block*/
 
+/*Connect us block*/
+#block-connectwithus {
+	text-align: center;
+	.social-icon {
+		display: inline-block;
+		margin: 0 5px;
+		a {
+			font-size: 0;
+			&:before {
+				font-size: 20px;
+				display: inline-block;
+				font: normal normal normal 24px/1 FontAwesome;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;						
+			}
+		}
+		&.icon-twitter {
+			a {
+				&:before {
+					content: "\f099";
+				}
+			}
+		}
+		&.icon-facebook {
+			a {
+				&:before {
+					content: "\f09a";
+				}
+			}
+		}
+		&.icon-googleplus {
+			a {
+				&:before {
+					content: "\f0d5";
+				}
+			}
+		}
+		&.icon-drupalorg {
+			a {
+				&:before {
+					content: "\f1a9";
+				}
+			}
+		}
+	}
+}
+
 /*Recent News*/
 .block-views-blockdrupal-camp-news-news-listing-block {
 	.view {

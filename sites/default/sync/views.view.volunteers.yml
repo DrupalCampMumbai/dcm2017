@@ -533,6 +533,21 @@ display:
       display_extenders: {  }
       path: organizing-committee
       display_description: ''
+      sorts:
+        field_dcm_departments_target_id:
+          id: field_dcm_departments_target_id
+          table: user__field_dcm_departments
+          field: field_dcm_departments_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+      defaults:
+        sorts: false
     cache_metadata:
       max-age: -1
       contexts:

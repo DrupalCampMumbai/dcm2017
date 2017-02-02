@@ -12,7 +12,7 @@ dependencies:
 id: sessioncategory
 theme: dcm2017
 region: sidebar_second
-weight: -22
+weight: -21
 provider: null
 plugin: 'block_content:176e46c8-53b5-48b2-ae84-432cc8505a50'
 settings:

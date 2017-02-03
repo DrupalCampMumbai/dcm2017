@@ -12,7 +12,7 @@ dependencies:
 id: views_block__session_info_block_3
 theme: dcm2017
 region: sidebar_second
-weight: -18
+weight: -17
 provider: null
 plugin: 'views_block:session_info-block_3'
 settings:

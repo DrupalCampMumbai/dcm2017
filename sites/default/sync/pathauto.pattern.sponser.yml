@@ -1,0 +1,14 @@
+uuid: e3b129c6-afc9-4049-8208-9087e8405ede
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: sponser
+label: sponser
+type: 'canonical_entities:node'
+pattern: 'dcm-sponser/[node:nid]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

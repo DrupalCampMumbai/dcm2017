@@ -1,0 +1,22 @@
+uuid: a83f5d18-d671-4b6b-9459-e2e9c34cdcba
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: dcm_news
+label: dcm-news
+type: 'canonical_entities:node'
+pattern: 'dcm-new/[node:nid]'
+selection_criteria:
+  facec555-40a6-4f17-914b-9829381815cb:
+    id: node_type
+    bundles:
+      drupal_camp_news: drupal_camp_news
+    negate: false
+    context_mapping:
+      node: node
+    uuid: facec555-40a6-4f17-914b-9829381815cb
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,14 @@
+uuid: 050a59d3-b286-479d-91d4-8b2a4aaa02b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: wall_image
+label: wall-image
+type: 'canonical_entities:node'
+pattern: 'wall-image/[node:nid]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

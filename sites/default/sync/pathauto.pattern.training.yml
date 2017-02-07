@@ -1,0 +1,22 @@
+uuid: ba789474-ee0b-411e-8bd0-9774295541a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: training
+label: training
+type: 'canonical_entities:node'
+pattern: 'dcm-training/[node:nid]'
+selection_criteria:
+  a84374ee-be15-45eb-9a94-b52b191ebbdc:
+    id: node_type
+    bundles:
+      training: training
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a84374ee-be15-45eb-9a94-b52b191ebbdc
+selection_logic: and
+weight: -5
+relationships: {  }

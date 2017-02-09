@@ -1,0 +1,14 @@
+uuid: 92086ad7-29b1-4257-bdce-f1e7390fd8cb
+langcode: en
+status: true
+dependencies: {  }
+name: community_profile_image
+label: 'community user image'
+effects:
+  beeea208-997d-4932-a3b9-3d446e0cc645:
+    uuid: beeea208-997d-4932-a3b9-3d446e0cc645
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 140
+      height: 140

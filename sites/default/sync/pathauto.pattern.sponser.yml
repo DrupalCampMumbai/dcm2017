@@ -8,7 +8,15 @@ id: sponser
 label: sponser
 type: 'canonical_entities:node'
 pattern: 'dcm-sponser/[node:nid]'
-selection_criteria: {  }
+selection_criteria:
+  c1f1bb4f-99ea-4244-89f9-815fae435b6d:
+    id: node_type
+    bundles:
+      sponsor: sponsor
+    negate: false
+    context_mapping:
+      node: node
+    uuid: c1f1bb4f-99ea-4244-89f9-815fae435b6d
 selection_logic: and
 weight: 0
 relationships: {  }

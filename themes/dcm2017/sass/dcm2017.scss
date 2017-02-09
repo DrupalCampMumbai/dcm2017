@@ -1417,6 +1417,7 @@ aside, .sidebar {
 	}
 	.view-content {
 		.views-row {
+			padding: 10px 0;
 		    border-top: 5px solid #999;
 		}
 	}
@@ -1560,6 +1561,7 @@ aside, .sidebar {
 		    border-radius: 15px 15px 8px 8px;
 		    box-shadow: 0 0 5px rgba(153, 153, 153, 0.35);
 		    overflow: hidden;
+		    transition: all 0.5s linear 0s;
 			@media screen and (max-width: 960px) {
 			    width: 150px;
 			    margin: 0 10px 15px 0;
@@ -1654,7 +1656,8 @@ aside, .sidebar {
 						color: #747474;
 					    text-overflow: ellipsis;
 					    overflow: hidden;
-					    white-space: nowrap;						
+					    white-space: nowrap;
+					    min-height: 20px;					
 					}
 				}	
 			}	
@@ -2464,6 +2467,41 @@ aside, .sidebar {
 				    &.field--name-user-picture {
 					    display: block;
 					    width: 100%;
+					    position: relative;
+					    &:before {
+						    content: '';
+						    height: 2px;
+						    background-color: $link-color;
+						    width: 98px;
+						    z-index: 1;
+						    position: absolute;
+						    bottom: 27px;
+						    @media screen and (max-width: 960px) {
+						    	display: none;
+						    }
+					    }
+					    &:after {
+						    content: '';
+						    height: 2px;
+						    background-color: $link-color;
+						    width: 79.5%;
+						    z-index: 1;
+						    position: absolute;
+						    bottom: 60px;
+						    left: 20.5%;
+						    @media screen and (max-width: 960px) {
+						    	display: none;
+						    }
+						}
+					    img {
+							border-radius: 50%;
+							margin: 0 0 0 10%;
+							border: 2px solid;
+							padding: 2px;
+							@media screen and (max-width: 960px) {
+						    	margin: 0 auto;
+						    }
+					    }
 					}
 					.field--label {
 					    border-bottom: 1px dashed #ddd;

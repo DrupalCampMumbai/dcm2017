@@ -241,9 +241,12 @@ header.container, .navbar.container {
 					ul {
 						text-align: center;
 						li {
-						.menu.dropdown-menu {
-						background-color: rgba(0, 0, 0, 0.56);
-						}
+							a {
+								padding: 10px 15px;
+							}
+							.menu.dropdown-menu {
+								background-color: rgba(0, 0, 0, 0.56);
+							}
 						}
 					}
 				}

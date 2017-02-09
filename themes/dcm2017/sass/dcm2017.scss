@@ -533,6 +533,7 @@ header#navbar {
 	    			font-size: 16px;
 	    			position: relative;
 	    			display: block;
+	    			padding: 10px 11px;
 	    			@media screen and (max-width: 960px) {
 	    				font-family: $proxima-regular;
 						font-size: 14px;
@@ -1417,6 +1418,7 @@ aside, .sidebar {
 	}
 	.view-content {
 		.views-row {
+			padding: 10px 0;
 		    border-top: 5px solid #999;
 		}
 	}
@@ -1560,6 +1562,7 @@ aside, .sidebar {
 		    border-radius: 15px 15px 8px 8px;
 		    box-shadow: 0 0 5px rgba(153, 153, 153, 0.35);
 		    overflow: hidden;
+		    transition: all 0.5s linear 0s;
 			@media screen and (max-width: 960px) {
 			    width: 150px;
 			    margin: 0 10px 15px 0;
@@ -1646,7 +1649,13 @@ aside, .sidebar {
 						text-overflow: ellipsis;
 						overflow: hidden;
 						white-space: nowrap;
-						font-family: $proxima-semibold;						
+						font-family: $proxima-semibold;		
+						a {
+							color: #191919;
+							&:hover {
+								color: $link-color;
+							}
+						}				
 					}
 					h4 {
 						margin-bottom: 0;
@@ -1654,7 +1663,8 @@ aside, .sidebar {
 						color: #747474;
 					    text-overflow: ellipsis;
 					    overflow: hidden;
-					    white-space: nowrap;						
+					    white-space: nowrap;
+					    min-height: 20px;					
 					}
 				}	
 			}	
@@ -1794,6 +1804,12 @@ aside, .sidebar {
 							overflow: hidden;
 							white-space: nowrap;
 							font-family: $proxima-semibold;
+							a {
+								color: #191919;
+								&:hover {
+									color: $link-color;
+								}
+							}
 						}
 						h3 {
 							margin-bottom: 0;
@@ -1897,69 +1913,77 @@ aside, .sidebar {
 /*End About mumbai*/
 
 /*Sessions page*/
-#tracks {
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    left: 1px;
-    z-index: 100;
-    top: 30%;
-    @media screen and (max-width: 960px) {
-    	position: static;
-    	margin-bottom: 15px;
-    }
-	li {
-	    display: block;
-	    width: 100%;
-	    margin: 0 0 0px;
-	    padding: 0 0 2px;
-	    @media screen and (max-width: 960px) {
-		    display: block;
-		    width: 100%;    	
-	    }
-    	a {
-		    padding: 10px;
-		    display: block;
-		    background: #ddd;
-		    text-align: left;
-		    color: rgba(0, 0, 0, 0.84);		
-		    font-family: $proxima-semibold;  
-		    position: relative; 
-			-webkit-transform: perspective(1px) translateZ(0);
-			transform: perspective(1px) translateZ(0);
-		    -webkit-transition-property: color;
-		    transition-property: color;
-		    -webkit-transition-duration: 0.5s;
-		    transition-duration: 0.5s;			
-		    &:hover {
-		    	color: #fff;
-		    	&:before {
-				    -webkit-transform: scaleX(1);
-				    transform: scaleX(1);
-				}
+#block-sessioncategory {
+	margin: 0;
+	.field--name-body {
+		background-color: transparent;
+		box-shadow: none;
+		padding: 0;
+		#tracks {
+		    margin: 0;
+		    padding: 0;
+		    position: fixed;
+		    left: 1px;
+		    z-index: 100;
+		    top: 30%;
+		    @media screen and (max-width: 960px) {
+		    	position: static;
+		    	margin-bottom: 15px;
 		    }
-		    &:before {
-			    content: "";
-			    position: absolute;
-			    z-index: -1;
-			    top: 0;
-			    left: 0;
-			    right: 0;
-			    bottom: 0;
-			    background: #2098D1;
-			    -webkit-transform: scaleX(0);
-			    transform: scaleX(0);
-			    -webkit-transform-origin: 0 50%;
-			    transform-origin: 0 50%;
-			    -webkit-transition-property: transform;
-			    transition-property: transform;
-			    -webkit-transition-duration: 0.5s;
-			    transition-duration: 0.5s;
-			    -webkit-transition-timing-function: ease-out;
-			    transition-timing-function: ease-out;
-			} 
-    	}
-    }
+			li {
+			    display: block;
+			    width: 100%;
+			    margin: 0 0 0px;
+			    padding: 0 0 2px;
+			    @media screen and (max-width: 960px) {
+				    display: block;
+				    width: 100%;    	
+			    }
+		    	a {
+				    padding: 10px;
+				    display: block;
+				    background: #ddd;
+				    text-align: left;
+				    color: rgba(0, 0, 0, 0.84);		
+				    font-family: $proxima-semibold;  
+				    position: relative; 
+					-webkit-transform: perspective(1px) translateZ(0);
+					transform: perspective(1px) translateZ(0);
+				    -webkit-transition-property: color;
+				    transition-property: color;
+				    -webkit-transition-duration: 0.5s;
+				    transition-duration: 0.5s;			
+				    &:hover {
+				    	color: #fff;
+				    	&:before {
+						    -webkit-transform: scaleX(1);
+						    transform: scaleX(1);
+						}
+				    }
+				    &:before {
+					    content: "";
+					    position: absolute;
+					    z-index: -1;
+					    top: 0;
+					    left: 0;
+					    right: 0;
+					    bottom: 0;
+					    background: #2098D1;
+					    -webkit-transform: scaleX(0);
+					    transform: scaleX(0);
+					    -webkit-transform-origin: 0 50%;
+					    transform-origin: 0 50%;
+					    -webkit-transition-property: transform;
+					    transition-property: transform;
+					    -webkit-transition-duration: 0.5s;
+					    transition-duration: 0.5s;
+					    -webkit-transition-timing-function: ease-out;
+					    transition-timing-function: ease-out;
+					} 
+		    	}
+		    }
+		}
+	}
 }
 .track-row {
 	margin: 0 0 30px;
@@ -2464,6 +2488,41 @@ aside, .sidebar {
 				    &.field--name-user-picture {
 					    display: block;
 					    width: 100%;
+					    position: relative;
+					    &:before {
+						    content: '';
+						    height: 2px;
+						    background-color: $link-color;
+						    width: 98px;
+						    z-index: 1;
+						    position: absolute;
+						    bottom: 27px;
+						    @media screen and (max-width: 960px) {
+						    	display: none;
+						    }
+					    }
+					    &:after {
+						    content: '';
+						    height: 2px;
+						    background-color: $link-color;
+						    width: 79.5%;
+						    z-index: 1;
+						    position: absolute;
+						    bottom: 60px;
+						    left: 20.5%;
+						    @media screen and (max-width: 960px) {
+						    	display: none;
+						    }
+						}
+					    img {
+							border-radius: 50%;
+							margin: 0 0 0 10%;
+							border: 2px solid;
+							padding: 2px;
+							@media screen and (max-width: 960px) {
+						    	margin: 0 auto;
+						    }
+					    }
 					}
 					.field--label {
 					    border-bottom: 1px dashed #ddd;

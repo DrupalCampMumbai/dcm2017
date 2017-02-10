@@ -23,4 +23,5 @@ bootstrap-scripts:
     js/dcm_sponsors.js: {}
     js/owl.carousel.min.js: {}
     js/sessions.js: {}
+    js/float-panel.js: {}
     js/dcm_custom.js: {}

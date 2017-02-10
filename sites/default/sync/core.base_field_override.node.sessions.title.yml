@@ -1,0 +1,18 @@
+uuid: 5ab0cb29-4d46-49c2-a4b7-ea2aa6ee81d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sessions
+id: node.sessions.title
+field_name: title
+entity_type: node
+bundle: sessions
+label: 'Session Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

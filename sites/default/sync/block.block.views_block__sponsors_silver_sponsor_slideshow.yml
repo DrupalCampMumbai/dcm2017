@@ -11,8 +11,8 @@ dependencies:
     - dcm2017
 id: views_block__sponsors_silver_sponsor_slideshow
 theme: dcm2017
-region: sidebar_second
-weight: -22
+region: content_bottom
+weight: -21
 provider: null
 plugin: 'views_block:sponsors-silver_sponsor_slideshow'
 settings:

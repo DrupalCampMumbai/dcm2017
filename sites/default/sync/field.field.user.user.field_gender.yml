@@ -1,21 +1,21 @@
-uuid: 5c77db1d-13c9-44d0-89fd-8e68f4a1f29c
+uuid: aecaab5a-1eb3-4d2f-85c6-bb62ab4f4b9e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_i_am_a
+    - field.storage.user.field_gender
   module:
     - options
     - user
-id: user.user.field_i_am_a
-field_name: field_i_am_a
+id: user.user.field_gender
+field_name: field_gender
 entity_type: user
 bundle: user
-label: 'I am a..'
+label: Gender
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: list_string
+field_type: list_integer

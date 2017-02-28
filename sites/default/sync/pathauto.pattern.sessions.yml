@@ -7,16 +7,16 @@ dependencies:
 id: sessions
 label: sessions
 type: 'canonical_entities:node'
-pattern: 'dcm-sessions/[node:nid]'
+pattern: 'session/[node:title]'
 selection_criteria:
-  9d3a7eb5-1076-48b7-9c74-4908da53d974:
+  83fe00e1-1e29-42cb-bb10-bf002e25bda7:
     id: node_type
     bundles:
       sessions: sessions
     negate: false
     context_mapping:
       node: node
-    uuid: 9d3a7eb5-1076-48b7-9c74-4908da53d974
+    uuid: 83fe00e1-1e29-42cb-bb10-bf002e25bda7
 selection_logic: and
 weight: -5
 relationships: {  }

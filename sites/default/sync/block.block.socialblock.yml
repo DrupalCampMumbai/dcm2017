@@ -5,10 +5,14 @@ dependencies:
   content:
     - 'block_content:basic:d70a1401-8b49-4d1f-be28-2050d8b2a944'
   module:
+    - block_class
     - block_content
     - user
   theme:
     - dcm2017
+third_party_settings:
+  block_class:
+    classes: ''
 id: socialblock
 theme: dcm2017
 region: content
@@ -27,6 +31,7 @@ visibility:
   user_role:
     id: user_role
     roles:
+      anonymous: anonymous
       authenticated: authenticated
     negate: false
     context_mapping:

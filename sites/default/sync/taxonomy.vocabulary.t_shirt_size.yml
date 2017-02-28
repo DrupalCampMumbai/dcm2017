@@ -1,0 +1,9 @@
+uuid: c11ed8c3-75a3-4bd1-b50c-3b6630855513
+langcode: en
+status: true
+dependencies: {  }
+name: 'T-Shirt Size'
+vid: t_shirt_size
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,29 @@
+uuid: 25925443-feb6-4869-bf3f-30ff4aa2c62d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_food_preference
+    - taxonomy.vocabulary.food_prefe
+  module:
+    - user
+id: user.user.field_food_preference
+field_name: field_food_preference
+entity_type: user
+bundle: user
+label: 'Food Preference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      food_prefe: food_prefe
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

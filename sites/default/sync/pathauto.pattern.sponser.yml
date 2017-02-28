@@ -7,16 +7,16 @@ dependencies:
 id: sponser
 label: sponser
 type: 'canonical_entities:node'
-pattern: 'dcm-sponser/[node:nid]'
+pattern: 'sponser/[node:title]'
 selection_criteria:
-  c1f1bb4f-99ea-4244-89f9-815fae435b6d:
+  764ce11f-5d6b-458b-be7e-38176881a7e9:
     id: node_type
     bundles:
       sponsor: sponsor
     negate: false
     context_mapping:
       node: node
-    uuid: c1f1bb4f-99ea-4244-89f9-815fae435b6d
+    uuid: 764ce11f-5d6b-458b-be7e-38176881a7e9
 selection_logic: and
 weight: 0
 relationships: {  }

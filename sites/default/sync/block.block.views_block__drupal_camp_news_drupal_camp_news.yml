@@ -5,10 +5,14 @@ dependencies:
   config:
     - views.view.drupal_camp_news
   module:
+    - block_class
     - system
     - views
   theme:
     - dcm2017
+third_party_settings:
+  block_class:
+    classes: ''
 id: views_block__drupal_camp_news_drupal_camp_news
 theme: dcm2017
 region: content

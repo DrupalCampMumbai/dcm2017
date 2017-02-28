@@ -1,0 +1,31 @@
+uuid: 16e389d1-864c-4fb0-a2a4-86df6e85c3ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: user.field_first_drupalcamp
+field_name: field_first_drupalcamp
+entity_type: user
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: 'Yes'
+    -
+      value: 1
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

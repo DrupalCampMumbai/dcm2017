@@ -32,8 +32,12 @@ display:
         type: none
         options: {  }
       cache:
-        type: tag
-        options: {  }
+        type: time
+        options:
+          results_lifespan: 0
+          results_lifespan_custom: 0
+          output_lifespan: 3600
+          output_lifespan_custom: 0
       query:
         type: views_query
         options:
@@ -74,7 +78,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: slideanim
           default_row_class: true
       row:
         type: fields

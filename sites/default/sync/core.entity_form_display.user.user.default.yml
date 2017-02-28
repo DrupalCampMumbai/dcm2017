@@ -4,26 +4,31 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_carrying_my_laptop
+    - field.field.user.user.field_code_sprint
     - field.field.user.user.field_dcm_departments
-    - field.field.user.user.field_drupal_org_id_url
+    - field.field.user.user.field_drupal_skill
+    - field.field.user.user.field_drupal_url
     - field.field.user.user.field_facebook_url
+    - field.field.user.user.field_first_drupalcamp
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_food_preference
+    - field.field.user.user.field_gender
     - field.field.user.user.field_how_likely_is_it_that
-    - field.field.user.user.field_i_am_a
     - field.field.user.user.field_i_am_registering_as_a
     - field.field.user.user.field_i_learned_about_dcm2017
     - field.field.user.user.field_i_would_like_to_attend
     - field.field.user.user.field_last_name
     - field.field.user.user.field_linkedin_url
-    - field.field.user.user.field_my_drupal_persona_is_a
     - field.field.user.user.field_organisation
     - field.field.user.user.field_phone_no
+    - field.field.user.user.field_profession
+    - field.field.user.user.field_t_shirt_size
     - field.field.user.user.field_twitter_url
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
-    - link
+    - path
     - user
 _core:
   default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
@@ -33,109 +38,125 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 0
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   field_carrying_my_laptop:
-    weight: 12
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_code_sprint:
+    weight: 20
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
   field_dcm_departments:
-    weight: 13
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_drupal_skill:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_drupal_url:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_first_drupalcamp:
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_drupal_org_id_url:
-    weight: 14
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-  field_facebook_url:
-    weight: 17
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
   field_first_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_food_preference:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_gender:
+    type: options_buttons
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+  field_how_likely_is_it_that:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_i_am_registering_as_a:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_i_learned_about_dcm2017:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_last_name:
     weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_how_likely_is_it_that:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-  field_i_am_a:
-    weight: 6
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-  field_i_am_registering_as_a:
-    weight: 9
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-  field_i_learned_about_dcm2017:
-    weight: 8
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-  field_last_name:
-    weight: 2
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-  field_linkedin_url:
-    weight: 15
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-  field_my_drupal_persona_is_a:
-    weight: 7
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
   field_organisation:
-    weight: 5
+    weight: 6
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_phone_no:
-    weight: 4
+    weight: 5
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_twitter_url:
-    weight: 16
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
+  field_profession:
+    weight: 7
+    settings: {  }
     third_party_settings: {  }
-    type: link_default
+    type: options_buttons
+  field_t_shirt_size:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  google_analytics:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image_image
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    weight: 3
+    weight: 2
 hidden:
   contact: true
+  field_facebook_url: true
   field_i_would_like_to_attend: true
+  field_linkedin_url: true
+  field_twitter_url: true
   language: true
   timezone: true

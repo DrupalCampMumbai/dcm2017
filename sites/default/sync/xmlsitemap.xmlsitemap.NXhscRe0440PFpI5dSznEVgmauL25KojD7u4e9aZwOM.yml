@@ -1,0 +1,11 @@
+uuid: a7c0415c-2635-4cca-b655-b09d9664a752
+langcode: en
+status: true
+dependencies: {  }
+id: NXhscRe0440PFpI5dSznEVgmauL25KojD7u4e9aZwOM
+label: 'http://2017.drupalmumbai.org/'
+chunks: 1
+links: 1
+max_filesize: 271
+context: {  }
+updated: 1487244920

@@ -1,9 +1,9 @@
 uuid: 3a6a1041-874f-44eb-a657-ed3370619e07
-name: DrupalCampMumbai2017
-mail: mayurj87@gmail.com
+name: 'Drupal Camp Mumbai 2017'
+mail: no-reply@drupalmumbai.org
 slogan: ''
 page:
-  403: ''
+  403: /node/157
   404: ''
   front: /node/33
 admin_compact_mode: false

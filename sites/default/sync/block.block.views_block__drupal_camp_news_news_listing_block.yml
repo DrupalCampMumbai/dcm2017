@@ -5,11 +5,14 @@ dependencies:
   config:
     - views.view.drupal_camp_news
   module:
-    - node
+    - block_class
     - system
     - views
   theme:
     - dcm2017
+third_party_settings:
+  block_class:
+    classes: ''
 id: views_block__drupal_camp_news_news_listing_block
 theme: dcm2017
 region: sidebar_second
@@ -24,17 +27,8 @@ settings:
   views_label: 'Recent News'
   items_per_page: none
 visibility:
-  node_type:
-    id: node_type
-    bundles:
-      page: page
-      article: article
-      drupal_camp_news: drupal_camp_news
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: '<front>'
-    negate: true
+    pages: "/news/*\r\n/contact/*\r\n"
+    negate: false
     context_mapping: {  }

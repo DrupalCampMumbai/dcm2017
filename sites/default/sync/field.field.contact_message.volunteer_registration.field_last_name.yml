@@ -1,0 +1,19 @@
+uuid: f7138418-aaf7-4729-ab17-125668969e7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.volunteer_registration
+    - field.storage.contact_message.field_last_name
+id: contact_message.volunteer_registration.field_last_name
+field_name: field_last_name
+entity_type: contact_message
+bundle: volunteer_registration
+label: 'Last Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

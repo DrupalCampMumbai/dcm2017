@@ -1,0 +1,73 @@
+uuid: 3213cc22-b1f9-4159-a375-efc252291258
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.volunteer_registration
+    - field.field.contact_message.volunteer_registration.field_contact_number
+    - field.field.contact_message.volunteer_registration.field_contribute
+    - field.field.contact_message.volunteer_registration.field_email_address
+    - field.field.contact_message.volunteer_registration.field_first_name
+    - field.field.contact_message.volunteer_registration.field_last_name
+    - field.field.contact_message.volunteer_registration.field_organization
+    - field.field.contact_message.volunteer_registration.field_weekly_bandwidth
+id: contact_message.volunteer_registration.default
+targetEntityType: contact_message
+bundle: volunteer_registration
+mode: default
+content:
+  field_contact_number:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_contribute:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_email_address:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_first_name:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_last_name:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_organization:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_weekly_bandwidth:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  copy: true
+  mail: true
+  message: true
+  name: true
+  subject: true

@@ -4,20 +4,25 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_carrying_my_laptop
+    - field.field.user.user.field_code_sprint
     - field.field.user.user.field_dcm_departments
-    - field.field.user.user.field_drupal_org_id_url
+    - field.field.user.user.field_drupal_skill
+    - field.field.user.user.field_drupal_url
     - field.field.user.user.field_facebook_url
+    - field.field.user.user.field_first_drupalcamp
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_food_preference
+    - field.field.user.user.field_gender
     - field.field.user.user.field_how_likely_is_it_that
-    - field.field.user.user.field_i_am_a
     - field.field.user.user.field_i_am_registering_as_a
     - field.field.user.user.field_i_learned_about_dcm2017
     - field.field.user.user.field_i_would_like_to_attend
     - field.field.user.user.field_last_name
     - field.field.user.user.field_linkedin_url
-    - field.field.user.user.field_my_drupal_persona_is_a
     - field.field.user.user.field_organisation
     - field.field.user.user.field_phone_no
+    - field.field.user.user.field_profession
+    - field.field.user.user.field_t_shirt_size
     - field.field.user.user.field_twitter_url
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -42,6 +47,15 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
+  field_code_sprint:
+    weight: 24
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_dcm_departments:
     weight: 16
     label: above
@@ -49,17 +63,20 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_drupal_org_id_url:
-    weight: 6
+  field_drupal_skill:
+    weight: 18
     label: above
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      link: true
     third_party_settings: {  }
-    type: link
+    type: entity_reference_label
+  field_drupal_url:
+    weight: 25
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_facebook_url:
     weight: 9
     label: above
@@ -71,6 +88,12 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+  field_first_drupalcamp:
+    weight: 20
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_first_name:
     weight: 1
     label: above
@@ -78,18 +101,25 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_food_preference:
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_gender:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_how_likely_is_it_that:
     type: list_default
     weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
-  field_i_am_a:
-    weight: 3
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
   field_i_am_registering_as_a:
     type: list_default
     weight: 13
@@ -126,12 +156,6 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_my_drupal_persona_is_a:
-    weight: 10
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
   field_organisation:
     weight: 5
     label: above
@@ -146,6 +170,20 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_profession:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_t_shirt_size:
+    weight: 21
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_twitter_url:
     weight: 8
     label: above

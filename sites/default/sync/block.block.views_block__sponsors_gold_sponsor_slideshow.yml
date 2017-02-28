@@ -5,10 +5,14 @@ dependencies:
   config:
     - views.view.sponsors
   module:
+    - block_class
     - system
     - views
   theme:
     - dcm2017
+third_party_settings:
+  block_class:
+    classes: ''
 id: views_block__sponsors_gold_sponsor_slideshow
 theme: dcm2017
 region: sidebar_second
@@ -25,6 +29,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/contact/sponsorship_contact\r\n<front>"
+    pages: '<front>'
     negate: false
     context_mapping: {  }

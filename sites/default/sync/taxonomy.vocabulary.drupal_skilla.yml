@@ -1,0 +1,9 @@
+uuid: 375602bb-de0d-4766-8198-da1255cda95e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Drupal Skill Level'
+vid: drupal_skilla
+description: ''
+hierarchy: 0
+weight: 0

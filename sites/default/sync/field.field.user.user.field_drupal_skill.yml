@@ -1,0 +1,29 @@
+uuid: dd448871-3848-4b11-ad34-36658d32b0c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_drupal_skill
+    - taxonomy.vocabulary.drupal_skilla
+  module:
+    - user
+id: user.user.field_drupal_skill
+field_name: field_drupal_skill
+entity_type: user
+bundle: user
+label: 'My Drupal Persona is a..'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      drupal_skilla: drupal_skilla
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

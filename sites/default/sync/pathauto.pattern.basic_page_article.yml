@@ -1,22 +1,23 @@
-uuid: 8ec7f2af-e157-42e4-aa06-655b90afba88
+uuid: a12ebc56-0796-46da-85f6-a46847ee6470
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: dcm_banner
-label: dcm-banner
+id: basic_page_article
+label: 'Basic page / Article'
 type: 'canonical_entities:node'
-pattern: 'dcm-banner/[node:nid]'
+pattern: '[node:title]'
 selection_criteria:
-  b9a38385-dc49-4472-8e5a-431f950a4f32:
+  f2f78f23-1dcb-489c-9a3b-8830f040125d:
     id: node_type
     bundles:
-      dcm_banner: dcm_banner
+      article: article
+      page: page
     negate: false
     context_mapping:
       node: node
-    uuid: b9a38385-dc49-4472-8e5a-431f950a4f32
+    uuid: f2f78f23-1dcb-489c-9a3b-8830f040125d
 selection_logic: and
 weight: -5
 relationships: {  }

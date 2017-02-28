@@ -5,6 +5,6 @@ dependencies: {  }
 id: sponsorship_contact
 label: 'Sponsorship Contact'
 recipients:
-  - ahmed.r@iksulaops.com
+  - ashish.vitthal.dalvi@gmail.com
 reply: ',mk'
 weight: 0

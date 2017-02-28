@@ -3200,6 +3200,12 @@ aside, .sidebar {
 /*End Form*/
 
 /*Buttons & message*/
+.user-logged-in {
+    .register-now {
+        display: none;
+    }
+}
+
 .btn, .btn-default {
     background: none repeat scroll 0 0 $link-color;
     border: 0 none;

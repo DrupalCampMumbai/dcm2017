@@ -5,10 +5,14 @@ dependencies:
   config:
     - views.view.sponsors
   module:
+    - block_class
     - system
     - views
   theme:
     - dcm2017
+third_party_settings:
+  block_class:
+    classes: ''
 id: views_block__sponsors_platinum_sponsors_2
 theme: dcm2017
 region: header

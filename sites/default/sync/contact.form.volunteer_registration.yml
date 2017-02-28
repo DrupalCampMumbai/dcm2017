@@ -1,0 +1,10 @@
+uuid: 6ffcf6ee-d309-4324-98f1-345af6dd75db
+langcode: en
+status: true
+dependencies: {  }
+id: volunteer_registration
+label: 'Volunteer Registration'
+recipients:
+  - ashish.vitthal.dalvi@gmail.com
+reply: "Thank you for getting in touch! We appreciate you contacting us for volunteer your time in Drupal Camp Mumbai 2017.\r\n\r\nWe will contact you for further details.\r\n\r\nThanks,\r\nTeam Drupal Mumbai"
+weight: 0

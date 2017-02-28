@@ -5,20 +5,24 @@ dependencies:
   config:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_carrying_my_laptop
+    - field.field.user.user.field_code_sprint
     - field.field.user.user.field_dcm_departments
-    - field.field.user.user.field_drupal_org_id_url
+    - field.field.user.user.field_drupal_skill
     - field.field.user.user.field_facebook_url
+    - field.field.user.user.field_first_drupalcamp
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_food_preference
+    - field.field.user.user.field_gender
     - field.field.user.user.field_how_likely_is_it_that
-    - field.field.user.user.field_i_am_a
     - field.field.user.user.field_i_am_registering_as_a
     - field.field.user.user.field_i_learned_about_dcm2017
     - field.field.user.user.field_i_would_like_to_attend
     - field.field.user.user.field_last_name
     - field.field.user.user.field_linkedin_url
-    - field.field.user.user.field_my_drupal_persona_is_a
     - field.field.user.user.field_organisation
     - field.field.user.user.field_phone_no
+    - field.field.user.user.field_profession
+    - field.field.user.user.field_t_shirt_size
     - field.field.user.user.field_twitter_url
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -42,19 +46,23 @@ content:
     label: hidden
 hidden:
   field_carrying_my_laptop: true
+  field_code_sprint: true
   field_dcm_departments: true
-  field_drupal_org_id_url: true
+  field_drupal_skill: true
   field_facebook_url: true
+  field_first_drupalcamp: true
   field_first_name: true
+  field_food_preference: true
+  field_gender: true
   field_how_likely_is_it_that: true
-  field_i_am_a: true
   field_i_am_registering_as_a: true
   field_i_learned_about_dcm2017: true
   field_i_would_like_to_attend: true
   field_last_name: true
   field_linkedin_url: true
-  field_my_drupal_persona_is_a: true
   field_organisation: true
   field_phone_no: true
+  field_profession: true
+  field_t_shirt_size: true
   field_twitter_url: true
   member_for: true

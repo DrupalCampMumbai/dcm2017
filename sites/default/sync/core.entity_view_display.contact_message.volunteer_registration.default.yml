@@ -1,0 +1,69 @@
+uuid: 6df1f5f6-5ceb-49d6-87e7-a575718e331f
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.volunteer_registration
+    - field.field.contact_message.volunteer_registration.field_contact_number
+    - field.field.contact_message.volunteer_registration.field_contribute
+    - field.field.contact_message.volunteer_registration.field_email_address
+    - field.field.contact_message.volunteer_registration.field_first_name
+    - field.field.contact_message.volunteer_registration.field_last_name
+    - field.field.contact_message.volunteer_registration.field_organization
+    - field.field.contact_message.volunteer_registration.field_weekly_bandwidth
+id: contact_message.volunteer_registration.default
+targetEntityType: contact_message
+bundle: volunteer_registration
+mode: default
+content:
+  field_contact_number:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_contribute:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_email_address:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_first_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_last_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_organization:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_weekly_bandwidth:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  message: true

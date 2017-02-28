@@ -1,0 +1,24 @@
+uuid: d456ae41-9d19-4248-a936-b92aa640bfba
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - taxonomy
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: user.field_drupal_skill
+field_name: field_drupal_skill
+entity_type: user
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

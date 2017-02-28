@@ -7,16 +7,16 @@ dependencies:
 id: dcm_news
 label: dcm-news
 type: 'canonical_entities:node'
-pattern: 'dcm-new/[node:nid]'
+pattern: 'news/[node:field_news_category]/[node:title]'
 selection_criteria:
-  facec555-40a6-4f17-914b-9829381815cb:
+  9e09a009-48e1-472e-ad5d-e6deaf6303d1:
     id: node_type
     bundles:
       drupal_camp_news: drupal_camp_news
     negate: false
     context_mapping:
       node: node
-    uuid: facec555-40a6-4f17-914b-9829381815cb
+    uuid: 9e09a009-48e1-472e-ad5d-e6deaf6303d1
 selection_logic: and
 weight: -5
 relationships: {  }

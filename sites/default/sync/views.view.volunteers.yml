@@ -68,7 +68,7 @@ display:
               field: field_dcm_departments
               rendered: true
               rendered_strip: false
-          row_class: ''
+          row_class: slideanim
           default_row_class: true
       row:
         type: fields
@@ -506,7 +506,7 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      title: 'ORGANIZING COMMITTEE'
+      title: 'Organising Committee'
       header: {  }
       footer: {  }
       empty: {  }

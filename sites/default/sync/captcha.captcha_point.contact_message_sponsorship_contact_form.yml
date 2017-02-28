@@ -1,0 +1,7 @@
+uuid: 9f532d95-17d4-432e-84a8-3e43a3a473ae
+langcode: en
+status: true
+dependencies: {  }
+formId: contact_message_sponsorship_contact_form
+captchaType: image_captcha/Image
+label: contact_message_sponsorship_contact_form

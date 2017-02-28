@@ -466,6 +466,7 @@ display:
         menu_name: dcm2017
         weight: -47
         parent: 'menu_link_content:c9abedb9-9834-4f5f-ab9e-bcbfb6e490cb'
+        enabled: false
       display_description: ''
     cache_metadata:
       max-age: 0

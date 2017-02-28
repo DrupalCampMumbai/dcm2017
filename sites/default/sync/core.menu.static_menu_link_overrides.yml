@@ -6,15 +6,15 @@ definitions:
     weight: 0
     expanded: false
   user__logout:
-    menu_name: dcm2017
+    weight: -43
     parent: ''
-    weight: 10
+    menu_name: dcm2017
     expanded: false
     enabled: true
   user__page:
     menu_name: dcm2017
     parent: ''
-    weight: -10
+    weight: -44
     expanded: false
     enabled: true
 _core:

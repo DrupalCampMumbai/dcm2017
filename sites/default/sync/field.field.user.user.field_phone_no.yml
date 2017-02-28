@@ -10,7 +10,7 @@ id: user.user.field_phone_no
 field_name: field_phone_no
 entity_type: user
 bundle: user
-label: 'Phone No'
+label: 'Contact No'
 description: 'Please enter valid 10 digit phone number (without +91). Please use STD code (without 0) for the 10 digit landline number. Eg: 02225160380'
 required: true
 translatable: false

@@ -1,0 +1,9 @@
+uuid: a45a408a-e6ad-480f-be1e-a471d2b5a6a6
+langcode: en
+status: true
+dependencies: {  }
+name: Profession
+vid: profession
+description: ''
+hierarchy: 0
+weight: 0

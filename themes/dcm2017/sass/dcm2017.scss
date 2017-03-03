@@ -3573,6 +3573,30 @@ footer.footer {
     width: 100%;
     max-width: inherit;
 
+    #block-drupalapprenctices {
+        padding: 20px 0;
+        background-color: #bce8f1;
+        .drupal-apprentice {
+            width: $page-width;
+            margin: 0 auto;
+            .image-wrapper {
+                text-align: right;
+            }
+        }
+    }
+
+    #block-joinda {
+        padding: 20px 0;
+        background-color: #F6F6F2;
+        .join-drup-assoc {
+            width: $page-width;
+            margin: 0 auto;
+            .image-wrapper {
+                text-align: right;
+            }
+        }
+    }    
+
     #dcm2017-footer {
         position: relative;
 

@@ -77,3 +77,22 @@ function dcm_sessions_page_attachments(array &$attachments) {
   // JS library attachment for Sessions page title.
   $attachments['#attached']['library'][] = 'dcm_sessions/session-title-js';
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function dcm_sessions_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'user_register_form' || $form_id == 'user_form') {
+
+    // Fetch current user roles.
+    $current_user_roles = \Drupal::currentUser()->getRoles();
+
+    // Restrict access to DCM Departments field from User Registration form to
+    // only admin user.
+    if (!in_array('administrator', $current_user_roles)) {
+      $form['field_dcm_departments']['#access'] = FALSE;
+    }
+
+  }
+}

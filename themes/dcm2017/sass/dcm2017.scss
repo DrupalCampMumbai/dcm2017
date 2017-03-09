@@ -925,6 +925,20 @@ header#navbar {
         overflow: hidden;
         margin-bottom: 40px;
         text-align: center;
+
+        @media screen and (max-width: 960px) {
+            width: 48%;
+            margin: 0 1% !important;
+            height: 350px;
+        }
+
+        @media screen and (max-width: 480px) {
+            width: 100%;
+            margin: 0 !important;
+            height: 300px;
+            float: none;
+            clear: both;
+        }
     }
 
     section#block-views-block-sponsors-gold-sponsor-slideshow {
@@ -1167,10 +1181,6 @@ aside, .sidebar {
 
 /*Twitter block*/
 #block-twitterfeeds {
-    @media screen and (max-width: 960px) {
-        clear: both;
-    }
-
     .timeline-Body {
         max-height: 400px;
         overflow-y: auto;
@@ -2932,7 +2942,7 @@ aside, .sidebar {
                                 display: none;
                             }
                         }
-                        
+
                         &:after {
                             content: '';
                             height: 2px;
@@ -3576,9 +3586,11 @@ footer.footer {
     #block-drupalapprenctices {
         padding: 20px 0;
         background-color: #bce8f1;
+
         .drupal-apprentice {
             width: $page-width;
             margin: 0 auto;
+
             .image-wrapper {
                 text-align: right;
             }
@@ -3588,14 +3600,16 @@ footer.footer {
     #block-joinda {
         padding: 20px 0;
         background-color: #F6F6F2;
+
         .join-drup-assoc {
             width: $page-width;
             margin: 0 auto;
+
             .image-wrapper {
                 text-align: right;
             }
         }
-    }    
+    }
 
     #dcm2017-footer {
         position: relative;
@@ -3684,6 +3698,11 @@ footer.footer {
             position: absolute;
             right: 10px;
             bottom: 5px;
+
+            @media screen and (max-width: 960px) {
+                position: static;
+                text-align: center;
+            }
 
             img {
                 @media screen and (max-width: 960px) {

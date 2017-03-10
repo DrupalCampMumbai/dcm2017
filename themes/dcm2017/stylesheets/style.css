@@ -12229,7 +12229,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
   display: block;
   width: 100%;
   overflow: hidden;
-  height: 60px;
+  height: 59px;
 }
 /* line 2528, ../sass/dcm2017.scss */
 .view-sessions .view-content .owl-wrapper-outer .owl-wrapper .owl-item ul li .views-field-field-speakers {
@@ -12262,7 +12262,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .view-sessions .view-content .owl-controls .owl-buttons {
   position: absolute;
   width: 100%;
-  top: 10%;
+  top: 6%;
   text-align: right;
 }
 /* line 2569, ../sass/dcm2017.scss */

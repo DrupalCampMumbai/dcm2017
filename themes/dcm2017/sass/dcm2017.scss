@@ -925,6 +925,20 @@ header#navbar {
         overflow: hidden;
         margin-bottom: 40px;
         text-align: center;
+
+        @media screen and (max-width: 960px) {
+            width: 48%;
+            margin: 0 1% !important;
+            height: 350px;
+        }
+
+        @media screen and (max-width: 480px) {
+            width: 100%;
+            margin: 0 !important;
+            height: 300px;
+            float: none;
+            clear: both;
+        }
     }
 
     section#block-views-block-sponsors-gold-sponsor-slideshow {
@@ -1167,10 +1181,6 @@ aside, .sidebar {
 
 /*Twitter block*/
 #block-twitterfeeds {
-    @media screen and (max-width: 960px) {
-        clear: both;
-    }
-
     .timeline-Body {
         max-height: 400px;
         overflow-y: auto;
@@ -2431,10 +2441,10 @@ aside, .sidebar {
                     ul {
                         margin: 20px 0;
                         padding: 20px;
-                        background-color: rgba(143, 139, 136, 0.15);
+                        background-color: transparent;
                         clear: both;
-                        border-radius: 8px;
-                        border: 1px solid rgba(170, 170, 170, 0.27);
+                        border-radius: 0;
+                        border: 0;
 
                         li {
                             padding: 30px 0px;
@@ -2511,8 +2521,7 @@ aside, .sidebar {
                                     display: block;
                                     width: 100%;
                                     overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    white-space: nowrap;
+                                    height: 60px;
                                 }
                             }
 
@@ -2554,7 +2563,7 @@ aside, .sidebar {
             .owl-buttons {
                 position: absolute;
                 width: 100%;
-                top: 13%;
+                top: 10%;
                 text-align: right;
 
                 div {
@@ -2932,7 +2941,7 @@ aside, .sidebar {
                                 display: none;
                             }
                         }
-                        
+
                         &:after {
                             content: '';
                             height: 2px;
@@ -3576,9 +3585,11 @@ footer.footer {
     #block-drupalapprenctices {
         padding: 20px 0;
         background-color: #bce8f1;
+
         .drupal-apprentice {
             width: $page-width;
             margin: 0 auto;
+
             .image-wrapper {
                 text-align: right;
             }
@@ -3588,14 +3599,16 @@ footer.footer {
     #block-joinda {
         padding: 20px 0;
         background-color: #F6F6F2;
+
         .join-drup-assoc {
             width: $page-width;
             margin: 0 auto;
+
             .image-wrapper {
                 text-align: right;
             }
         }
-    }    
+    }
 
     #dcm2017-footer {
         position: relative;
@@ -3684,6 +3697,11 @@ footer.footer {
             position: absolute;
             right: 10px;
             bottom: 5px;
+
+            @media screen and (max-width: 960px) {
+                position: static;
+                text-align: center;
+            }
 
             img {
                 @media screen and (max-width: 960px) {

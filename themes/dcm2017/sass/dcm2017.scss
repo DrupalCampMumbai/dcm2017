@@ -2401,6 +2401,7 @@ aside, .sidebar {
         position: relative;
 
         .owl-wrapper-outer {
+            overflow: hidden;
             .owl-wrapper {
                 .owl-item {
                     h3 {

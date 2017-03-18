@@ -2402,6 +2402,7 @@ aside, .sidebar {
 
         .owl-wrapper-outer {
             overflow: hidden;
+
             .owl-wrapper {
                 .owl-item {
                     h3 {
@@ -2897,6 +2898,32 @@ aside, .sidebar {
 }
 
 /*End Speakers*/
+
+/*Keynote and Key Speakers*/
+.speakers_wrapper {
+    border-bottom: 1px dotted #535353;
+    padding: 10px;
+
+    .img_wrapper {
+        width: 30%;
+        float: left;
+
+        img {
+            width: 100%;
+            border: 1px solid #535353;
+            padding: 5px;
+        }
+    }
+
+    .speaker_bio {
+        width: 70%;
+        float: left;
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
+
+/*End Keynote and Key Speakers*/
 
 /*User page*/
 /*Login*/

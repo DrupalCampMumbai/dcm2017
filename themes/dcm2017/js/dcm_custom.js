@@ -26,15 +26,12 @@ jQuery(document).ready(function($){
     /*End Propose session get heighest session height and apply to all session block*/
 
     /*Propose session get heighest session height and apply to all session block*/
-    var highest1 = null;
-    var hi1 = 0;
+    var h1;
     $(".view-sponsors .views-field-body").each(function(){
-        var h1 = $(this).outerHeight(true);
-        if(h1 > hi1){
-         hi1 = h1;
-        }    
+        h1 = $(this).outerHeight(true);
+        $(this).siblings('.views-field-field-sponsor-logo').height(h1);
     });
-    $(".view-sponsors .views-field-field-sponsor-logo").height(hi1);
+    
     /*End Propose session get heighest session height and apply to all session block*/
 
     /*Sponcers page odd/even class*/

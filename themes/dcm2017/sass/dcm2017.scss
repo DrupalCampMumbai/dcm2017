@@ -2936,6 +2936,11 @@ aside, .sidebar {
         display: inline-block;
         margin-top: 15px;
 
+        @media screen and (max-width: 640px) {
+            width: 99%;
+            border-bottom: 1px dotted #535353;
+        }
+
         .speaker_bio:nth-child(1), .img_wrapper {
             width: 45%;
         }
@@ -2950,6 +2955,10 @@ aside, .sidebar {
 
         .speaker_bio {
             width: 100%;
+
+            @media screen and (max-width: 400px) {
+                font-size: 13px;
+            }
         }
     }
 
@@ -2969,9 +2978,20 @@ aside, .sidebar {
         width: 16.3%;
         display: inline-block;
 
+        @media screen and (max-width: 854px) {
+            width: 32.3%;
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 49%;
+        }
+
         .img_wrapper {
             width: 100%;
             float: none;
+            padding: 0;
+            text-align: center;
         }
 
         .speaker_name {

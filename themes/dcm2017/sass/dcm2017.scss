@@ -928,13 +928,13 @@ header#navbar {
 
         @media screen and (max-width: 960px) {
             width: 48%;
-            margin: 0 1% !important;
+            margin: 0 1% 20px !important;
             height: 350px;
         }
 
         @media screen and (max-width: 480px) {
             width: 100%;
-            margin: 0 !important;
+            margin: 0 0 20px !important;
             height: 300px;
             float: none;
             clear: both;
@@ -2916,7 +2916,7 @@ aside, .sidebar {
             height: 150px;
             border: 2px solid #5dcbe6;
             border-radius: 50%;
-            padding: 5px;   
+            padding: 5px;
         }
     }
 
@@ -3261,6 +3261,10 @@ aside, .sidebar {
     &:hover, &:focus, &:active, &.active, .open .dropdown-toggle.btn-default {
         background: none repeat scroll 0 0 $hover-color;
         color: #fff;
+    }
+
+    @media screen and (max-width: 960px) {
+        padding: 6px 15px;
     }
 }
 
@@ -3619,12 +3623,25 @@ footer.footer {
         padding: 20px 0;
         background-color: #bce8f1;
 
+        @media screen and (max-width: 960px) {
+            padding: 15px;
+        }
+
         .drupal-apprentice {
             width: $page-width;
             margin: 0 auto;
 
+            @media screen and (max-width: 960px) {
+                width: 100%;
+            }
+
             .image-wrapper {
                 text-align: right;
+
+                @media screen and (max-width: 960px) {
+                    text-align: left;
+                    margin: 15px 0 0;
+                }
             }
         }
     }
@@ -3633,12 +3650,25 @@ footer.footer {
         padding: 20px 0;
         background-color: #F6F6F2;
 
+        @media screen and (max-width: 960px) {
+            padding: 15px;
+        }
+
         .join-drup-assoc {
             width: $page-width;
             margin: 0 auto;
 
+            @media screen and (max-width: 960px) {
+                width: 100%;
+            }
+
             .image-wrapper {
                 text-align: right;
+
+                @media screen and (max-width: 960px) {
+                    text-align: left;
+                    margin: 15px 0 0;
+                }
             }
         }
     }

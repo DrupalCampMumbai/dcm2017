@@ -2916,7 +2916,7 @@ aside, .sidebar {
             height: 150px;
             border: 2px solid #5dcbe6;
             border-radius: 50%;
-            padding: 5px;   
+            padding: 5px;
         }
     }
 
@@ -2934,24 +2934,29 @@ aside, .sidebar {
         width: 49%;
         display: inline-block;
         margin-top: 15px;
-         .speaker_bio:nth-child(1), .img_wrapper {
-            width: 45%;
-     }
-     .speaker_bio:nth-child(1) {
-        margin-right: 10px;
-     }
-     .img_wrapper  img {
-        float: right;
-     }
-       .speaker_bio {
-         width: 100%;
-       }
-    }
-     .speakers_wrapper:nth-child(1) {
-            border-right: 1px dotted #535353;
-     }
 
+        .speaker_bio:nth-child(1), .img_wrapper {
+            width: 45%;
+        }
+
+        .speaker_bio:nth-child(1) {
+            margin-right: 10px;
+        }
+
+        .img_wrapper img {
+            float: right;
+        }
+
+        .speaker_bio {
+            width: 100%;
+        }
+    }
+
+    .speakers_wrapper:nth-child(1) {
+        border-right: 1px dotted #535353;
+    }
 }
+
 /*End Keynote and Key Speakers*/
 
 /*User page*/

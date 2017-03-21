@@ -1433,7 +1433,8 @@ aside, .sidebar {
 /*Sponsors*/
 .block-views-blocksponsors-platinum-sponsors, .block-views-blocksponsors-gold-sponsors,
 .block-views-blocksponsors-silver-sponsor, .block-views-blocksponsors-gold-sponsor-slideshow,
-.block-views-blocksponsors-silver-sponsor-slideshow, .block-views-blocksponsors-partners-slideshow, #block-keynotespeakershomepage-2 {
+.block-views-blocksponsors-silver-sponsor-slideshow, .block-views-blocksponsors-partners-slideshow,
+#block-keynotespeakershomepage-2, #block-keyspeakershomepage {
     .block-title {
         padding: 0 0 10px;
         text-align: center;
@@ -2954,6 +2955,28 @@ aside, .sidebar {
 
     .speakers_wrapper:nth-child(1) {
         border-right: 1px dotted #535353;
+    }
+}
+
+#block-keyspeakershomepage {
+    margin-top: 20px;
+
+    .speakers_wrapper {
+        border-bottom: 0;
+    }
+
+    .key-speakers {
+        width: 16.3%;
+        display: inline-block;
+
+        .img_wrapper {
+            width: 100%;
+            float: none;
+        }
+
+        .speaker_name {
+            text-align: center;
+        }
     }
 }
 

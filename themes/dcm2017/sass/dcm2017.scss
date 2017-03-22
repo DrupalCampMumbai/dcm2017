@@ -928,13 +928,13 @@ header#navbar {
 
         @media screen and (max-width: 960px) {
             width: 48%;
-            margin: 0 1% 20px !important;
+            margin: 0 1% !important;
             height: 350px;
         }
 
         @media screen and (max-width: 480px) {
             width: 100%;
-            margin: 0 0 20px !important;
+            margin: 0 !important;
             height: 300px;
             float: none;
             clear: both;
@@ -1433,7 +1433,8 @@ aside, .sidebar {
 /*Sponsors*/
 .block-views-blocksponsors-platinum-sponsors, .block-views-blocksponsors-gold-sponsors,
 .block-views-blocksponsors-silver-sponsor, .block-views-blocksponsors-gold-sponsor-slideshow,
-.block-views-blocksponsors-silver-sponsor-slideshow, .block-views-blocksponsors-partners-slideshow {
+.block-views-blocksponsors-silver-sponsor-slideshow, .block-views-blocksponsors-partners-slideshow,
+#block-keynotespeakershomepage-2, #block-keyspeakershomepage {
     .block-title {
         padding: 0 0 10px;
         text-align: center;
@@ -2928,6 +2929,75 @@ aside, .sidebar {
     }
 }
 
+#block-keynotespeakershomepage-2 {
+    .speakers_wrapper {
+        border-bottom: 0;
+        width: 49%;
+        display: inline-block;
+        margin-top: 15px;
+
+        @media screen and (max-width: 640px) {
+            width: 99%;
+             border-bottom: 1px dotted #535353;
+        }
+
+        .speaker_bio:nth-child(1), .img_wrapper {
+            width: 45%;
+        }
+
+        .speaker_bio:nth-child(1) {
+            margin-right: 10px;
+        }
+
+        .img_wrapper img {
+            float: right;
+        }
+
+        .speaker_bio {
+            width: 100%;
+           @media screen and (max-width: 400px) { 
+                font-size: 13px;
+           }
+        }
+    }
+
+    .speakers_wrapper:nth-child(1) {
+        border-right: 1px dotted #535353;
+    }
+}
+
+#block-keyspeakershomepage {
+    margin-top: 20px;
+
+    .speakers_wrapper {
+        border-bottom: 0;
+    }
+
+    .key-speakers {
+        width: 16.3%;
+        display: inline-block;
+        @media screen and (max-width: 854px) { 
+              width: 32.3%;
+              margin-top: 10px;
+           }
+
+           @media screen and (max-width: 400px) { 
+              width: 49%;
+           }
+
+        .img_wrapper {
+            width: 100%;
+            float: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .speaker_name {
+            text-align: center;
+        }
+    }
+}
+
 /*End Keynote and Key Speakers*/
 
 /*User page*/
@@ -3261,10 +3331,6 @@ aside, .sidebar {
     &:hover, &:focus, &:active, &.active, .open .dropdown-toggle.btn-default {
         background: none repeat scroll 0 0 $hover-color;
         color: #fff;
-    }
-
-    @media screen and (max-width: 960px) {
-        padding: 6px 15px;
     }
 }
 
@@ -3623,25 +3689,12 @@ footer.footer {
         padding: 20px 0;
         background-color: #bce8f1;
 
-        @media screen and (max-width: 960px) {
-            padding: 15px;
-        }
-
         .drupal-apprentice {
             width: $page-width;
             margin: 0 auto;
 
-            @media screen and (max-width: 960px) {
-                width: 100%;
-            }
-
             .image-wrapper {
                 text-align: right;
-
-                @media screen and (max-width: 960px) {
-                    text-align: left;
-                    margin: 15px 0 0;
-                }
             }
         }
     }
@@ -3650,25 +3703,12 @@ footer.footer {
         padding: 20px 0;
         background-color: #F6F6F2;
 
-        @media screen and (max-width: 960px) {
-            padding: 15px;
-        }
-
         .join-drup-assoc {
             width: $page-width;
             margin: 0 auto;
 
-            @media screen and (max-width: 960px) {
-                width: 100%;
-            }
-
             .image-wrapper {
                 text-align: right;
-
-                @media screen and (max-width: 960px) {
-                    text-align: left;
-                    margin: 15px 0 0;
-                }
             }
         }
     }

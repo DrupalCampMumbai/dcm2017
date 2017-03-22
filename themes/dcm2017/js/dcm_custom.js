@@ -60,7 +60,7 @@ jQuery(document).ready(function($){
             $('.menuSlideOverlay, .menuSlideClose').remove();
         });         
         //var userNametxt = $('.login-user h1').text();
-        $('header#navbar #dcm-sticky-menu .menu.nav').prepend('<h2 class="welcomeUserMenu"><span>Hello</span> <span class="uName">User</span></h2>');
+        $('header#navbar #dcm-sticky-menu .menu.nav').prepend('<h2 class="welcomeUserMenu"><span>Hello</span> <span class="uName">Drupalite</span></h2>');
         //$('.user-logged-in .uName').text(userNametxt);                    
         /*End Responsive menu*/
     } else {

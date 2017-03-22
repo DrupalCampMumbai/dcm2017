@@ -1503,7 +1503,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .block-title, .block-views-blocksponsors-gold-sponsors .block-title,
 .block-views-blocksponsors-silver-sponsor .block-title, .block-views-blocksponsors-gold-sponsor-slideshow .block-title,
 .block-views-blocksponsors-silver-sponsor-slideshow .block-title, .block-views-blocksponsors-partners-slideshow .block-title,
-#block-keynotespeakershomepage-2 .block-title, #block-keyspeakershomepage .block-title {
+#block-keynotespeakershomepage .block-title, #block-keyspeakershomepage .block-title {
   padding: 0 0 10px;
   text-align: center;
   line-height: 100%;
@@ -1516,7 +1516,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .block-title:before, .block-views-blocksponsors-gold-sponsors .block-title:before,
 .block-views-blocksponsors-silver-sponsor .block-title:before, .block-views-blocksponsors-gold-sponsor-slideshow .block-title:before,
 .block-views-blocksponsors-silver-sponsor-slideshow .block-title:before, .block-views-blocksponsors-partners-slideshow .block-title:before,
-#block-keynotespeakershomepage-2 .block-title:before, #block-keyspeakershomepage .block-title:before {
+#block-keynotespeakershomepage .block-title:before, #block-keyspeakershomepage .block-title:before {
   content: '';
   width: 100px;
   display: inline-block;
@@ -1530,7 +1530,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
   .block-views-blocksponsors-platinum-sponsors .block-title:before, .block-views-blocksponsors-gold-sponsors .block-title:before,
   .block-views-blocksponsors-silver-sponsor .block-title:before, .block-views-blocksponsors-gold-sponsor-slideshow .block-title:before,
   .block-views-blocksponsors-silver-sponsor-slideshow .block-title:before, .block-views-blocksponsors-partners-slideshow .block-title:before,
-  #block-keynotespeakershomepage-2 .block-title:before, #block-keyspeakershomepage .block-title:before {
+  #block-keynotespeakershomepage .block-title:before, #block-keyspeakershomepage .block-title:before {
     width: 50px;
     margin-left: -60px;
   }
@@ -1539,7 +1539,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .block-title:after, .block-views-blocksponsors-gold-sponsors .block-title:after,
 .block-views-blocksponsors-silver-sponsor .block-title:after, .block-views-blocksponsors-gold-sponsor-slideshow .block-title:after,
 .block-views-blocksponsors-silver-sponsor-slideshow .block-title:after, .block-views-blocksponsors-partners-slideshow .block-title:after,
-#block-keynotespeakershomepage-2 .block-title:after, #block-keyspeakershomepage .block-title:after {
+#block-keynotespeakershomepage .block-title:after, #block-keyspeakershomepage .block-title:after {
   content: '';
   width: 100px;
   display: inline-block;
@@ -1553,7 +1553,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
   .block-views-blocksponsors-platinum-sponsors .block-title:after, .block-views-blocksponsors-gold-sponsors .block-title:after,
   .block-views-blocksponsors-silver-sponsor .block-title:after, .block-views-blocksponsors-gold-sponsor-slideshow .block-title:after,
   .block-views-blocksponsors-silver-sponsor-slideshow .block-title:after, .block-views-blocksponsors-partners-slideshow .block-title:after,
-  #block-keynotespeakershomepage-2 .block-title:after, #block-keyspeakershomepage .block-title:after {
+  #block-keynotespeakershomepage .block-title:after, #block-keyspeakershomepage .block-title:after {
     width: 50px;
   }
 }
@@ -1561,7 +1561,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .view-content, .block-views-blocksponsors-gold-sponsors .view-content,
 .block-views-blocksponsors-silver-sponsor .view-content, .block-views-blocksponsors-gold-sponsor-slideshow .view-content,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content, .block-views-blocksponsors-partners-slideshow .view-content,
-#block-keynotespeakershomepage-2 .view-content, #block-keyspeakershomepage .view-content {
+#block-keynotespeakershomepage .view-content, #block-keyspeakershomepage .view-content {
   padding: 0;
   text-align: center;
 }
@@ -1569,7 +1569,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .view-content .views-row, .block-views-blocksponsors-gold-sponsors .view-content .views-row,
 .block-views-blocksponsors-silver-sponsor .view-content .views-row, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row, .block-views-blocksponsors-partners-slideshow .view-content .views-row,
-#block-keynotespeakershomepage-2 .view-content .views-row, #block-keyspeakershomepage .view-content .views-row {
+#block-keynotespeakershomepage .view-content .views-row, #block-keyspeakershomepage .view-content .views-row {
   display: inline-block;
   width: 25%;
   margin: 0 15px 55px 0;
@@ -1585,7 +1585,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
   .block-views-blocksponsors-platinum-sponsors .view-content .views-row, .block-views-blocksponsors-gold-sponsors .view-content .views-row,
   .block-views-blocksponsors-silver-sponsor .view-content .views-row, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row,
   .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row, .block-views-blocksponsors-partners-slideshow .view-content .views-row,
-  #block-keynotespeakershomepage-2 .view-content .views-row, #block-keyspeakershomepage .view-content .views-row {
+  #block-keynotespeakershomepage .view-content .views-row, #block-keyspeakershomepage .view-content .views-row {
     width: 40%;
     margin: 0 15px 30px 0;
   }
@@ -1595,7 +1595,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
   .block-views-blocksponsors-platinum-sponsors .view-content .views-row, .block-views-blocksponsors-gold-sponsors .view-content .views-row,
   .block-views-blocksponsors-silver-sponsor .view-content .views-row, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row,
   .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row, .block-views-blocksponsors-partners-slideshow .view-content .views-row,
-  #block-keynotespeakershomepage-2 .view-content .views-row, #block-keyspeakershomepage .view-content .views-row {
+  #block-keynotespeakershomepage .view-content .views-row, #block-keyspeakershomepage .view-content .views-row {
     width: 90%;
     margin-right: 0;
   }
@@ -1604,7 +1604,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .view-content .views-row:after, .block-views-blocksponsors-gold-sponsors .view-content .views-row:after,
 .block-views-blocksponsors-silver-sponsor .view-content .views-row:after, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row:after,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row:after, .block-views-blocksponsors-partners-slideshow .view-content .views-row:after,
-#block-keynotespeakershomepage-2 .view-content .views-row:after, #block-keyspeakershomepage .view-content .views-row:after {
+#block-keynotespeakershomepage .view-content .views-row:after, #block-keyspeakershomepage .view-content .views-row:after {
   display: inline-block;
   content: '';
   border-right: 120px solid transparent;
@@ -1625,7 +1625,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
   .block-views-blocksponsors-platinum-sponsors .view-content .views-row:after, .block-views-blocksponsors-gold-sponsors .view-content .views-row:after,
   .block-views-blocksponsors-silver-sponsor .view-content .views-row:after, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row:after,
   .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row:after, .block-views-blocksponsors-partners-slideshow .view-content .views-row:after,
-  #block-keynotespeakershomepage-2 .view-content .views-row:after, #block-keyspeakershomepage .view-content .views-row:after {
+  #block-keynotespeakershomepage .view-content .views-row:after, #block-keyspeakershomepage .view-content .views-row:after {
     display: none;
   }
 }
@@ -1635,8 +1635,8 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-silver-sponsor .view-content .views-row:nth-child(3n), .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row:last-child, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row:nth-child(3n),
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row:last-child,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row:nth-child(3n), .block-views-blocksponsors-partners-slideshow .view-content .views-row:last-child, .block-views-blocksponsors-partners-slideshow .view-content .views-row:nth-child(3n),
-#block-keynotespeakershomepage-2 .view-content .views-row:last-child,
-#block-keynotespeakershomepage-2 .view-content .views-row:nth-child(3n), #block-keyspeakershomepage .view-content .views-row:last-child, #block-keyspeakershomepage .view-content .views-row:nth-child(3n) {
+#block-keynotespeakershomepage .view-content .views-row:last-child,
+#block-keynotespeakershomepage .view-content .views-row:nth-child(3n), #block-keyspeakershomepage .view-content .views-row:last-child, #block-keyspeakershomepage .view-content .views-row:nth-child(3n) {
   margin-right: 0;
 }
 @media screen and (max-width: 960px) {
@@ -1646,8 +1646,8 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
   .block-views-blocksponsors-silver-sponsor .view-content .views-row:nth-child(3n), .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row:last-child, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row:nth-child(3n),
   .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row:last-child,
   .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row:nth-child(3n), .block-views-blocksponsors-partners-slideshow .view-content .views-row:last-child, .block-views-blocksponsors-partners-slideshow .view-content .views-row:nth-child(3n),
-  #block-keynotespeakershomepage-2 .view-content .views-row:last-child,
-  #block-keynotespeakershomepage-2 .view-content .views-row:nth-child(3n), #block-keyspeakershomepage .view-content .views-row:last-child, #block-keyspeakershomepage .view-content .views-row:nth-child(3n) {
+  #block-keynotespeakershomepage .view-content .views-row:last-child,
+  #block-keynotespeakershomepage .view-content .views-row:nth-child(3n), #block-keyspeakershomepage .view-content .views-row:last-child, #block-keyspeakershomepage .view-content .views-row:nth-child(3n) {
     margin-right: 15px;
   }
 }
@@ -1658,8 +1658,8 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
   .block-views-blocksponsors-silver-sponsor .view-content .views-row:nth-child(3n), .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row:last-child, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row:nth-child(3n),
   .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row:last-child,
   .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row:nth-child(3n), .block-views-blocksponsors-partners-slideshow .view-content .views-row:last-child, .block-views-blocksponsors-partners-slideshow .view-content .views-row:nth-child(3n),
-  #block-keynotespeakershomepage-2 .view-content .views-row:last-child,
-  #block-keynotespeakershomepage-2 .view-content .views-row:nth-child(3n), #block-keyspeakershomepage .view-content .views-row:last-child, #block-keyspeakershomepage .view-content .views-row:nth-child(3n) {
+  #block-keynotespeakershomepage .view-content .views-row:last-child,
+  #block-keynotespeakershomepage .view-content .views-row:nth-child(3n), #block-keyspeakershomepage .view-content .views-row:last-child, #block-keyspeakershomepage .view-content .views-row:nth-child(3n) {
     margin-right: 0;
   }
 }
@@ -1667,7 +1667,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .view-content .views-row .views-field-field-sponsor-logo, .block-views-blocksponsors-gold-sponsors .view-content .views-row .views-field-field-sponsor-logo,
 .block-views-blocksponsors-silver-sponsor .view-content .views-row .views-field-field-sponsor-logo, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row .views-field-field-sponsor-logo,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row .views-field-field-sponsor-logo, .block-views-blocksponsors-partners-slideshow .view-content .views-row .views-field-field-sponsor-logo,
-#block-keynotespeakershomepage-2 .view-content .views-row .views-field-field-sponsor-logo, #block-keyspeakershomepage .view-content .views-row .views-field-field-sponsor-logo {
+#block-keynotespeakershomepage .view-content .views-row .views-field-field-sponsor-logo, #block-keyspeakershomepage .view-content .views-row .views-field-field-sponsor-logo {
   display: table;
   width: 100%;
 }
@@ -1675,7 +1675,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .view-content .views-row .views-field-field-sponsor-logo .field-content, .block-views-blocksponsors-gold-sponsors .view-content .views-row .views-field-field-sponsor-logo .field-content,
 .block-views-blocksponsors-silver-sponsor .view-content .views-row .views-field-field-sponsor-logo .field-content, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row .views-field-field-sponsor-logo .field-content,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row .views-field-field-sponsor-logo .field-content, .block-views-blocksponsors-partners-slideshow .view-content .views-row .views-field-field-sponsor-logo .field-content,
-#block-keynotespeakershomepage-2 .view-content .views-row .views-field-field-sponsor-logo .field-content, #block-keyspeakershomepage .view-content .views-row .views-field-field-sponsor-logo .field-content {
+#block-keynotespeakershomepage .view-content .views-row .views-field-field-sponsor-logo .field-content, #block-keyspeakershomepage .view-content .views-row .views-field-field-sponsor-logo .field-content {
   display: table-cell;
   vertical-align: middle;
   height: 115px;
@@ -1685,7 +1685,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .view-content .views-row .views-field-field-sponsor-logo .img-responsive, .block-views-blocksponsors-gold-sponsors .view-content .views-row .views-field-field-sponsor-logo .img-responsive,
 .block-views-blocksponsors-silver-sponsor .view-content .views-row .views-field-field-sponsor-logo .img-responsive, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row .views-field-field-sponsor-logo .img-responsive,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row .views-field-field-sponsor-logo .img-responsive, .block-views-blocksponsors-partners-slideshow .view-content .views-row .views-field-field-sponsor-logo .img-responsive,
-#block-keynotespeakershomepage-2 .view-content .views-row .views-field-field-sponsor-logo .img-responsive, #block-keyspeakershomepage .view-content .views-row .views-field-field-sponsor-logo .img-responsive {
+#block-keynotespeakershomepage .view-content .views-row .views-field-field-sponsor-logo .img-responsive, #block-keyspeakershomepage .view-content .views-row .views-field-field-sponsor-logo .img-responsive {
   margin: auto;
 }
 @media screen and (max-width: 960px) {
@@ -1693,7 +1693,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
   .block-views-blocksponsors-platinum-sponsors .view-content .views-row .views-field-field-sponsor-logo .img-responsive, .block-views-blocksponsors-gold-sponsors .view-content .views-row .views-field-field-sponsor-logo .img-responsive,
   .block-views-blocksponsors-silver-sponsor .view-content .views-row .views-field-field-sponsor-logo .img-responsive, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-row .views-field-field-sponsor-logo .img-responsive,
   .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-row .views-field-field-sponsor-logo .img-responsive, .block-views-blocksponsors-partners-slideshow .view-content .views-row .views-field-field-sponsor-logo .img-responsive,
-  #block-keynotespeakershomepage-2 .view-content .views-row .views-field-field-sponsor-logo .img-responsive, #block-keyspeakershomepage .view-content .views-row .views-field-field-sponsor-logo .img-responsive {
+  #block-keynotespeakershomepage .view-content .views-row .views-field-field-sponsor-logo .img-responsive, #block-keyspeakershomepage .view-content .views-row .views-field-field-sponsor-logo .img-responsive {
     width: auto;
   }
 }
@@ -1701,14 +1701,14 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .view-content .views-slideshow-controls-top, .block-views-blocksponsors-gold-sponsors .view-content .views-slideshow-controls-top,
 .block-views-blocksponsors-silver-sponsor .view-content .views-slideshow-controls-top, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-slideshow-controls-top,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-slideshow-controls-top, .block-views-blocksponsors-partners-slideshow .view-content .views-slideshow-controls-top,
-#block-keynotespeakershomepage-2 .view-content .views-slideshow-controls-top, #block-keyspeakershomepage .view-content .views-slideshow-controls-top {
+#block-keynotespeakershomepage .view-content .views-slideshow-controls-top, #block-keyspeakershomepage .view-content .views-slideshow-controls-top {
   position: relative;
 }
 /* line 1561, ../sass/dcm2017.scss */
 .block-views-blocksponsors-platinum-sponsors .view-content .views-slideshow-controls-top .views_slideshow_controls_text, .block-views-blocksponsors-gold-sponsors .view-content .views-slideshow-controls-top .views_slideshow_controls_text,
 .block-views-blocksponsors-silver-sponsor .view-content .views-slideshow-controls-top .views_slideshow_controls_text, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-slideshow-controls-top .views_slideshow_controls_text,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-slideshow-controls-top .views_slideshow_controls_text, .block-views-blocksponsors-partners-slideshow .view-content .views-slideshow-controls-top .views_slideshow_controls_text,
-#block-keynotespeakershomepage-2 .view-content .views-slideshow-controls-top .views_slideshow_controls_text, #block-keyspeakershomepage .view-content .views-slideshow-controls-top .views_slideshow_controls_text {
+#block-keynotespeakershomepage .view-content .views-slideshow-controls-top .views_slideshow_controls_text, #block-keyspeakershomepage .view-content .views-slideshow-controls-top .views_slideshow_controls_text {
   position: absolute;
   width: 100%;
   top: 70px;
@@ -1717,7 +1717,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-platinum-sponsors .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a, .block-views-blocksponsors-gold-sponsors .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a,
 .block-views-blocksponsors-silver-sponsor .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a, .block-views-blocksponsors-gold-sponsor-slideshow .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a, .block-views-blocksponsors-partners-slideshow .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a,
-#block-keynotespeakershomepage-2 .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a, #block-keyspeakershomepage .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a {
+#block-keynotespeakershomepage .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a, #block-keyspeakershomepage .view-content .views-slideshow-controls-top .views_slideshow_controls_text span a {
   text-indent: -9999px;
   display: inline-block;
   position: relative;
@@ -1734,9 +1734,9 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow, .block-views-blocksponsors-partners-slideshow .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow, .block-views-blocksponsors-partners-slideshow .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow,
 .block-views-blocksponsors-partners-slideshow .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow,
-#block-keynotespeakershomepage-2 .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow,
-#block-keynotespeakershomepage-2 .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow,
-#block-keynotespeakershomepage-2 .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow, #block-keyspeakershomepage .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow, #block-keyspeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow,
+#block-keynotespeakershomepage .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow,
+#block-keynotespeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow,
+#block-keynotespeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow, #block-keyspeakershomepage .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow, #block-keyspeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow,
 #block-keyspeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow {
   width: 100%;
 }
@@ -1752,9 +1752,9 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow .views_slideshow_cycle_slide,
 .block-views-blocksponsors-silver-sponsor-slideshow .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow .views_slideshow_cycle_slide, .block-views-blocksponsors-partners-slideshow .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow .views_slideshow_cycle_slide, .block-views-blocksponsors-partners-slideshow .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow .views_slideshow_cycle_slide,
 .block-views-blocksponsors-partners-slideshow .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow .views_slideshow_cycle_slide,
-#block-keynotespeakershomepage-2 .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow .views_slideshow_cycle_slide,
-#block-keynotespeakershomepage-2 .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow .views_slideshow_cycle_slide,
-#block-keynotespeakershomepage-2 .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow .views_slideshow_cycle_slide, #block-keyspeakershomepage .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow .views_slideshow_cycle_slide, #block-keyspeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow .views_slideshow_cycle_slide,
+#block-keynotespeakershomepage .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow .views_slideshow_cycle_slide,
+#block-keynotespeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow .views_slideshow_cycle_slide,
+#block-keynotespeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow .views_slideshow_cycle_slide, #block-keyspeakershomepage .view-content #views_slideshow_cycle_main_sponsors-gold_sponsor_slideshow .views_slideshow_cycle_slide, #block-keyspeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-silver_sponsor_slideshow .views_slideshow_cycle_slide,
 #block-keyspeakershomepage .view-content #views_slideshow_cycle_teaser_section_sponsors-partners_slideshow .views_slideshow_cycle_slide {
   width: 100%;
 }
@@ -3078,7 +3078,7 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 }
 
 /* line 2933, ../sass/dcm2017.scss */
-#block-keynotespeakershomepage-2 .speakers_wrapper {
+#block-keynotespeakershomepage .speakers_wrapper {
   border-bottom: 0;
   width: 49%;
   display: inline-block;
@@ -3086,35 +3086,35 @@ aside .block .view-content, aside .block .field--name-body, .sidebar .block .vie
 }
 @media screen and (max-width: 640px) {
   /* line 2933, ../sass/dcm2017.scss */
-  #block-keynotespeakershomepage-2 .speakers_wrapper {
+  #block-keynotespeakershomepage .speakers_wrapper {
     width: 99%;
     border-bottom: 1px dotted #535353;
   }
 }
 /* line 2944, ../sass/dcm2017.scss */
-#block-keynotespeakershomepage-2 .speakers_wrapper .speaker_bio:nth-child(1), #block-keynotespeakershomepage-2 .speakers_wrapper .img_wrapper {
+#block-keynotespeakershomepage .speakers_wrapper .speaker_bio:nth-child(1), #block-keynotespeakershomepage .speakers_wrapper .img_wrapper {
   width: 45%;
 }
 /* line 2948, ../sass/dcm2017.scss */
-#block-keynotespeakershomepage-2 .speakers_wrapper .speaker_bio:nth-child(1) {
+#block-keynotespeakershomepage .speakers_wrapper .speaker_bio:nth-child(1) {
   margin-right: 10px;
 }
 /* line 2952, ../sass/dcm2017.scss */
-#block-keynotespeakershomepage-2 .speakers_wrapper .img_wrapper img {
+#block-keynotespeakershomepage .speakers_wrapper .img_wrapper img {
   float: right;
 }
 /* line 2956, ../sass/dcm2017.scss */
-#block-keynotespeakershomepage-2 .speakers_wrapper .speaker_bio {
+#block-keynotespeakershomepage .speakers_wrapper .speaker_bio {
   width: 100%;
 }
 @media screen and (max-width: 400px) {
   /* line 2956, ../sass/dcm2017.scss */
-  #block-keynotespeakershomepage-2 .speakers_wrapper .speaker_bio {
+  #block-keynotespeakershomepage .speakers_wrapper .speaker_bio {
     font-size: 13px;
   }
 }
 /* line 2965, ../sass/dcm2017.scss */
-#block-keynotespeakershomepage-2 .speakers_wrapper:nth-child(1) {
+#block-keynotespeakershomepage .speakers_wrapper:nth-child(1) {
   border-right: 1px dotted #535353;
 }
 

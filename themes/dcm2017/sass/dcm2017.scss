@@ -1434,7 +1434,7 @@ aside, .sidebar {
 .block-views-blocksponsors-platinum-sponsors, .block-views-blocksponsors-gold-sponsors,
 .block-views-blocksponsors-silver-sponsor, .block-views-blocksponsors-gold-sponsor-slideshow,
 .block-views-blocksponsors-silver-sponsor-slideshow, .block-views-blocksponsors-partners-slideshow,
-#block-keynotespeakershomepage-2, #block-keyspeakershomepage {
+#block-keynotespeakershomepage, #block-keyspeakershomepage {
     .block-title {
         padding: 0 0 10px;
         text-align: center;
@@ -2030,18 +2030,6 @@ aside, .sidebar {
                 }
             }
 
-            &:first-child {
-                display: none;
-            }
-
-            &:nth-child(5n) {
-                margin-right: 0;
-
-                @media screen and (max-width: 960px) {
-                    margin-right: 8px;
-                }
-            }
-
             .attendees-page {
                 background-image: url(../images/zigzak.png), url(../images/zigzak.png);
                 background-repeat: repeat-x, repeat-x;
@@ -2382,13 +2370,12 @@ aside, .sidebar {
     }
 
     .session-data {
-        padding: 20px;
+        padding: 20px 20px 95px;
         background-color: rgba(94, 204, 229, 0.13);
         background-image: url(../images/dcm-logo.png);
-        background-position: right bottom;
+        background-position: right 10px bottom 10px;
         background-repeat: no-repeat;
         background-size: 80px;
-        background-origin: content-box;
 
         @media screen and (max-width: 560px) {
             background-image: none;
@@ -2929,7 +2916,7 @@ aside, .sidebar {
     }
 }
 
-#block-keynotespeakershomepage-2 {
+#block-keynotespeakershomepage {
     .speakers_wrapper {
         border-bottom: 0;
         width: 49%;

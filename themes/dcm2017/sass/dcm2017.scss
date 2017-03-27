@@ -2370,13 +2370,12 @@ aside, .sidebar {
     }
 
     .session-data {
-        padding: 20px;
+        padding: 20px 20px 95px;
         background-color: rgba(94, 204, 229, 0.13);
         background-image: url(../images/dcm-logo.png);
-        background-position: right bottom;
+        background-position: right 10px bottom 10px;
         background-repeat: no-repeat;
         background-size: 80px;
-        background-origin: content-box;
 
         @media screen and (max-width: 560px) {
             background-image: none;
